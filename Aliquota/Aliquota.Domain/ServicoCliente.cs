@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Aliquota.Domain
 {
@@ -20,6 +21,14 @@ namespace Aliquota.Domain
 			_contexto.SaveChanges();
 		}
 
+		public Cliente BuscaPorNome(string nome)
+		{
+			var cliente = _contexto.Clientes.FirstOrDefault(c => c.Nome == nome);
 
+			if (cliente == null)
+				throw new Exception("Cliente não encontrado");
+
+			return cliente;
+		}
 	}
 }
