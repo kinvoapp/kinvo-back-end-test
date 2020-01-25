@@ -16,5 +16,7 @@ namespace Aliquota.Domain
 
 		public DbSet<Cliente> Clientes { get; set; }
 
+		public DbSet<ProdutoFinanceiro> ProdutosFinanceiros { get; set; }
+
 	}
 }
