@@ -1,0 +1,5 @@
+C:\Users\Elias\source\repos\kinvo-back-end-test\KinvoBackEndTeste\KinvoBackEndTeste.Domain\bin\Debug\KinvoBackEndTeste.Domain.dll
+C:\Users\Elias\source\repos\kinvo-back-end-test\KinvoBackEndTeste\KinvoBackEndTeste.Domain\bin\Debug\KinvoBackEndTeste.Domain.pdb
+C:\Users\Elias\source\repos\kinvo-back-end-test\KinvoBackEndTeste\KinvoBackEndTeste.Domain\obj\Debug\KinvoBackEndTeste.Domain.csprojAssemblyReference.cache
+C:\Users\Elias\source\repos\kinvo-back-end-test\KinvoBackEndTeste\KinvoBackEndTeste.Domain\obj\Debug\KinvoBackEndTeste.Domain.dll
+C:\Users\Elias\source\repos\kinvo-back-end-test\KinvoBackEndTeste\KinvoBackEndTeste.Domain\obj\Debug\KinvoBackEndTeste.Domain.pdb

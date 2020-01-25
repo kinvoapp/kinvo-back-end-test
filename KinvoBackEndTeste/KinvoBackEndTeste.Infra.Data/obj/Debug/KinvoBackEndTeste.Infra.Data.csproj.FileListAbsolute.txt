@@ -1,0 +1,13 @@
+C:\Users\Elias\source\repos\kinvo-back-end-test\KinvoBackEndTeste\KinvoBackEndTeste.Infra.Data\bin\Debug\KinvoBackEndTeste.Infra.Data.dll.config
+C:\Users\Elias\source\repos\kinvo-back-end-test\KinvoBackEndTeste\KinvoBackEndTeste.Infra.Data\bin\Debug\KinvoBackEndTeste.Infra.Data.dll
+C:\Users\Elias\source\repos\kinvo-back-end-test\KinvoBackEndTeste\KinvoBackEndTeste.Infra.Data\bin\Debug\KinvoBackEndTeste.Infra.Data.pdb
+C:\Users\Elias\source\repos\kinvo-back-end-test\KinvoBackEndTeste\KinvoBackEndTeste.Infra.Data\bin\Debug\EntityFramework.dll
+C:\Users\Elias\source\repos\kinvo-back-end-test\KinvoBackEndTeste\KinvoBackEndTeste.Infra.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Elias\source\repos\kinvo-back-end-test\KinvoBackEndTeste\KinvoBackEndTeste.Infra.Data\bin\Debug\KinvoBackEndTeste.Domain.dll
+C:\Users\Elias\source\repos\kinvo-back-end-test\KinvoBackEndTeste\KinvoBackEndTeste.Infra.Data\bin\Debug\KinvoBackEndTeste.Domain.pdb
+C:\Users\Elias\source\repos\kinvo-back-end-test\KinvoBackEndTeste\KinvoBackEndTeste.Infra.Data\bin\Debug\EntityFramework.xml
+C:\Users\Elias\source\repos\kinvo-back-end-test\KinvoBackEndTeste\KinvoBackEndTeste.Infra.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Elias\source\repos\kinvo-back-end-test\KinvoBackEndTeste\KinvoBackEndTeste.Infra.Data\obj\Debug\KinvoBackEndTeste.Infra.Data.csprojAssemblyReference.cache
+C:\Users\Elias\source\repos\kinvo-back-end-test\KinvoBackEndTeste\KinvoBackEndTeste.Infra.Data\obj\Debug\KinvoBackEndTeste.Infra.Data.csproj.CopyComplete
+C:\Users\Elias\source\repos\kinvo-back-end-test\KinvoBackEndTeste\KinvoBackEndTeste.Infra.Data\obj\Debug\KinvoBackEndTeste.Infra.Data.dll
+C:\Users\Elias\source\repos\kinvo-back-end-test\KinvoBackEndTeste\KinvoBackEndTeste.Infra.Data\obj\Debug\KinvoBackEndTeste.Infra.Data.pdb
