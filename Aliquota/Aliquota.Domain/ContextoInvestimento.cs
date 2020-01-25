@@ -18,5 +18,6 @@ namespace Aliquota.Domain
 
 		public DbSet<ProdutoFinanceiro> ProdutosFinanceiros { get; set; }
 
+		public DbSet<Aplicacao> Aplicacoes { get; set; }
 	}
 }
