@@ -14,7 +14,7 @@ namespace Aliquota.Domain.Test
 		public void Adiciona_Cliente()
 		{
 			var opcoes = new DbContextOptionsBuilder<ContextoInvestimento>()
-				.UseInMemoryDatabase(databaseName: "Cliente")
+				.UseInMemoryDatabase(databaseName: "Adiciona_Cliente")
 				.Options;
 
 			using (var contexto = new ContextoInvestimento(opcoes))
@@ -38,7 +38,7 @@ namespace Aliquota.Domain.Test
 		public void BuscaPorNome_Cliente()
 		{
 			var opcoes = new DbContextOptionsBuilder<ContextoInvestimento>()
-				.UseInMemoryDatabase(databaseName: "Cliente")
+				.UseInMemoryDatabase(databaseName: "BuscaPorNome_Cliente")
 				.Options;
 
 			using (var contexto = new ContextoInvestimento(opcoes))

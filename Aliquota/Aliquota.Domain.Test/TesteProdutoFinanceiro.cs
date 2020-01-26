@@ -13,7 +13,7 @@ namespace Aliquota.Domain.Test
 		public void Adiciona_ProdutoFinanceiro()
 		{
 			var opcoes = new DbContextOptionsBuilder<ContextoInvestimento>()
-				.UseInMemoryDatabase(databaseName: "ProdutoFinanceiro")
+				.UseInMemoryDatabase(databaseName: "Adiciona_ProdutoFinanceiro")
 				.Options;
 
 			using (var contexto = new ContextoInvestimento(opcoes))
@@ -37,7 +37,7 @@ namespace Aliquota.Domain.Test
 		public void BuscaPorNome_ProdutoFinanceiro()
 		{
 			var opcoes = new DbContextOptionsBuilder<ContextoInvestimento>()
-				.UseInMemoryDatabase(databaseName: "ProdutoFinanceiro")
+				.UseInMemoryDatabase(databaseName: "BuscaPorNome_ProdutoFinanceiro")
 				.Options;
 
 			using (var contexto = new ContextoInvestimento(opcoes))

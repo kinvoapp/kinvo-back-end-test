@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,10 +15,44 @@ namespace Aliquota.Domain
 			_contexto = contexto;
 		}
 
+		public void Remover(Aplicacao aplicacao)
+		{
+			if (!VerificaAplicacaoExiste(aplicacao))
+				throw new ArgumentException("A aplicação não existe.");
+
+			_contexto.Aplicacoes.Remove(aplicacao);
+			_contexto.SaveChanges();
+		}
+
+		public Aplicacao BuscaPorClienteProdutoFinanceiro(Cliente cliente, ProdutoFinanceiro produto)
+		{
+			if (cliente == null)
+				throw new ArgumentException("É necessário fornecer um cliente.");
+
+			if (produto == null)
+				throw new ArgumentException("É necessário fornecer um produto financeiro.");
+
+			Aplicacao aplicacao = _contexto.Aplicacoes
+				.Include(a => a.ProdutoFinanceiro)
+				.Include(a => a.Cliente)
+				.SingleOrDefault(a => a.Cliente.Id == cliente.Id && a.ProdutoFinanceiro.Id == produto.Id);
+
+			if (aplicacao == null)
+				throw new Exception("Aplicação não encontrada.");
+
+			return aplicacao;
+		}
+
 		public void Adicionar(decimal valor, Cliente cliente, ProdutoFinanceiro produto)
 		{
 			if (valor <= 0)
 				throw new ArgumentException("O valor da aplicação deve ser maior que 0");
+
+			if (cliente == null)
+				throw new ArgumentException("É necessário fornecer um cliente.");
+
+			if (produto == null)
+				throw new ArgumentException("É necessário fornecer um produto financeiro.");
 
 			if (!_contexto.Clientes.Any(c => c.Id == cliente.Id))
 				throw new ArgumentException("O cliente não existe");
@@ -59,6 +94,13 @@ namespace Aliquota.Domain
 			bool aplicacaoExiste = _contexto.Aplicacoes.Any(a =>
 				a.Cliente.Nome == cliente.Nome &&
 				a.ProdutoFinanceiro.Nome == produto.Nome);
+
+			return aplicacaoExiste;
+		}
+
+		private bool VerificaAplicacaoExiste(Aplicacao aplicacao)
+		{
+			bool aplicacaoExiste = _contexto.Aplicacoes.Any(a => a.Id == aplicacao.Id);
 
 			return aplicacaoExiste;
 		}
