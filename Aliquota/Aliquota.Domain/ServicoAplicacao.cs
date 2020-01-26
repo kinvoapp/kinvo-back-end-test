@@ -37,56 +37,53 @@ namespace Aliquota.Domain
 				.Include(a => a.Cliente)
 				.SingleOrDefault(a => a.Cliente.Id == cliente.Id && a.ProdutoFinanceiro.Id == produto.Id);
 
-			if (aplicacao == null)
-				throw new Exception("Aplicação não encontrada.");
+			return aplicacao;
+		}
+
+		public Aplicacao Atualizar(decimal valor, Cliente cliente, ProdutoFinanceiro produto)
+		{
+			this.ValidaArgumentosAplicacao(valor, cliente, produto);
+
+			Aplicacao aplicacao;
+			// verificar se ja existe aplicacao com mesmo Cliente e ProdutoFinanceiro
+			if (!this.VerificaAplicacaoExiste(cliente, produto))
+				throw new Exception("A aplicação não existe");
+
+			aplicacao = _contexto.Aplicacoes.Single(a =>
+				a.Cliente.Id == cliente.Id &&
+				a.ProdutoFinanceiro.Id == produto.Id);
+
+			aplicacao.Valor += valor;
+
+			_contexto.SaveChanges();
 
 			return aplicacao;
 		}
 
-		public void Adicionar(decimal valor, Cliente cliente, ProdutoFinanceiro produto)
+		public Aplicacao Adicionar(decimal valor, Cliente cliente, ProdutoFinanceiro produto)
 		{
-			if (valor <= 0)
-				throw new ArgumentException("O valor da aplicação deve ser maior que 0");
-
-			if (cliente == null)
-				throw new ArgumentException("É necessário fornecer um cliente.");
-
-			if (produto == null)
-				throw new ArgumentException("É necessário fornecer um produto financeiro.");
-
-			if (!_contexto.Clientes.Any(c => c.Id == cliente.Id))
-				throw new ArgumentException("O cliente não existe");
-
-			if (!_contexto.ProdutosFinanceiros.Any(p => p.Id == cliente.Id))
-				throw new ArgumentException("O produto financeiro não existe");
+			this.ValidaArgumentosAplicacao(valor, cliente, produto);
 
 			Aplicacao aplicacao;
-			// verificar se ja existe aplicacao com mesmo Cliente e ProdutoFinanceiro
+
 			if (this.VerificaAplicacaoExiste(cliente, produto))
-			{
-				aplicacao = _contexto.Aplicacoes.Single(a =>
-				a.Cliente.Id == cliente.Id &&
-				a.ProdutoFinanceiro.Id == produto.Id);
+				throw new Exception("A aplicação já existe");
 
-				aplicacao.Valor += valor;
-			}
-			else 
+			aplicacao = new Aplicacao
 			{
-				aplicacao = new Aplicacao
-				{
-					Valor = valor,
-					DataInicial = DateTime.Now,
-					IdCliente = cliente.Id,
-					IdProdutoFinanceiro = produto.Id,
-					// work around, .include not working
-					Cliente = cliente,
-					ProdutoFinanceiro = produto
-				};
-				_contexto.Add(aplicacao);
-
-			}
+				Valor = valor,
+				DataInicial = DateTime.Now,
+				IdCliente = cliente.Id,
+				IdProdutoFinanceiro = produto.Id,
+				// work around, .include not working
+				Cliente = cliente,
+				ProdutoFinanceiro = produto
+			};
+			_contexto.Add(aplicacao);
 
 			_contexto.SaveChanges();
+
+			return aplicacao;
 		}
 
 		private bool VerificaAplicacaoExiste(Cliente cliente, ProdutoFinanceiro produto)
@@ -103,6 +100,24 @@ namespace Aliquota.Domain
 			bool aplicacaoExiste = _contexto.Aplicacoes.Any(a => a.Id == aplicacao.Id);
 
 			return aplicacaoExiste;
+		}
+
+		private void ValidaArgumentosAplicacao(decimal valor, Cliente cliente, ProdutoFinanceiro produto)
+		{
+			if (valor <= 0)
+				throw new ArgumentException("O valor da aplicação deve ser maior que 0");
+
+			if (cliente == null)
+				throw new ArgumentException("É necessário fornecer um cliente.");
+
+			if (produto == null)
+				throw new ArgumentException("É necessário fornecer um produto financeiro.");
+
+			if (!_contexto.Clientes.Any(c => c.Id == cliente.Id))
+				throw new ArgumentException("O cliente não existe");
+
+			if (!_contexto.ProdutosFinanceiros.Any(p => p.Id == cliente.Id))
+				throw new ArgumentException("O produto financeiro não existe");
 		}
 	}
 }
