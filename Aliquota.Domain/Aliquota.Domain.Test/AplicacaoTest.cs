@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Aliquota.Domain.Test
 {
-    public class UnitTest1
+    public class AplicacaoTest
     {
         [Fact]
         public void Test1()

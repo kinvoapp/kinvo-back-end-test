@@ -1,0 +1,13 @@
+C:\Users\brunno\kinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp1.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\brunno\kinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp1.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\brunno\kinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp1.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\brunno\kinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp1.1\Aliquota.Domain.Test.deps.json
+C:\Users\brunno\kinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp1.1\Aliquota.Domain.Test.runtimeconfig.json
+C:\Users\brunno\kinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp1.1\Aliquota.Domain.Test.runtimeconfig.dev.json
+C:\Users\brunno\kinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp1.1\Aliquota.Domain.Test.dll
+C:\Users\brunno\kinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp1.1\Aliquota.Domain.Test.pdb
+C:\Users\brunno\kinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\obj\Debug\netcoreapp1.1\Aliquota.Domain.Test.csprojAssemblyReference.cache
+C:\Users\brunno\kinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\obj\Debug\netcoreapp1.1\Aliquota.Domain.Test.csproj.CoreCompileInputs.cache
+C:\Users\brunno\kinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\obj\Debug\netcoreapp1.1\Aliquota.Domain.Test.AssemblyInfo.cs
+C:\Users\brunno\kinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\obj\Debug\netcoreapp1.1\Aliquota.Domain.Test.dll
+C:\Users\brunno\kinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\obj\Debug\netcoreapp1.1\Aliquota.Domain.Test.pdb
