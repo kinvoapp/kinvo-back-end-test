@@ -1,0 +1,17 @@
+C:\Users\Flavio\source\repos\Alíquota\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\Flavio\source\repos\Alíquota\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\Flavio\source\repos\Alíquota\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\Flavio\source\repos\Alíquota\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\Aliquota.Domain.Test.deps.json
+C:\Users\Flavio\source\repos\Alíquota\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\Aliquota.Domain.Test.runtimeconfig.json
+C:\Users\Flavio\source\repos\Alíquota\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\Aliquota.Domain.Test.runtimeconfig.dev.json
+C:\Users\Flavio\source\repos\Alíquota\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\Aliquota.Domain.Test.dll
+C:\Users\Flavio\source\repos\Alíquota\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\Aliquota.Domain.Test.pdb
+C:\Users\Flavio\source\repos\Alíquota\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\Aliquota.Domain.dll
+C:\Users\Flavio\source\repos\Alíquota\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\Aliquota.Domain.pdb
+C:\Users\Flavio\source\repos\Alíquota\Aliquota.Domain.Test\obj\Debug\netcoreapp2.1\Aliquota.Domain.Test.csprojAssemblyReference.cache
+C:\Users\Flavio\source\repos\Alíquota\Aliquota.Domain.Test\obj\Debug\netcoreapp2.1\Aliquota.Domain.Test.csproj.CoreCompileInputs.cache
+C:\Users\Flavio\source\repos\Alíquota\Aliquota.Domain.Test\obj\Debug\netcoreapp2.1\Aliquota.Domain.Test.AssemblyInfoInputs.cache
+C:\Users\Flavio\source\repos\Alíquota\Aliquota.Domain.Test\obj\Debug\netcoreapp2.1\Aliquota.Domain.Test.AssemblyInfo.cs
+C:\Users\Flavio\source\repos\Alíquota\Aliquota.Domain.Test\obj\Debug\netcoreapp2.1\Aliquota.Domain.Test.csproj.CopyComplete
+C:\Users\Flavio\source\repos\Alíquota\Aliquota.Domain.Test\obj\Debug\netcoreapp2.1\Aliquota.Domain.Test.dll
+C:\Users\Flavio\source\repos\Alíquota\Aliquota.Domain.Test\obj\Debug\netcoreapp2.1\Aliquota.Domain.Test.pdb
