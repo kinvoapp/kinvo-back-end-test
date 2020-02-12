@@ -40,13 +40,13 @@ namespace Aliquota.Domain.Models
             cliente.Transacoes.Add(transacao);
         }
 
-        public void Resgatar(Cliente cliente){
+        public void Resgatar(Cliente cliente, DateTime dataResgate){
 
             var ultimaAplicacao = cliente.Transacoes
                                         .Where(q => q.TipoTransacao == (int)TiposDeTrasacoes.Aplicacao)
                                         .FirstOrDefault();
 
-            if (DateTime.Now < ultimaAplicacao.Data){
+            if (dataResgate < ultimaAplicacao.Data){
                 throw new System.ArgumentException("A data de resgate não pode ser menor que a data de aplicação", "data");
             }
 

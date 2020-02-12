@@ -6,8 +6,6 @@ namespace Aliquota.Domain
 {
     public class Principal
     {
-       public void Gerenciador(){
-           
-       }
+
     }
 }
