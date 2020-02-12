@@ -23,18 +23,22 @@ namespace Aliquota.Domain.Test
         readonly Cliente cliente;
         readonly Transacao transacao;
 
-        [Fact]
-        public void Aplicacao_Valor_Zero()
+        [Theory]
+        [InlineData(-1)]
+        [InlineData(0)]
+        public void Aplicacao_Valor_Zero(double value)
         {
-            Assert.Throws<ArgumentException>(() => transacao.Aplicar(cliente, 0));
+            Assert.Throws<ArgumentException>(() => transacao.Aplicar(cliente, value));
         }
 
-         [Fact]
-        public void Aplicacao_Valor_Correto()
+        [Theory]
+        [InlineData(2000.22)]
+        [InlineData(1550.00)]
+        public void Aplicacao_Valor_Correto(double value)
         {
-            transacao.Aplicar(cliente, 1000);
+            transacao.Aplicar(cliente, value);
 
-            Assert.Equal(1000.00, cliente.Transacoes.FirstOrDefault().Valor);
+            Assert.Equal(value, cliente.Transacoes.FirstOrDefault().Valor);
         }
     }
 }
