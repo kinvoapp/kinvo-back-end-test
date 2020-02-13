@@ -13,7 +13,9 @@ namespace Aliquota.Domain.Models
 
         public bool FoiResgatada { get; set; }
 
-        public static Aplicacao EfetuarAplicacao(Cliente cliente, decimal valor)
+        public string ProdutoFinanceiro { get; set; }
+
+        public static Aplicacao EfetuarAplicacao(Cliente cliente, decimal valor, string produtoFinanceiro = "CDB")
         {
             if (valor <= 0){
                 throw new System.ArgumentException("A aplicação não pode ser igual ou menor que zero", "valor");
@@ -24,7 +26,8 @@ namespace Aliquota.Domain.Models
                 AplicacaoId = new Random().Next(0,10000),
                 Data = DateTime.Now,
                 Valor = valor,
-                FoiResgatada = false
+                FoiResgatada = false,
+                ProdutoFinanceiro = produtoFinanceiro
             };
 
             cliente.Aplicacoes.Add(aplicacao);

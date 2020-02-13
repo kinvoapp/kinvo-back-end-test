@@ -31,7 +31,7 @@ namespace Aliquota.Domain.Test
         [Fact]
         public void Resgate_Data_Menor()
         {
-            Aplicacao.EfetuarAplicacao(cliente, 50000); // Aplicaçaõ feita na data de Hoje
+            Aplicacao.EfetuarAplicacao(cliente, 3500.56m); // Aplicaçaõ feita na data de Hoje
             var dataDeResgate = DateTime.Now.AddYears(-1); // Aplicaçaõ feito a um ano atrás
 
             Assert.Throws<ArgumentException>(() => Resgate.EfetuarResgate(cliente, dataDeResgate));
@@ -43,7 +43,7 @@ namespace Aliquota.Domain.Test
         [InlineData(3)]
         public void Resgate_Data_Correta(int value)
         {
-            Aplicacao.EfetuarAplicacao(cliente, 50000);
+            Aplicacao.EfetuarAplicacao(cliente, 12500.56m);
             var dataDeResgate = DateTime.Now.AddYears(value);
            Resgate.EfetuarResgate(cliente, DateTime.Now.AddYears(value));
 
@@ -56,7 +56,7 @@ namespace Aliquota.Domain.Test
         [InlineData(3)]
         public void Resgate_Calculo_IR(int value)
         {
-            Aplicacao.EfetuarAplicacao(cliente, 50000);
+            Aplicacao.EfetuarAplicacao(cliente, 35300.56m);
             var dataDeResgate = DateTime.Now.AddYears(value);
             var aplicacao = cliente.Aplicacoes.Where(q => !q.FoiResgatada).FirstOrDefault();
 
@@ -64,6 +64,19 @@ namespace Aliquota.Domain.Test
             decimal valorIr = CalcularImpostoDeRenda(lucro, dataDeResgate.Year - aplicacao.Data.Year);
 
             Assert.Equal(valorIr, Resgate.EfetuarResgate(cliente, dataDeResgate).IR);
+        }
+
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        public void EfetuarResgate(int value)
+        {
+            Aplicacao.EfetuarAplicacao(cliente, 3500.6m);
+            var dataDeResgate = DateTime.Now.AddYears(value);
+
+            Assert.Equal(dataDeResgate, Resgate.EfetuarResgate(cliente, dataDeResgate).Data);
+            Assert.Equal(cliente.Aplicacoes.FirstOrDefault().AplicacaoId, Resgate.EfetuarResgate(cliente, dataDeResgate).AplicacaoId);
         }
     }
 }

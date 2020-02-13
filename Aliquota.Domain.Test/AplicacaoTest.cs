@@ -38,6 +38,18 @@ namespace Aliquota.Domain.Test
 
             Assert.Equal(value, cliente.Aplicacoes.FirstOrDefault().Valor);
         }
-        
+
+        [Theory]
+        [InlineData("CDB")]
+        [InlineData("Debêntures")]
+        [InlineData("Títulos Públicos")]
+        public void Efetuar_Aplicacao(string value)
+        {
+           Aplicacao.EfetuarAplicacao(cliente, 3350.85m, value);
+
+            Assert.Equal("Yuri Brandão", cliente.Nome);
+            Assert.Equal(3350.85m, cliente.Aplicacoes.FirstOrDefault().Valor);
+            Assert.Equal(value, cliente.Aplicacoes.FirstOrDefault().ProdutoFinanceiro);
+        }
     }
 }
