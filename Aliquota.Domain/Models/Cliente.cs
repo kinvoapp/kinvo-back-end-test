@@ -9,6 +9,8 @@ namespace Aliquota.Domain.Models
         
         public string Nome { get; set; }
 
-        public List<Transacao> Transacoes { get; set; }
+        public List<Aplicacao> Aplicacoes { get; set; }
+
+        public List<Resgate> Resgates { get; set; }
     }
 }
