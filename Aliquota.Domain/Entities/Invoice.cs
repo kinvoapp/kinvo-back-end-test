@@ -35,11 +35,11 @@ namespace Aliquota.Domain.Entities
         {
             return "Initial Investment: "
                 + Investment.InitialAmount.ToString("F2", CultureInfo.InvariantCulture)
-                + "\nProfit: "
+                + "\nProfits: "
                 + Investment.Profit.ToString("F2", CultureInfo.InvariantCulture)
-                + "\nTax: "
+                + "\nTaxes: "
                 + Investment.Interest.ToString("F2", CultureInfo.InvariantCulture)
-                + "\nAmount Redeemed: "
+                + "\nTotal Amount Redeemed: "
                 + Redeem.ToString("F2", CultureInfo.InvariantCulture);
         }
     }
