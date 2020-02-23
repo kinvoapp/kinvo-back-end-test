@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliquota.Domain", "Aliquota.Domain\Aliquota.Domain.csproj", "{18111406-4E54-4B34-9DC7-477314D41E39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliquota.Domain.Test", "Aliquota.Domain.Test\Aliquota.Domain.Test.csproj", "{4A354F8C-F9AA-47D0-9239-2EF9A27508CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18111406-4E54-4B34-9DC7-477314D41E39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18111406-4E54-4B34-9DC7-477314D41E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18111406-4E54-4B34-9DC7-477314D41E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18111406-4E54-4B34-9DC7-477314D41E39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A354F8C-F9AA-47D0-9239-2EF9A27508CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A354F8C-F9AA-47D0-9239-2EF9A27508CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A354F8C-F9AA-47D0-9239-2EF9A27508CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A354F8C-F9AA-47D0-9239-2EF9A27508CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {064EEC88-04C1-4160-9ACC-4109AA32DA9E}
+	EndGlobalSection
+EndGlobal
