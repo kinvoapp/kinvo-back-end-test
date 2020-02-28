@@ -3,3 +3,5 @@
 ################################################################################
 
 /Aliquota/.vs/Aliquota
+/Aliquota/Aliquota.Domain/bin/Debug/netcoreapp3.1
+/Aliquota/Aliquota.Domain.Test/bin/Debug/netcoreapp3.1
