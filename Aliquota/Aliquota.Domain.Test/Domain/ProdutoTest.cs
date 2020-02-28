@@ -43,5 +43,12 @@ namespace Aliquota.Domain.Test.Domain
             
             Assert.Throws<ArgumentOutOfRangeException>(() => produto.ResgatarRendimentos(0.00M, DateTime.Now));
         }
+
+        [Fact]
+        public void ResgatarRendimentoValorNegativo()
+        {
+
+            Assert.Throws<ArgumentOutOfRangeException>(() => produto.ResgatarRendimentos(-100.00M, DateTime.Now));
+        }
     }
 }
