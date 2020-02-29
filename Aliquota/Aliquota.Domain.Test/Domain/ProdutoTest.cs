@@ -15,6 +15,27 @@ namespace Aliquota.Domain.Test.Domain
         {
             produto = Produto.Create("Teste", new DateTime(2019, 01, 05), 200.00M, 7.00M, 1500.00M);
         }
+
+        [Fact]
+        public void CriarProdutoComSucesso()
+        {
+            produto = Produto.Create("Teste", new DateTime(2019, 01, 05), 200.00M, 7.00M, 1500.00M);
+        }
+
+        [Fact]
+        public void CriarProdutoPrecoZerado()
+        {
+            Assert.Throws<PrecoOutOfRangeException>(() => Produto.Create("Teste", new DateTime(2019, 01, 05), 0.00M, 7.00M, 1500.00M));
+        }
+
+        [Fact]
+        public void CriarProdutoPrecoNegativo()
+        {
+            Assert.Throws<PrecoOutOfRangeException>(() => Produto.Create("Teste", new DateTime(2019, 01, 05), -200.00M, 7.00M, 1500.00M));
+        }
+
+
+
         [Fact]
         public void ResgatarRendimentoValorMenorQueSaldo()
         {
@@ -41,14 +62,21 @@ namespace Aliquota.Domain.Test.Domain
         public void ResgatarRendimentoValorZerado()
         {
             
-            Assert.Throws<ArgumentOutOfRangeException>(() => produto.ResgatarRendimentos(0.00M, DateTime.Now));
+            Assert.Throws<ValorResgateMenorIgualZeroException>(() => produto.ResgatarRendimentos(0.00M, DateTime.Now));
         }
 
         [Fact]
         public void ResgatarRendimentoValorNegativo()
         {
 
-            Assert.Throws<ArgumentOutOfRangeException>(() => produto.ResgatarRendimentos(-100.00M, DateTime.Now));
+            Assert.Throws<ValorResgateMenorIgualZeroException>(() => produto.ResgatarRendimentos(-100.00M, DateTime.Now));
+        }
+
+        [Fact]
+        public void ResgatarRendimentoDataMenorQueDataDaAplicacao()
+        {
+
+            Assert.Throws<DataResgateMenorDataAplicacaoException>(() => produto.ResgatarRendimentos(1000.00M, new DateTime(2019, 01, 04)));
         }
     }
 }

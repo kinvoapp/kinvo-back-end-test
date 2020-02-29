@@ -15,6 +15,8 @@ namespace Aliquota.Domain.Domain.AgregadoProduto
             Guid = guid;
             Descricao = descricao;
             DataAplicacao = dataAplicacao;
+            if (precoCompra <= 0.00M)
+                throw new PrecoOutOfRangeException();
             PrecoCompra = precoCompra;
             Rentabilidade = rentabilidade;
             SaldoAtual = saldoAtual;
@@ -30,9 +32,9 @@ namespace Aliquota.Domain.Domain.AgregadoProduto
         public Resgate ResgatarRendimentos(decimal valor, DateTime data)
         {
             if (valor <= 0)
-                throw new ArgumentOutOfRangeException("O valor de resgate não pode ser igual o menor que zero!");
-            if (DataAplicacao >= data)
-                throw new ArgumentOutOfRangeException("A data de resgate é menor ou igual a data da aplicação!");
+                throw new ValorResgateMenorIgualZeroException();
+            if (DataAplicacao > data)
+                throw new DataResgateMenorDataAplicacaoException();
             if (valor > SaldoAtual)
                 throw new SaldoInsuficienteException();
 

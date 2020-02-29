@@ -1,4 +1,5 @@
 ﻿using Aliquota.Domain.Domain.AgregadoProduto;
+using Aliquota.Domain.ImpostoRenda;
 using Aliquota.Domain.SeedofWork;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace Aliquota.Domain.Domain.AgregadoResgate
 {
-    public class Resgate : Entity
+    public class Resgate : Entity, IImpostoRenda
     {
         public Resgate(Produto produto, string gUID, DateTime data, decimal valor)
         {
@@ -30,5 +31,14 @@ namespace Aliquota.Domain.Domain.AgregadoResgate
             return new Resgate(produto, System.Guid.NewGuid().ToString(), data, valor);
         }
 
+        public decimal Lucro()
+        {
+            return Produto.SaldoAtual - Produto.PrecoCompra; 
+        }
+
+        public TimeSpan PeriodoInvestimento()
+        {
+            return  this.Data.Subtract(Produto.DataAplicacao);
+        }
     }
 }
