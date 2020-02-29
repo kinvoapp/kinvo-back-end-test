@@ -20,10 +20,12 @@ namespace Aliquota.Domain.Domain.AgregadoProduto
             PrecoCompra = precoCompra;
             Rentabilidade = rentabilidade;
             SaldoAtual = saldoAtual;
+            Disponibilizar();
         }
 
         public string Guid { get; set; }
         public string Descricao { get; set; }
+        public Situacao Situacao { get; private set; }
         public DateTime DataAplicacao { get; set; }
         public decimal PrecoCompra { get; set; }
         public decimal Rentabilidade { get; set; }
@@ -31,17 +33,40 @@ namespace Aliquota.Domain.Domain.AgregadoProduto
 
         public Resgate ResgatarRendimentos(decimal valor, DateTime data)
         {
-            if (valor <= 0)
-                throw new ValorResgateMenorIgualZeroException();
-            if (DataAplicacao > data)
-                throw new DataResgateMenorDataAplicacaoException();
-            if (valor > SaldoAtual)
-                throw new SaldoInsuficienteException();
+            if (VerificarSituacaoParaResgate())
+            {
+                if (valor <= 0)
+                    throw new ValorResgateMenorIgualZeroException();
+                if (DataAplicacao > data)
+                    throw new DataResgateMenorDataAplicacaoException();
+                if (valor > SaldoAtual)
+                    throw new SaldoInsuficienteException();
 
-            SaldoAtual -= valor;
+                SaldoAtual -= valor;
 
-            return Resgate.Create(this, data, valor);
+                if (SaldoAtual == 0.00M)
+                    Resgatar();
 
+                return Resgate.Create(this, data, valor);
+            }
+
+            return null;
+
+        }
+        public void Disponibilizar()
+        {
+            Situacao = Situacao.Disponivel;
+        }
+
+        public void Resgatar()
+        {
+            Situacao = Situacao.Resgatado;
+        }
+        private bool VerificarSituacaoParaResgate()
+        {
+            if (Situacao != Situacao.Disponivel)
+                throw new ProdutoIndisponivelException();
+            return true;
         }
 
         public static Produto Create(string descricao, DateTime data, decimal precoCompra, decimal rentabilidade, decimal saldoAtual)

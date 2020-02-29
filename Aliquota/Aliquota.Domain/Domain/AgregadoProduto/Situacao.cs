@@ -4,7 +4,10 @@ using System.Text;
 
 namespace Aliquota.Domain.Domain.AgregadoProduto
 {
-    class Situacao
+    public enum Situacao
     {
+        
+        Disponivel,
+        Resgatado
     }
 }
