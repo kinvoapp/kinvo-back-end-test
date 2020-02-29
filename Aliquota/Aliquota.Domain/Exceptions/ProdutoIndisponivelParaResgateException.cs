@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Aliquota.Domain.Exceptions
 {
-    public class ProdutoIndisponivelException:Exception
+    public class ProdutoIndisponivelParaResgateException:Exception
     {
     }
 }

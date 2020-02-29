@@ -65,7 +65,7 @@ namespace Aliquota.Domain.Domain.AgregadoProduto
         private bool VerificarSituacaoParaResgate()
         {
             if (Situacao != Situacao.Disponivel)
-                throw new ProdutoIndisponivelException();
+                throw new ProdutoIndisponivelParaResgateException();
             return true;
         }
 

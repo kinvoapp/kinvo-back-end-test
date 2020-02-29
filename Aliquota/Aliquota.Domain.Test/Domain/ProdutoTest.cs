@@ -50,6 +50,7 @@ namespace Aliquota.Domain.Test.Domain
            
             produto.ResgatarRendimentos(1500.00M, DateTime.Now);
             Assert.True(produto.SaldoAtual == 0.00M);
+            Assert.True(produto.Situacao == Situacao.Resgatado);
         }
 
         [Fact]
@@ -63,6 +64,13 @@ namespace Aliquota.Domain.Test.Domain
         {
             
             Assert.Throws<ValorResgateMenorIgualZeroException>(() => produto.ResgatarRendimentos(0.00M, DateTime.Now));
+        }
+
+        [Fact]
+        public void ResgatarRendimentoIndisponivel()
+        {
+            ResgatarRendimentoTotal();
+            Assert.Throws<ProdutoIndisponivelParaResgateException>(() => produto.ResgatarRendimentos(100.00M, DateTime.Now));
         }
 
         [Fact]
