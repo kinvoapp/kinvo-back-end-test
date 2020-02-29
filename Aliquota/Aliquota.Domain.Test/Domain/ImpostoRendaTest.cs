@@ -1,4 +1,5 @@
 ﻿using Aliquota.Domain.Domain.AgregadoProduto;
+using Aliquota.Domain.Domain.AgregadoResgate;
 using Aliquota.Domain.ImpostoRenda;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace Aliquota.Domain.Test.Domain
     public class ImpostoRendaTest
     {
         Produto produto;
+        Resgate resgate;
         ICalcularImposto calcularImpostoRenda;
         public ImpostoRendaTest()
         {
@@ -20,27 +22,30 @@ namespace Aliquota.Domain.Test.Domain
         [Fact]
         public void CalcularImpostoRendaInvestimentoAte1Ano()
         {
-            var rendimento = produto.ResgatarRendimentos(produto.SaldoAtual, new DateTime(2019, 12, 05));
-            calcularImpostoRenda.Calcular(rendimento);
-            Assert.Equal(22.5M, rendimento.PercentualIR);
+            resgate = produto.ResgatarRendimentos(produto.SaldoAtual, new DateTime(2019, 12, 05));
+            calcularImpostoRenda.Calcular(resgate);
+            Assert.Equal(22.5M, resgate.PercentualIR);
+            Assert.Equal(resgate.Lucro() * (resgate.PercentualIR / 100), resgate.ValorIR);
 
         }
 
         [Fact]
         public void CalcularImpostoRendaInvestimentoDe1a2Anos()
         {
-            var rendimento = produto.ResgatarRendimentos(produto.SaldoAtual, new DateTime(2020, 01, 07));
-            calcularImpostoRenda.Calcular(rendimento);
-            Assert.Equal(18.5M, rendimento.PercentualIR);
+            resgate = produto.ResgatarRendimentos(produto.SaldoAtual, new DateTime(2020, 01, 07));
+            calcularImpostoRenda.Calcular(resgate);
+            Assert.Equal(18.5M, resgate.PercentualIR);
+            Assert.Equal(resgate.Lucro() * (resgate.PercentualIR / 100), resgate.ValorIR);
 
         }
 
         [Fact]
         public void CalcularImpostoRendaInvestimentoAcima2Anos()
         {
-            var rendimento = produto.ResgatarRendimentos(produto.SaldoAtual, new DateTime(2021, 01, 07));
-            calcularImpostoRenda.Calcular(rendimento);
-            Assert.Equal(15.00M, rendimento.PercentualIR);
+            resgate = produto.ResgatarRendimentos(produto.SaldoAtual, new DateTime(2021, 01, 07));
+            calcularImpostoRenda.Calcular(resgate);
+            Assert.Equal(15.00M, resgate.PercentualIR);
+            Assert.Equal(resgate.Lucro() * (resgate.PercentualIR / 100), resgate.ValorIR);
 
         }
     }

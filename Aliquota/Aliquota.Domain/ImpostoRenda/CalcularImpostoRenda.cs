@@ -8,6 +8,9 @@ namespace Aliquota.Domain.ImpostoRenda
     {
         public void Calcular(IImpostoRenda impostoRenda)
         {
+            if (impostoRenda.Lucro() == 0.00M)
+                return;
+
             if (impostoRenda.PeriodoInvestimento().TotalDays <= 366)
             {
                 impostoRenda.PercentualIR = 22.5M;
