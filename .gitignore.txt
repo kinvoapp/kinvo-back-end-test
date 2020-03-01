@@ -1,0 +1,5 @@
+Aliquota.Domain/bin
+Aliquota.Domain/obj
+Aliquota.Domain.Test/bin
+Aliquota.Domain.Test/obj
+Aliquota.Domain/.vs
