@@ -10,13 +10,11 @@ namespace Aliquota.Domain
         private float lucroTotal, taxaRendimento, valorInvestidoAtual, valorRecolhidoIR;
         private DateTime dataAplicacao, dataResgate1, dataResgate2;
 
-        public ProdutoFinanceiro() { }
-
-        public ProdutoFinanceiro(float taxaRendimento)
+        public ProdutoFinanceiro()
         {
             tempoTotal = 0;
             lucroTotal = 0;
-            this.taxaRendimento = taxaRendimento;
+            taxaRendimento = 0.01f;
         }
 
         #region Getters and Setters
@@ -45,7 +43,7 @@ namespace Aliquota.Domain
                 ValorInvestidoAtual += valorAplicado;
             }
 
-            else throw new NotImplementedException("Valor para aplicação inválido.");
+            else throw new ArgumentOutOfRangeException("Valor inválido");
         }
 
         public float calcularLucro(int tempoDecorridoUltimoResgate)
@@ -61,7 +59,7 @@ namespace Aliquota.Domain
         public void resgatarMontante(float valorResgatado)
         {
             if ((valorResgatado == 0) ^ (valorResgatado > ValorInvestidoAtual))
-                throw new NotImplementedException("Valor para resgate inválido.");
+                throw new ArgumentOutOfRangeException("Valor inválido");
 
             else
             {
@@ -74,12 +72,12 @@ namespace Aliquota.Domain
             }
         }
 
-        public int calcularTempo(DateTime dataInicial = new DateTime(), DateTime dataFinal = new DateTime())
+        public int calcularTempo(DateTime dataInicial, DateTime dataFinal)
         {
             if (dataFinal > dataInicial)
                 return ((dataFinal.Year - dataInicial.Year) * 12) + dataFinal.Month - dataInicial.Month;
 
-            else return 0;
+            else throw new ArgumentOutOfRangeException("Data Invalida");
         }
 
         public void calcularImpostoDeRenda()
@@ -101,18 +99,24 @@ namespace Aliquota.Domain
             {
                 ValorRecolhidoIR = 0.15f * LucroTotal;
             }
+
         }
 
         public float calcularValorResgatado(List<float> valorResgatado)
         {
-            float valorTotalResgatado = 0;
-
-            foreach (float value in valorResgatado)
+            if (valorResgatado != null)
             {
-                valorTotalResgatado += value;
+                float valorTotalResgatado = 0;
+
+                foreach (float value in valorResgatado)
+                {
+                    valorTotalResgatado += value;
+                }
+
+                return valorTotalResgatado;
             }
 
-            return valorTotalResgatado;
+            else throw new ArgumentNullException();
         }
     }
 }
