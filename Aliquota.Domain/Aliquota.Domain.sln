@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1022
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliquota.Domain", "Aliquota.Domain\Aliquota.Domain.csproj", "{037A5C81-A2E9-4300-A0F5-AE3165B03091}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliquota.Domain.Test", "Aliquota.Domain.Test\Aliquota.Domain.Test.csproj", "{64D86DC1-840A-437D-AEF7-88B3D2B32E00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{037A5C81-A2E9-4300-A0F5-AE3165B03091}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{037A5C81-A2E9-4300-A0F5-AE3165B03091}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{037A5C81-A2E9-4300-A0F5-AE3165B03091}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64D86DC1-840A-437D-AEF7-88B3D2B32E00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64D86DC1-840A-437D-AEF7-88B3D2B32E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64D86DC1-840A-437D-AEF7-88B3D2B32E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64D86DC1-840A-437D-AEF7-88B3D2B32E00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
