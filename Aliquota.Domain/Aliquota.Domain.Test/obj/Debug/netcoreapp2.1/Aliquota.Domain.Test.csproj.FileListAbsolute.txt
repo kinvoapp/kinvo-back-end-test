@@ -1,0 +1,14 @@
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\Aliquota.Domain.Test.deps.json
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\Aliquota.Domain.Test.runtimeconfig.json
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\Aliquota.Domain.Test.runtimeconfig.dev.json
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\Aliquota.Domain.Test.dll
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\obj\Debug\netcoreapp2.1\Aliquota.Domain.Test.csprojAssemblyReference.cache
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\obj\Debug\netcoreapp2.1\Aliquota.Domain.Test.csproj.CoreCompileInputs.cache
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\obj\Debug\netcoreapp2.1\Aliquota.Domain.Test.AssemblyInfoInputs.cache
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\obj\Debug\netcoreapp2.1\Aliquota.Domain.Test.AssemblyInfo.cs
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\Aliquota.Domain.Test.pdb
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\obj\Debug\netcoreapp2.1\Aliquota.Domain.Test.dll
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\obj\Debug\netcoreapp2.1\Aliquota.Domain.Test.pdb

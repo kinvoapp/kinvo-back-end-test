@@ -1,0 +1,19 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Aplicacao] (Table)
+       [dbo].[Cliente] (Table)
+       [dbo].[ProdutoFinanceiro] (Table)
+       [dbo].[FK_ProdutoFinanceiro_ID] (Foreign Key)
+       [dbo].[FK_Cliente_ID] (Foreign Key)
+
+** Supporting actions

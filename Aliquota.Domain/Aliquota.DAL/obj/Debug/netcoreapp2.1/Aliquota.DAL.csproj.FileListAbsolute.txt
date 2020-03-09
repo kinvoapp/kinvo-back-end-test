@@ -1,0 +1,12 @@
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.DAL\bin\Debug\netcoreapp2.1\Aliquota.DAL.deps.json
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.DAL\bin\Debug\netcoreapp2.1\Aliquota.DAL.dll
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.DAL\obj\Debug\netcoreapp2.1\Aliquota.DAL.csprojAssemblyReference.cache
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.DAL\obj\Debug\netcoreapp2.1\Aliquota.DAL.csproj.CoreCompileInputs.cache
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.DAL\obj\Debug\netcoreapp2.1\Aliquota.DAL.AssemblyInfoInputs.cache
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.DAL\obj\Debug\netcoreapp2.1\Aliquota.DAL.AssemblyInfo.cs
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.DAL\bin\Debug\netcoreapp2.1\Aliquota.DAL.pdb
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.DAL\bin\Debug\netcoreapp2.1\Aliquota.Domain.dll
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.DAL\bin\Debug\netcoreapp2.1\Aliquota.Domain.pdb
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.DAL\obj\Debug\netcoreapp2.1\Aliquota.DAL.csproj.CopyComplete
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.DAL\obj\Debug\netcoreapp2.1\Aliquota.DAL.dll
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.DAL\obj\Debug\netcoreapp2.1\Aliquota.DAL.pdb

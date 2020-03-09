@@ -1,0 +1,11 @@
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.ConsoleApp\bin\Debug\netcoreapp2.1\Aliquota.ConsoleApp.deps.json
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.ConsoleApp\bin\Debug\netcoreapp2.1\Aliquota.ConsoleApp.runtimeconfig.json
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.ConsoleApp\bin\Debug\netcoreapp2.1\Aliquota.ConsoleApp.runtimeconfig.dev.json
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.ConsoleApp\bin\Debug\netcoreapp2.1\Aliquota.ConsoleApp.dll
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.ConsoleApp\bin\Debug\netcoreapp2.1\Aliquota.ConsoleApp.pdb
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.ConsoleApp\obj\Debug\netcoreapp2.1\Aliquota.ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.ConsoleApp\obj\Debug\netcoreapp2.1\Aliquota.ConsoleApp.AssemblyInfoInputs.cache
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.ConsoleApp\obj\Debug\netcoreapp2.1\Aliquota.ConsoleApp.AssemblyInfo.cs
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.ConsoleApp\obj\Debug\netcoreapp2.1\Aliquota.ConsoleApp.dll
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.ConsoleApp\obj\Debug\netcoreapp2.1\Aliquota.ConsoleApp.pdb
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.ConsoleApp\obj\Debug\netcoreapp2.1\Aliquota.ConsoleApp.csprojAssemblyReference.cache
