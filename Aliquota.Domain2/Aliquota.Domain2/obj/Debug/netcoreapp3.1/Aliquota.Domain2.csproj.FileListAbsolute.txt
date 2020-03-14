@@ -1,0 +1,11 @@
+C:\Users\Alberto Oliveira\Desktop\desafio\kinvo-back-end-test\Aliquota.Domain2\Aliquota.Domain2\bin\Debug\netcoreapp3.1\Aliquota.Domain2.exe
+C:\Users\Alberto Oliveira\Desktop\desafio\kinvo-back-end-test\Aliquota.Domain2\Aliquota.Domain2\bin\Debug\netcoreapp3.1\Aliquota.Domain2.deps.json
+C:\Users\Alberto Oliveira\Desktop\desafio\kinvo-back-end-test\Aliquota.Domain2\Aliquota.Domain2\bin\Debug\netcoreapp3.1\Aliquota.Domain2.runtimeconfig.json
+C:\Users\Alberto Oliveira\Desktop\desafio\kinvo-back-end-test\Aliquota.Domain2\Aliquota.Domain2\bin\Debug\netcoreapp3.1\Aliquota.Domain2.runtimeconfig.dev.json
+C:\Users\Alberto Oliveira\Desktop\desafio\kinvo-back-end-test\Aliquota.Domain2\Aliquota.Domain2\bin\Debug\netcoreapp3.1\Aliquota.Domain2.dll
+C:\Users\Alberto Oliveira\Desktop\desafio\kinvo-back-end-test\Aliquota.Domain2\Aliquota.Domain2\bin\Debug\netcoreapp3.1\Aliquota.Domain2.pdb
+C:\Users\Alberto Oliveira\Desktop\desafio\kinvo-back-end-test\Aliquota.Domain2\Aliquota.Domain2\obj\Debug\netcoreapp3.1\Aliquota.Domain2.csprojAssemblyReference.cache
+C:\Users\Alberto Oliveira\Desktop\desafio\kinvo-back-end-test\Aliquota.Domain2\Aliquota.Domain2\obj\Debug\netcoreapp3.1\Aliquota.Domain2.AssemblyInfoInputs.cache
+C:\Users\Alberto Oliveira\Desktop\desafio\kinvo-back-end-test\Aliquota.Domain2\Aliquota.Domain2\obj\Debug\netcoreapp3.1\Aliquota.Domain2.AssemblyInfo.cs
+C:\Users\Alberto Oliveira\Desktop\desafio\kinvo-back-end-test\Aliquota.Domain2\Aliquota.Domain2\obj\Debug\netcoreapp3.1\Aliquota.Domain2.dll
+C:\Users\Alberto Oliveira\Desktop\desafio\kinvo-back-end-test\Aliquota.Domain2\Aliquota.Domain2\obj\Debug\netcoreapp3.1\Aliquota.Domain2.pdb
