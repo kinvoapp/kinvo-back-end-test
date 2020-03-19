@@ -16,10 +16,16 @@ namespace Application
 
         public void Adicionar(Aplicacao a_Aplicacao)
         {
+            if (!ValidarAplicacao(a_Aplicacao))
+                throw new ApplicationException("Aplicação inválida");
+
             i_InterfaceAplicacao.Adicionar(a_Aplicacao);
         }
         public void Atualizar(Aplicacao a_Aplicacao)
         {
+            if (!ValidarAplicacao(a_Aplicacao))
+                throw new ApplicationException("Aplicação inválida");
+
             i_InterfaceAplicacao.Atualizar(a_Aplicacao);
         }
         public void Excluir(Aplicacao a_Aplicacao)
@@ -35,11 +41,10 @@ namespace Application
             return i_InterfaceAplicacao.Listar();
         }
 
-        public decimal ImpostoRendaDevido(Aplicacao a_Aplicacao)
+        public static decimal ImpostoRendaDevido(Aplicacao a_Aplicacao)
         {
             if (!a_Aplicacao.DataRetirada.HasValue)
                 return 0;
-
             
             int l_PeriodoAplicacao = ((a_Aplicacao.DataRetirada.Value.Year - a_Aplicacao.DataAplicacao.Year) * 12) + a_Aplicacao.DataRetirada.Value.Month - a_Aplicacao.DataAplicacao.Month;
 
@@ -51,13 +56,31 @@ namespace Application
 
             decimal l_Lucro = l_RendimentoBruto - (a_Aplicacao.Produto.Custo * l_PeriodoAplicacao);
 
-            if (l_PeriodoAplicacao <= 12)
-                return l_Lucro * (decimal)1.225;
+            decimal l_PercentualIR = ObterPercentualIR(l_PeriodoAplicacao);
 
-            if (l_PeriodoAplicacao > 12 && l_PeriodoAplicacao <= 24)
-                return l_Lucro * (decimal)1.185;
-           
-            return l_Lucro * (decimal)1.15;
+            return l_Lucro * l_PercentualIR;            
+        }
+
+        public static decimal ObterPercentualIR(int a_PeriodoAplicacao)
+        {
+            if (a_PeriodoAplicacao <= 12)
+                return (decimal)1.225;
+
+            if (a_PeriodoAplicacao > 12 && a_PeriodoAplicacao <= 24)
+                return (decimal)1.185;
+
+            return (decimal)1.15;
+        }
+
+        public static bool ValidarAplicacao(Aplicacao a_Aplicacao)
+        {
+            if (a_Aplicacao != null && a_Aplicacao.Valor <= 0)
+                return false;
+
+            if (a_Aplicacao.DataRetirada.HasValue && a_Aplicacao.DataRetirada < a_Aplicacao.DataAplicacao)
+                return false;
+
+            return true;
         }
     }
 }

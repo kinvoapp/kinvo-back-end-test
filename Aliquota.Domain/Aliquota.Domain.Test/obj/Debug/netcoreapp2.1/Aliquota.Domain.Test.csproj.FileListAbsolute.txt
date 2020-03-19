@@ -12,3 +12,8 @@ C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Do
 C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\Aliquota.Domain.Test.pdb
 C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\obj\Debug\netcoreapp2.1\Aliquota.Domain.Test.dll
 C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\obj\Debug\netcoreapp2.1\Aliquota.Domain.Test.pdb
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\Aliquota.Domain.dll
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\Application.dll
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\Application.pdb
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\bin\Debug\netcoreapp2.1\Aliquota.Domain.pdb
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\obj\Debug\netcoreapp2.1\Aliquota.Domain.Test.csproj.CopyComplete

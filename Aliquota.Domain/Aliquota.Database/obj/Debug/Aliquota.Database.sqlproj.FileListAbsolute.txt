@@ -3,7 +3,4 @@ C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Da
 C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Database\bin\Debug\Aliquota.Database.pdb
 C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Database\obj\Debug\Aliquota.Database.dll
 C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Database\obj\Debug\Aliquota.Database.pdb
-C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Database\obj\Debug\Model.xml
-C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Database\obj\Debug\refactor.xml
-C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Database\obj\Debug\postdeploy.sql
-C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Database\obj\Debug\predeploy.sql
+C:\Fellipe\Projetos Pessoais\DDD\kinvo-back-end-test\Aliquota.Domain\Aliquota.Database\obj\Debug\Aliquota.Database.sqlprojAssemblyReference.cache

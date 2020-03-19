@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v2.1": {
       "Aliquota.Domain.Test/1.0.0": {
         "dependencies": {
+          "Application": "1.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.2",
           "Microsoft.NET.Test.Sdk": "15.9.0",
@@ -1496,6 +1497,23 @@
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "15.9.0"
         }
+      },
+      "Aliquota.Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.1.2",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.2"
+        },
+        "runtime": {
+          "Aliquota.Domain.dll": {}
+        }
+      },
+      "Application/1.0.0": {
+        "dependencies": {
+          "Aliquota.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Application.dll": {}
+        }
       }
     }
   },
@@ -2316,6 +2334,16 @@
       "sha512": "sha512-3eq5cGXbEJkqW9nwLuXwtxy9B5gMA8i7HW4rN63AhAvy5UvEcQbZnve23wx/oPrkyg/4CbfNhxkBezS0b1oUdQ==",
       "path": "xunit.runner.visualstudio/2.4.0",
       "hashPath": "xunit.runner.visualstudio.2.4.0.nupkg.sha512"
+    },
+    "Aliquota.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
