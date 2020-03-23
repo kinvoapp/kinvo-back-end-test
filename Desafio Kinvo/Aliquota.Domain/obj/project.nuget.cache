@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XxXYLgdoO4B5QOr3rmYU6BN6/ixls/6tzmums9w75hAUZO7qrKQApLzOLnqkOB9Br5LMeAkBoGiw8ytrIgqAtQ==",
+  "dgSpecHash": "/D0sz4/xH4ZjxB6JutIqhGvmO8hdMZqpCLYZHf7MbXcaH32ea/H+Qmkn2HfRI1AW8jOx3IPv6n40uYzl1OeLfA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Workstation\\Documents\\Desafio Kinvo\\Desafio Kinvo\\Aliquota.Domain\\Aliquota.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Workstation\\Desktop\\kinvo-back-end-test\\Desafio Kinvo\\Aliquota.Domain\\Aliquota.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Workstation\\.nuget\\packages\\entityframework\\6.4.0\\entityframework.6.4.0.nupkg.sha512",
     "C:\\Users\\Workstation\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

@@ -52,11 +52,12 @@ namespace Aliquota.Domain
                             }
                             catch (Exception)
                             {
-                                if (repository.ValInfo(newInvestment) == "Novo investimento adcicionado!")
-                                {
-                                    repository.Add(newInvestment);
-                                }
                                     Console.WriteLine(" \n " + repository.ValInfo(newInvestment));
+                            }
+
+                            if (repository.ValInfo(newInvestment) == "Novo investimento adcicionado!")
+                            {
+                                repository.Add(newInvestment);
                             }
                         }
                         break;
@@ -71,7 +72,8 @@ namespace Aliquota.Domain
                                   "|    Lucro     |" +
                                   "|  Acumulado   |" +
                                   "|  Imposto %   |" +
-                                  "| Valor de Retirada |\n");
+                                  "| Valor de Retirada | " +
+                                  "| Iniciado em  |\n");
 
                             for (int i = 0; i < repository.GetList().Count; i++)
                             {
@@ -83,7 +85,8 @@ namespace Aliquota.Domain
                                     "\t\t $ " + decimal.Parse( repository.GetList()[i].gain.ToString()) + " " +
                                     "\t $ " + decimal.Parse(repository.GetList()[i].amount.ToString()) + " " +
                                     "\t " + repository.GetList()[i].tax + "% " +
-                                    "\t  $ " + decimal.Parse(repository.GetList()[i].canRecover.ToString()) + " "); ;
+                                    "\t  $ " + decimal.Parse(repository.GetList()[i].canRecover.ToString()) + " " +
+                                    "\t\t" + repository.GetList()[i].started.ToShortDateString() + " " ); ;
                             }
 
                         }
@@ -96,14 +99,18 @@ namespace Aliquota.Domain
                             try
                             {
                                 id = int.Parse(Console.ReadLine());
-                                Console.WriteLine("\n Investimento Removido com sucesso!");
                             }
                             catch (Exception)
                             {
-                                Console.WriteLine("\n Investimento não encontrado:");
                             }
                             if (repository.Remove(id) != null)
+                            {
                                 repository.Remove(id);
+                                Console.WriteLine("\n Investimento Removido com sucesso!");
+                            }
+                            else {
+                                Console.WriteLine("\n Investimento não encontrado:");
+                            }
 
                         }
                         break;

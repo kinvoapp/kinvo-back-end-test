@@ -1069,11 +1069,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Workstation\\Documents\\Desafio Kinvo\\Desafio Kinvo\\Aliquota.Domain\\Aliquota.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Workstation\\Desktop\\kinvo-back-end-test\\Desafio Kinvo\\Aliquota.Domain\\Aliquota.Domain.csproj",
       "projectName": "Aliquota.Domain",
-      "projectPath": "C:\\Users\\Workstation\\Documents\\Desafio Kinvo\\Desafio Kinvo\\Aliquota.Domain\\Aliquota.Domain.csproj",
+      "projectPath": "C:\\Users\\Workstation\\Desktop\\kinvo-back-end-test\\Desafio Kinvo\\Aliquota.Domain\\Aliquota.Domain.csproj",
       "packagesPath": "C:\\Users\\Workstation\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Workstation\\Documents\\Desafio Kinvo\\Desafio Kinvo\\Aliquota.Domain\\obj\\",
+      "outputPath": "C:\\Users\\Workstation\\Desktop\\kinvo-back-end-test\\Desafio Kinvo\\Aliquota.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Workstation\\AppData\\Roaming\\NuGet\\NuGet.Config",

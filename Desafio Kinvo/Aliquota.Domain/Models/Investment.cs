@@ -18,5 +18,7 @@ namespace Aliquota.Domain.Models
         public decimal amount { get; set; }
         public decimal canRecover { get; set; }
         public decimal tax { get; set; }
+
+        public DateTime started { get; set; }
     }
 }

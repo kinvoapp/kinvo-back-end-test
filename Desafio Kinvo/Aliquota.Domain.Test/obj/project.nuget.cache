@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YWg18efHkHO/xSp3kZ8SM9G7d53zwYNNsfBKBsoMYfFw7FcQJJr/qPsafCTzUCIKlIT25pbrw+la5a3sM5FmcA==",
+  "dgSpecHash": "pPIAOaoGs5R548A4BJVzcmvOF/0o5u6YZsGOaw6NrC3dIvmLh4LRqwqcD+/kuizs2oZ3FAPxedfu3/pCFLHg+Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Workstation\\Documents\\Desafio Kinvo\\Desafio Kinvo\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj",
+  "projectFilePath": "C:\\Users\\Workstation\\Desktop\\kinvo-back-end-test\\Desafio Kinvo\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Workstation\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\Workstation\\.nuget\\packages\\entityframework\\6.4.0\\entityframework.6.4.0.nupkg.sha512",

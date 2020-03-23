@@ -7338,11 +7338,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Workstation\\Documents\\Desafio Kinvo\\Desafio Kinvo\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj",
+      "projectUniqueName": "C:\\Users\\Workstation\\Desktop\\kinvo-back-end-test\\Desafio Kinvo\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj",
       "projectName": "Aliquota.Domain.Test",
-      "projectPath": "C:\\Users\\Workstation\\Documents\\Desafio Kinvo\\Desafio Kinvo\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj",
+      "projectPath": "C:\\Users\\Workstation\\Desktop\\kinvo-back-end-test\\Desafio Kinvo\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj",
       "packagesPath": "C:\\Users\\Workstation\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Workstation\\Documents\\Desafio Kinvo\\Desafio Kinvo\\Aliquota.Domain.Test\\obj\\",
+      "outputPath": "C:\\Users\\Workstation\\Desktop\\kinvo-back-end-test\\Desafio Kinvo\\Aliquota.Domain.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Workstation\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7358,8 +7358,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Workstation\\Documents\\Desafio Kinvo\\Desafio Kinvo\\Aliquota.Domain\\Aliquota.Domain.csproj": {
-              "projectPath": "C:\\Users\\Workstation\\Documents\\Desafio Kinvo\\Desafio Kinvo\\Aliquota.Domain\\Aliquota.Domain.csproj"
+            "C:\\Users\\Workstation\\Desktop\\kinvo-back-end-test\\Desafio Kinvo\\Aliquota.Domain\\Aliquota.Domain.csproj": {
+              "projectPath": "C:\\Users\\Workstation\\Desktop\\kinvo-back-end-test\\Desafio Kinvo\\Aliquota.Domain\\Aliquota.Domain.csproj"
             }
           }
         }

@@ -46,7 +46,7 @@ namespace Aliquota.Domain.Repository
             investment.gain = investment.amount - investment.amountBegin;
             investment.canRecover = investment.amount - (investment.gain * investment.tax);
             investment.tax *= 100;
-
+            investment.started = DateTime.Now;
 
             context.Set<Investment>().Add(investment);
             context.SaveChanges();
@@ -85,9 +85,12 @@ namespace Aliquota.Domain.Repository
 
         public Investment Remove(int id)
         {
+
             Investment investment = context.Set<Investment>().Find(id);
             
-            if(investment!=null)
+            if (investment == null) return null;
+
+            if(investment.started > DateTime.Now)
             context.Investments.Remove(investment);
 
 
