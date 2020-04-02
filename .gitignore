@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+Aliquota.Servicos/bin/Debug/netcoreapp3.1
+Aliquota.Servicos/obj
+Aliquota.Domain/bin/Debug/netcoreapp3.1
+Aliquota.Domain/obj
+Aliquota.Domain.Test/bin/Debug/netcoreapp3.1
+Aliquota.Domain.Test/obj
+Aliquota.Infra/bin/Debug/netcoreapp3.1
+Aliquota.Infra/obj
+Aliquota.Lab/bin/Debug/netcoreapp3.1
+Aliquota.Lab/obj
+/.vs/KinvoBackEndTest/DesignTimeBuild
+/.vs/KinvoBackEndTest/v16/.suo
