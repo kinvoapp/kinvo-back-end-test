@@ -1,0 +1,16 @@
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infrastructure.CrossCutting.IoC\bin\Debug\netcoreapp3.1\Aliquota.Infrastructure.CrossCutting.IoC.deps.json
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infrastructure.CrossCutting.IoC\bin\Debug\netcoreapp3.1\Aliquota.Infrastructure.CrossCutting.IoC.dll
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infrastructure.CrossCutting.IoC\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.CrossCutting.IoC.csprojAssemblyReference.cache
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infrastructure.CrossCutting.IoC\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.CrossCutting.IoC.AssemblyInfoInputs.cache
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infrastructure.CrossCutting.IoC\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.CrossCutting.IoC.AssemblyInfo.cs
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infrastructure.CrossCutting.IoC\bin\Debug\netcoreapp3.1\Aliquota.Infrastructure.CrossCutting.IoC.pdb
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infrastructure.CrossCutting.IoC\bin\Debug\netcoreapp3.1\Aliquota.Application.dll
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infrastructure.CrossCutting.IoC\bin\Debug\netcoreapp3.1\Aliquota.Domain.dll
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infrastructure.CrossCutting.IoC\bin\Debug\netcoreapp3.1\Aliquota.Infrastructure.Data.dll
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infrastructure.CrossCutting.IoC\bin\Debug\netcoreapp3.1\Aliquota.Application.pdb
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infrastructure.CrossCutting.IoC\bin\Debug\netcoreapp3.1\Aliquota.Domain.pdb
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infrastructure.CrossCutting.IoC\bin\Debug\netcoreapp3.1\Aliquota.Infrastructure.Data.pdb
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infrastructure.CrossCutting.IoC\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.CrossCutting.IoC.csproj.CoreCompileInputs.cache
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infrastructure.CrossCutting.IoC\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.CrossCutting.IoC.csproj.CopyComplete
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infrastructure.CrossCutting.IoC\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.CrossCutting.IoC.dll
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infrastructure.CrossCutting.IoC\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.CrossCutting.IoC.pdb

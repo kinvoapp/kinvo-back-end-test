@@ -1,0 +1,9 @@
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Domain\bin\Debug\netcoreapp3.1\Aliquota.Domain.deps.json
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Domain\bin\Debug\netcoreapp3.1\Aliquota.Domain.dll
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Domain\bin\Debug\netcoreapp3.1\Aliquota.Domain.pdb
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.AssemblyInfoInputs.cache
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.AssemblyInfo.cs
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.csproj.CoreCompileInputs.cache
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.dll
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.pdb
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.csprojAssemblyReference.cache

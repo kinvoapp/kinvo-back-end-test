@@ -1,0 +1,4 @@
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.csprojAssemblyReference.cache
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.AssemblyInfo.cs
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.csproj.CoreCompileInputs.cache

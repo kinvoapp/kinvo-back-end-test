@@ -1,0 +1,5 @@
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure\bin\Debug\netcoreapp3.1\Aliquota.Infraestructure.deps.json
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure\bin\Debug\netcoreapp3.1\Aliquota.Infraestructure.dll
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure\obj\Debug\netcoreapp3.1\Aliquota.Infraestructure.csprojAssemblyReference.cache
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure\obj\Debug\netcoreapp3.1\Aliquota.Infraestructure.AssemblyInfoInputs.cache
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure\obj\Debug\netcoreapp3.1\Aliquota.Infraestructure.AssemblyInfo.cs

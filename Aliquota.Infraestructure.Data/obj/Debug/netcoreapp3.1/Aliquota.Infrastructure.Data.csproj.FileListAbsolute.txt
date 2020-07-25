@@ -1,0 +1,15 @@
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure.Data\bin\Debug\netcoreapp3.1\Aliquota.Domain.dll
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure.Data\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.Data.csprojAssemblyReference.cache
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure.Data\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.Data.AssemblyInfoInputs.cache
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure.Data\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.Data.AssemblyInfo.cs
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure.Data\bin\Debug\netcoreapp3.1\Aliquota.Infrastructure.Data.deps.json
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure.Data\bin\Debug\netcoreapp3.1\Aliquota.Infrastructure.Data.runtimeconfig.json
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure.Data\bin\Debug\netcoreapp3.1\Aliquota.Infrastructure.Data.runtimeconfig.dev.json
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure.Data\bin\Debug\netcoreapp3.1\Aliquota.Infrastructure.Data.dll
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure.Data\bin\Debug\netcoreapp3.1\Aliquota.Infrastructure.Data.pdb
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure.Data\bin\Debug\netcoreapp3.1\Aliquota.Domain.pdb
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure.Data\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.Data.csproj.CoreCompileInputs.cache
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure.Data\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.Data.csproj.CopyComplete
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure.Data\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.Data.dll
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure.Data\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.Data.pdb
+C:\Users\vitor\source\repos\Kinvo\Aliquota.Infraestructure.Data\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.Data.genruntimeconfig.cache

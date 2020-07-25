@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="o0vayen1.dsu~" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aliquota.Application\Aliquota.Application.csproj" />
+    <ProjectReference Include="..\Aliquota.Domain\Aliquota.Domain.csproj" />
+    <ProjectReference Include="..\Aliquota.Infrastructure.CrossCutting.IoC\Aliquota.Infrastructure.CrossCutting.IoC.csproj" />
+  </ItemGroup>
+
+</Project>

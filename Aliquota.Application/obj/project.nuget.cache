@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZZYhpxES8s6D+cBESK/fc+lLp+vFh69FX5DSanXoAJ2VPzH5aCqdXzMUEY6ydo9cRsVicfSajWnLKiiP9YAaAQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vitor\\Source\\Repos\\kinvo-back-end-test\\Aliquota.Application\\Aliquota.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vitor\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.6\\microsoft.extensions.dependencyinjection.abstractions.3.1.6.nupkg.sha512"
+  ],
+  "logs": []
+}
