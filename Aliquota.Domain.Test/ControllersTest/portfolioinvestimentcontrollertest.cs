@@ -3,9 +3,7 @@ using Aliquota.Domain.Infra.Context;
 using Aliquota.Domain.Services;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Xunit;
 
 namespace Aliquota.Domain.Test.ControllersTest

@@ -21,3 +21,4 @@ C:\Users\Flavio\Documents\GitHub\kinvo-back-end-test\Aliquota.Domain\obj\Debug\n
 C:\Users\Flavio\Documents\GitHub\kinvo-back-end-test\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.dll
 C:\Users\Flavio\Documents\GitHub\kinvo-back-end-test\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.pdb
 C:\Users\Flavio\Documents\GitHub\kinvo-back-end-test\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.genruntimeconfig.cache
+C:\Users\Flavio\Documents\GitHub\kinvo-back-end-test\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.csprojAssemblyReference.cache

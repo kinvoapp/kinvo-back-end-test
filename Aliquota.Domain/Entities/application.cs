@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aliquota.Domain.Entities
 {
-    public class application
+	public class application
     {
 		public int id { get; set; }
 		public int idclient { get; set; }

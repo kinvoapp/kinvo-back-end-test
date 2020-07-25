@@ -1,9 +1,6 @@
 ﻿using Aliquota.Domain.Entities;
 using Aliquota.Domain.Interfaces;
-using Aliquota.Domain.Services;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aliquota.Domain.Controllers
 {

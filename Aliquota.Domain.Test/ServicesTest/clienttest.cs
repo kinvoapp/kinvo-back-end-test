@@ -2,7 +2,6 @@ using Aliquota.Domain.Infra.Context;
 using Aliquota.Domain.Entities;
 using Aliquota.Domain.Services;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Linq;
 using Xunit;
 
