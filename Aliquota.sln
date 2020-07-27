@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EB6B5735-E241-49EC-8F94-9580123EE5EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{1F07C620-76BC-4906-86F7-6D66AFFDFD3D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aliquota.API", "src\Aliquota.Web.API\Aliquota.API.csproj", "{024B8B98-6F5C-48C5-8BE0-48B1E294270A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aliquota.Domain", "src\Aliquota.Domain\Aliquota.Domain.csproj", "{F4764944-F9F9-46AF-A3BE-A00FAE35AEDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aliquota.Repository", "src\Aliquota.Repository\Aliquota.Repository.csproj", "{A940A6D5-8BB3-4596-81F7-D5E029D8F2AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aliquota.Domain.Test", "test\Aliquota.Domain.Test\Aliquota.Domain.Test.csproj", "{C98C25DB-A65F-4844-AC39-388197A5AA13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{024B8B98-6F5C-48C5-8BE0-48B1E294270A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{024B8B98-6F5C-48C5-8BE0-48B1E294270A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{024B8B98-6F5C-48C5-8BE0-48B1E294270A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{024B8B98-6F5C-48C5-8BE0-48B1E294270A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4764944-F9F9-46AF-A3BE-A00FAE35AEDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4764944-F9F9-46AF-A3BE-A00FAE35AEDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4764944-F9F9-46AF-A3BE-A00FAE35AEDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4764944-F9F9-46AF-A3BE-A00FAE35AEDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A940A6D5-8BB3-4596-81F7-D5E029D8F2AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A940A6D5-8BB3-4596-81F7-D5E029D8F2AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A940A6D5-8BB3-4596-81F7-D5E029D8F2AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A940A6D5-8BB3-4596-81F7-D5E029D8F2AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C98C25DB-A65F-4844-AC39-388197A5AA13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C98C25DB-A65F-4844-AC39-388197A5AA13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C98C25DB-A65F-4844-AC39-388197A5AA13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C98C25DB-A65F-4844-AC39-388197A5AA13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{024B8B98-6F5C-48C5-8BE0-48B1E294270A} = {EB6B5735-E241-49EC-8F94-9580123EE5EE}
+		{F4764944-F9F9-46AF-A3BE-A00FAE35AEDA} = {EB6B5735-E241-49EC-8F94-9580123EE5EE}
+		{A940A6D5-8BB3-4596-81F7-D5E029D8F2AA} = {EB6B5735-E241-49EC-8F94-9580123EE5EE}
+		{C98C25DB-A65F-4844-AC39-388197A5AA13} = {1F07C620-76BC-4906-86F7-6D66AFFDFD3D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F65FD49-4FFD-4E42-A734-597C56A2184A}
+	EndGlobalSection
+EndGlobal
