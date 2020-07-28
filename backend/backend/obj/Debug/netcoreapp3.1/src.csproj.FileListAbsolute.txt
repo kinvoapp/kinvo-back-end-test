@@ -1,0 +1,5 @@
+/Users/lucasplacido/Google Drive/workspace/kinvo-back-end-test/backend/backend/obj/Debug/netcoreapp3.1/src.csprojAssemblyReference.cache
+/Users/lucasplacido/Google Drive/workspace/kinvo-back-end-test/backend/backend/obj/Debug/netcoreapp3.1/src.AssemblyInfoInputs.cache
+/Users/lucasplacido/Google Drive/workspace/kinvo-back-end-test/backend/backend/obj/Debug/netcoreapp3.1/src.AssemblyInfo.cs
+/Users/lucasplacido/Google Drive/workspace/kinvo-back-end-test/backend/backend/obj/Debug/netcoreapp3.1/src.csproj.CoreCompileInputs.cache
+/Users/lucasplacido/Google Drive/workspace/kinvo-back-end-test/backend/backend/obj/Debug/netcoreapp3.1/src.MvcApplicationPartsAssemblyInfo.cache
