@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/lucasplacido/Google Drive/workspace/kinvo-back-end-test/backend/backend/src.csproj": {}
+    "/Users/lucasplacido/Google Drive/Lucas Reis/workspace/kinvo-back-end-test/backend/backend/src.csproj": {}
   },
   "projects": {
-    "/Users/lucasplacido/Google Drive/workspace/kinvo-back-end-test/backend/backend/src.csproj": {
+    "/Users/lucasplacido/Google Drive/Lucas Reis/workspace/kinvo-back-end-test/backend/backend/src.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/lucasplacido/Google Drive/workspace/kinvo-back-end-test/backend/backend/src.csproj",
+        "projectUniqueName": "/Users/lucasplacido/Google Drive/Lucas Reis/workspace/kinvo-back-end-test/backend/backend/src.csproj",
         "projectName": "src",
-        "projectPath": "/Users/lucasplacido/Google Drive/workspace/kinvo-back-end-test/backend/backend/src.csproj",
+        "projectPath": "/Users/lucasplacido/Google Drive/Lucas Reis/workspace/kinvo-back-end-test/backend/backend/src.csproj",
         "packagesPath": "/Users/lucasplacido/.nuget/packages/",
-        "outputPath": "/Users/lucasplacido/Google Drive/workspace/kinvo-back-end-test/backend/backend/obj/",
+        "outputPath": "/Users/lucasplacido/Google Drive/Lucas Reis/workspace/kinvo-back-end-test/backend/backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/lucasplacido/.config/NuGet/NuGet.Config"
+          "/Users/lucasplacido/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -35,6 +35,26 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
