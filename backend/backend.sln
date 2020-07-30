@@ -1,7 +1,9 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "backend\src.csproj", "{0C2A4848-9143-48C5-9955-36EBF6249DFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kinvo.api", "backend\kinvo.api.csproj", "{0C2A4848-9143-48C5-9955-36EBF6249DFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kinvo.test", "test\kinvo.test.csproj", "{80B5FD05-8480-45F2-B343-ECBA1634E1EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,5 +15,11 @@ Global
 		{0C2A4848-9143-48C5-9955-36EBF6249DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C2A4848-9143-48C5-9955-36EBF6249DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C2A4848-9143-48C5-9955-36EBF6249DFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80B5FD05-8480-45F2-B343-ECBA1634E1EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80B5FD05-8480-45F2-B343-ECBA1634E1EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80B5FD05-8480-45F2-B343-ECBA1634E1EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80B5FD05-8480-45F2-B343-ECBA1634E1EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 EndGlobal
