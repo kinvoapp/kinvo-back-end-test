@@ -1,24 +1,30 @@
-﻿<Properties StartupConfiguration="{0C2A4848-9143-48C5-9955-36EBF6249DFE}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="backend/model/Aliquota.cs">
+﻿<Properties StartupConfiguration="{0C2A4848-9143-48C5-9955-36EBF6249DFE}|backend">
+  <MonoDevelop.Ide.Workbench ActiveDocument="backend/Database/KinvoDbContext.cs">
     <Files>
-      <File FileName="backend/Controllers/WeatherForecastController.cs" Line="26" Column="1" />
-      <File FileName="backend/FundoInvestimento.cs" Line="10" Column="1" />
-      <File FileName="backend/model/Ativo.cs" Line="9" Column="1" />
-      <File FileName="backend/model/EmptyClass.cs" Line="6" Column="32" />
-      <File FileName="backend/model/ResgateFundo.cs" Line="1" Column="1" />
-      <File FileName="backend/model/SaldoFundo.cs" Line="1" Column="1" />
-      <File FileName="backend/model/Aliquota.cs" Line="1" Column="1" />
+      <File FileName="backend/Controllers/AplicacaoFundoController.cs" Line="1" Column="1" />
+      <File FileName="backend/Database/Mappings/AplicacaoFundoMap.cs" Line="1" Column="1" />
+      <File FileName="backend/Database/Mappings/FundoInvestimentoMap.cs" Line="1" Column="1" />
+      <File FileName="backend/Database/Mappings/ResgateFundoMap.cs" Line="1" Column="1" />
+      <File FileName="backend/Database/Mappings/SaldoFundoMap.cs" Line="1" Column="1" />
+      <File FileName="backend/Database/KinvoDbContext.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="backend" expanded="True">
-            <Node name="src" expanded="True">
+            <Node name="kinvo.api" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="model" expanded="True">
-                <Node name="Aliquota.cs" selected="True" />
+              <Node name="Database" expanded="True">
+                <Node name="Mappings" expanded="True" />
+                <Node name="KinvoDbContext.cs" selected="True" />
               </Node>
-              <Node name="Properties" expanded="True" />
+              <Node name="Services" expanded="True" />
+            </Node>
+            <Node name="kinvo.test" expanded="True">
+              <Node name="UnitTests" expanded="True">
+                <Node name="Controllers" expanded="True" />
+                <Node name="Services" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -27,7 +33,11 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.src PreferredExecutionTarget="/Applications/Firefox.app" />
+  <DisabledProjects>
+    <String>Aliquota.Domain/Aliquota.Domain.Core/Aliquota.Domain.Core.csproj</String>
+  </DisabledProjects>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.kinvo.api PreferredExecutionTarget="/Applications/Firefox.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
