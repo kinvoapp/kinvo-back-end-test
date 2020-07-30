@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aliquiota.Infra\Aliquiota.Infra.csproj" />
+    <ProjectReference Include="..\Aliquota.Domain\Aliquota.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
