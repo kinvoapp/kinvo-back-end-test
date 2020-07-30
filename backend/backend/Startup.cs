@@ -6,13 +6,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using src.Database;
-using src.Repositories;
 
 namespace backend
 {
@@ -29,16 +26,6 @@ namespace backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
-            //Inclusao de contextos 
-            services.AddDbContext<KinvoDbContext>(options => options.UseSqlServer("Name=Kinvo"));
-
-            // Services e Repositories de outros projetos
-            services.AddTransient<IAplicacaoFundoRepository, AplicacaoFundoRepository>();
-            services.AddTransient<IResgateFundoRepository, ResgateFundoRepository>();
-            services.AddTransient<IFundoInvestimentoRepository, FundoInvestimentoRepository>();
-            services.AddTransient<ISaldoFundoRepository, SaldoFundoRepository>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
