@@ -30,7 +30,7 @@ namespace backend.Controllers
         /// Salvar Fundo Investimento 
         /// </summary>
         /// <param name="pFundoInvestimento"> Parametro contendo o fundo Investimento </param>
-        /// <return> Lista de Papel de trabalho </returns>
+        /// <return> Salvar de Fundo Investimento  </returns>
         [HttpPost]
         public ActionResult SalvarFundoInvestimento(FundoInvestimento pFundoInvestimento)
         {
@@ -57,7 +57,7 @@ namespace backend.Controllers
         /// </summary>
         /// <param name="pId">Parametro contendo id do fundo investimento</param>
         /// <returns>Fundo de investimento persistido</returns>
-        [HttpGet("ObterPapelTrabalho/{inscricao}")]
+        [HttpGet("ObterFundoInvestimento/{inscricao}")]
         public ActionResult ObterFundoInvestimento(int pId)
         {
             if (pId == 0)

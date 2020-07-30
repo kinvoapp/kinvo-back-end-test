@@ -33,9 +33,9 @@ namespace src.Repositories
             return await _dbSet.FirstOrDefaultAsync(predicate);
         }
 
-        public virtual IQueryable<TEntity> GetAll()
+        public virtual List<TEntity> GetAll()
         {
-            return _dbSet.AsNoTracking();
+            return _dbSet.AsNoTracking().ToList();
         }
 
         public virtual IQueryable<TEntity> FindBy(Expression<Func<TEntity, bool>> predicate)

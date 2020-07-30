@@ -15,7 +15,7 @@ namespace src.Interfaces.IRepositories
         /// Get all queries
         /// </summary>
         /// <returns>IQueryable queries</returns>
-        IQueryable<TEntity> GetAll();
+        List<TEntity> GetAll();
 
         /// <summary>
         /// Find queries by predicate

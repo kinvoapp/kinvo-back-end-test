@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using src.Models;
 
 namespace src.Interfaces.IServices
@@ -7,5 +8,6 @@ namespace src.Interfaces.IServices
     {
        bool SalvarFundoInvestimento(FundoInvestimento pFundoInvestimento);
        FundoInvestimento ObterFundoInvestimento(int pId);
+       List<FundoInvestimento> ListarFundoInvestimento();
     }
 }

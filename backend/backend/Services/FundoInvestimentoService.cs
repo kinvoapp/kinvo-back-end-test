@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using src.Interfaces.IRepositories;
 using src.Interfaces.IServices;
 using src.Models;
@@ -40,6 +41,15 @@ namespace src.Services
         {
             return this.fundoInvestimentoRepository.FirstAsync(r =>
                 r.Id == pId).Result;
+        }
+           
+        ///<summary>
+        /// Listar Fundo Investimento 
+        ///</summary>
+        ///<param name="fundoInvestimento">Fundo Investimento</param>
+        public List<FundoInvestimento> ListarFundoInvestimento()
+        {
+            return this.fundoInvestimentoRepository.GetAll();
         }
     }
 }

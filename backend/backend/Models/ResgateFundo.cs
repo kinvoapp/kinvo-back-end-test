@@ -10,9 +10,9 @@ namespace src.Models
 
         public DateTime DataReferencia { get; set; }
 
-        public decimal ValorResgateBruto  { get; set; }
+        public float ValorResgateBruto  { get; set; }
 
-        public decimal ValorResgateLiquido { get; set; }
+        public float ValorResgateLiquido { get; set; }
 
         [Required]
         public int FundoInvestimentoId { get; set; }

@@ -14,7 +14,7 @@
         "outputPath": "/Users/lucasplacido/Google Drive/Lucas Reis/workspace/kinvo-back-end-test/backend/backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/lucasplacido/.nuget/NuGet/NuGet.Config"
+          "/Users/lucasplacido/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"

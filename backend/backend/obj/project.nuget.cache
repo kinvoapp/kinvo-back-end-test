@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rP0qpYtZx78PeKgt6rcpUALtQ8KCDTc28CYgmAPQmAr9Cy8VMxUrX86cwH75HGeyDi0cl5Jyg544Wv87xv4xHw==",
+  "dgSpecHash": "Q2v2Vu/W6kxhp+cxMN5QvoLD3lkUz90MKs9J2W357D4JPngc1qwc1r63kt5MLWelxw1HgF3Z9nXyuP33KRXzaA==",
   "success": true,
-  "projectFilePath": "/Users/lucasplacido/Google Drive/Lucas Reis/workspace/kinvo-back-end-test/backend/backend/src.csproj",
+  "projectFilePath": "/Users/lucasplacido/Google Drive/Lucas Reis/workspace/kinvo-back-end-test/backend/backend/kinvo.api.csproj",
   "expectedPackageFiles": [
     "/Users/lucasplacido/.nuget/packages/entityframework/6.4.4/entityframework.6.4.4.nupkg.sha512",
     "/Users/lucasplacido/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
