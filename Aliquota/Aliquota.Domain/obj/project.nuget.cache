@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "3RCBX/SjojdlPBJ2eKT/w5BK3eScqLZyslpJDXXVCwSrVsNVN4vqXxPvlsiGR8VHRNoC5rgw3biYHB0eAHtqjA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Danilo\\Desktop\\DesafioKinvo\\DesafioKinvo\\kinvo-back-end-test\\Aliquota\\Aliquota.Domain\\Aliquota.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Danilo\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
+    "C:\\Users\\Danilo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Danilo\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

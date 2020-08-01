@@ -1,0 +1,17 @@
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\Aliquota.Application\bin\Debug\netcoreapp3.1\Aliquota.Application.deps.json
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\Aliquota.Application\bin\Debug\netcoreapp3.1\Aliquota.Application.dll
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\Aliquota.Application\bin\Debug\netcoreapp3.1\Aliquota.Application.pdb
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\Aliquota.Application\obj\Debug\netcoreapp3.1\Aliquota.Application.csprojAssemblyReference.cache
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\Aliquota.Application\obj\Debug\netcoreapp3.1\Aliquota.Application.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\Aliquota.Application\obj\Debug\netcoreapp3.1\Aliquota.Application.AssemblyInfo.cs
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\Aliquota.Application\obj\Debug\netcoreapp3.1\Aliquota.Application.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\Aliquota.Application\obj\Debug\netcoreapp3.1\Aliquota.Application.dll
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\Aliquota.Application\obj\Debug\netcoreapp3.1\Aliquota.Application.pdb
+C:\Users\Danilo\Desktop\DesafioKinvo\DesafioKinvo\kinvo-back-end-test\Aliquota\Aliquota.Application\bin\Debug\netcoreapp3.1\Aliquota.Application.deps.json
+C:\Users\Danilo\Desktop\DesafioKinvo\DesafioKinvo\kinvo-back-end-test\Aliquota\Aliquota.Application\bin\Debug\netcoreapp3.1\Aliquota.Application.dll
+C:\Users\Danilo\Desktop\DesafioKinvo\DesafioKinvo\kinvo-back-end-test\Aliquota\Aliquota.Application\bin\Debug\netcoreapp3.1\Aliquota.Application.pdb
+C:\Users\Danilo\Desktop\DesafioKinvo\DesafioKinvo\kinvo-back-end-test\Aliquota\Aliquota.Application\obj\Debug\netcoreapp3.1\Aliquota.Application.csprojAssemblyReference.cache
+C:\Users\Danilo\Desktop\DesafioKinvo\DesafioKinvo\kinvo-back-end-test\Aliquota\Aliquota.Application\obj\Debug\netcoreapp3.1\Aliquota.Application.AssemblyInfoInputs.cache
+C:\Users\Danilo\Desktop\DesafioKinvo\DesafioKinvo\kinvo-back-end-test\Aliquota\Aliquota.Application\obj\Debug\netcoreapp3.1\Aliquota.Application.AssemblyInfo.cs
+C:\Users\Danilo\Desktop\DesafioKinvo\DesafioKinvo\kinvo-back-end-test\Aliquota\Aliquota.Application\obj\Debug\netcoreapp3.1\Aliquota.Application.dll
+C:\Users\Danilo\Desktop\DesafioKinvo\DesafioKinvo\kinvo-back-end-test\Aliquota\Aliquota.Application\obj\Debug\netcoreapp3.1\Aliquota.Application.pdb
