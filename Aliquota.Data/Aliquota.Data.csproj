@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Services\EF\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.6" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Entities\InvestimentoEF.cs" />
+    <Compile Remove="Entities\ProdutoEF.cs" />
+    <Compile Remove="Entities\CarteiraEF.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aliquota.Domain\Aliquota.Domain.csproj" />
+  </ItemGroup>
+</Project>
