@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Aliquota.Data.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,18 +12,26 @@ namespace Aliquota.API.Controllers
     [ApiController]
     public class ProdutoController : ControllerBase
     {
+        private readonly IAliquotaService Aliquota;
+
+        public ProdutoController(IAliquotaService aliquota)
+        {
+            Aliquota = aliquota;
+        }
         // GET: api/Produto
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> Get()
         {
-            return new string[] { "value1", "value2" };
+            var model = await Aliquota.GetProdutosAsync().ConfigureAwait(false);
+            return Ok(model);
         }
 
         // GET: api/Produto/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return "value";
+            var model = await Aliquota.GetProdutoByIdAsync((uint)id);
+            return Ok(model);
         }
 
         // POST: api/Produto

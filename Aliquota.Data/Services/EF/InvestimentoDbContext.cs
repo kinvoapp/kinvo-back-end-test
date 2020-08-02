@@ -15,5 +15,16 @@ namespace Aliquota.Data.Services.EF
         public DbSet<Investimento> Investimentos { get; set; }
         public DbSet<Produto> Produtos { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //Configure default schema
+
+            //Map entity to table
+            modelBuilder.Entity<Carteira>();
+            modelBuilder.Entity<Investimento>();
+            modelBuilder.Entity<Produto>();
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
