@@ -4,10 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Aliquota.Domain.Model
 {
-    [Table("Investimento")]
+    [Table("Carteira")]
     public class Investimento
     {
-        [Key]
         public Guid Id { get; set; }
         public decimal Total { get { return ValorInvestimento + ValorLucro; } }
         public decimal ValorInvestimento { get; set; }
@@ -44,6 +43,12 @@ namespace Aliquota.Domain.Model
             if(ValorInvestimento <= 0)
             {
                 throw new ArgumentException("Valor da aplicação não pode ser inferior ou igual a zero!");
+            }else if(Produto == null)
+            {
+                throw new ApplicationException("Instância do produto não pode ser nulo");
+            }else if(Carteira == null)
+            {
+                throw new ApplicationException("Instancia da carteira não pode ser nulo");
             }
             return true;
         }

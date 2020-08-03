@@ -7,6 +7,7 @@ namespace Aliquota.API.ViewModel
         public string Nome { get; set; }
         public decimal TaxaAnual { get; set; }
         public DateTime Vencimento { get; set; }
+
         public ProdutoPostViewModel()
         {
         }

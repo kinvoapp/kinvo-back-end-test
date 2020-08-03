@@ -8,7 +8,6 @@ namespace Aliquota.Domain.Model
     [Table("Carteira")]
     public class Carteira
     {
-        [Key]
         public Guid Id { get; set; }
         public DateTime DataCriacaoCarteira { get; set; }
         public string NomeCliente { get; set; } // Model Cliente simplificado

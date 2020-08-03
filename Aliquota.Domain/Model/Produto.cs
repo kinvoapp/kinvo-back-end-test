@@ -4,10 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Aliquota.Domain.Model
 {
-    [Table("Produto")]
+    [Table("Carteira")]
     public class Produto
     {
-        [Key]
         public uint Id { get; }
         public string Nome { get; set; }
         public decimal TaxaAnual { get; set; }

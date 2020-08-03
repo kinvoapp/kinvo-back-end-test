@@ -8,21 +8,24 @@ namespace Aliquota.Data.Services.EF
     {
         public InvestimentoDbContext(DbContextOptions<InvestimentoDbContext> options) : base(options)
         {
-
+        }
+        public InvestimentoDbContext()
+        {
+                
         }
 
-        public DbSet<Carteira> Carteiras { get; set; }
-        public DbSet<Investimento> Investimentos { get; set; }
-        public DbSet<Produto> Produtos { get; set; }
+        
+        public DbSet<Carteira> Carteira { get; set; }
+        public DbSet<Investimento> Investimento { get; set; }
+        public DbSet<Produto> Produto { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Configure default schema
-
             //Map entity to table
-            modelBuilder.Entity<Carteira>();
-            modelBuilder.Entity<Investimento>();
-            modelBuilder.Entity<Produto>();
+            modelBuilder.Entity<Carteira>().HasKey(carteira => carteira.Id);
+            modelBuilder.Entity<Investimento>().HasKey(investimento => investimento.Id);
+            modelBuilder.Entity<Produto>().HasKey(produto => produto.Id);
 
             base.OnModelCreating(modelBuilder);
         }

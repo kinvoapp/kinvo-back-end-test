@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.InMemory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,7 +28,8 @@ namespace Aliquota.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<InvestimentoDbContext>( options => options.UseInMemoryDatabase("MemoryDb"));
+            services.AddDbContext<InvestimentoDbContext>( options =>
+            options.UseSqlServer("workstation id=kinvoteste.mssql.somee.com;packet size=4096;user id=luizsantos1997_SQLLogin_1;pwd=7iq54n3t8q;data source=kinvoteste.mssql.somee.com;persist security info=False;initial catalog=kinvoteste"));
 
             services.AddControllers();
             services.AddScoped<IAliquotaService, AliquotaService>();

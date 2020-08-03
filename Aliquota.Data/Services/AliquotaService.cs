@@ -26,7 +26,7 @@
                         throw new ApplicationException("Id do produto já existe!");
                     }
                     var produto = new Produto(id,nome,taxa,vencimento);
-                    contexto.Produtos.Add(produto);
+                    contexto.Produto.Add(produto);
                     await contexto.SaveChangesAsync().ConfigureAwait(false);
                     return await ExistProdutoByIdAsync(produto.Id);
 
@@ -42,7 +42,7 @@
             {
                 try
                 {
-                    return await contexto.Produtos.AsNoTracking().AnyAsync(produto => produto.Id.Equals(id)).ConfigureAwait(false);
+                    return await contexto.Produto.AsNoTracking().AnyAsync(produto => produto.Id.Equals(id)).ConfigureAwait(false);
                 }
                 catch (Exception ex)
                 {
@@ -54,7 +54,7 @@
             {
                 try
                 {
-                    return await contexto.Produtos
+                    return await contexto.Produto
                     .FirstOrDefaultAsync(produto => produto.Id.Equals(id)).ConfigureAwait(false);
                 }
                 catch (Exception ex)
@@ -72,7 +72,7 @@
                         throw new ApplicationException("Id do produto já existe!");
                     }
                     var carteira = new Carteira(nome);
-                    contexto.Carteiras.Add(carteira);
+                    contexto.Carteira.Add(carteira);
                     await contexto.SaveChangesAsync().ConfigureAwait(false);
                     return await ExistCarteiraByNomeAsync(nome);
 
@@ -88,7 +88,7 @@
             {
                 try
                 {
-                    return await contexto.Carteiras.AsNoTracking()
+                    return await contexto.Carteira.AsNoTracking()
                         .AnyAsync(carteira => carteira.NomeCliente.Equals(nome)).ConfigureAwait(false);
                 }
                 catch (Exception ex)
@@ -101,7 +101,7 @@
             {
                 try
                 {
-                    return await contexto.Carteiras.FirstOrDefaultAsync(carteira => carteira.NomeCliente.Equals(nome))
+                    return await contexto.Carteira.FirstOrDefaultAsync(carteira => carteira.NomeCliente.Equals(nome))
                         .ConfigureAwait(false);
                 }
                 catch (Exception ex)
@@ -114,7 +114,7 @@
             {
                 try
                 {
-                    return await contexto.Carteiras.FirstOrDefaultAsync(carteira => carteira.Id.Equals(id))
+                    return await contexto.Carteira.FirstOrDefaultAsync(carteira => carteira.Id.Equals(id))
                         .ConfigureAwait(false);
                 }
                 catch (Exception ex)
@@ -131,7 +131,7 @@
                     var carteira = await this.GetCarteiraByNomeAsync(CarteiraId);
                     var guid = Guid.NewGuid();
                     var invest = new Investimento(guid, valor, produto, carteira);
-                    await contexto.Investimentos.AddAsync(invest).ConfigureAwait(false);
+                    await contexto.Investimento.AddAsync(invest).ConfigureAwait(false);
                     await contexto.SaveChangesAsync().ConfigureAwait(false);
                     return await this.ExistInvestimentoByIdAsync(guid).ConfigureAwait(false);
                 }
@@ -146,7 +146,7 @@
             {
                 try
                 {
-                    return await contexto.Investimentos.AsNoTracking()
+                    return await contexto.Investimento.AsNoTracking()
                         .AnyAsync(investimento => investimento.Id.Equals(id)).ConfigureAwait(false);
                 }
                 catch (Exception ex)
@@ -159,7 +159,7 @@
             {
                 try
                 {
-                    return await contexto.Investimentos
+                    return await contexto.Investimento
                         .FirstOrDefaultAsync(investimento => investimento.Id.Equals(id))
                         .ConfigureAwait(false);
                 }
@@ -173,11 +173,11 @@
 
             public async Task<List<Produto>> GetProdutosAsync()
             {
-                return await contexto.Produtos.AsNoTracking().OrderByDescending(produto => produto.Nome).ToListAsync().ConfigureAwait(false);
+                return await contexto.Produto.AsNoTracking().OrderByDescending(produto => produto.Nome).ToListAsync().ConfigureAwait(false);
             }
             public async Task<List<Investimento>> GetInvestimentosAsync(Guid CarteiraId)
             {
-                return await contexto.Investimentos
+                return await contexto.Investimento
                     .Where(investimento => investimento.Carteira.Id.Equals(CarteiraId) && investimento.DataRetornado == null)
                     .OrderByDescending(investimento => investimento.DataInvestimento).ToListAsync().ConfigureAwait(false);
             }
