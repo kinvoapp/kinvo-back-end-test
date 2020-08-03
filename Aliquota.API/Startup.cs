@@ -29,9 +29,12 @@ namespace Aliquota.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<InvestimentoDbContext>( options =>
-            options.UseSqlServer("workstation id=kinvoteste.mssql.somee.com;packet size=4096;user id=luizsantos1997_SQLLogin_1;pwd=7iq54n3t8q;data source=kinvoteste.mssql.somee.com;persist security info=False;initial catalog=kinvoteste"));
+            options.UseSqlServer("workstation id=kinvoteste.mssql.somee.com;packet size=4096;user id=luizsantos1997_SQLLogin_1;pwd=7iq54n3t8q;data source=kinvoteste.mssql.somee.com;persist security info=False;initial catalog=kinvoteste",
+            (b) => b.MigrationsAssembly("Aliquota.API")));
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling =
+                Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddScoped<IAliquotaService, AliquotaService>();
         }
 

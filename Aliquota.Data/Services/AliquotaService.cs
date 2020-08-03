@@ -128,10 +128,10 @@
                 try
                 {
                     var produto = await this.GetProdutoByIdAsync(ProdutoId).ConfigureAwait(false);
-                    var carteira = await this.GetCarteiraByNomeAsync(CarteiraId);
+                    var carteira = await this.GetCarteiraByNomeAsync(CarteiraId).ConfigureAwait(false);
                     var guid = Guid.NewGuid();
-                    var invest = new Investimento(guid, valor, produto, carteira);
-                    await contexto.Investimento.AddAsync(invest).ConfigureAwait(false);
+                    var invest = new Investimento(guid, valor, produto.Id, carteira.Id);
+                    contexto.Investimento.Add(invest);
                     await contexto.SaveChangesAsync().ConfigureAwait(false);
                     return await this.ExistInvestimentoByIdAsync(guid).ConfigureAwait(false);
                 }
@@ -171,15 +171,20 @@
 
 
 
-            public async Task<List<Produto>> GetProdutosAsync()
+            public Task<List<Produto>> GetProdutosAsync()
             {
-                return await contexto.Produto.AsNoTracking().OrderByDescending(produto => produto.Nome).ToListAsync().ConfigureAwait(false);
+                return contexto.Produto.AsNoTracking().OrderByDescending(produto => produto.Nome).ToListAsync();
             }
-            public async Task<List<Investimento>> GetInvestimentosAsync(Guid CarteiraId)
-            {
-                return await contexto.Investimento
-                    .Where(investimento => investimento.Carteira.Id.Equals(CarteiraId) && investimento.DataRetornado == null)
-                    .OrderByDescending(investimento => investimento.DataInvestimento).ToListAsync().ConfigureAwait(false);
+        public async Task<List<Investimento>> GetInvestimentosAsync(Guid CarteiraId)
+        {
+            return await contexto.Investimento
+                .Where(investimento => investimento.Carteira.Id.Equals(CarteiraId)
+                && investimento.DataRetornado == null)
+                .OrderByDescending(investimento => investimento.DataInvestimento)
+                .Include(inve => inve.Carteira)
+                .Include(inve => inve.Produto)
+                .ToListAsync();
+            
             }
         }
     }

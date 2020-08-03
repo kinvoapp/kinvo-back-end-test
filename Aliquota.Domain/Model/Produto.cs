@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Aliquota.Domain.Model
 {
-    [Table("Carteira")]
+    [Table("Produto")]
     public class Produto
     {
         public uint Id { get; }
