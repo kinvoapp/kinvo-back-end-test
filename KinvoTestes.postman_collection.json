@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "83b64f0e-29d9-4361-84b4-476af20551a3",
+		"name": "KinvoTestes",
+		"description": "Todos os endpoints para consumir o projeto da Kinvo para teste de backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:32553/api/Produto/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"Id\":1,\n     \"Nome\":\"Tesouro Selic\",\n     \"TaxaAnual\":1.0,\n     \"Vencimento\":\"2021-08-02T13:43:15.635709-03:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:32553/api/Produto/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "32553",
+					"path": [
+						"api",
+						"Produto",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:32553/api/investimento",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"CarteiraGuid\":\"bfc51dd2-34a4-4310-98d8-91644df914ec\",\n    \"Id\":1,\n    \"ValorInvestimento\":50000.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:32553/api/investimento",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "32553",
+					"path": [
+						"api",
+						"investimento"
+					]
+				},
+				"description": "3 Acao"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:32553/api/Carteira/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\":\"Luiz Eduardo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:32553/api/Carteira/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "32553",
+					"path": [
+						"api",
+						"Carteira",
+						""
+					]
+				},
+				"description": "2 Acao"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:32553/api/Carteira/?nome=Luiz Eduardo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\":\"Luiz Eduardo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:32553/api/Carteira/?nome=Luiz Eduardo",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "32553",
+					"path": [
+						"api",
+						"Carteira",
+						""
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "Luiz Eduardo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:32553/api/Produto/1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://localhost:32553/api/Produto/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "32553",
+					"path": [
+						"api",
+						"Produto",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:32553/api/investimento?carteiraId=bfc51dd2-34a4-4310-98d8-91644df914ec",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"CarteiraGuid\":\"bfc51dd2-34a4-4310-98d8-91644df914ec\",\n    \"Id\":1,\n    \"ValorInvestimento\":100.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:32553/api/investimento?carteiraId=bfc51dd2-34a4-4310-98d8-91644df914ec",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "32553",
+					"path": [
+						"api",
+						"investimento"
+					],
+					"query": [
+						{
+							"key": "carteiraId",
+							"value": "bfc51dd2-34a4-4310-98d8-91644df914ec"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:32553/api/ResgatarInvestimento/?investimentoId=88bd36fe-ef6d-4a82-94b8-3a4cf4b8097b",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"DataResgate\": \"2028-10-03T12:52:08.422709\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:32553/api/ResgatarInvestimento/?investimentoId=88bd36fe-ef6d-4a82-94b8-3a4cf4b8097b",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "32553",
+					"path": [
+						"api",
+						"ResgatarInvestimento",
+						""
+					],
+					"query": [
+						{
+							"key": "investimentoId",
+							"value": "88bd36fe-ef6d-4a82-94b8-3a4cf4b8097b"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
