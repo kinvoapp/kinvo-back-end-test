@@ -23,5 +23,7 @@ namespace Aliquota.Data.Services
 
         Task<List<Produto>> GetProdutosAsync();
         Task<List<Investimento>> GetInvestimentosAsync(Guid CarteiraId);
+
+        Task<Object> RealizarSaqueInvestimento(Guid InvestimentoId,DateTime dataSaque);
     }
 }

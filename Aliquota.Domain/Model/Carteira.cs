@@ -38,27 +38,6 @@ namespace Aliquota.Domain.Model
             return true;
         }
 
-        public Object SacarValor(decimal valorSacar)
-        {
-            if(valorSacar <= 0)
-            {
-                throw new ArgumentException("Parâmetro para sacar inválido!");
-            }else if((Valor - valorSacar) < 0)
-            {
-                throw new ArgumentException("Valor sacado maior que o disponível!");
-            }
-            else
-            {
-                AtualizarRendimento();
-                Valor -= valorSacar;
-
-                return new {
-                    IR = 0,
-                    Valor
-                };
-            }
-
-        }
 
         private void AtualizarRendimento()
         {
