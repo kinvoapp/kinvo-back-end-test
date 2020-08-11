@@ -1,14 +1,13 @@
 ﻿@model Aliquota.Domain.Models.ResultadoFinanceiro
 
 @{
-    ViewData["Title"] = "ResultadoFinanceiro";
+    ViewData["Title"] = "Dados da Aplicação Financeira";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>ResultadoFinanceiro</h1>
+<h1>Dados da Aplicação Financeira</h1>
 
 <div>
-    <h4>ResultadoFinanceiro</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -36,28 +35,22 @@
             @Html.DisplayFor(model => model.ValorAplicado)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TotalRendimento)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TotalRendimento)
-        </dd>
-        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ValorRendimento)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ValorRendimento)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ValorJuros)
+            @Html.DisplayNameFor(model => model.ImpostoDevido)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ValorJuros)
+            @Html.DisplayFor(model => model.ImpostoDevido)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LucroTotal)
+            @Html.DisplayNameFor(model => model.LucroReal)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LucroTotal)
+            @Html.DisplayFor(model => model.LucroReal)
         </dd>
     </dl>
 </div>
