@@ -11,22 +11,19 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="CadastroInvestidor">
+        <form asp-action="Cadastro">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
                 <input asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
-            @foreach (var item in ViewBag.Aplicacao)
-            {
-                <div class="form-group">
-                <label class="control-label">Nome da Aplicacao</label>
-                <select class="form-control">
-                    <option>@item.NomeAplicacao</option>
-                </select>
-                </div>
-            } 
+            <div class="form-group">
+            <label asp-for="TipoAplicacao" class="control-label">Nome da Aplicacao</label>
+            <select asp-for="TipoAplicacao" class="form-control">
+                <option>Tesouro Direto</option>
+            </select>
+            </div>
             <div class="form-group">
                 <label asp-for="ValorAplicacao" class="control-label"></label>
                 <input asp-for="ValorAplicacao" class="form-control" />

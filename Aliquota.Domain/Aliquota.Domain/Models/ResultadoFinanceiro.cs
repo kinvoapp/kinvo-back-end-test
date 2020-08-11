@@ -20,10 +20,10 @@ namespace Aliquota.Domain.Models
         [Display(Name = "Valor da Aplicação")]
         public string ValorAplicado { get; set; }
 
-        [Display(Name = "Valor do Rendimento")]
+        [Display(Name = "Valor do Lucro")]
         public string ValorRendimento { get; set; }
 
-        [Display(Name = "Imposto Devido")]
+        [Display(Name = "Imposto Devido Sobre o Lucro")]
         public string ImpostoDevido { get; set; }
 
         [Display(Name = "Valor a Receber")]

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Aliquota.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Aliquota.Domain.Models;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.Extensions.WebEncoders.Testing;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Aliquota.Domain.Controllers
 {
@@ -29,24 +24,15 @@ namespace Aliquota.Domain.Controllers
 
         public IActionResult Cadastro()
         {
-            List<TipoAplicacao> tipoAplicacao = new List<TipoAplicacao>();
-            tipoAplicacao.Add(new TipoAplicacao()
-            {
-                ID = 1,
-                NomeAplicacao = "Tesouro Direto"
-            });
-
-            ViewBag.Aplicacao = tipoAplicacao;
-
             return View();
         }
 
         [HttpPost]
-        public IActionResult CadastroInvestidor(CadastroInvestidor cadastro)
+        public IActionResult Cadastro(CadastroInvestidor cadastro)
         {
             if (!ModelState.IsValid)
             {
-                RedirectToAction("Error");
+                return View();
             }
 
             ProcessaDados processaCalculo = new ProcessaDados();
@@ -78,7 +64,7 @@ namespace Aliquota.Domain.Controllers
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Error(bool valid)
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
