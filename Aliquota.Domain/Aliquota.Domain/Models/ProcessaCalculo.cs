@@ -11,23 +11,8 @@ namespace Aliquota.Domain.Models
         {
             TimeSpan date = Convert.ToDateTime(dataResgate) - Convert.ToDateTime(dataAplicacao);
             int totalDias = date.Days;
-            int totalMeses = (date.Days / 30);
-            double jurosMensal = (1.5D/100);
-            double lucroTotal = 0;
 
-            for (int i = 0; i < totalMeses; i++)
-            {
-                if (i == 0)
-                {
-                    lucroTotal = (valorAplicado * jurosMensal) + valorAplicado;
-
-                }
-                else
-                {
-                    lucroTotal = (lucroTotal * jurosMensal) + lucroTotal;
-                }                
-            }
-
+            double lucroTotal = CalculaValorRendimento(dataAplicacao, dataResgate, valorAplicado);
             double impostoCalculado;
 
             if (totalDias > 730)
@@ -49,12 +34,9 @@ namespace Aliquota.Domain.Models
         public double CalculaValorRendimento(DateTime dataAplicacao, DateTime dataResgate, double valorAplicado)
         {
             TimeSpan date = Convert.ToDateTime(dataResgate) - Convert.ToDateTime(dataAplicacao);
-            int totalDias = date.Days;
             int totalMeses = (date.Days / 30);
             double jurosMensal = (1.5D / 100);
             double lucroTotal = 0;
-            double valorRendimento = 0;
-
             for (int i = 0; i < totalMeses; i++)
             {
                 if (i == 0)
@@ -68,8 +50,7 @@ namespace Aliquota.Domain.Models
                 }
             }
 
-            valorRendimento = lucroTotal;
-
+            double valorRendimento = lucroTotal;
             return valorRendimento;
         }
     }
