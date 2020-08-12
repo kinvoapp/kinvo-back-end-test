@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Aliquota.Domain.Models.Negocio;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Aliquota.Domain.Models
 {
-    public class CadastroInvestidor : ValidationAttribute
+    public class EditarDados : ValidationAttribute
     {
         public int ID { get; set; }
 
@@ -22,8 +23,7 @@ namespace Aliquota.Domain.Models
         [Display(Name = "Data da Aplicação")]
         public DateTime DataAplicacao { get; set; }
 
-
-        [ValidaDataCadastro]
+        [ValidaDataEditar]
         [DataType(DataType.Date, ErrorMessage = "Data inválida")]
         [Display(Name = "Data do Resgate")]
         public DateTime DataResgate { get; set; }

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Aliquota.Domain.Models
 {
@@ -15,15 +12,15 @@ namespace Aliquota.Domain.Models
 
             if (TotalDias > 730)
             {
-                IRSobreRendimento = (valorRendimento * 15D)/100;
+                IRSobreRendimento = (valorRendimento * 15D/100);
             }
             else if (TotalDias >= 365 && TotalDias <= 730)
             {
-                IRSobreRendimento = (valorRendimento * 18.5D)/100;
+                IRSobreRendimento = (valorRendimento * 18.5D/100);
             }
             else
             {
-                IRSobreRendimento = (valorRendimento * 22.5D)/100;
+                IRSobreRendimento = (valorRendimento * 22.5D/100);
             }
 
             return IRSobreRendimento;
@@ -32,7 +29,7 @@ namespace Aliquota.Domain.Models
         public double CalculaValorRendimento(DateTime dataAplicacao, DateTime dataResgate, double valorAplicado)
         {
             int TotalMeses = RetornaQtdMeses(dataResgate, dataAplicacao);
-            double JurosMensal = (1.5D / 100);
+            double JurosMensal = (1.5D / 100);//Juros de 1,5% ao mês (Não foi definido na descrição do teste)
             double LucroTotal = 0;
 
             for (int i = 0; i < TotalMeses; i++)
@@ -65,6 +62,28 @@ namespace Aliquota.Domain.Models
             int TotalMeses = (Date.Days / 30);
 
             return TotalMeses;
+        }
+
+        public string TaxaIRAplicada(DateTime dataAplicacao, DateTime dataResgate)
+        {
+            int TotalDias = RetornaQtdDias(dataResgate, dataAplicacao);
+
+            string TaxaIRAplicada = string.Empty;
+
+            if (TotalDias > 730)
+            {
+                TaxaIRAplicada = "15%";
+            }
+            else if (TotalDias >= 365 && TotalDias <= 730)
+            {
+                TaxaIRAplicada = "18,5%";
+            }
+            else
+            {
+                TaxaIRAplicada = "22,5%";
+            }
+
+            return TaxaIRAplicada;
         }
     }
 }

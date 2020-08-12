@@ -1,4 +1,5 @@
 ﻿using Aliquota.Domain.Models;
+using Aliquota.Domain.Models.BD;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -11,13 +12,13 @@ namespace Aliquota.Domain.Context
     {
         public DataContext(DbContextOptions<DataContext> dbContext) : base(dbContext) { }
 
-        public DbSet<CadastroInvestidor> CadastroInvestidors { get; set; }
-        public DbSet<TipoAplicacao> TipoAplicacaos { get; set; }
+        public DbSet<BDCadastroInvestidor> BDCadastroInvestidors { get; set; }
+        public DbSet<BDResultadoFinanceiro> BDResultadoFinanceiros { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<CadastroInvestidor>();
-            modelBuilder.Entity<TipoAplicacao>();
+            modelBuilder.Entity<BDCadastroInvestidor>();
+            modelBuilder.Entity<BDResultadoFinanceiro>();
         }
     }
 }

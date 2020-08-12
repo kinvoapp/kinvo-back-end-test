@@ -124,6 +124,7 @@ C:\Users\C&S\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\ob
 C:\Users\C&S\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.TagHelpers.output.cache
 C:\Users\C&S\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.RazorCoreGenerate.cache
 C:\Users\C&S\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp3.1\Razor\Views\Home\Cadastro.cshtml.g.cs
+C:\Users\C&S\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp3.1\Razor\Views\Home\Editar.cshtml.g.cs
 C:\Users\C&S\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\C&S\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp3.1\Razor\Views\Home\ResultadoFinanceiro.cshtml.g.cs
 C:\Users\C&S\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs

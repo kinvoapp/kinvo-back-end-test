@@ -5,82 +5,58 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Dados da Aplicação Financeira</h1>
+<h1>Demonstrativo da Aplicação Financeira</h1>
 
 <div>
     <hr />
-    <div class="row">
-        <div class="col-md-4 titulo">
-            @Html.DisplayNameFor(model => model.Nome)
-        </div>
-        <div class="col-md-4">
-            @Html.DisplayFor(model => model.Nome)
-        </div>
-    </div>
     
-    <div class="row">
-        <div class="col-md-4 titulo">
-            @Html.DisplayNameFor(model => model.DataAplicacao)
-        </div>
-        <div class="col-md-4">
-            @Html.DisplayFor(model => model.DataAplicacao)
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-md-4 titulo">
-            @Html.DisplayNameFor(model => model.DataResgate)
-        </div>
-        <div class="col-md-4">
-            @Html.DisplayFor(model => model.DataResgate)
-        </div>
-    </div>
+    <div class="col-md-4">
+        <form asp-action="Editar" asp-controller="Home">      
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" readOnly />
+            </div>
+        
+            <div class="form-group">
+                <label asp-for="DataAplicacao" class="control-label"></label>
+                <input asp-for="DataAplicacao" class="form-control" readOnly />
+            </div>
+        
+            <div class="form-group">
+                <label asp-for="DataResgate" class="control-label"></label>
+                <input asp-for="DataResgate" class="form-control" readOnly />
+            </div>
+        
+            <div class="form-group">
+                <label asp-for="ValorAplicado" class="control-label"></label>
+                <input asp-for="ValorAplicado" class="form-control" readOnly />
+            </div>
+        
+            <div class="form-group">
+                <label asp-for="ValorRendimento" class="control-label"></label>
+                <input asp-for="ValorRendimento" class="form-control" readOnly />
+            </div>
+        
+            <div class="form-group">
+                <label asp-for="TaxaIRAplicada" class="control-label"></label>
+                <input asp-for="TaxaIRAplicada" class="form-control" readOnly />
+            </div>
 
-    <div class="row">
-        <div class="col-md-4 titulo">
-            @Html.DisplayNameFor(model => model.ValorAplicado)
-        </div>
-        <div class="col-md-4">
-            @Html.DisplayFor(model => model.ValorAplicado)
-        </div>
-    </div>
+            <div class="form-group">
+                <label asp-for="ImpostoDevido" class="control-label"></label>
+                <input asp-for="ImpostoDevido" class="form-control" readOnly />
+            </div>
 
-    <div class="row">
-        <div class="col-md-4 titulo">
-            @Html.DisplayNameFor(model => model.ValorRendimento)
-        </div>
-        <div class="col-md-4">
-            @Html.DisplayFor(model => model.ValorRendimento)
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4 titulo">
-            @Html.DisplayNameFor(model => model.ImpostoDevido)
-        </div>
-        <div class="col-md-4">
-            @Html.DisplayFor(model => model.ImpostoDevido)
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4 titulo">
-            @Html.DisplayNameFor(model => model.LucroReal)
-        </div>
-        <div class="col-md-4">
-            @Html.DisplayFor(model => model.LucroReal)
-        </div>
+            <div class="form-group">
+                <label asp-for="LucroReal" class="control-label"></label>
+                <input asp-for="LucroReal" class="form-control" readOnly />
+            </div>
+            
+            <div style="margin-top:25px;">
+                <a asp-action="Cadastro" class="btn btn-success" value="Volar">Voltar</a>
+                <input type="submit" value="Editar" class="btn btn-primary" />
+            </div>
+        </form>
     </div>
 </div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Cadastro">Back to List</a>
-</div>
-
-
-<style>
-    .titulo{
-        font-weight:bold;
-    }
-</style>
 

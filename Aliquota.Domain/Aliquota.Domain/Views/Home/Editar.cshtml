@@ -1,7 +1,7 @@
 ﻿@model Aliquota.Domain.Models.CadastroInvestidor
 
 @{
-    ViewData["Title"] = "Consulta Aplicação";
+    ViewData["Title"] = "Editar Aplicação";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -39,8 +39,8 @@
                 <span asp-validation-for="DataResgate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <a asp-action="Index" class="btn btn-success" value="Volar">Voltar</a>
-                <input type="submit" value="Simular" class="btn btn-primary" />
+                <a asp-action="ResultadoFinanceiro" class="btn btn-success" value="Volar">Voltar</a>
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
