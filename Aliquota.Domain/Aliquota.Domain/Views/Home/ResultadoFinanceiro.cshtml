@@ -11,12 +11,7 @@
     <hr />
     
     <div class="col-md-4">
-        <form asp-action="Editar" asp-controller="Home">      
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" readOnly />
-            </div>
-        
+        <form asp-action="Editar" asp-controller="Home">          
             <div class="form-group">
                 <label asp-for="DataAplicacao" class="control-label"></label>
                 <input asp-for="DataAplicacao" class="form-control" readOnly />
@@ -54,7 +49,7 @@
             
             <div style="margin-top:25px;">
                 <a asp-action="Cadastro" class="btn btn-success" value="Volar">Voltar</a>
-                <input type="submit" value="Editar" class="btn btn-primary" />
+                <input type="submit" value="Alterar" class="btn btn-primary" />
             </div>
         </form>
     </div>

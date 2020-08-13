@@ -41,19 +41,18 @@ namespace Aliquota.Domain.Controllers
             double ImpostoDevidoSobreLucro = processaDados.CalculaImpostoDevido(cadastro.DataAplicacao, cadastro.DataResgate, ValorRendimento);
             string TaxaIRAplicada = processaDados.TaxaIRAplicada(cadastro.DataAplicacao, cadastro.DataResgate);
 
-            string Nome = cadastro.Nome;
+            
             DateTime DtInicioAplicacao = cadastro.DataAplicacao;
             DateTime DtResgateAplicacao = cadastro.DataResgate;
             double ValorAplicado = cadastro.ValorAplicacao;
 
-            return RedirectToAction("ResultadoFinanceiro", new { cadastro, DtInicioAplicacao, DtResgateAplicacao, Nome, ValorAplicado, ValorRendimento, ImpostoDevidoSobreLucro, TaxaIRAplicada });
+            return RedirectToAction("ResultadoFinanceiro", new { cadastro, DtInicioAplicacao, DtResgateAplicacao, ValorAplicado, ValorRendimento, ImpostoDevidoSobreLucro, TaxaIRAplicada });
         }
 
         public IActionResult ResultadoFinanceiro(CadastroInvestidor cadastro, DateTime dtInicioAplicacao, DateTime dtResgateAplicacao, string nome, double valorAplicado, double valorRendimento, double impostoDevidoSobreLucro, string taxaIRAplicada)
         {
             ResultadoFinanceiro resultadoFinanceiro = new ResultadoFinanceiro()
             {
-                Nome = nome,
                 DataAplicacao = dtInicioAplicacao,
                 DataResgate = dtResgateAplicacao,
                 ValorAplicado = valorAplicado.ToString(),
@@ -67,24 +66,24 @@ namespace Aliquota.Domain.Controllers
         }
 
         [HttpPost]
-        public IActionResult Editar(ResultadoFinanceiro resultadoFinanceiro)
+        public IActionResult Editar()
         {
-            CadastroInvestidor cadastro = new CadastroInvestidor()
-            {
-                DataAplicacao = resultadoFinanceiro.DataAplicacao,
-                DataResgate = resultadoFinanceiro.DataResgate,
-                Nome = resultadoFinanceiro.Nome,
-                TipoAplicacao = "Tesouro Direto",
-                ValorAplicacao = Convert.ToDouble(resultadoFinanceiro.ValorAplicado)
-            };
-
-            return View(cadastro);
+            return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error(bool valid)
+        public ActionResult Processar(CadastroInvestidor cadastro)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            ProcessaDados processaDados = new ProcessaDados();
+            double ValorRendimento = processaDados.CalculaValorRendimento(cadastro.DataAplicacao, cadastro.DataResgate, cadastro.ValorAplicacao);
+            double ImpostoDevidoSobreLucro = processaDados.CalculaImpostoDevido(cadastro.DataAplicacao, cadastro.DataResgate, ValorRendimento);
+            string TaxaIRAplicada = processaDados.TaxaIRAplicada(cadastro.DataAplicacao, cadastro.DataResgate);
+
+            //string Nome = cadastro.Nome;
+            DateTime DtInicioAplicacao = cadastro.DataAplicacao;
+            DateTime DtResgateAplicacao = cadastro.DataResgate;
+            double ValorAplicado = cadastro.ValorAplicacao;
+
+            return RedirectToAction("ResultadoFinanceiro", new { cadastro, DtInicioAplicacao, DtResgateAplicacao, ValorAplicado, ValorRendimento, ImpostoDevidoSobreLucro, TaxaIRAplicada });
         }
     }
 }
