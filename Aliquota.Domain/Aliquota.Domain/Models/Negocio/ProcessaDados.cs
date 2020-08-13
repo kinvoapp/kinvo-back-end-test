@@ -85,5 +85,35 @@ namespace Aliquota.Domain.Models
 
             return TaxaIRAplicada;
         }
+
+        public static string TaxaIRAplicadaTest(DateTime dataAplicacao, DateTime dataResgate)
+        {
+            int TotalDias = RetornaQtdDiasTest(dataResgate, dataAplicacao);
+
+            string TaxaIRAplicada = string.Empty;
+
+            if (TotalDias > 730)
+            {
+                TaxaIRAplicada = "15%";
+            }
+            else if (TotalDias >= 365 && TotalDias <= 730)
+            {
+                TaxaIRAplicada = "18,5%";
+            }
+            else
+            {
+                TaxaIRAplicada = "22,5%";
+            }
+
+            return TaxaIRAplicada;
+        }
+
+        public static int RetornaQtdDiasTest(DateTime dataFinal, DateTime dataInicial)
+        {
+            TimeSpan Date = Convert.ToDateTime(dataFinal) - Convert.ToDateTime(dataInicial);
+            int TotalDias = Date.Days;
+
+            return TotalDias;
+        }
     }
 }

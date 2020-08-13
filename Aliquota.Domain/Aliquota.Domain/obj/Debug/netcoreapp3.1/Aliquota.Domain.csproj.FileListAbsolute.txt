@@ -141,3 +141,4 @@ C:\Users\C&S\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\ob
 C:\Users\C&S\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.dll
 C:\Users\C&S\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.pdb
 C:\Users\C&S\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.genruntimeconfig.cache
+C:\Users\C&S\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.csprojAssemblyReference.cache
