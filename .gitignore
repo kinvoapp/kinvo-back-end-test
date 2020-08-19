@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Aliquota/v16
+*.user
+
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+
+.vs
+/Aliquota.MVC/appsettings.Development.json
+/Aliquota.MVC/Properties/launchSettings.json
