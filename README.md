@@ -14,6 +14,7 @@ Fiz o melhor que pude.
 
 obrigado
 
+PS. A aplicação com SqLite não funcionou. A Aplicação no Sql Server funciona (tem alguns problemas, não pude resolver pois o meu tempo acaba as 12.30)
 
 
 
