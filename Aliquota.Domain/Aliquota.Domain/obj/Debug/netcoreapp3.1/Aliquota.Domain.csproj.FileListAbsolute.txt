@@ -1,0 +1,12 @@
+E:\Kinvo\Aliquota.Domain\Aliquota.Domain\bin\Debug\netcoreapp3.1\Aliquota.Domain.deps.json
+E:\Kinvo\Aliquota.Domain\Aliquota.Domain\bin\Debug\netcoreapp3.1\Aliquota.Domain.dll
+E:\Kinvo\Aliquota.Domain\Aliquota.Domain\bin\Debug\netcoreapp3.1\Aliquota.Domain.pdb
+E:\Kinvo\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.csprojAssemblyReference.cache
+E:\Kinvo\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.AssemblyInfoInputs.cache
+E:\Kinvo\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.AssemblyInfo.cs
+E:\Kinvo\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.dll
+E:\Kinvo\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.pdb
+E:\Kinvo\Aliquota.Domain\Aliquota.Domain\bin\Debug\netcoreapp3.1\Aliquota.Domain.runtimeconfig.json
+E:\Kinvo\Aliquota.Domain\Aliquota.Domain\bin\Debug\netcoreapp3.1\Aliquota.Domain.runtimeconfig.dev.json
+E:\Kinvo\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.genruntimeconfig.cache
+E:\Kinvo\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.csproj.CoreCompileInputs.cache

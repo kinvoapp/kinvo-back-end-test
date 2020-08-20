@@ -1,5 +1,25 @@
 > ![Logo Kinvo](https://github.com/kinvoapp/kinvo-mobile-test/blob/master/logo.svg)
 
+
+# Bom Dia
+
+Fiz a aplicação, não fiz o teste pois não tenho experiência com testes. Também não tenho muita experiência com C# e 
+até segunda 17/08 não conhecia nada do Entity Core. 
+
+Já trabalho há 38 anos. Tenho experiência com Java e SQL Server, alguma com C# e GIT.
+
+Atualmente estou aposentado e foi otimo ter esse desafio. 
+
+Fiz o melhor que pude.
+
+obrigado
+
+
+
+
+
+
+
 # Teste para candidatos à vaga de Desenvolvedor C#  
 
 
