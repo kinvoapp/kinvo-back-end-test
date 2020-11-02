@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Income.Tax.Willian.Santos.Kinvo.Domain.DTOs.ApplicationITDTO>
+
+@{
+    ViewData["Title"] = "QueryTable";
+}
+
+<h1>Tabela de Consulta</h1>
+
+<p>
+    <a asp-action="Create">Novo resgate</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Value)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContributionTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateRetreat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValueRetreat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContributionTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateRetreat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValueRetreat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

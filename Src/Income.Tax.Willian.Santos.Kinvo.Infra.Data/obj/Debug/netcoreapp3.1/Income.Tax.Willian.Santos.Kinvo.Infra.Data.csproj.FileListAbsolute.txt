@@ -1,0 +1,14 @@
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Infra.Data\bin\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Infra.Data.deps.json
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Infra.Data\bin\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Infra.Data.dll
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Infra.Data\bin\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Infra.Data.pdb
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Infra.Data\bin\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Domain.dll
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Infra.Data\bin\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Shared.dll
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Infra.Data\bin\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Domain.pdb
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Infra.Data\bin\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Shared.pdb
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Infra.Data\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Infra.Data.csprojAssemblyReference.cache
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Infra.Data\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Infra.Data.AssemblyInfoInputs.cache
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Infra.Data\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Infra.Data.AssemblyInfo.cs
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Infra.Data\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Infra.Data.csproj.CopyComplete
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Infra.Data\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Infra.Data.dll
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Infra.Data\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Infra.Data.pdb
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Infra.Data\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Infra.Data.csproj.CoreCompileInputs.cache

@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Application", "1.Application", "{148805C5-A02C-4592-A920-12C928BCAEA8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Domain", "3.Domain", "{69199CC2-AA92-4511-B5FA-8FBA6A928B1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Infra", "4.Infra", "{03B6C54C-8941-47E7-872F-AAE51C7510F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Shared", "5.Shared", "{CDEBFCD7-49A5-4238-9C7A-489796A536AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1.Data", "4.1.Data", "{A9ABF711-38AE-4CE1-BB55-9845E514C98D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2.IoC", "4.2.IoC", "{4C491CEA-9EAD-4FD9-8EE0-25AADBCFD832}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.Test", "6.Test", "{464F83E9-B65D-4678-9438-AE6FCFD0355A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Income.Tax.Willian.Santos.Kinvo.Infra.Data", "Src\Income.Tax.Willian.Santos.Kinvo.Infra.Data\Income.Tax.Willian.Santos.Kinvo.Infra.Data.csproj", "{61EF9701-C244-4BA8-A2D9-19AFC2D61CD9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Income.Tax.Willian.Santos.Kinvo.Infra.IoC", "Src\Income.Tax.Willian.Santos.Kinvo.Infra.IoC\Income.Tax.Willian.Santos.Kinvo.Infra.IoC.csproj", "{EDD191B6-15D8-4407-B8A9-C97CE358E418}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Income.Tax.Willian.Santos.Kinvo.Shared", "Src\Income.Tax.Willian.Santos.Kinvo.Shared\Income.Tax.Willian.Santos.Kinvo.Shared.csproj", "{86AC5DAC-3856-4C86-B344-DE45F746241D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Income.Tax.Willian.Santos.Kinvo.Domain", "Src\Income.Tax.Willian.Santos.Kinvo.Domain\Income.Tax.Willian.Santos.Kinvo.Domain.csproj", "{71F32D73-55A0-4541-91D8-DB9AD9BE6016}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Income.Tax.Willian.Santos.Kinvo.Application", "Src\Income.Tax.Willian.Santos.Kinvo.Application\Income.Tax.Willian.Santos.Kinvo.Application.csproj", "{CC7BB2BB-F46A-4A68-B831-9B24871DB3A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Income.Tax.Willian.Santos.Kinvo.Test", "Src\Income.Tax.Willian.Santos.Kinvo.Test\Income.Tax.Willian.Santos.Kinvo.Test.csproj", "{C1A10614-BF67-4238-8CA7-03ACB90DFA23}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61EF9701-C244-4BA8-A2D9-19AFC2D61CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61EF9701-C244-4BA8-A2D9-19AFC2D61CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61EF9701-C244-4BA8-A2D9-19AFC2D61CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61EF9701-C244-4BA8-A2D9-19AFC2D61CD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDD191B6-15D8-4407-B8A9-C97CE358E418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDD191B6-15D8-4407-B8A9-C97CE358E418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDD191B6-15D8-4407-B8A9-C97CE358E418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDD191B6-15D8-4407-B8A9-C97CE358E418}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86AC5DAC-3856-4C86-B344-DE45F746241D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86AC5DAC-3856-4C86-B344-DE45F746241D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86AC5DAC-3856-4C86-B344-DE45F746241D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86AC5DAC-3856-4C86-B344-DE45F746241D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71F32D73-55A0-4541-91D8-DB9AD9BE6016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71F32D73-55A0-4541-91D8-DB9AD9BE6016}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71F32D73-55A0-4541-91D8-DB9AD9BE6016}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71F32D73-55A0-4541-91D8-DB9AD9BE6016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC7BB2BB-F46A-4A68-B831-9B24871DB3A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC7BB2BB-F46A-4A68-B831-9B24871DB3A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC7BB2BB-F46A-4A68-B831-9B24871DB3A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC7BB2BB-F46A-4A68-B831-9B24871DB3A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1A10614-BF67-4238-8CA7-03ACB90DFA23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A10614-BF67-4238-8CA7-03ACB90DFA23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A10614-BF67-4238-8CA7-03ACB90DFA23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1A10614-BF67-4238-8CA7-03ACB90DFA23}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A9ABF711-38AE-4CE1-BB55-9845E514C98D} = {03B6C54C-8941-47E7-872F-AAE51C7510F8}
+		{4C491CEA-9EAD-4FD9-8EE0-25AADBCFD832} = {03B6C54C-8941-47E7-872F-AAE51C7510F8}
+		{61EF9701-C244-4BA8-A2D9-19AFC2D61CD9} = {A9ABF711-38AE-4CE1-BB55-9845E514C98D}
+		{EDD191B6-15D8-4407-B8A9-C97CE358E418} = {4C491CEA-9EAD-4FD9-8EE0-25AADBCFD832}
+		{86AC5DAC-3856-4C86-B344-DE45F746241D} = {CDEBFCD7-49A5-4238-9C7A-489796A536AF}
+		{71F32D73-55A0-4541-91D8-DB9AD9BE6016} = {69199CC2-AA92-4511-B5FA-8FBA6A928B1E}
+		{CC7BB2BB-F46A-4A68-B831-9B24871DB3A5} = {148805C5-A02C-4592-A920-12C928BCAEA8}
+		{C1A10614-BF67-4238-8CA7-03ACB90DFA23} = {464F83E9-B65D-4678-9438-AE6FCFD0355A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A43881A-5039-4FAB-A385-F62C1860439C}
+	EndGlobalSection
+EndGlobal

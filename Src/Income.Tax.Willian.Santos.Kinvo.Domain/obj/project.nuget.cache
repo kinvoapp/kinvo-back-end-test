@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "5MssziGBuTNtYy8I66zbNmwa1zCI2SEWKzaU6yCufDoKd1hX1ihCuBEyCurC2J5v+s4LVhXdidvO0s+6b1moYg==",
+  "success": true,
+  "projectFilePath": "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Domain\\Income.Tax.Willian.Santos.Kinvo.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\wssantos\\.nuget\\packages\\flunt\\1.0.5\\flunt.1.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}

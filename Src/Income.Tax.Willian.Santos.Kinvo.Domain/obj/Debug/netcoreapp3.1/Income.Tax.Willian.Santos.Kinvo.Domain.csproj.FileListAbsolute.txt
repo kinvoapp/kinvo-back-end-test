@@ -1,0 +1,12 @@
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Domain\bin\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Domain.deps.json
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Domain\bin\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Domain.dll
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Domain\bin\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Domain.pdb
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Domain\bin\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Shared.dll
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Domain\bin\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Shared.pdb
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Domain\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Domain.csprojAssemblyReference.cache
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Domain\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Domain.AssemblyInfoInputs.cache
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Domain\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Domain.AssemblyInfo.cs
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Domain\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Domain.csproj.CoreCompileInputs.cache
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Domain\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Domain.csproj.CopyComplete
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Domain\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Domain.dll
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Domain\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Domain.pdb

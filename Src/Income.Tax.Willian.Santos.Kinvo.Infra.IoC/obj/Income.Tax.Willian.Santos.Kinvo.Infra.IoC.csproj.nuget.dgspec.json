@@ -1,0 +1,267 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Infra.IoC\\Income.Tax.Willian.Santos.Kinvo.Infra.IoC.csproj": {}
+  },
+  "projects": {
+    "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Domain\\Income.Tax.Willian.Santos.Kinvo.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Domain\\Income.Tax.Willian.Santos.Kinvo.Domain.csproj",
+        "projectName": "Income.Tax.Willian.Santos.Kinvo.Domain",
+        "projectPath": "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Domain\\Income.Tax.Willian.Santos.Kinvo.Domain.csproj",
+        "packagesPath": "C:\\Users\\wssantos\\.nuget\\packages\\",
+        "outputPath": "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\wssantos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Shared\\Income.Tax.Willian.Santos.Kinvo.Shared.csproj": {
+                "projectPath": "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Shared\\Income.Tax.Willian.Santos.Kinvo.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Flunt": {
+              "target": "Package",
+              "version": "[1.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Infra.Data\\Income.Tax.Willian.Santos.Kinvo.Infra.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Infra.Data\\Income.Tax.Willian.Santos.Kinvo.Infra.Data.csproj",
+        "projectName": "Income.Tax.Willian.Santos.Kinvo.Infra.Data",
+        "projectPath": "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Infra.Data\\Income.Tax.Willian.Santos.Kinvo.Infra.Data.csproj",
+        "packagesPath": "C:\\Users\\wssantos\\.nuget\\packages\\",
+        "outputPath": "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Infra.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\wssantos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Domain\\Income.Tax.Willian.Santos.Kinvo.Domain.csproj": {
+                "projectPath": "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Domain\\Income.Tax.Willian.Santos.Kinvo.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Infra.IoC\\Income.Tax.Willian.Santos.Kinvo.Infra.IoC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Infra.IoC\\Income.Tax.Willian.Santos.Kinvo.Infra.IoC.csproj",
+        "projectName": "Income.Tax.Willian.Santos.Kinvo.Infra.IoC",
+        "projectPath": "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Infra.IoC\\Income.Tax.Willian.Santos.Kinvo.Infra.IoC.csproj",
+        "packagesPath": "C:\\Users\\wssantos\\.nuget\\packages\\",
+        "outputPath": "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Infra.IoC\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\wssantos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Domain\\Income.Tax.Willian.Santos.Kinvo.Domain.csproj": {
+                "projectPath": "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Domain\\Income.Tax.Willian.Santos.Kinvo.Domain.csproj"
+              },
+              "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Infra.Data\\Income.Tax.Willian.Santos.Kinvo.Infra.Data.csproj": {
+                "projectPath": "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Infra.Data\\Income.Tax.Willian.Santos.Kinvo.Infra.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Shared\\Income.Tax.Willian.Santos.Kinvo.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Shared\\Income.Tax.Willian.Santos.Kinvo.Shared.csproj",
+        "projectName": "Income.Tax.Willian.Santos.Kinvo.Shared",
+        "projectPath": "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Shared\\Income.Tax.Willian.Santos.Kinvo.Shared.csproj",
+        "packagesPath": "C:\\Users\\wssantos\\.nuget\\packages\\",
+        "outputPath": "C:\\Clientes\\Estudo\\Projetos\\C\\Prototipo\\Income.Tax.Willian.Santos.Kinvo\\Src\\Income.Tax.Willian.Santos.Kinvo.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\wssantos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Flunt": {
+              "target": "Package",
+              "version": "[1.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

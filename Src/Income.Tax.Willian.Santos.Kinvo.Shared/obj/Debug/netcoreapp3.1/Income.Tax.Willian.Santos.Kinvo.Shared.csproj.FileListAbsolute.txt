@@ -1,0 +1,9 @@
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Shared\bin\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Shared.deps.json
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Shared\bin\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Shared.dll
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Shared\bin\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Shared.pdb
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Shared\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Shared.AssemblyInfoInputs.cache
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Shared\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Shared.AssemblyInfo.cs
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Shared\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Shared.csproj.CoreCompileInputs.cache
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Shared\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Shared.dll
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Shared\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Shared.pdb
+C:\Clientes\Estudo\Projetos\C\Prototipo\Income.Tax.Willian.Santos.Kinvo\Src\Income.Tax.Willian.Santos.Kinvo.Shared\obj\Debug\netcoreapp3.1\Income.Tax.Willian.Santos.Kinvo.Shared.csprojAssemblyReference.cache
