@@ -3,42 +3,55 @@
 # Teste para candidatos à vaga de Desenvolvedor C#  
 
 
-## Problema:
+## Solucao:
 
-* Um determinado produto financeiro recolhe imposto de renda apenas quando o cliente faz o seu resgate. O cálculo do IR segue a seguinte lógica abaixo:
-* Até 1 ano de aplicação: 22,5% sobre o lucro
-* De 1 a 2 anos de aplicação: 18,5% sobre o lucro
-* Acima de 2 anos de aplicação: 15% sobre o lucro
-* A aplicação não pode ser igual ou menor que zero
-* A data de resgate não pode ser menor que a data de aplicação
+### Tecnologia:
 
-Após terminar seu teste submeta um pull request e aguarde seu feedback.
+* [.Net Core](https://docs.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1#recommended-learning-path)
+* [SQL Server (Docker)](https://hub.docker.com/_/microsoft-mssql-server)
+* [XUnit](https://xunit.net/)
 
-### Instruções:
+### Historias de Usuario:
 
-1. Criar um projeto de classes chamado “Aliquota.Domain”;
-2. Criar um projeto de testes chamado “Aliquota.Domain.Test”
-3. Modelar a(s) entidade(s) que resolvem o problema abaixo;
-4. Mapear as entidades no Entity Framework Core;
-5. Criar um projeto de frontend para permitir a persistência de dados (console, webapp, etc.);
-4. Testar a(s) entidade(s) de forma que garantam as regras de negócio;
-5. Utilizar os conceitos de DDD, OO, POCO e SOLID que você julgar necessário;
-6. Use inglês ou português no seu código. Como achar melhor. Isso não será critério de avaliação.
+* Eu, como investidor, quero me cadastrar na plataforma para gerenciar meu patrimônio.
+* Eu, como investidor, preciso inserir os meus produtos financeiros para calcular impostos.
+* Eu, como investidor, preciso visualizar a lista dos meus produtos para simples conferência.
 
+### Domínio
 
-### Pré-requisitos:
+O domínio da solução consiste em duas classes base: **Cliente** e **ProdutoFinanceiro**.  
 
-* Utilizar C# e framework .NET Core;
-* Utilizar xUnit para os testes;
-* O projeto deve compilar;
-* Os testes devem rodar pelo Test Explorer do VS e via console (dotnet test);
+### Arquitetura
+
+Em alinhamento com as especificações do desafio, optou-se por utilizar uma arquitetura *Clean Architecture*. O intuito é quebrar a aplicacao de acordo com suas responsabilidades e papeis (bem semelhante a uma arquitetura em camadas). Um dos principais beneficios desta abordagem está na melhor manutenabilidade do código, ainda  que novas funcionalidades sejam requeridas e o repositório cresça.
+
+De acordo com [Microsoft](https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures):
+
+    *Clean architecture puts the business logic and application model at the center of the application. Instead of having business logic depend on data access or other infrastructure concerns, this dependency is inverted: infrastructure and implementation details depend on the Application Core.*
+
+Segue abaixo diagrama da arquitetura:
 
 
-* **Importante:** Usamos o mesmo teste para todos os níveis de desenvolvedor, **junior**, **pleno** ou **senior**, mas procuramos adequar nossa exigência na avaliação com cada um desses níveis sem, por exemplo, exigir excelência de quem está começando :-)
+Na implementação da solução, o mapemento pêde ser feito da seguinte forma:
+- ApplicationCore -> Domain (Aliquota.Domain)
+- Infrastructure -> Infrastructure (Aliquota.Infrastructure)
+- UserInterface (linha de comando) -> Application (Aliquota.Application)
 
-## Submissão
+#### **Aliquota.Domain**
 
-Para iniciar o teste, faça um fork deste repositório, crie uma branch com o seu nome e depois envie-nos o pull request.
-Se você apenas clonar o repositório não vai conseguir fazer push e depois vai ser mais complicado fazer o pull request.
+Projeto de classes com as entidades de domínio. Também contém projeto para execução de testes de unidade.
 
-**Sucesso!**
+#### **Aliquota.Infrastructure**
+
+Projeto utilizando como ORM o [EFCore](https://docs.microsoft.com/en-us/ef/core/).      
+
+    *Entity Framework (EF) Core is a lightweight, extensible, open source and cross-platform version of the popular Entity Framework data access technology.*
+
+#### **Aliquota.Application**
+
+Aplicação console para interação com o usuário.
+
+## Referencias:
+
+* https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures#clean-architecture 
+* 
