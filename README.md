@@ -49,7 +49,6 @@ Projeto de classes com as entidades de domínio. Também contém projeto para ex
 #### **Aliquota.Infrastructure**
 
 Projeto utilizando como ORM o [EFCore](https://docs.microsoft.com/en-us/ef/core/).      
-
 >Entity Framework (EF) Core is a lightweight, extensible, open source and cross-platform version of the popular Entity Framework data access technology.
 
 #### **Aliquota.Application**
@@ -59,18 +58,25 @@ Aplicação console para interação com o usuário.
 ## Execução do Projeto:
 
 - SQLServer (docker):
-  * docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=yourStrong(!)Password" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest
+>```bash
+>docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=yourStrong(!)Password" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest
+>```
 
 
 - Migrations:
-  * dotnet ef database update --project .\Infrastructure\Aliquota.Infrastructure\ --startup-project .\Infrastructure\Aliquota.Infra.Dummy\ 
+>```bash
+>dotnet ef database update --project .\Infrastructure\Aliquota.Infrastructure\ --startup-project .\Infrastructure\Aliquota.Infra.Dummy\ 
+>```
 
 - Rodar:
-  * dotnet run -p .\Application\Aliquota.WebApi\Aliquota.WebApi.csproj
+>```bash
+>dotnet run -p .\Application\Aliquota.WebApi\Aliquota.WebApi.csproj
+>```
 
 - Testes:
-  * dotnet test .\Domain\Aliquota.Domain.Test\Aliquota.Domain.Test.csproj
-
+>```bash
+>dotnet test .\Domain\Aliquota.Domain.Test\Aliquota.Domain.Test.csproj
+>```
 
 
 ## Referencias:
