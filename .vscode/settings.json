@@ -1,0 +1,8 @@
+{
+    "editor.quickSuggestions": true,
+    "editor.suggestOnTriggerCharacters": true,
+    "[csharp]": {
+        "editor.showUnused": true,
+        "editor.suggestSelection": "recentlyUsed"
+    }
+}
