@@ -5,11 +5,11 @@ namespace Aliquota.Domain.Models
     public class ProdutoFinanceiro{
         private ProdutoFinanceiro(){}
 
-        public ProdutoFinanceiro(Guid id, Cliente cliente,decimal Valor, DateTime DataAplicacao, DateTime DataResgate){
+        public ProdutoFinanceiro(Guid Id, Cliente Cliente,decimal Valor, DateTime DataAplicacao, DateTime DataResgate){
             Validador.MaiorQueZero(Valor, "valor");
             Validador.MaiorQueData(DataResgate,DataAplicacao);
-            this.Id = id; 
-            this.Cliente = cliente; 
+            this.Id = Id; 
+            this.Cliente = Cliente; 
             this.Valor = Valor;
             this.DataAplicacao = DataAplicacao;
             this.DataResgate = DataResgate;

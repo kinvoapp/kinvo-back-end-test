@@ -23,7 +23,7 @@ namespace Aliquota.Application
             await _dbContext.SaveChangesAsync();
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Produto {produtoFinanceiro.Id} criado!");
+            Console.WriteLine($"Produto criado!");
 
             Console.ResetColor();
         }
@@ -31,7 +31,7 @@ namespace Aliquota.Application
         public async Task CriarCliente(Cliente cliente)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Criando Cliente...");
+            Console.WriteLine("Criando cliente...");
 
             _dbContext.Add(cliente);
             await _dbContext.SaveChangesAsync();
@@ -45,16 +45,16 @@ namespace Aliquota.Application
         public async Task<Cliente> CapturarClientePorCPF(string cpf)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine($"Buscando cliente {cpf}...");
+            Console.WriteLine($"Buscando cpf {cpf}...");
 
             Cliente cliente = await _dbContext.Clientes.Include( o => o.ProdutosFinanceiros).FirstOrDefaultAsync(o => o.CPF.Equals(cpf));
             if (cliente != null)
             {
-                Console.WriteLine("Cliente encontrado!");
+                Console.WriteLine("Cpf encontrado!");
             }
             else
             {
-                Console.WriteLine("Nenhum resultado encontrado encontrado!");
+                Console.WriteLine("Nenhum resultado encontrado!");
             }
             Console.ResetColor();
             return cliente;

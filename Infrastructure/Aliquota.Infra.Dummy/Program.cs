@@ -6,7 +6,7 @@ namespace Aliquota.Infra.Dummy
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("EFCore Startup Project!");
         }
     }
 }

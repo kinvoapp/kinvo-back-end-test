@@ -2,23 +2,20 @@
 using Aliquota.Domain.Models;
 using System.Threading.Tasks;
 using System.Globalization;
-using System.Linq;
 
 namespace Aliquota.Application
 {
     class Program
     {
         static CultureInfo cultureInfo = new CultureInfo("pt-BR");
+        static string opcoes = "\nSelecione a opcao desejada:\n1 - Quero me cadastrar!\n2 - Quero adicionar meu novo Produto Financeiro\n3 - Ver detalhes dos meus produtos (pelo CPF)\n0 - Sair";
         static async Task Main(string[] args)
         {
-            string opcao;
-
             try
             {
                 await using var db = new AliquotaRepository();
-                // {
-                Console.WriteLine("Selecione a opcao desejada:\n1 - Cadastrar Cliente\n2 - Cadastrar Produtos Financeiros\n3 - Detalhar produtos (pelo CPF)\n0 - Sair");
-                opcao = Console.ReadLine();
+                Console.WriteLine(opcoes);
+                string opcao = Console.ReadLine();
                 while (!opcao.Equals("0"))
                 {
                     switch (opcao)
@@ -36,10 +33,10 @@ namespace Aliquota.Application
                             Console.WriteLine("Opcao nao mapeada!");
                             break;
                     }
-                    Console.WriteLine("Selecione a opcao desejada:\n1 - Cadastrar Cliente\n2 - Cadastrar Produtos Financeiros\n3 - Detalhar produtos (pelo CPF)\n0 - Sair");
+                    Console.WriteLine(opcoes);
                     opcao = Console.ReadLine();
                 }
-                Console.WriteLine("Aplicacao Finalizada");                
+                Console.WriteLine("Aplicacao Finalizada");
             }
             catch (Exception e)
             {

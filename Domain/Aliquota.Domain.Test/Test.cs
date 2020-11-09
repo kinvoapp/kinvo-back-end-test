@@ -44,9 +44,9 @@ namespace Aliquota.Domain.Test
             DateTime dataAplicacao = DateTime.Today.AddMonths(-18);
             DateTime dataResgate = DateTime.Today;
             ProdutoFinanceiro produto = new ProdutoFinanceiro(new Guid(), cliente,100,dataAplicacao, dataResgate);
-            Assert.Equal(0, cliente.ProdutosFinanceiros.ToList().Count);
+            Assert.Empty(cliente.ProdutosFinanceiros);
             cliente.AdicionarProdutoFinanceiro(produto);
-            Assert.Equal(1, cliente.ProdutosFinanceiros.ToList().Count);
+            Assert.Single(cliente.ProdutosFinanceiros);
         }
     }
 }

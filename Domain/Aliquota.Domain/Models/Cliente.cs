@@ -6,13 +6,12 @@ namespace Aliquota.Domain.Models
 {
     public class Cliente {
         private Cliente(){}
-        public Cliente(Guid id,string Nome, string Cpf, IEnumerable<ProdutoFinanceiro> produtos){
+        public Cliente(Guid Id,string Nome, string Cpf, IEnumerable<ProdutoFinanceiro> produtos){
             Validador.NaoNulo(Nome, "nome");
             Validador.NaoNulo(Cpf, "cpf");
-            this.Id = id; 
+            this.Id = Id; 
             this.Nome = Nome;
             this.CPF = Cpf;
-            this._produtosFinanceiros = new List<ProdutoFinanceiro>();
             _produtosFinanceiros = (produtos ?? Enumerable.Empty<ProdutoFinanceiro>()).ToList();
         }
         
