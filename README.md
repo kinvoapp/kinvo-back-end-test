@@ -21,7 +21,7 @@
 
 O domínio da solução consiste em duas classes base: **Cliente** e **ProdutoFinanceiro**.  
 
-<img src="https://github.com/tarcisiobruni/kinvo-back-end-test/blob/tarcisiobruni/images/kinvo-solucao.png" width="40%" > 
+<img src="https://github.com/tarcisiobruni/kinvo-back-end-test/blob/tarcisiobruni/images/kinvo-solucao.png" width="80%" > 
 
 ### Arquitetura
 
@@ -33,14 +33,14 @@ De acordo com [Microsoft](https://docs.microsoft.com/en-us/dotnet/architecture/m
 
 Segue abaixo diagrama da arquitetura:
 
-<img src="https://github.com/tarcisiobruni/kinvo-back-end-test/blob/tarcisiobruni/images/clean-architecture.png" width="40%">
+<img src="https://github.com/tarcisiobruni/kinvo-back-end-test/blob/tarcisiobruni/images/clean-architecture.png" width="80%">
 
 Na implementação da solução, o mapeamento pôde ser feito da seguinte forma:
 - ApplicationCore -> Domain (Aliquota.Domain)
 - Infrastructure -> Infrastructure (Aliquota.Infrastructure)
 - UserInterface (linha de comando) -> Application (Aliquota.Application)
-- 
-<img src="https://github.com/tarcisiobruni/kinvo-back-end-test/blob/tarcisiobruni/images/solution-explorer.png" width="50%">
+
+<img src="https://github.com/tarcisiobruni/kinvo-back-end-test/blob/tarcisiobruni/images/solution-explorer.png" width="60%">
 
 #### **Aliquota.Domain**
 
@@ -55,6 +55,23 @@ Projeto utilizando como ORM o [EFCore](https://docs.microsoft.com/en-us/ef/core/
 #### **Aliquota.Application**
 
 Aplicação console para interação com o usuário.
+
+## Execução do Projeto:
+
+- SQLServer (docker):
+  * docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=yourStrong(!)Password" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest
+
+
+- Migrations:
+  * dotnet ef database update --project .\Infrastructure\Aliquota.Infrastructure\ --startup-project .\Infrastructure\Aliquota.Infra.Dummy\ 
+
+- Rodar:
+  * dotnet run -p .\Application\Aliquota.WebApi\Aliquota.WebApi.csproj
+
+- Testes:
+  * dotnet test .\Domain\Aliquota.Domain.Test\Aliquota.Domain.Test.csproj
+
+
 
 ## Referencias:
 
