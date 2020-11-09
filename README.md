@@ -63,7 +63,7 @@ Aplicação console para interação com o usuário.
 >```
 
 
-- Migrations:
+- [Migrations](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/migrations?view=aspnetcore-3.1):
 >```bash
 >dotnet ef database update --project .\Infrastructure\Aliquota.Infrastructure\ --startup-project .\Infrastructure\Aliquota.Infra.Dummy\ 
 >```
