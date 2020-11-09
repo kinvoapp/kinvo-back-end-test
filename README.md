@@ -70,12 +70,12 @@ Aplicação console para interação com o usuário.
 
 - Rodar:
 >```bash
->dotnet run -p .\Application\Aliquota.WebApi\Aliquota.WebApi.csproj
+>dotnet run -p .\Application\Aliquota.Application\
 >```
 
 - Testes:
 >```bash
->dotnet test .\Domain\Aliquota.Domain.Test\Aliquota.Domain.Test.csproj
+>dotnet test 
 >```
 
 
