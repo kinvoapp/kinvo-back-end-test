@@ -1,0 +1,2 @@
+C:\Users\Alisson\Documents\kinvo-back-end-test\Aliquota\Aliquota.Console\obj\Debug\netcoreapp3.1\Aliquota.Console.AssemblyInfoInputs.cache
+C:\Users\Alisson\Documents\kinvo-back-end-test\Aliquota\Aliquota.Console\obj\Debug\netcoreapp3.1\Aliquota.Console.AssemblyInfo.cs

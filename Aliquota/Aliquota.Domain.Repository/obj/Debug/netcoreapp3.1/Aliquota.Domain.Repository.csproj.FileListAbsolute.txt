@@ -1,0 +1,36 @@
+C:\Users\u000438\Downloads\kinvo-back-end-test (extract.me)\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\bin\Debug\netcoreapp3.1\Aliquota.Domain.Repository.deps.json
+C:\Users\u000438\Downloads\kinvo-back-end-test (extract.me)\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\bin\Debug\netcoreapp3.1\Aliquota.Domain.Repository.dll
+C:\Users\u000438\Downloads\kinvo-back-end-test (extract.me)\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\bin\Debug\netcoreapp3.1\Aliquota.Domain.Repository.pdb
+C:\Users\u000438\Downloads\kinvo-back-end-test (extract.me)\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\bin\Debug\netcoreapp3.1\Aliquota.Domain.dll
+C:\Users\u000438\Downloads\kinvo-back-end-test (extract.me)\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\bin\Debug\netcoreapp3.1\Aliquota.Domain.pdb
+C:\Users\u000438\Downloads\kinvo-back-end-test (extract.me)\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.csprojAssemblyReference.cache
+C:\Users\u000438\Downloads\kinvo-back-end-test (extract.me)\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.AssemblyInfoInputs.cache
+C:\Users\u000438\Downloads\kinvo-back-end-test (extract.me)\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.AssemblyInfo.cs
+C:\Users\u000438\Downloads\kinvo-back-end-test (extract.me)\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.csproj.CoreCompileInputs.cache
+C:\Users\u000438\Downloads\kinvo-back-end-test (extract.me)\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.csproj.CopyComplete
+C:\Users\u000438\Downloads\kinvo-back-end-test (extract.me)\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.dll
+C:\Users\u000438\Downloads\kinvo-back-end-test (extract.me)\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.pdb
+C:\Users\leand\Desktop\Tatiani\Alison\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\bin\Debug\netcoreapp3.1\Aliquota.Domain.Repository.deps.json
+C:\Users\leand\Desktop\Tatiani\Alison\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\bin\Debug\netcoreapp3.1\Aliquota.Domain.Repository.dll
+C:\Users\leand\Desktop\Tatiani\Alison\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\bin\Debug\netcoreapp3.1\Aliquota.Domain.Repository.pdb
+C:\Users\leand\Desktop\Tatiani\Alison\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\bin\Debug\netcoreapp3.1\Aliquota.Domain.dll
+C:\Users\leand\Desktop\Tatiani\Alison\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\bin\Debug\netcoreapp3.1\Aliquota.Domain.pdb
+C:\Users\leand\Desktop\Tatiani\Alison\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.csprojAssemblyReference.cache
+C:\Users\leand\Desktop\Tatiani\Alison\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.AssemblyInfoInputs.cache
+C:\Users\leand\Desktop\Tatiani\Alison\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.AssemblyInfo.cs
+C:\Users\leand\Desktop\Tatiani\Alison\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.csproj.CoreCompileInputs.cache
+C:\Users\leand\Desktop\Tatiani\Alison\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.csproj.CopyComplete
+C:\Users\leand\Desktop\Tatiani\Alison\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.dll
+C:\Users\leand\Desktop\Tatiani\Alison\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.pdb
+C:\Users\Alisson\Documents\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\bin\Debug\netcoreapp3.1\Aliquota.Domain.Repository.deps.json
+C:\Users\Alisson\Documents\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\bin\Debug\netcoreapp3.1\Aliquota.Domain.Repository.dll
+C:\Users\Alisson\Documents\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\bin\Debug\netcoreapp3.1\Aliquota.Domain.Repository.pdb
+C:\Users\Alisson\Documents\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\bin\Debug\netcoreapp3.1\Aliquota.Domain.dll
+C:\Users\Alisson\Documents\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\bin\Debug\netcoreapp3.1\Aliquota.Domain.pdb
+C:\Users\Alisson\Documents\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.csprojAssemblyReference.cache
+C:\Users\Alisson\Documents\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.AssemblyInfoInputs.cache
+C:\Users\Alisson\Documents\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.AssemblyInfo.cs
+C:\Users\Alisson\Documents\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Alisson\Documents\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.csproj.CopyComplete
+C:\Users\Alisson\Documents\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.dll
+C:\Users\Alisson\Documents\kinvo-back-end-test\kinvo-back-end-test\Aliquota\Aliquota.Domain.Repository\obj\Debug\netcoreapp3.1\Aliquota.Domain.Repository.pdb
