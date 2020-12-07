@@ -1,0 +1,86 @@
+﻿@model Aliquota.Domain.Models.Investimento
+
+@{
+    ViewData["Title"] = "Resgate";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('.calc').keyup(function () {
+            var dt1 = new Date(document.getElementById("dt1").value);
+            var dt2 = new Date(document.getElementById("dt2").value);        
+
+            if (dt2 < dt1) {
+                alert("Data de Resgate não pode ser menor que a data do Investimento")
+            }
+
+            var dt3 = Math.abs(dt1.getTime() - dt2.getTime());
+            const dias = Math.ceil(dt3 / (1000 * 60 * 60 * 24));
+
+            var val1 = document.getElementById("val1").value;
+
+            if (dias < 360) {
+                var val2 = val1 - (val1 * 0.225);
+                return val2;
+            }
+            if (dias > 360 && dias < 720) {
+                var val2 = val1 - (val1 * 0.185);
+                return val2;
+            }
+            if (dias > 720) {
+                var val2 = val1 - (val1 * 0.150);
+                return val2;
+            }
+        });
+    });
+
+</script>
+<h1>Resgatar</h1>
+
+<h4>Investimento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Resgate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" disabled />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Valor_inicio" class="control-label"></label>
+                <input asp-for="Valor_inicio" id="val1" class="form-control calc" disabled />
+                <span asp-validation-for="Valor_inicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dt_entrada" class="control-label"></label>
+                <input asp-for="Dt_entrada" id="dt1" class="form-control calc" disabled />
+                <span asp-validation-for="Dt_entrada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dt_saida" class="control-label"></label>
+                <input asp-for="Dt_saida" id="dt2" class="form-control calc" value=""/>
+                <span asp-validation-for="Dt_saida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Valor_final" class="control-label"></label>
+                <input asp-for="Valor_final" id="val2" class="form-control calc" disabled />
+                <span asp-validation-for="Valor_final" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
