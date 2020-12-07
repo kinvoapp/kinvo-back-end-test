@@ -55,7 +55,7 @@ namespace Aliquota.Domain
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Investimento}/{action=Index}/{id?}");
             });
         }
     }

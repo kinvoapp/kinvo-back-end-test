@@ -16,25 +16,31 @@
             }
 
             var dt3 = Math.abs(dt1.getTime() - dt2.getTime());
-            const dias = Math.ceil(dt3 / (1000 * 60 * 60 * 24));
+            const dias = Math.ceil(dt3 / (1000 * 60 * 60 * 24));   
+            
+            var val1 = parseFloat($('#val1').val().replace(".", "").replace(",", ".")) || 0.00;                                                                                              
 
-            var val1 = document.getElementById("val1").value;
-
-            if (dias < 360) {
-                var val2 = val1 - (val1 * 0.225);
-                return val2;
+            if (dias <= 360) {
+                var total = val1 - (val1 * 0.225);
+                $('#val2').val(number_format(total, 2, ',', '.'));              
             }
             if (dias > 360 && dias < 720) {
-                var val2 = val1 - (val1 * 0.185);
-                return val2;
+                var total = val1 - (val1 * 0.185);
+                $('#val2').val(number_format(total, 2, ',', '.'));                
             }
             if (dias > 720) {
-                var val2 = val1 - (val1 * 0.150);
-                return val2;
+                var total = val1 - (val1 * 0.150);
+                $('#val2').val(number_format(total, 2, ',', '.'));               
             }
         });
     });
-
+    function number_format(number, decimals, dec_point, thousands_sep) {
+        var n = number, c = isNaN(decimals = Math.abs(decimals)) ? 2 : decimals;
+        var d = dec_point == undefined ? "," : dec_point;
+        var t = thousands_sep == undefined ? "." : thousands_sep, s = n < 0 ? "-" : "";
+        var i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
+        return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+    }
 </script>
 <h1>Resgatar</h1>
 
@@ -51,23 +57,23 @@
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Valor_inicio" class="control-label"></label>
-                <input asp-for="Valor_inicio" id="val1" class="form-control calc" disabled />
+                <label asp-for="Valor_inicio" class="control-label"> Valor Inicial</label>
+                <input asp-for="Valor_inicio" id="val1" name="val1" class="form-control calc" disabled />
                 <span asp-validation-for="Valor_inicio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Dt_entrada" class="control-label"></label>
+                <label asp-for="Dt_entrada" class="control-label">Data Inicial</label>
                 <input asp-for="Dt_entrada" id="dt1" class="form-control calc" disabled />
                 <span asp-validation-for="Dt_entrada" class="text-danger"></span>
-            </div>
+            </div>            
             <div class="form-group">
-                <label asp-for="Dt_saida" class="control-label"></label>
-                <input asp-for="Dt_saida" id="dt2" class="form-control calc" value=""/>
+                <label asp-for="Dt_saida" class="control-label">Data Resgate</label>
+                <input asp-for="Dt_saida" id="dt2" class="form-control calc" value="" />
                 <span asp-validation-for="Dt_saida" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Valor_final" class="control-label"></label>
-                <input asp-for="Valor_final" id="val2" class="form-control calc" disabled />
+                <label asp-for="Valor_final" class="control-label">Valor Resgatado</label>
+                <input asp-for="Valor_final" id="val2" name=" val2" class="form-control calc" disabled />
                 <span asp-validation-for="Valor_final" class="text-danger"></span>
             </div>
             <div class="form-group">

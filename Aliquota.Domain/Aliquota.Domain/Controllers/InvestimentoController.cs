@@ -54,7 +54,7 @@ namespace Aliquota.Domain.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Nome,Valor_inicio,Valor_final,Dt_entrada,Dt_saida")] Investimento investimento)
+        public async Task<IActionResult> Create([Bind("ID,Nome,Valor_inicio,Dt_entrada")] Investimento investimento)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace Aliquota.Domain.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ID,Nome,Valor_inicio,Valor_final,Dt_entrada,Dt_saida")] Investimento investimento)
-        {
+        {            
             if (id != investimento.ID)
             {
                 return NotFound();
@@ -96,9 +96,11 @@ namespace Aliquota.Domain.Controllers
             if (ModelState.IsValid)
             {
                 try
-                {
-                    _context.Update(investimento);
-                    await _context.SaveChangesAsync();
+                {     if (investimento.Dt_entrada < investimento.Dt_saida)
+                        {
+                            _context.Update(investimento);
+                            await _context.SaveChangesAsync();
+                        }                                            
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -163,14 +165,10 @@ namespace Aliquota.Domain.Controllers
                 return NotFound();
             }
             return View(investimento);
-        }
-
-        // POST: Investimento/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        }        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Resgate(int id, [Bind("ID,Nome,Valor_inicio,Valor_final,Dt_entrada,Dt_saida")] Investimento investimento)
+        public async Task<IActionResult> Resgate(int id, [Bind("Valor_final,Dt_saida")] Investimento investimento)
         {
             if (id != investimento.ID)
             {
@@ -180,7 +178,7 @@ namespace Aliquota.Domain.Controllers
             if (ModelState.IsValid)
             {
                 try
-                {
+                {                    
                     _context.Update(investimento);
                     await _context.SaveChangesAsync();
                 }
@@ -198,6 +196,19 @@ namespace Aliquota.Domain.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(investimento);
+        }
+        public double Calculo(double valor, Investimento investimento)
+        {                        
+           int total = investimento.Dt_saida.Year - investimento.Dt_entrada.Year;
+            valor = 0;
+
+            if (total < 1)
+                valor = investimento.Valor_inicio - (investimento.Valor_inicio * 0.225);
+            if (total > 1 && total < 2)
+                valor = investimento.Valor_inicio - (investimento.Valor_inicio * 0.185);
+            if (total > 2)
+                valor = investimento.Valor_inicio - (investimento.Valor_inicio * 0.150);
+            return investimento.Valor_final = valor;
         }
 
     }
