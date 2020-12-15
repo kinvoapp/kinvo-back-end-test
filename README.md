@@ -1,7 +1,7 @@
 > ![Logo Kinvo](https://github.com/kinvoapp/kinvo-mobile-test/blob/master/logo.svg)
 
 # Teste para candidatos à vaga de Desenvolvedor C#  
-
+Obrigado pela oportunidade de participar do teste, fiz o melhor que pude dentro do tempo que tive.
 
 ## Problema:
 
@@ -16,14 +16,16 @@ Após terminar seu teste submeta um pull request e aguarde seu feedback.
 
 ### Instruções:
 
-1. Criar um projeto de classes chamado “Aliquota.Domain”;
-2. Criar um projeto de testes chamado “Aliquota.Domain.Test”
-3. Modelar a(s) entidade(s) que resolvem o problema abaixo;
-4. Mapear as entidades no Entity Framework Core;
-5. Criar um projeto de frontend para permitir a persistência de dados (console, webapp, etc.);
-4. Testar a(s) entidade(s) de forma que garantam as regras de negócio;
-5. Utilizar os conceitos de DDD, OO, POCO e SOLID que você julgar necessário;
-6. Use inglês ou português no seu código. Como achar melhor. Isso não será critério de avaliação.
+1. Criar um projeto de classes chamado “Aliquota.Domain”;-ok
+2. Criar um projeto de testes chamado “Aliquota.Domain.Test”-ok (porem não fiz a implementação dos testes)
+3. Modelar a(s) entidade(s) que resolvem o problema abaixo; - ok (fiz uma modelagem de algumas entidates, mas no fim mudei para tornar mais prático e entregar no tempo requerido)
+A única entidade válida para o desafio será a FinancialApplication, porém não apaguei as outras para evitar problemas de refatoração, já que estou entregando em cima do prazo.
+
+4. Mapear as entidades no Entity Framework Core; - ok
+5. Criar um projeto de frontend para permitir a persistência de dados (console, webapp, etc.); -ok (fiz a implementação do swagger para ser mais rápido e entregar o desafio, cheguei a criar um projeto de fronte, mas não tive tempo de implementar)
+4. Testar a(s) entidade(s) de forma que garantam as regras de negócio; - testei manualmente com o swagger
+5. Utilizar os conceitos de DDD, OO, POCO e SOLID que você julgar necessário; - utilizado
+6. Use inglês ou português no seu código. Como achar melhor. Isso não será critério de avaliação. -ok
 
 
 ### Pré-requisitos:
