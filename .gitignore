@@ -1,0 +1,16 @@
+.vscode
+Aliquota.API/bin
+Aliquota.API/obj
+
+Aliquota.Core/bin
+Aliquota.Core/obj
+
+Aliquota.Domain/bin
+Aliquota.Domain/obj
+
+/test/Aliquota.Test/bin
+/test/Aliquota.Test/obj
+
+
+#nvim guttentags
+tags
