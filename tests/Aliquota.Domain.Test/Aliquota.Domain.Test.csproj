@@ -19,4 +19,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Aliquota.Application\Aliquota.Application.csproj" />
+    <ProjectReference Include="..\..\src\Aliquota.Domain\Aliquota.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Aliquota.Presentation\Aliquota.Presentation.csproj" />
+  </ItemGroup>
+
 </Project>
