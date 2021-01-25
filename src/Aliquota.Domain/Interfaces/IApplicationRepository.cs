@@ -10,6 +10,6 @@ namespace Aliquota.Domain.Interfaces
     {
         Task<List<Application>> ListApplicationsAsync();
         Task<Application> GetApplicationByIdAsync(Guid id);
-        void AddApplication(Application application);
+        Task<Application> UpdateApplication(Guid id);
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "karSJ0mu2rras2/ICrH/6iYTLVSfNsvHhiwBIhfGs9vQY8SqGLQH5+1nuWAbTKl1iLY4dORBsU+NN8FL4/aU5Q==",
+  "dgSpecHash": "y009ob2LptfyiftIjEPTPYa0ucmYYaEP0DOfqLtt72r0tXCy1d1FCU9TPqcsfqZZXqzv2AwN/joX2GfmoMlIZQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pedro\\Documents\\dev\\netcore\\kinvo-back-end-test\\src\\Aliquota.Domain.Core\\Aliquota.Domain.Core.csproj",
+  "projectFilePath": "D:\\Pedro\\dotnet\\kinvo-back-end-test\\src\\Aliquota.Domain.Core\\Aliquota.Domain.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

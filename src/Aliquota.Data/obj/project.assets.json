@@ -5714,20 +5714,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pedro\\.nuget\\packages\\": {}
+    "C:\\Users\\CDS02\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pedro\\Documents\\dev\\netcore\\kinvo-back-end-test\\src\\Aliquota.Data\\Aliquota.Infra.Data.csproj",
+      "projectUniqueName": "D:\\Pedro\\dotnet\\kinvo-back-end-test\\src\\Aliquota.Data\\Aliquota.Infra.Data.csproj",
       "projectName": "Aliquota.Infra.Data",
-      "projectPath": "C:\\Users\\pedro\\Documents\\dev\\netcore\\kinvo-back-end-test\\src\\Aliquota.Data\\Aliquota.Infra.Data.csproj",
-      "packagesPath": "C:\\Users\\pedro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pedro\\Documents\\dev\\netcore\\kinvo-back-end-test\\src\\Aliquota.Data\\obj\\",
+      "projectPath": "D:\\Pedro\\dotnet\\kinvo-back-end-test\\src\\Aliquota.Data\\Aliquota.Infra.Data.csproj",
+      "packagesPath": "C:\\Users\\CDS02\\.nuget\\packages\\",
+      "outputPath": "D:\\Pedro\\dotnet\\kinvo-back-end-test\\src\\Aliquota.Data\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\CDS02\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5738,9 +5745,10 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\pedro\\Documents\\dev\\netcore\\kinvo-back-end-test\\src\\Aliquota.Domain\\Aliquota.Domain.csproj": {
-              "projectPath": "C:\\Users\\pedro\\Documents\\dev\\netcore\\kinvo-back-end-test\\src\\Aliquota.Domain\\Aliquota.Domain.csproj"
+            "D:\\Pedro\\dotnet\\kinvo-back-end-test\\src\\Aliquota.Domain\\Aliquota.Domain.csproj": {
+              "projectPath": "D:\\Pedro\\dotnet\\kinvo-back-end-test\\src\\Aliquota.Domain\\Aliquota.Domain.csproj"
             }
           }
         }
@@ -5753,6 +5761,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -5778,7 +5787,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

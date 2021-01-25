@@ -7,6 +7,14 @@
   <ItemGroup>
     <Compile Remove="Migrations\20210123231748_Initial.cs" />
     <Compile Remove="Migrations\20210123231748_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20210125190836_AddProperties.cs" />
+    <Compile Remove="Migrations\20210125190836_AddProperties.Designer.cs" />
+    <Compile Remove="Migrations\20210125191102_AddProperties.cs" />
+    <Compile Remove="Migrations\20210125191102_AddProperties.Designer.cs" />
+    <Compile Remove="Migrations\20210125191252_AddProperties.cs" />
+    <Compile Remove="Migrations\20210125191252_AddProperties.Designer.cs" />
+    <Compile Remove="Migrations\20210125191455_AddProperties.cs" />
+    <Compile Remove="Migrations\20210125191455_AddProperties.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

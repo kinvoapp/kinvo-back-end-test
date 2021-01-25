@@ -10,7 +10,7 @@ namespace Aliquota.Domain.Models.Validations
                 .NotEmpty().WithMessage("O campo {PropertyName} é obrigatório")
                 .Length(2, 100).WithMessage("O campo {PropertyName} deve ter entre {MinLength} e {MaxLength} caracteres.");
 
-            RuleFor(c => c.Value)
+            RuleFor(c => c.InitialValue)
                 .NotEmpty().WithMessage("O campo {PropertyName} é obrigatório")
                 .GreaterThan(0).WithMessage("O valor da aplicação precisa ser maior que {ComparisonValue}");
 

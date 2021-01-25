@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "HKPvi3sDBJldkRdnDNDI3ist4FdxFxcyyLMb2mEj5fJTIb1dQ/39qmybRsHV/NFYxRWmEaVYr4O7JqUUjnqV5Q==",
+  "dgSpecHash": "rUU6bIfRALE22I8/KoOvLZgDz63+CFXJDjFg3dxgMmuK9cxcGDXuIxELO3aKuOgd1HOD4zirt54LfDU/kReCcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pedro\\Documents\\dev\\netcore\\kinvo-back-end-test\\src\\Aliquota.Domain\\Aliquota.Domain.csproj",
+  "projectFilePath": "D:\\Pedro\\dotnet\\kinvo-back-end-test\\src\\Aliquota.Domain\\Aliquota.Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\pedro\\.nuget\\packages\\fluentvalidation\\9.4.0\\fluentvalidation.9.4.0.nupkg.sha512"
+    "C:\\Users\\CDS02\\.nuget\\packages\\fluentvalidation\\9.4.0\\fluentvalidation.9.4.0.nupkg.sha512"
   ],
   "logs": []
 }

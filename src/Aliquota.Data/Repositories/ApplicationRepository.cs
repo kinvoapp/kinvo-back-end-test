@@ -1,5 +1,6 @@
 ﻿using Aliquota.Domain.Interfaces;
 using Aliquota.Domain.Models;
+using Aliquota.Domain.Models.Validations;
 using Aliquota.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -17,6 +18,7 @@ namespace Aliquota.Infra.Data.Repositories
         {
             _context = context;
         }
+
         public async Task<List<Application>> ListApplicationsAsync()
         {
             return await _context.Applications.AsNoTracking().ToListAsync();
@@ -27,9 +29,21 @@ namespace Aliquota.Infra.Data.Repositories
             return await _context.Applications.AsNoTracking().FirstAsync(e => e.Id == id);
         }
 
-        public void AddApplication(Application application)
+        public async Task<Application> UpdateApplication(Guid id)
         {
-            _context.Applications.Add(application);
+            var app = await _context.Applications.FirstAsync(p => p.Id == id);
+            app.WithdrawnAt = DateTime.UtcNow;
+            app.Active = false;
+            ApplicationValidation validator = new ApplicationValidation();
+
+            var result = await validator.ValidateAsync(app);
+            if (result.IsValid)
+            {
+                _context.Applications.Update(app);
+                await _context.SaveChangesAsync();
+            }
+
+            return app;
         }
     }
 }

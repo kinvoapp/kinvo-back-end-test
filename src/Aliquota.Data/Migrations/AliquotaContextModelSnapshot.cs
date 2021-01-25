@@ -26,19 +26,27 @@ namespace Aliquota.Infra.Data.Migrations
                         .HasColumnName("id")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<bool>("Active")
+                        .HasColumnName("active")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnName("created_at")
                         .HasColumnType("datetime2");
+
+                    b.Property<decimal>("CurrentValue")
+                        .HasColumnName("current_value")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<decimal>("InitialValue")
+                        .HasColumnName("initial_value")
+                        .HasColumnType("decimal(10,2)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnName("name")
                         .HasColumnType("varchar(100)")
                         .HasMaxLength(100);
-
-                    b.Property<decimal>("Value")
-                        .HasColumnName("value")
-                        .HasColumnType("decimal(10,2)");
 
                     b.Property<DateTime?>("WithdrawnAt")
                         .HasColumnName("withdrawn_at")
@@ -47,6 +55,35 @@ namespace Aliquota.Infra.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("application");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("f498ec2d-a9f1-47a9-b479-6cf1430f6e0a"),
+                            Active = true,
+                            CreatedAt = new DateTime(2017, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            CurrentValue = 300.00m,
+                            InitialValue = 100.00m,
+                            Name = "Sample application"
+                        },
+                        new
+                        {
+                            Id = new Guid("85d83f27-9945-42b3-9021-0e316c8a8b3a"),
+                            Active = true,
+                            CreatedAt = new DateTime(2019, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            CurrentValue = 300.00m,
+                            InitialValue = 100.00m,
+                            Name = "Second application"
+                        },
+                        new
+                        {
+                            Id = new Guid("d19039ef-cfc0-4413-911a-4bd69fb96f0c"),
+                            Active = true,
+                            CreatedAt = new DateTime(2021, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            CurrentValue = 300.00m,
+                            InitialValue = 100.00m,
+                            Name = "Third application"
+                        });
                 });
 #pragma warning restore 612, 618
         }

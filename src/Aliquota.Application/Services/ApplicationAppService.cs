@@ -24,5 +24,10 @@ namespace Aliquota.Application.Services
         {
             return _mapper.Map<List<ApplicationViewModel>>(await _applicationRepository.ListApplicationsAsync());
         }
+
+        public async Task<ApplicationViewModel> GetApplicationByIdAsync(Guid id)
+        {
+            return _mapper.Map<ApplicationViewModel>(await _applicationRepository.GetApplicationByIdAsync(id));
+        }
     }
 }

@@ -18,6 +18,6 @@ namespace Aliquota.Application.ViewModels
 
         [Required(ErrorMessage = "O campo 'valor' é obrigatório")]
         [DisplayName("Valor")]
-        public decimal Value { get; set; }
+        public decimal CurrentValue { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Aliquota.Infra.Data.Context;
+using Aliquota.Presentation.Configurations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,9 @@ namespace Aliquota.Presentation
             services.AddDbContext<AliquotaContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews();
+
+            services.AddAutoMapperConfig();
+            services.AddDependencyInjectionConfig();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -7,7 +7,7 @@ namespace Aliquota.Presentation.Configurations
 {
     public static class AutoMapperConfig
     {
-        public static void AddAutoMapperSetup(this IServiceCollection services)
+        public static void AddAutoMapperConfig(this IServiceCollection services)
         {
             if (services == null)
             {

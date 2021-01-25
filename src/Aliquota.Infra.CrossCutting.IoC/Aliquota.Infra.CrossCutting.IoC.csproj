@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aliquota.Application\Aliquota.Application.csproj" />
+    <ProjectReference Include="..\Aliquota.Data\Aliquota.Infra.Data.csproj" />
+    <ProjectReference Include="..\Aliquota.Domain\Aliquota.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
