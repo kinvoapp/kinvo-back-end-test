@@ -1,0 +1,9 @@
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Domain.Core\bin\Debug\netcoreapp3.1\Aliquota.Domain.Core.deps.json
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Domain.Core\bin\Debug\netcoreapp3.1\Aliquota.Domain.Core.dll
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Domain.Core\bin\Debug\netcoreapp3.1\Aliquota.Domain.Core.pdb
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Domain.Core\obj\Debug\netcoreapp3.1\Aliquota.Domain.Core.csprojAssemblyReference.cache
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Domain.Core\obj\Debug\netcoreapp3.1\Aliquota.Domain.Core.csproj.CoreCompileInputs.cache
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Domain.Core\obj\Debug\netcoreapp3.1\Aliquota.Domain.Core.AssemblyInfoInputs.cache
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Domain.Core\obj\Debug\netcoreapp3.1\Aliquota.Domain.Core.AssemblyInfo.cs
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Domain.Core\obj\Debug\netcoreapp3.1\Aliquota.Domain.Core.dll
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Domain.Core\obj\Debug\netcoreapp3.1\Aliquota.Domain.Core.pdb

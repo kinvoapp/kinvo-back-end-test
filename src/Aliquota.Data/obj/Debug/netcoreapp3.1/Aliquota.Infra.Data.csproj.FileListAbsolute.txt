@@ -1,0 +1,14 @@
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Data\bin\Debug\netcoreapp3.1\Aliquota.Domain.Core.dll
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Data\bin\Debug\netcoreapp3.1\Aliquota.Domain.dll
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Data\obj\Debug\netcoreapp3.1\Aliquota.Infra.Data.csprojAssemblyReference.cache
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Data\obj\Debug\netcoreapp3.1\Aliquota.Infra.Data.AssemblyInfoInputs.cache
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Data\obj\Debug\netcoreapp3.1\Aliquota.Infra.Data.AssemblyInfo.cs
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Data\obj\Debug\netcoreapp3.1\Aliquota.Infra.Data.csproj.CoreCompileInputs.cache
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Data\bin\Debug\netcoreapp3.1\Aliquota.Infra.Data.deps.json
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Data\bin\Debug\netcoreapp3.1\Aliquota.Infra.Data.dll
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Data\bin\Debug\netcoreapp3.1\Aliquota.Infra.Data.pdb
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Data\bin\Debug\netcoreapp3.1\Aliquota.Domain.pdb
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Data\bin\Debug\netcoreapp3.1\Aliquota.Domain.Core.pdb
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Data\obj\Debug\netcoreapp3.1\Aliquota.Infra.Data.csproj.CopyComplete
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Data\obj\Debug\netcoreapp3.1\Aliquota.Infra.Data.dll
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Data\obj\Debug\netcoreapp3.1\Aliquota.Infra.Data.pdb

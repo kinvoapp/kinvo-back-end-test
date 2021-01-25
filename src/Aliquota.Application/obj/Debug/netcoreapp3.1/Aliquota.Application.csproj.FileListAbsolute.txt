@@ -1,0 +1,15 @@
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Application\bin\Debug\netcoreapp3.1\Aliquota.Application.deps.json
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Application\bin\Debug\netcoreapp3.1\Aliquota.Application.dll
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Application\obj\Debug\netcoreapp3.1\Aliquota.Application.csprojAssemblyReference.cache
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Application\obj\Debug\netcoreapp3.1\Aliquota.Application.AssemblyInfoInputs.cache
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Application\obj\Debug\netcoreapp3.1\Aliquota.Application.AssemblyInfo.cs
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Application\bin\Debug\netcoreapp3.1\Aliquota.Application.pdb
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Application\bin\Debug\netcoreapp3.1\Aliquota.Domain.Core.dll
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Application\bin\Debug\netcoreapp3.1\Aliquota.Domain.dll
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Application\bin\Debug\netcoreapp3.1\Aliquota.Infra.Data.dll
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Application\bin\Debug\netcoreapp3.1\Aliquota.Infra.Data.pdb
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Application\bin\Debug\netcoreapp3.1\Aliquota.Domain.pdb
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Application\bin\Debug\netcoreapp3.1\Aliquota.Domain.Core.pdb
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Application\obj\Debug\netcoreapp3.1\Aliquota.Application.csproj.CopyComplete
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Application\obj\Debug\netcoreapp3.1\Aliquota.Application.dll
+C:\Users\pedro\Documents\dev\netcore\kinvo-back-end-test\src\Aliquota.Application\obj\Debug\netcoreapp3.1\Aliquota.Application.pdb
