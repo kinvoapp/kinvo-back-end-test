@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZhRutXpJUUYCnFz/Tg2jYo4Nnt8LosvL6PrxwCnZilfKwKbNAEotbzG3q0mS6yfCB2itgsC6ikfMu4Bl35anGA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vinic\\Downloads\\kinvo-back-end-test-d9b5bd0b86041add59f60196d17ec82e2c53a8bc\\src\\Aliquota.Domain\\Aliquota.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vinic\\.nuget\\packages\\fluentvalidation\\9.4.0\\fluentvalidation.9.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
