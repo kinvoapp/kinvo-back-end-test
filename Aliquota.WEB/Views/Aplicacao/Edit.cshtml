@@ -1,0 +1,46 @@
+﻿@model Aliquota.Application.ViewModels.AplicacaoViewModel
+
+@{ ViewData["Title"] = "Retirar"; }
+
+<h1>Retirar Aplicação</h1>
+
+<div>
+    <hr />
+    <form id="FormCad" accept-charset="UTF-8" asp-action="Edit" method="POST">
+         @if (ViewContext.ViewData.ModelState.ErrorCount > 0)
+        {
+            <div class="alert alert-danger" role="alert">
+                @foreach (var item in ViewContext.ViewData.ModelState)
+                {
+                    if (item.Value.Errors.Any())
+                    {
+                        <p>@(string.Join("", item.Value.Errors.Select(x => x.ErrorMessage)))</p>
+                    }
+                }
+            </div>
+        }
+        <input asp-for="Id" type="hidden" id="">
+        <div class="row mt-1">
+            <div class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ValorAtual)
+            </div>
+            <div class="col-sm-10">
+                <input asp-for="ValorAtual" id="" class="form-control">
+            </div>
+        </div>
+        <div class="row mt-1">
+            <div class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DataRetirada)
+            </div>
+            <div class="col-sm-10">
+                <input asp-for="DataRetirada" id="" class="form-control">
+            </div>
+        </div>
+
+        <div class="row mt-1 text-left">
+            <div class="col-sm-2 mt-l"><a class="btn btn-secondary shadow-0 btn-sm" asp-action="Index">Listagem</a></div>
+            <div class="col-sm-2"><button class="btn btn-secondary shadow-0 btn-sm" type="submit">Retirar</button></div>
+        </div>
+
+    </form>
+</div>

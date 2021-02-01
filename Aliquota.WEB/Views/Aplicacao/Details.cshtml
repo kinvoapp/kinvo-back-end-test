@@ -1,0 +1,63 @@
+﻿@model Aliquota.Application.ViewModels.AplicacaoViewModel
+
+
+@{ ViewData["Title"] = "Detalhes"; }
+
+<h1>Detalhes Aplicação</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorAplicado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ValorAplicado)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorAtual)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ValorAtual)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataAplicacao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataAplicacao)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataRetirada)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataRetirada)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AliquotaIR)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AliquotaIR)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorIR)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ValorIR)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorResgate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ValorResgate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Listagem</a>
+</div>

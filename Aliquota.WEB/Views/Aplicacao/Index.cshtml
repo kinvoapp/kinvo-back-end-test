@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Aliquota.Application.ViewModels.AplicacaoViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Minhas Aplicações</h1>
+
+<div class="row">
+    <div class="col-12">
+        @Html.ActionLink("Novo", "Create")
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorAplicado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataAplicacao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ValorAplicado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataAplicacao)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Detalhes", "Details", new { id = item.Id })
+                        @if (!item.DataRetirada.HasValue)
+                        {
+                            @Html.ActionLink("Retirar", "Edit", new { id = item.Id })
+                        }
+
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
