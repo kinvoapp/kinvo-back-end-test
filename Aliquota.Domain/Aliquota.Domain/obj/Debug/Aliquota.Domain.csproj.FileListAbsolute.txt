@@ -1,0 +1,5 @@
+C:\Users\WINDOWS\Documents\Visual Studio 2010\Projects\Aliquota.Domain\Aliquota.Domain\bin\Aliquota.Domain.dll
+C:\Users\WINDOWS\Documents\Visual Studio 2010\Projects\Aliquota.Domain\Aliquota.Domain\bin\Aliquota.Domain.pdb
+C:\Users\WINDOWS\Documents\Visual Studio 2010\Projects\Aliquota.Domain\Aliquota.Domain\obj\Debug\Aliquota.Domain.dll
+C:\Users\WINDOWS\Documents\Visual Studio 2010\Projects\Aliquota.Domain\Aliquota.Domain\obj\Debug\Aliquota.Domain.pdb
+C:\Users\WINDOWS\Documents\Visual Studio 2010\Projects\Aliquota.Domain\Aliquota.Domain\obj\Debug\Aliquota.Domain.csprojResolveAssemblyReference.cache
