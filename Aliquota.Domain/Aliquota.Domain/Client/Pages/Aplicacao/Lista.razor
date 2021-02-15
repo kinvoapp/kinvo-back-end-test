@@ -1,0 +1,83 @@
+﻿@page "/"
+@page "/aplicacoes"
+@inject HttpClient http
+
+<h3>Lista de aplicações</h3>
+
+<div>
+    <a href="aplicacoes/criar" class="btn btn-success"><i class="oi oi-plus"></i> Criar</a>
+</div>
+
+<div>
+    @if(aplicacaos == null)
+    {
+        <p>Carregando...</p>
+    }
+    else if(aplicacaos.Count <= 0)
+    {
+        <p>Não há aplicações.</p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    @*<th></th>*@
+                    <th>Sacado</th>
+                    <th>Data aplicação</th>
+                    <th>Valor aplicado</th>
+                    <th>Periodo</th>
+                    <th>Valor total</th>
+                    <th>Rentabilidade</th>
+                    <th>Valor de saque</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var aplicacao in aplicacaos)
+                {
+                    <tr>
+                        @*<td><a href="aplicacoes/@aplicacao.Id" class="btn btn-info btn-sm" title="Visualizar."><i class="oi oi-eye"></i></a></td>*@
+                        <td><input type="checkbox" disabled checked="@(!aplicacao.Ativo)" /></td>
+                        <td>@aplicacao.DataAplicacao.ToString("d", new CultureInfo("pt-br"))</td>
+                        <td>@aplicacao.ValorInvestido.ToString("C2", new CultureInfo("pt-br"))</td>
+                        <td>@aplicacao.PeriodoPrevistoAplicadoEmMeses meses</td>
+                        <td>@aplicacao.ValorTotal.ToString("C2", new CultureInfo("pt-br"))</td>
+                        <td>@((aplicacao.Juros/100).ToString("P", new CultureInfo("pt-br")))</td>
+                        <td>
+                                @aplicacao.ValorSacado.ToString("C2", new CultureInfo("pt-br"))
+                        </td>
+                        <td>
+                            <a href="aplicacoes/@aplicacao.Id" class="btn btn-info btn-sm" title="Visualizar."><i class="oi oi-eye"></i></a>
+                            @if (aplicacao.Ativo)
+                            {
+                                <a class="btn btn-warning btn-sm" href="aplicacoes/editar/@aplicacao.Id" title="Editar."><i class="oi oi-pencil"></i></a>
+                                <button class="btn btn-danger btn-sm" @onclick="(() => FinalizarAplicacao(aplicacao.Id))" title="Deletar."><i class="oi oi-trash"></i></button>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+
+@code {
+    List<Aplicacao> aplicacaos;
+
+    protected async override Task OnInitializedAsync()
+    {
+        await CarregarAplicacoes();
+    }
+
+    private async Task CarregarAplicacoes()
+    {
+        aplicacaos = await http.GetFromJsonAsync<List<Aplicacao>>("api/aplicacao");
+    }
+
+    private async Task FinalizarAplicacao(int id)
+    {
+        await http.DeleteAsync($"api/aplicacao/{id}");
+        await CarregarAplicacoes();
+    }
+}

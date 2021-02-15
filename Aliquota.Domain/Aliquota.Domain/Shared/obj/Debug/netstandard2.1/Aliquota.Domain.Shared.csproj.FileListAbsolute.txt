@@ -1,0 +1,9 @@
+C:\Users\bruno.welausen\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\Shared\bin\Debug\netstandard2.1\Aliquota.Domain.Shared.deps.json
+C:\Users\bruno.welausen\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\Shared\bin\Debug\netstandard2.1\Aliquota.Domain.Shared.dll
+C:\Users\bruno.welausen\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\Shared\bin\Debug\netstandard2.1\Aliquota.Domain.Shared.pdb
+C:\Users\bruno.welausen\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\Shared\obj\Debug\netstandard2.1\Aliquota.Domain.Shared.csprojAssemblyReference.cache
+C:\Users\bruno.welausen\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\Shared\obj\Debug\netstandard2.1\Aliquota.Domain.Shared.AssemblyInfoInputs.cache
+C:\Users\bruno.welausen\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\Shared\obj\Debug\netstandard2.1\Aliquota.Domain.Shared.AssemblyInfo.cs
+C:\Users\bruno.welausen\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\Shared\obj\Debug\netstandard2.1\Aliquota.Domain.Shared.csproj.CoreCompileInputs.cache
+C:\Users\bruno.welausen\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\Shared\obj\Debug\netstandard2.1\Aliquota.Domain.Shared.dll
+C:\Users\bruno.welausen\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\Shared\obj\Debug\netstandard2.1\Aliquota.Domain.Shared.pdb

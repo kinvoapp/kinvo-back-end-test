@@ -1,0 +1,18 @@
+﻿@page "/aplicacoes/criar"
+@inject HttpClient http
+@inject NavigationManager navigation
+
+<h3>Criar</h3>
+
+<FormAplicacao Aplicacao="@aplicacao" EhEditar="false" TituloBotao="Adicionar" OnValidSubmit="@CriarAplicacao"></FormAplicacao>
+
+@code {
+    Aplicacao aplicacao = new Aplicacao();
+
+    private async Task CriarAplicacao()
+    {
+        aplicacao.DataAplicacao = DateTime.Now;
+        await http.PostAsJsonAsync("api/aplicacao", aplicacao);
+        navigation.NavigateTo("aplicacoes");
+    }
+}

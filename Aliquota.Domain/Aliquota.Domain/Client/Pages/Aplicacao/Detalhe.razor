@@ -1,0 +1,92 @@
+﻿@page "/aplicacoes/{id:int}"
+@inject HttpClient http
+@inject NavigationManager navigation
+
+<h3>Detalhe</h3>
+
+<EditForm Model="@aplicacao" OnValidSubmit="@SacarAplicacao">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <label>Valor investido:</label>
+            </div>
+            <div class="col-md-3">
+                <label>@aplicacao.ValorInvestido.ToString("C2", new CultureInfo("pt-br"))</label>
+            </div>
+            <div class="col-md-7"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <label>Valor total:</label>
+            </div>
+            <div class="col-md-3">
+                <label>@aplicacao.ValorTotal.ToString("C2", new CultureInfo("pt-br"))</label>
+            </div>
+            <div class="col-md-7"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <label>Rentabilidade:</label>
+            </div>
+            <div class="col-md-3">
+                <label>@((aplicacao.Juros/100).ToString("P", new CultureInfo("pt-br"))) a.a</label>
+            </div>
+            <div class="col-md-7"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <label>Periodo:</label>
+            </div>
+            <div class="col-md-3">
+                <label>@aplicacao.PeriodoPrevistoAplicadoEmMeses meses</label>
+            </div>
+            <div class="col-md-7"></div>
+        </div>
+
+        <div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Data Aplicação:</label>
+                </div>
+                <div class="col-md-7"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                    <label>De: @aplicacao.DataAplicacao.ToString("d", new CultureInfo("pt-br"))</label>
+                </div>
+                <div class="col-md-3">
+                    <label>Até @aplicacao.DataRetirada.ToString("d", new CultureInfo("pt-br"))</label>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+
+    @if (aplicacao.Ativo)
+    {
+        <button type="submit" class="btn btn-primary">Retirar aplicação</button>
+    }
+</EditForm>
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+
+    Aplicacao aplicacao = new Aplicacao();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        aplicacao = await http.GetFromJsonAsync<Aplicacao>($"api/aplicacao/{id}");
+    }
+
+    private async Task SacarAplicacao()
+    {
+        await http.PutAsJsonAsync("api/aplicacao/retirar", aplicacao);
+        navigation.NavigateTo("aplicacoes");
+    }
+}

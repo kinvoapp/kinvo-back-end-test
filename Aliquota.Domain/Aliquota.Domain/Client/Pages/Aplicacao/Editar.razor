@@ -1,0 +1,25 @@
+﻿@page "/aplicacoes/editar/{id:int}"
+@inject HttpClient http
+@inject NavigationManager navigation
+
+<h3>Editar</h3>
+
+<FormAplicacao Aplicacao="@aplicacao" EhEditar="true" TituloBotao="Alterar" OnValidSubmit="@AlterarAplicacao"></FormAplicacao>
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+
+    Aplicacao aplicacao = new Aplicacao();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        aplicacao = await http.GetFromJsonAsync<Aplicacao>($"api/aplicacao/{id}");
+    }
+
+    private async Task AlterarAplicacao()
+    {
+        await http.PutAsJsonAsync("api/aplicacao", aplicacao);
+        navigation.NavigateTo("aplicacoes");
+    }
+}

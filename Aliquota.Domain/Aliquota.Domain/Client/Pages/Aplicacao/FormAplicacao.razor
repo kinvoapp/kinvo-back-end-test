@@ -1,0 +1,108 @@
+﻿<EditForm Model="@Aplicacao" OnValidSubmit="@OnValidSubmit">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <label>Valor:</label>
+            </div>
+            <div class="col-md-5">
+                <InputNumber @bind-Value="Aplicacao.ValorInvestido" @onblur="RecalculaTotal"></InputNumber>
+                <ValidationMessage For="@(() => Aplicacao.ValorInvestido)"></ValidationMessage>
+            </div>
+            <div class="col-md-5"></div>
+        </div>
+        
+        @if (EhEditar)
+        {
+            <div class="row">
+                <div class="colmd-2">
+                    <label>Total:</label>
+                </div>
+                <div class="colmd-5">
+                    <label>@Aplicacao.ValorTotal.ToString("C2", new CultureInfo("pt-br"))</label>
+                </div>
+                <div class="colmd-5"></div>
+            </div>
+        }
+
+        <div class="row">
+            <div class="col-md-2">
+                <label>Juros anuais:</label>
+            </div>
+            <div class="col-md-5">
+                <InputNumber @bind-Value="Aplicacao.Juros" @onblur="RecalculaTotal"></InputNumber><i>%</i>
+                <ValidationMessage For="@(() => Aplicacao.Juros)"></ValidationMessage>
+            </div>
+            <div class="col-md-5"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <label>Periodo previsto em meses:</label>
+            </div>
+            <div class="col-md-5">
+                <InputNumber @bind-Value="Aplicacao.PeriodoPrevistoAplicadoEmMeses" @onblur="RecalculaData"></InputNumber>
+                <ValidationMessage For="@(() => Aplicacao.PeriodoPrevistoAplicadoEmMeses)"></ValidationMessage>
+            </div>
+            <div class="col-md-5"></div>
+        </div>
+
+        @if (EhEditar)
+        {
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Data Aplicação:</label>
+                </div>
+                <div class="col-md-5">
+                    <label>@Aplicacao.DataAplicacao.ToString("d", new CultureInfo("pt-br"))</label>
+                </div>
+                <div class="col-md-5"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Data Retirada:</label>
+                </div>
+                <div class="col-md-5">
+                    <label>@Aplicacao.DataRetirada.ToString("d", new CultureInfo("pt-br"))</label>
+                </div>
+                <div class="col-md-5"></div>
+            </div>
+        }
+    </div>
+
+    @if (Aplicacao.Ativo || !EhEditar)
+    {
+        <button type="submit" class="btn btn-primary">@TituloBotao</button>
+    }
+</EditForm>
+
+@code {
+
+    [Parameter]
+    public Aplicacao Aplicacao { get; set; }
+
+    [Parameter]
+    public bool EhEditar { get; set; }
+
+    [Parameter]
+    public string TituloBotao { get; set; }
+
+    [Parameter]
+    public EventCallback OnValidSubmit { get; set; }
+
+    private void RecalculaData()
+    {
+        if (!EhEditar) return;
+        var novaData = Aplicacao.DataAplicacao.AddMonths(Aplicacao.PeriodoPrevistoAplicadoEmMeses);
+        Aplicacao.DataRetirada = novaData;
+        RecalculaTotal();
+    }
+
+    private void RecalculaTotal()
+    {
+        if (!EhEditar) return;
+        var novoTotal = Utilitarios.CalculaRentabilidade((double)Aplicacao.ValorInvestido, Aplicacao.Juros, Aplicacao.PeriodoPrevistoAplicadoEmMeses);
+        Aplicacao.ValorTotal = novoTotal;
+    }
+}
