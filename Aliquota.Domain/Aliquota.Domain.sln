@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliquota.Domain.Client", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliquota.Domain.Shared", "Aliquota.Domain\Shared\Aliquota.Domain.Shared.csproj", "{406FA653-BB96-4B6E-8980-FF38F72C7F8A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliquota.Domain.Test", "Aliquota.Domain.Test\Aliquota.Domain.Test.csproj", "{F3D74872-800A-47F5-BFA5-7D71F8841466}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{406FA653-BB96-4B6E-8980-FF38F72C7F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{406FA653-BB96-4B6E-8980-FF38F72C7F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{406FA653-BB96-4B6E-8980-FF38F72C7F8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3D74872-800A-47F5-BFA5-7D71F8841466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3D74872-800A-47F5-BFA5-7D71F8841466}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3D74872-800A-47F5-BFA5-7D71F8841466}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3D74872-800A-47F5-BFA5-7D71F8841466}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
