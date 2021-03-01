@@ -22,6 +22,36 @@ namespace Aliquota.API.Controllers
             _context = context;
         }
 
+        // GET: api/Aplicacaos/CalculaValorDeResgate/5
+        [HttpGet("CalculaValorDeResgate/{aplicacaoId}")]
+        public async Task<ActionResult<double>> CalculaValorDeResgate(int aplicacaoId)
+        {
+            var aplicacao = await _context.aplicacoes.FindAsync(aplicacaoId);
+            var produtoFinanceiro = await _context.produtoFinanceiros.FindAsync(aplicacao.produtoFinanceiroId);
+
+            if(aplicacao == null || produtoFinanceiro == null)
+            {
+                return NotFound();
+            }
+
+            return new AplicacaoDomain(aplicacao).CalcularValorAResgatar(produtoFinanceiro.taxaDeRendimento, DateTime.UtcNow);
+        }
+
+        // GET: api/Aplicacaos/CalculaValorDeResgate/5&300
+        [HttpGet("CalculaValorDeResgateMock/{aplicacaoId}&{daysForward}")]
+        public async Task<ActionResult<double>> CalculaValorDeResgateMock(int aplicacaoId, int daysForward)
+        {
+            var aplicacao = await _context.aplicacoes.FindAsync(aplicacaoId);
+            var produtoFinanceiro = await _context.produtoFinanceiros.FindAsync(aplicacao.produtoFinanceiroId);
+
+            if (aplicacao == null || produtoFinanceiro == null)
+            {
+                return NotFound();
+            }
+
+            return new AplicacaoDomain(aplicacao).CalcularValorAResgatar(produtoFinanceiro.taxaDeRendimento, DateTime.UtcNow.AddDays(daysForward));
+        }
+
         // GET: api/Aplicacaos
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Aplicacao>>> Getaplicacoes()

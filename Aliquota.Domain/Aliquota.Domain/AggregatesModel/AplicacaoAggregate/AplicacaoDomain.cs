@@ -37,7 +37,7 @@ namespace Aliquota.Domain.AggregatesModel.AplicacaoAggregate
             lucro = (aplicacao.valorInicial * Math.Pow(1 + taxaDeRendimento / 100, duracaoAplicacao.Days / 30)) - aplicacao.valorInicial;
             lucro -= (lucro * taxaAliquota);
 
-            return aplicacao.valorInicial + lucro;
+            return Math.Round(aplicacao.valorInicial + lucro, 2);
         }
     }
 }
