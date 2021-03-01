@@ -21,6 +21,11 @@ namespace Aliquota.Infrastructure.EntityConfigurations
                 .IsRequired();
 
             aplicacaoConfiguration
+                .Property<double?>("valorResgate")
+                .UsePropertyAccessMode(PropertyAccessMode.Field)
+                .IsRequired(false);
+
+            aplicacaoConfiguration
                 .Property<DateTime>("dataInicial")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .IsRequired();

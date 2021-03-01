@@ -22,22 +22,77 @@ namespace Aliquota.API.Controllers
             _context = context;
         }
 
+        // Put: api/Aplicacao/RealizarResgate/5
+        [HttpPut("RealizarResgateMock/{aplicacaoId}&{daysForward}")]
+        public async Task<ActionResult<string>> RealizarResgateMock(int aplicacaoId, int daysForward)
+        {
+            var aplicacao = await _context.aplicacoes.FindAsync(aplicacaoId);
+
+            if (aplicacao == null)
+                return NotFound();
+
+            var produtoFinanceiro = await _context.produtoFinanceiros.FindAsync(aplicacao.produtoFinanceiroId);
+
+            if (produtoFinanceiro == null)
+                return NotFound();
+
+            var dataResgate = DateTime.UtcNow.AddDays(daysForward);
+            var valorResgatado = new AplicacaoDomain(aplicacao).CalcularValorAResgatar(produtoFinanceiro.taxaDeRendimento, dataResgate);
+
+            aplicacao.SetValorResgate(valorResgatado);
+            aplicacao.SetDataResgate(dataResgate);
+
+            await _context.SaveChangesAsync();
+
+            return String.Format("Operação Finalizada com sucesso! Foi resgatado R${0}!", valorResgatado);
+        }
+
+        // Put: api/Aplicacao/RealizarResgate/5
+        [HttpPut("RealizarResgate/{aplicacaoId}")]
+        public async Task<ActionResult<string>> RealizarResgate(int aplicacaoId)
+        {
+            var aplicacao = await _context.aplicacoes.FindAsync(aplicacaoId);
+            
+            if (aplicacao == null)
+                return NotFound();
+
+            var produtoFinanceiro = await _context.produtoFinanceiros.FindAsync(aplicacao.produtoFinanceiroId);
+            
+            if (produtoFinanceiro == null)
+                return NotFound();
+
+            var dataResgate = DateTime.UtcNow;
+            var valorResgatado = new AplicacaoDomain(aplicacao).CalcularValorAResgatar(produtoFinanceiro.taxaDeRendimento, dataResgate);
+
+            aplicacao.SetValorResgate(valorResgatado);
+            aplicacao.SetDataResgate(dataResgate);
+
+            await _context.SaveChangesAsync();
+
+            return String.Format("Operação Finalizada com sucesso! Foi resgatado R${0}!", valorResgatado);
+        }
+
         // GET: api/Aplicacaos/CalculaValorDeResgate/5
         [HttpGet("CalculaValorDeResgate/{aplicacaoId}")]
         public async Task<ActionResult<double>> CalculaValorDeResgate(int aplicacaoId)
         {
             var aplicacao = await _context.aplicacoes.FindAsync(aplicacaoId);
+            if (aplicacao == null )
+            {
+                return NotFound();
+            }
+            
             var produtoFinanceiro = await _context.produtoFinanceiros.FindAsync(aplicacao.produtoFinanceiroId);
-
-            if(aplicacao == null || produtoFinanceiro == null)
+            if (produtoFinanceiro == null)
             {
                 return NotFound();
             }
 
+
             return new AplicacaoDomain(aplicacao).CalcularValorAResgatar(produtoFinanceiro.taxaDeRendimento, DateTime.UtcNow);
         }
 
-        // GET: api/Aplicacaos/CalculaValorDeResgate/5&300
+        // GET: api/Aplicacaos/CalculaValorDeResgateMock/5&300
         [HttpGet("CalculaValorDeResgateMock/{aplicacaoId}&{daysForward}")]
         public async Task<ActionResult<double>> CalculaValorDeResgateMock(int aplicacaoId, int daysForward)
         {

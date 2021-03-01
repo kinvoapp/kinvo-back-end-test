@@ -8,6 +8,8 @@ namespace Aliquota.Domain.AggregatesModel.AplicacaoAggregate
     public class Aplicacao : Entity
     {
         public double valorInicial { get; private set; }
+
+        public double? valorResgate { get; private set; }
         public DateTime dataInicial { get; private set; }
         public DateTime? dataResgate { get; private set; }
 
@@ -32,9 +34,14 @@ namespace Aliquota.Domain.AggregatesModel.AplicacaoAggregate
             this.valorInicial = valorInicial;
         }
 
-        public void SetDataResgate()
+        public void SetDataResgate(DateTime dataResgate)
         {
-            dataResgate = DateTime.UtcNow;
+            this.dataResgate = dataResgate;
+        }
+
+        public void SetValorResgate(double valor)
+        {
+            this.valorResgate = valor;
         }
 
         
