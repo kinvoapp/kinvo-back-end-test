@@ -42,3 +42,20 @@ Para iniciar o teste, faça um fork deste repositório, crie uma branch com o se
 Se você apenas clonar o repositório não vai conseguir fazer push e depois vai ser mais complicado fazer o pull request.
 
 **Sucesso!**
+
+## Minha Submissão
+
+Eu usei o swagger para gerar uma página web expondo as chamadas da API.
+
+### Instruções
+
+1. Colocar o projeto Aliquota.API como startup project.
+2. Executar a aplicação.
+3. Executar chamada Post do Usuario gerar um usuario com qualquer nome.
+4. Executar chamada Post de ProdutoFinanceiroes gerar um produto financeiro com uma descrição qualquer ("ex. Taxa de Rendimento 10%") e o valor da taxa de rendimento ("ex. 10").
+5. Executar chamada Post de Aplicacaos gerar uma Aplicacao com o valor inicial da aplicacao (ex. 100) e os ids do Usuario e Produto Financeiro criado anteriormente, ambos são 1 no nosso passo a passo.
+6. Executar chamada "Get /Api/Aplicacaos/", verificar a aplicacao acima preenchida exceto os campos dataResgate e valorResgate nulos.
+7. Executar chamada "Put /api/Aplicacaos/RealizarResgate/{aplicacaoId}" com o Id da aplicação acima, seguinte o passo a passo o valor é 1.
+8. Executar chamada  "Get /Api/Aplicacaos/" novamente, agora os campos nulos estão preenchidos.
+
+Nos testes unitarios os mesmos metodos são utilizados para testar essas funcionalidades, porém o valor do DateTime.UTCNow é mockado para simular aplicações com longas durações.
