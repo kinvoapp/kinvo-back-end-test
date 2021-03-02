@@ -42,6 +42,8 @@ namespace Aliquota.Domain.AggregatesModel.AplicacaoAggregate
 
         public double RealizarResgate(double taxaDeRendimento, DateTime dataResgate)
         {
+            if (aplicacao.dataResgate != null)
+                throw new Exception("Não é possivel realizar o resgate. Está aplicação já foi resgatada previamente.");
             double valorResgatado = CalcularValorAResgatar(taxaDeRendimento, dataResgate);
 
             this.aplicacao.SetValorResgate(valorResgatado);

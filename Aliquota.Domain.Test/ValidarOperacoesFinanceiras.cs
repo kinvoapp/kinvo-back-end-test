@@ -13,25 +13,7 @@ namespace Aliquota.Domain.Test
     {
         private AliquotaContext context = new AliquotaContext(new DbContextOptionsBuilder<AliquotaContext>().UseInMemoryDatabase("DbTeste").Options);
 
-        [Theory(DisplayName = "Valor de resgate de aplicação é correto.")]
-        [InlineData(223.52, 100, 10)]
-        [InlineData(274.28, 100, 12)]
-        [InlineData(821.25, 100, 24)]
-        public void ValidarValorDeResgate(double resultadoEsperado, double valorInicialDeAplicacao, int tempoDaAplicacaoEmMeses)
-        {
-            Aplicacao aplicacao = new Aplicacao(valorInicialDeAplicacao, 1, 1);
-            AplicacaoDomain aplicacaoDomain = new AplicacaoDomain(aplicacao);
 
-            var mockDateTime = new Mock<TimeProvider>();
-            mockDateTime.Setup(o => o.UtcNow).Returns(DateTime.UtcNow.AddMonths(tempoDaAplicacaoEmMeses));
-            TimeProvider.Current = mockDateTime.Object;
-
-            var dataResgate = TimeProvider.Current.UtcNow;
-            TimeProvider.ResetToDefault();
-
-            var valorResgate = aplicacaoDomain.CalcularValorAResgatar(10, dataResgate);
-            Assert.Equal(resultadoEsperado, Math.Round(valorResgate, 2));
-        }
 
         [Theory(DisplayName = "Aplicacao com valor inicial inválido.")]
         [InlineData(0)]
@@ -43,22 +25,6 @@ namespace Aliquota.Domain.Test
 
         }
 
-        [Fact(DisplayName = "Resgate com data invalida")]
-        public void ResgateDeAplicacaoComDataInvalida()
-        {
-            Aplicacao aplicacao = new Aplicacao(100, 1, 1);
-            AplicacaoDomain aplicacaoDomain = new AplicacaoDomain(aplicacao);
-
-            var mockDateTime = new Mock<TimeProvider>();
-            mockDateTime.Setup(o => o.UtcNow).Returns(DateTime.UtcNow.AddMinutes(-30));
-            TimeProvider.Current = mockDateTime.Object;
-
-            var dataResgate = TimeProvider.Current.UtcNow;
-            TimeProvider.ResetToDefault();
-
-            var exception = Assert.Throws<Exception>(() => aplicacaoDomain.RealizarResgate(10, dataResgate));
-            Assert.Equal("A data de resgate da aplicação é invalida. A data de resgate não pode ser anterior a data inicial da aplicação.", exception.Message);
-        }
 
         [Fact(DisplayName = "Produto Financeiro com taxa de rendimento inválida.")]
         public void TaxadeRendimentoInvalida()
@@ -66,6 +32,67 @@ namespace Aliquota.Domain.Test
             var exception = Assert.Throws<Exception>(() => new ProdutoFinanceiro("Taxa 10", 0));
             Assert.Equal("O valor da taxa de rendimento está inválido. A taxa de rendimento não pode ser menor ou igual a zero.", exception.Message);
 
+        }
+
+        public class TestesComDateTimeMockado
+        {
+            [Theory(DisplayName = "Valor de resgate de aplicação é correto.")]
+            [InlineData(223.52, 100, 10)]
+            [InlineData(274.28, 100, 12)]
+            [InlineData(821.25, 100, 24)]
+            public void ValidarValorDeResgate(double resultadoEsperado, double valorInicialDeAplicacao, int tempoDaAplicacaoEmMeses)
+            {
+                Aplicacao aplicacao = new Aplicacao(valorInicialDeAplicacao, 1, 1);
+                AplicacaoDomain aplicacaoDomain = new AplicacaoDomain(aplicacao);
+
+                var mockDateTime = new Mock<TimeProvider>();
+                mockDateTime.Setup(o => o.UtcNow).Returns(DateTime.UtcNow.AddMonths(tempoDaAplicacaoEmMeses));
+                TimeProvider.Current = mockDateTime.Object;
+
+                var dataResgate = TimeProvider.Current.UtcNow;
+                TimeProvider.ResetToDefault();
+
+                var valorResgate = aplicacaoDomain.CalcularValorAResgatar(10, dataResgate);
+                Assert.Equal(resultadoEsperado, Math.Round(valorResgate, 2));
+            }
+
+
+            [Fact(DisplayName = "Resgate de Aplicação Financeira já resgatada.")]
+            public void ResgateDeAplicacaoFinanceiraJaResgatada()
+            {
+                Aplicacao aplicacao = new Aplicacao(100, 1, 1);
+
+                var mockDateTime = new Mock<TimeProvider>();
+                mockDateTime.Setup(o => o.UtcNow).Returns(DateTime.UtcNow.AddMonths(20));
+                TimeProvider.Current = mockDateTime.Object;
+
+                var dataResgate = TimeProvider.Current.UtcNow;
+                TimeProvider.ResetToDefault();
+
+                AplicacaoDomain aplicacaoDomain = new AplicacaoDomain(aplicacao);
+                aplicacaoDomain.RealizarResgate(10, dataResgate);
+
+                var exception = Assert.Throws<Exception>(() => aplicacaoDomain.RealizarResgate(10, dataResgate));
+                Assert.Equal("Não é possivel realizar o resgate. Está aplicação já foi resgatada previamente.", exception.Message);
+
+            }
+
+            [Fact(DisplayName = "Resgate com data invalida")]
+            public void ResgateDeAplicacaoComDataInvalida()
+            {
+                Aplicacao aplicacao = new Aplicacao(100, 1, 1);
+                AplicacaoDomain aplicacaoDomain = new AplicacaoDomain(aplicacao);
+
+                var mockDateTime = new Mock<TimeProvider>();
+                mockDateTime.Setup(o => o.UtcNow).Returns(DateTime.UtcNow.AddMinutes(-30));
+                TimeProvider.Current = mockDateTime.Object;
+
+                var dataResgate = TimeProvider.Current.UtcNow;
+                TimeProvider.ResetToDefault();
+
+                var exception = Assert.Throws<Exception>(() => aplicacaoDomain.RealizarResgate(10, dataResgate));
+                Assert.Equal("A data de resgate da aplicação é invalida. A data de resgate não pode ser anterior a data inicial da aplicação.", exception.Message);
+            }
         }
     }
 }
