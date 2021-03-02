@@ -1,14 +1,12 @@
-﻿using System;
+﻿using Aliquota.API.Helper;
+using Aliquota.Domain.AggregatesModel.AplicacaoAggregate;
+using Aliquota.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Aliquota.Domain.AggregatesModel.ProdutoFinanceiroAggregate;
-using Aliquota.Infrastructure;
-using Aliquota.Domain.AggregatesModel.AplicacaoAggregate;
-using Aliquota.API.Helper;
 
 namespace Aliquota.API.Controllers
 {
@@ -23,47 +21,22 @@ namespace Aliquota.API.Controllers
             _context = context;
         }
 
-        //// Put: api/Aplicacao/RealizarResgate/5
-        //[HttpPut("RealizarResgateMock/{aplicacaoId}&{daysForward}")]
-        //public async Task<ActionResult<string>> RealizarResgateMock(int aplicacaoId, int daysForward)
-        //{
-        //    var aplicacao = await _context.aplicacoes.FindAsync(aplicacaoId);
-
-        //    if (aplicacao == null)
-        //        return NotFound();
-
-        //    var produtoFinanceiro = await _context.produtoFinanceiros.FindAsync(aplicacao.produtoFinanceiroId);
-
-        //    if (produtoFinanceiro == null)
-        //        return NotFound();
-
-        //    var dataResgate = DateTime.UtcNow.AddDays(daysForward);
-        //    var valorResgatado = new AplicacaoDomain(aplicacao).CalcularValorAResgatar(produtoFinanceiro.taxaDeRendimento, dataResgate);
-
-        //    aplicacao.SetValorResgate(valorResgatado);
-        //    aplicacao.SetDataResgate(dataResgate);
-
-        //    await _context.SaveChangesAsync();
-
-        //    return String.Format("Operação Finalizada com sucesso! Foi resgatado R${0}!", valorResgatado);
-        //}
-
         // Put: api/Aplicacao/RealizarResgate/5
         [HttpPut("RealizarResgate/{aplicacaoId}")]
         public async Task<ActionResult<string>> RealizarResgate(int aplicacaoId)
         {
             var aplicacao = await _context.aplicacoes.FindAsync(aplicacaoId);
-            
+
             if (aplicacao == null)
                 return NotFound();
 
             var produtoFinanceiro = await _context.produtoFinanceiros.FindAsync(aplicacao.produtoFinanceiroId);
-            
+
             if (produtoFinanceiro == null)
                 return NotFound();
 
             var dataResgate = TimeProvider.Current.UtcNow;
-            var valorResgatado = new AplicacaoDomain(aplicacao).RealizarResgate(produtoFinanceiro.taxaDeRendimento, dataResgate);            
+            var valorResgatado = new AplicacaoDomain(aplicacao).RealizarResgate(produtoFinanceiro.taxaDeRendimento, dataResgate);
 
             await _context.SaveChangesAsync();
 
@@ -75,11 +48,11 @@ namespace Aliquota.API.Controllers
         public async Task<ActionResult<double>> CalculaValorDeResgate(int aplicacaoId)
         {
             var aplicacao = await _context.aplicacoes.FindAsync(aplicacaoId);
-            if (aplicacao == null )
+            if (aplicacao == null)
             {
                 return NotFound();
             }
-            
+
             var produtoFinanceiro = await _context.produtoFinanceiros.FindAsync(aplicacao.produtoFinanceiroId);
             if (produtoFinanceiro == null)
             {
@@ -88,21 +61,6 @@ namespace Aliquota.API.Controllers
 
 
             return new AplicacaoDomain(aplicacao).CalcularValorAResgatar(produtoFinanceiro.taxaDeRendimento, DateTime.UtcNow);
-        }
-
-        // GET: api/Aplicacaos/CalculaValorDeResgateMock/5&300
-        [HttpGet("CalculaValorDeResgateMock/{aplicacaoId}&{daysForward}")]
-        public async Task<ActionResult<double>> CalculaValorDeResgateMock(int aplicacaoId, int daysForward)
-        {
-            var aplicacao = await _context.aplicacoes.FindAsync(aplicacaoId);
-            var produtoFinanceiro = await _context.produtoFinanceiros.FindAsync(aplicacao.produtoFinanceiroId);
-
-            if (aplicacao == null || produtoFinanceiro == null)
-            {
-                return NotFound();
-            }
-
-            return new AplicacaoDomain(aplicacao).CalcularValorAResgatar(produtoFinanceiro.taxaDeRendimento, DateTime.UtcNow.AddDays(daysForward));
         }
 
         // GET: api/Aplicacaos

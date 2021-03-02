@@ -1,16 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Aliquota.Domain.AggregatesModel.AplicacaoAggregate;
 using Aliquota.Domain.AggregatesModel.ProdutoFinanceiroAggregate;
 using Aliquota.Domain.AggregatesModel.Usuario;
 using Aliquota.Infrastructure.EntityConfigurations;
-using System.Data;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore.Storage;
-using Aliquota.Domain.SeedWork;
-using System.Threading;
-using Aliquota.Domain.AggregatesModel.AplicacaoAggregate;
+using Microsoft.EntityFrameworkCore;
 
 namespace Aliquota.Infrastructure
 {

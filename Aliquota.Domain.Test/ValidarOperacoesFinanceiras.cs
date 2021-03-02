@@ -1,15 +1,10 @@
-﻿using Aliquota.API.Controllers;
-using Aliquota.API.Helper;
+﻿using Aliquota.API.Helper;
 using Aliquota.Domain.AggregatesModel.AplicacaoAggregate;
 using Aliquota.Domain.AggregatesModel.ProdutoFinanceiroAggregate;
-using Aliquota.Domain.AggregatesModel.Usuario;
 using Aliquota.Infrastructure;
-using Aliquota.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace Aliquota.Domain.Test
@@ -17,7 +12,7 @@ namespace Aliquota.Domain.Test
     public class ValidarOperacoesFinanceiras
     {
         private AliquotaContext context = new AliquotaContext(new DbContextOptionsBuilder<AliquotaContext>().UseInMemoryDatabase("DbTeste").Options);
-        
+
         [Theory(DisplayName = "Valor de resgate de aplicação é correto.")]
         [InlineData(223.52, 100, 10)]
         [InlineData(274.28, 100, 12)]
@@ -48,7 +43,7 @@ namespace Aliquota.Domain.Test
 
         }
 
-        [Fact(DisplayName ="Resgate com data invalida")]
+        [Fact(DisplayName = "Resgate com data invalida")]
         public void ResgateDeAplicacaoComDataInvalida()
         {
             Aplicacao aplicacao = new Aplicacao(100, 1, 1);
@@ -63,6 +58,14 @@ namespace Aliquota.Domain.Test
 
             var exception = Assert.Throws<Exception>(() => aplicacaoDomain.RealizarResgate(10, dataResgate));
             Assert.Equal("A data de resgate da aplicação é invalida. A data de resgate não pode ser anterior a data inicial da aplicação.", exception.Message);
+        }
+
+        [Fact(DisplayName = "Produto Financeiro com taxa de rendimento inválida.")]
+        public void TaxadeRendimentoInvalida()
+        {
+            var exception = Assert.Throws<Exception>(() => new ProdutoFinanceiro("Taxa 10", 0));
+            Assert.Equal("O valor da taxa de rendimento está inválido. A taxa de rendimento não pode ser menor ou igual a zero.", exception.Message);
+
         }
     }
 }

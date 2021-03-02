@@ -1,11 +1,10 @@
-using System;
-using Xunit;
-using Aliquota.Domain.AggregatesModel.ProdutoFinanceiroAggregate;
-using Aliquota.Infrastructure.Repositories;
-using Aliquota.Infrastructure;
-using Microsoft.EntityFrameworkCore;
-using Aliquota.Domain.AggregatesModel.Usuario;
 using Aliquota.Domain.AggregatesModel.AplicacaoAggregate;
+using Aliquota.Domain.AggregatesModel.ProdutoFinanceiroAggregate;
+using Aliquota.Domain.AggregatesModel.Usuario;
+using Aliquota.Infrastructure;
+using Aliquota.Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
+using Xunit;
 
 namespace Aliquota.Domain.Test
 {
@@ -51,7 +50,7 @@ namespace Aliquota.Domain.Test
             Assert.Equal(aplicacao, segundaAplicacao);
         }
 
-        [Fact(DisplayName ="Persistencia de Usuario está correta.")]
+        [Fact(DisplayName = "Persistencia de Usuario está correta.")]
         public void ValidarUsuario()
         {
             UsuarioRepository usuarioRepository = new UsuarioRepository(context);

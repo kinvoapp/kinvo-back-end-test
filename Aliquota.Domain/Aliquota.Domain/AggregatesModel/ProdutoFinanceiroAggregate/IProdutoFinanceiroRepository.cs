@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Aliquota.Domain.AggregatesModel.ProdutoFinanceiroAggregate
+﻿namespace Aliquota.Domain.AggregatesModel.ProdutoFinanceiroAggregate
 {
     public interface IProdutoFinanceiroRepository
     {
@@ -10,7 +6,7 @@ namespace Aliquota.Domain.AggregatesModel.ProdutoFinanceiroAggregate
 
         void Update(ProdutoFinanceiro produtoFinanceiro);
 
-        public ProdutoFinanceiro GetProdutoFinanceiroById(int id);       
+        public ProdutoFinanceiro GetProdutoFinanceiroById(int id);
 
         public void Remove(ProdutoFinanceiro produtoFinanceiro);
 

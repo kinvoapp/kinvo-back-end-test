@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Aliquota.Domain.SeedWork;
+﻿using Aliquota.Domain.SeedWork;
+using System;
 
 namespace Aliquota.Domain.AggregatesModel.AplicacaoAggregate
 {
@@ -19,7 +17,7 @@ namespace Aliquota.Domain.AggregatesModel.AplicacaoAggregate
 
         protected Aplicacao() { }
 
-        public Aplicacao(double valorInicial,  int produtoFinanceiroId, int usuarioId)
+        public Aplicacao(double valorInicial, int produtoFinanceiroId, int usuarioId)
         {
             SetValorInicial(valorInicial);
             this.dataInicial = DateTime.UtcNow;
@@ -36,7 +34,7 @@ namespace Aliquota.Domain.AggregatesModel.AplicacaoAggregate
 
         public void SetDataResgate(DateTime dataResgate)
         {
-            if (dataInicial < dataResgate)
+            if (dataResgate < dataInicial)
                 throw new Exception("A data de resgate da aplicação é invalida. A data de resgate não pode ser anterior a data inicial da aplicação.");
             this.dataResgate = dataResgate;
         }
@@ -46,7 +44,7 @@ namespace Aliquota.Domain.AggregatesModel.AplicacaoAggregate
             this.valorResgate = valor;
         }
 
-        
+
 
     }
 }

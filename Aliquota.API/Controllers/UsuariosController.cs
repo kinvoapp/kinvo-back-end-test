@@ -1,12 +1,10 @@
-﻿using System;
+﻿using Aliquota.Domain.AggregatesModel.Usuario;
+using Aliquota.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Aliquota.Domain.AggregatesModel.Usuario;
-using Aliquota.Infrastructure;
 
 namespace Aliquota.API.Controllers
 {
@@ -73,9 +71,9 @@ namespace Aliquota.API.Controllers
             return NoContent();
         }
 
-        // POST: api/Usuarios
+        // POST: api/Usuarios/Lucas Nunes
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
+        [HttpPost("{nomeUsuario}")]
         public async Task<ActionResult<Usuario>> PostUsuario(string nomeUsuario)
         {
             Usuario usuario = new Usuario(nomeUsuario);

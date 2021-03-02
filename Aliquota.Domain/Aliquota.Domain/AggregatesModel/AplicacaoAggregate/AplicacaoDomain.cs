@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aliquota.Domain.AggregatesModel.AplicacaoAggregate
 {
@@ -51,7 +49,7 @@ namespace Aliquota.Domain.AggregatesModel.AplicacaoAggregate
 
             return valorResgatado;
         }
-        
+
         public int calculaDuracaoDaAplicacaoEmMeses(DateTime dataInicial, DateTime dataDoResgate)
         {
             return dataDoResgate.Day < dataInicial.Day ? (((dataDoResgate.Year - dataInicial.Year) * 12) + dataDoResgate.Month - dataInicial.Month) - 1 :

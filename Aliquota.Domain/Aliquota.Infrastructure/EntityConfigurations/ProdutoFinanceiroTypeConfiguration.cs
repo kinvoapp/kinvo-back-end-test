@@ -1,9 +1,6 @@
 ﻿using Aliquota.Domain.AggregatesModel.ProdutoFinanceiroAggregate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aliquota.Infrastructure.EntityConfigurations
 {
@@ -21,7 +18,7 @@ namespace Aliquota.Infrastructure.EntityConfigurations
             produtoFinanceiroConfiguration
                 .Property<string>("descricao")
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
-                .IsRequired(true);               
+                .IsRequired(true);
         }
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Aliquota.Domain.SeedWork;
+﻿using Aliquota.Domain.SeedWork;
 
 namespace Aliquota.Domain.AggregatesModel.Usuario
 {
@@ -9,9 +6,9 @@ namespace Aliquota.Domain.AggregatesModel.Usuario
     {
         public string nome { get; private set; }
 
-        public Usuario (string nome)
+        public Usuario(string nome)
         {
             this.nome = nome;
-        }       
+        }
     }
 }

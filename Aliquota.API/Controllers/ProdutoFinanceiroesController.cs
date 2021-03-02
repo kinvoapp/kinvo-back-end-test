@@ -1,12 +1,10 @@
-﻿using System;
+﻿using Aliquota.Domain.AggregatesModel.ProdutoFinanceiroAggregate;
+using Aliquota.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Aliquota.Domain.AggregatesModel.ProdutoFinanceiroAggregate;
-using Aliquota.Infrastructure;
 
 namespace Aliquota.API.Controllers
 {
@@ -73,9 +71,9 @@ namespace Aliquota.API.Controllers
             return NoContent();
         }
 
-        // POST: api/ProdutoFinanceiroes
+        // POST: api/ProdutoFinanceiroes/taxa 10/10
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
+        [HttpPost("{descricao}/{taxaDeRendimento}")]
         public async Task<ActionResult<ProdutoFinanceiro>> PostProdutoFinanceiro(string descricao, double taxaDeRendimento)
         {
             ProdutoFinanceiro produtoFinanceiro = new ProdutoFinanceiro(descricao, taxaDeRendimento);

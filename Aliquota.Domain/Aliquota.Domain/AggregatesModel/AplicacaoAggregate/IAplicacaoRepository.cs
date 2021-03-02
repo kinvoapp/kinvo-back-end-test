@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Aliquota.Domain.AggregatesModel.AplicacaoAggregate
-{ 
+﻿namespace Aliquota.Domain.AggregatesModel.AplicacaoAggregate
+{
     public interface IAplicacaoRepository
     {
         Aplicacao Add(Aplicacao aplicacao);
