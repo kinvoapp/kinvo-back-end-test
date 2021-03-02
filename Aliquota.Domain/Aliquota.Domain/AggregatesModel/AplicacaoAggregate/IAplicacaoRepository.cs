@@ -10,7 +10,7 @@ namespace Aliquota.Domain.AggregatesModel.AplicacaoAggregate
 
         void Update(Aplicacao aplicacao);
 
-        public Aplicacao GetProdutoFinanceiroById(int id);       
+        public Aplicacao GetAplicacaoById(int id);
 
         public void Remove(Aplicacao aplicacao);
 

@@ -29,10 +29,8 @@ namespace Aliquota.API
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers()
-                .AddNewtonsoftJson(options =>
-                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-            );
+            services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Aliquota.API", Version = "v1" });

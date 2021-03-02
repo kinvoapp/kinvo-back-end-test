@@ -29,13 +29,15 @@ namespace Aliquota.Domain.AggregatesModel.AplicacaoAggregate
 
         private void SetValorInicial(double valorInicial)
         {
-            if (valorInicial < 0)
-                throw new Exception("Valor inicial de investimento é inválido.");
+            if (valorInicial <= 0)
+                throw new Exception("Valor inicial de investimento é inválido. O valor deve ser maior que zero.");
             this.valorInicial = valorInicial;
         }
 
         public void SetDataResgate(DateTime dataResgate)
         {
+            if (dataInicial < dataResgate)
+                throw new Exception("A data de resgate da aplicação é invalida. A data de resgate não pode ser anterior a data inicial da aplicação.");
             this.dataResgate = dataResgate;
         }
 
