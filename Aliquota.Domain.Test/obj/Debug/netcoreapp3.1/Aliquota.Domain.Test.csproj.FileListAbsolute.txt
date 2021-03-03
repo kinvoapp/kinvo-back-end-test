@@ -1,0 +1,4 @@
+C:\Users\wende\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\obj\Debug\netcoreapp3.1\Aliquota.Domain.Test.csprojAssemblyReference.cache
+C:\Users\wende\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\obj\Debug\netcoreapp3.1\Aliquota.Domain.Test.AssemblyInfoInputs.cache
+C:\Users\wende\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\obj\Debug\netcoreapp3.1\Aliquota.Domain.Test.AssemblyInfo.cs
+C:\Users\wende\source\repos\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain.Test\obj\Debug\netcoreapp3.1\Aliquota.Domain.Test.csproj.CoreCompileInputs.cache
