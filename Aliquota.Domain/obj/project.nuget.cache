@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "tYo97yxSjNcE5O5xD7I9DRS6Z+JXCTxJrnyxL9yjuhKFyQCP6eFqcgsY6bgZ2WSpJwWMx+FDAnaCOqH6X4Nq6A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\marco\\source\\repos\\Aliquota\\kinvo-back-end-test\\Aliquota.Domain\\Aliquota.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\marco\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\marco\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

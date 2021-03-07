@@ -1,0 +1,9 @@
+C:\Users\marco\source\repos\Aliquota\kinvo-back-end-test\Aliquota.Domain\obj\Debug\netstandard2.0\Aliquota.Domain.csprojAssemblyReference.cache
+C:\Users\marco\source\repos\Aliquota\kinvo-back-end-test\Aliquota.Domain\obj\Debug\netstandard2.0\Aliquota.Domain.AssemblyInfoInputs.cache
+C:\Users\marco\source\repos\Aliquota\kinvo-back-end-test\Aliquota.Domain\obj\Debug\netstandard2.0\Aliquota.Domain.AssemblyInfo.cs
+C:\Users\marco\source\repos\Aliquota\kinvo-back-end-test\Aliquota.Domain\obj\Debug\netstandard2.0\Aliquota.Domain.csproj.CoreCompileInputs.cache
+C:\Users\marco\source\repos\Aliquota\kinvo-back-end-test\Aliquota.Domain\bin\Debug\netstandard2.0\Aliquota.Domain.deps.json
+C:\Users\marco\source\repos\Aliquota\kinvo-back-end-test\Aliquota.Domain\bin\Debug\netstandard2.0\Aliquota.Domain.dll
+C:\Users\marco\source\repos\Aliquota\kinvo-back-end-test\Aliquota.Domain\bin\Debug\netstandard2.0\Aliquota.Domain.pdb
+C:\Users\marco\source\repos\Aliquota\kinvo-back-end-test\Aliquota.Domain\obj\Debug\netstandard2.0\Aliquota.Domain.dll
+C:\Users\marco\source\repos\Aliquota\kinvo-back-end-test\Aliquota.Domain\obj\Debug\netstandard2.0\Aliquota.Domain.pdb
