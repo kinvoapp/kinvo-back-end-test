@@ -1,7 +1,12 @@
+using Aliquota.Applications;
+using Aliquota.Domain.IRepos;
+using Aliquota.Infrastructure;
+using Aliquota.Infrastructure.DBContext;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,8 +31,15 @@ namespace Aliquota
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<AliquotaDBContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
+            services.AddScoped<IAppCliente, AppCliente>();
+            services.AddScoped<IAppAplicacao, AppAplicacao>();
+            services.AddScoped<IAppProdutoFinanceiro, AppProdutoFinanceiro>();
+            services.AddScoped<IClienteRepo, ClienteRepository>();
+            services.AddScoped<IAplicacaoRepo, AplicacaoRepository>();
+            services.AddScoped<IProdutoFinanceiroRepo, ProdutoFinanceiroRepository>();
+            services.AddScoped<AliquotaDBContext>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Aliquota", Version = "v1" });
