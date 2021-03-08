@@ -2,6 +2,7 @@
 using Aliquota.Domain.IRepos;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Aliquota.Applications
 {
@@ -14,25 +15,25 @@ namespace Aliquota.Applications
             _repo = clienteRepo;
         }
 
-        public void Adicionar(Cliente cliente)
+        public async Task Adicionar(Cliente cliente)
         {            
-            _repo.Adicionar(cliente);
+            await _repo.Adicionar(cliente);
         }
-        public void Atualizar(Cliente cliente)
+        public async Task Atualizar(Cliente cliente)
         {          
-            _repo.Atualizar(cliente);
+            await _repo.Atualizar(cliente);
         }
-        public void Excluir(Cliente cliente)
+        public async Task Excluir(Cliente cliente)
         {
-            _repo.Excluir(cliente);
+            await _repo.Excluir(cliente);
         }
-        public Cliente ObterPorId(int clienteId)
+        public async Task<Cliente> ObterPorId(int clienteId)
         {
-            return _repo.ObterPorId(clienteId);
+            return await _repo.ObterPorId(clienteId);
         }
-        public IList<Cliente> Listar(Predicate<Cliente> queryPredicate = null)
+        public async Task<IList<Cliente>> Listar(Predicate<Cliente> queryPredicate = null)
         {
-            return _repo.Listar(queryPredicate);
+            return await _repo.Listar(queryPredicate);
         }        
     }
 }

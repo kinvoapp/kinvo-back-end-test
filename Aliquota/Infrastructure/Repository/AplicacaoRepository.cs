@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Aliquota.Infrastructure.DBContext;
 using Aliquota.Domain.Entities;
+using System.Threading.Tasks;
 
 namespace Aliquota.Infrastructure
 {
@@ -14,32 +15,32 @@ namespace Aliquota.Infrastructure
         {
             _dbContext = dbContext;
         }
-        public void Adicionar(Aplicacao entity)
+        public async Task Adicionar(Aplicacao entity)
         {
-            _dbContext.Aplicacao.Add(entity);
-            _dbContext.SaveChanges();
+            await _dbContext.Aplicacao.AddAsync(entity);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void Excluir(Aplicacao entity)
+        public async Task Excluir(Aplicacao entity)
         {
             _dbContext.Aplicacao.Remove(entity);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
         }
 
-        public Aplicacao ObterPorId(int Id)
+        public async Task<Aplicacao> ObterPorId(int Id)
         {
-            return (Aplicacao)_dbContext.Aplicacao.Find(Id);
+            return await _dbContext.Aplicacao.FindAsync(Id);
         }
 
-        public IList<Aplicacao> Listar(Predicate<Aplicacao> queryPredicate = null)
+        public async Task<IList<Aplicacao>> Listar(Predicate<Aplicacao> queryPredicate = null)
         {
             return _dbContext.Aplicacao.Where(x => queryPredicate(x)).ToList();
         }
 
-        public void Atualizar(Aplicacao entity)
+        public async Task Atualizar(Aplicacao entity)
         {
             _dbContext.Aplicacao.Update(entity);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

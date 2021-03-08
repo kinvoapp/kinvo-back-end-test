@@ -4,42 +4,43 @@ using System.Collections.Generic;
 using System.Linq;
 using Aliquota.Infrastructure.DBContext;
 using Aliquota.Domain.Entities;
+using System.Threading.Tasks;
 
 namespace Aliquota.Infrastructure
 {
     public class ClienteRepository : IClienteRepo
     {
         private AliquotaDBContext _dbContext = null;
-        public ClienteRepository(AliquotaDBContext dbContext)
+        public  ClienteRepository(AliquotaDBContext dbContext)
         {
             _dbContext = dbContext;
         }
-        public void Adicionar(Cliente entity)
+        public async Task Adicionar(Cliente entity)
         {
-            _dbContext.Cliente.Add(entity);
-            _dbContext.SaveChanges();
+            await _dbContext.Cliente.AddAsync(entity);
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void Excluir(Cliente entity)
+        public async Task Excluir(Cliente entity)
         {
             _dbContext.Cliente.Remove(entity);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
         }
 
-        public Cliente ObterPorId(int Id)
+        public async Task<Cliente> ObterPorId(int Id)
         {
-            return (Cliente)_dbContext.Cliente.Find(Id);
+            return (Cliente) await _dbContext.Cliente.FindAsync(Id);
         }
 
-        public IList<Cliente> Listar(Predicate<Cliente> queryPredicate = null)
+        public async Task<IList<Cliente>> Listar(Predicate<Cliente> queryPredicate = null)
         {
             return _dbContext.Cliente.Where(x => queryPredicate(x)).ToList();
         }
 
-        public void Atualizar(Cliente entity)
+        public async Task Atualizar(Cliente entity)
         {
             _dbContext.Cliente.Update(entity);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

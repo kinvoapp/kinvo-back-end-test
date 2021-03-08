@@ -2,6 +2,7 @@
 using Aliquota.Domain.IRepos;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Aliquota.Applications
 {
@@ -14,25 +15,25 @@ namespace Aliquota.Applications
             _repo = produtoFinanceiroRepo;
         }
 
-        public void Adicionar(ProdutoFinanceiro produtoFinanceiro)
-        {            
-            _repo.Adicionar(produtoFinanceiro);
-        }
-        public void Atualizar(ProdutoFinanceiro produtoFinanceiro)
-        {          
-            _repo.Atualizar(produtoFinanceiro);
-        }
-        public void Excluir(ProdutoFinanceiro produtoFinanceiro)
+        public async Task Adicionar(ProdutoFinanceiro produtoFinanceiro)
         {
-            _repo.Excluir(produtoFinanceiro);
+            await _repo.Adicionar(produtoFinanceiro);
         }
-        public ProdutoFinanceiro ObterPorId(int produtoFinanceiroID)
+        public async Task Atualizar(ProdutoFinanceiro produtoFinanceiro)
         {
-            return _repo.ObterPorId(produtoFinanceiroID);
+            await _repo.Atualizar(produtoFinanceiro);
         }
-        public IList<ProdutoFinanceiro> Listar(Predicate<ProdutoFinanceiro> queryPredicate = null)
+        public async Task Excluir(ProdutoFinanceiro produtoFinanceiro)
         {
-            return _repo.Listar(queryPredicate);
+            await _repo.Excluir(produtoFinanceiro);
+        }
+        public async Task<ProdutoFinanceiro> ObterPorId(int produtoFinanceiroID)
+        {
+            return await _repo.ObterPorId(produtoFinanceiroID);
+        }
+        public async Task<IList<ProdutoFinanceiro>> Listar(Predicate<ProdutoFinanceiro> queryPredicate = null)
+        {
+            return await _repo.Listar(queryPredicate);
         }        
     }
 }

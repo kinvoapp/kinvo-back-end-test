@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Aliquota.Infrastructure.DBContext;
 using Aliquota.Domain.Entities;
+using System.Threading.Tasks;
 
 namespace Aliquota.Infrastructure
 {
@@ -14,32 +15,32 @@ namespace Aliquota.Infrastructure
         {
             _dbContext = dbContext;
         }
-        public void Adicionar(ProdutoFinanceiro entity)
+        public async Task Adicionar(ProdutoFinanceiro entity)
         {
             _dbContext.ProdutoFinanceiro.Add(entity);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
         }
 
-        public void Excluir(ProdutoFinanceiro entity)
+        public async Task Excluir(ProdutoFinanceiro entity)
         {
             _dbContext.ProdutoFinanceiro.Remove(entity);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
         }
 
-        public ProdutoFinanceiro ObterPorId(int Id)
+        public async Task<ProdutoFinanceiro> ObterPorId(int Id)
         {
-            return (ProdutoFinanceiro)_dbContext.ProdutoFinanceiro.Find(Id);
+            return (ProdutoFinanceiro) await _dbContext.ProdutoFinanceiro.FindAsync(Id);
         }
 
-        public IList<ProdutoFinanceiro> Listar(Predicate<ProdutoFinanceiro> queryPredicate = null)
+        public async Task<IList<ProdutoFinanceiro>> Listar(Predicate<ProdutoFinanceiro> queryPredicate = null)
         {
             return _dbContext.ProdutoFinanceiro.Where(x => queryPredicate(x)).ToList();
         }
 
-        public void Atualizar(ProdutoFinanceiro entity)
+        public async Task Atualizar(ProdutoFinanceiro entity)
         {
             _dbContext.ProdutoFinanceiro.Update(entity);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

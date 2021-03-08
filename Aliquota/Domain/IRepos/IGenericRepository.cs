@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Aliquota.Domain.IRepos
 {
     public interface IGenericRepository<TEntityModel,TPrimaryKey> where TEntityModel : class 
     {
-        void Adicionar(TEntityModel Objeto);
+        Task Adicionar(TEntityModel Objeto);
 
-        void Atualizar(TEntityModel Objeto);     
+        Task Atualizar(TEntityModel Objeto);
 
-        void Excluir(TEntityModel Objeto);
+        Task Excluir(TEntityModel Objeto);
 
-        TEntityModel ObterPorId(TPrimaryKey Id);
+        Task<TEntityModel> ObterPorId(TPrimaryKey Id);
 
-        IList<TEntityModel> Listar(Predicate<TEntityModel> queryPredicate = null);
+        Task<IList<TEntityModel>> Listar(Predicate<TEntityModel> queryPredicate = null);
     }
 }

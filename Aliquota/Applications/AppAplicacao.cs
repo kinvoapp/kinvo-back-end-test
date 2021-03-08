@@ -2,6 +2,7 @@
 using Aliquota.Domain.IRepos;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Aliquota.Applications
 {
@@ -14,27 +15,27 @@ namespace Aliquota.Applications
             _repo = aplicacaoRepo;
         }
 
-        public void Adicionar(Aplicacao a_Aplicacao)
+        public async Task Adicionar(Aplicacao a_Aplicacao)
         {
             ValidarAplicacao(a_Aplicacao);
-            _repo.Adicionar(a_Aplicacao);
+            await _repo.Adicionar(a_Aplicacao);
         }
-        public void Atualizar(Aplicacao a_Aplicacao)
+        public async Task Atualizar(Aplicacao a_Aplicacao)
         {
             ValidarAplicacao(a_Aplicacao);
-            _repo.Atualizar(a_Aplicacao);
+            await _repo.Atualizar(a_Aplicacao);
         }
-        public void Excluir(Aplicacao a_Aplicacao)
+        public async Task Excluir(Aplicacao a_Aplicacao)
         {
-            _repo.Excluir(a_Aplicacao);
+            await _repo.Excluir(a_Aplicacao);
         }
-        public Aplicacao ObterPorId(int a_AplicacaoID)
+        public async Task<Aplicacao> ObterPorId(int a_AplicacaoID)
         {
-            return _repo.ObterPorId(a_AplicacaoID);
+            return await _repo.ObterPorId(a_AplicacaoID);
         }
-        public IList<Aplicacao> Listar(Predicate<Aplicacao> queryPredicate = null)
+        public async Task<IList<Aplicacao>> Listar(Predicate<Aplicacao> queryPredicate = null)
         {
-            return _repo.Listar(queryPredicate);
+            return await _repo.Listar(queryPredicate);
         }
 
         public decimal ImpostoRendaDevido(Aplicacao a_Aplicacao)
