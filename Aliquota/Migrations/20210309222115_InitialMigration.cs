@@ -11,9 +11,9 @@ namespace Aliquota.Domain.Migrations
                 name: "Cliente",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Nome = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -24,11 +24,11 @@ namespace Aliquota.Domain.Migrations
                 name: "ProdutoFinanceiro",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Rendimento = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Custo = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    Descricao = table.Column<string>(nullable: true),
+                    Rendimento = table.Column<decimal>(nullable: false),
+                    Custo = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -39,15 +39,15 @@ namespace Aliquota.Domain.Migrations
                 name: "Aplicacao",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProdutoFinanceiro_ID = table.Column<int>(type: "int", nullable: false),
-                    Cliente_ID = table.Column<int>(type: "int", nullable: false),
-                    DataAplicacao = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DataRetirada = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    Valor = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    ProdutoID = table.Column<int>(type: "int", nullable: true),
-                    InvestidorID = table.Column<int>(type: "int", nullable: true)
+                    ProdutoFinanceiro_ID = table.Column<int>(nullable: false),
+                    Cliente_ID = table.Column<int>(nullable: false),
+                    DataAplicacao = table.Column<DateTime>(nullable: false),
+                    DataRetirada = table.Column<DateTime>(nullable: true),
+                    Valor = table.Column<decimal>(nullable: false),
+                    ProdutoID = table.Column<int>(nullable: true),
+                    InvestidorID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {

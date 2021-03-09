@@ -34,6 +34,9 @@ namespace Aliquota.Infrastructure
 
         public async Task<IList<ProdutoFinanceiro>> Listar(Predicate<ProdutoFinanceiro> queryPredicate = null)
         {
+            if (queryPredicate == null)
+                return _dbContext.ProdutoFinanceiro.ToList();
+
             return _dbContext.ProdutoFinanceiro.Where(x => queryPredicate(x)).ToList();
         }
 

@@ -15,66 +15,76 @@ namespace Aliquota.Applications
             _repo = aplicacaoRepo;
         }
 
-        public async Task Adicionar(Aplicacao a_Aplicacao)
+        public async Task Adicionar(Aplicacao aplicacao)
         {
-            ValidarAplicacao(a_Aplicacao);
-            await _repo.Adicionar(a_Aplicacao);
+            ValidarAplicacao(aplicacao);
+            await _repo.Adicionar(aplicacao);
         }
-        public async Task Atualizar(Aplicacao a_Aplicacao)
+        public async Task Atualizar(Aplicacao aplicacao)
         {
-            ValidarAplicacao(a_Aplicacao);
-            await _repo.Atualizar(a_Aplicacao);
+            ValidarAplicacao(aplicacao);
+            await _repo.Atualizar(aplicacao);
         }
-        public async Task Excluir(Aplicacao a_Aplicacao)
+        public async Task Excluir(Aplicacao aplicacao)
         {
-            await _repo.Excluir(a_Aplicacao);
+            await _repo.Excluir(aplicacao);
         }
-        public async Task<Aplicacao> ObterPorId(int a_AplicacaoID)
+        public async Task<Aplicacao> ObterPorId(int aplicacaoID)
         {
-            return await _repo.ObterPorId(a_AplicacaoID);
+            return await _repo.ObterPorId(aplicacaoID);
         }
         public async Task<IList<Aplicacao>> Listar(Predicate<Aplicacao> queryPredicate = null)
         {
             return await _repo.Listar(queryPredicate);
         }
 
-        public decimal ImpostoRendaDevido(Aplicacao a_Aplicacao)
+        public decimal ImpostoRendaDevido(Aplicacao aplicacao)
         {
-            if (!a_Aplicacao.DataRetirada.HasValue)
-                return 0;
-            
-            int l_PeriodoAplicacao = ((a_Aplicacao.DataRetirada.Value.Year - a_Aplicacao.DataAplicacao.Year) * 12) + a_Aplicacao.DataRetirada.Value.Month - a_Aplicacao.DataAplicacao.Month;
+            var periodoAplicacao = ObterPeriodoAplicacao(aplicacao);
 
-            decimal l_RendimentoBruto = a_Aplicacao.Valor;
-            for (int i = l_PeriodoAplicacao; i > 0; i--)
+            var lucro = ObterLucro(aplicacao);
+
+            decimal percentualIR = ObterPercentualIR(periodoAplicacao);
+
+            return lucro * percentualIR;
+        }
+
+        private int ObterPeriodoAplicacao(Aplicacao aplicacao)
+        {
+            if (!aplicacao.DataRetirada.HasValue)
+                return 0;
+
+            return ((aplicacao.DataRetirada.Value.Year - aplicacao.DataAplicacao.Year) * 12) + aplicacao.DataRetirada.Value.Month - aplicacao.DataAplicacao.Month;
+        }
+        private decimal ObterLucro(Aplicacao aplicacao)
+        {
+            var periodoAplicacao = ObterPeriodoAplicacao(aplicacao);
+
+            decimal rendimentoBruto = aplicacao.Valor;
+            for (int i = periodoAplicacao; i > 0; i--)
             {
-                l_RendimentoBruto = l_RendimentoBruto + (l_RendimentoBruto * a_Aplicacao.Produto.Rendimento);
+                rendimentoBruto = rendimentoBruto + (rendimentoBruto * (aplicacao.Produto.Rendimento / 100));
             }
 
-            decimal l_Lucro = l_RendimentoBruto - (a_Aplicacao.Produto.Custo * l_PeriodoAplicacao);
+            return rendimentoBruto - (aplicacao.Produto.Custo * periodoAplicacao) - aplicacao.Valor;
+        }
+        public decimal ObterPercentualIR(int periodoAplicacao)
+        {
+            if (periodoAplicacao <= 12)
+                return (decimal)0.225;
 
-            decimal l_PercentualIR = ObterPercentualIR(l_PeriodoAplicacao);
+            if (periodoAplicacao > 12 && periodoAplicacao <= 24)
+                return (decimal)0.185;
 
-            return l_Lucro * l_PercentualIR;            
+            return (decimal)0.15;
         }
 
-        public decimal ObterPercentualIR(int a_PeriodoAplicacao)
+        private void ValidarAplicacao(Aplicacao aplicacao)
         {
-            if (a_PeriodoAplicacao <= 12)
-                return (decimal)1.225;
-
-            if (a_PeriodoAplicacao > 12 && a_PeriodoAplicacao <= 24)
-                return (decimal)1.185;
-
-            return (decimal)1.15;
-        }
-
-        public void ValidarAplicacao(Aplicacao a_Aplicacao)
-        {
-            if (a_Aplicacao != null && a_Aplicacao.Valor <= 0)
+            if (aplicacao != null && aplicacao.Valor <= 0)
                 throw new ApplicationException("O valor da aplicação deve ser maior que zero (0).");
 
-            if (a_Aplicacao.DataRetirada.HasValue && a_Aplicacao.DataRetirada < a_Aplicacao.DataAplicacao)
+            if (aplicacao.DataRetirada.HasValue && aplicacao.DataRetirada < aplicacao.DataAplicacao)
                 throw new ApplicationException("A data de retirada deve ser posterior à data de aplicação");
         }
     }

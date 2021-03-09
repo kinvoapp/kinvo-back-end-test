@@ -34,6 +34,8 @@ namespace Aliquota.Infrastructure
 
         public async Task<IList<Aplicacao>> Listar(Predicate<Aplicacao> queryPredicate = null)
         {
+            if (queryPredicate == null)
+                return _dbContext.Aplicacao.ToList();
             return _dbContext.Aplicacao.Where(x => queryPredicate(x)).ToList();
         }
 

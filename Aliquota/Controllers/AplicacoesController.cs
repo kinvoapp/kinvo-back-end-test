@@ -10,10 +10,12 @@ namespace Aliquota.Domain.Controllers
     public class AplicacoesController : ControllerBase
     {
         private readonly IAppAplicacao _appAplicacao;
+        private readonly IAppProdutoFinanceiro _appProdutoFinanceiro;
 
-        public AplicacoesController(IAppAplicacao appAplicacao)
+        public AplicacoesController(IAppAplicacao appAplicacao, IAppProdutoFinanceiro appProdutoFinanceiro)
         {
             _appAplicacao = appAplicacao;
+            _appProdutoFinanceiro = appProdutoFinanceiro;
         }
 
         // GET: api/Aplicacoes
@@ -27,14 +29,14 @@ namespace Aliquota.Domain.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAplicacao(int id)
         {
-            var cliente = await _appAplicacao.ObterPorId(id);
+            var aplicacao = await _appAplicacao.ObterPorId(id);
 
-            if (cliente == null)
+            if (aplicacao == null)
             {
                 return NotFound();
             }
 
-            return Ok(cliente);
+            return Ok(aplicacao);
         }
 
         // PUT: api/Aplicacoes/5
@@ -72,6 +74,27 @@ namespace Aliquota.Domain.Controllers
 
             await _appAplicacao.Excluir(aplicacao);
             return Ok();
-        }        
+        }
+
+        // GET: api/Aplicacoes/ImpostoRendaDevido/5
+        [HttpGet("ImpostoRendaDevido/{id}")]
+        public async Task<IActionResult> ObterImpostoRendeDevido(int id)
+        {
+            var aplicacao = await _appAplicacao.ObterPorId(id);
+
+            if (aplicacao == null)
+            {
+                return NotFound();
+            }
+
+            aplicacao.Produto = await _appProdutoFinanceiro.ObterPorId(aplicacao.ProdutoFinanceiro_ID);
+
+            if(aplicacao.Produto == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(_appAplicacao.ImpostoRendaDevido(aplicacao));
+        }
     }
 }
