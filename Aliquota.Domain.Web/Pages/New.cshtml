@@ -20,16 +20,16 @@
                     <div class="row mx-1">
                         <div class="col">
                             <div class="form-group row">
-                                <label asp-for="applicationGet.InvestedValue"></label>
-                                <input asp-for="applicationGet.InvestedValue" type="number" class="form-control w-auto mx-1" />
+                                <label asp-for="application.InvestedValue"></label>
+                                <input asp-for="application.InvestedValue" type="number" step=".01" class="form-control w-auto mx-1" />
                             </div>
                             <div class="form-group row">
-                                <label asp-for="applicationGet.MonthlyInterestRate"></label>
-                                <input asp-for="applicationGet.MonthlyInterestRate" type="number" class="form-control w-auto mx-1" />
+                                <label asp-for="application.MonthlyInterestRate"></label>
+                                <input asp-for="application.MonthlyInterestRate" type="number" step=".01" class="form-control w-auto mx-1" />
                             </div>
                             <div class="form-group row">
-                                <label asp-for="applicationGet.ExpectedMonthlyPeriod"></label>
-                                <input asp-for="applicationGet.ExpectedMonthlyPeriod" type="number" class="form-control w-auto mx-1" />
+                                <label asp-for="application.ExpectedMonthlyPeriod"></label>
+                                <input asp-for="application.ExpectedMonthlyPeriod" type="number" class="form-control w-auto mx-1" />
                             </div>
                         </div>
                     </div>
@@ -44,9 +44,9 @@
                     </div>
 
                     <div class="my-1">
-                        <span asp-validation-for="applicationGet.InvestedValue" class="text-danger"></span><br />
-                        <span asp-validation-for="applicationGet.MonthlyInterestRate" class="text-danger"></span><br />
-                        <span asp-validation-for="applicationGet.ExpectedMonthlyPeriod" class="text-danger"></span><br />
+                        <span asp-validation-for="application.InvestedValue" class="text-danger"></span><br />
+                        <span asp-validation-for="application.MonthlyInterestRate" class="text-danger"></span><br />
+                        <span asp-validation-for="application.ExpectedMonthlyPeriod" class="text-danger"></span><br />
                     </div>
 
                 </div>

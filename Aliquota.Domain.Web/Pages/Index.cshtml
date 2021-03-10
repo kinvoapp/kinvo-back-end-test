@@ -3,9 +3,13 @@
 @{
     ViewData["Title"] = "Aplicações";
 }
+@using System.Globalization;
 
-<div class="container border shadow">
-    <div class="row justify-content-center my-3">
+<div class="container border shadow overflow-auto">
+    <button class="btn-block btn-sm btn btn-info w-auto float-right mt-5 font-weight-bold" data-toggle="collapse" href=".collapse">
+        Expandir todos <span data-toggle="tooltip" title="Expandir todos" class="oi oi-spreadsheet"></span>
+    </button>
+    <div class="row my-3">
         <div class="col-auto">
             <h1 class="text-primary font-weight-bold">@ViewData["Title"]</h1>
         </div>
@@ -41,7 +45,7 @@
                                     @application.Id
                                 </td>
                                 <td>
-                                    @application.InvestedValue
+                                    @application.InvestedValue.ToString("C2", new CultureInfo("pt-br"))
                                 </td>
                                 <td>
                                     @application.MonthlyInterestRate%/mês

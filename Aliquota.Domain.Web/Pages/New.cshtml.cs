@@ -13,7 +13,8 @@ namespace Aliquota.Domain.Web.Pages
     {
         private readonly ILogger<NewModel> _logger;
         private readonly ApplicationDbContext _context;
-        public Application applicationGet;
+        [BindProperty]
+        public Application application { get; set; }
 
         public NewModel(ILogger<NewModel> logger, ApplicationDbContext context)
         {
@@ -25,14 +26,14 @@ namespace Aliquota.Domain.Web.Pages
         {
         }
 
-        public IActionResult OnPost(Application applicationPost)
+        public async Task<IActionResult> OnPost()
         {
             if (!ModelState.IsValid)
                 return new UnprocessableEntityResult();
             
-            applicationPost.OnNewEntry();
-            _context.Add(applicationPost);
-            _context.SaveChanges();
+            application.OnNewEntry();
+            _context.Add(application);
+            await _context.SaveChangesAsync();
             return Redirect("Index");
         }
     }

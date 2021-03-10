@@ -13,7 +13,7 @@ namespace Aliquota.Domain.Web.Pages
     {
         private readonly ILogger<DeleteModel> _logger;
         private readonly ApplicationDbContext _context;
-        public Application applicationGet;
+        public Application application;
 
         public DeleteModel(ILogger<DeleteModel> logger, ApplicationDbContext context)
         {
@@ -27,18 +27,18 @@ namespace Aliquota.Domain.Web.Pages
             if (query == null)
                 return NotFound();
 
-            applicationGet = query;
+            application = query;
             return Page();
         }
         
-        public IActionResult OnPost(int? Id)
+        public async Task<IActionResult> OnPost(int? Id)
         {
             var query = _context.Applications.Find(Id);
             if (query == null)
                 return NotFound();
 
             _context.Remove(query);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return Redirect("Index");
         }
     }

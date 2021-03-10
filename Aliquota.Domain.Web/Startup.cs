@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace Aliquota.Domain.Web
 {
@@ -63,6 +64,12 @@ namespace Aliquota.Domain.Web
             });
 
             sev.GetService<IDataService>().StartDB();
+
+            var cultureInfo = new CultureInfo("pt-BR", true);
+            cultureInfo.NumberFormat.CurrencySymbol = "R";
+
+            CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+            CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
         }
     }
 }

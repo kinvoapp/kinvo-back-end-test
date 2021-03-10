@@ -13,7 +13,8 @@ namespace Aliquota.Domain.Web.Pages
     {
         private readonly ILogger<EditModel> _logger;
         private readonly ApplicationDbContext _context;
-        public Application applicationGet;
+        [BindProperty]
+        public Application application { get; set; }
 
         public EditModel(ILogger<EditModel> logger, ApplicationDbContext context)
         {
@@ -27,18 +28,18 @@ namespace Aliquota.Domain.Web.Pages
             if (query == null)
                 return NotFound();
 
-            applicationGet = query;
+            application = query;
             return Page();
         }
 
-        public IActionResult OnPost(Application applicationPost)
+        public async Task<IActionResult> OnPost()
         {
             if (!ModelState.IsValid)
                 return new UnprocessableEntityResult();
 
-            applicationPost.OnNewEntry();
-            _context.Applications.Update(applicationPost);
-            _context.SaveChanges();
+            application.OnNewEntry();
+            _context.Applications.Update(application);
+            await _context.SaveChangesAsync();
             return Redirect("Index");
         }
     }
