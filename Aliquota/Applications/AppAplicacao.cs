@@ -63,7 +63,7 @@ namespace Aliquota.Applications
             decimal rendimentoBruto = aplicacao.Valor;
             for (int i = periodoAplicacao; i > 0; i--)
             {
-                rendimentoBruto = rendimentoBruto + (rendimentoBruto * (aplicacao.Produto.Rendimento / 100));
+                rendimentoBruto += (rendimentoBruto * (aplicacao.Produto.Rendimento / 100));
             }
 
             return rendimentoBruto - (aplicacao.Produto.Custo * periodoAplicacao) - aplicacao.Valor;
@@ -79,7 +79,7 @@ namespace Aliquota.Applications
             return (decimal)0.15;
         }
 
-        private void ValidarAplicacao(Aplicacao aplicacao)
+        public void ValidarAplicacao(Aplicacao aplicacao)
         {
             if (aplicacao != null && aplicacao.Valor <= 0)
                 throw new ApplicationException("O valor da aplicação deve ser maior que zero (0).");
