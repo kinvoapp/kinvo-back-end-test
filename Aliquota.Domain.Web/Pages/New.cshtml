@@ -1,0 +1,63 @@
+﻿@page
+@model Aliquota.Domain.Web.Pages.NewModel
+@{
+    ViewData["Title"] = "Nova Aplicação";
+}
+
+<div class="container border p-0 shadow">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="container my-3">
+            <div class="row justify-content-center mb-3 ">
+                <div class="col-auto">
+                    <h1 class="text-primary font-weight-bold">@ViewData["Title"]</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col">
+
+
+                    <div class="row mx-1">
+                        <div class="col">
+                            <div class="form-group row">
+                                <label asp-for="applicationGet.InvestedValue"></label>
+                                <input asp-for="applicationGet.InvestedValue" type="number" class="form-control w-auto mx-1" />
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="applicationGet.MonthlyInterestRate"></label>
+                                <input asp-for="applicationGet.MonthlyInterestRate" type="number" class="form-control w-auto mx-1" />
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="applicationGet.ExpectedMonthlyPeriod"></label>
+                                <input asp-for="applicationGet.ExpectedMonthlyPeriod" type="number" class="form-control w-auto mx-1" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-3 justify-content-center">
+                        <div class="col-auto">
+                            <input class="btn btn-success m-1 w-auto" type="submit" value="Aplicar" />
+                        </div>
+                        <div class="col-auto">
+                            <a asp-page="Index" class="btn btn-danger m-1 w-auto">Cancelar</a>
+                        </div>
+                    </div>
+
+                    <div class="my-1">
+                        <span asp-validation-for="applicationGet.InvestedValue" class="text-danger"></span><br />
+                        <span asp-validation-for="applicationGet.MonthlyInterestRate" class="text-danger"></span><br />
+                        <span asp-validation-for="applicationGet.ExpectedMonthlyPeriod" class="text-danger"></span><br />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+

@@ -96,3 +96,4 @@ C:\Users\marco\source\repos\Aliquota\kinvo-back-end-test\Aliquota.Domain.Test\ob
 C:\Users\marco\source\repos\Aliquota\kinvo-back-end-test\Aliquota.Domain.Test\obj\Debug\netcoreapp3.1\Aliquota.Domain.Test.dll
 C:\Users\marco\source\repos\Aliquota\kinvo-back-end-test\Aliquota.Domain.Test\obj\Debug\netcoreapp3.1\Aliquota.Domain.Test.pdb
 C:\Users\marco\source\repos\Aliquota\kinvo-back-end-test\Aliquota.Domain.Test\obj\Debug\netcoreapp3.1\Aliquota.Domain.Test.genruntimeconfig.cache
+C:\Users\marco\source\repos\Aliquota\kinvo-back-end-test\Aliquota.Domain.Test\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll

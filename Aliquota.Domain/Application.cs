@@ -1,34 +1,48 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Aliquota.Domain
 {
     public class Application
     {
-        public float Value { get; private set; }
-        public float Profit { get; private set; }
-        public float IncomeTax { get; private set; }
-        public DateTime ApplyDate { get; private set; }
-        public DateTime WithdrawDate { get; private set; }
-        public Account _Account { get; private set; }
-        //public Asset _Asset { get; private set; }
+        const string errorMessageRange = "'{0}' deve ser maior que zero.";
+        const string errorMessageRequired = "'{0}' deve ser preenchido.";
 
-        public Application(Account account, float value, DateTime applyDate)
+        public int Id { get; set; }
+
+        [Required(ErrorMessage = errorMessageRequired)]
+        [Display(Name = "Valor Investido")]
+        [Range(double.Epsilon, double.MaxValue, ErrorMessage = errorMessageRange)]
+        public decimal InvestedValue { get; set; }
+        [Display(Name = "Lucro")]
+        public decimal ProfitValue { get; set; }
+        [Display(Name = "Valor Total")]
+        public decimal TotalValue { get; set; }
+        [Display(Name = "Valor Retido")]
+        public decimal WithholdedValue { get; set; }
+
+        [Required(ErrorMessage = errorMessageRequired)]
+        [Display(Name = "Juros ao mês")]
+        [Range(double.Epsilon, double.MaxValue, ErrorMessage = errorMessageRange)]
+        public decimal MonthlyInterestRate { get; set; }
+        [Required(ErrorMessage = errorMessageRequired)]
+        [Display(Name = "Meses para o resgate")]
+        [Range(1, int.MaxValue, ErrorMessage = "'{0}' deve ser um número inteiro maior que zero.")]
+        public int ExpectedMonthlyPeriod { get; set; }
+
+        [Display(Name = "Data de aplicação")]
+        public DateTime ApplyDate { get; set; }
+        [Display(Name = "Data de resgate")]
+        public DateTime WithdrawDate { get; set; }
+
+        public void OnNewEntry()
         {
-            _Account = account;
-            Value = value;
-            ApplyDate = applyDate;
-        }
-
-        //Using a fixed appreciation range(0% to 10%) for test purposes
-        public void CalculateProfit(int months)
-        {
-            for (int i = 0; i < months; i++)
-            {
-                var random = new Random();
-                float appreciation = random.Next(0, 11) / 100;
-
-                Profit = Value * appreciation;
-            }
+            ApplyDate = DateTime.Now;
+            WithdrawDate = ApplyDate.AddMonths(ExpectedMonthlyPeriod);
+            ProfitValue =
+                (InvestedValue * Transactions.CalculateProfitability(ExpectedMonthlyPeriod, (double)MonthlyInterestRate)) - InvestedValue;
+            TotalValue = InvestedValue + ProfitValue;
+            WithholdedValue = ProfitValue * Transactions.CalculateIncomeTax((WithdrawDate - ApplyDate).Days / 365);
         }
     }
 }

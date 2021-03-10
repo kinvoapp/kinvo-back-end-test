@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PFHIY9u/plq2orVfijPoFc03Im+U+7EyDkztyNWgKIua8tg8Stlh6LRXtGax/UIshUXCepQprJiezsxVDHouKA==",
+  "dgSpecHash": "vK0yk6XETOiu4QX8WlPGV9qy7N/lbN0K6zMyGj7h6P3QHAmsMzbZN/QUkfmRVbshrlIfU3qMsktIahZA6qzyzw==",
   "success": true,
   "projectFilePath": "C:\\Users\\marco\\source\\repos\\Aliquota\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\marco\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
     "C:\\Users\\marco\\.nuget\\packages\\nuget.frameworks\\5.0.0\\nuget.frameworks.5.0.0.nupkg.sha512",
     "C:\\Users\\marco\\.nuget\\packages\\system.collections\\4.0.11\\system.collections.4.0.11.nupkg.sha512",
+    "C:\\Users\\marco\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\marco\\.nuget\\packages\\system.diagnostics.debug\\4.0.11\\system.diagnostics.debug.4.0.11.nupkg.sha512",
     "C:\\Users\\marco\\.nuget\\packages\\system.diagnostics.tools\\4.0.1\\system.diagnostics.tools.4.0.1.nupkg.sha512",
     "C:\\Users\\marco\\.nuget\\packages\\system.dynamic.runtime\\4.0.11\\system.dynamic.runtime.4.0.11.nupkg.sha512",

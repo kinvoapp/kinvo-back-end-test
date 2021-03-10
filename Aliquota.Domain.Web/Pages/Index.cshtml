@@ -1,0 +1,145 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Aplicações";
+}
+
+<div class="container border shadow">
+    <div class="row justify-content-center my-3">
+        <div class="col-auto">
+            <h1 class="text-primary font-weight-bold">@ViewData["Title"]</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Aplicação
+                        </th>
+                        <th>
+                            Rendimento
+                        <th>
+                            Período
+                        </th>
+                        <th class="text-center" colspan="3">
+                            Ferramentas
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.applications.Count() > 0)
+                    {
+                        foreach (var application in Model.applications)
+                        {
+                            <tr>
+                                <td>
+                                    @application.Id
+                                </td>
+                                <td>
+                                    @application.InvestedValue
+                                </td>
+                                <td>
+                                    @application.MonthlyInterestRate%/mês
+                                </td>
+                                @if (application.ExpectedMonthlyPeriod < 1)
+                                {
+                                    <td>@application.ExpectedMonthlyPeriod mês</td>
+                                }
+                                else
+                                {
+                                    <td>@application.ExpectedMonthlyPeriod meses</td>
+                                }
+                                <td>
+                                    <a class="btn-block btn-sm btn btn-info" data-toggle="collapse" href="#expandirAplicação@{@application.Id}">
+                                        <span data-toggle="tooltip" title="Expandir" class="oi oi-eye"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a asp-page="Edit" asp-route-Id="@application.Id" class="btn-block btn-sm btn btn-success"
+                                       data-toggle="tooltip" title="Editar">
+                                        <span class="oi oi-pencil"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a asp-page="Delete" asp-route-Id="@application.Id" class="btn-block btn-sm btn btn-danger"
+                                       data-toggle="tooltip" title="Remover">
+                                        <span class="oi oi-trash"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="7" class="p-0">
+                                    <div class="collapse" id="expandirAplicação@{@application.Id}">
+                                        <div class="card card-body pb-1">
+                                            <div class="card-text mb-3">
+                                                <div class="card-text bg-light">
+                                                    <div>
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>
+                                                                        Investido
+                                                                    </th>
+                                                                    <th>
+                                                                        Lucro
+                                                                    </th>
+                                                                    <th>
+                                                                        Total
+                                                                    </th>
+                                                                    <th>
+                                                                        Retido
+                                                                    </th>
+                                                                    <th>
+                                                                        Para saque
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        @application.InvestedValue
+                                                                    </td>
+                                                                    <td>
+                                                                        @application.ProfitValue
+                                                                    </td>
+                                                                    <td>
+                                                                        @application.TotalValue
+                                                                    </td>
+                                                                    <td class="text-danger">
+                                                                        @application.WithholdedValue
+                                                                    </td>
+                                                                    <td>
+                                                                        @{@(application.TotalValue - application.WithholdedValue)}
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <label class="row">Aplicado em: @application.ApplyDate</label>
+                                                <label class="row">Retirada em: @application.WithdrawDate</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td class="text-center" colspan="5">Nenhuma aplicação encontrada.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
