@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "KiCXaFFvpGZTJb3vLSDe6vYZGQd2FdOrtwTWwR6RiLKjqTRqOAWq5yEiXc4ovj6BslS09h22AR/M/ie9P9hgTA==",
+  "success": true,
+  "projectFilePath": "C:\\kinvoTest\\kinvo-back-end-test\\Aliquota.Service\\Aliquota.Service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Felipe Kinvo\\.nuget\\packages\\fluentvalidation\\9.5.3\\fluentvalidation.9.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}

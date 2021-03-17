@@ -1,0 +1,12 @@
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Service\bin\Debug\netcoreapp3.1\Aliquota.Service.deps.json
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Service\bin\Debug\netcoreapp3.1\Aliquota.Service.dll
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Service\bin\Debug\netcoreapp3.1\Aliquota.Service.pdb
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Service\bin\Debug\netcoreapp3.1\Aliquota.Domain.dll
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Service\bin\Debug\netcoreapp3.1\Aliquota.Domain.pdb
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Service\obj\Debug\netcoreapp3.1\Aliquota.Service.csprojAssemblyReference.cache
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Service\obj\Debug\netcoreapp3.1\Aliquota.Service.csproj.CoreCompileInputs.cache
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Service\obj\Debug\netcoreapp3.1\Aliquota.Service.AssemblyInfoInputs.cache
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Service\obj\Debug\netcoreapp3.1\Aliquota.Service.AssemblyInfo.cs
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Service\obj\Debug\netcoreapp3.1\Aliquota.Service.csproj.CopyComplete
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Service\obj\Debug\netcoreapp3.1\Aliquota.Service.dll
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Service\obj\Debug\netcoreapp3.1\Aliquota.Service.pdb

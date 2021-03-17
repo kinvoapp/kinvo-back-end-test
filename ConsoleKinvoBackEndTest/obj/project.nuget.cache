@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ud94IVlqjxyp9xyB6wH9M8t8cSQ8Q2HA4Nc+jkw109EjHQPSpZJi9avrjd6b8o1CIkSDM7Ayl32WSYeu/GoX1w==",
+  "success": true,
+  "projectFilePath": "C:\\kinvoTest\\kinvo-back-end-test\\ConsoleKinvoBackEndTest\\ConsoleKinvoBackEndTest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Felipe Kinvo\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

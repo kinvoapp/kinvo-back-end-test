@@ -1,0 +1,15 @@
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.Data\bin\Debug\netcoreapp3.1\Aliquota.Infra.Data.deps.json
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.Data\bin\Debug\netcoreapp3.1\Aliquota.Infra.Data.runtimeconfig.json
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.Data\bin\Debug\netcoreapp3.1\Aliquota.Infra.Data.runtimeconfig.dev.json
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.Data\bin\Debug\netcoreapp3.1\Aliquota.Infra.Data.dll
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.Data\bin\Debug\netcoreapp3.1\Aliquota.Infra.Data.pdb
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.Data\bin\Debug\netcoreapp3.1\Aliquota.Domain.dll
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.Data\bin\Debug\netcoreapp3.1\Aliquota.Domain.pdb
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.Data\obj\Debug\netcoreapp3.1\Aliquota.Infra.Data.csprojAssemblyReference.cache
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.Data\obj\Debug\netcoreapp3.1\Aliquota.Infra.Data.csproj.CoreCompileInputs.cache
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.Data\obj\Debug\netcoreapp3.1\Aliquota.Infra.Data.AssemblyInfoInputs.cache
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.Data\obj\Debug\netcoreapp3.1\Aliquota.Infra.Data.AssemblyInfo.cs
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.Data\obj\Debug\netcoreapp3.1\Aliquota.Infra.Data.csproj.CopyComplete
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.Data\obj\Debug\netcoreapp3.1\Aliquota.Infra.Data.dll
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.Data\obj\Debug\netcoreapp3.1\Aliquota.Infra.Data.pdb
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.Data\obj\Debug\netcoreapp3.1\Aliquota.Infra.Data.genruntimeconfig.cache

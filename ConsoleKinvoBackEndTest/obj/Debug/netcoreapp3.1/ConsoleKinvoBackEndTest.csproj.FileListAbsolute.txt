@@ -1,0 +1,15 @@
+C:\kinvoTest\kinvo-back-end-test\ConsoleKinvoBackEndTest\bin\Debug\netcoreapp3.1\ConsoleKinvoBackEndTest.exe
+C:\kinvoTest\kinvo-back-end-test\ConsoleKinvoBackEndTest\obj\Debug\netcoreapp3.1\ConsoleKinvoBackEndTest.AssemblyInfoInputs.cache
+C:\kinvoTest\kinvo-back-end-test\ConsoleKinvoBackEndTest\obj\Debug\netcoreapp3.1\ConsoleKinvoBackEndTest.AssemblyInfo.cs
+C:\kinvoTest\kinvo-back-end-test\ConsoleKinvoBackEndTest\obj\Debug\netcoreapp3.1\ConsoleKinvoBackEndTest.csprojAssemblyReference.cache
+C:\kinvoTest\kinvo-back-end-test\ConsoleKinvoBackEndTest\obj\Debug\netcoreapp3.1\ConsoleKinvoBackEndTest.csproj.CoreCompileInputs.cache
+C:\kinvoTest\kinvo-back-end-test\ConsoleKinvoBackEndTest\bin\Debug\netcoreapp3.1\ConsoleKinvoBackEndTest.deps.json
+C:\kinvoTest\kinvo-back-end-test\ConsoleKinvoBackEndTest\bin\Debug\netcoreapp3.1\ConsoleKinvoBackEndTest.runtimeconfig.json
+C:\kinvoTest\kinvo-back-end-test\ConsoleKinvoBackEndTest\bin\Debug\netcoreapp3.1\ConsoleKinvoBackEndTest.runtimeconfig.dev.json
+C:\kinvoTest\kinvo-back-end-test\ConsoleKinvoBackEndTest\bin\Debug\netcoreapp3.1\ConsoleKinvoBackEndTest.dll
+C:\kinvoTest\kinvo-back-end-test\ConsoleKinvoBackEndTest\bin\Debug\netcoreapp3.1\ConsoleKinvoBackEndTest.pdb
+C:\kinvoTest\kinvo-back-end-test\ConsoleKinvoBackEndTest\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\kinvoTest\kinvo-back-end-test\ConsoleKinvoBackEndTest\obj\Debug\netcoreapp3.1\ConsoleKinvoBackEndTest.csproj.CopyComplete
+C:\kinvoTest\kinvo-back-end-test\ConsoleKinvoBackEndTest\obj\Debug\netcoreapp3.1\ConsoleKinvoBackEndTest.dll
+C:\kinvoTest\kinvo-back-end-test\ConsoleKinvoBackEndTest\obj\Debug\netcoreapp3.1\ConsoleKinvoBackEndTest.pdb
+C:\kinvoTest\kinvo-back-end-test\ConsoleKinvoBackEndTest\obj\Debug\netcoreapp3.1\ConsoleKinvoBackEndTest.genruntimeconfig.cache

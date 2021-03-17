@@ -1,0 +1,52 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Aliquota.Service/1.0.0": {
+        "dependencies": {
+          "Aliquota.Domain": "1.0.0",
+          "FluentValidation": "9.5.3"
+        },
+        "runtime": {
+          "Aliquota.Service.dll": {}
+        }
+      },
+      "FluentValidation/9.5.3": {
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.5.3.0"
+          }
+        }
+      },
+      "Aliquota.Domain/1.0.0": {
+        "runtime": {
+          "Aliquota.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Aliquota.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FluentValidation/9.5.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BataCga/cwQUeo9yy8dzDnihx3N5l1+wj6kEQOkdQ5FIsSFcWD/UjdPJ2jNKODSPAtYuDH5KLM5IBrr1UCNf/A==",
+      "path": "fluentvalidation/9.5.3",
+      "hashPath": "fluentvalidation.9.5.3.nupkg.sha512"
+    },
+    "Aliquota.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

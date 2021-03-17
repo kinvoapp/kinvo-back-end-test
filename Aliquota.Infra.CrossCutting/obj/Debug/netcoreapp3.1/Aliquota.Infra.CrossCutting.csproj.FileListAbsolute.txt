@@ -1,0 +1,12 @@
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.CrossCutting\bin\Debug\netcoreapp3.1\Aliquota.Infra.CrossCutting.deps.json
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.CrossCutting\bin\Debug\netcoreapp3.1\Aliquota.Infra.CrossCutting.dll
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.CrossCutting\bin\Debug\netcoreapp3.1\Aliquota.Infra.CrossCutting.pdb
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.CrossCutting\bin\Debug\netcoreapp3.1\Aliquota.Domain.dll
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.CrossCutting\bin\Debug\netcoreapp3.1\Aliquota.Domain.pdb
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.CrossCutting\obj\Debug\netcoreapp3.1\Aliquota.Infra.CrossCutting.csprojAssemblyReference.cache
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.CrossCutting\obj\Debug\netcoreapp3.1\Aliquota.Infra.CrossCutting.csproj.CoreCompileInputs.cache
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.CrossCutting\obj\Debug\netcoreapp3.1\Aliquota.Infra.CrossCutting.AssemblyInfoInputs.cache
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.CrossCutting\obj\Debug\netcoreapp3.1\Aliquota.Infra.CrossCutting.AssemblyInfo.cs
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.CrossCutting\obj\Debug\netcoreapp3.1\Aliquota.Infra.CrossCutting.csproj.CopyComplete
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.CrossCutting\obj\Debug\netcoreapp3.1\Aliquota.Infra.CrossCutting.dll
+C:\kinvoTest\kinvo-back-end-test\Aliquota.Infra.CrossCutting\obj\Debug\netcoreapp3.1\Aliquota.Infra.CrossCutting.pdb
