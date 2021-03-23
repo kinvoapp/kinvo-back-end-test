@@ -1,0 +1,49 @@
+﻿@model Aliquota.Domain.Models.AplicacaoModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h4>Adicionar aplicação</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ValorInicial" class="control-label"></label>
+                <p style="color:red; display:inline-block">*</p>
+                <input asp-for="ValorInicial" class="form-control" />
+                <span asp-validation-for="ValorInicial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataAplicada" class="control-label"></label>
+                <p style="color:red; display:inline-block">*</p>
+                <input asp-for="DataAplicada" class="form-control" readonly/>
+                <span asp-validation-for="DataAplicada" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="DataRetirada" class="control-label"></label>
+                <input asp-for="DataRetirada" class="form-control"/>
+                <span asp-validation-for="DataRetirada" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="ValorFinalBruto" class="control-label"></label>
+                <input asp-for="ValorFinalBruto" class="form-control" readonly/>
+                <span asp-validation-for="ValorFinalBruto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

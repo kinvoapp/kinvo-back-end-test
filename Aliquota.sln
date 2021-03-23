@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliquota.Domain", "Aliquota.Domain\Aliquota.Domain.csproj", "{97F25B24-D151-4541-A2F3-5B379263F054}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliquota.Domain.Test", "Aliquota.Domain.Test\Aliquota.Domain.Test.csproj", "{2DC77FF2-F23E-4A1D-B57D-095FF092F460}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97F25B24-D151-4541-A2F3-5B379263F054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97F25B24-D151-4541-A2F3-5B379263F054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97F25B24-D151-4541-A2F3-5B379263F054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97F25B24-D151-4541-A2F3-5B379263F054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DC77FF2-F23E-4A1D-B57D-095FF092F460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DC77FF2-F23E-4A1D-B57D-095FF092F460}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DC77FF2-F23E-4A1D-B57D-095FF092F460}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DC77FF2-F23E-4A1D-B57D-095FF092F460}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AFFA24F0-27EB-4C59-8AE1-93B18832F1A0}
+	EndGlobalSection
+EndGlobal

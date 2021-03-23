@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Aliquota.Domain.Models.AplicacaoModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<p>
+    <a asp-action="Create">Adicionar aplicação</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorInicial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataAplicada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataRetirada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorFinalBruto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorImpostoRenda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorLucroLiquido)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorInicial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataAplicada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataRetirada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorFinalBruto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorImpostoRenda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorLucroLiquido)
+            </td>
+            <td>
+                @if (!item.DataRetirada.HasValue)
+                {
+                    <a asp-action="Edit" asp-route-id="@item.AplicacaoId">Resgatar</a>
+                }
+                |
+                <a asp-action="Details" asp-route-id="@item.AplicacaoId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.AplicacaoId">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
