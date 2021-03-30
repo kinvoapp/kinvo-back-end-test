@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliquota.WebApp", "Aliquota.WebApp\Aliquota.WebApp.csproj", "{FEC645C8-C6B5-4CE6-BBB6-9DC1CC6DA7AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliquota.Domain", "Aliquota.Domain\Aliquota.Domain.csproj", "{26547F19-E97F-42CD-9EBF-7F2EB23CED43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEC645C8-C6B5-4CE6-BBB6-9DC1CC6DA7AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEC645C8-C6B5-4CE6-BBB6-9DC1CC6DA7AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEC645C8-C6B5-4CE6-BBB6-9DC1CC6DA7AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEC645C8-C6B5-4CE6-BBB6-9DC1CC6DA7AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26547F19-E97F-42CD-9EBF-7F2EB23CED43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26547F19-E97F-42CD-9EBF-7F2EB23CED43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26547F19-E97F-42CD-9EBF-7F2EB23CED43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26547F19-E97F-42CD-9EBF-7F2EB23CED43}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D05E28AC-0B51-44A1-A172-1732612A16B1}
+	EndGlobalSection
+EndGlobal
