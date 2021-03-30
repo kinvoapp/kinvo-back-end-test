@@ -19,7 +19,8 @@ namespace Aliquota.Domain.Negocio
 
         public void Add(ProdutoFinanceiro item)
         {
-            item.Id = Guid.NewGuid();
+            if (item.Id == Guid.Empty)
+                item.Id = Guid.NewGuid();
 
             _unitOfWork.Produtos.Add(item);
             _unitOfWork.Complete();
