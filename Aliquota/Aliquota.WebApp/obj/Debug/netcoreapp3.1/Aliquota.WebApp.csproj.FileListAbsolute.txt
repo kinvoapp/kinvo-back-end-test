@@ -168,10 +168,15 @@ C:\Projetos\Labs\Kinvo-Back-End-Test\kinvo-back-end-test\Aliquota\Aliquota.WebAp
 C:\Projetos\Labs\Kinvo-Back-End-Test\kinvo-back-end-test\Aliquota\Aliquota.WebApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Projetos\Labs\Kinvo-Back-End-Test\kinvo-back-end-test\Aliquota\Aliquota.WebApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Projetos\Labs\Kinvo-Back-End-Test\kinvo-back-end-test\Aliquota\Aliquota.WebApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Projetos\Labs\Kinvo-Back-End-Test\kinvo-back-end-test\Aliquota\Aliquota.WebApp\obj\Debug\netcoreapp3.1\Aliquota.WebApp.csproj.CoreCompileInputs.cache
-C:\Projetos\Labs\Kinvo-Back-End-Test\kinvo-back-end-test\Aliquota\Aliquota.WebApp\obj\Debug\netcoreapp3.1\Aliquota.WebApp.MvcApplicationPartsAssemblyInfo.cache
 C:\Projetos\Labs\Kinvo-Back-End-Test\kinvo-back-end-test\Aliquota\Aliquota.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\ProdutoFinanceiro\Index.cshtml.g.cs
 C:\Projetos\Labs\Kinvo-Back-End-Test\kinvo-back-end-test\Aliquota\Aliquota.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\ProdutoFinanceiro\Create.cshtml.g.cs
 C:\Projetos\Labs\Kinvo-Back-End-Test\kinvo-back-end-test\Aliquota\Aliquota.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\ProdutoFinanceiro\Details.cshtml.g.cs
 C:\Projetos\Labs\Kinvo-Back-End-Test\kinvo-back-end-test\Aliquota\Aliquota.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\ProdutoFinanceiro\Edit.cshtml.g.cs
 C:\Projetos\Labs\Kinvo-Back-End-Test\kinvo-back-end-test\Aliquota\Aliquota.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\ProdutoFinanceiro\Delete.cshtml.g.cs
+C:\Projetos\Labs\Kinvo-Back-End-Test\kinvo-back-end-test\Aliquota\Aliquota.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Aplicacao\Index.cshtml.g.cs
+C:\Projetos\Labs\Kinvo-Back-End-Test\kinvo-back-end-test\Aliquota\Aliquota.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Aplicacao\Create.cshtml.g.cs
+C:\Projetos\Labs\Kinvo-Back-End-Test\kinvo-back-end-test\Aliquota\Aliquota.WebApp\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Projetos\Labs\Kinvo-Back-End-Test\kinvo-back-end-test\Aliquota\Aliquota.WebApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Projetos\Labs\Kinvo-Back-End-Test\kinvo-back-end-test\Aliquota\Aliquota.WebApp\obj\Debug\netcoreapp3.1\Aliquota.WebApp.csproj.CoreCompileInputs.cache
+C:\Projetos\Labs\Kinvo-Back-End-Test\kinvo-back-end-test\Aliquota\Aliquota.WebApp\obj\Debug\netcoreapp3.1\Aliquota.WebApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Projetos\Labs\Kinvo-Back-End-Test\kinvo-back-end-test\Aliquota\Aliquota.WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Aplicacao\Resgatar.cshtml.g.cs

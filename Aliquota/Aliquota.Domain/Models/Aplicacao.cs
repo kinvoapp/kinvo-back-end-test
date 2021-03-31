@@ -16,6 +16,6 @@ namespace Aliquota.Domain.Models
 
         public Guid ProdutoFinanceiroId { get; set; }
 
-        public ProdutoFinanceiro ProdutoFinanceiro { get; set; }
+        public virtual ProdutoFinanceiro ProdutoFinanceiro { get; set; }
     }
 }

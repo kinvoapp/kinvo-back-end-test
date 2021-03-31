@@ -118,6 +118,10 @@
               "target": "Package",
               "version": "[5.0.4, )"
             },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.13, )"
@@ -135,6 +139,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.5, )"
+            },
+            "Select2.js": {
+              "target": "Package",
+              "version": "[4.0.13, )"
             }
           },
           "imports": [

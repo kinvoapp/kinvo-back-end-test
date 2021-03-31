@@ -7,5 +7,8 @@ namespace Aliquota.Domain.Negocio.Interfaces
 {
     public interface IAplicacaoService : IBaseService<Aplicacao>
     {
+        bool ValidarAplicacao(Aplicacao aplicacao);
+
+        bool ValidarResgate(Aplicacao aplicacao, DateTime dataResgate);
     }
 }

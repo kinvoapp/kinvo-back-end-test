@@ -20,6 +20,9 @@ namespace Aliquota.Domain.Negocio
 
         public void Add(Aplicacao item)
         {
+            if (!ValidarAplicacao(item))
+                throw new ApplicationException("Valor da aplicação deve ser maior que 0 (zero).");
+
             _unitOfWork.Aplicacoes.Add(item);
             _unitOfWork.Complete();
         }
@@ -30,9 +33,9 @@ namespace Aliquota.Domain.Negocio
             _unitOfWork.Complete();
         }
 
-        public Task<Aplicacao> Find(Guid id)
+        public async Task<Aplicacao> Find(Guid id)
         {
-            return _unitOfWork.Aplicacoes.Get(id);
+            return await _unitOfWork.Aplicacoes.Get(id);
         }
 
         public Task<IEnumerable<Aplicacao>> List()
@@ -44,6 +47,28 @@ namespace Aliquota.Domain.Negocio
         {
             _unitOfWork.Aplicacoes.Delete(item);
             _unitOfWork.Complete();
+        }
+
+        public bool ValidarAplicacao(Aplicacao aplicacao)
+        {
+            if (aplicacao == null)
+                return false;
+
+            if (aplicacao.ValorAplicado <= 0)
+                return false;
+
+            if (aplicacao.Quantidade <= 0)
+                return false;
+
+            return true;
+        }
+
+        public bool ValidarResgate(Aplicacao aplicacao, DateTime dataResgate)
+        {
+            if (aplicacao.DataAplicacao > dataResgate)
+                return false;
+
+            return true;
         }
     }
 }

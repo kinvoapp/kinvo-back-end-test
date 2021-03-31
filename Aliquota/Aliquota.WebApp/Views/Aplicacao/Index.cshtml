@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Aliquota.WebApp.Models.AplicacaoViewModelList>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DataAplicacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Produto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorAplicado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorAtual)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Variacao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataAplicacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Produto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorAplicado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorAtual)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Variacao)
+            </td>
+            <td>
+                @Html.ActionLink("Resgatar", "Resgatar", new { id = item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

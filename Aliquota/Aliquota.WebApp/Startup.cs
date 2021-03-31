@@ -27,7 +27,7 @@ namespace Aliquota.WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AliquotaContext>(options => options.UseSqlite(Configuration.GetConnectionString("SQLiteConnection")));
+            services.AddDbContext<AliquotaContext>(options => options.UseLazyLoadingProxies().UseSqlite(Configuration.GetConnectionString("SQLiteConnection")));
 
             services.AddScoped<IProdutoService, ProdutoService>();
             services.AddScoped<IAplicacaoService, AplicacaoService>();

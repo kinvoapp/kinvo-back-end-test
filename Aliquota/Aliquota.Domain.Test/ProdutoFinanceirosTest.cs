@@ -30,6 +30,7 @@ namespace Aliquota.Domain.Test
 
             ServiceProvider = Services.BuildServiceProvider();
         }
+
         [Fact]
         public void ProdutoFinanceiro_Cadastro()
         {
