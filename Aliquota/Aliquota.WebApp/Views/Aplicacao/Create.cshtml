@@ -1,0 +1,50 @@
+﻿@model Aliquota.WebApp.Models.AplicacaoViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<script>
+    $(".id_label_single").select2();
+</script>
+
+<h1>Create</h1>
+
+<h4>AplicacaoViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <label for="id_label_single">
+                Produto Financeiro
+                <select asp-for="ProdutoFinanceiroId" class="js-example-basic-single js-states form-control" id="id_label_single"
+                        asp-items="@ViewBag.Produtos"></select>
+            </label>
+
+            <div class="form-group">
+                <label asp-for="DataAplicacao" class="control-label"></label>
+                <input asp-for="DataAplicacao" class="form-control" />
+                <span asp-validation-for="DataAplicacao" class="text-danger"></span>
+            </div>
+                        
+            <div class="form-group">
+                <label asp-for="ValorAplicado" class="control-label"></label>
+                <input asp-for="ValorAplicado" class="form-control" />
+                <span asp-validation-for="ValorAplicado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
