@@ -43,6 +43,35 @@ namespace Aliquota.Domain.Negocio
             return _unitOfWork.Aplicacoes.GetAll();
         }
 
+        public decimal ObterAlicotaImposto(Aplicacao aplicacao, DateTime dataResgate)
+        {
+            int diasAplicado = (dataResgate - aplicacao.DataAplicacao).Days;
+            if (!aplicacao.ProdutoFinanceiro.Aliquotas.Any(x => x.Key > diasAplicado))
+                return (decimal)aplicacao.ProdutoFinanceiro.AliquotaDefault;
+
+            Double alicota = aplicacao.ProdutoFinanceiro.Aliquotas.Where(x => x.Key > diasAplicado).OrderBy(x => x.Key).First().Value;
+            return (decimal)alicota;
+
+        }
+
+        public decimal ObterImpostoARecolher(Aplicacao aplicacao, DateTime dataResgate)
+        {
+            decimal variacao = ObterLucroAplicacao(aplicacao);
+
+            if (variacao < 0)
+                return 0;
+
+            decimal alicota = ObterAlicotaImposto(aplicacao, dataResgate);
+            return variacao * (alicota / 100);
+        }
+
+        private static decimal ObterLucroAplicacao(Aplicacao aplicacao)
+        {
+            decimal valorAtual = aplicacao.Quantidade * aplicacao.ProdutoFinanceiro.Cotacao;
+            decimal variacao = valorAtual - aplicacao.ValorAplicado;
+            return variacao;
+        }
+
         public void Remove(Aplicacao item)
         {
             _unitOfWork.Aplicacoes.Delete(item);
@@ -69,6 +98,15 @@ namespace Aliquota.Domain.Negocio
                 return false;
 
             return true;
+        }
+
+        public void Resgatar(Aplicacao aplicacao, DateTime dataResgate)
+        {
+            if (!ValidarResgate(aplicacao, dataResgate))
+                throw new ApplicationException("Data de resgate deve ser maior que a data da aplicação");
+
+            Remove(aplicacao);
+
         }
     }
 }

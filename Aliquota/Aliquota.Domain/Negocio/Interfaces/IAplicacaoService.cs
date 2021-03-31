@@ -10,5 +10,11 @@ namespace Aliquota.Domain.Negocio.Interfaces
         bool ValidarAplicacao(Aplicacao aplicacao);
 
         bool ValidarResgate(Aplicacao aplicacao, DateTime dataResgate);
+
+        decimal ObterAlicotaImposto(Aplicacao aplicacao, DateTime dataResgate);
+
+        decimal ObterImpostoARecolher(Aplicacao aplicacao, DateTime dataResgate);
+
+        void Resgatar(Aplicacao aplicacao, DateTime dataResgate);
     }
 }

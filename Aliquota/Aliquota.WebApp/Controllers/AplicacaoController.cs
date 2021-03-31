@@ -68,16 +68,20 @@ namespace Aliquota.WebApp.Controllers
         {
             Aplicacao aplicacao = await _aplicacaoService.Find(id);
             var model = AplicacaoViewModelList.ConvertToModelView(aplicacao);
+            ViewBag.Aliquota = _aplicacaoService.ObterAlicotaImposto(aplicacao, DateTime.Now);
+            ViewBag.ImpostoAtual = _aplicacaoService.ObterImpostoARecolher(aplicacao, DateTime.Now);
             return View(model);
         }
 
         // POST: AplicacaoController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Resgatar(int id, IFormCollection collection)
+        public ActionResult Resgatar(AplicacaoViewModel model)
         {
             try
             {
+                Aplicacao aplicacao = model.ConvertToModel();
+                _aplicacaoService.Resgatar(aplicacao, DateTime.Now);
                 return RedirectToAction(nameof(Index));
             }
             catch
