@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Aliquota.Domain.Models
 {
-    class Resgate
+    class Resgates
     {
         [Key]
         public int Id { get; set; }
@@ -15,6 +15,6 @@ namespace Aliquota.Domain.Models
         public double Valor_IR { get; set; }
         public DateTime Data { get; set; }
         public int AplicacaoId { get; set; }
-        public Aplicacao Aplicacao { get; set; }
+        public Aplicacoes Aplicacao { get; set; }
     }
 }

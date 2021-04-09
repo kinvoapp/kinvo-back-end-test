@@ -8,12 +8,20 @@ using System.Threading.Tasks;
 
 namespace Aliquota.Domain.Data
 {
-    class AliquotaContext :DbContext
+    class AliquotaContext : DbContext
     {
-        public DbSet<Aplicacao> Aplicacoes { get; set; }
-        public DbSet<Resgate> Resgates { get; set; }
+        public DbSet<Aplicacoes> Aplicacoes { get; set; }
+        public DbSet<Resgates> Resgates { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-           => options.UseSqlite("Data Source=AliquotaDB.db");
+        {
+            options.UseSqlite("Data Source=" + AppContext.BaseDirectory + "AliquotaDB");
+            base.OnConfiguring(options);
+        }
+
+        public void Start()
+        {
+            this.Database.EnsureCreated();
+        }
     }
 }

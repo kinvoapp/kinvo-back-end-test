@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Aliquota.Domain.Models
 {
-    public class Aplicacao
+    public class Aplicacoes
     {
         [Key]
         public int Id { get; set; }
