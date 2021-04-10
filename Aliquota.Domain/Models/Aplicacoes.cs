@@ -12,6 +12,7 @@ namespace Aliquota.Domain.Models
         public double Valor { get; set; }
         public double Rentabilidade_Mes { get; set; }
         public DateTime Data { get; set; }
+        public bool Resgatada { get; set; }
         public List<Historicos> Hisotricos { get; set; }
     }
 }

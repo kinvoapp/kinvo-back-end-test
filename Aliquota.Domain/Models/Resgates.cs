@@ -12,6 +12,7 @@ namespace Aliquota.Domain.Models
         [Key]
         public int Id { get; set; }
         public double Lucro { get; set; }
+        public double Valor_Retirado { get; set; }
         public double Valor_IR { get; set; }
         public DateTime Data { get; set; }
         public int AplicacaoId { get; set; }
