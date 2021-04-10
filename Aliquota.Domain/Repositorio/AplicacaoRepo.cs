@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Aliquota.Domain.Repositorio
 {
-    class Aplicacao
+    class AplicacaoRepo
     {
         readonly AliquotaContext _context;
 
-        public Aplicacao(AliquotaContext context)
+        public AplicacaoRepo(AliquotaContext context)
         {
             _context = context;
         }
@@ -20,12 +20,16 @@ namespace Aliquota.Domain.Repositorio
         {
             try
             {
+
                 _context.Aplicacoes.Add(aplicacao);
                 _context.SaveChanges();
+                Console.WriteLine("Aplicacao cadastrada com sucesso");
             }
             catch
             {
                 Console.WriteLine("Houve um erro no sistema, tente novamente mais tarde");
+                Console.Clear();
+                //Console.WriteLine(ex);
             }
         }
 

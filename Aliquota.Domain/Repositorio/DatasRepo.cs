@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Aliquota.Domain.Repositorio
 {
-    class Datas
+    class DatasRepo
     {
         public int CalcularMesesAplicado(DateTime dataAplicacao, DateTime dataResgate)
         {

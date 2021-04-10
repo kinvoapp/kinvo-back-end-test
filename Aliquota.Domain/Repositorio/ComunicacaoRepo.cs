@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Aliquota.Domain.Repositorio
 {
-    class Comunicacao
+    class ComunicacaoRepo
     {
         public void Menu()
         {

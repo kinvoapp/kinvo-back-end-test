@@ -15,7 +15,7 @@ namespace Aliquota.Domain.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlite("Data Source=" + AppContext.BaseDirectory + "AliquotaDB");
+            options.UseSqlite("Data Source=" + AppContext.BaseDirectory + "AliquotaDB.db");
             base.OnConfiguring(options);
         }
 
