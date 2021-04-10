@@ -32,7 +32,20 @@ namespace Aliquota.Domain.Controllers.Resgate
             {
                 Resgates resgate = new Resgates();
                 resgate.Data = _comunicacao.ColetarValidarDataResgate(resgate.Data, aplicacao.Data);
-                int totalMeses = _datasRepo.CalcularMesesAplicado(aplicacao.Data, resgate.Data);
+
+                int totalMeses = 0;
+
+                if (aplicacao.Hisotricos.Count > 0)
+                {
+                    List<Historicos> hist = aplicacao.Hisotricos.OrderBy(p => p.Id).ToList();
+                    totalMeses = _datasRepo.CalcularMesesAplicado(hist[0].Data, resgate.Data);
+                }
+                else
+                {
+                    totalMeses = _datasRepo.CalcularMesesAplicado(aplicacao.Data, resgate.Data);
+                }
+
+
                 resgate.Lucro = _lucroRepo.CalcularLucroTotal(aplicacao, totalMeses);
                 resgate.Valor_IR = _lucroRepo.CalcularValorIR(totalMeses, resgate.Lucro);
                 resgate.Valor_Retirado = aplicacao.Valor + resgate.Lucro - resgate.Valor_IR;
@@ -61,7 +74,7 @@ namespace Aliquota.Domain.Controllers.Resgate
                 return "c";
         }
 
-        public void FluxoSelecionarResgate()
+        public string FluxoSelecionarResgate()
         {
            List<Resgates> resgates = _resgateRepo.ListarResgates();
             Console.Clear();
@@ -69,6 +82,12 @@ namespace Aliquota.Domain.Controllers.Resgate
             Console.WriteLine("\n Digite o ID de um resgate para ver seus detalhes\n oudigite 'm' para voltar ao menu");
 
             string opcao = Console.ReadLine();
+
+            if (opcao == "m")
+            {
+                Console.Clear();
+                return "m";
+            }
 
             int id = 0;
             Resgates selecionado = new Resgates();
@@ -94,6 +113,7 @@ namespace Aliquota.Domain.Controllers.Resgate
             Console.ReadKey();
             Console.Clear();
 
+            return "";
         }
     }
 }

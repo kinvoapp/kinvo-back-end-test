@@ -119,10 +119,14 @@ namespace Aliquota.Domain.Controllers.Aplicacao
 
             if (app.Hisotricos.Count > 0)
             {
-                Console.WriteLine("\nHistorico de investimento:");
-                Console.WriteLine("\n\n\tID: {0}", app.Id);
-                Console.WriteLine("\tValor: {0}", app.Valor);
-                Console.WriteLine("\tData: {0}\n\n", app.Data.ToShortDateString());
+                foreach(Historicos h in app.Hisotricos)
+                {
+                    Console.WriteLine("\nHistorico de investimento:");
+                    Console.WriteLine("\n\tID: {0}", h.Id);
+                    Console.WriteLine("\tValor: {0}", h.Valor);
+                    Console.WriteLine("\tData: {0}\n\n", h.Data.ToShortDateString());
+
+                }
             }
         }
 

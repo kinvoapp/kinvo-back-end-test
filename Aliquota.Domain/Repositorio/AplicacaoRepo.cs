@@ -78,16 +78,13 @@ namespace Aliquota.Domain.Repositorio
                 int totalMeses = _dataRepo.CalcularMesesAplicado(antiga.Data, apl.Data);
 
                 hist.Lucro = _lucroRepo.CalcularLucroTotal(antiga, totalMeses);
+                _context.Historicos.Add(hist);
 
                 apl.Valor += antiga.Valor;
                 apl.Rentabilidade_Mes = antiga.Rentabilidade_Mes;
                 apl.Id = antiga.Id;
 
                 _context.Entry(antiga).CurrentValues.SetValues(apl);
-            
-                hist.Lucro = _lucroRepo.CalcularLucroTotal(antiga, totalMeses);
-
-                _context.Historicos.Add(hist);
 
                 _context.SaveChanges();
 

@@ -109,7 +109,10 @@ namespace Aliquota.Domain
                 }
                 else if(opcao == "4")
                 {
-                    _resgateController.FluxoSelecionarResgate();
+                    string resultado =_resgateController.FluxoSelecionarResgate();
+
+                    if (resultado == "m")
+                        continue;
 
                     continue;
                     
