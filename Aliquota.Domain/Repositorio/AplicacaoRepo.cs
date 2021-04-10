@@ -29,8 +29,9 @@ namespace Aliquota.Domain.Repositorio
             catch
             {
                 Console.WriteLine("Houve um erro no sistema, tente novamente mais tarde");
+                Console.WriteLine("\nDigite qualquer tecla para continuar...");
+                Console.ReadKey();
                 Console.Clear();
-                //Console.WriteLine(ex);
             }
         }
 
