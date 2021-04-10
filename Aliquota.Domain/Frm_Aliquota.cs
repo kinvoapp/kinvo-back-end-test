@@ -18,17 +18,15 @@ namespace Aliquota.Domain
         {
             InitializeComponent();
         }
-        private DateTime data;
-        private double lucro;
-        private double aliquota;
+        private DateTime dataResgate;
+        private DateTime dataAplicacao;
 
         private void Frm_Aliquota_Load(object sender, EventArgs e)
         {
             txt_Valor.Text = "R$";
-            data = DateTime.Today;
-            lbl_DataAtual.Text = data.ToString("d");
-            txt_DataResgate.Text = data.Date.ToString();
-
+            dataResgate = DateTime.Today;
+            //lbl_DataAtual.Text = data.ToString("d");
+            txt_DataResgate.Text = dataResgate.Date.ToString();
         }
         private void txt_Valor_TextChanged(object sender, EventArgs e)
         {
@@ -54,76 +52,33 @@ namespace Aliquota.Domain
 
         private void btn_Resgatar_Click(object sender, EventArgs e)
         {
+            dataAplicacao = DateTime.ParseExact(txt_Data.Text, "d/M/yyyy", CultureInfo.InvariantCulture);
+            dataResgate = DateTime.ParseExact(txt_DataResgate.Text, "d/M/yyyy", CultureInfo.InvariantCulture);
+
+            double valor = double.Parse(txt_Valor.Text.Replace("R$", "").Replace(".", ""));
+            double taxa = 0;
+
             if (cmb_Aplicação.SelectedItem == "Tesouro Direto")
             {
-                lucro = calculaLucro(0.088);
-                lbl_Lucro.Text = "R$ " + lucro.ToString();
+                taxa = 0.088;
             }
             if (cmb_Aplicação.SelectedItem == "CDB")
             {
-                lucro = calculaLucro(0.015);
-                lbl_Lucro.Text = "R$ " + lucro.ToString();
+                taxa = 0.015;
             }
             if (cmb_Aplicação.SelectedItem == "LCI/LCA")
             {
-                lucro = calculaLucro(0.065);
-                lbl_Lucro.Text = "R$ " + lucro.ToString();
+                taxa = 0.065;  
             }
-            lbl_IR.Text = "R$ " + (lucro * aliquota).ToString();
+
+            IR ir = new IR();
+            ir.lucro = new Lucro(dataResgate, dataAplicacao, taxa, valor);
+
+            lbl_Aliquota.Text = ir.lucro.getAliquota().ToString();
+            lbl_Lucro.Text = "R$ " + ir.lucro.getLucro().ToString();
+            lbl_IR.Text = "R$ " + ir.getIR().ToString();
         }
-        private double calculaLucro(double taxaAnual)
-        {
-            double valor = 0;
-            try
-            {
-                valor = double.Parse(txt_Valor.Text.Replace("R$", "").Replace(".", "").TrimStart('0'));
-            }
-            catch(Exception e) { }
-
-            if (valor > 0)
-            {
-                try
-                {
-                    DateTime dataAplicacao = DateTime.ParseExact(txt_Data.Text, "d/M/yyyy", CultureInfo.InvariantCulture);
-                    TimeSpan tempo = (data - dataAplicacao) / 365;
-
-                    if (tempo.Days < 0)
-                    {
-                        MessageBox.Show("Data Inválida");
-                        return 0;
-                    }
-
-                    if (tempo.Days < 1)
-                    {
-                        lbl_Aliquota.Text = "22,5%";
-                        aliquota = 0.225;
-                    }
-                    else if (tempo.Days <= 2)
-                    {
-                        lbl_Aliquota.Text = "18,5%";
-                        aliquota = 0.185;
-                    }
-                    else if (tempo.Days > 2)
-                    {
-                        lbl_Aliquota.Text = "15%";
-                        aliquota = 0.15;
-                    }
-                   
-                    return valor * taxaAnual * tempo.Days;
-                }
-                catch (Exception e) 
-                {
-                    MessageBox.Show("Data Inválida");
-                    return 0; 
-                }
-            }
-            else
-            {
-                MessageBox.Show("Valor inválido");
-                return 0;
-            }
-        }
-
+       
         private void txt_Data_MouseClick(object sender, MouseEventArgs e)
         {
             if (txt_Data.Text == "  /  /")
