@@ -44,8 +44,10 @@ namespace Aliquota.Domain
                 else if(opcao == "3")
                 {
                     Console.Clear();
-                    List<Aplicacoes> aps =_aplicacaoRepo.ListarAplicacoes();
-                    Console.WriteLine(aps.Count);
+                    List<Aplicacoes> aps = _aplicacaoRepo.ListarAplicacoes();
+                    comunicacao.TabelaDeAplicacao(aps);
+                    //
+                    //Console.WriteLine(aps.Count);
                     Console.ReadLine();
                 }
                 else if (opcao == "q")

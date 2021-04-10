@@ -12,6 +12,15 @@ namespace Aliquota.Domain.Data
     {
         public DbSet<Aplicacoes> Aplicacoes { get; set; }
         public DbSet<Resgates> Resgates { get; set; }
+        public DbSet<Historicos> Historicos { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Historicos>()
+                .HasOne(p => p.Aplicacoes)
+                .WithMany(b => b.Hisotricos)
+                .HasForeignKey(b=> b.AplicacaoId);
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
