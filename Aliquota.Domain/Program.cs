@@ -39,16 +39,43 @@ namespace Aliquota.Domain
                 else if (opcao == "2")
                 {
                     Console.Clear();
-                    Console.WriteLine("De qual aplicação vc deseja resgatar?");
+                    Console.WriteLine("\tDe qual aplicação vc deseja resgatar?\n");
+                    List<Aplicacoes> aps = _aplicacaoRepo.ListarAplicacoes();
+
+                    comunicacao.TabelaDeAplicacao(aps);
+
+                    Console.WriteLine("\nDigite o ID da aplicacao:");
+                    Console.ReadLine();
                 }
                 else if(opcao == "3")
                 {
                     Console.Clear();
                     List<Aplicacoes> aps = _aplicacaoRepo.ListarAplicacoes();
                     comunicacao.TabelaDeAplicacao(aps);
-                    //
-                    //Console.WriteLine(aps.Count);
-                    Console.ReadLine();
+
+                    Console.WriteLine("\n Para selecionar uma aplicacao digite o ID dela");
+                    Console.WriteLine(" Caso queira voltar ao medo digite 'm'");
+                    string acao = Console.ReadLine();
+
+                    if(acao == "m")
+                    {
+                        Console.Clear();
+                        continue;
+                    }
+                    else
+                    {
+                       Aplicacoes selecionada = _aplicacaoRepo.VerificaExistencia(aps, Int32.Parse(acao));
+                        if(selecionada == null)
+                        {
+                            Console.WriteLine("ID invalido, tente novamente");
+                        }
+                        else
+                        {
+                            comunicacao.DetalharAplicacao(selecionada);
+                            Console.ReadKey();
+                        }
+                    }
+
                 }
                 else if (opcao == "q")
                 {

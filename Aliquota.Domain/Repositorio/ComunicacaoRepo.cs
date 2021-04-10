@@ -19,6 +19,39 @@ namespace Aliquota.Domain.Repositorio
             Console.WriteLine("\nq - Sair");
         }
 
+        public void TabelaDeAplicacao(List<Aplicacoes> app)
+        {
+            Console.WriteLine("\n\n\t\t\t\t\t\tEssas sao suas aplicacoes\n");
+            Console.WriteLine("\tID |\t\tValor\t\t|\tRentabilidade/Mes\t|\t Data de aplicacao");
+            Console.WriteLine("________________________________________________________________________________________________________");
+            if (app.Count > 0)
+                foreach (Aplicacoes a in app)
+                {
+                    Console.WriteLine("\t{0}\t\t{1}\t\t\t\t{2}%\t\t\t\t{3}", a.Id, a.Valor, a.Rentabilidade_Mes, a.Data.ToShortDateString());
+                    Console.WriteLine("________________________________________________________________________________________________________");
+                }
+            else
+                Console.WriteLine("Voce nao possui Aplicacoes");
+        }
+
+        public void DetalharAplicacao(Aplicacoes app)
+        {
+            Console.Clear();
+            Console.WriteLine("\nSituacao atual:");
+            Console.WriteLine("\n\n\tID: {0}", app.Id);
+            Console.WriteLine("\tValor: {0}", app.Valor);
+            Console.WriteLine("\tRentabilidade/mes: {0}", app.Rentabilidade_Mes);
+            Console.WriteLine("\tData: {0}", app.Data.ToShortDateString());
+
+            if(app.Hisotricos.Count > 0)
+            {
+                Console.WriteLine("\nHistorico de investimento:");
+                Console.WriteLine("\n\n\tID: {0}", app.Id);
+                Console.WriteLine("\tValor: {0}", app.Valor);
+                Console.WriteLine("\tData: {0}\n\n", app.Data.ToShortDateString());
+            }
+        }
+
         public double ColetarValidarValorAplicacao(double valor) 
         {
             Console.WriteLine("\nQual o valor da aplicacao?\n Ex: 540.50");
