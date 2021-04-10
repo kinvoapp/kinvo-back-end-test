@@ -10,9 +10,9 @@ namespace Aliquota.Domain.Repositorio
     {
         public int CalcularMesesAplicado(DateTime dataAplicacao, DateTime dataResgate)
         {
-            int total = (dataResgate.Year - dataAplicacao.Year) + dataAplicacao.Month + dataResgate.Month;
-
-            return total;
+            var total = dataResgate.Subtract(dataAplicacao);
+            int meses = (int)total.Days / 30;
+            return meses;
         }
     }
 }
