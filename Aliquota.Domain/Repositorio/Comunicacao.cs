@@ -24,7 +24,7 @@ namespace Aliquota.Domain.Repositorio
             Console.WriteLine("\nQual o valor da aplicacao?\n Ex: 540.50");
             string resposta = Console.ReadLine();
 
-            while (valor == 0)
+            while (valor <= 0)
             {
                 try
                 {
@@ -51,7 +51,6 @@ namespace Aliquota.Domain.Repositorio
                 try
                 {
                     return data = DateTime.Parse(resposta);
-
                 }
                 catch
                 {
