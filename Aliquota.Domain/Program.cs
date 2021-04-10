@@ -1,4 +1,6 @@
-﻿using Aliquota.Domain.Data;
+﻿using Aliquota.Domain.Controllers;
+using Aliquota.Domain.Controllers.Resgate;
+using Aliquota.Domain.Data;
 using Aliquota.Domain.Models;
 using Aliquota.Domain.Repositorio;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,40 +20,60 @@ namespace Aliquota.Domain
             while (true)
             {
                 Aplicacoes aplicacao = new Aplicacoes();
-                AplicacaoRepo _aplicacaoRepo = new AplicacaoRepo(new AliquotaContext());
-                ComunicacaoRepo comunicacao = new ComunicacaoRepo();
+                AplicacaoController _aplicacaoController = new AplicacaoController();
+                ResgateController _resgateController = new ResgateController();
+                ComunicacaoGeral _comunicacao = new ComunicacaoGeral();
 
-                comunicacao.Menu();
+                _comunicacao.Menu();
                 Console.WriteLine("Digite sua opcao:");
                 string opcao = Console.ReadLine();
 
                 if (opcao == "1")
                 {
-                    Console.Clear();
-                    Console.WriteLine("\n\n\tPreencha os dados abaixo");
-
-                    aplicacao.Valor = comunicacao.ColetarValidarValorAplicacao(aplicacao.Valor);
-                    aplicacao.Data = comunicacao.ColetarValidarDataAplicacao(aplicacao.Data);
-                    aplicacao.Rentabilidade_Mes = comunicacao.ColetarValidarRentabilidadeAplicacao(aplicacao.Rentabilidade_Mes);
-                    _aplicacaoRepo.CadastrarAplicacao(aplicacao);
+                    _aplicacaoController.FluxoAdicionarAplicacao(aplicacao);
                     continue;
                 }
                 else if (opcao == "2")
                 {
                     Console.Clear();
                     Console.WriteLine("\tDe qual aplicação vc deseja resgatar?\n");
-                    List<Aplicacoes> aps = _aplicacaoRepo.ListarAplicacoes();
+                    List<Aplicacoes> aps = _aplicacaoController.ListarAplicacoes();
 
-                    comunicacao.TabelaDeAplicacao(aps);
+                    _comunicacao.TabelaDeAplicacao(aps);
 
-                    Console.WriteLine("\nDigite o ID da aplicacao:");
-                    Console.ReadLine();
+                    Console.WriteLine("\nDigite o ID da aplicacao\no 'c' para cancelar");
+                    string acao = Console.ReadLine();
+
+                    if (acao == "c")
+                    {
+                        Console.Clear();
+                        continue;
+                    }
+                    else
+                    {
+
+                        Aplicacoes selecionada = _aplicacaoController.FluxoSelecionarAplicacao(aps, acao);
+
+                        string resultado = _resgateController.FluxoResgatarAplicacao(selecionada);
+                        if(resultado == "r")
+                        {
+                            _aplicacaoController.ResgatarAplicacao(selecionada);
+                            Console.Clear();
+                            continue;
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            continue;
+                        }
+                    }
+
                 }
                 else if(opcao == "3")
                 {
                     Console.Clear();
-                    List<Aplicacoes> aps = _aplicacaoRepo.ListarAplicacoes();
-                    comunicacao.TabelaDeAplicacao(aps);
+                    List<Aplicacoes> aps = _aplicacaoController.ListarAplicacoes();
+                    _comunicacao.TabelaDeAplicacao(aps);
 
                     Console.WriteLine("\n Para selecionar uma aplicacao digite o ID dela");
                     Console.WriteLine(" Caso queira voltar ao medo digite 'm'");
@@ -64,18 +86,17 @@ namespace Aliquota.Domain
                     }
                     else
                     {
-                       Aplicacoes selecionada = _aplicacaoRepo.VerificaExistencia(aps, Int32.Parse(acao));
-                        if(selecionada == null)
-                        {
-                            Console.WriteLine("ID invalido, tente novamente");
-                        }
-                        else
-                        {
-                            comunicacao.DetalharAplicacao(selecionada);
-                            Console.ReadKey();
-                        }
+                        _aplicacaoController.FluxoSelecionarAplicacao(aps, acao);
+                        Console.ReadKey();
                     }
 
+                }
+                else if(opcao == "4")
+                {
+                    _resgateController.FluxoSelecionarResgate();
+
+                    continue;
+                    
                 }
                 else if (opcao == "q")
                 {
@@ -91,23 +112,6 @@ namespace Aliquota.Domain
 
             }
 
-
-                string data = "01/05/2021";
-
-                DateTime dataa = DateTime.Parse(data);
-                DateTime dataAtu = DateTime.Now;
-                int result = DateTime.Compare(dataa, dataAtu);
-                string relationship = "";
-                if (result < 0)
-                    relationship = "é mais cedo que";
-                else if (result == 0)
-                    relationship = "é o mesmo tempo que";
-                else
-                    relationship = "é mais tarde que";
-
-                // Console.WriteLine(dataa.Date.ToString());
-               // Console.WriteLine("{0} {1} {2}", dataa, relationship, dataAtu);
- 
         }
     }
 }

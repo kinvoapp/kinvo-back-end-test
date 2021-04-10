@@ -21,10 +21,12 @@ namespace Aliquota.Domain.Repositorio
         {
             try
             {
-
                 _context.Aplicacoes.Add(aplicacao);
                 _context.SaveChanges();
-                Console.WriteLine("Aplicacao cadastrada com sucesso");
+                Console.WriteLine("Aplicacao cadastrada com sucesso!");
+                Console.WriteLine("\nDigite qualquer tecla para continuar...");
+                Console.ReadKey();
+                Console.Clear();
             }
             catch
             {
@@ -50,12 +52,21 @@ namespace Aliquota.Domain.Repositorio
 
         public List<Aplicacoes> ListarAplicacoes()
         {
-            return _context.Aplicacoes.Include(h => h.Hisotricos).ToList();
+            return _context.Aplicacoes.Include(h => h.Hisotricos).Where(a => a.Resgatada == false).ToList();
         }
 
         public Aplicacoes VerificaExistencia(List<Aplicacoes> app, int id)
         {
             return app.Find(i => i.Id == id);
+        }
+
+        public void ResgatarAplicacao(Aplicacoes app)
+        {
+            Aplicacoes editada = app;
+            editada.Resgatada = true;
+
+            _context.Entry(app).CurrentValues.SetValues(editada);
+            _context.SaveChanges();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Aliquota.Domain.Data;
 using Aliquota.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +36,12 @@ namespace Aliquota.Domain.Repositorio
 
         public List<Resgates> ListarResgates()
         {
-            return _context.Resgates.ToList();
+            return _context.Resgates.Include(a => a.Aplicacao).ToList();
+        }
+
+        public Resgates VerificarExistencia(List<Resgates> lista, int id)
+        {
+            return lista.Find(i => i.Id == id);
         }
     }
 }
