@@ -35,7 +35,7 @@ namespace Aliquota.Domain.Controllers
             return aplicacao;
         }
 
-        public void FluxoSelecionarAplicacao(List<Aplicacoes> lista, string acao)
+        public Aplicacoes FluxoSelecionarAplicacao(List<Aplicacoes> lista, string acao)
         {
             int id = 0;
             Aplicacoes selecionada = new Aplicacoes();
@@ -55,7 +55,20 @@ namespace Aliquota.Domain.Controllers
 
             _comunicacao.DetalharAplicacao(selecionada);
 
+            return selecionada;
 
+        }
+
+        public void RealizarInvestimento(Aplicacoes selecionada)
+        {
+            Aplicacoes aplicacao = new Aplicacoes();
+            Console.WriteLine("\n\n\tPreencha os dados abaixo");
+
+            aplicacao.Valor = _comunicacao.ColetarValidarValorAplicacao(aplicacao.Valor);
+            aplicacao.Data = _comunicacao.ColetarValidarDataInvestimento(selecionada.Data);
+            aplicacao.Resgatada = false;
+
+            _aplicacaoRepo.Aplicar(aplicacao, selecionada);
         }
 
         public void ResgatarAplicacao(Aplicacoes app)

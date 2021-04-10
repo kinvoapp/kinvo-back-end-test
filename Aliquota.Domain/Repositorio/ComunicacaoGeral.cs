@@ -23,7 +23,7 @@ namespace Aliquota.Domain.Repositorio
         public void TabelaDeAplicacao(List<Aplicacoes> app)
         {
             Console.WriteLine("\n\n\t\t\t\t\t\tEssas sao suas aplicacoes\n");
-            Console.WriteLine("\tID |\t\tValor\t\t|\tRentabilidade/Mes\t|\t Data de aplicacao");
+            Console.WriteLine("\tID |\t\tValor\t\t|\tRentabilidade/Mes\t|\t Data da ultima aplicacao");
             Console.WriteLine("________________________________________________________________________________________________________");
             if (app.Count > 0)
                 foreach (Aplicacoes a in app)

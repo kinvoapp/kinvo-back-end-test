@@ -86,7 +86,23 @@ namespace Aliquota.Domain
                     }
                     else
                     {
-                        _aplicacaoController.FluxoSelecionarAplicacao(aps, acao);
+                        Aplicacoes selecionada =_aplicacaoController.FluxoSelecionarAplicacao(aps, acao);
+
+                        Console.WriteLine("\n Caso queira investir mais nesta aplicacao digite 'i'\n caso queria voltar ao menu digite 'm'");
+                        acao = Console.ReadLine();
+
+                        while (acao != "i" && acao != "m")
+                        {
+                            Console.WriteLine("Opcao invalida, tente novamente");
+                            acao = Console.ReadLine();
+                        }
+
+                        if(acao == "i")
+                        {
+                            _aplicacaoController.RealizarInvestimento(selecionada);
+                            continue;
+                        }
+                        
                         Console.ReadKey();
                     }
 

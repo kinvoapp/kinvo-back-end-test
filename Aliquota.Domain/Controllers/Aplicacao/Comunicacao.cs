@@ -11,14 +11,17 @@ namespace Aliquota.Domain.Controllers.Aplicacao
     {
         public double ColetarValidarValorAplicacao(double valor)
         {
-            Console.WriteLine("\nQual o valor da aplicacao?\n Ex: 540.50");
+            Console.WriteLine("\nQual o valor da aplicacao?\n");
             string resposta = Console.ReadLine();
+
+            if (resposta.Contains('.'))
+                resposta = resposta.Replace('.', ',');
 
             while (valor <= 0)
             {
                 try
                 {
-                    return valor = double.Parse(resposta);
+                    return Convert.ToDouble(resposta);
                 }
                 catch
                 {
@@ -52,6 +55,38 @@ namespace Aliquota.Domain.Controllers.Aplicacao
             return new DateTime();
         }
 
+        public DateTime ColetarValidarDataInvestimento (DateTime apl)
+        {
+            Console.WriteLine("\nQual a data da aplicacao?\n Ex: dd/MM/aaaa");
+            string resposta = Console.ReadLine();
+
+            if (resposta.Contains('.'))
+                resposta = resposta.Replace('.', ',');
+
+            while (true)
+            {
+                try
+                {
+                    DateTime inv = DateTime.Parse(resposta);
+
+                    if(DateTime.Compare(inv, apl) < 0)
+                    {
+                        Console.WriteLine("A data do investimento tem que ser posterior a data de aplicacao, tente novamente");
+                        resposta = Console.ReadLine();
+                        continue;
+                    }
+
+                    return inv;
+                }
+                catch
+                {
+                    Console.WriteLine("Formato invalido!\n");
+                    Console.WriteLine("Tento novamente:");
+                    resposta = Console.ReadLine();
+                }
+            }
+
+        }
         public double ColetarValidarRentabilidadeAplicacao(double rent)
         {
             Console.WriteLine("\nQual a rentabilidade por mes?\n Ps: Nao e necessario escrever o simbolo de %");
