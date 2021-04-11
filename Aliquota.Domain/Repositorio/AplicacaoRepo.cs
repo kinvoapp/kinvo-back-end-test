@@ -49,6 +49,13 @@ namespace Aliquota.Domain.Repositorio
             return lista;
         }
 
+        public Aplicacoes BuscaPorId(int id)
+        {
+            List<Aplicacoes> app = _context.Aplicacoes.Include(h =>h.Hisotricos).Where(a => a.Id == id).ToList();
+            Aplicacoes apli = app[0];
+            return apli;
+        }
+
         public Aplicacoes VerificaExistencia(List<Aplicacoes> app, int id)
         {
             return app.Find(i => i.Id == id);
