@@ -30,7 +30,7 @@ namespace Aliquota.Domain
                 if (opcao == "1")
                 {
                     Aplicacoes aplicacao = new Aplicacoes();
-                    _aplicacaoController.FluxoAdicionarAplicacao(aplicacao);
+                    _aplicacaoController.AdicionarAplicacao(aplicacao);
                     continue;
                 }
                 else if (opcao == "2")

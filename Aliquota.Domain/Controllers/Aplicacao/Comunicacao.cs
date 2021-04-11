@@ -7,31 +7,33 @@ using System.Threading.Tasks;
 
 namespace Aliquota.Domain.Controllers.Aplicacao
 {
-    class Comunicacao
+    public class Comunicacao
     {
-        public double ColetarValidarValorAplicacao(double valor)
+        public double ColetarValidarValorAplicacao(string valor)
         {
-            Console.WriteLine("\nQual o valor da aplicacao?\n");
-            string resposta = Console.ReadLine();
+            if (valor.Contains('.'))
+                valor = valor.Replace('.', ',');
 
-            if (resposta.Contains('.'))
-                resposta = resposta.Replace('.', ',');
-
-            while (valor <= 0)
+            try
             {
-                try
+                double resultado = Convert.ToDouble(valor);
+
+                if (resultado <= 0)
                 {
-                    return Convert.ToDouble(resposta);
+                    Console.WriteLine("Valor invalido!\n");
+                    Console.WriteLine("Tente novamente:");
+                    return 0;
                 }
-                catch
-                {
-                    Console.WriteLine("Formato invalido!\n");
-                    Console.WriteLine("Tento novamente:");
-                    resposta = Console.ReadLine();
-                }
+                return resultado;
+            }
+            catch
+            {
+                Console.WriteLine("Formato invalido!\n");
+                Console.WriteLine("Tente novamente:");
+                return 0;
             }
 
-            return 0;
+           
         }
 
         public DateTime ColetarValidarDataAplicacao(DateTime data)

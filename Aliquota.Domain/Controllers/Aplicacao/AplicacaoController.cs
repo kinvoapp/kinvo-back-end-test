@@ -21,12 +21,18 @@ namespace Aliquota.Domain.Controllers
             return _aplicacaoRepo.ListarAplicacoes();
         }
 
-        public Aplicacoes FluxoAdicionarAplicacao(Aplicacoes aplicacao)
+        public Aplicacoes AdicionarAplicacao(Aplicacoes aplicacao)
         {
             Console.Clear();
             Console.WriteLine("\n\n\tPreencha os dados abaixo");
 
-            aplicacao.Valor = _comunicacao.ColetarValidarValorAplicacao(aplicacao.Valor);
+            while (aplicacao.Valor <= 0)
+            {
+                Console.WriteLine("\nQual o valor da aplicacao?\n");
+                string resposta = Console.ReadLine();
+
+                aplicacao.Valor = _comunicacao.ColetarValidarValorAplicacao(resposta);
+            }
             aplicacao.Data = _comunicacao.ColetarValidarDataAplicacao(aplicacao.Data);
             aplicacao.Rentabilidade_Mes = _comunicacao.ColetarValidarRentabilidadeAplicacao(aplicacao.Rentabilidade_Mes);
             aplicacao.Resgatada = false;
@@ -76,7 +82,14 @@ namespace Aliquota.Domain.Controllers
             Aplicacoes aplicacao = new Aplicacoes();
             Console.WriteLine("\n\n\tPreencha os dados abaixo");
 
-            aplicacao.Valor = _comunicacao.ColetarValidarValorAplicacao(aplicacao.Valor);
+            while (aplicacao.Valor <= 0)
+            {
+                Console.WriteLine("\nQual o valor da aplicacao?\n");
+                string resposta = Console.ReadLine();
+
+                aplicacao.Valor = _comunicacao.ColetarValidarValorAplicacao(resposta);
+            }
+
             aplicacao.Data = _comunicacao.ColetarValidarDataInvestimento(selecionada.Data);
             aplicacao.Resgatada = false;
 
