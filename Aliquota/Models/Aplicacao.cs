@@ -12,7 +12,7 @@ namespace Aliquota.Models
         [Required]
         public double valor { get; set; }
 
-        public DateTime dataAplicacao { get; set; }
+        public String dataAplicacao { get; set; }
 
     }
 }

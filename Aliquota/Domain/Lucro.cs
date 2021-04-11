@@ -10,7 +10,7 @@ namespace Aliquota.Domain
         private double lucro_;
         private double valor;
 
-        public Lucro(DateTime dataResgate, DateTime dataAplicacao, double taxaAnual, double valor) : base(dataResgate, dataAplicacao)
+        public Lucro(String dataResgate, String dataAplicacao, double taxaAnual, double valor) : base(dataResgate, dataAplicacao)
         {
             this.taxaAnual = taxaAnual;
             this.valor = valor;

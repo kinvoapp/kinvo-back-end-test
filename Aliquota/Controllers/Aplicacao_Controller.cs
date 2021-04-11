@@ -54,7 +54,7 @@ namespace Aliquota.Controllers
                     Aplicacao a = new Aplicacao();
                     a.Id = reader.GetInt32(0);
                     a.valor = reader.GetDouble(1);
-                    a.dataAplicacao = reader.GetDateTime(2);
+                    a.dataAplicacao = reader.GetString(2);
                     aps.Add(a);
                 }
             }
@@ -80,7 +80,7 @@ namespace Aliquota.Controllers
                 {
                     a.Id = reader.GetInt32(0);
                     a.valor = reader.GetDouble(1);
-                    a.dataAplicacao = reader.GetDateTime(2);
+                    a.dataAplicacao = reader.GetString(2);
                 }
                 
             }
@@ -97,11 +97,13 @@ namespace Aliquota.Controllers
         // POST: Aplicacao_Controller/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        //public ActionResult Create(IFormCollection collection)
         public ActionResult Create(Aplicacao aplicacao)
         {
+            //aplicacao.dataAplicacao = DateTime.ParseExact(d, "d/M/yyyy", CultureInfo.InvariantCulture);
             SqlConnection connection = connect();
-            String sql = "insert into Aplicacao (" + "valor, dataAplicacao"
-                + ")values(convert(datetime, '" + aplicacao.dataAplicacao + "', 5)); ";
+            String sql = "insert into Aplicacao (valor, dataAplicacao)"
+                + " values (" + aplicacao.valor + ", '" + aplicacao.dataAplicacao + "')";
 
             Aplicacao a = new Aplicacao();
 
@@ -118,9 +120,10 @@ namespace Aliquota.Controllers
                 {
                     connection.Close();
                     return View(aplicacao);
-                }            
+                }
             }
         }
+
         // GET: Aplicacao_Controller/Edit/5
         public ActionResult Edit(int id)
         {
@@ -159,7 +162,7 @@ namespace Aliquota.Controllers
                 {
                     a.Id = reader.GetInt32(0);
                     a.valor = reader.GetDouble(1);
-                    a.dataAplicacao = reader.GetDateTime(2);
+                    a.dataAplicacao = reader.GetString(2);
                 }
 
             }

@@ -8,7 +8,7 @@ namespace Aliquota.Domain
     {
         private double aliquota;
 
-        public Aliquota(DateTime dataResgate, DateTime dataAplicacao): base(dataResgate, dataAplicacao)
+        public Aliquota(String dataResgate, String dataAplicacao): base(dataResgate, dataAplicacao)
         {
             setAliquota();
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace Aliquota.Domain
@@ -17,10 +18,10 @@ namespace Aliquota.Domain
         {
 
         }
-        public ImpostoRenda(DateTime dataResgate, DateTime dataAplicacao)
+        public ImpostoRenda(String dataResgate, String dataAplicacao)
         {
-            this.dataResgate = dataResgate;
-            this.dataAplicacao = dataAplicacao;
+            this.dataResgate = DateTime.ParseExact(dataResgate, "d/M/yyyy", CultureInfo.InvariantCulture);
+            this.dataAplicacao = DateTime.ParseExact(dataAplicacao, "d/M/yyyy", CultureInfo.InvariantCulture);
         }
         public double getIR()
         {

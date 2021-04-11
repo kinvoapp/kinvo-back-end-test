@@ -13,9 +13,9 @@ namespace Aliquota.Models
         [Required]
         public double valor { get; set; }
 
-        public DateTime dataResgate { get; set; }
+        public String dataResgate { get; set; }
 
-        public DateTime dataAplicacao { get; set; }
+        public String dataAplicacao { get; set; }
 
         public double ir { get; set; }
 
