@@ -33,7 +33,15 @@ namespace Aliquota.Domain.Controllers.Resgate
             {
                 try
                 {
-                    return data = DateTime.Parse(resposta);
+                    data = DateTime.Parse(resposta);
+                    if(DateTime.Compare(data, dataAplicacao) < 0)
+                    {
+                        Console.WriteLine("A data do resgate precisa ser posterior a aplicacao");
+                        resposta = Console.ReadLine();
+                        data = new DateTime();
+                        continue;
+                    }
+                    return data;
                 }
                 catch
                 {

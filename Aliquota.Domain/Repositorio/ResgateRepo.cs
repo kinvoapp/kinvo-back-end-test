@@ -22,8 +22,11 @@ namespace Aliquota.Domain.Repositorio
         {
             try
             {
-            _context.Resgates.Add(resgate);
-            _context.SaveChanges();
+                _context.Resgates.Add(resgate);
+                _context.SaveChanges();
+                Console.WriteLine("Resgate realizado com sucesso!");
+                Console.WriteLine("\nDigite qualquer tecla para continuar...");
+                Console.ReadKey();
             }
             catch
             {

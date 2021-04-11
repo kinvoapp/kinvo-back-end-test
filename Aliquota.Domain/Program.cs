@@ -17,19 +17,19 @@ namespace Aliquota.Domain
 
         static void Main(string[] args)
         {
+            AplicacaoController _aplicacaoController = new AplicacaoController();
+            ResgateController _resgateController = new ResgateController();
+            ComunicacaoGeral _comunicacao = new ComunicacaoGeral();
             while (true)
             {
-                Aplicacoes aplicacao = new Aplicacoes();
-                AplicacaoController _aplicacaoController = new AplicacaoController();
-                ResgateController _resgateController = new ResgateController();
-                ComunicacaoGeral _comunicacao = new ComunicacaoGeral();
-
+                
                 _comunicacao.Menu();
-                Console.WriteLine("Digite sua opcao:");
+                Console.WriteLine("\n Digite sua opcao:");
                 string opcao = Console.ReadLine();
 
                 if (opcao == "1")
                 {
+                    Aplicacoes aplicacao = new Aplicacoes();
                     _aplicacaoController.FluxoAdicionarAplicacao(aplicacao);
                     continue;
                 }
@@ -51,13 +51,24 @@ namespace Aliquota.Domain
                     }
                     else
                     {
+                        Aplicacoes apli = _aplicacaoController.SelecionarAplicacao(aps, acao);
 
-                        Aplicacoes selecionada = _aplicacaoController.FluxoSelecionarAplicacao(aps, acao);
+                        Resgates resgate = _resgateController.DetalharResgateNaoCriado(apli);
 
-                        string resultado = _resgateController.FluxoResgatarAplicacao(selecionada);
-                        if(resultado == "r")
+                        Console.WriteLine("Quer fazer a retirada desta aplicacao?");
+                        Console.WriteLine("Para ver os dados do resgate digite 'r' para cancelar digite 'c'");
+
+                        string confirmacao = Console.ReadLine();
+
+                        while (confirmacao != "r" && confirmacao != "c")
                         {
-                            _aplicacaoController.ResgatarAplicacao(selecionada);
+                            Console.WriteLine("Opcao invalida, tente novamente");
+                            confirmacao = Console.ReadLine();
+                        }
+
+                        if (confirmacao == "r")
+                        {
+                            _resgateController.CriarResgate(apli, resgate);
                             Console.Clear();
                             continue;
                         }
@@ -86,7 +97,7 @@ namespace Aliquota.Domain
                     }
                     else
                     {
-                        Aplicacoes selecionada =_aplicacaoController.FluxoSelecionarAplicacao(aps, acao);
+                        Aplicacoes selecionada =_aplicacaoController.SelecionarAplicacao(aps, acao);
 
                         Console.WriteLine("\n Caso queira investir mais nesta aplicacao digite 'i'\n caso queria voltar ao menu digite 'm'");
                         acao = Console.ReadLine();
@@ -102,6 +113,11 @@ namespace Aliquota.Domain
                             _aplicacaoController.RealizarInvestimento(selecionada);
                             continue;
                         }
+                        else if(acao == "m")
+                        {
+                            Console.Clear();
+                            continue;
+                        }
                         
                         Console.ReadKey();
                     }
@@ -109,12 +125,17 @@ namespace Aliquota.Domain
                 }
                 else if(opcao == "4")
                 {
-                    string resultado =_resgateController.FluxoSelecionarResgate();
+                    Resgates resgate = _resgateController.ListarSelecionarResgate();
 
-                    if (resultado == "m")
+                    if(resgate == null)
+                    {
+                        Console.Clear();
                         continue;
+                    }
 
-                    continue;
+                    Aplicacoes app = _aplicacaoController.BuscarAplicacaoPorId(resgate.AplicacaoId);
+
+                    _resgateController.DetalharResgate(resgate, app);
                     
                 }
                 else if (opcao == "q")

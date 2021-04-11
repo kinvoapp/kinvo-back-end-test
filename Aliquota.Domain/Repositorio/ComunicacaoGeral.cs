@@ -14,7 +14,7 @@ namespace Aliquota.Domain.Repositorio
             Console.WriteLine("\n\n\tBem-vindo :D");
             Console.WriteLine("\n\tOque deseja fazer hoje?");
             Console.WriteLine("\n 1 - Fazer nova aplicação");
-            Console.WriteLine("\n 2 - Fazer retirada");
+            Console.WriteLine("\n 2 - Fazer novo resgate");
             Console.WriteLine("\n 3 - Ver aplicacoes");
             Console.WriteLine("\n 4 - Ver resgates");
             Console.WriteLine("\n q - Sair");
@@ -28,7 +28,7 @@ namespace Aliquota.Domain.Repositorio
             if (app.Count > 0)
                 foreach (Aplicacoes a in app)
                 {
-                    Console.WriteLine("\t{0}\t\t{1}\t\t\t\t{2}%\t\t\t\t{3}", a.Id, a.Valor.ToString("C"), a.Rentabilidade_Mes, a.Data.ToShortDateString());
+                    Console.WriteLine("\t{0}\t\t{1}\t\t\t{2}%\t\t\t\t{3}", a.Id, a.Valor.ToString("C"), a.Rentabilidade_Mes, a.Data.ToShortDateString());
                     Console.WriteLine("________________________________________________________________________________________________________");
                 }
             else

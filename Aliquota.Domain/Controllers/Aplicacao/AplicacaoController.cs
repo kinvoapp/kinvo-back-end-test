@@ -35,7 +35,7 @@ namespace Aliquota.Domain.Controllers
             return aplicacao;
         }
 
-        public Aplicacoes FluxoSelecionarAplicacao(List<Aplicacoes> lista, string acao)
+        public Aplicacoes SelecionarAplicacao(List<Aplicacoes> lista, string acao)
         {
             int id = 0;
             Aplicacoes selecionada = new Aplicacoes();
@@ -45,11 +45,18 @@ namespace Aliquota.Domain.Controllers
                 {
                     id = Int32.Parse(acao);
                      selecionada = _aplicacaoRepo.VerificaExistencia(lista, id);
+                    if(selecionada == null)
+                    {
+                        Console.WriteLine("ID invalido, tente novamente");
+                        acao = Console.ReadLine();
+                        continue;
+                    }
                 }
                 catch
                 {
                     Console.WriteLine("ID invalido, tente novamente");
                     acao = Console.ReadLine();
+                    continue;
                 }
             }
 
@@ -57,6 +64,11 @@ namespace Aliquota.Domain.Controllers
 
             return selecionada;
 
+        }
+
+        public Aplicacoes BuscarAplicacaoPorId(int id)
+        {
+            return _aplicacaoRepo.BuscaPorId(id);
         }
 
         public void RealizarInvestimento(Aplicacoes selecionada)

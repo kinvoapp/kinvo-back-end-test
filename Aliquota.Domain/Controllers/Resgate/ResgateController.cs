@@ -16,65 +16,18 @@ namespace Aliquota.Domain.Controllers.Resgate
         DatasRepo _datasRepo = new DatasRepo();
         LucroRepo _lucroRepo = new LucroRepo();
 
-        public string FluxoResgatarAplicacao(Aplicacoes aplicacao)
+        public void CriarResgate(Aplicacoes aplicacao, Resgates resgate)
         {
+           
+                resgate.AplicacaoId = aplicacao.Id;
 
-            Console.WriteLine("Quer fazer a retirada desta aplicacao?");
-            Console.WriteLine("Para ver os dados do resgate digite 'r' para cancelar digite 'c'");
-            string confirmacao = Console.ReadLine();
-            while (confirmacao != "r" && confirmacao != "c")
-            {
-                Console.WriteLine("Opcao invalida, tente novamente");
-                confirmacao = Console.ReadLine();
-            }
+                _resgateRepo.RetirarAplicacao(resgate);
 
-            if (confirmacao == "r")
-            {
-                Resgates resgate = new Resgates();
-                resgate.Data = _comunicacao.ColetarValidarDataResgate(resgate.Data, aplicacao.Data);
-
-                int totalMeses = 0;
-
-                if (aplicacao.Hisotricos.Count > 0)
-                {
-                    List<Historicos> hist = aplicacao.Hisotricos.OrderBy(p => p.Id).ToList();
-                    totalMeses = _datasRepo.CalcularMesesAplicado(hist[0].Data, resgate.Data);
-                }
-                else
-                {
-                    totalMeses = _datasRepo.CalcularMesesAplicado(aplicacao.Data, resgate.Data);
-                }
-
-
-                resgate.Lucro = _lucroRepo.CalcularLucroTotal(aplicacao, totalMeses);
-                resgate.Valor_IR = _lucroRepo.CalcularValorIR(totalMeses, resgate.Lucro);
-                resgate.Valor_Retirado = aplicacao.Valor + resgate.Lucro - resgate.Valor_IR;
-
-                _comunicacao.DetalharResgates(aplicacao, resgate, totalMeses);
-
-                Console.WriteLine("Para realizar o resgate digite 'r' para cancelar operacao digite 'c'");
-                confirmacao = Console.ReadLine();
-
-                while (confirmacao != "r" && confirmacao != "c")
-                {
-                    Console.WriteLine("Opcao invalida, tente novamente");
-                    confirmacao = Console.ReadLine();
-                }
-
-                if (confirmacao == "r")
-                {
-                    resgate.AplicacaoId = aplicacao.Id;
-                    _resgateRepo.RetirarAplicacao(resgate);
-                    return "r";
-                }
-                else
-                    return "c";
-            }
-            else
-                return "c";
         }
 
-        public string FluxoSelecionarResgate()
+        
+
+        public Resgates ListarSelecionarResgate()
         {
            List<Resgates> resgates = _resgateRepo.ListarResgates();
             Console.Clear();
@@ -86,34 +39,75 @@ namespace Aliquota.Domain.Controllers.Resgate
             if (opcao == "m")
             {
                 Console.Clear();
-                return "m";
+                return null;
             }
 
             int id = 0;
             Resgates selecionado = new Resgates();
-            while (id == 0 || selecionado == null)
+            while (id == 0)
             {
                 try
                 {
                     id = Int32.Parse(opcao);
                     selecionado = _resgateRepo.VerificarExistencia(resgates, id);
+                    if(selecionado == null)
+                    {
+                        Console.WriteLine("ID invalido, tente novamente");
+                        id = 0;
+                        opcao = Console.ReadLine();
+                        continue;
+                    }
                 }
                 catch
                 {
                     Console.WriteLine("ID invalido, tente novamente");
                     opcao = Console.ReadLine();
+                    continue;
                 }
             }
+            return selecionado;
 
-            int totalMeses = _datasRepo.CalcularMesesAplicado(selecionado.Aplicacao.Data, selecionado.Data);
+        }
 
-            _comunicacao.DetalharResgates(selecionado.Aplicacao, selecionado, totalMeses);
+        public Resgates DetalharResgateNaoCriado(Aplicacoes aplicacao)
+        {
+            Resgates resgate = new Resgates();
+            resgate.Data = _comunicacao.ColetarValidarDataResgate(resgate.Data, aplicacao.Data);
+
+            int totalMeses = _datasRepo.CalcularMesesAplicadosComHistorico(aplicacao, resgate);
+
+            resgate.Lucro = _lucroRepo.CalcularLucroTotal(aplicacao, totalMeses);
+            resgate.Valor_IR = _lucroRepo.CalcularValorIR(totalMeses, resgate.Lucro);
+            resgate.Valor_Retirado = aplicacao.Valor + resgate.Lucro - resgate.Valor_IR;
+
+            _comunicacao.DetalharResgates(aplicacao, resgate, totalMeses);
+
+            return resgate;
+        }
+
+        public void DetalharResgate(Resgates resgate, Aplicacoes aplicacao)
+        {
+            int totalMeses = 0;
+
+            if (aplicacao.Hisotricos != null)
+            {
+                if(aplicacao.Hisotricos.Count > 0)
+                {
+                    List<Historicos> hist = aplicacao.Hisotricos.OrderBy(p => p.Id).ToList();
+                    totalMeses = _datasRepo.CalcularMesesAplicado(hist[0].Data, resgate.Data);
+                }
+
+            }
+            else
+            {
+                totalMeses = _datasRepo.CalcularMesesAplicado(aplicacao.Data, resgate.Data);
+            }
+
+            _comunicacao.DetalharResgates(resgate.Aplicacao, resgate, totalMeses);
 
             Console.WriteLine("\nDigite qualquer tecla para voltar ao menu...");
             Console.ReadKey();
             Console.Clear();
-
-            return "";
         }
     }
 }
