@@ -14,21 +14,23 @@ namespace Aliquota.Domain
         }
         public void setAliquota()
         {
-            TimeSpan tempo = (getDataResgate() - getDataAplicacao()) / 365;
+            TimeSpan t = (getDataResgate() - getDataAplicacao());
 
-            if (tempo.Days < 0)
+            double tempo = t.Days / 365.0;
+
+            if (tempo < 0)
             {
-                // MessageBox.Show("Data Inválida");
+
             }
-            if (tempo.Days < 1)
+            if (tempo < 1)
             {
                 aliquota = 0.225;
             }
-            else if (tempo.Days <= 2)
+            else if (tempo <= 2)
             {
                 aliquota = 0.185;
             }
-            else if (tempo.Days > 2)
+            else if (tempo > 2)
             {
                 aliquota = 0.15;
             }

@@ -7,6 +7,7 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Aliquota.Data;
+using Aliquota.Domain;
 using Aliquota.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -30,12 +31,42 @@ namespace Aliquota.Controllers
                 return connection;
    
             }
-            catch (SqlException e)
+            catch
             {
-                //Console.WriteLine(e.ToString());
                 return null;
             }
-            //Console.ReadLine();
+        }
+        public ActionResult Resgatar(int id)
+        {
+            IR i = new IR();
+
+            SqlConnection connection = connect();
+
+            String sql = "SELECT * FROM Aplicacao WHERE Id=" + id;
+
+            SqlCommand command = new SqlCommand(sql, connection);
+            connection.Open();
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    String dR = DateTime.Now.ToString().Substring(0, 10);
+                    double valor = reader.GetDouble(1);
+                    String dA = reader.GetString(2);
+                    double taxa = 0.088;
+                    Lucro l = new Lucro(dR, dA, taxa, valor);
+
+                    i.valor = valor;
+                    i.dataAplicacao = l.getDataAplicacao().ToString().Substring(0, 10);
+                    i.dataResgate = l.getDataResgate().ToString().Substring(0, 10);
+                    i.ir = Math.Round(l.getIR(l), 2);
+                    i.lucro = Math.Round(l.getLucro(), 2);
+                    i.aliquota = l.getAliquota();
+                    
+                }
+            }
+            connection.Close();
+            return View(i);
         }
         // GET: Aplicacao_Controller
         public ActionResult Index()
@@ -43,7 +74,7 @@ namespace Aliquota.Controllers
             ArrayList aps = new ArrayList();
             SqlConnection connection = connect();
 
-            String sql = "SELECT * FROM Aplicacao";
+            String sql = "SELECT * FROM Aplicacao ORDER BY valor DESC";
 
             SqlCommand command = new SqlCommand(sql, connection);
             connection.Open();
@@ -97,13 +128,32 @@ namespace Aliquota.Controllers
         // POST: Aplicacao_Controller/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        //public ActionResult Create(IFormCollection collection)
         public ActionResult Create(Aplicacao aplicacao)
         {
-            //aplicacao.dataAplicacao = DateTime.ParseExact(d, "d/M/yyyy", CultureInfo.InvariantCulture);
             SqlConnection connection = connect();
             String sql = "insert into Aplicacao (valor, dataAplicacao)"
-                + " values (" + aplicacao.valor + ", '" + aplicacao.dataAplicacao + "')";
+                + " values (" + Math.Round(aplicacao.valor, 2) + ", '" + aplicacao.dataAplicacao + "')";
+
+            SqlCommand command = new SqlCommand(sql, connection);
+            connection.Open();
+            try
+            {
+                SqlDataReader reader = command.ExecuteReader();
+                connection.Close();
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Aplicacao_Controller/Edit/5
+        public ActionResult Edit(int id)
+        {
+
+            SqlConnection connection = connect();
+            String sql = "SELECT * FROM Aplicacao WHERE Id=" + id;
 
             Aplicacao a = new Aplicacao();
 
@@ -113,31 +163,36 @@ namespace Aliquota.Controllers
             {
                 if (reader.Read())
                 {
-                    connection.Close();
-                    return RedirectToAction("Index");
+                    a.Id = reader.GetInt32(0);
+                    a.valor = Math.Round(reader.GetDouble(1), 2);
+                    a.dataAplicacao = reader.GetString(2);
                 }
-                else
-                {
-                    connection.Close();
-                    return View(aplicacao);
-                }
+
             }
-        }
-
-        // GET: Aplicacao_Controller/Edit/5
-        public ActionResult Edit(int id)
-        {
-
-            return View();
+            connection.Close();
+            return View(a);
         }
 
         // POST: Aplicacao_Controller/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Aplicacao aplicacao)
         {
             try
             {
+                SqlConnection connection = connect();
+
+                String sql = "UPDATE Aplicacao SET valor="+ aplicacao.valor +",dataAplicacao='"+aplicacao.dataAplicacao+"' WHERE Id=" + id;
+
+                Aplicacao a = new Aplicacao();
+
+                SqlCommand command = new SqlCommand(sql, connection);
+
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                connection.Close();
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -150,7 +205,8 @@ namespace Aliquota.Controllers
         public ActionResult Delete(int id)
         {
             SqlConnection connection = connect();
-            String sql = "DELETE FROM Aplicacao WHERE Id=" + id;
+            //String sql = "DELETE FROM Aplicacao WHERE Id=" + id;
+            String sql = "SELECT * FROM Aplicacao WHERE Id=" + id;
 
             Aplicacao a = new Aplicacao();
 
@@ -177,12 +233,22 @@ namespace Aliquota.Controllers
         {
             try
             {
+                SqlConnection connection = connect();
+                String sql = "DELETE FROM Aplicacao WHERE Id=" + id;
+
+                Aplicacao a = new Aplicacao();
+
+                SqlCommand command = new SqlCommand(sql, connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                connection.Close();
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
                 return View();
             }
-        }
+        } 
     }
 }

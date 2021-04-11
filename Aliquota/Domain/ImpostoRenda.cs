@@ -7,12 +7,9 @@ namespace Aliquota.Domain
 {
     public class ImpostoRenda
     {
-        private double valor;
         private DateTime dataResgate;
         private DateTime dataAplicacao;
         private double ir;
-
-        public Lucro lucro;
 
         public ImpostoRenda()
         {
@@ -23,7 +20,7 @@ namespace Aliquota.Domain
             this.dataResgate = DateTime.ParseExact(dataResgate, "d/M/yyyy", CultureInfo.InvariantCulture);
             this.dataAplicacao = DateTime.ParseExact(dataAplicacao, "d/M/yyyy", CultureInfo.InvariantCulture);
         }
-        public double getIR()
+        public double getIR(Lucro lucro)
         {
             ir = lucro.getLucro() * lucro.getAliquota();
             return ir;
@@ -38,9 +35,5 @@ namespace Aliquota.Domain
             return dataAplicacao;
         }
 
-        public double getValor()
-        {
-            return valor;
-        }
     }
 }

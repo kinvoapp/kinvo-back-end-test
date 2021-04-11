@@ -19,15 +19,13 @@ namespace Aliquota.Domain
         }
         public void setLucro()
         {
-            TimeSpan tempo = (getDataResgate() - getDataAplicacao()) / 365;
+            TimeSpan t = (getDataResgate() - getDataAplicacao());
+
+            double taxaDia = taxaAnual / 365.0;
 
             if (valor > 0)
             {
-                 lucro_ =  valor * taxaAnual * tempo.Days;
-            }
-            else
-            {
-                //MessageBox.Show("Valor inválido"); 
+                 lucro_ =  valor * taxaDia * t.Days;
             }
         }
         public double getLucro()

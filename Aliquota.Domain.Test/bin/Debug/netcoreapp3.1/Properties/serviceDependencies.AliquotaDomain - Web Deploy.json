@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/aliquota-domaindbserver/databases/Aliquota.Domain_db",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionString",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}

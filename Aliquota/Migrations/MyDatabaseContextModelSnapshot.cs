@@ -22,74 +22,58 @@ namespace Aliquota.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnName("id")
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("dataAplicacao")
+                        .HasColumnName("dataAplicacao")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("valor")
+                        .HasColumnName("valor")
                         .HasColumnType("float");
 
                     b.HasKey("Id");
 
                     b.ToTable("Aplicacao");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 2,
-                            dataAplicacao = "19/09/1999",
-                            valor = 2000.0
-                        },
-                        new
-                        {
-                            Id = 3,
-                            dataAplicacao = "17/04/1987",
-                            valor = 3000.0
-                        });
                 });
 
             modelBuilder.Entity("Aliquota.Models.IR", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnName("id")
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<double>("aliquota")
+                        .HasColumnName("aliquota")
                         .HasColumnType("float");
 
                     b.Property<string>("dataAplicacao")
+                        .HasColumnName("dataAplicacao")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("dataResgate")
+                        .HasColumnName("dataResgate")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("ir")
+                        .HasColumnName("ir")
                         .HasColumnType("float");
 
                     b.Property<double>("lucro")
+                        .HasColumnName("lucro")
                         .HasColumnType("float");
 
                     b.Property<double>("valor")
+                        .HasColumnName("valor")
                         .HasColumnType("float");
 
                     b.HasKey("Id");
 
                     b.ToTable("IR");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            aliquota = 0.14999999999999999,
-                            dataAplicacao = "19/09/1999",
-                            dataResgate = "22/12/2021",
-                            ir = 290.39999999999998,
-                            lucro = 1936.0,
-                            valor = 1000.0
-                        });
                 });
 #pragma warning restore 612, 618
         }

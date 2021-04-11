@@ -24,37 +24,23 @@ namespace Aliquota.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //DateTime d1 = DateTime.ParseExact(("22/12/2021"), "d/M/yyyy", CultureInfo.InvariantCulture);
-            //DateTime d2 = DateTime.ParseExact(("19/09/1999"), "d/M/yyyy", CultureInfo.InvariantCulture);
-            String d1 = "22/12/2021";
-            String d2 = "19/09/1999";
-            Lucro l = new Lucro(d1, d2, 0.088, 1000);
-
-            modelBuilder.Entity<IR>().HasData(
-                 new IR
-                 {
-                     Id = 1,
-                     valor = 1000,
-                     dataResgate = "22/12/2021",
-                     dataAplicacao = "19/09/1999",
-                     ir = l.getLucro() * l.getAliquota(),
-                     lucro = l.getLucro(),
-                     aliquota = l.getAliquota()
-                 });
-            modelBuilder.Entity<Aplicacao>().HasData(
-                 new Aplicacao
-                 {
-                     Id = 2,
-                     valor = 2000,
-                     dataAplicacao = "19/09/1999"
-                 },
-                 new Aplicacao
-                 {
-                     Id = 3,
-                     valor = 3000,
-                     dataAplicacao = "17/04/1987"
-                 }
-            ); ;
+            modelBuilder.Entity<IR>(entity =>
+            {
+                entity.Property(e => e.Id).HasColumnName("id").IsRequired();
+                entity.Property(e => e.valor).HasColumnName("valor");
+                entity.Property(e => e.dataResgate)
+                .HasColumnName("dataResgate");
+                entity.Property(e => e.dataAplicacao).HasColumnName("dataAplicacao");
+                entity.Property(e => e.ir).HasColumnName("ir");
+                entity.Property(e => e.lucro).HasColumnName("lucro");
+                entity.Property(e => e.aliquota).HasColumnName("aliquota");
+            });
+            modelBuilder.Entity<Aplicacao>(entity =>
+            {
+                entity.Property(e => e.Id).HasColumnName("id").IsRequired();
+                entity.Property(e => e.valor).HasColumnName("valor");
+                entity.Property(e => e.dataAplicacao).HasColumnName("dataAplicacao");
+            });
         }
     }
 }

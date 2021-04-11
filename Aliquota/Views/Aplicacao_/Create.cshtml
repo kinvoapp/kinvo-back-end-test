@@ -2,19 +2,35 @@
 
 <h4>Aplicacao</h4>
 <hr />
+
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" name="create" onsubmit="return validateForm()">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="valor" class="control-label"></label>
-                <input asp-for="valor" class="form-control" />
+                <input asp-for="valor" name="valor" type="number" class="form-control" />
                 <span asp-validation-for="valor" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="dataAplicacao" class="control-label"></label>
-                <input asp-for="dataAplicacao" class="form-control" />
-                
+                <input asp-for="dataAplicacao" name="data" class="form-control"
+                       id="data" placeholder="DD/MM/YYYY" onkeydown="
+
+                            var v = this.value;
+                            if (v.match(/^\d{2}$/) !== null) {
+                                this.value = v + '/';
+                            } else if (v.match(/^\d{2}\/\d{2}$/) !== null) {
+                                this.value = v + '/';
+                            }
+                            var letters = /^[A-Za-z]+$/;
+                            if (v.match(letters))
+                            {
+                                alert('Caracter Inválido');
+                            }
+                            "
+                       maxlength="10" />
+
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -27,3 +43,25 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+<script>
+    function validateForm() {
+        var v = document.forms["create"]["valor"].value;
+        var d = document.forms["create"]["data"].value;
+        var ds = d.replace('/', '');
+        ds = ds.replace('/', '');
+
+        var dia = parseInt(ds.substring(0, 2));
+        var mes = parseInt(ds.substring(2, 4));
+
+        if (v == "" || parseInt(v) <= 0)
+        {
+            alert("Valor inválido");
+            return false;
+        }
+        if (d == "" || d.length < 10 || isNaN(ds) || dia > 31 || dia <= 0 || mes > 12 || mes <= 0)
+        {
+            alert("Data inválida");
+            return false;
+        }
+    }
+</script>
