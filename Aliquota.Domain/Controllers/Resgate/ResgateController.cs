@@ -18,11 +18,8 @@ namespace Aliquota.Domain.Controllers.Resgate
 
         public void CriarResgate(Aplicacoes aplicacao, Resgates resgate)
         {
-           
                 resgate.AplicacaoId = aplicacao.Id;
-
                 _resgateRepo.RetirarAplicacao(resgate);
-
         }
 
         
