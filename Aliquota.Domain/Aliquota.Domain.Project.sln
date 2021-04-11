@@ -5,7 +5,10 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aliquota.Domain", "Aliquota.Domain.csproj", "{3310632B-C96B-4AF2-B31F-B459960098A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliquota.Domain.Test", "..\Aliquota.Domain.Test\Aliquota.Domain.Test.csproj", "{AE9FA482-F644-4D02-8F1D-A7FF07EEC486}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aliquota.Domain.Test", "..\Aliquota.Domain.Test\Aliquota.Domain.Test.csproj", "{AE9FA482-F644-4D02-8F1D-A7FF07EEC486}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3310632B-C96B-4AF2-B31F-B459960098A3} = {3310632B-C96B-4AF2-B31F-B459960098A3}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

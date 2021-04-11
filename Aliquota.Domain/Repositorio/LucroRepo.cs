@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Aliquota.Domain.Repositorio
 {
-    class LucroRepo
+    public class LucroRepo
     {
         public double CalcularLucroTotal(Aplicacoes aplicacao, int totalMeses)
         {
@@ -20,11 +20,12 @@ namespace Aliquota.Domain.Repositorio
                 valorAntigo = valorTotal;
             }            
 
-            if(aplicacao.Hisotricos.Count > 0)
-            {
-                foreach (Historicos h in aplicacao.Hisotricos)
-                    valorTotal += h.Lucro;
-            }
+            if(aplicacao.Hisotricos != null)
+                if(aplicacao.Hisotricos.Count > 0)
+                {
+                    foreach (Historicos h in aplicacao.Hisotricos)
+                        valorTotal += h.Lucro;
+                }
 
             return valorTotal - aplicacao.Valor;
 
@@ -40,10 +41,12 @@ namespace Aliquota.Domain.Repositorio
             {
                 return lucroTotal * (18.5 / 100);
             }
-            else
+            else if(totalMeses > 24)
             {
-                return  lucroTotal * (15 / 100);
+                return  lucroTotal * (15.0 / 100);
             }
+
+            return 0;
         }
     }
 }

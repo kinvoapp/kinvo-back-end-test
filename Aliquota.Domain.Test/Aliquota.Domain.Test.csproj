@@ -19,4 +19,7 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Aliquota.Domain\Aliquota.Domain.csproj" />
+
 </Project>
