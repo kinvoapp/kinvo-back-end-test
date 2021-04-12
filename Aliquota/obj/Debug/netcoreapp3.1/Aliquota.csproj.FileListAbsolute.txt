@@ -71,8 +71,6 @@ C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Debug\netcoreapp3.1\
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\Aliquota.csproj.CoreCompileInputs.cache
-C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\Aliquota.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
@@ -151,5 +149,9 @@ C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\Razor\Views\Aplicacao_\Delete.cshtml.g.cs
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\Razor\Views\Aplicacao_\Edit.cshtml.g.cs
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\Aliquota.csprojAssemblyReference.cache
-C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\Razor\Views\Aplicacao_\Resgatar.cshtml.g.cs
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\Razor\Views\Aplicacao_\Create.cshtml.g.cs
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\Razor\Views\Aplicacao_\Resgatar.cshtml.g.cs
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.local.json
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\local\mssql1.arm.json
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Debug\netcoreapp3.1\Azure.Core.dll
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Debug\netcoreapp3.1\Azure.Identity.dll

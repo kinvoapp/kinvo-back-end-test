@@ -153,3 +153,10 @@ C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Release\netcoreapp3.
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Release\netcoreapp3.1\Aliquota.dll
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Release\netcoreapp3.1\Aliquota.pdb
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Release\netcoreapp3.1\Aliquota.genruntimeconfig.cache
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Release\netcoreapp3.1\Properties\serviceDependencies.local.json
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Release\netcoreapp3.1\Properties\ServiceDependencies\AliquotaDomain - Web Deploy\secrets1.arm.json
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Release\netcoreapp3.1\Properties\ServiceDependencies\local\mssql1.arm.json
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Release\netcoreapp3.1\Azure.Core.dll
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Release\netcoreapp3.1\Azure.Extensions.AspNetCore.Configuration.Secrets.dll
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Release\netcoreapp3.1\Azure.Identity.dll
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Release\netcoreapp3.1\Azure.Security.KeyVault.Secrets.dll

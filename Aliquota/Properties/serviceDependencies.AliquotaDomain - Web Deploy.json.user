@@ -1,11 +1,19 @@
 {
   "dependencies": {
+    "secrets1": {
+      "restored": true,
+      "restoreTime": "2021-04-12T23:26:15.5263607Z"
+    },
     "mssql1": {
       "restored": true,
       "restoreTime": "2021-04-12T23:08:10.9491105Z"
     }
   },
   "parameters": {
+    "secrets1.resourceGroupName": {
+      "Type": "resourceGroup",
+      "Value": "Aliquota"
+    },
     "mssql1.subscriptionId": {
       "Type": "subscription",
       "Value": "5077bdf6-6867-40b5-b34b-d1db8f86ecce"
@@ -13,6 +21,10 @@
     "mssql1.resourceGroupName": {
       "Type": "resourceGroup",
       "Value": "Aliquota"
+    },
+    "secrets1.subscriptionId": {
+      "Type": "subscription",
+      "Value": "5077bdf6-6867-40b5-b34b-d1db8f86ecce"
     }
   }
 }
