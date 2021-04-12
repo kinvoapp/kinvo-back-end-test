@@ -1,8 +1,8 @@
 using System;
 using Xunit;
-
 using Aliquota.Domain.Models;
 using Aliquota.Domain.Repositorio;
+using Aliquota.Domain.Repositorio.Comunicacao;
 
 namespace Aliquota.Domain.Test
 {
@@ -69,7 +69,7 @@ namespace Aliquota.Domain.Test
         [Fact]
         public void ValidacaoValorAplicacao_ValorMenorQueZero_RetornaZero()
         {
-            Controllers.Aplicacao.Comunicacao comunicacao = new Controllers.Aplicacao.Comunicacao();
+            AplicacaoComunicacao comunicacao = new AplicacaoComunicacao();
 
             double resultado = comunicacao.ColetarValidarValorAplicacao("-546.80");
 
@@ -79,7 +79,7 @@ namespace Aliquota.Domain.Test
         [Fact]
         public void ValidacaoValorAplicacao_ValorIgualAZero_RetornaZero()
         {
-            Controllers.Aplicacao.Comunicacao comunicacao = new Controllers.Aplicacao.Comunicacao();
+            AplicacaoComunicacao comunicacao = new AplicacaoComunicacao();
 
             double resultado = comunicacao.ColetarValidarValorAplicacao("0");
 
@@ -89,11 +89,35 @@ namespace Aliquota.Domain.Test
         [Fact]
         public void ValidacaoValorAplicacao_ValorMaiorQueZero_RetornaValor()
         {
-            Controllers.Aplicacao.Comunicacao comunicacao = new Controllers.Aplicacao.Comunicacao();
+            AplicacaoComunicacao comunicacao = new AplicacaoComunicacao();
 
             double resultado = comunicacao.ColetarValidarValorAplicacao("158.45");
 
             Assert.Equal(158.45, resultado);
+        }
+
+        [Fact]
+        public void ValidacaoDataResgate_DataAnterior_RetornaErro()
+        {
+            ResgateComunicacao comunicacao = new ResgateComunicacao();
+
+            DateTime dataAplicacao = DateTime.Parse("01/12/2021");
+
+            DateTime resultado = comunicacao.ColetarValidarDataResgate("01/11/2021", dataAplicacao);
+
+            Assert.Equal(new DateTime(), resultado);
+        }
+
+        [Fact]
+        public void ValidacaoDataResgate_DataPosterior_RetornaData()
+        {
+            ResgateComunicacao comunicacao = new ResgateComunicacao();
+
+            DateTime dataAplicacao = DateTime.Parse("01/12/2021");
+
+            DateTime resultado = comunicacao.ColetarValidarDataResgate("01/12/2022", dataAplicacao);
+
+            Assert.Equal(DateTime.Parse("01/12/2022"), resultado);
         }
     }
 }
