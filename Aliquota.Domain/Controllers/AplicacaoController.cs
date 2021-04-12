@@ -1,7 +1,7 @@
-﻿using Aliquota.Domain.Controllers.Aplicacao;
-using Aliquota.Domain.Data;
+﻿using Aliquota.Domain.Data;
 using Aliquota.Domain.Models;
 using Aliquota.Domain.Repositorio;
+using Aliquota.Domain.Repositorio.Comunicacao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ namespace Aliquota.Domain.Controllers
     class AplicacaoController
     {
         AplicacaoRepo _aplicacaoRepo = new AplicacaoRepo(new AliquotaContext());
-        Comunicacao _comunicacao = new Comunicacao();
+        AplicacaoComunicacao _comunicacao = new AplicacaoComunicacao();
 
 
         public List<Aplicacoes> ListarAplicacoes()

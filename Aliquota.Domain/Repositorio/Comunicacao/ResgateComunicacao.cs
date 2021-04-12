@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aliquota.Domain.Controllers.Resgate
+namespace Aliquota.Domain.Repositorio.Comunicacao
 {
-    class Comunicacao
+    public class ResgateComunicacao
     {
         public void DetalharResgates(Aplicacoes app, Resgates resgate, int totalMeses)
         {
@@ -24,22 +24,15 @@ namespace Aliquota.Domain.Controllers.Resgate
             Console.WriteLine("\tValor a ser resgatado: {0}", (app.Valor + resgate.Lucro).ToString("C"));
         }
 
-        public DateTime ColetarValidarDataResgate(DateTime data, DateTime dataAplicacao)
+        public DateTime ColetarValidarDataResgate(string resposta, DateTime dataAplicacao) 
         {
-            Console.WriteLine("\nQual a data do resgate?\n Ex: dd/MM/aaaa");
-            string resposta = Console.ReadLine();
-
-            while (DateTime.Compare(data, new DateTime()) == 0 && DateTime.Compare(data, dataAplicacao) < 0)
-            {
                 try
                 {
-                    data = DateTime.Parse(resposta);
+                    DateTime data = DateTime.Parse(resposta);
                     if(DateTime.Compare(data, dataAplicacao) < 0)
                     {
                         Console.WriteLine("A data do resgate precisa ser posterior a aplicacao");
-                        resposta = Console.ReadLine();
-                        data = new DateTime();
-                        continue;
+                        return new DateTime();
                     }
                     return data;
                 }
@@ -47,10 +40,9 @@ namespace Aliquota.Domain.Controllers.Resgate
                 {
                     Console.WriteLine("Formato ou data invalida\n");
                     Console.WriteLine("Tento novamente:");
-                    resposta = Console.ReadLine();
+                    return new DateTime();
                 }
-            }
-            return new DateTime();
+
         }
 
         public void TabelaResgates(List<Resgates> resgates)

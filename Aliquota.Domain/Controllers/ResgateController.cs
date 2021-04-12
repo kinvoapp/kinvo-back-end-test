@@ -1,6 +1,7 @@
 ﻿using Aliquota.Domain.Data;
 using Aliquota.Domain.Models;
 using Aliquota.Domain.Repositorio;
+using Aliquota.Domain.Repositorio.Comunicacao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace Aliquota.Domain.Controllers.Resgate
     class ResgateController
     {
         ResgateRepo _resgateRepo = new ResgateRepo(new AliquotaContext());
-        Comunicacao _comunicacao = new Comunicacao();
+        ResgateComunicacao _comunicacao = new ResgateComunicacao();
         DatasRepo _datasRepo = new DatasRepo();
         LucroRepo _lucroRepo = new LucroRepo();
 
@@ -69,7 +70,14 @@ namespace Aliquota.Domain.Controllers.Resgate
         public Resgates DetalharResgateNaoCriado(Aplicacoes aplicacao)
         {
             Resgates resgate = new Resgates();
-            resgate.Data = _comunicacao.ColetarValidarDataResgate(resgate.Data, aplicacao.Data);
+
+            while (DateTime.Compare(resgate.Data, new DateTime()) == 0 && DateTime.Compare(resgate.Data, aplicacao.Data) < 0)
+            {
+                Console.WriteLine("\nQual a data do resgate?\n Ex: dd/MM/aaaa");
+                string resposta = Console.ReadLine();
+                resgate.Data = _comunicacao.ColetarValidarDataResgate(resposta, aplicacao.Data);
+
+            }
 
             int totalMeses = _datasRepo.CalcularMesesAplicadosComHistorico(aplicacao, resgate);
 

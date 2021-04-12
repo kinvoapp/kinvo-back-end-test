@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aliquota.Domain.Controllers.Aplicacao
+namespace Aliquota.Domain.Repositorio.Comunicacao
 {
-    public class Comunicacao
+    public class AplicacaoComunicacao
     {
         public double ColetarValidarValorAplicacao(string valor)
         {

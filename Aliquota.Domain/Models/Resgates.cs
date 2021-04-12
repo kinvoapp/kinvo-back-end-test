@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Aliquota.Domain.Models
 {
-    class Resgates
+    public class Resgates
     {
         [Key]
         public int Id { get; set; }
