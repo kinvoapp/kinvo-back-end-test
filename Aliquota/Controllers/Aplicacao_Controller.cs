@@ -17,6 +17,7 @@ namespace Aliquota.Controllers
  
     public class Aplicacao_Controller : Controller
     {
+        private double taxa = 0.01;
         public SqlConnection connect()
         {
             try
@@ -53,7 +54,7 @@ namespace Aliquota.Controllers
                     String dR = DateTime.Now.ToString().Substring(0, 10);
                     double valor = reader.GetDouble(1);
                     String dA = reader.GetString(2);
-                    double taxa = 0.088;
+
                     Lucro l = new Lucro(dR, dA, taxa, valor);
 
                     i.valor = valor;
