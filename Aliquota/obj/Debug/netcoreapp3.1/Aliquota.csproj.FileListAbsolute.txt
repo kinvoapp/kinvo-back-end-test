@@ -151,7 +151,7 @@ C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Debug\netcoreapp3.1\
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\Razor\Views\Aplicacao_\Index.cshtml.g.cs
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\Razor\Views\Aplicacao_\Details.cshtml.g.cs
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\Razor\Views\Aplicacao_\Delete.cshtml.g.cs
-C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\Razor\Views\Aplicacao_\Create.cshtml.g.cs
-C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\Razor\Views\Aplicacao_\Resgatar.cshtml.g.cs
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\Razor\Views\Aplicacao_\Edit.cshtml.g.cs
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\Aliquota.csprojAssemblyReference.cache
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\Razor\Views\Aplicacao_\Resgatar.cshtml.g.cs
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\Razor\Views\Aplicacao_\Create.cshtml.g.cs

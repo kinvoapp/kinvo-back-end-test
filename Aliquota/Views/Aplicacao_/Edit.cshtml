@@ -4,27 +4,74 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" name="edit" onsubmit="return validateForm()">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="valor" class="control-label"></label>
-                <input asp-for="valor" class="form-control" />
+                <input asp-for="valor" class="form-control" type="number" />
                 <span asp-validation-for="valor" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="dataAplicacao" class="control-label"></label>
-                <input asp-for="dataAplicacao" class="form-control" />
+                <input asp-for="dataAplicacao" class="form-control" 
+                        id="data" placeholder="DD/MM/YYYY" onkeydown="
+
+                            var v = this.value;
+                            if (v.match(/^\d{2}$/) !== null) {
+                                this.value = v + '/';
+                            } else if (v.match(/^\d{2}\/\d{2}$/) !== null) {
+                                this.value = v + '/';
+                            } 
+                            "
+                       maxlength="10" />
                 <span asp-validation-for="dataAplicacao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-outline-dark">Voltar</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
+<script>
+    function validateForm() {
+        var v = document.forms["edit"]["valor"].value;
+        var d = document.forms["edit"]["data"].value;
+        var ds = d.replace('/', '');
+        ds = ds.replace('/', '');
+
+        var dia = parseInt(ds.substring(0, 2));
+        var mes = parseInt(ds.substring(2, 4));
+        var ano = parseInt(ds.substring(4, 8));
+
+        var data = new Date();
+
+        var diaAtual = data.getDate();
+        var mesAtual = data.getMonth() + 1;
+        var anoAtual = data.getFullYear();
+
+        if (v == "" || parseInt(v) <= 0) {
+            alert("Valor inválido");
+            return false;
+        }
+        if (d == "" || d.length < 10 || isNaN(ds) || dia > 31 || dia <= 0 || mes > 12 || mes <= 0 || ano > anoAtual || ano <= 0) {
+            alert("Data inválida");
+            return false;
+        }
+        if (ano == anoAtual) {
+            if (mes > mesAtual) {
+                alert("Data inválida");
+                return false;
+            }
+            else if (mes == mesAtual) {
+                if (dia > diaAtual) {
+                    alert("Data inválida");
+                    return false;
+                }
+            }
+        }
+    }
+</script>

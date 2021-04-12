@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <Folder Include="Scripts\" />
+    <Folder Include="wwwroot\img\" />
   </ItemGroup>
 
 </Project>

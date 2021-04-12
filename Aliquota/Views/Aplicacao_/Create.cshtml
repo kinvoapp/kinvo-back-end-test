@@ -2,19 +2,18 @@
 
 <h4>Aplicacao</h4>
 <hr />
-
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create" name="create" onsubmit="return validateForm()">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="valor" class="control-label"></label>
-                <input asp-for="valor" name="valor" type="number" class="form-control" />
+                <input asp-for="valor" class="form-control" type="number" />
                 <span asp-validation-for="valor" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="dataAplicacao" class="control-label"></label>
-                <input asp-for="dataAplicacao" name="data" class="form-control"
+                <input asp-for="dataAplicacao" class="form-control" 
                        id="data" placeholder="DD/MM/YYYY" onkeydown="
 
                             var v = this.value;
@@ -23,24 +22,16 @@
                             } else if (v.match(/^\d{2}\/\d{2}$/) !== null) {
                                 this.value = v + '/';
                             }
-                            var letters = /^[A-Za-z]+$/;
-                            if (v.match(letters))
-                            {
-                                alert('Caracter Inválido');
-                            }
                             "
                        maxlength="10" />
-
+                <span asp-validation-for="dataAplicacao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Adicionar" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-outline-dark">Voltar</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 <script>
@@ -52,16 +43,33 @@
 
         var dia = parseInt(ds.substring(0, 2));
         var mes = parseInt(ds.substring(2, 4));
+        var ano = parseInt(ds.substring(4, 8));
 
-        if (v == "" || parseInt(v) <= 0)
-        {
+        var data = new Date();
+
+        var diaAtual = data.getDate(); 
+        var mesAtual = data.getMonth() + 1; 
+        var anoAtual = data.getFullYear();
+
+        if (v == "" || parseInt(v) <= 0) {
             alert("Valor inválido");
             return false;
         }
-        if (d == "" || d.length < 10 || isNaN(ds) || dia > 31 || dia <= 0 || mes > 12 || mes <= 0)
-        {
+        if (d == "" || d.length < 10 || isNaN(ds) || dia > 31 || dia <= 0 || mes > 12 || mes <= 0 || ano > anoAtual || ano <= 0) {
             alert("Data inválida");
             return false;
+        }
+        if (ano == anoAtual) {
+            if (mes > mesAtual) {
+                alert("Data inválida");
+                return false;
+            }
+            else if (mes == mesAtual) {
+                if (dia > diaAtual) {
+                    alert("Data inválida");
+                    return false;
+                }
+            }
         }
     }
 </script>

@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Aliquota.Models.Aplicacao>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Criar Aplicação</a>
 </p>
 <table class="table">
     <thead>
@@ -17,18 +17,16 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
-            <td>
+        <tr onclick="
+            window.location.href = '/Aplicacao_/Details/@item.Id' ">
+            <td>             
                 @Html.DisplayFor(modelItem => item.valor)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.dataAplicacao)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
-                <a asp-action="Resgatar" asp-route-id="@item.Id">Resgatar</a>
+                <a asp-action="Delete" asp-route-id="@item.Id"><img src="~/img/delete.png" class="delete" /></a>
             </td>
         </tr>
 }
