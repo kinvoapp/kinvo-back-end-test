@@ -61,7 +61,7 @@ namespace Aliquota.Controllers
                     i.dataResgate = l.getDataResgate().ToString().Substring(0, 10);
                     i.ir = Math.Round(l.getIR(l), 2);
                     i.lucro = Math.Round(l.getLucro(), 2);
-                    i.aliquota = l.getAliquota();
+                    i.aliquota = l.getAliquota()*100;
                     
                 }
             }
