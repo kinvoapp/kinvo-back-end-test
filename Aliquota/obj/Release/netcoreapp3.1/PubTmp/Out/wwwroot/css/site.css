@@ -13,9 +13,9 @@ a {
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #0DD1E3;
+    border-color: #0DD1E3;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -70,11 +70,19 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
-tr:hover{
-    background: #f2f3ff;
+tr:hover {
+    background: #EEF2F4;
     outline: none;
 }
 
 .delete{
     width: 15px;
+}
+
+#logo {
+    width: 105px;
+}
+
+#menu {
+    background-color: #687279 
 }
