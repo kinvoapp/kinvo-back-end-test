@@ -10,7 +10,10 @@
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
-      "launchBrowser": true
+      "launchBrowser": true,
+      "environmentVariables": {
+        "Chave": "Development"
+      }
     },
     "Aliquota": {
       "commandName": "Project",
