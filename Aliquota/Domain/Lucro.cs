@@ -6,13 +6,13 @@ namespace Aliquota.Domain
 {
     public class Lucro : Aliquota
     {
-        private double taxaAnual;
+        private double taxaAnual = 0.01;
         private double lucro_;
         private double valor;
 
         public Lucro(String dataResgate, String dataAplicacao, double taxaAnual, double valor) : base(dataResgate, dataAplicacao)
         {
-            this.taxaAnual = taxaAnual;
+            //this.taxaAnual = taxaAnual;
             this.valor = valor;
 
             setLucro();

@@ -12,14 +12,18 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "Chave": "Development"
+        "Chave": "Development",
+        "VaultUri": "https://aliquotavault.vault.azure.net/",
+        "AZURE_USERNAME": "h.furtado@aluno.ufabc.edu.br"
       }
     },
     "Aliquota": {
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development ",
+        "VaultUri": "https://aliquotavault.vault.azure.net/",
+        "AZURE_USERNAME": "h.furtado@aluno.ufabc.edu.br"
       },
       "applicationUrl": "https://localhost:5001;http://localhost:5000"
     }

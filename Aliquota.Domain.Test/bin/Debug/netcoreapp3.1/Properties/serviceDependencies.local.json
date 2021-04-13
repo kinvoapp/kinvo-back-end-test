@@ -4,13 +4,13 @@
       "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/aliquota-domaindbserver/databases/Aliquota.Domain_db",
       "type": "mssql.azure",
       "connectionId": "ConnectionString",
-      "secretStore": "AzureAppSettings"
+      "secretStore": "LocalSecretsFile"
     },
     "secrets2": {
       "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.KeyVault/vaults/Aliquotavault",
       "type": "secrets.keyVault",
       "connectionId": "VaultUri",
-      "secretStore": "AzureAppSettings"
+      "secretStore": null
     }
   }
 }

@@ -10,15 +10,15 @@ namespace Aliquota.Domain.Test
         [Fact]
         public void testAliquota()
         {
-            String dataResgate = "11/04/2020";
+            String dataResgate = "13/04/2021";
             String dataAplicacao = "11/04/1999";
-            double taxaAnual = 0.088;
+            double taxaAnual = 0.01;
             double valor = 1000;
 
             Lucro l = new Lucro(dataResgate, dataAplicacao, taxaAnual, valor);
 
             var ir = l.getIR(l);
-            var valorEsperado = 277.4;
+            var valorEsperado = 33.03;
 
             Assert.Equal(valorEsperado, ir, 1);
         }
@@ -32,9 +32,9 @@ namespace Aliquota.Domain.Test
             return start.ToString().Substring(0, 10);
         }
         [Theory]
-        [InlineData("01/01/2020", "15/06/2020", 0.01, 1000, 9.00)]
-        [InlineData("01/01/2020", "15/06/2021", 0.01, 1000, 23.70)]
-        [InlineData("06/01/2001", "11/04/2020", 0.01, 2000, 375.80)]
+        [InlineData("12/05/2018", "13/04/2021", 0.01, 4000, 17.54)]
+        [InlineData("27/11/2019", "13/04/2021", 0.01, 3000, 7.65)]
+        [InlineData("08/05/2020", "13/04/2021", 0.01, 2500, 5.24)]
         public void testAliquotaRelativo(String dA, String dR, double taxa, double valor, double valorEsperado)
         {
             Lucro l = new Lucro(dR, dA, taxa, valor);
