@@ -4,7 +4,7 @@
       "type": "mssql",
       "connectionId": "ConnectionString"
     },
-    "secrets1": {
+    "secrets2": {
       "type": "secrets",
       "connectionId": "VaultUri"
     }

@@ -3,9 +3,21 @@
     "mssql1": {
       "restored": true,
       "restoreTime": "2021-04-12T23:08:10.9491105Z"
+    },
+    "secrets2": {
+      "restored": true,
+      "restoreTime": "2021-04-13T14:42:25.557493Z"
     }
   },
   "parameters": {
+    "secrets2.resourceGroupName": {
+      "Type": "resourceGroup",
+      "Value": "Aliquota"
+    },
+    "secrets2.subscriptionId": {
+      "Type": "subscription",
+      "Value": "5077bdf6-6867-40b5-b34b-d1db8f86ecce"
+    },
     "mssql1.subscriptionId": {
       "Type": "subscription",
       "Value": "5077bdf6-6867-40b5-b34b-d1db8f86ecce"
