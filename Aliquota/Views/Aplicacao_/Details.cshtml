@@ -1,0 +1,25 @@
+﻿@model Aliquota.Models.Aplicacao
+
+<div>
+    <h4>Aplicação</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.valor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.valor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dataAplicacao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dataAplicacao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+    <a asp-action="Resgatar" asp-route-id="@Model.Id" class="btn btn-primary">Resgatar</a>
+    <a asp-action="Index" class="btn btn-outline-dark">Voltar</a>
+</div>

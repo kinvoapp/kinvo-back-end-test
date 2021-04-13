@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Aliquota.Models.Aplicacao>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Criar Aplicação</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.valor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dataAplicacao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr onclick="
+            window.location.href = '/Aplicacao_/Details/@item.Id' ">
+            <td>             
+                @Html.DisplayFor(modelItem => item.valor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataAplicacao)
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.Id"><img src="~/img/delete.png" class="delete" /></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
