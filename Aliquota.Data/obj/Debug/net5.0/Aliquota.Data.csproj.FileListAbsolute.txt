@@ -1,0 +1,12 @@
+/home/paloma/projetos/kinvo_test/Aliquota.Data/bin/Debug/net5.0/Aliquota.Data.deps.json
+/home/paloma/projetos/kinvo_test/Aliquota.Data/bin/Debug/net5.0/Aliquota.Data.dll
+/home/paloma/projetos/kinvo_test/Aliquota.Data/bin/Debug/net5.0/ref/Aliquota.Data.dll
+/home/paloma/projetos/kinvo_test/Aliquota.Data/bin/Debug/net5.0/Aliquota.Data.pdb
+/home/paloma/projetos/kinvo_test/Aliquota.Data/obj/Debug/net5.0/Aliquota.Data.csprojAssemblyReference.cache
+/home/paloma/projetos/kinvo_test/Aliquota.Data/obj/Debug/net5.0/Aliquota.Data.GeneratedMSBuildEditorConfig.editorconfig
+/home/paloma/projetos/kinvo_test/Aliquota.Data/obj/Debug/net5.0/Aliquota.Data.AssemblyInfoInputs.cache
+/home/paloma/projetos/kinvo_test/Aliquota.Data/obj/Debug/net5.0/Aliquota.Data.AssemblyInfo.cs
+/home/paloma/projetos/kinvo_test/Aliquota.Data/obj/Debug/net5.0/Aliquota.Data.csproj.CoreCompileInputs.cache
+/home/paloma/projetos/kinvo_test/Aliquota.Data/obj/Debug/net5.0/Aliquota.Data.dll
+/home/paloma/projetos/kinvo_test/Aliquota.Data/obj/Debug/net5.0/ref/Aliquota.Data.dll
+/home/paloma/projetos/kinvo_test/Aliquota.Data/obj/Debug/net5.0/Aliquota.Data.pdb
