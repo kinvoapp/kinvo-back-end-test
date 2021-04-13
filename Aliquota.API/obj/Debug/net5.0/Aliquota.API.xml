@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aliquota.API</name>
+    </assembly>
+    <members>
+        <member name="T:Aliquot.API.Controllers.AliquotController">
+            <summary>
+            Aliquot Controller
+            </summary>    
+        </member>
+        <member name="M:Aliquot.API.Controllers.AliquotController.Create(Aliquota.API.Models.Request.CreateClientRequest)">
+            <summary>
+            Creates a client in the database
+            </summary>
+            <parameter name="request">CreateClientRequest object</parameter>
+            <response code="204">Client successfully created</response>
+            <response code="400">Client name already exists</response>
+            <response code="500">Internal error</response>
+        </member>
+        <member name="M:Aliquot.API.Controllers.AliquotController.Apply(Aliquota.API.Models.Request.ApplyRequest)">
+            <summary>
+            Perform an application
+            </summary>
+            <parameter name="request">ApplyRequest object</parameter>
+            <response code="200">Successful application</response>
+            <response code="400">Application value invalid</response>
+            <response code="500">Internal error</response>
+        </member>
+        <member name="M:Aliquot.API.Controllers.AliquotController.Withdraw(System.String)">
+            <summary>
+            Perform an application
+            </summary>
+            <parameter name="applicationCode">Application identifier code</parameter>
+            <response code="200">Successful withdraw</response>
+            <response code="400">This withdrawal has already been carried out</response>
+            <response code="500">Internal error</response>
+        </member>
+    </members>
+</doc>
