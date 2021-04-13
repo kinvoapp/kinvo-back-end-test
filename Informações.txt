@@ -1,2 +1,6 @@
 O programa utiliza uma taxa fixa de rendimento anual igual a 0.01 (1% ao ano)
 para cálculo do lucro.
+
+
+
+Criado por: Henrique Martins Furtado
