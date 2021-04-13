@@ -155,3 +155,8 @@ C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Debug\netcoreapp3.1\
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\local\mssql1.arm.json
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Debug\netcoreapp3.1\Azure.Core.dll
 C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Debug\netcoreapp3.1\Azure.Identity.dll
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Debug\netcoreapp3.1\Azure.Extensions.AspNetCore.Configuration.Secrets.dll
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Debug\netcoreapp3.1\Azure.Security.KeyVault.Secrets.dll
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\Aliquota.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\obj\Debug\netcoreapp3.1\Aliquota.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\source\repos\kinvo-back-end-test\Aliquota\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\local\secrets2.arm.json

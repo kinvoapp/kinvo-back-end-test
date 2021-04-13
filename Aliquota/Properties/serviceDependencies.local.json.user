@@ -2,14 +2,26 @@
   "dependencies": {
     "secrets1": {
       "restored": true,
-      "restoreTime": "2021-04-12T23:24:13.5779606Z"
+      "restoreTime": "2021-04-13T14:38:49.7779142Z"
     },
     "mssql1": {
       "restored": true,
       "restoreTime": "2021-04-12T23:24:25.9201772Z"
+    },
+    "secrets2": {
+      "restored": true,
+      "restoreTime": "2021-04-13T14:39:11.1150046Z"
     }
   },
   "parameters": {
+    "secrets2.resourceGroupName": {
+      "Type": "resourceGroup",
+      "Value": "Aliquota"
+    },
+    "secrets2.subscriptionId": {
+      "Type": "subscription",
+      "Value": "5077bdf6-6867-40b5-b34b-d1db8f86ecce"
+    },
     "mssql1.subscriptionId": {
       "Type": "subscription",
       "Value": "5077bdf6-6867-40b5-b34b-d1db8f86ecce"

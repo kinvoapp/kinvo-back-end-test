@@ -32,9 +32,9 @@ namespace Aliquota.Domain.Test
             return start.ToString().Substring(0, 10);
         }
         [Theory]
-        [InlineData("01/01/2020", "15/06/2020", 0.088, 1000, 9.00)]
-        [InlineData("01/01/2020", "15/06/2021", 0.088, 1000, 23.70)]
-        [InlineData("06/01/2001", "11/04/2020", 0.065, 2000, 375.80)]
+        [InlineData("01/01/2020", "15/06/2020", 0.01, 1000, 9.00)]
+        [InlineData("01/01/2020", "15/06/2021", 0.01, 1000, 23.70)]
+        [InlineData("06/01/2001", "11/04/2020", 0.01, 2000, 375.80)]
         public void testAliquotaRelativo(String dA, String dR, double taxa, double valor, double valorEsperado)
         {
             Lucro l = new Lucro(dR, dA, taxa, valor);

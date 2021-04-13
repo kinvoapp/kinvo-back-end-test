@@ -5,12 +5,6 @@
       "type": "mssql.azure",
       "connectionId": "ConnectionString",
       "secretStore": "AzureAppSettings"
-    },
-    "secrets1": {
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.KeyVault/vaults/Aliquotavault",
-      "type": "secrets.keyVault",
-      "connectionId": "VaultUri",
-      "secretStore": "AzureAppSettings"
     }
   }
 }
