@@ -8,10 +8,8 @@ namespace Aliquota.Domain.DTO
         public string FantasyName { get; set; }
         public decimal ApplicationValue { get; set; }
         public decimal? WithdrawValue { get; set; }
-        public decimal TaxPercentage { get; set; }
-        public decimal TaxValue { get; set; }
-        public DateTime ApplicationDate { get; private set; }
-        public DateTime? WithdrawDate { get; private set; }
+        public DateTime ApplicationDate { get; set; }
+        public DateTime? WithdrawDate { get; set; }
 
         public static explicit operator WithdrawDTO(Application application)
         {

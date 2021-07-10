@@ -20,7 +20,11 @@ namespace Aliquota.Infrastructure.Configurations
                 .Property(e => e.FantasyName)
                 .HasColumnName("fantasy_name");
 
-        }
+            builder
+                .Property(e => e.Document)
+                .HasColumnName("document");
+            
+            }
 
     }
 }

@@ -40,6 +40,10 @@ namespace Aliquota.Infrastructure.Configurations
                 .HasConstraintName("client_id");
 
             builder
+                .Property(e => e.ClientId)
+                .HasColumnName("client_id");
+
+            builder
                 .Property(e => e.IsActive)
                 .HasColumnName("is_active");
         }

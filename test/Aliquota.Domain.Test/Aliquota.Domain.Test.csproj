@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Aliquota.API\Aliquota.API.csproj" />
     <ProjectReference Include="..\..\Aliquota.Domain\Aliquota.Domain.csproj" />
   </ItemGroup>
 

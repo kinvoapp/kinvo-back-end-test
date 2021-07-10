@@ -7,10 +7,21 @@ C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\
 C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\bin\Debug\net5.0\Aliquota.API.dll
 C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\bin\Debug\net5.0\ref\Aliquota.API.dll
 C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\bin\Debug\net5.0\Aliquota.API.pdb
+C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\bin\Debug\net5.0\Npgsql.dll
+C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\bin\Debug\net5.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\bin\Debug\net5.0\Aliquota.Domain.dll
+C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\bin\Debug\net5.0\Aliquota.Infrastructure.dll
+C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\bin\Debug\net5.0\Aliquota.Domain.pdb
+C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\bin\Debug\net5.0\Aliquota.Infrastructure.pdb
 C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\obj\Debug\net5.0\Aliquota.API.csproj.AssemblyReference.cache
 C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\obj\Debug\net5.0\Aliquota.API.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\obj\Debug\net5.0\Aliquota.API.AssemblyInfoInputs.cache
@@ -19,7 +30,6 @@ C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\
 C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\obj\Debug\net5.0\Aliquota.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\obj\Debug\net5.0\Aliquota.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\obj\Debug\net5.0\staticwebassets\Aliquota.API.StaticWebAssets.Manifest.cache
-C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\obj\Debug\net5.0\staticwebassets\Aliquota.API.StaticWebAssets.xml
 C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\obj\Debug\net5.0\scopedcss\bundle\Aliquota.API.styles.css
 C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\obj\Debug\net5.0\Aliquota.API.RazorTargetAssemblyInfo.cache
 C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\obj\Debug\net5.0\Aliquota.API.csproj.CopyComplete
@@ -27,3 +37,6 @@ C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\
 C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\obj\Debug\net5.0\ref\Aliquota.API.dll
 C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\obj\Debug\net5.0\Aliquota.API.pdb
 C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\obj\Debug\net5.0\Aliquota.API.genruntimeconfig.cache
+C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\bin\Debug\net5.0\Aliquota.API.xml
+C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\obj\Debug\net5.0\staticwebassets\Aliquota.API.StaticWebAssets.xml
+C:\Users\elias.garcia\Projetos\Seletivos\Kinvo\kinvo-back-end-test\Aliquota.API\obj\Debug\net5.0\Aliquota.API.xml
