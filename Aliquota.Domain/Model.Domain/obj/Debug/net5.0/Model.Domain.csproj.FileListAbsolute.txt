@@ -1,0 +1,12 @@
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Domain\bin\Debug\net5.0\Model.Domain.deps.json
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Domain\bin\Debug\net5.0\Model.Domain.dll
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Domain\bin\Debug\net5.0\ref\Model.Domain.dll
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Domain\bin\Debug\net5.0\Model.Domain.pdb
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Domain\obj\Debug\net5.0\Model.Domain.csprojAssemblyReference.cache
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Domain\obj\Debug\net5.0\Model.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Domain\obj\Debug\net5.0\Model.Domain.AssemblyInfoInputs.cache
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Domain\obj\Debug\net5.0\Model.Domain.AssemblyInfo.cs
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Domain\obj\Debug\net5.0\Model.Domain.csproj.CoreCompileInputs.cache
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Domain\obj\Debug\net5.0\Model.Domain.dll
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Domain\obj\Debug\net5.0\ref\Model.Domain.dll
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Domain\obj\Debug\net5.0\Model.Domain.pdb

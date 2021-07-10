@@ -1,0 +1,15 @@
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Service\bin\Debug\net5.0\Model.Service.deps.json
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Service\bin\Debug\net5.0\Model.Service.dll
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Service\bin\Debug\net5.0\ref\Model.Service.dll
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Service\bin\Debug\net5.0\Model.Service.pdb
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Service\bin\Debug\net5.0\Model.Domain.dll
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Service\bin\Debug\net5.0\Model.Domain.pdb
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Service\obj\Debug\net5.0\Model.Service.csprojAssemblyReference.cache
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Service\obj\Debug\net5.0\Model.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Service\obj\Debug\net5.0\Model.Service.AssemblyInfoInputs.cache
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Service\obj\Debug\net5.0\Model.Service.AssemblyInfo.cs
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Service\obj\Debug\net5.0\Model.Service.csproj.CoreCompileInputs.cache
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Service\obj\Debug\net5.0\Model.Service.csproj.CopyComplete
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Service\obj\Debug\net5.0\Model.Service.dll
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Service\obj\Debug\net5.0\ref\Model.Service.dll
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Service\obj\Debug\net5.0\Model.Service.pdb
