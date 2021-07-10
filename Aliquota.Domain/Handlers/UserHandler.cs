@@ -18,11 +18,12 @@ namespace Aliquota.Domain.Handlers {
 
         public User Handle(CreateUserCommand command) {
             var portfolio = new Portfolio();
-            var user = new User(command.Email, command.FullName, portfolio);
+            var user = new User(command.Email, command.FullName);
             user.SetPassword(command.Password);
+            user.Portfolio = portfolio;
 
-            userRepository.Add(user);
             portfolioRepository.Add(portfolio);
+            userRepository.Add(user);
 
             return user;
         }

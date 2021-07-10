@@ -1,5 +1,10 @@
+using System;
+using Aliquota.Domain.Contracts.Repositories;
+using Aliquota.Domain.Handlers;
 using Aliquota.Persistence.Context;
+using Aliquota.Persistence.Repositories;
 using Aliquota.WebApp.Configuration;
+using Aliquota.WebApp.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,10 +40,17 @@ namespace Aliquota.WebApp
 
             services.AddDbContext<AppDbContext>(
                 options => options.UseSqlite(Configuration.GetConnectionString("Default")));
+            
+            services.AddScoped<UserHandler>();
+            services.AddScoped<ModelConverter>();
+            services.AddScoped<TokenService>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IPortfolioRepository, PortfolioRepository>();
 
             services.Configure<AppConfig>(Configuration.GetSection("AppConfig"));
 
-            var sp = services.BuildServiceProvider();
+            var key = Convert.FromBase64String(Configuration.GetSection("AppConfig")
+                                                            .GetValue<string>("TokenSecretKeyBase64"));
 
             services.AddAuthentication(options => {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -48,8 +60,7 @@ namespace Aliquota.WebApp
                 options.SaveToken = true;
                 options.TokenValidationParameters = new TokenValidationParameters {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(
-                        sp.GetRequiredService<IOptions<AppConfig>>().Value.TokenSecretKey),
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = false,
                     ValidateAudience = false,
                 };

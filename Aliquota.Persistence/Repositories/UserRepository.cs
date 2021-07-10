@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Threading.Tasks;
 using Aliquota.Domain.Contracts.Repositories;
 using Aliquota.Domain.Entities;
 using Aliquota.Persistence.Context;
@@ -20,6 +21,12 @@ namespace Aliquota.Persistence.Repositories {
         public void Add(User user)
         {
             Context.Users.Add(user);
+        }
+
+        public async Task<User> GetUserByEmailAsync(string email)
+        {
+            return await Context.Users.Where(u => email == u.Email)
+                                .FirstOrDefaultAsync();
         }
     }
 }

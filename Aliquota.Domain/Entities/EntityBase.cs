@@ -11,6 +11,6 @@ namespace Aliquota.Domain.Entities
         }
 
         [Key]
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
     }
 }

@@ -8,24 +8,23 @@ namespace Aliquota.Domain.Entities
 {
     public class User : EntityBase
     {
-        public User(string email, string fullName, Portfolio portfolio)
+        public User(string email, string fullName)
         {
             Email = email;
             FullName = fullName;
-            Portfolio = portfolio;
         }
 
         [EmailAddress]
-        public string Email { get; private set; }
+        public string Email { get; set; }
 
         [MaxLength(50)]
-        public string FullName { get; private set; }
+        public string FullName { get; set; }
 
         public byte[] PasswordHash { get; private set; }
 
-        public Guid PortfolioId { get; private set; }
+        public Guid PortfolioId { get; set; }
 
-        public Portfolio Portfolio { get; private set; }
+        public Portfolio Portfolio { get; set; }
 
         public void SetPassword(string password) {
             var sha256 = SHA256.Create();
