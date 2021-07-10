@@ -6077,11 +6077,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Aliquota.Domain\\AliquotaDomain.csproj",
-      "projectName": "AliquotaDomain",
-      "projectPath": "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Aliquota.Domain\\AliquotaDomain.csproj",
+      "projectUniqueName": "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Application\\Model.Application.csproj",
+      "projectName": "Model.Application",
+      "projectPath": "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Application\\Model.Application.csproj",
       "packagesPath": "C:\\Users\\lpc13\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Aliquota.Domain\\obj\\",
+      "outputPath": "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
