@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -31,9 +32,9 @@ namespace Aliquota.Domain.Entities
             PasswordHash = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
         }
 
-        public bool ComparePassword(string password) {
+        public bool VerifyPassword(string password) {
             var sha256 = SHA256.Create();
-            return PasswordHash == sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+            return PasswordHash.SequenceEqual(sha256.ComputeHash(Encoding.UTF8.GetBytes(password)));
         }
     }
 }
