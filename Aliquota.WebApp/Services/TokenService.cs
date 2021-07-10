@@ -34,6 +34,7 @@ namespace Aliquota.WebApp.Services
             {
                 Subject = new ClaimsIdentity(GetClaims(user)),
                 Expires = DateTime.Now + appConfig.Value.TokenValidityTime,
+                NotBefore = DateTime.Now,
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(appConfig.Value.TokenSecretKey),
                     SecurityAlgorithms.HmacSha256Signature),

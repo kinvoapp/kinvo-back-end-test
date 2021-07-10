@@ -43,7 +43,7 @@ namespace Aliquota.WebApp.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<AuthenticationResponse> CreateUser(LoginCommand command)
+        public async Task<AuthenticationResponse> LoginUser([FromBody] LoginCommand command)
         {
             var user = await userRepository.GetUserByEmailAsync(command.Email);
 
