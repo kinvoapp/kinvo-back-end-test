@@ -1,0 +1,20 @@
+<mat-card class="w-100">
+    <mat-card-title>
+        Login
+    </mat-card-title>
+    <mat-card-content class="d-flex flex-column align-items-center">
+        <form class="w-100 px-3" [formGroup]="loginForm">
+            <mat-form-field class="w-100">
+                <mat-label>Email</mat-label>
+                <input matInput type="text" formControlName="email"/>
+            </mat-form-field>
+            <mat-form-field class="w-100">
+                <mat-label>Senha</mat-label>
+                <input matInput type="text" formControlName="password"/>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions class="d-flex justify-content-center my-3">
+        <button mat-flat-button color="primary" [disabled]="!isFormValid">ok</button>
+    </mat-card-actions>
+</mat-card>
