@@ -10,7 +10,7 @@ import { HomeComponent } from './components/layout/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateUserComponent } from './components/user/create-user/create-user.component';
 import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule, MatFormFieldModule, MatInputModule, MatProgressSpinnerModule } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule, MatInputModule, MatProgressSpinnerModule, MatSnackBarModule } from '@angular/material';
 import { LoginComponent } from './components/user/login/login.component';
 
 @NgModule({
@@ -38,6 +38,7 @@ import { LoginComponent } from './components/user/login/login.component';
     ReactiveFormsModule,
     MatButtonModule,
     MatProgressSpinnerModule,
+    MatSnackBarModule,
   ],
   providers: [
     FormBuilder,

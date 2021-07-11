@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
+    private snackBar: MatSnackBar,
   ) { }
 
   get isFormValid() {
@@ -35,7 +37,12 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.value.password,
     }).subscribe(
       res => {
-        this.loading = false;
+        if(res.success) {
+          this.loading = false;
+        } else {
+          this.snackBar.open(res.message, "Fechar");
+          this.loading = false;
+        }
       }
     );
   }
