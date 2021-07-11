@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Investment>
+
+<div class="row">
+    <div class="col-md-2">
+
+        <h4>Investimentos</h4>
+    </div>
+
+    @if (Model.Count() > 0)
+    {
+
+        <div>
+            <a asp-action="Create" type="button" class="btn btn-success">Criar um investimento</a>
+        </div>
+    }
+
+</div>
+
+<br />
+
+@if (Model.Count() == 0)
+{
+    <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading">Você ainda não começou a investir. Está esperando o quê?</h4>
+        <p>Clique no botão abaixo para fazer seu primeiro depósito:</p>
+        <hr>
+        <p class="mb-0"><a asp-action="Create" type="button" class="btn btn-success">Criar um investimento</a></p>
+    </div>
+}
+else
+{
+    <table class="table data_table">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(model => model.Id)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Value)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.InvestmentDate)</th>
+                <th></th>
+                <th>Resgatado</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var investment in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(x => investment.Id)</td>
+                    <td>@investment.Value.ToString("c")</td>
+                    <td>@investment.InvestmentDate.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@investment.Id"> Detalhes</a>
+                        @if (!investment.RescueDate.HasValue)
+                        {
+                            <a asp-action="Rescue" asp-route-id="@investment.Id"> | Resgatar </a>
+                        }
+                    </td>
+                    <td>
+                        @if (!investment.RescueDate.HasValue)
+                        {
+                            <p>Não</p>
+                        }
+                        else
+                        {
+                            <p>Sim</p>
+                        }
+                    </td>
+                </tr>
+            }
+    </table>
+}
+
+@*@section Head{
+        <link rel="stylesheet" href="~/lib/DataTables/datatables.css">
+    }*@

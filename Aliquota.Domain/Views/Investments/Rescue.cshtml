@@ -1,0 +1,66 @@
+﻿@model Investment
+
+@{
+    ViewData["Title"] = "Resgate";
+}
+
+<h3>@ViewData["Title"]</h3>
+
+
+<div class="alert alert-info" role="alert">
+    <h4 class="alert-heading">Informações sobre o cálculo do Imposto de Renda</h4>
+    <p>
+        O Imposto de Renda só é recolhido quando você faz o resgate. O cálculo de IR se dá em cima do seu valor final de lucro e
+        segue a seguinte lógica:
+    </p>
+    <hr>
+    <p class="mb-0">
+        <ul>
+            <li>Até 1 ano de aplicação: 22,5% sobre o lucro</li>
+            <li>De 1 a 2 anos de aplicação: 18,5% sobre o lucro</li>
+            <li>Acima de 2 anos de aplicação: 15% sobre o lucro</li>
+            <li>Seu investimento rende aproximadamente 4,15% ao ano de lucro</li>
+        </ul>
+    </p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <strong>@Html.DisplayNameFor(x => x.InvestmentDate) : </strong> @Model.InvestmentDate.ToString("dd/MM/yyyy")
+    </div>
+    <div class="col-md-4">
+        <strong>@Html.DisplayNameFor(x => x.RescueDate) : </strong> @ViewBag.RescueDate.ToString("dd/MM/yyyy")
+    </div>
+    <div class="col-md-4">
+        <strong> Tempo investindo (dias) : </strong> @ViewBag.Date
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <strong>@Html.DisplayNameFor(x => x.Value) : </strong> @Model.Value.ToString("c")
+    </div>
+    <div class="col-md-4">
+        <strong>Lucro Total : </strong> @ViewBag.TotalProfit.ToString("c")
+    </div>
+    <div class="col-md-4">
+        <strong>Porcentagem do IR : </strong> @ViewBag.Percentage.ToString("N1")%
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <strong>Desconto do IR : </strong> @ViewBag.Discout.ToString("c")
+    </div>
+    <div class="col-md-4">
+        <strong>Valor total de Resgate : </strong> @ViewBag.RescueTotal.ToString("c")
+    </div>
+</div>
+
+<br />
+
+<div>
+    <form asp-action="Rescue">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Confirmar Resgate" class="btn btn-success" />
+        <a asp-action="Index">Voltar a página inicial</a>
+    </form>
+</div>

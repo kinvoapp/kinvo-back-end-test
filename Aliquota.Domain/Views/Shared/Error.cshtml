@@ -1,0 +1,17 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Um erro ocorreu";
+}
+
+<p>
+    <h3 class="text-dark">
+        <strong>@ViewData["Title"] : <span class="text-danger">@Model.Message</span></strong>
+    </h3>
+</p>
+
+
+<p>
+    <img src="~/imagens/error.png" alt="Um erro ocorreu" class="w-75" />
+</p>
+
+<a asp-action="Index">Voltar a página inicial</a>

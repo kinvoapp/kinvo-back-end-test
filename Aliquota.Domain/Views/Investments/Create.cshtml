@@ -1,0 +1,44 @@
+﻿@model Investment
+
+<h3 class="text-center">
+    Investindo...
+</h3>
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create" class="form-horizontal">
+            <hr />
+
+            @if (!Html.ViewData.ModelState.IsValid)
+            {
+                <strong class="text-danger">
+                    @Html.ValidationSummary()
+                </strong>
+                <hr />
+            }
+            <div class="form-group">
+                <label asp-for="Value" class="col-md-2 control-label"></label>
+                <div class="col-md-12">
+                    <input asp-for="Value" type="text" class="form-control" id="money" />
+                    <span asp-validation-for="Value" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="InvestmentDate" class="col-md-2 control-label"></label>
+                <div class="col-md-12">
+                    <input asp-for="InvestmentDate" type="date" class="form-control" />
+                    <span asp-validation-for="InvestmentDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <div class="container container-elements-center">
+                        <input type="submit" class="btn btn-success " value="Depositar" />
+                        <a asp-action="Index" class="btn btn-danger">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
