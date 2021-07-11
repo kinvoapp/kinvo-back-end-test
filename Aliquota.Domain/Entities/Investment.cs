@@ -18,6 +18,6 @@ namespace Aliquota.Domain.Entities
 
         public FinancialProduct FinancialProduct { get; set; }
 
-        public int Value { get; set; }
+        public double InitialValue { get; set; }
     }
 }

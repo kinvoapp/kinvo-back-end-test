@@ -22,7 +22,7 @@ namespace Aliquota.Domain.Entities
 
         public byte[] PasswordHash { get; private set; }
 
-        public int Balance { get; set; }
+        public double Balance { get; set; }
 
         public void SetPassword(string password) {
             var sha256 = SHA256.Create();
