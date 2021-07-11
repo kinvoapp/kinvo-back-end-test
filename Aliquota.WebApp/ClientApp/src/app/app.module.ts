@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateUserComponent } from './components/user/create-user/create-user.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule, MatFormFieldModule, MatInputModule, MatProgressSpinnerModule } from '@angular/material';
+import { LoginComponent } from './components/user/login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { MatButtonModule, MatFormFieldModule, MatInputModule, MatProgressSpinner
     NavMenuComponent,
     HomeComponent,
     CreateUserComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -25,6 +27,8 @@ import { MatButtonModule, MatFormFieldModule, MatInputModule, MatProgressSpinner
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'register', component: CreateUserComponent, pathMatch: 'full' },
+      { path: 'login', component: LoginComponent, pathMatch: 'full' },
     ]),
     MatCardModule,
     MatInputModule,

@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class CreateUserComponent implements OnInit {
 
-  loginForm: FormGroup;
+  registerForm: FormGroup;
   loading: boolean = false;
 
   constructor(
@@ -19,11 +19,11 @@ export class CreateUserComponent implements OnInit {
   ) { }
 
   get isFormValid() {
-    return this.loginForm.valid;
+    return this.registerForm.valid;
   }
 
   ngOnInit() {
-    this.loginForm = this.fb.group({
+    this.registerForm = this.fb.group({
       email: [null, Validators.required, Validators.email],
       fullName: [null, Validators.required, Validators.maxLength(50)],
       password: [null, Validators.required, Validators.minLength(8), Validators.maxLength(20)],
@@ -33,9 +33,9 @@ export class CreateUserComponent implements OnInit {
   onSubmit() {
     this.loading = true;
     this.userService.createUser({
-      email: this.loginForm.value.email,
-      fullName: this.loginForm.value.fullName,
-      password: this.loginForm.value.password,
+      email: this.registerForm.value.email,
+      fullName: this.registerForm.value.fullName,
+      password: this.registerForm.value.password,
     }).subscribe(
       res => {
         this.loading = false;

@@ -3,18 +3,13 @@
 </div>
 <mat-card class="w-100 border border-primary" *ngIf="!loading">
     <mat-card-title class="d-flex flex-column align-items-center">
-        Cadastre-se
+        Login
     </mat-card-title>
     <mat-card-content class="d-flex flex-column align-items-center">
-        <p>Por favor, preencha seus dados</p>
-        <form class="w-100 px-3" [formGroup]="registerForm">
+        <form class="w-100 px-3" [formGroup]="loginForm">
             <mat-form-field class="w-100">
                 <mat-label>Email</mat-label>
                 <input matInput type="text" formControlName="email"/>
-            </mat-form-field>
-            <mat-form-field class="w-100">
-                <mat-label>Nome</mat-label>
-                <input matInput type="text" formControlName="fullName"/>
             </mat-form-field>
             <mat-form-field class="w-100">
                 <mat-label>Senha</mat-label>
@@ -24,10 +19,10 @@
     </mat-card-content>
     <mat-card-actions class="d-flex flex-column align-items-center my-3">
         <button mat-flat-button color="primary" class="w-25 mb-3" [disabled]="!isFormValid" (click)="onSubmit()">
-            Cadastrar
+            Entrar
         </button>
-        <a [routerLink]="['/login']">
-            Já tenho cadastro
+        <a [routerLink]="['/register']">
+            Não tenho cadastro
         </a>
     </mat-card-actions>
 </mat-card>

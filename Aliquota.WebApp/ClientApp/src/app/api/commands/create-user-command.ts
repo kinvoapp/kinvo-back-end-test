@@ -3,3 +3,8 @@ export interface CreateUserCommand {
     fullName: string;
     password: string;
 }
+
+export interface LoginCommand {
+    email: string;
+    password: string;
+}
