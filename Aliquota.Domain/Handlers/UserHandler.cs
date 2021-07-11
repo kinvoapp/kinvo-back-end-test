@@ -26,7 +26,7 @@ namespace Aliquota.Domain.Handlers {
             var portfolio = new Portfolio();
             var user = new User(command.Email, command.FullName);
             user.SetPassword(command.Password);
-            user.Portfolio = portfolio;
+            portfolio.Owner = user;
 
             portfolioRepository.Add(portfolio);
             userRepository.Add(user);

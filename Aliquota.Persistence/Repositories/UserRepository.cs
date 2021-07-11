@@ -15,8 +15,7 @@ namespace Aliquota.Persistence.Repositories {
 
         public AppDbContext Context { get; set; }
         public IQueryable<User> Users 
-            => Context.Users.Include(u => u.Portfolio)
-                            .ThenInclude(p => p.Investments);
+            => Context.Users;
 
         public void Add(User user)
         {
