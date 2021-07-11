@@ -14,5 +14,9 @@ html {
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: 0 .40rem 1rem rgba(0, 0, 0, .05);
+}
+
+nav {
+  border-radius: 0 0 20px 20px;
 }
