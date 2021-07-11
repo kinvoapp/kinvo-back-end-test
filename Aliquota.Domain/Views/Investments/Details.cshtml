@@ -1,0 +1,40 @@
+﻿@model Investment
+
+@{
+    ViewData["Title"] = "Detalhes do Investimento";
+}
+
+<h3>@ViewData["Title"]</h3>
+
+<hr />
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(m => m.Id)</dt>
+        <dd>@Html.DisplayFor(m => m.Id)</dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(m => m.InvestmentDate)</dt>
+        <dd>@Model.InvestmentDate.ToString("dd/MM/yyyy")</dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(m => m.Value)</dt>
+        <dd>@Model.Value.ToString("c")</dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(m => m.RescueDate)</dt>
+        <dd>
+            @if (Model.RescueDate.HasValue)
+            {
+                @Model.RescueDate.Value.ToString("dd/MM/yyyy")
+            }
+            else
+            {
+            <p>Não resgatado</p>
+            }
+        </dd>
+    </dl>
+</div>
+<p>
+    <a asp-action="Index">Voltar a página inicial</a>
+</p>
