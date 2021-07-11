@@ -9,6 +9,10 @@ namespace Aliquota.Domain.Entities
     {
         public Portfolio() : base() { }
 
+        public Guid OwnerId { get; set; }
+
+        public User Owner { get; set; }
+
         public List<Investment> Investments { get; set; }
 
         [NotMapped]
