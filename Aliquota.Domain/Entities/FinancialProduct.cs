@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text.Json;
+using Aliquota.Domain.Services;
 
 namespace Aliquota.Domain.Entities
 {
@@ -12,11 +13,12 @@ namespace Aliquota.Domain.Entities
         public string Name { get; set; }
 
         [NotMapped]
-        public List<InvestmentEvaluatorCommand> Evaluators { get; set; } // Dont store this
+        public List<InvestmentEvaluatorSpec> EvaluatorsSpec { get; set; } // Dont store this
 
-        public string EvaluatorsJson { // Store this instead
-            get => JsonSerializer.Serialize(Evaluators);
-            set => JsonSerializer.Deserialize<List<InvestmentEvaluatorCommand>>(value);
+        public string EvaluatorsSpecJson
+        { // Store this instead
+            get => JsonSerializer.Serialize(EvaluatorsSpec);
+            set => EvaluatorsSpec = JsonSerializer.Deserialize<List<InvestmentEvaluatorSpec>>(value);
         }
     }
 }

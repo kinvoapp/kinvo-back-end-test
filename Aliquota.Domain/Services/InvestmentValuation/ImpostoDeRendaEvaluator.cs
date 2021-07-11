@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Aliquota.Domain.Entities;
 
-namespace Aliquota.Domain.Entities
+namespace Aliquota.Domain.Services
 {
     public class ImpostoDeRendaEvaluatorParams { /* void */ }
     public class ImpostoDeRendaEvaluator : IInvestmentEvaluator

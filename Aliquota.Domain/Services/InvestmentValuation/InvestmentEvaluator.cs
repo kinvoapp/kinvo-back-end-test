@@ -1,14 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using Aliquota.Domain.Entities;
 
-namespace Aliquota.Domain.Entities {
+namespace Aliquota.Domain.Services {
     public enum InvestmentEvaluatorTypes {
         ConstantMultiplier = 1,
         ImpostoDeRenda = 2,
     }
 
-    public class InvestmentEvaluatorCommand {
+    public class InvestmentEvaluatorSpec {
         [JsonIgnore]
         public InvestmentEvaluatorTypes EvaluatorType { get; set; }
 

@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json.Serialization;
+using Aliquota.Domain.Entities;
 
-namespace Aliquota.Domain.Entities
+namespace Aliquota.Domain.Services
 {
     public class ConstantMultiplierEvaluatorParams
     {
