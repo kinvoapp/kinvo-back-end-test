@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Aliquota.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210710200045_Initial")]
+    [Migration("20210711122327_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -68,7 +68,12 @@ namespace Aliquota.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
+                    b.Property<Guid>("OwnerId")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("OwnerId");
 
                     b.ToTable("Portfolios");
                 });
@@ -89,12 +94,7 @@ namespace Aliquota.Persistence.Migrations
                     b.Property<byte[]>("PasswordHash")
                         .HasColumnType("BLOB");
 
-                    b.Property<Guid>("PortfolioId")
-                        .HasColumnType("TEXT");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("PortfolioId");
 
                     b.ToTable("Users");
                 });
@@ -118,15 +118,15 @@ namespace Aliquota.Persistence.Migrations
                     b.Navigation("Portfolio");
                 });
 
-            modelBuilder.Entity("Aliquota.Domain.Entities.User", b =>
+            modelBuilder.Entity("Aliquota.Domain.Entities.Portfolio", b =>
                 {
-                    b.HasOne("Aliquota.Domain.Entities.Portfolio", "Portfolio")
+                    b.HasOne("Aliquota.Domain.Entities.User", "Owner")
                         .WithMany()
-                        .HasForeignKey("PortfolioId")
+                        .HasForeignKey("OwnerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Portfolio");
+                    b.Navigation("Owner");
                 });
 
             modelBuilder.Entity("Aliquota.Domain.Entities.Portfolio", b =>
