@@ -16,7 +16,13 @@ namespace Aliquota.Domain.Handlers {
             this.portfolioRepository = portfolioRepository;
         }
 
-        public User Handle(CreateUserCommand command) {
+        public async Task<User> HandleAsync(CreateUserCommand command) {
+            var existingUser = await userRepository.GetUserByEmailAsync(command.Email);
+
+            if(existingUser != null) {
+                return null;
+            }
+ 
             var portfolio = new Portfolio();
             var user = new User(command.Email, command.FullName);
             user.SetPassword(command.Password);

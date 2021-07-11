@@ -33,31 +33,49 @@ namespace Aliquota.WebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<UserModel> CreateUser([FromBody] CreateUserCommand command)
+        public async Task<CommandResult<UserModel>> CreateUser([FromBody] CreateUserCommand command)
         {
             
-            var user = userHandler.Handle(command);
+            var user = await userHandler.HandleAsync(command);
+
+            if (user == null) {
+                return new CommandResult<UserModel> {
+                    Success = false,
+                    Message = $"O email {command.Email} já foi cadastrado",
+                    Data = null,
+                };
+            }
+
             await context.SaveChangesAsync();
 
-            return mc.ToModel(user);
+            return new CommandResult<UserModel> {
+                Success = true,
+                Message = "Usuário cadastrado com sucesso!",
+                Data = mc.ToModel(user),
+            };
         }
 
         [HttpPost("login")]
-        public async Task<AuthenticationResponse> LoginUser([FromBody] LoginCommand command)
+        public async Task<CommandResult<AuthenticationResponse>> LoginUser([FromBody] LoginCommand command)
         {
             var user = await userRepository.GetUserByEmailAsync(command.Email);
 
             if (user == null || !user.VerifyPassword(command.Password))
             {
-                return new AuthenticationResponse {
+                return new CommandResult<AuthenticationResponse> {
                     Success = false,
+                    Message = "Email ou senha incorretos",
+                    Data = null,
                 };
             }
 
-            return new AuthenticationResponse {
+            return new CommandResult<AuthenticationResponse> {
                 Success = true,
-                Token = tokenService.GenerateToken(user),
-                User = mc.ToModel(user),
+                Message = "Autenticação realizada com sucesso!",
+                Data = new AuthenticationResponse {
+                    Token = tokenService.GenerateToken(user),
+                    User = mc.ToModel(user),
+                },
             };
         }
     }

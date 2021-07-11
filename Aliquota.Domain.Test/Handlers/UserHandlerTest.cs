@@ -23,32 +23,51 @@ namespace Aliquota.Domain.Test.Handlers {
         }
 
         [Fact]
-        public void Handle_CreateUserCommand_ShouldCallRepositories() {
+        public async Task Handle_CreateUserCommand_ShouldCallRepositories() {
             var command = new CreateUserCommand {
                 Email = "alan.turing@email.com",
                 FullName = "Alan Turing",
                 Password = "EnigmaStriker123",
             };
 
-            userHandler.Handle(command);
+            var user = await userHandler.HandleAsync(command);
 
+            userRepositoryMock.Verify(m => m.GetUserByEmailAsync(It.IsAny<string>()), Times.Once());
             userRepositoryMock.Verify(m => m.Add(It.IsAny<User>()), Times.Once());
             portfolioRepositoryMock.Verify(m => m.Add(It.IsAny<Portfolio>()), Times.Once());
         }
 
         [Fact]
-        public void Handle_CreateUserCommand_ShouldCreateUserCorrectly() {
+        public async Task Handle_CreateUserCommand_ShouldCreateUserCorrectly() {
             var command = new CreateUserCommand {
                 Email = "alan.turing@email.com",
                 FullName = "Alan Turing",
                 Password = "EnigmaStriker123",
             };
 
-            var user = userHandler.Handle(command);
+            var user = await userHandler.HandleAsync(command);
 
             Assert.Equal(user.Email, command.Email);
             Assert.Equal(user.FullName, command.FullName);
             Assert.True(user.VerifyPassword(command.Password));
+        }
+
+        [Fact]
+        public async Task Handle_CreateUserCommand_ShouldNotCreateTwoUsersWithSameEmail() {
+            var testUser = UserRepositoryMockProvider.GetAlreadyRegisteredUserEmail();
+
+            var command = new CreateUserCommand {
+                Email = testUser.Email,
+                FullName = testUser.FullName,
+                Password = "",
+            };
+
+            var user = await userHandler.HandleAsync(command);
+
+            Assert.Null(user);
+            userRepositoryMock.Verify(m => m.GetUserByEmailAsync(It.IsAny<string>()), Times.Once());
+            userRepositoryMock.Verify(m => m.Add(It.IsAny<User>()), Times.Never());
+            portfolioRepositoryMock.Verify(m => m.Add(It.IsAny<Portfolio>()), Times.Never());
         }
     }
 }
