@@ -34,10 +34,12 @@ namespace Aliquota.Infrastructure.Repository
         public Application Withdraw(Application application)
         {
             var updateApplication = GetApplication(application.Id);
-
+            
             _context.Applications.Attach(updateApplication);
 
-            updateApplication = application;
+            updateApplication.IsActive = application.IsActive;
+            updateApplication.WithdrawDate = application.WithdrawDate;
+            updateApplication.WithdrawValue = application.WithdrawValue;
 
             _context.SaveChanges();
 
