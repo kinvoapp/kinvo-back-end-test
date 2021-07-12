@@ -13,6 +13,8 @@ namespace Aliquota.Domain.Entities
 
         public User Owner { get; set; }
 
+        public double Balance { get; set; }
+
         public List<Investment> Investments { get; set; }
     }
 }
