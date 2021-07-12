@@ -22,6 +22,9 @@ namespace Aliquota.WebApp
             {
                 var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
                 db.Database.Migrate();
+
+                var dataInitializer = scope.ServiceProvider.GetRequiredService<DataInitializers.DataInitializer>();
+                dataInitializer.EnsureDataExists();
             }
             
             host.Run();

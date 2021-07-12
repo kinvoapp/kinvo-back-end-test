@@ -4,6 +4,7 @@ using Aliquota.Domain.Handlers;
 using Aliquota.Persistence.Context;
 using Aliquota.Persistence.Repositories;
 using Aliquota.WebApp.Configuration;
+using Aliquota.WebApp.DataInitializers;
 using Aliquota.WebApp.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -44,6 +45,8 @@ namespace Aliquota.WebApp
             services.AddScoped<UserHandler>();
             services.AddScoped<ModelConverter>();
             services.AddScoped<TokenService>();
+            services.AddScoped<DataInitializer>();
+            services.AddScoped<FinancialProductInitializer>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IPortfolioRepository, PortfolioRepository>();
 
