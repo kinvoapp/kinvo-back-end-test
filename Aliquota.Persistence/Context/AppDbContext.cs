@@ -8,5 +8,6 @@ namespace Aliquota.Persistence.Context {
         public DbSet<User> Users { get; set; }
         public DbSet<Portfolio> Portfolios { get; set; }
         public DbSet<FinancialProduct> FinancialProducts { get; set; }
+        public DbSet<Investment> Investments { get; set; }
     }
 }
