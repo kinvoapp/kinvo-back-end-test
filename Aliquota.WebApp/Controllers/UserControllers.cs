@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Aliquota.WebApp.Controllers
 {
+    [ApiController]
     [Route("/api/users")]
     public class UserController : ControllerBase
     {

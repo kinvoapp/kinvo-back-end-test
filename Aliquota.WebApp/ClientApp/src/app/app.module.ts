@@ -10,8 +10,11 @@ import { HomeComponent } from './components/layout/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateUserComponent } from './components/user/create-user/create-user.component';
 import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule, MatFormFieldModule, MatInputModule, MatProgressSpinnerModule, MatSnackBarModule } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule, MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, MatSidenav, MatSidenavModule, MatSnackBarModule, MatTabsModule } from '@angular/material';
 import { LoginComponent } from './components/user/login/login.component';
+import { InvestmentComponent } from './components/investment/investment/investment.component';
+import { FinancialProductsComponent } from './components/investment/financial-products/financial-products.component';
+import { PortfolioComponent } from './components/investment/portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import { LoginComponent } from './components/user/login/login.component';
     HomeComponent,
     CreateUserComponent,
     LoginComponent,
+    InvestmentComponent,
+    FinancialProductsComponent,
+    PortfolioComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -29,6 +35,7 @@ import { LoginComponent } from './components/user/login/login.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'register', component: CreateUserComponent, pathMatch: 'full' },
       { path: 'login', component: LoginComponent, pathMatch: 'full' },
+      { path: 'portfolio', component: PortfolioComponent, pathMatch: 'full' },
     ]),
     MatCardModule,
     MatInputModule,
@@ -39,6 +46,9 @@ import { LoginComponent } from './components/user/login/login.component';
     MatButtonModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
+    MatTabsModule,
+    MatSidenavModule,
+    MatPaginatorModule,
   ],
   providers: [
     FormBuilder,

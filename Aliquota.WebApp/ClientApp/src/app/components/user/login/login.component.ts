@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private userService: UserService,
     private snackBar: MatSnackBar,
+    private router: Router,
   ) { }
 
   get isFormValid() {
@@ -38,7 +40,7 @@ export class LoginComponent implements OnInit {
     }).subscribe(
       res => {
         if(res.success) {
-          this.loading = false;
+          this.router.navigateByUrl('/portfolio');
         } else {
           this.snackBar.open(res.message, "Fechar");
           this.loading = false;
