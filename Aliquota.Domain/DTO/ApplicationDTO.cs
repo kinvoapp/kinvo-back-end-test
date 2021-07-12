@@ -4,9 +4,9 @@ namespace Aliquota.Domain.DTO
 {
     public class ApplicationDTO
     {
-        public decimal Value { get; set; }
+        public decimal ApplicationValue { get; set; }
         public DateTime ApplicationDate { get; set; }
-        public string Document { get; set; }
+        public int ClientId { get; set; }
 
     }
 }

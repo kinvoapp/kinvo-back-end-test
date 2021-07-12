@@ -17,21 +17,15 @@ namespace Aliquota.Domain.Service
             _clientRepository = clientRepository;
         }
 
-        public ClientDTO Add(ClientDTO clientDTO)
+        public ClientDTO Add(ClientDTO client)
         {
-            if (VerifyIfExists(clientDTO))
+            if (VerifyIfExists(client))
             {
                 throw new BusinessException("Client already exists");
             }
-            Client client = new Client()
-            {
-                FantasyName = clientDTO.FantasyName,
-                Document = clientDTO.Document,
-            };
+            _clientRepository.Add((Client)client);
 
-            _clientRepository.Add(client);
-
-            return clientDTO;
+            return client;
         }
 
         public ClientDTO GetById(int id)
@@ -45,26 +39,10 @@ namespace Aliquota.Domain.Service
             throw new BusinessException("Client not found");
         }
 
-        public ClientDTO GetByDocument(string document)
-        {
-            var client = _clientRepository.GetByDocument(document);
-
-            if (client != null)
-            {
-                return (ClientDTO)client;
-            }
-            throw new BusinessException("Client not found");
-        }
-
         public bool VerifyIfExists(ClientDTO clientDTO)
         {
             return _clientRepository.VerifyIfExists(clientDTO.Document);
         }
-        public void Remove(int id)
-        {
-            _clientRepository.Remove(id);
-        }
-
-        
+       
     }
 }

@@ -11,9 +11,7 @@ namespace Aliquota.Domain.Service.Interfaces
     {
         ClientDTO Add(ClientDTO clientDTO);
         ClientDTO GetById(int id);
-        ClientDTO GetByDocument(string document);
         bool VerifyIfExists(ClientDTO clientDTO);
-        void Remove(int id);
         
     }
 }

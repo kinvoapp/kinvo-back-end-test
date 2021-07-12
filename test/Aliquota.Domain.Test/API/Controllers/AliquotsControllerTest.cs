@@ -7,7 +7,7 @@ using Aliquota.API.Controllers;
 using Aliquota.Domain.DTO;
 using Aliquota.Domain.Service.Interfaces;
 
-namespace Aliquota.Domain.Test.API
+namespace Aliquota.Domain.Test.API.controllers
 {
     public class AliquotsControllerTest
     {
@@ -22,7 +22,7 @@ namespace Aliquota.Domain.Test.API
         }
 
         [Fact]
-        public void GetOneApplication()
+        public void ShouldReturnOkWhenApplicationExists()
         {
             //Arranje
             ResponseApplicationDTO responseTest = new ResponseApplicationDTO()
@@ -42,7 +42,7 @@ namespace Aliquota.Domain.Test.API
         }
 
         [Fact]
-        public void FailedToGetOneApplication()
+        public void ShouldReturnNotFoundWhenApplicationNotExists()
         {
             //Arranje
             mockAliquot.Setup(a => a.GetApplication(It.IsAny<int>())).Returns<ResponseApplicationDTO>(null);
@@ -55,7 +55,7 @@ namespace Aliquota.Domain.Test.API
         }
 
         [Fact]
-        public void NewApplySuccessfull()
+        public void ShouldReturnOkWhenApllySuccessfull()
         {
             //Arranje
             ResponseApplicationDTO responseTest = new ResponseApplicationDTO()
@@ -67,9 +67,9 @@ namespace Aliquota.Domain.Test.API
             };
             ApplicationDTO applicationTest = new ApplicationDTO()
             {
-                Value = 1200.00m,
+                ApplicationValue = 1200.00m,
                 ApplicationDate = Convert.ToDateTime("2020-06-10"),
-                Document = "00000.000/000.0"
+                ClientId = 1
             };
             mockAliquot.Setup(a => a.Apply(It.IsAny<ApplicationDTO>())).Returns(responseTest);
 
@@ -81,14 +81,14 @@ namespace Aliquota.Domain.Test.API
         }
 
         [Fact]
-        public void NewApplyFailed()
+        public void ShouldReturnbadRequestWhenDataNewApplyIsIncorrect()
         {
             //Arranje
             ApplicationDTO applicationTest = new ApplicationDTO()
             {
-                Value = 1200.00m,
+                ApplicationValue = 1200.00m,
                 ApplicationDate = Convert.ToDateTime("2020-06-10"),
-                Document = "00000.000/000.0"
+                ClientId = 1
             };
             controller.ModelState.AddModelError("error", "error");
 
@@ -100,7 +100,7 @@ namespace Aliquota.Domain.Test.API
         }
 
         [Fact]
-        public void RealizeWithdraw()
+        public void ShouldReturnWithdrawValueWhenWithdrawSuccessful()
         {
             //Arranje
             RequestWithdrawDTO requestTest = new RequestWithdrawDTO()
@@ -126,7 +126,7 @@ namespace Aliquota.Domain.Test.API
         }
 
         [Fact]
-        public void AddNewClient()
+        public void ShouldReturOkResultWithNewClienWhenNewClientAddSuccessful()
         {
             //Arranje
             ClientDTO clientTest = new ClientDTO()
@@ -145,7 +145,7 @@ namespace Aliquota.Domain.Test.API
         }
 
         [Fact]
-        public void AddExistingClient()
+        public void ShouldReturnbadRequestWhenTryAddClientAlreadyExists()
         {
             //Arranje
             ClientDTO clientTest = new ClientDTO()

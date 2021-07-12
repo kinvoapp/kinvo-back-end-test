@@ -23,21 +23,12 @@ namespace Aliquota.Infrastructure.Repository
                 .FirstOrDefault(a => a.Id == id);
         }
 
-        public Application Apply(ApplicationDTO application)
+        public Application Apply(Application application)
         {
-            var client = _context.Clients.FirstOrDefault(c => c.Document == application.Document);
-            var newApplication = new Application()
-            {
-                ApplicationValue = application.Value,
-                Client = client,
-                ClientId = client.Id,
-                ApplicationDate = application.ApplicationDate,
-                IsActive = true
-            };
-            _context.Applications.Add(newApplication);
+            _context.Applications.Add(application);
             _context.SaveChanges();
 
-            return newApplication;
+            return application;
         }
 
         public Application Withdraw(Application application)

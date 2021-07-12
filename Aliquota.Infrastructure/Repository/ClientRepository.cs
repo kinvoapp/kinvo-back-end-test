@@ -21,8 +21,9 @@ namespace Aliquota.Infrastructure.Repository
 
         public Client Add(Client client)
         {
-            var teste =_context.Clients.Add(client);
-
+            _context.Clients.Add(client);
+            _context.SaveChanges();
+            
             return client;
         }
 
@@ -31,17 +32,7 @@ namespace Aliquota.Infrastructure.Repository
             return _context.Clients.FirstOrDefault(c => c.Id == id);
         }
 
-        public Client GetByDocument(string document)
-        {
-            return _context.Clients.FirstOrDefault(c => c.Document == document);
-        }
-
         public bool VerifyIfExists(string document) => (_context.Clients.FirstOrDefault(x => x.Document == document) != null);
-        
 
-        public void Remove(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

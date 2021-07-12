@@ -13,6 +13,8 @@ namespace Aliquota.Domain.DTO
         public decimal ApplicationValue { get; set; }
         public DateTime ApplicationDate { get; set; }
         public bool IsActive { get; set; }
+        public DateTime? WithdrawDate { get; internal set; }
+        public decimal? WithdrawValue { get; internal set; }
 
         public static explicit operator ResponseApplicationDTO(Application application)
         {
@@ -21,7 +23,9 @@ namespace Aliquota.Domain.DTO
                 ClientId = application.ClientId,
                 ApplicationValue = application.ApplicationValue,
                 ApplicationDate = application.ApplicationDate,
-                IsActive = application.IsActive
+                IsActive = application.IsActive,
+                WithdrawDate = application.WithdrawDate,
+                WithdrawValue = application.WithdrawValue
             };
         }
     }

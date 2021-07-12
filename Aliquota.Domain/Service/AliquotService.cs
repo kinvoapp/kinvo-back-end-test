@@ -1,6 +1,7 @@
 using System;
 
 using Aliquota.Domain.DTO;
+using Aliquota.Domain.Entities;
 using Aliquota.Domain.Exceptions;
 using Aliquota.Domain.Interfaces;
 using Aliquota.Domain.Service.Interfaces;
@@ -23,7 +24,7 @@ namespace Aliquota.Domain.Service
 
             if (application == null)
             {
-                throw new BusinessException("Aplicação não encontrada"); 
+                throw new BusinessException("Application not found"); 
             }
 
             return (ResponseApplicationDTO)application; 
@@ -31,18 +32,18 @@ namespace Aliquota.Domain.Service
         }
         public ResponseApplicationDTO Apply(ApplicationDTO application)
         {
-            if (application.Value <= 0)
+            if (application.ApplicationValue <= 0)
             {
-                throw new BusinessException("A aplicação não pode ser igual ou menor que zero");
+                throw new BusinessException("This application must bigger than 0");
             }
 
-            var newApplication = _repository.Apply(application);
+             _repository.Apply((Application)application);
 
             ResponseApplicationDTO returnApplicationDTO = new ResponseApplicationDTO()
             {
-                ClientId = newApplication.ClientId,
-                ApplicationValue = newApplication.ApplicationValue,
-                ApplicationDate = newApplication.ApplicationDate,
+                ClientId = application.ClientId,
+                ApplicationValue = application.ApplicationValue,
+                ApplicationDate = application.ApplicationDate,
                 IsActive = true
             };
 
@@ -50,16 +51,16 @@ namespace Aliquota.Domain.Service
         }
         public WithdrawDTO Withdraw(RequestWithdrawDTO withdraw)
         {
-            var application = _repository.GetApplication(withdraw.ApplicationId);
+            var application = GetApplication(withdraw.ApplicationId);
 
             if (!application.IsActive)
             {
-                throw new BusinessException("Esta aplicação já foi resgatada");
+                throw new BusinessException("This application is already withdraw");
             }
 
             if (withdraw.WithdrawDate < application.ApplicationDate)
             {
-                throw new BusinessException("A data de resgate não pode ser menor que a data de aplicação");
+                throw new BusinessException("Date withdraw must older than date application");
             }
 
             application.WithdrawDate = withdraw.WithdrawDate;
@@ -80,7 +81,7 @@ namespace Aliquota.Domain.Service
                 application.WithdrawValue = application.ApplicationValue - application.ApplicationValue * Constants.PlusTwoYearsFactor;
             }
 
-            return (WithdrawDTO)_repository.Withdraw(application);
+            return (WithdrawDTO)_repository.Withdraw((Application)application);
         }
 
     }
