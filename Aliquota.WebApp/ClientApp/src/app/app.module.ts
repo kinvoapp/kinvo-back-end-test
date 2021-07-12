@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ControlContainer, FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { LoginComponent } from './components/user/login/login.component';
 import { InvestmentComponent } from './components/investment/investment/investment.component';
 import { FinancialProductsComponent } from './components/investment/financial-products/financial-products.component';
 import { PortfolioComponent } from './components/investment/portfolio/portfolio.component';
+import { AuthorizationInterceptor } from './interceptors/authorization-interceptor';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,11 @@ import { PortfolioComponent } from './components/investment/portfolio/portfolio.
   ],
   providers: [
     FormBuilder,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthorizationInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

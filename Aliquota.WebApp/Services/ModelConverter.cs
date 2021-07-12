@@ -18,6 +18,7 @@ namespace Aliquota.WebApp.Services
         {
             return new PortfolioModel
             {
+                Balance = portfolio.Balance,
                 Investments = portfolio.Investments.ConvertAll(i => ToModel(i)),
             };
         }

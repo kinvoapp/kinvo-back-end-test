@@ -22,7 +22,7 @@ namespace Aliquota.WebApp.Controllers {
 
         [Authorize]
         public async Task<PortfolioModel> GetPortfolio() {
-            var userId = Guid.Parse(HttpContext.User.FindFirst(c => c.Type == ClaimTypes.PrimarySid).ToString());
+            var userId = Guid.Parse(HttpContext.User.FindFirst(c => c.Type == ClaimTypes.PrimarySid).Value.ToString());
             var portfolio = await portfolioRepository.GetPortfolioByOwnerIdAsync(userId);
             return mc.ToModel(portfolio);
         }

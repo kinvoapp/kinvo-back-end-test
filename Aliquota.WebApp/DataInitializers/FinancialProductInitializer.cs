@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Aliquota.Domain.Entities;
 using Aliquota.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace Aliquota.WebApp.DataInitializers {
     public class FinancialProductInitializer {
@@ -12,14 +14,14 @@ namespace Aliquota.WebApp.DataInitializers {
             this.context = context;
         }
 
-        public void EnsureFinancialProductsExist(List<FinancialProduct> products) {
+        public async Task EnsureFinancialProductsExist(List<FinancialProduct> products) {
             foreach(var product in products) {
-                if (!context.FinancialProducts.Any(fp => fp.Name == product.Name)) {
+                if (! await context.FinancialProducts.AnyAsync(fp => fp.Name == product.Name)) {
                     context.Add(product);
                 }
             }
 
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
     }
 }

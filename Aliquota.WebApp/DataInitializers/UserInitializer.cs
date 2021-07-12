@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Aliquota.Domain.Entities;
 using Aliquota.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace Aliquota.WebApp.DataInitializers
 {
@@ -14,7 +16,7 @@ namespace Aliquota.WebApp.DataInitializers
             this.context = context;
         }
 
-        public void EnsureUsersExistAndRecreate(List<User> users)
+        public async Task EnsureUsersExistAndRecreate(List<User> users)
         {
             foreach(var user in users) {
                 var exisingUser = context.Users.Where(u => u.Email == user.Email).FirstOrDefault();
@@ -22,7 +24,7 @@ namespace Aliquota.WebApp.DataInitializers
                 {
                     context.Users.Remove(exisingUser);
 
-                    var portfolio = context.Portfolios.Where(p => p.OwnerId == exisingUser.Id).FirstOrDefault();
+                    var portfolio = await context.Portfolios.Where(p => p.OwnerId == exisingUser.Id).FirstOrDefaultAsync();
 
                     if (portfolio != null) {
                         context.Portfolios.Remove(portfolio);
@@ -31,7 +33,7 @@ namespace Aliquota.WebApp.DataInitializers
             }
 
             context.Users.AddRange(users);
-            context.SaveChangesAsync();
+            await context.SaveChangesAsync();
         }
     }
 }

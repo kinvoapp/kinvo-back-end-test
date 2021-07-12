@@ -24,7 +24,7 @@ namespace Aliquota.WebApp
                 db.Database.Migrate();
 
                 var dataInitializer = scope.ServiceProvider.GetRequiredService<DataInitializers.DataInitializer>();
-                dataInitializer.EnsureDataExists();
+                dataInitializer.EnsureDataExists().GetAwaiter().GetResult();
             }
             
             host.Run();

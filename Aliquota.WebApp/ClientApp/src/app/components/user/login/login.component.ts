@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
+import { tokenLocalStorageItemName } from 'src/app/constants';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -40,6 +41,7 @@ export class LoginComponent implements OnInit {
     }).subscribe(
       res => {
         if(res.success) {
+          localStorage.setItem(tokenLocalStorageItemName, res.data.token);
           this.router.navigateByUrl('/portfolio');
         } else {
           this.snackBar.open(res.message, "Fechar");

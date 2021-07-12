@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Aliquota.Domain.Entities;
 using Aliquota.Domain.Services;
 
@@ -10,17 +11,26 @@ namespace Aliquota.WebApp.DataInitializers
     {
         private readonly FinancialProductInitializer financialProductInitializer;
         private readonly UserInitializer userInitializer;
+        private readonly PortfolioInitializer portfolioInitializer;
 
-        public DataInitializer(FinancialProductInitializer financialProductInitializer, UserInitializer userInitializer)
+        public DataInitializer(
+            FinancialProductInitializer financialProductInitializer,
+            UserInitializer userInitializer,
+            PortfolioInitializer portfolioInitializer)
         {
             this.financialProductInitializer = financialProductInitializer;
             this.userInitializer = userInitializer;
+            this.portfolioInitializer = portfolioInitializer;
         }
 
-        public void EnsureDataExists()
+        public async Task EnsureDataExists()
         {
-            financialProductInitializer.EnsureFinancialProductsExist(getDefaultProducts());
-            userInitializer.EnsureUsersExistAndRecreate(getDefaultUsers());
+            var users = getDefaultUsers();
+            var products = getDefaultProducts();
+            
+            await financialProductInitializer.EnsureFinancialProductsExist(products);
+            await userInitializer.EnsureUsersExistAndRecreate(users);
+            await portfolioInitializer.EnsurePortfoliosExist(getDefaultPortfolios(users, products.FirstOrDefault()));
         }
 
         private List<FinancialProduct> getDefaultProducts()
