@@ -47,6 +47,8 @@ namespace Aliquota.WebApp
             services.AddScoped<TokenService>();
             services.AddScoped<DataInitializer>();
             services.AddScoped<FinancialProductInitializer>();
+            services.AddScoped<UserInitializer>();
+            services.AddScoped<PortfolioInitializer>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IPortfolioRepository, PortfolioRepository>();
 

@@ -14,7 +14,7 @@ namespace Aliquota.WebApp.DataInitializers {
 
         public void EnsureFinancialProductsExist(List<FinancialProduct> products) {
             foreach(var product in products) {
-                if (!context.FinancialProducts.Any(fp => fp.Id == product.Id)) {
+                if (!context.FinancialProducts.Any(fp => fp.Name == product.Name)) {
                     context.Add(product);
                 }
             }
