@@ -9,6 +9,7 @@ namespace Aliquota.Domain.DTO
 {
     public class ResponseApplicationDTO
     {
+        public int ApplicationId { get; set; }
         public int ClientId { get; set; }
         public decimal ApplicationValue { get; set; }
         public DateTime ApplicationDate { get; set; }
@@ -20,6 +21,7 @@ namespace Aliquota.Domain.DTO
         {
             return new ResponseApplicationDTO()
             {
+                ApplicationId = application.Id,
                 ClientId = application.ClientId,
                 ApplicationValue = application.ApplicationValue,
                 ApplicationDate = application.ApplicationDate,

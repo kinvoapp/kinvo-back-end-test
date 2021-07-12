@@ -35,6 +35,7 @@ namespace Aliquota.Domain.Entities
         {
             return new Application()
             {
+                Id = dto.ApplicationId,
                 ClientId = dto.ClientId,
                 ApplicationValue = dto.ApplicationValue,
                 ApplicationDate = dto.ApplicationDate,
