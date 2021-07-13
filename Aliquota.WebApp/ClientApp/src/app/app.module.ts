@@ -10,7 +10,7 @@ import { HomeComponent } from './components/layout/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateUserComponent } from './components/user/create-user/create-user.component';
 import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule, MatFormFieldModule, MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, MatSidenav, MatSidenavModule, MatSnackBarModule, MatTabsModule } from '@angular/material';
+import { MatButtonModule, MatDividerModule, MatFormFieldModule, MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, MatSidenav, MatSidenavModule, MatSnackBarModule, MatTabsModule } from '@angular/material';
 import { LoginComponent } from './components/user/login/login.component';
 import { InvestmentComponent } from './components/investment/investment/investment.component';
 import { FinancialProductsComponent } from './components/investment/financial-products/financial-products.component';
@@ -37,6 +37,7 @@ import { AuthorizationInterceptor } from './interceptors/authorization-intercept
       { path: 'register', component: CreateUserComponent, pathMatch: 'full' },
       { path: 'login', component: LoginComponent, pathMatch: 'full' },
       { path: 'portfolio', component: PortfolioComponent, pathMatch: 'full' },
+      { path: 'investments/:id', component: InvestmentComponent, pathMatch: 'full' },
     ]),
     MatCardModule,
     MatInputModule,
@@ -50,6 +51,7 @@ import { AuthorizationInterceptor } from './interceptors/authorization-intercept
     MatTabsModule,
     MatSidenavModule,
     MatPaginatorModule,
+    MatDividerModule,
   ],
   providers: [
     FormBuilder,

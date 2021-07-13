@@ -1,6 +1,7 @@
 using System;
 using Aliquota.Domain.Contracts.Repositories;
 using Aliquota.Domain.Handlers;
+using Aliquota.Domain.Services;
 using Aliquota.Persistence.Context;
 using Aliquota.Persistence.Repositories;
 using Aliquota.WebApp.Configuration;
@@ -45,10 +46,12 @@ namespace Aliquota.WebApp
             services.AddScoped<UserHandler>();
             services.AddScoped<ModelConverter>();
             services.AddScoped<TokenService>();
+            services.AddScoped<InvestmentEvaluationService>();
             services.AddScoped<DataInitializer>();
             services.AddScoped<FinancialProductInitializer>();
             services.AddScoped<UserInitializer>();
             services.AddScoped<PortfolioInitializer>();
+            services.AddScoped<IInvestmentRepository, InvestmentRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IPortfolioRepository, PortfolioRepository>();
 

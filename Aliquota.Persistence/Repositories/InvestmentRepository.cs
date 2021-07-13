@@ -10,6 +10,11 @@ namespace Aliquota.Persistence.Repositories
 {
     public class InvestmentRepository : IInvestmentRepository
     {
+        public InvestmentRepository(AppDbContext context)
+        {
+            Context = context;
+        }
+
         public AppDbContext Context { get; set; }
 
         public IQueryable<Investment> Investments

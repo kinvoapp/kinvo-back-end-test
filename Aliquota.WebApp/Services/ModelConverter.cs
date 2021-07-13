@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Aliquota.Domain.Entities;
 using Aliquota.Domain.Services;
 using Aliquota.WebApp.Models;
@@ -29,7 +30,9 @@ namespace Aliquota.WebApp.Services
         {
             return new InvestmentModel
             {
+                Id = investment.Id,
                 ApplicationDate = investment.ApplicationDate,
+                RedemptionDate = investment.RedemptionDate,
                 FinancialProduct = ToModel(investment.FinancialProduct),
                 InitialValue = investment.InitialValue,
             };
@@ -39,11 +42,13 @@ namespace Aliquota.WebApp.Services
         {
             return new InvestmentFullModel
             {
+                Id = investment.Id,
                 ApplicationDate = investment.ApplicationDate,
+                RedemptionDate = investment.RedemptionDate,
                 FinancialProduct = ToModel(investment.FinancialProduct),
                 InitialValue = investment.InitialValue,
+                CurrentValue = evaluations.Select(e => e.Value).Aggregate((acc, v) => acc + v) + investment.InitialValue,
                 Evaluations = evaluations.ConvertAll(e => ToModel(e)),
-                RedemptionDate = investment.RedemptionDate,
             };
         }
 

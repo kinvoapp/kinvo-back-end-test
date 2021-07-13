@@ -18,7 +18,15 @@ namespace Aliquota.Domain.Entities
         public string EvaluatorsSpecJson
         { // Store this instead
             get => JsonSerializer.Serialize(EvaluatorsSpec);
-            set => EvaluatorsSpec = JsonSerializer.Deserialize<List<InvestmentEvaluatorSpec>>(value);
+            set {
+                var specs = JsonSerializer.Deserialize<List<InvestmentEvaluatorSpec>>(value);
+                EvaluatorsSpec = specs.Select(spec =>
+                    new InvestmentEvaluatorSpec {
+                        EvaluatorType = spec.EvaluatorType,
+                        Config = InvestmentEvaluatorConfigProvider.GetConfig(((JsonElement) spec.Config).GetRawText(), spec.EvaluatorType),
+                    }
+                ).ToList();
+            }
         }
     }
 }

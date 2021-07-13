@@ -17,9 +17,14 @@ namespace Aliquota.WebApp.Controllers
         private readonly InvestmentEvaluationService evaluationService;
         private readonly ModelConverter mc;
 
-        public InvestmentController(IInvestmentRepository investmentRepository)
+        public InvestmentController(
+            IInvestmentRepository investmentRepository,
+            InvestmentEvaluationService evaluationService = null,
+            ModelConverter mc = null)
         {
             this.investmentRepository = investmentRepository;
+            this.evaluationService = evaluationService;
+            this.mc = mc;
         }
 
         [Route("{id}")]
