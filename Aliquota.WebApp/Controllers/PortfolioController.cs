@@ -22,10 +22,14 @@ namespace Aliquota.WebApp.Controllers {
         }
 
         [Authorize]
-        public async Task<PortfolioModel> GetPortfolio() {
+        public async Task<RequestResult<PortfolioModel>> GetPortfolio() {
             var userId = HttpContext.User.GetUserId();
             var portfolio = await portfolioRepository.GetPortfolioByOwnerIdAsync(userId);
-            return mc.ToModel(portfolio);
+            return new RequestResult<PortfolioModel>() { 
+                Success = true,
+                Message = "Portfolio obtido com sucesso",
+                Data = mc.ToModel(portfolio),
+            };
         }
     }
 }

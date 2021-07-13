@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PortfolioModel } from '../api/models/portfolio-models';
+import { RequestResult } from '../api/models/request-result';
 
 const apiRoute = "/api/portfolio"
 
@@ -14,7 +15,7 @@ export class PortfolioService {
     private http: HttpClient,
   ) { }
 
-  getPortfolio(): Observable<PortfolioModel> {
-    return this.http.get<PortfolioModel>(apiRoute);
+  getPortfolio(): Observable<RequestResult<PortfolioModel>> {
+    return this.http.get<RequestResult<PortfolioModel>>(apiRoute);
   }
 }

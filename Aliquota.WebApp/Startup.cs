@@ -6,6 +6,7 @@ using Aliquota.Persistence.Context;
 using Aliquota.Persistence.Repositories;
 using Aliquota.WebApp.Configuration;
 using Aliquota.WebApp.DataInitializers;
+using Aliquota.WebApp.Filters;
 using Aliquota.WebApp.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -33,7 +34,10 @@ namespace Aliquota.WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers(options => {
+                options.Filters.Add(typeof(ValidationFilter));
+                options.Filters.Add(typeof(DomainExceptionFilter));
+            });
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

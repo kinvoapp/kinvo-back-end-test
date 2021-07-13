@@ -24,11 +24,11 @@ export class PortfolioComponent implements OnInit {
   ngOnInit() {
     this.portfolioService.getPortfolio().subscribe(
       res => {
-        this.portfolio = res;
+        this.portfolio = res.data;
         this.loading = false;
       },
       err => {
-        this.snackBar.open("Ocorreu uma falha ao tentar obter o seu portfólio");
+        this.snackBar.open("Ocorreu uma falha ao tentar obter o seu portfólio", "Fechar");
         this.loading = false;
       },
     );
