@@ -37,6 +37,7 @@ import { AuthorizationInterceptor } from './interceptors/authorization-intercept
       { path: 'register', component: CreateUserComponent, pathMatch: 'full' },
       { path: 'login', component: LoginComponent, pathMatch: 'full' },
       { path: 'portfolio', component: PortfolioComponent, pathMatch: 'full' },
+      { path: 'products', component: FinancialProductsComponent, pathMatch: 'full' },
       { path: 'investments/:id', component: InvestmentComponent, pathMatch: 'full' },
     ]),
     MatCardModule,

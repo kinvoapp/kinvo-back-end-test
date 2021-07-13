@@ -15,7 +15,12 @@
         </div>
     </mat-card>
     <div class="d-flex flex-column">
-        <h3>Meus investimentos</h3>
+        <div class="d-flex flex-row justify-content-between mb-3">
+            <h3>Meus investimentos</h3>
+            <a [routerLink]="['/products']">
+                <button mat-flat-button color="primary">Aplicar</button>
+            </a>
+        </div>
         <mat-card *ngFor="let investment of portfolio.investments" class="my-1">
             <div class="d-flex flex-row justify-content-between align-items-center">
                 <p>{{ investment.financialProduct.name }}</p>
