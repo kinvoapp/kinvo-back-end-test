@@ -28,7 +28,7 @@ namespace Aliquota.Infrastructure.Repository
             _context.Applications.Add(application);
             _context.SaveChanges();
 
-            return application;
+            return _context.Applications.OrderBy(a => a.Id).LastOrDefault();
         }
 
         public Application Withdraw(Application application)

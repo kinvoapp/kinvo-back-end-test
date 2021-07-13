@@ -14,8 +14,8 @@ namespace Aliquota.Domain.DTO
         public decimal ApplicationValue { get; set; }
         public DateTime ApplicationDate { get; set; }
         public bool IsActive { get; set; }
-        public DateTime? WithdrawDate { get; internal set; }
-        public decimal? WithdrawValue { get; internal set; }
+        public DateTime? WithdrawDate { get; set; }
+        public decimal? WithdrawValue { get; set; }
 
         public static explicit operator ResponseApplicationDTO(Application application)
         {

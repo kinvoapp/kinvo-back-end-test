@@ -37,17 +37,7 @@ namespace Aliquota.Domain.Service
                 throw new BusinessException("This application must bigger than 0");
             }
 
-             _repository.Apply((Application)application);
-
-            ResponseApplicationDTO returnApplicationDTO = new ResponseApplicationDTO()
-            {
-                ClientId = application.ClientId,
-                ApplicationValue = application.ApplicationValue,
-                ApplicationDate = application.ApplicationDate,
-                IsActive = true
-            };
-
-            return returnApplicationDTO;
+            return (ResponseApplicationDTO)_repository.Apply((Application)application);
         }
         public WithdrawDTO Withdraw(RequestWithdrawDTO withdraw)
         {
@@ -66,13 +56,13 @@ namespace Aliquota.Domain.Service
             application.WithdrawDate = withdraw.WithdrawDate;
             application.IsActive = false;
 
-            var years = withdraw.WithdrawDate.Year - application.ApplicationDate.Year;
+            var timeElapsed = Convert.ToDecimal(withdraw.WithdrawDate.Subtract(application.ApplicationDate).TotalDays / Constants.DaysInOneYear);
 
-            if (years <= 1)
+            if (timeElapsed <= 1)
             {
                 application.WithdrawValue = application.ApplicationValue - application.ApplicationValue * Constants.OneYearFactor;
             }
-            else if (years <= 2)
+            else if (timeElapsed <= 2)
             {
                 application.WithdrawValue = application.ApplicationValue - application.ApplicationValue * Constants.BetweenOneAndTwoYearsFactor;
             }
