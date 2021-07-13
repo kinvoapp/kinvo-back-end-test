@@ -42,7 +42,7 @@ namespace Aliquota.WebApp.DataInitializers
                     new InvestmentEvaluatorSpec {
                         EvaluatorType = InvestmentEvaluatorTypes.ConstantMultiplier,
                         Config = new ConstantMultiplierEvaluatorParams {
-                            Multiplier = 105/100, // 105%
+                            Multiplier = 101.0/100.0, // 101%
                             PeriodMinutes = 30*24*60, // ~ 1 month
                         }
                     },
