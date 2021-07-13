@@ -22,14 +22,4 @@ namespace Aliquota.Domain.Services {
         [JsonPropertyName("P")]
         public object Config { get; set; }
     }
-
-    public class InvestmentEvaluationComponent {
-        public string Name { get; set; }
-        public string Alias { get; set; }
-        public double Value { get; set; } // Negative for abatements
-    }
-
-    public interface IInvestmentEvaluator {
-        void Evaluate(Investment investment, List<InvestmentEvaluationComponent> evaluations);
-    }
 }

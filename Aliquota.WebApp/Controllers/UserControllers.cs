@@ -34,13 +34,13 @@ namespace Aliquota.WebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<CommandResult<UserModel>> CreateUser([FromBody] CreateUserCommand command)
+        public async Task<RequestResult<UserModel>> CreateUser([FromBody] CreateUserCommand command)
         {
             
             var user = await userHandler.HandleAsync(command);
 
             if (user == null) {
-                return new CommandResult<UserModel> {
+                return new RequestResult<UserModel> {
                     Success = false,
                     Message = $"O email {command.Email} já foi cadastrado",
                     Data = null,
@@ -49,7 +49,7 @@ namespace Aliquota.WebApp.Controllers
 
             await context.SaveChangesAsync();
 
-            return new CommandResult<UserModel> {
+            return new RequestResult<UserModel> {
                 Success = true,
                 Message = "Usuário cadastrado com sucesso!",
                 Data = mc.ToModel(user),
@@ -57,20 +57,20 @@ namespace Aliquota.WebApp.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<CommandResult<AuthenticationResponse>> LoginUser([FromBody] LoginCommand command)
+        public async Task<RequestResult<AuthenticationResponse>> LoginUser([FromBody] LoginCommand command)
         {
             var user = await userRepository.GetUserByEmailAsync(command.Email);
 
             if (user == null || !user.VerifyPassword(command.Password))
             {
-                return new CommandResult<AuthenticationResponse> {
+                return new RequestResult<AuthenticationResponse> {
                     Success = false,
                     Message = "Email ou senha incorretos",
                     Data = null,
                 };
             }
 
-            return new CommandResult<AuthenticationResponse> {
+            return new RequestResult<AuthenticationResponse> {
                 Success = true,
                 Message = "Autenticação realizada com sucesso!",
                 Data = new AuthenticationResponse {

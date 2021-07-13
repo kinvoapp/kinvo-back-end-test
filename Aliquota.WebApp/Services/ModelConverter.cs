@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using Aliquota.Domain.Entities;
+using Aliquota.Domain.Services;
 using Aliquota.WebApp.Models;
 
 namespace Aliquota.WebApp.Services
@@ -30,6 +32,28 @@ namespace Aliquota.WebApp.Services
                 ApplicationDate = investment.ApplicationDate,
                 FinancialProduct = ToModel(investment.FinancialProduct),
                 InitialValue = investment.InitialValue,
+            };
+        }
+
+        public InvestmentFullModel ToFullModel(Investment investment, List<InvestmentEvaluationComponent> evaluations)
+        {
+            return new InvestmentFullModel
+            {
+                ApplicationDate = investment.ApplicationDate,
+                FinancialProduct = ToModel(investment.FinancialProduct),
+                InitialValue = investment.InitialValue,
+                Evaluations = evaluations.ConvertAll(e => ToModel(e)),
+                RedemptionDate = investment.RedemptionDate,
+            };
+        }
+
+        public InvestmentEvaluationModel ToModel(InvestmentEvaluationComponent evaluationComponent) 
+        {
+            return new InvestmentEvaluationModel
+            {
+                Name = evaluationComponent.Name,
+                Alias = evaluationComponent.Alias,
+                Value = evaluationComponent.Value,
             };
         }
 

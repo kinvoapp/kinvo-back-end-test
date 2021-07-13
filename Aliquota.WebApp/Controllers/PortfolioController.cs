@@ -2,6 +2,7 @@ using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Aliquota.Domain.Contracts.Repositories;
+using Aliquota.WebApp.Extensions;
 using Aliquota.WebApp.Models;
 using Aliquota.WebApp.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -22,7 +23,7 @@ namespace Aliquota.WebApp.Controllers {
 
         [Authorize]
         public async Task<PortfolioModel> GetPortfolio() {
-            var userId = Guid.Parse(HttpContext.User.FindFirst(c => c.Type == ClaimTypes.PrimarySid).Value.ToString());
+            var userId = HttpContext.User.GetUserId();
             var portfolio = await portfolioRepository.GetPortfolioByOwnerIdAsync(userId);
             return mc.ToModel(portfolio);
         }
