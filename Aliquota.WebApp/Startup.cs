@@ -58,6 +58,7 @@ namespace Aliquota.WebApp
             services.AddScoped<IInvestmentRepository, InvestmentRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IPortfolioRepository, PortfolioRepository>();
+            services.AddScoped<IFinancialProductRepository, FinancialProductRepository>();
 
             services.Configure<AppConfig>(Configuration.GetSection("AppConfig"));
 
