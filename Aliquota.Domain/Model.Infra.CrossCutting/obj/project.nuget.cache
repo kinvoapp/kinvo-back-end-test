@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "8TofTVCGMrOJ/3QDsbrPhjcs042QPluxrFkvXckd+69Sm0/Kd6BgKm9kDEYEZPMSrlLiaaGYgYCYQ0HiUyDZ3g==",
+  "dgSpecHash": "lo1pm1rz8X9zLL+DLF4L3y9juDwJDfG42+ozmDhPzkUKKrBq4LztYJ4CNtjhzWCAyfPvMlT8ZGvkp8TsYcp7QA==",
   "success": true,
   "projectFilePath": "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Infra.CrossCutting\\Model.Infra.CrossCutting.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\lpc13\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\lpc13\\.nuget\\packages\\fluentvalidation\\10.3.0\\fluentvalidation.10.3.0.nupkg.sha512",
+    "C:\\Users\\lpc13\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.3.0\\fluentvalidation.aspnetcore.10.3.0.nupkg.sha512",
+    "C:\\Users\\lpc13\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.3.0\\fluentvalidation.dependencyinjectionextensions.10.3.0.nupkg.sha512",
+    "C:\\Users\\lpc13\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\lpc13\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512",
+    "C:\\Users\\lpc13\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

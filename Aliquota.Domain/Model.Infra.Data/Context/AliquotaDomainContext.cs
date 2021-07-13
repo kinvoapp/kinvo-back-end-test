@@ -10,11 +10,14 @@ namespace Model.Infra.Data.Context
         {
         }
         public DbSet<User> Users { get; set; }
+        public DbSet<Investment> Investments { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<User>(new UserMap().Configure);
+            modelBuilder.Entity<Investment>(new InvestmentMap().Configure);
         }
     }
 }

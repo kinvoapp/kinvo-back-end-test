@@ -4,14 +4,14 @@
     "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Infra.CrossCutting\\Model.Infra.CrossCutting.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Infra.CrossCutting\\Model.Infra.CrossCutting.csproj": {
+    "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Domain\\Model.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Infra.CrossCutting\\Model.Infra.CrossCutting.csproj",
-        "projectName": "Model.Infra.CrossCutting",
-        "projectPath": "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Infra.CrossCutting\\Model.Infra.CrossCutting.csproj",
+        "projectUniqueName": "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Domain\\Model.Domain.csproj",
+        "projectName": "Model.Domain",
+        "projectPath": "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Domain\\Model.Domain.csproj",
         "packagesPath": "C:\\Users\\lpc13\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Infra.CrossCutting\\obj\\",
+        "outputPath": "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -44,6 +44,16 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.3.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -55,6 +65,75 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Infra.CrossCutting\\Model.Infra.CrossCutting.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Infra.CrossCutting\\Model.Infra.CrossCutting.csproj",
+        "projectName": "Model.Infra.CrossCutting",
+        "projectPath": "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Infra.CrossCutting\\Model.Infra.CrossCutting.csproj",
+        "packagesPath": "C:\\Users\\lpc13\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Infra.CrossCutting\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\lpc13\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Domain\\Model.Domain.csproj": {
+                "projectPath": "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Domain\\Model.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

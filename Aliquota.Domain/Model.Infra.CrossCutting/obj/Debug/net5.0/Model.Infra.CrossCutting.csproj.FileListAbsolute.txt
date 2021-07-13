@@ -1,0 +1,15 @@
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Infra.CrossCutting\bin\Debug\net5.0\Model.Infra.CrossCutting.deps.json
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Infra.CrossCutting\bin\Debug\net5.0\Model.Infra.CrossCutting.dll
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Infra.CrossCutting\bin\Debug\net5.0\ref\Model.Infra.CrossCutting.dll
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Infra.CrossCutting\bin\Debug\net5.0\Model.Infra.CrossCutting.pdb
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Infra.CrossCutting\bin\Debug\net5.0\Model.Domain.dll
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Infra.CrossCutting\bin\Debug\net5.0\Model.Domain.pdb
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Infra.CrossCutting\obj\Debug\net5.0\Model.Infra.CrossCutting.csprojAssemblyReference.cache
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Infra.CrossCutting\obj\Debug\net5.0\Model.Infra.CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Infra.CrossCutting\obj\Debug\net5.0\Model.Infra.CrossCutting.AssemblyInfoInputs.cache
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Infra.CrossCutting\obj\Debug\net5.0\Model.Infra.CrossCutting.AssemblyInfo.cs
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Infra.CrossCutting\obj\Debug\net5.0\Model.Infra.CrossCutting.csproj.CoreCompileInputs.cache
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Infra.CrossCutting\obj\Debug\net5.0\Model.Infra.CrossCutting.csproj.CopyComplete
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Infra.CrossCutting\obj\Debug\net5.0\Model.Infra.CrossCutting.dll
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Infra.CrossCutting\obj\Debug\net5.0\ref\Model.Infra.CrossCutting.dll
+C:\Users\lpc13\OneDrive\Área de Trabalho\ProselKinvo\kinvo-back-end-test\Aliquota.Domain\Model.Infra.CrossCutting\obj\Debug\net5.0\Model.Infra.CrossCutting.pdb

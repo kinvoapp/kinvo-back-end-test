@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Model.Application.Models;
 using Model.Domain.Entities;
 using Model.Domain.Interfaces;
 using Model.Service.Validators;
@@ -18,21 +19,21 @@ namespace Model.Application.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] User user)
+        public IActionResult Create([FromBody] CreateUserModel user)
         {
             if (user == null)
                 return NotFound();
 
-            return Execute(() => _baseUserService.Add<UserValidator>(user).Id);
+            return Execute(() => _baseUserService.Add<CreateUserModel, UserModel, UserValidator>(user));
         }
 
         [HttpPut]
-        public IActionResult Update([FromBody] User user)
+        public IActionResult Update([FromBody] UpdateUserModel user)
         {
             if (user == null)
                 return NotFound();
 
-            return Execute(() => _baseUserService.Update<UserValidator>(user));
+            return Execute(() => _baseUserService.Update<UpdateUserModel, UserModel, UserValidator>(user));
         }
 
         [HttpDelete("{id}")]
@@ -53,7 +54,7 @@ namespace Model.Application.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Execute(() => _baseUserService.Get());
+            return Execute(() => _baseUserService.Get<UserModel>());
         }
 
         [HttpGet("{id}")]
@@ -62,7 +63,7 @@ namespace Model.Application.Controllers
             if (id == 0)
                 return NotFound();
 
-            return Execute(() => _baseUserService.GetById(id));
+            return Execute(() => _baseUserService.GetById<UserModel>(id));
         }
 
         private IActionResult Execute(Func<object> func)

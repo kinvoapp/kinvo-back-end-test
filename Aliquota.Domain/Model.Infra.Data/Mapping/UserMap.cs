@@ -18,6 +18,12 @@ namespace Model.Infra.Data.Mapping
                 .HasColumnName("Name")
                 .HasColumnType("varchar(100)");
 
+            builder.Property(prop => prop.Cpf)
+                .HasConversion(prop => prop.ToString(), prop => prop)
+                .IsRequired()
+                .HasColumnName("Cpf")
+                .HasColumnType("varchar(100)");
+
             builder.Property(prop => prop.Email)
                .HasConversion(prop => prop.ToString(), prop => prop)
                .IsRequired()
@@ -29,6 +35,11 @@ namespace Model.Infra.Data.Mapping
                 .IsRequired()
                 .HasColumnName("Password")
                 .HasColumnType("varchar(100)");
+
+            builder.Property(prop => prop.Capital)
+                .IsRequired()
+                .HasColumnName("Capital")
+                .HasColumnType("money");
         }
     }
 }
