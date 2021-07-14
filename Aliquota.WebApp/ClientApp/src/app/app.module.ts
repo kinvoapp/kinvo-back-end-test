@@ -16,6 +16,7 @@ import { InvestmentComponent } from './components/investment/investment/investme
 import { FinancialProductsComponent } from './components/investment/financial-products/financial-products.component';
 import { PortfolioComponent } from './components/investment/portfolio/portfolio.component';
 import { AuthorizationInterceptor } from './interceptors/authorization-interceptor';
+import { FinancialProductApplyComponent } from './components/investment/financial-product-apply/financial-product-apply.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AuthorizationInterceptor } from './interceptors/authorization-intercept
     InvestmentComponent,
     FinancialProductsComponent,
     PortfolioComponent,
+    FinancialProductApplyComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -37,6 +39,7 @@ import { AuthorizationInterceptor } from './interceptors/authorization-intercept
       { path: 'register', component: CreateUserComponent, pathMatch: 'full' },
       { path: 'login', component: LoginComponent, pathMatch: 'full' },
       { path: 'portfolio', component: PortfolioComponent, pathMatch: 'full' },
+      { path: 'products/:id', component: FinancialProductApplyComponent, pathMatch: 'full' },
       { path: 'products', component: FinancialProductsComponent, pathMatch: 'full' },
       { path: 'investments/:id', component: InvestmentComponent, pathMatch: 'full' },
     ]),

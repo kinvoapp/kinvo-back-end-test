@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -22,6 +23,11 @@ namespace Aliquota.Persistence.Repositories {
         public async Task<List<FinancialProduct>> GetProductsAsync()
         {
             return await FinancialProducts.ToListAsync();
+        }
+
+        public async Task<FinancialProduct> GetProductAsync(Guid productId)
+        {
+            return await FinancialProducts.FirstOrDefaultAsync(p => p.Id == productId);
         }
     }
 }

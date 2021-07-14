@@ -66,6 +66,7 @@ namespace Aliquota.WebApp.Services
         {
             return new FinancialProductModel
             {
+                Id = financialProductModel.Id,
                 Name = financialProductModel.Name,
             };
         }

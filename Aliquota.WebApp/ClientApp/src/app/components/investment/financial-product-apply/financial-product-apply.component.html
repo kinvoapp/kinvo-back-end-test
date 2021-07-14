@@ -1,0 +1,17 @@
+<a [routerLink]="['/products']">
+    <button mat-flat-button color="primary">Voltar</button>
+</a>
+<div *ngIf="loading" class="loading">
+    <mat-spinner></mat-spinner>
+</div>
+<ng-container *ngIf="!loading">
+    <h3 class="mt-4">Aplicação em {{ product.name }}</h3>
+    <form [formGroup]="form">
+        <p>Quanto você deseja aplicar?</p>
+        <mat-form-field>
+            <mat-label>Valor</mat-label>
+            <input matInput type="number" formControlName="investmentValue"/>
+        </mat-form-field>
+        <button mat-flat-button color="primary" class="mx-3" [disabled]="!form.valid">Aplicar</button>
+    </form>
+</ng-container>

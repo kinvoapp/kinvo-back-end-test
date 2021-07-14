@@ -18,4 +18,8 @@ export class FinancialProductService {
   getProducts(): Observable<RequestResult<FinancialProductModel[]>> {
     return this.http.get<RequestResult<FinancialProductModel[]>>(apiRoute);
   }
+
+  getProduct(id: string): Observable<RequestResult<FinancialProductModel>> {
+    return this.http.get<RequestResult<FinancialProductModel>>(`${apiRoute}/${id}`);
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FinancialProductModel } from 'src/app/api/models/financial-product-models';
 import { FinancialProductService } from 'src/app/services/financial-product.service';
+import { InvestmentService } from 'src/app/services/investment.service';
 
 @Component({
   selector: 'app-financial-products',
@@ -9,7 +10,7 @@ import { FinancialProductService } from 'src/app/services/financial-product.serv
 })
 export class FinancialProductsComponent implements OnInit {
   loading: boolean = true;
-  financialProducts: FinancialProductModel[];
+  products: FinancialProductModel[];
 
   constructor(
     private financialProductService: FinancialProductService,
@@ -18,11 +19,10 @@ export class FinancialProductsComponent implements OnInit {
   ngOnInit() {
     this.financialProductService.getProducts().subscribe(
       res => {
-        this.financialProducts = res.data;
+        this.products = res.data;
         this.loading = false;
       },
       err => this.loading = false,
     );
   }
-
 }

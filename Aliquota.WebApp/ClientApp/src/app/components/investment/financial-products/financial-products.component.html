@@ -1,0 +1,9 @@
+<a [routerLink]="['/portfolio']">
+    <button mat-flat-button color="primary">Voltar</button>
+</a>
+<mat-card *ngFor="let product of products" class="d-flex flex-row justify-content-between align-items-center my-3">
+    <p class="m-0">{{ product.name }}</p>
+    <a [routerLink]="['/products', product.id ]">
+        <button mat-stroked-button>Aplicar</button>
+    </a>
+</mat-card>

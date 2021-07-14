@@ -33,5 +33,27 @@ namespace Aliquota.WebApp.Controllers
                 Data = products.ConvertAll(p => mc.ToModel(p)),
             };
         }
+
+        [Route("{id}")]
+        public async Task<RequestResult<FinancialProductModel>> GetFinancialProduct([FromRoute] Guid id)
+        {
+            var product = await financialProductRepository.GetProductAsync(id);
+
+            if(product == null)
+            {
+                return new RequestResult<FinancialProductModel>
+                {
+                    Success = false,
+                    Message = "Produto não encontrado",
+                };
+            }
+
+            return new RequestResult<FinancialProductModel>
+            {
+                Success = true,
+                Message = "Produto obtido com sucesso",
+                Data = mc.ToModel(product),
+            };
+        }
     }
 }
