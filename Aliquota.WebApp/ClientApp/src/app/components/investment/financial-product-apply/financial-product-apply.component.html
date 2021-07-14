@@ -12,6 +12,6 @@
             <mat-label>Valor</mat-label>
             <input matInput type="number" formControlName="investmentValue"/>
         </mat-form-field>
-        <button mat-flat-button color="primary" class="mx-3" [disabled]="!form.valid">Aplicar</button>
+        <button mat-flat-button color="primary" class="mx-3" [disabled]="!form.valid" (click)="onApply()">Aplicar</button>
     </form>
 </ng-container>

@@ -18,15 +18,19 @@ namespace Aliquota.WebApp.DataInitializers
 
         public async Task EnsureFinancialProductsExist(List<FinancialProduct> products)
         {
+            bool changed = false;
             foreach (var product in products)
             {
                 if (!await context.FinancialProducts.AnyAsync(fp => fp.Name == product.Name))
                 {
                     context.Add(product);
+                    changed = true;
                 }
             }
 
-            await context.SaveChangesAsync();
+            if(changed) {
+                await context.SaveChangesAsync();
+            }
         }
     }
 }

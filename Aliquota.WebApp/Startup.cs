@@ -48,6 +48,7 @@ namespace Aliquota.WebApp
                 options => options.UseSqlite(Configuration.GetConnectionString("Default")));
             
             services.AddScoped<UserHandler>();
+            services.AddScoped<InvestmentHandler>();
             services.AddScoped<ModelConverter>();
             services.AddScoped<TokenService>();
             services.AddScoped<InvestmentEvaluationService>();

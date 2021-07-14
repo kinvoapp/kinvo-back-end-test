@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Aliquota.Domain.Commands;
 using Aliquota.Domain.Contracts.Repositories;
@@ -22,9 +23,9 @@ namespace Aliquota.Domain.Handlers
             this.investmentRepository = investmentRepository;
         }
 
-        public async Task<Investment> HandleAsync(CreateInvestmentCommand command)
+        public async Task<Investment> HandleAsync(CreateInvestmentCommand command, Guid ownerId)
         {
-            var portfolio = await portfolioRepository.GetPortfolioByOwnerIdAsync(command.UserId);
+            var portfolio = await portfolioRepository.GetPortfolioByOwnerIdAsync(ownerId);
 
             if (command.Value <= 0)
             {

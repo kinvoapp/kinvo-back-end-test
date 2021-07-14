@@ -8,8 +8,5 @@ namespace Aliquota.Domain.Commands {
 
         [Required]
         public double Value { get; set; }
-
-        [Required]
-        public Guid UserId { get; set; }
     }
 }

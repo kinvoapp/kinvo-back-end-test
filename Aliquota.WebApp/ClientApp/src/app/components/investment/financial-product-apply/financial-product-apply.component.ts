@@ -46,10 +46,17 @@ export class FinancialProductApplyComponent implements OnInit {
   }
 
   onApply() {
+    this.loading = true;  
+    console.log(this.form.value);
     this.investmentService.createInvestment({
        productId: this.product.id,
-       value: this.form.value.invesmentValue,
-    })
+       value: this.form.value.investmentValue,
+    }).subscribe(
+      res => {
+        this.snackBar.open(res.message, "Fechar");
+        this.loading = false;
+      }, err => this.loading = false,
+    )
   }
 
 }

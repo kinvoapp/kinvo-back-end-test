@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CreateInvestmentCommand } from '../api/commands/create-investment-coammand';
+import { CreateInvestmentCommand } from '../api/commands/create-investment-command';
 import { InvestmentFullModel, InvestmentModel } from '../api/models/investment-models';
 import { RequestResult } from '../api/models/request-result';
 

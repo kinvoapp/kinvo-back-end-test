@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Aliquota.Domain.Commands;
 using Aliquota.Domain.Contracts.Repositories;
 using Aliquota.Domain.Entities;
@@ -31,15 +32,16 @@ namespace Aliquota.Domain.Test.Handlers
         [Fact]
         public void HandleAsync_ShouldThrowWhenValueIsLessThanZero()
         {
+            var portfolio = PortfolioRepositoryMockProvider.GetStandardPortfolio();
+            
             var command = new CreateInvestmentCommand
             {
                 Value = -20.0,
-                UserId = PortfolioRepositoryMockProvider.GetStandardPortfolio().OwnerId,
             };
 
             Assert.ThrowsAsync<HandlerException>(async () =>
             {
-                await investmentHandler.HandleAsync(command);
+                await investmentHandler.HandleAsync(command, portfolio.OwnerId);
             });
         }
 
@@ -50,32 +52,27 @@ namespace Aliquota.Domain.Test.Handlers
             var command = new CreateInvestmentCommand
             {
                 Value = portfolio.Balance * 20,
-                UserId = portfolio.OwnerId,
             };
 
             Assert.ThrowsAsync<HandlerException>(async () =>
             {
-                await investmentHandler.HandleAsync(command);
+                await investmentHandler.HandleAsync(command, portfolio.OwnerId);
             });
         }
 
         [Fact]
-        public void HandleAsync_ShouldCreateInvestmentAndDiscountBalanceProperly()
+        public async Task HandleAsync_ShouldCreateInvestmentAndDiscountBalanceProperly()
         {
             var portfolio = PortfolioRepositoryMockProvider.SharedPortfolio;
             var product = FinancialProductRepositoryMockProvider.GetStandardFinancialProduct();
             var command = new CreateInvestmentCommand
             {
                 Value = portfolio.Balance - 20,
-                UserId = portfolio.OwnerId,
                 ProductId = product.Id,
             };
 
             Investment generatedInvestment = null;
-            Assert.ThrowsAsync<HandlerException>(async () =>
-            {
-                generatedInvestment = await investmentHandler.HandleAsync(command);
-            });
+            generatedInvestment = await investmentHandler.HandleAsync(command, portfolio.OwnerId);
 
             Assert.NotNull(generatedInvestment);
             Assert.Equal(20, portfolio.Balance);
