@@ -54,7 +54,7 @@ namespace Aliquota.Domain.Test.Handlers {
 
         [Fact]
         public async Task Handle_CreateUserCommand_ShouldNotCreateTwoUsersWithSameEmail() {
-            var testUser = UserRepositoryMockProvider.GetAlreadyRegisteredUserEmail();
+            var testUser = UserRepositoryMockProvider.GetAlreadyRegisteredEmailUser();
 
             var command = new CreateUserCommand {
                 Email = testUser.Email,

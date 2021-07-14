@@ -7,7 +7,7 @@ namespace Aliquota.Domain.Test.Mocks.Repositories
 {
     public static class UserRepositoryMockProvider
     {
-        public static User GetAlreadyRegisteredUserEmail()
+        public static User GetAlreadyRegisteredEmailUser()
         {
             var user = new User("mandelbrot@email.com", "Benoit Mandelbrot");
             user.SetPassword("HaveSeenThisBefore123");
@@ -19,7 +19,7 @@ namespace Aliquota.Domain.Test.Mocks.Repositories
             var mock = new Mock<IUserRepository>();
 
             mock.Setup(r => r.Add(It.IsAny<User>()));
-            mock.Setup(r => r.GetUserByEmailAsync(GetAlreadyRegisteredUserEmail().Email)).Returns(Task.FromResult(GetAlreadyRegisteredUserEmail()));
+            mock.Setup(r => r.GetUserByEmailAsync(GetAlreadyRegisteredEmailUser().Email)).ReturnsAsync(GetAlreadyRegisteredEmailUser());
             
             return mock;
         }
