@@ -28,7 +28,7 @@ namespace Aliquota.Domain.Services
 
         public void Evaluate(Investment investment, List<InvestmentEvaluationComponent> evaluations)
         {
-            var minutesPassed = (DateTimeOffset.Now - investment.ApplicationDate).TotalMinutes;
+            var minutesPassed = ((investment.RedemptionDate ?? DateTimeOffset.Now) - investment.ApplicationDate).TotalMinutes;
             var currentValue = investment.InitialValue * Math.Pow(multiplier, (int) minutesPassed / periodMinutes);
             evaluations.Add(new InvestmentEvaluationComponent {
                 Name = "Valorização",

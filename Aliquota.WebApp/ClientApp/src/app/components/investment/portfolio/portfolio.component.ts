@@ -18,7 +18,8 @@ export class PortfolioComponent implements OnInit {
   ) { }
 
   get totalInvested() : number {
-    return this.portfolio.investments.map(i => i.initialValue).reduce((acc, v) => acc + v);
+    let investments = this.portfolio.investments.filter(i => i.redemptionDate == null);
+    return investments.length > 0 ? investments.map(i => i.initialValue).reduce((acc, v) => acc + v) : 0;
   }
 
   ngOnInit() {

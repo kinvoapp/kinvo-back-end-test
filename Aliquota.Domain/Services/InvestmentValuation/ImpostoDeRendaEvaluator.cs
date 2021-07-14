@@ -18,7 +18,7 @@ namespace Aliquota.Domain.Services
         {
             var profit = evaluations.Any()? evaluations.Select(e => e.Value).Aggregate((acc, v) => acc + v) : 0;
 
-            TimeSpan timePassed = DateTimeOffset.Now - investment.ApplicationDate;
+            TimeSpan timePassed = (investment.RedemptionDate ?? DateTimeOffset.Now) - investment.ApplicationDate;
             var yearsPassed = (int) (timePassed.Days / 365);
 
             var evaluation = new InvestmentEvaluationComponent
