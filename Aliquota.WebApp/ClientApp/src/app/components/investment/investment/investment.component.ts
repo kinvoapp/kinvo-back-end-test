@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
-import { ActivatedRoute, Route } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { InvestmentFullModel } from 'src/app/api/models/investment-models';
 import { InvestmentService } from 'src/app/services/investment.service';
 
@@ -16,6 +16,7 @@ export class InvestmentComponent implements OnInit {
   constructor(
     private investmentService: InvestmentService,
     private route: ActivatedRoute,
+    private router: Router,
     private snackBar: MatSnackBar,
   ) { }
 
@@ -25,7 +26,6 @@ export class InvestmentComponent implements OnInit {
       res => {
         if(res.success) {
           this.investment = res.data;
-          console.log(this.investment);
         } else {
           this.snackBar.open(res.message, "Fechar");
         }
@@ -38,4 +38,23 @@ export class InvestmentComponent implements OnInit {
     );
   }
 
+  onRedempt() {
+    this.loading = true;
+    this.investmentService.redemptInvestment({
+      investmentId: this.investment.id,
+    }).subscribe(
+      res => {
+        if(res.success) {
+          this.router.navigateByUrl("/portfolio");
+        } else {
+          this.snackBar.open(res.message, "Fechar");
+        }
+
+        this.loading = false;
+      },
+      err => {
+        this.loading = false;
+      }
+    )
+  }
 }

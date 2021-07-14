@@ -83,5 +83,20 @@ namespace Aliquota.WebApp.Controllers
                 Data = mc.ToModel(investment),
             };
         }
+
+        [HttpPost("redempt")]
+        public async Task<RequestResult<InvestmentModel>> RedemptInvestment([FromBody] RedemptInvestmentCommand command)
+        {
+            var userId = HttpContext.User.GetUserId();
+            var investment = await investmentHandler.HandleAsync(command, userId);
+            await context.SaveChangesAsync();
+
+            return new RequestResult<InvestmentModel>
+            {
+                Success = true,
+                Message = "Investimento resgatado com sucesso!",
+                Data = mc.ToModel(investment),
+            };
+        }
     }
 }

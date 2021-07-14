@@ -109,7 +109,7 @@ namespace Aliquota.Domain.Test.Handlers
             };
 
             Investment redemptedInvestment = null;
-            redemptedInvestment = await investmentHandler.HandleAsync(command);
+            redemptedInvestment = await investmentHandler.HandleAsync(command, InvestmentRepositoryMockProvider.SharedInvestment.Portfolio.OwnerId);
 
             Assert.NotNull(redemptedInvestment.RedemptionDate);
             Assert.True(initialBalance < portfolio.Balance);
@@ -144,7 +144,7 @@ namespace Aliquota.Domain.Test.Handlers
             Investment redemptedInvestment = null;
             await Assert.ThrowsAsync<HandlerException>(async () =>
             {
-                redemptedInvestment = await investmentHandler.HandleAsync(command);
+                redemptedInvestment = await investmentHandler.HandleAsync(command, InvestmentRepositoryMockProvider.SharedInvestment.Portfolio.OwnerId);
             });
         }
     }

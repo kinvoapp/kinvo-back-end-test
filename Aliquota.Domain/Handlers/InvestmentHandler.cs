@@ -63,9 +63,14 @@ namespace Aliquota.Domain.Handlers
             return investment;
         }
 
-        public async Task<Investment> HandleAsync(RedemptInvestmentCommand command)
+        public async Task<Investment> HandleAsync(RedemptInvestmentCommand command, Guid requesterId)
         {
             var investment = await investmentRepository.GetInvestmentAsync(command.InvestmentId);   
+
+            if(investment.Portfolio.OwnerId != requesterId)
+            {
+                throw new HandlerException("Você não possui autorização para resgatar esse investimento");
+            }
 
             if(investment == null) 
             {
