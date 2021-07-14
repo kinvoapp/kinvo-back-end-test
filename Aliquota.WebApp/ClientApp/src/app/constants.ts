@@ -1,0 +1,1 @@
+export const tokenLocalStorageItemName = "kinvo_titosilva_token";

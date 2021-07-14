@@ -1,0 +1,28 @@
+<div *ngIf="loading" class="loading">
+    <mat-spinner></mat-spinner>
+</div>
+<mat-card class="w-100 border border-primary" *ngIf="!loading">
+    <mat-card-title class="d-flex flex-column align-items-center">
+        Login
+    </mat-card-title>
+    <mat-card-content class="d-flex flex-column align-items-center">
+        <form class="w-100 px-3" [formGroup]="loginForm">
+            <mat-form-field class="w-100">
+                <mat-label>Email</mat-label>
+                <input matInput type="text" formControlName="email"/>
+            </mat-form-field>
+            <mat-form-field class="w-100">
+                <mat-label>Senha</mat-label>
+                <input matInput type="password" formControlName="password"/>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions class="d-flex flex-column align-items-center my-3">
+        <button mat-flat-button color="primary" class="w-25 mb-3" [disabled]="!isFormValid" (click)="onSubmit()">
+            Entrar
+        </button>
+        <a [routerLink]="['/register']">
+            Não tenho cadastro
+        </a>
+    </mat-card-actions>
+</mat-card>
