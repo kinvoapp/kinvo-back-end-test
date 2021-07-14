@@ -23,7 +23,7 @@ namespace Aliquota.Domain.Test.Handlers {
         }
 
         [Fact]
-        public async Task Handle_CreateUserCommand_ShouldCallRepositories() {
+        public async Task HandleAsync_CreateUserCommand_ShouldCallRepositories() {
             var command = new CreateUserCommand {
                 Email = "alan.turing@email.com",
                 FullName = "Alan Turing",
@@ -38,7 +38,7 @@ namespace Aliquota.Domain.Test.Handlers {
         }
 
         [Fact]
-        public async Task Handle_CreateUserCommand_ShouldCreateUserCorrectly() {
+        public async Task HandleAsync_CreateUserCommand_ShouldCreateUserCorrectly() {
             var command = new CreateUserCommand {
                 Email = "alan.turing@email.com",
                 FullName = "Alan Turing",

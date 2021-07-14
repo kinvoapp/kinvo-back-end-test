@@ -14,7 +14,10 @@ namespace Aliquota.Domain.Test.Mocks.Repositories
         {
             var investment = new Investment()
             {
-                ApplicationDate = new DateTimeOffset(2019, 10, 6, 10, 0, 0, 0, new GregorianCalendar(), new TimeSpan(0)),
+                InitialValue = 200.0,
+                ApplicationDate = DateTimeOffset.Now.AddMinutes(-20),
+                FinancialProduct = FinancialProductRepositoryMockProvider.SharedProduct,
+                Portfolio = PortfolioRepositoryMockProvider.SharedPortfolio,
             };
 
             return investment;
@@ -25,7 +28,7 @@ namespace Aliquota.Domain.Test.Mocks.Repositories
             var mock = new Mock<IInvestmentRepository>();
 
             mock.Setup(r => r.Add(It.IsAny<Investment>()));
-            mock.Setup(r => r.GetInvestmentAsync(It.IsAny<Guid>())).ReturnsAsync(GetStandardInvestment());
+            mock.Setup(r => r.GetInvestmentAsync(It.IsAny<Guid>())).ReturnsAsync(SharedInvestment);
             return mock;
         }
     }

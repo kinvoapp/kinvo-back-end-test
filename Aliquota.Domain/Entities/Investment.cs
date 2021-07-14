@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Aliquota.Domain.Entities
 {
@@ -16,6 +17,7 @@ namespace Aliquota.Domain.Entities
 
         public Guid FinancialProductId { get; set; }
 
+        [Required]
         public FinancialProduct FinancialProduct { get; set; }
 
         public double InitialValue { get; set; }

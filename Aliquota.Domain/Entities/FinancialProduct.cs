@@ -13,13 +13,15 @@ namespace Aliquota.Domain.Entities
         public string Name { get; set; }
 
         [NotMapped]
-        public List<InvestmentEvaluatorSpec> EvaluatorsSpec { get; set; } // Dont store this
+        public List<InvestmentEvaluatorSpec> EvaluatorsSpec { get; set; } = new List<InvestmentEvaluatorSpec>(); // Dont store this
 
         public string EvaluatorsSpecJson
         { // Store this instead
-            get => JsonSerializer.Serialize(EvaluatorsSpec);
+            get =>  EvaluatorsSpec != null? JsonSerializer.Serialize(EvaluatorsSpec) : null;
             set {
-                var specs = JsonSerializer.Deserialize<List<InvestmentEvaluatorSpec>>(value);
+                var specs = value != null? JsonSerializer.Deserialize<List<InvestmentEvaluatorSpec>>(value) 
+                                                    : new List<InvestmentEvaluatorSpec>();
+                                                    
                 EvaluatorsSpec = specs.Select(spec =>
                     new InvestmentEvaluatorSpec {
                         EvaluatorType = spec.EvaluatorType,
