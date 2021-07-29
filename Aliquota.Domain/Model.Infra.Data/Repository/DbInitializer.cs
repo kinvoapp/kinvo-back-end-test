@@ -39,14 +39,14 @@ namespace Model.Infra.Data.Repository
 
             var investments = new Investment[]
             {
-            new Investment{Cpf="984.461.546-84", Capital=1200, InvestmentDayZero=DateTime.Now},
-            new Investment{Cpf="156.485.189-41", Capital=1500.85, InvestmentDayZero=DateTime.Now},
-            new Investment{Cpf="494.564.489-78", Capital=10000.43, InvestmentDayZero=DateTime.Now},
-            new Investment{Cpf="456.158.451-15", Capital=10000.43, InvestmentDayZero=DateTime.Now},
-            new Investment{Cpf="123.456.789-00", Capital=1200000, InvestmentDayZero=DateTime.Now},
-            new Investment{Cpf="987.654.321-00", Capital=12000, InvestmentDayZero=DateTime.Now},
-            new Investment{Cpf="485.548.785-85", Capital=1200.00, InvestmentDayZero=DateTime.Now},
-            new Investment{Cpf="456.123.789-00", Capital=1.200, InvestmentDayZero=DateTime.Now}
+            new Investment{Cpf="984.461.546-84", Capital=1200, InvestmentDayZero=DateTime.Today},
+            new Investment{Cpf="156.485.189-41", Capital=1500.85, InvestmentDayZero=DateTime.Today},
+            new Investment{Cpf="494.564.489-78", Capital=10000.43, InvestmentDayZero=DateTime.Today},
+            new Investment{Cpf="456.158.451-15", Capital=10000.43, InvestmentDayZero=DateTime.Today},
+            new Investment{Cpf="123.456.789-00", Capital=1200000, InvestmentDayZero=DateTime.Today},
+            new Investment{Cpf="987.654.321-00", Capital=12000, InvestmentDayZero=DateTime.Today},
+            new Investment{Cpf="485.548.785-85", Capital=1200.00, InvestmentDayZero=DateTime.Today},
+            new Investment{Cpf="456.123.789-00", Capital=1.200, InvestmentDayZero=DateTime.Today}
             };
             foreach (Investment i in investments)
             {

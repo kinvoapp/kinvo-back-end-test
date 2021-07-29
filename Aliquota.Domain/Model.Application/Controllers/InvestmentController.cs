@@ -36,7 +36,9 @@ namespace Model.Application.Controllers
                 return NotFound();
 
             Rescue r = new Rescue();
-            var rescuedValue = r.rescue(Investment.Capital, Investment.InvestmentDayZero);
+            double capital = Investment.Capital;
+            DateTime investmentDayZero = Investment.InvestmentDayZero;
+            double rescuedValue = r.rescue(capital, investmentDayZero);
             var incomeTax = Investment.Capital - rescuedValue;
             Delete(Investment.Id);
             return Ok("The rescued value was " + String.Format("{0:C}", Convert.ToInt32(rescuedValue)) + " and the incomeTax was " + String.Format("{0:C}", Convert.ToInt32(incomeTax)));

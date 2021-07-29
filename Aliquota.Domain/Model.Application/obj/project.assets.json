@@ -1627,10 +1627,7 @@
         },
         "runtime": {
           "bin/placeholder/Model.Domain.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Model.Infra.CrossCutting/1.0.0": {
         "type": "project",
@@ -1643,10 +1640,7 @@
         },
         "runtime": {
           "bin/placeholder/Model.Infra.CrossCutting.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Model.Infra.Data/1.0.0": {
         "type": "project",
@@ -1663,10 +1657,7 @@
         },
         "runtime": {
           "bin/placeholder/Model.Infra.Data.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Model.Service/1.0.0": {
         "type": "project",
@@ -1680,10 +1671,7 @@
         },
         "runtime": {
           "bin/placeholder/Model.Service.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       }
     }
   },
@@ -6217,7 +6205,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.205\\RuntimeIdentifierGraph.json"
       }
     }
   }

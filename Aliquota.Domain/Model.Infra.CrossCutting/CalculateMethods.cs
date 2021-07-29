@@ -12,7 +12,7 @@ namespace Model.Infra.CrossCutting
         User user = new User();
         public double calculateInvestedTime(DateTime startInvestment)
         {
-            var finishInvestment = DateTime.Now;
+            var finishInvestment = DateTime.Today;
             TimeSpan investedTime = finishInvestment.Subtract(startInvestment);
             var investedTimeInYears = (investedTime.TotalDays) / 365;
             

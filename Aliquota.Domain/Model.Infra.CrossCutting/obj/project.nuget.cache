@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lo1pm1rz8X9zLL+DLF4L3y9juDwJDfG42+ozmDhPzkUKKrBq4LztYJ4CNtjhzWCAyfPvMlT8ZGvkp8TsYcp7QA==",
+  "dgSpecHash": "m/X2ENEm/03JHi8/ErKQNHIPVF15M7p13nDIFbDnVcwL+YMYJFxLXa7y/90fdZGaIpMIcQPBwCLCURpose6u6w==",
   "success": true,
   "projectFilePath": "C:\\Users\\lpc13\\OneDrive\\Área de Trabalho\\ProselKinvo\\kinvo-back-end-test\\Aliquota.Domain\\Model.Infra.CrossCutting\\Model.Infra.CrossCutting.csproj",
   "expectedPackageFiles": [
