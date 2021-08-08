@@ -1,0 +1,107 @@
+﻿@model Aliquota.WebApp.Models.ProdutoFinanceiroViewModel.ProdutoFinanceiroVisulzVM
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes do Produto Financeiro</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PorcentagemLucro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PorcentagemLucro)%
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorAplicado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ValorAplicado)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lucro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lucro)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataAplicacao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataAplicacao)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorIR)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ValorIR)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataResgate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataResgate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.Status == Aliquota.Domain.Models.Status.EmAplicacao)
+            {
+                <h5><span class="badge badge-primary">Em Aplicação</span></h5>
+            }
+            else
+            {
+                <h5><span class="badge badge-danger">Resgatado</span></h5>
+            }
+        </dd>
+        @if (Model.Status == Aliquota.Domain.Models.Status.EmAplicacao)
+        {
+            <dt class="col-sm-2">
+                Deseja fazer o Resgate?
+            </dt>
+            <dd class="col-sm-10">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#resgate-modal">Resgatar</button>
+            </dd>
+        }
+    </dl>
+</div>
+<div>
+    <a asp-controller="Painel" asp-action="Index">Voltar para o Painel</a>
+</div>
+
+<div class="modal fade" id="resgate-modal" tabindex="-1" role="dialog" aria-labelledby="ModalResgate" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tem certeza?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label for="data-resgate">Data do Resgate</label>
+                        <input type="text" class="form-control" id="data-resgate" aria-describedby="Dia/Mês/Ano" placeholder="Dia/Mês/Ano" maxlength="10" />
+                        <span style="color:red" id="erro-resgate"></span>
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="botao-resgate">Fazer Resgate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/conta.js" asp-append-version="true"></script>

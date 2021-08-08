@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Aliquota.WebApp.Models.ProdutoFinanceiroViewModel.ProdutoFinanceiroVM>
+
+@{
+    ViewData["Title"] = "Painel";
+}
+
+<div class="row">
+    <div class="col">
+        <div class="text-left">
+            <h5 class="display-10">Meu Saldo:</h5>
+            <h1 class="display-4">R$ <span id="valor-conta">0</span></h1>
+        </div>
+    </div>
+    <div class="col">
+        <div class="text-right">
+            <h5 class="display-10">Meus</h5>
+            <h1 class="display-4">Produtos Financeiros</h1>
+        </div>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-12">
+        <ul class="nav nav-pills justify-content-end">
+            <li class="nav-item">
+                <a asp-controller="ProdutoFinanceiro" asp-action="Novo" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Novo</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<br />
+<div class="table-responsive">
+    <table id="tabela-produto" class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ValorAplicado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Lucro)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataAplicacao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ValorIR)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataResgate)
+                </th>
+                <th>
+                    Ações
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @if (item.Status == Aliquota.Domain.Models.Status.EmAplicacao)
+                        {
+                            <h5><span class="badge badge-primary">Em Aplicação</span></h5>
+                        }
+                        else
+                        {
+                            <h5><span class="badge badge-danger">Resgatado</span></h5>
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ValorAplicado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Lucro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataAplicacao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ValorIR)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataResgate)
+                    </td>
+                    <td>
+                        <a asp-action="Visualizar" asp-controller="ProdutoFinanceiro" asp-route-id="@item.Id" class="btn btn-primary"><i class="bi bi-eye"></i></a>
+                        @if (item.Status == Aliquota.Domain.Models.Status.EmAplicacao)
+                        {
+                            <a asp-action="Deletar" asp-controller="ProdutoFinanceiro" asp-route-id="@item.Id" class="btn btn-danger disabled"><i class="bi bi-trash"></i></a>
+                        }
+                        else
+                        {
+                            <a asp-action="Deletar" asp-controller="ProdutoFinanceiro" asp-route-id="@item.Id" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+<script src="~/js/conta.js" asp-append-version="true"></script>

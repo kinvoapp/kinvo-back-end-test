@@ -1,0 +1,30 @@
+﻿@model Aliquota.Domain.Models.TipoProdutoFinanceiro
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhamento</h1>
+
+<div>
+    <h4>Tipo de Produto Financeiro</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PorcentagemLucro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PorcentagemLucro)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index">Retornar</a>
+</div>

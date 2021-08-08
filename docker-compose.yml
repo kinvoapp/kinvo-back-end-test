@@ -1,0 +1,12 @@
+version: "3.5"
+
+services:
+
+  postgres:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports: 
+      - "4242:1433"
+    container_name: aliquota_sql
+    environment:
+        - MSSQL_SA_PASSWORD=master42
+        - ACCEPT_EULA=Y
