@@ -1,4 +1,6 @@
-﻿using Aliquota.Application.Interfaces.Repositories;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Aliquota.Application.Interfaces.Repositories;
 using Aliquota.Domain.Entities;
 using Aliquota.Persistance.Contexts;
 using Aliquota.Persistance.Repositories.Base;

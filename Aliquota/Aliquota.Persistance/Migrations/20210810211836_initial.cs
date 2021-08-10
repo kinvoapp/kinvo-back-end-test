@@ -51,7 +51,6 @@ namespace Aliquota.Persistance.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Amount = table.Column<decimal>(type: "decimal(18,4)", nullable: false),
                     Start = table.Column<DateTime>(nullable: false),
-                    WithdrawDate = table.Column<DateTime>(nullable: true),
                     FinancialProductId = table.Column<decimal>(type: "decimal", nullable: false)
                 },
                 constraints: table =>
@@ -79,16 +78,16 @@ namespace Aliquota.Persistance.Migrations
 
             migrationBuilder.InsertData(
                 table: "Investments",
-                columns: new[] { "Id", "Amount", "FinancialProductId", "Start", "WithdrawDate" },
+                columns: new[] { "Id", "Amount", "FinancialProductId", "Start" },
                 values: new object[,]
                 {
-                    { 1m, 1000m, 1m, new DateTime(2019, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null },
-                    { 5m, 2500m, 1m, new DateTime(2015, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null },
-                    { 2m, 5000m, 2m, new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null },
-                    { 6m, 3000m, 2m, new DateTime(2009, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null },
-                    { 3m, 10000m, 3m, new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null },
-                    { 4m, 9500m, 4m, new DateTime(2018, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null },
-                    { 7m, 7500m, 4m, new DateTime(2010, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null }
+                    { 1m, 1000m, 1m, new DateTime(2019, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 5m, 2500m, 1m, new DateTime(2015, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 2m, 5000m, 2m, new DateTime(2012, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 6m, 3000m, 2m, new DateTime(2009, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 3m, 10000m, 3m, new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 4m, 9500m, 4m, new DateTime(2018, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 7m, 7500m, 4m, new DateTime(2010, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.CreateIndex(

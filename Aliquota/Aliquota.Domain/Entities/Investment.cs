@@ -26,7 +26,7 @@ namespace Aliquota.Domain.Entities
         {
             get
             {
-                return ((Amount * (FinancialProduct.MonthlyIncome / 30)) * (decimal)(DateTime.Now - Start).TotalDays) - Amount;
+                return ((Amount * (FinancialProduct.MonthlyIncome / 30)) * (decimal)(DateTime.Now - Start).TotalDays);
             }
         }
         /// <summary>

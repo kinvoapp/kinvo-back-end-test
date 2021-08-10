@@ -54,13 +54,13 @@ namespace Aliquota.Application.Features.Investments.Commands
                 
                 var withdraw = new WithdrawDTO
                 {
+                    Amount = inv.Amount,
                     TaxPercentage = taxPercentage,
                     Profit = inv.Profit,
                     TaxAmount = inv.Profit * taxPercentage,
                     LiquidIncome = inv.Profit - (inv.Profit * taxPercentage),
                     Start = inv.Start,
-                    InvestedTime = investedTime,
-                    FinancialProduct = _mapper.Map<FinancialProductDTO>(inv.FinancialProduct)
+                    InvestedTime = investedTime
                 };
 
                 return withdraw;

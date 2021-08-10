@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Aliquota.Persistance.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210810013327_initial")]
+    [Migration("20210810211836_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -111,9 +111,6 @@ namespace Aliquota.Persistance.Migrations
                         .HasColumnType("decimal");
 
                     b.Property<DateTime>("Start")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("WithdrawDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");

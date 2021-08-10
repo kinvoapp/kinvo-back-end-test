@@ -111,9 +111,6 @@ namespace Aliquota.Persistance.Migrations
                     b.Property<DateTime>("Start")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("WithdrawDate")
-                        .HasColumnType("datetime2");
-
                     b.HasKey("Id");
 
                     b.HasIndex("FinancialProductId");
