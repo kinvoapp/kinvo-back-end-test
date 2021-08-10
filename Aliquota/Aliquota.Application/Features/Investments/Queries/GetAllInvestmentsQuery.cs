@@ -23,7 +23,8 @@ namespace Aliquota.Application.Features.Investments.Queries
                 _mapper = mapper;
             }
 
-            public async Task<IEnumerable<InvestmentDTO>> Handle(GetAllInvestmentsQuery request, CancellationToken cancellationToken)
+            public async Task<IEnumerable<InvestmentDTO>> Handle(GetAllInvestmentsQuery request,
+                CancellationToken cancellationToken)
             {
                 return _mapper.Map<IEnumerable<InvestmentDTO>>(await _investmentRepository.GetAllAsync());
             }

@@ -14,7 +14,6 @@ namespace Aliquota.Controllers
     [ApiController]
     public class FinancialProductController : ApiBaseController
     {
-
         [HttpGet]
         public async Task<IEnumerable<FinancialProductDTO>> GetAll()
         {
@@ -24,7 +23,7 @@ namespace Aliquota.Controllers
         [HttpGet("{id}")]
         public async Task<FinancialProductDTO> Get([FromRoute] decimal id)
         {
-            return await Mediator.Send(new GetFinancialProductByIdQuery(id));
+            return await Mediator.Send(new GetFinancialProductByIdQuery(){Id = id});
         }
 
         [HttpPost]
@@ -32,11 +31,11 @@ namespace Aliquota.Controllers
         {
             return await Mediator.Send(command);
         }
-        
+
         [HttpDelete("{id}")]
         public async Task<FinancialProductDTO> Delete([FromRoute] decimal id)
         {
-            return await Mediator.Send(new DeleteFinancialProductCommand(id));
+            return await Mediator.Send(new DeleteFinancialProductCommand() {Id = id});
         }
     }
 }

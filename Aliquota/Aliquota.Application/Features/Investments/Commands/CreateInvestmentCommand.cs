@@ -16,6 +16,7 @@ namespace Aliquota.Application.Features.Investments.Commands
         public decimal Amount { get; set; }
         public DateTime Start { get; set; }
         public decimal FinancialProductId { get; set; }
+
         public class CreateInvestmentCommandHandler : IRequestHandler<CreateInvestmentCommand, decimal>
         {
             private readonly IInvestmentRepository _investmentRepository;

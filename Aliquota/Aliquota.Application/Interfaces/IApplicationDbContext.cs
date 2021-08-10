@@ -7,5 +7,6 @@ namespace Aliquota.Application.Interfaces
     {
         DbSet<FinancialProduct> FinancialProducts { get; set; }
         DbSet<Investment> Investments { get; set; }
+        DbSet<Withdraw> Withdraws { get; set; }
     }
 }

@@ -15,6 +15,5 @@ namespace Aliquota.Application.Features.Investments.DTOs
         public decimal Profit { get; set; }
         public decimal InvestedTime { get; set; }
         public DateTime Start { get; set; }
-        public FinancialProductDTO  FinancialProduct { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Aliquota.Persistance.Configurations
+namespace Aliquota.Persistence.Configurations
 {
     public class WithdrawConfiguration : IEntityTypeConfiguration<Withdraw>
     {
@@ -16,7 +16,7 @@ namespace Aliquota.Persistance.Configurations
             builder.Property(wd => wd.Amount)
                 .HasColumnType("decimal(18,4)")
                 .IsRequired();
-            
+
             builder.Property(wd => wd.TaxPercentage)
                 .HasColumnType("decimal(18,4)")
                 .IsRequired();
@@ -36,7 +36,7 @@ namespace Aliquota.Persistance.Configurations
             builder.Property(wd => wd.TaxAmount)
                 .HasColumnType("decimal(18,4)")
                 .IsRequired();
-            
+
             builder.Property(wd => wd.Start)
                 .IsRequired();
         }

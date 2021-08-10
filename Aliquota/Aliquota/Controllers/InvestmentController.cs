@@ -10,8 +10,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Aliquota.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class InvestmentController : ApiBaseController
     {
         [HttpGet]
@@ -23,7 +21,7 @@ namespace Aliquota.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get([FromRoute] decimal id)
         {
-            return Ok(await Mediator.Send(new GetInvestmentByIdQuery(id)));
+            return Ok(await Mediator.Send(new GetInvestmentByIdQuery(){Id = id}));
         }
 
         [HttpPost]
@@ -32,10 +30,10 @@ namespace Aliquota.Controllers
             return Ok(await Mediator.Send(command));
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("Withdraw/{id}")]
         public async Task<IActionResult> Withdraw(decimal id, [FromBody] DateTime withdraw)
         {
-            return Ok(await Mediator.Send(new CreateWithdrawInvestmentCommand { Id = id, WithdrawDate = withdraw }));
+            return Ok(await Mediator.Send(new CreateWithdrawInvestmentCommand {Id = id, WithdrawDate = withdraw}));
         }
     }
 }

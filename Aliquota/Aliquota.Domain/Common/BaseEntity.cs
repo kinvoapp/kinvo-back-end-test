@@ -1,6 +1,4 @@
-﻿
-
-namespace Aliquota.Domain.Common
+﻿namespace Aliquota.Domain.Common
 {
     public class BaseEntity
     {

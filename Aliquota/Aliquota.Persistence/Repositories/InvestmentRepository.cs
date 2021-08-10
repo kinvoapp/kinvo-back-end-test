@@ -2,15 +2,16 @@
 using System.Threading.Tasks;
 using Aliquota.Application.Interfaces.Repositories;
 using Aliquota.Domain.Entities;
-using Aliquota.Persistance.Contexts;
-using Aliquota.Persistance.Repositories.Base;
+using Aliquota.Persistence.Contexts;
+using Aliquota.Persistence.Repositories.Base;
 using Microsoft.EntityFrameworkCore;
 
-namespace Aliquota.Persistance.Repositories
+namespace Aliquota.Persistence.Repositories
 {
     public class InvestmentRepository : GenericRepositoryAsync<Investment>, IInvestmentRepository
     {
         private readonly DbSet<Investment> _investments;
+
         public InvestmentRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
             _investments = dbContext.Set<Investment>();

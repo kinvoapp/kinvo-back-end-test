@@ -11,26 +11,32 @@ namespace Aliquota.Domain.Entities
         /// Quantidade inicial investida
         /// </summary>
         public decimal Amount { get; set; }
+
         /// <summary>
         /// Porcentagem do Imposto de renda
         /// </summary>
         public decimal TaxPercentage { get; set; }
+
         /// <summary>
         /// Valor descontado pelo Imposto de Renda
         /// </summary>
         public decimal TaxAmount { get; set; }
+
         /// <summary>
         /// Tempo que ficou investido
         /// </summary>
         public decimal InvestedTime { get; set; }
+
         /// <summary>
         /// Lucro líquido
         /// </summary>
         public decimal LiquidIncome { get; set; }
+
         /// <summary>
         /// Lucro
         /// </summary>
         public decimal Profit { get; set; }
+
         /// <summary>
         /// Quando começou o investimento
         /// </summary>

@@ -12,12 +12,7 @@ namespace Aliquota.Application.Features.Investments.Queries
 {
     public class GetInvestmentByIdQuery : IRequest<InvestmentDTO>
     {
-        public GetInvestmentByIdQuery(decimal id)
-        {
-            Id = id;
-        }
-
-        public decimal Id { get; }
+        public decimal Id { get; set; }
 
         public class GetInvestmentByIdQueryHandler : IRequestHandler<GetInvestmentByIdQuery, InvestmentDTO>
         {

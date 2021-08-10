@@ -29,7 +29,8 @@ namespace Aliquota.Application.Features.FinancialProducts.Commands
                 _mapper = mapper;
             }
 
-            public async Task<decimal> Handle(CreateFinancialProductCommand request, CancellationToken cancellationToken)
+            public async Task<decimal> Handle(CreateFinancialProductCommand request,
+                CancellationToken cancellationToken)
             {
                 var fp = _mapper.Map<FinancialProduct>(request);
 

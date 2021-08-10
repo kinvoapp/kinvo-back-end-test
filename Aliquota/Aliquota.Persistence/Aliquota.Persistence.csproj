@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <AssemblyName>Aliquota.Persistence</AssemblyName>
+        <RootNamespace>Aliquota.Persistence</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Remove="Migrations\20210807222506_InitialCreate.cs"/>
+        <Compile Remove="Migrations\20210807222506_InitialCreate.Designer.cs"/>
+        <Compile Remove="Migrations\20210808002912_InitialCreate.cs"/>
+        <Compile Remove="Migrations\20210808002912_InitialCreate.Designer.cs"/>
+        <Compile Remove="Migrations\20210808003117_InitialCreate.cs"/>
+        <Compile Remove="Migrations\20210808003117_InitialCreate.Designer.cs"/>
+        <Compile Remove="Migrations\20210808003424_InitialCreate.cs"/>
+        <Compile Remove="Migrations\20210808003424_InitialCreate.Designer.cs"/>
+        <Compile Remove="Migrations\20210808172330_InitialCreate.cs"/>
+        <Compile Remove="Migrations\20210808172330_InitialCreate.Designer.cs"/>
+        <Compile Remove="Migrations\20210808183916_InitialCreate.cs"/>
+        <Compile Remove="Migrations\20210808183916_InitialCreate.Designer.cs"/>
+        <Compile Remove="Migrations\20210808184418_InitialCreate.cs"/>
+        <Compile Remove="Migrations\20210808184418_InitialCreate.Designer.cs"/>
+        <Compile Remove="Migrations\20210810005010_initial.cs"/>
+        <Compile Remove="Migrations\20210810005010_initial.Designer.cs"/>
+        <Compile Remove="Migrations\20210810010127_initial.cs"/>
+        <Compile Remove="Migrations\20210810010127_initial.Designer.cs"/>
+        <Compile Remove="Migrations\20210810013327_initial.cs"/>
+        <Compile Remove="Migrations\20210810013327_initial.Designer.cs"/>
+        <Compile Remove="Migrations\20210810205843_initial.cs"/>
+        <Compile Remove="Migrations\20210810205843_initial.Designer.cs"/>
+        <Compile Remove="Migrations\20210810205931_initial.cs"/>
+        <Compile Remove="Migrations\20210810205931_initial.Designer.cs"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Aliquota.Application\Aliquota.Application.csproj"/>
+        <ProjectReference Include="..\Aliquota.Domain\Aliquota.Domain.csproj"/>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.7"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.7"/>
+        <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.7"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Migrations\"/>
+    </ItemGroup>
+</Project>

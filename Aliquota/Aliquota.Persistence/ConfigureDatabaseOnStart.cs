@@ -1,9 +1,10 @@
-﻿using Aliquota.Persistance.Contexts;
+﻿using Aliquota.Persistence.Contexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Aliquota.Persistance
+
+namespace Aliquota.Persistence
 {
     public static class ConfigureDatabaseOnStart
     {
@@ -11,7 +12,6 @@ namespace Aliquota.Persistance
         {
             using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
-
                 var context = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
                 context.Database.EnsureDeleted();
                 context.Database.Migrate();

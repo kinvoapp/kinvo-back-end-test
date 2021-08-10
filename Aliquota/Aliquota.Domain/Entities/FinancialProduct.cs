@@ -8,7 +8,12 @@ namespace Aliquota.Domain.Entities
     /// </summary>
     public class FinancialProduct : BaseEntity
     {
-        public FinancialProduct(string name, decimal monthlyIncome, Profitability profitability, Deadline deadline, decimal minimalInvestedAmount)
+        public FinancialProduct()
+        {
+        }
+
+        public FinancialProduct(string name, decimal monthlyIncome, Profitability profitability, Deadline deadline,
+            decimal minimalInvestedAmount)
         {
             Name = name;
             MonthlyIncome = monthlyIncome;
@@ -26,7 +31,8 @@ namespace Aliquota.Domain.Entities
         /// Quantidade mínima a ser investida
         /// </summary>
         /// <remarks>
-        /// Você só conseque investir nesse fundo caso o valor seja maior ou igual ao <see cref="MinimalInvestedAmount"/>
+        /// Você só conseque investir nesse fundo caso o valor seja maior ou igual ao <see
+        /// cref="MinimalInvestedAmount" />
         /// </remarks>
         public decimal MinimalInvestedAmount { get; set; }
 
@@ -50,6 +56,5 @@ namespace Aliquota.Domain.Entities
         /// O investimento só pode ser retirado após esse tempo ter passado
         /// </remarks>
         public Deadline Deadline { get; set; }
-
     }
 }

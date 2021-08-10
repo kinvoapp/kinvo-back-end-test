@@ -10,6 +10,7 @@ namespace Aliquota.Application.Features.Investments.DTOs
     /// <inheritdoc cref="Investment"/>
     public class InvestmentDTO : IMapFrom<Investment>
     {
+        public decimal Id { get; set; }
         public decimal Amount { get; set; }
         public DateTime Start { get; set; }
         public DateTime? Withdraw { get; set; }

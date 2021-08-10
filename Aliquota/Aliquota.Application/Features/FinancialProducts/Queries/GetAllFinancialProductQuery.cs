@@ -10,7 +10,9 @@ namespace Aliquota.Application.Features.FinancialProducts.Queries
 {
     public class GetAllFinancialProductQuery : IRequest<IEnumerable<FinancialProductDTO>>
     {
-        public class GetAllFinancialProductQueryHandler : IRequestHandler<GetAllFinancialProductQuery, IEnumerable<FinancialProductDTO>>
+        public class
+            GetAllFinancialProductQueryHandler : IRequestHandler<GetAllFinancialProductQuery,
+                IEnumerable<FinancialProductDTO>>
         {
             private readonly IFinancialProductRepository _financialProduct;
             private readonly IMapper _mapper;
@@ -21,7 +23,8 @@ namespace Aliquota.Application.Features.FinancialProducts.Queries
                 _mapper = mapper;
             }
 
-            public async Task<IEnumerable<FinancialProductDTO>> Handle(GetAllFinancialProductQuery request, CancellationToken cancellationToken)
+            public async Task<IEnumerable<FinancialProductDTO>> Handle(GetAllFinancialProductQuery request,
+                CancellationToken cancellationToken)
             {
                 return _mapper.Map<IEnumerable<FinancialProductDTO>>(await _financialProduct.GetAllAsync());
             }

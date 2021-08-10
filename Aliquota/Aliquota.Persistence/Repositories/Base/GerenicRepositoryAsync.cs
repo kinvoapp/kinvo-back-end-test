@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Aliquota.Application.Interfaces;
-using Aliquota.Persistance.Contexts;
+using Aliquota.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
 
-namespace Aliquota.Persistance.Repositories.Base
+namespace Aliquota.Persistence.Repositories.Base
 {
     public class GenericRepositoryAsync<T> : IGenericRepositoryAsync<T> where T : class
     {
@@ -42,8 +42,8 @@ namespace Aliquota.Persistance.Repositories.Base
         public virtual async Task<IReadOnlyList<T>> GetAllAsync()
         {
             return await _dbContext
-                 .Set<T>()
-                 .ToListAsync();
+                .Set<T>()
+                .ToListAsync();
         }
     }
 }
