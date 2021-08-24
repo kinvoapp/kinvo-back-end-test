@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Aliquota.Domain.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Clientes";
+}
+
+<h1>Clientes</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Novo cliente</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cpf)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ClienteId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.ClienteId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.ClienteId">Deletar</a> |
+                <a asp-action="AplicacaoIndex" asp-controller="Aplicacoes" asp-route-clienteId="@item.ClienteId">Aplicações</a>             
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

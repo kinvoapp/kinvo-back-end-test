@@ -1,0 +1,41 @@
+﻿@model Aliquota.Domain.Models.Aplicacao
+
+@{
+    ViewData["Title"] = "Aplicação";
+}
+
+<h1>Aplicação</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TaxaLucro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TaxaLucro)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Periodicidade)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Periodicidade)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cliente)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cliente.Cpf)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.AplicacaoId">Edit</a> |
+    <a asp-action="AplicacaoIndex">Back to List</a>
+</div>

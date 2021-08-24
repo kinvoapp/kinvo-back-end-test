@@ -1,0 +1,68 @@
+﻿@model Aliquota.Domain.Models.Aplicacao
+
+@{
+    ViewData["Title"] = "Resgatar";
+}
+
+<h1>Resgatar</h1>
+
+<h3>Tem certeza que deseja resgatar?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Data)
+            @Html.ValidationMessageFor(model => model.Data, "", new { @class = "text-danger" })
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TaxaLucro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TaxaLucro)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Periodicidade)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Periodicidade)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cliente)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cliente.Cpf)
+        </dd>
+        <dt class="col-sm-2">
+            Valor do resgate
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Resgate.Valor)
+        </dd>
+        <dt class="col-sm-2">
+            Desconto IR
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Resgate.ValorIr)
+        </dd>
+    </dl>
+
+    <form asp-action="Resgatar">        
+        @Html.HiddenFor(model => model.AplicacaoId)
+        @Html.HiddenFor(model => model.Data)
+        @Html.HiddenFor(model => model.Valor)
+        @Html.HiddenFor(model => model.TaxaLucro)
+        @Html.HiddenFor(model => model.Periodicidade)
+        @Html.HiddenFor(model => model.Cliente.Cpf)
+        <input type="submit" value="Resgatar" asp-route-id="@Model.AplicacaoId" asp-route-valorResgate="@Model.Resgate.Valor" asp-route-valorIr="@Model.Resgate.ValorIr" class="btn btn-danger" /> |
+        <a asp-action="AplicacaoIndex">Back to List</a>
+    </form>
+</div>

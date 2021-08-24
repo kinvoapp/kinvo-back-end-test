@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Aliquota.Domain.Models.Aplicacao>
+
+@{
+    ViewData["Title"] = "Aplicações";
+}
+
+<h1>Aplicações</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Nova Aplicação</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaxaLucro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Periodicidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rendimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resgatado)
+            </th>
+            <th>
+                IR
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaxaLucro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Periodicidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rendimento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Resgatado)
+                </td>
+                <td>
+                    @if(item.Resgatado) {
+                    @Html.DisplayFor(modelItem => item.Resgate.ValorIr)
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cliente.Cpf)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.AplicacaoId">Details</a>
+                    <a asp-action="Resgatar" asp-route-id="@item.AplicacaoId">
+                        @if(!item.Resgatado) {
+                        <span>| Resgatar</span>
+                        }
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

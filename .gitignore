@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Aliquota.Domain/Aliquota.Domain/obj/Debug
+/Aliquota.Domain/Aliquota.Domain/obj
+/Aliquota.Domain/.vs/Aliquota.Domain
+/Aliquota.Domain/Aliquota.Domain/appsettings.Development.json
+/Aliquota.Domain/Aliquota.Domain/bin/Debug/netcoreapp5.0
