@@ -63,6 +63,6 @@
         @Html.HiddenFor(model => model.Periodicidade)
         @Html.HiddenFor(model => model.Cliente.Cpf)
         <input type="submit" value="Resgatar" asp-route-id="@Model.AplicacaoId" asp-route-valorResgate="@Model.Resgate.Valor" asp-route-valorIr="@Model.Resgate.ValorIr" class="btn btn-danger" /> |
-        <a asp-action="AplicacaoIndex">Back to List</a>
+        <a asp-action="AplicacaoIndex">Retornar</a>
     </form>
 </div>

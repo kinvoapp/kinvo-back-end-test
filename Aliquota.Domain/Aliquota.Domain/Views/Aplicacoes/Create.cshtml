@@ -22,7 +22,7 @@
                 <span asp-validation-for="Valor" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TaxaLucro" class="control-label"></label>
+                <label asp-for="TaxaLucro" class="control-label">Taxa de Lucro</label>
                 <input asp-for="TaxaLucro" class="form-control" />
                 <span asp-validation-for="TaxaLucro" class="text-danger"></span>
             </div>
@@ -34,18 +34,18 @@
                 }
             </div>
             <div class="form-group">
-                <label asp-for="ClienteId" class="control-label"></label>
+                <label asp-for="ClienteId" class="control-label">Cliente</label>
                 <select asp-for="ClienteId" class="form-control" asp-items="ViewBag.ClienteId" disabled></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary"/>
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="AplicacaoIndex">Back to List</a>
+    <a asp-action="AplicacaoIndex">Retornar</a>
 </div>
 
 @section Scripts {

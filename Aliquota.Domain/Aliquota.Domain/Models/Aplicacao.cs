@@ -45,13 +45,13 @@ namespace Aliquota.Domain.Models
             {
                 //Até 1 ano de aplicação: 22,5 % sobre o lucro
                 case 0:
-                    return Rendimento * 0.225;
+                    return Math.Round(Rendimento * 0.225, 2);
                 //De 1 a 2 anos de aplicação: 18,5 % sobre o lucro
                 case 1:
-                    return Rendimento * 0.185;
+                    return Math.Round(Rendimento * 0.185, 2);
                 //Acima de 2 anos de aplicação: 15 % sobre o lucro
                 default:
-                    return Rendimento * 0.15;
+                    return Math.Round(Rendimento * 0.15, 2);
             }
         }
     }

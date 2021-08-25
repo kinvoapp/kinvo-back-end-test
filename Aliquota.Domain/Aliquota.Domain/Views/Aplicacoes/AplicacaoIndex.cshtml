@@ -20,7 +20,7 @@
                 @Html.DisplayNameFor(model => model.Valor)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TaxaLucro)
+                Taxa de Lucro
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Periodicidade)
@@ -71,7 +71,7 @@
                     @Html.DisplayFor(modelItem => item.Cliente.Cpf)
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.AplicacaoId">Details</a>
+                    <a asp-action="Details" asp-route-id="@item.AplicacaoId">Detalhes</a>
                     <a asp-action="Resgatar" asp-route-id="@item.AplicacaoId">
                         @if(!item.Resgatado) {
                         <span>| Resgatar</span>
