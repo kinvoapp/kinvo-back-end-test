@@ -1,0 +1,36 @@
+﻿@model Aliquota.Domain.Models.Investment
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Investment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InvestorName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.InvestorName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DayOfInvestment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DayOfInvestment)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.InitialAmount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.InitialAmount)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
