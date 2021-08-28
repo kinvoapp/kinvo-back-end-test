@@ -77,7 +77,6 @@ namespace Aliquota.Domain.Controllers
             int? id;
             id = viewExample.ActualInvestment.Id;
             DateTime dateSimulate = viewExample.ActualDate;
-
             if (id == null)
             {
                 return RedirectToAction(nameof(Error), new { message = "This investment doesn't exist, please try again." });
@@ -99,7 +98,7 @@ namespace Aliquota.Domain.Controllers
             return View(viewModel);
         }
 
-       [HttpPost]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddInvestmentDB(Investment vest)
         {
