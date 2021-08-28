@@ -37,7 +37,7 @@ namespace Aliquota.Domain
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<AliquotaDomainContext>(options =>
-                    options.UseMySql(Configuration.GetConnectionString("AliquotaDomainModel"), builder =>
+                    options.UseMySql(Configuration.GetConnectionString("AliquotaDomainContext"), builder =>
                     builder.MigrationsAssembly("Aliquota.Domain")));
         }
 
@@ -62,7 +62,7 @@ namespace Aliquota.Domain
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Investments}/{action=Main}/{id?}");
             });
         }
     }
