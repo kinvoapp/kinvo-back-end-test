@@ -1,0 +1,43 @@
+﻿@model Aliquota.Domain.Models.Investment
+@{
+    Model.DayOfInvestment = DateTime.Now;
+}
+<br />
+<div>
+    <p> 
+        <a asp-action="Main">
+            <input type="submit" value="Voltar" class="btn btn-default" style="border-radius:3px" />
+        </a>
+    </p>
+</div>
+<br />
+<h3 style="text-align:center">Add investment</h3>
+<br />
+<div>
+    <form style="text-align:center" asp-action="AddInvestmentDB">
+        <div>
+            <label asp-for="InvestorName" style="font-size:medium;padding-right:20px">Name of the investor: </label>
+            <input asp-for="InvestorName" />
+            <span asp-validation-for="InvestorName" class="text-danger" style="padding-left:15px"></span>
+        </div>
+        <br />
+        <div>
+            <label asp-for="InitialAmount" style="font-size:medium;padding-right:20px">Initial amount: </label>
+            <input asp-for="InitialAmount" type="number" />
+            <span asp-validation-for="InitialAmount" class="text-danger" style="padding-left:15px"></span>
+        </div>
+        <br />
+        <div>
+            <label asp-for="DayOfInvestment" style="font-size:medium;padding-right:20px">Date of the investment simulation: </label>
+            <input asp-for="DayOfInvestment" type="date" />
+        </div>
+        <br />
+        <div>
+            <input type="submit" value="Add investment!" class="btn btn-success" style="border-radius:3px" />
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
