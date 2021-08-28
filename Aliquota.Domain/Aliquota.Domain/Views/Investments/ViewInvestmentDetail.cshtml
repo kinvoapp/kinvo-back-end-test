@@ -27,13 +27,13 @@
     Initial amount: $@Model.InitialAmount
 </p>
 <p>
-    Amount of years passed: @(monthsQuantity/12)
+    Amount of years passed until today: @(monthsQuantity/12)
 </p>
 <p>
-    Amount of months passed: @monthsQuantity
+    Amount of months passed until today: @monthsQuantity
 </p>
 <p>
-    Amount of days passed: @((DateTime.Now-@Model.DayOfInvestment).Days)
+    Amount of days passed until today: @((DateTime.Now-@Model.DayOfInvestment).Days)
 </p>
 <p>
     Total profit based 5%/month with compound interest: $@actualProfit.ToString("F2", System.Globalization.CultureInfo.InvariantCulture)
@@ -42,7 +42,7 @@
     Total amount: $@initialAmount + $@actualProfit.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) = $@((initialAmount+actualProfit).ToString("F2", System.Globalization.CultureInfo.InvariantCulture))
 </p>
 <br />
-<a asp-action="RemoveInvestment" asp-route-id="@Model.Id" class="btn btn-danger" style="border-radius:4px">Remove investment?</a>
+<a asp-action="RemoveInvestment" asp-route-id="@Model.Id" class="btn btn-danger" style="border-radius:4px">Simulate a date do remove?</a>
 <br />
 
 <p style="font-size:80%">
