@@ -107,7 +107,6 @@ namespace Aliquota.Domain.Controllers
             {
                 return RedirectToAction(nameof(Add));
             }
-            ViewData["ErrorAmount"] = null;
             await _aliquotaContext.AddAsync(vest);
             await _aliquotaContext.SaveChangesAsync();
             return RedirectToAction(nameof(ViewInvestments));

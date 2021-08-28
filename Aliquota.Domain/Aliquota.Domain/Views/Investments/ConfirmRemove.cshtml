@@ -1,13 +1,8 @@
 ﻿@model Aliquota.Domain.Models.ViewModelRemove
 @{
-    int monthsQuantity = ((Model.ActualDate.Month - @Model.ActualInvestment.DayOfInvestment.Month) + ((Model.ActualDate.Year - Model.ActualInvestment.DayOfInvestment.Year) * 12));
+    int monthsQuantity = Aliquota.Domain.Services.AliquotaCalc.MonthQuantity(Model.ActualDate, Model.ActualInvestment.DayOfInvestment);
     double initialAmount = Model.ActualInvestment.InitialAmount;
-    double actualProfit = initialAmount;
-    for (int i = 0; i < monthsQuantity; i++)
-    {
-        actualProfit = actualProfit + actualProfit * 0.05;
-    }
-    actualProfit -= initialAmount;
+    double actualProfit = Aliquota.Domain.Services.AliquotaCalc.CalculateProfit(monthsQuantity, initialAmount);
     int years = monthsQuantity / 12;
 }
 
@@ -21,19 +16,19 @@
 <br />
 <h1 style="text-align:center">REMOVE INVESTMENT</h1>
 
-@if (years <= 1)
+@if (years < 1)
 {
     <h3> In this simulation, has been passed @monthsQuantity months, so your profit will be: $@actualProfit.ToString("F2", System.Globalization.CultureInfo.InvariantCulture)</h3>
     <h3> You have simulated @years year with this investment, like said in the main page, it will be removed 22.5% of your profit (not the base amount) for this plataform and the amount that is left is totally yours</h3>
-    <h3> 22.5% of $@actualProfit.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) is $@((actualProfit*0.225).ToString("F2", System.Globalization.CultureInfo.InvariantCulture))</h3>
+    <h3> 22.5% of $@actualProfit.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) is $@(Aliquota.Domain.Services.AliquotaCalc.ProfitOneYearString(actualProfit))</h3>
     <h3> Your initial amount: $@initialAmount</h3>
     <h3> Your part: $@((actualProfit * 0.775 + initialAmount).ToString("F2", System.Globalization.CultureInfo.InvariantCulture))</h3>
 }
 else if (years <= 2)
 {
     <h3> In this simulation, has been passed @monthsQuantity months, so your profit will be: $@actualProfit.ToString("F2", System.Globalization.CultureInfo.InvariantCulture)</h3>
-    <h3> You have simulated @years years with this investment, like said in the main page, it will be removed 18.5% of your profit (not the base amount) for this plataform and the amount that is left is totally yours</h3>
-    <h3> 18.5% of $@actualProfit.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) is $@((actualProfit*0.185).ToString("F2", System.Globalization.CultureInfo.InvariantCulture))</h3>
+    <h3> You have simulated between 1 to 2 years with this investment, like said in the main page, it will be removed 18.5% of your profit (not the base amount) for this plataform and the amount that is left is totally yours</h3>
+    <h3> 18.5% of $@actualProfit.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) is $@(Aliquota.Domain.Services.AliquotaCalc.ProfitOneToTwoYearString(actualProfit))</h3>
     <h3> Your initial amount: $@initialAmount</h3>
     <h3> Your part: $@((actualProfit * 0.815 + initialAmount).ToString("F2", System.Globalization.CultureInfo.InvariantCulture))</h3>
 }
@@ -41,7 +36,7 @@ else
 {
     <h3> In this simulation, has been passed @monthsQuantity months, so your profit will be: $@actualProfit.ToString("F2", System.Globalization.CultureInfo.InvariantCulture)</h3>
     <h3>Y ou have simulated @years years with this investment, like said in the main page, it will be removed 15% of your profit (not the base amount) for this plataform and the amount that is left is totally yours</h3>
-    <h3> 15% of $@actualProfit.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) is $@((actualProfit*0.15).ToString("F2", System.Globalization.CultureInfo.InvariantCulture))</h3>
+    <h3> 15% of $@actualProfit.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) is $@(Aliquota.Domain.Services.AliquotaCalc.ProfitTwoYearString(actualProfit))</h3>
     <h3> Your initial amount: $@initialAmount</h3>
     <h3> Your part: $@((actualProfit * 0.85 + initialAmount).ToString("F2", System.Globalization.CultureInfo.InvariantCulture))</h3>
 }
