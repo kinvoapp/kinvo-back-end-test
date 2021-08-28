@@ -37,7 +37,7 @@ namespace Aliquota.Domain.Controllers
         {
             if (id == null)
             {
-                return RedirectToAction(nameof(Error), new { message = "Sorry, investment not found, please try again." });
+                return RedirectToAction(nameof(Error), new { message = "This investment doesn't exist, please try again." });
             }
             if (!(await _aliquotaContext.Investment.AnyAsync(x => x.Id == id)))
             {
@@ -55,7 +55,7 @@ namespace Aliquota.Domain.Controllers
         {
             if (id == null)
             {
-                return RedirectToAction(nameof(Error), new { message = "Sorry, investment not found, please try again." });
+                return RedirectToAction(nameof(Error), new { message = "This investment doesn't exist, please try again." });
             }
             if (!(await _aliquotaContext.Investment.AnyAsync(x => x.Id == id)))
             {
@@ -82,7 +82,15 @@ namespace Aliquota.Domain.Controllers
             await _aliquotaContext.SaveChangesAsync();
             return RedirectToAction(nameof(ViewInvestments));
         }
-
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DefinitiveRemove(int id)
+        {
+            var obj = _aliquotaContext.Investment.FirstOrDefault(x => x.Id == id);
+            _aliquotaContext.Investment.Remove(obj);
+            _aliquotaContext.SaveChanges();
+            return RedirectToAction(nameof(ViewInvestments));
+        }
 
         public IActionResult Error(string message)
         {
