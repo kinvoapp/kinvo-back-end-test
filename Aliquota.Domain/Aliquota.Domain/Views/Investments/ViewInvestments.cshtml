@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Aliquota.Domain.Models.Investment>
+
+@{
+}
+<div>
+    <p>
+        <a asp-action="Main">
+            <input type="submit" value="Voltar" class="btn btn-default" style="border-radius:3px" />
+        </a>
+    </p>
+</div>
+<br />
+<h3 style="text-align:center;font-size:250%">ALL INVESTMENTS</h3>
+<br />
+<br />
+@if (Model.Count() == 0)
+{
+    <div style="text-align:center;color:crimson">No investments found!</div>
+}
+@foreach (Investment invest in Model)
+{
+    
+        <label class="alert alert-dismissible alert-info" style="border-radius:5px;font-size:110%;margin-right:-142px;margin-left:160px">
+            Name of the investor: @invest.InvestorName
+            <br />
+            Day of investment: @invest.DayOfInvestment.ToShortDateString() &nbsp;&nbsp;&nbsp;
+            <a asp-action="ViewInvestmentDetail" asp-route-id="@invest.Id" class="btn btn-success" style="border-radius:4px"> Acess 🚀 </a>
+            <br />
+            Initial amount: $@invest.InitialAmount
+
+        </label>
+   
+
+}

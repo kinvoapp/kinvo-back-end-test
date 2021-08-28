@@ -1,0 +1,50 @@
+﻿@model Aliquota.Domain.Models.Investment
+
+@{
+    int monthsQuantity = ((DateTime.Now.Month - @Model.DayOfInvestment.Month) + ((DateTime.Now.Year - Model.DayOfInvestment.Year) * 12));
+    double initialAmount = Model.InitialAmount;
+    double actualProfit = initialAmount;
+    for(int i = 0; i< monthsQuantity; i++)
+    {
+        actualProfit = actualProfit + actualProfit * 0.05;
+    }
+    actualProfit -= initialAmount;
+}
+<div>
+    <p>
+        <a asp-action="ViewInvestments">
+            <input type="submit" value="Voltar" class="btn btn-default" style="border-radius:3px" />
+        </a>
+    </p>
+</div>
+<br />
+<h3 style="text-align:center">Investments of @Model.InvestorName</h3>
+<br />
+<p>
+    Day of investment: @Model.DayOfInvestment.ToShortDateString()
+</p>
+<p>
+    Initial amount: $@Model.InitialAmount
+</p>
+<p>
+    Amount of years passed: @(monthsQuantity/12)
+</p>
+<p>
+    Amount of months passed: @monthsQuantity
+</p>
+<p>
+    Amount of days passed: @((DateTime.Now-@Model.DayOfInvestment).Days)
+</p>
+<p>
+    Total profit based 5%/month with compound interest: $@actualProfit.ToString("F2", System.Globalization.CultureInfo.InvariantCulture)
+</p>
+<p>
+    Total amount: $@initialAmount + $@actualProfit.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) = $@((initialAmount+actualProfit).ToString("F2", System.Globalization.CultureInfo.InvariantCulture))
+</p>
+<br />
+<a asp-action="RemoveInvestment" asp-route-id="@Model.Id" class="btn btn-danger" style="border-radius:4px">Remove investment?</a>
+<br />
+
+<p style="font-size:80%">
+    Don't worry, if you are sure, we will calculated your and our profit in the next page
+</p>

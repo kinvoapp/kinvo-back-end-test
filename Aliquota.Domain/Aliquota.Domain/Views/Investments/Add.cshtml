@@ -2,6 +2,7 @@
 @{
     Model.DayOfInvestment = DateTime.Now;
 }
+
 <br />
 <div>
     <p> 
@@ -11,22 +12,23 @@
     </p>
 </div>
 <br />
-<h3 style="text-align:center">Add investment</h3>
+<h3 style="text-align:center">ADD INVESTMENT</h3>
+<br />
 <br />
 <div>
-    <form style="text-align:center" asp-action="AddInvestmentDB">
+    <form  asp-action="AddInvestmentDB">
         <div>
-            <label asp-for="InvestorName" style="font-size:medium;padding-right:20px">Name of the investor: </label>
+            <label asp-for="InvestorName" style="font-size:medium;padding-right:113px">Name of the investor: </label>
             <input asp-for="InvestorName" />
             <span asp-validation-for="InvestorName" class="text-danger" style="padding-left:15px"></span>
         </div>
-        <br />
+        
         <div>
-            <label asp-for="InitialAmount" style="font-size:medium;padding-right:20px">Initial amount: </label>
+            <label asp-for="InitialAmount" style="font-size:medium;padding-right:162px">Initial amount: </label>
             <input asp-for="InitialAmount" type="number" />
             <span asp-validation-for="InitialAmount" class="text-danger" style="padding-left:15px"></span>
         </div>
-        <br />
+        
         <div>
             <label asp-for="DayOfInvestment" style="font-size:medium;padding-right:20px">Date of the investment simulation: </label>
             <input asp-for="DayOfInvestment" type="date" />
