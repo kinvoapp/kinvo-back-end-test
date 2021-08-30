@@ -1,30 +1,11 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
-      "Aliquota.Domain.Entities/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "compile": {
-          "bin/placeholder/Aliquota.Domain.Entities.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Aliquota.Domain.Entities.dll": {}
-        }
-      }
-    }
+    ".NETCoreApp,Version=v3.1": {}
   },
-  "libraries": {
-    "Aliquota.Domain.Entities/1.0.0": {
-      "type": "project",
-      "path": "../Aliquota.Domain.Entities/Aliquota.Domain.Entities.csproj",
-      "msbuildProject": "../Aliquota.Domain.Entities/Aliquota.Domain.Entities.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
-      "Aliquota.Domain.Entities >= 1.0.0"
-    ]
+    ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
     "C:\\Users\\yan.paiva\\.nuget\\packages\\": {},
@@ -34,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yan.paiva\\Documents\\Prova Kinovo\\Aliquota\\Aliquota.Domain.Repository\\Aliquota.Domain.Repository.csproj",
-      "projectName": "Aliquota.Domain.Repository",
-      "projectPath": "C:\\Users\\yan.paiva\\Documents\\Prova Kinovo\\Aliquota\\Aliquota.Domain.Repository\\Aliquota.Domain.Repository.csproj",
+      "projectUniqueName": "C:\\Users\\yan.paiva\\Documents\\Prova Kinovo\\Aliquota\\Aliquota.Domin.Util\\Aliquota.Domin.Util.csproj",
+      "projectName": "Aliquota.Domin.Util",
+      "projectPath": "C:\\Users\\yan.paiva\\Documents\\Prova Kinovo\\Aliquota\\Aliquota.Domin.Util\\Aliquota.Domin.Util.csproj",
       "packagesPath": "C:\\Users\\yan.paiva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yan.paiva\\Documents\\Prova Kinovo\\Aliquota\\Aliquota.Domain.Repository\\obj\\",
+      "outputPath": "C:\\Users\\yan.paiva\\Documents\\Prova Kinovo\\Aliquota\\Aliquota.Domin.Util\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -59,11 +40,7 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {
-            "C:\\Users\\yan.paiva\\Documents\\Prova Kinovo\\Aliquota\\Aliquota.Domain.Entities\\Aliquota.Domain.Entities.csproj": {
-              "projectPath": "C:\\Users\\yan.paiva\\Documents\\Prova Kinovo\\Aliquota\\Aliquota.Domain.Entities\\Aliquota.Domain.Entities.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

@@ -12,5 +12,6 @@ namespace Aliquota.Domain.Entities.Entidades
         public virtual int IdTipoProduto { get; set; }
         public virtual string NomeTipoProduto { get; set; }
         public virtual decimal Rentabilidade { get; set; }
+        public ICollection<Produto> ProdutoLista { get; set; }
     }
 }

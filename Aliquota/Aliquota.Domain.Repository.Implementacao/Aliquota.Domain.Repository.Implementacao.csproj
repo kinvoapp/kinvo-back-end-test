@@ -4,4 +4,17 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.9" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aliquota.Domain.Entities\Aliquota.Domain.Entities.csproj" />
+    <ProjectReference Include="..\Aliquota.Domain.Repository\Aliquota.Domain.Repository.csproj" />
+    <ProjectReference Include="..\Aliquota.Domin.Util\Aliquota.Domin.Util.csproj" />
+  </ItemGroup>
+
 </Project>

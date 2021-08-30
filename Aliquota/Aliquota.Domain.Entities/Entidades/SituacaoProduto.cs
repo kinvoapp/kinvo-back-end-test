@@ -11,5 +11,7 @@ namespace Aliquota.Domain.Entities.Entidades
         public string Descricao { get { return @"Entidade responsavel por guardar a situação atual do produto. Exemplo 'Não movimentado', 'Movimentado','Bloqueado' e etc..."; } }
         public int IdSituacaoProduto { get; set; }
         public string Situacao { get; set; }
+
+        public ICollection<Produto> ProdutoLista { get; set; }
     }
 }
