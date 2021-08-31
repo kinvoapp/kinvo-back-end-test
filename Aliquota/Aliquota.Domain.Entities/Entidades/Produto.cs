@@ -15,7 +15,9 @@ namespace Aliquota.Domain.Entities.Entidades
         public virtual int IdCliente { get; set; }
         public virtual decimal? ValorInvestido { get; set; }
         public virtual decimal? ValorAtual { get; set; }
+        public virtual decimal? ValorResgatado { get; set; }
         public virtual DateTime DataInvestimento { get; set; }
+        public virtual DateTime? DataResgate { get; set; }
         public virtual TipoProduto TipoProduto { get; set; }
         public virtual SituacaoProduto SituacaoProduto { get; set; }
         public virtual Cliente Cliente { get; set; }

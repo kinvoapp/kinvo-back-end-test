@@ -4,4 +4,14 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="10.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aliquota.Domain.Business\Aliquota.Domain.Business.csproj" />
+    <ProjectReference Include="..\Aliquota.Domain.Repository.Implementacao\Aliquota.Domain.Repository.Implementacao.csproj" />
+    <ProjectReference Include="..\Aliquota.Domain.Repository\Aliquota.Domain.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
