@@ -72,15 +72,20 @@ namespace KinvoProject.Controllers
             string conta = HttpContext.Session.GetString(ContaController.SessionKeyConta);
             if (conta != null)
             {
+                bool Aux = false;
+                if (investir != null) 
+                { 
+
                 investir = investir.Replace("R$", "");
 
                 int produto = Convert.ToInt32(HttpContext.Session.GetInt32("Produto"));
                 i.Produto = _produtoDAO.BuscarPorId(produto);
                 i.Conta = _contaDAO.BuscarContaNmr(Convert.ToInt32(conta));
                 i.ValorInvestido = Convert.ToDecimal(investir);
-                bool Aux = _investimentoDAO.Cadastrar(i);
+                 Aux = _investimentoDAO.Cadastrar(i);
+                }
 
-                if(Aux == false)
+                if (Aux == false)
                 {
                     return View(i);
                 }

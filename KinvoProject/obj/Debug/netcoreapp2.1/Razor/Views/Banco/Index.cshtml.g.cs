@@ -114,7 +114,7 @@ using Domain.Aliquiota;
             WriteLiteral("\r\n    </tbody>\r\n</table>\r\n<div>\r\n    ");
             EndContext();
             BeginContext(630, 69, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "18f780ccc8e34674b44557bd7e982d44", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "10b12ae002e64eb28036b830ac824d9c", async() => {
                 BeginContext(680, 15, true);
                 WriteLiteral(" Cadastrar Novo");
                 EndContext();

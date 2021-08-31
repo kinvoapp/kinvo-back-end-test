@@ -22,7 +22,7 @@ namespace Repository.Aliquiota
             {
                 Aux_BL = false;
             }
-            if (i.ValorInvestido == null || i.ValorInvestido >= 0)
+            if ( i.ValorInvestido <= 0 | i.ValorInvestido == Decimal.MinValue)
             {
                 Aux_BL = false;
             }

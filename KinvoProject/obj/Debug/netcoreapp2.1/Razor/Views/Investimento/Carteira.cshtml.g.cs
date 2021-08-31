@@ -144,7 +144,7 @@ using Domain.Aliquiota;
             WriteLiteral("            <td>\r\n                ");
             EndContext();
             BeginContext(866, 231, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "02978ac081ef44989ad35b9b0d69d4e5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ec8bc934c81441df9208f5b775b727ac", async() => {
                 BeginContext(910, 38, true);
                 WriteLiteral("\r\n                    <input name=\"id\"");
                 EndContext();
@@ -192,7 +192,7 @@ WriteAttributeValue("", 956, item.IdInvestimento, 956, 20, false);
             WriteLiteral("             <td>\r\n                ");
             EndContext();
             BeginContext(1230, 230, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8dc4e096519244bbaa01208c9350cdd2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6848baba978b43038100724143ec7084", async() => {
                 BeginContext(1272, 38, true);
                 WriteLiteral("\r\n                    <input name=\"id\"");
                 EndContext();
