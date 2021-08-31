@@ -1,0 +1,34 @@
+﻿@model List<Conta>
+
+
+
+<h2>Lista Contas</h2>
+<table class="table table-hover table-striped"
+       style="margin-top:15px;margin-bottom:15px">
+    <thead>
+        <tr>
+            <th>Numero Conta</th>
+            <th>Nome Cliente</th>
+            <th>Banco</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Conta item in Model)
+        {
+
+            <tr>
+                <td>@item.NumeroConta</td>
+                <td>@item.Cliente.Nome</td>
+                <td>@item.Banco.Nome</td>
+            </tr>
+
+
+
+
+        }
+
+    </tbody>
+</table>
+<div>
+    <a asp-action="Cadastrar" class="btn btn-success"> Cadastrar Novo</a>
+</div>

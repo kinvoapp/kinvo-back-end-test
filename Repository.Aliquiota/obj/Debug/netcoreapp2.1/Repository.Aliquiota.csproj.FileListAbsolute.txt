@@ -1,0 +1,11 @@
+C:\Users\yanrd\source\repos\KinvoProject\Repository.Aliquiota\bin\Debug\netcoreapp2.1\Repository.Aliquiota.deps.json
+C:\Users\yanrd\source\repos\KinvoProject\Repository.Aliquiota\bin\Debug\netcoreapp2.1\Repository.Aliquiota.dll
+C:\Users\yanrd\source\repos\KinvoProject\Repository.Aliquiota\bin\Debug\netcoreapp2.1\Repository.Aliquiota.pdb
+C:\Users\yanrd\source\repos\KinvoProject\Repository.Aliquiota\bin\Debug\netcoreapp2.1\Domain.Aliquiota.dll
+C:\Users\yanrd\source\repos\KinvoProject\Repository.Aliquiota\bin\Debug\netcoreapp2.1\Domain.Aliquiota.pdb
+C:\Users\yanrd\source\repos\KinvoProject\Repository.Aliquiota\obj\Debug\netcoreapp2.1\Repository.Aliquiota.csprojAssemblyReference.cache
+C:\Users\yanrd\source\repos\KinvoProject\Repository.Aliquiota\obj\Debug\netcoreapp2.1\Repository.Aliquiota.AssemblyInfoInputs.cache
+C:\Users\yanrd\source\repos\KinvoProject\Repository.Aliquiota\obj\Debug\netcoreapp2.1\Repository.Aliquiota.AssemblyInfo.cs
+C:\Users\yanrd\source\repos\KinvoProject\Repository.Aliquiota\obj\Debug\netcoreapp2.1\Repository.Aliquiota.csproj.CopyComplete
+C:\Users\yanrd\source\repos\KinvoProject\Repository.Aliquiota\obj\Debug\netcoreapp2.1\Repository.Aliquiota.dll
+C:\Users\yanrd\source\repos\KinvoProject\Repository.Aliquiota\obj\Debug\netcoreapp2.1\Repository.Aliquiota.pdb

@@ -1,0 +1,45 @@
+﻿@model List<Produto>
+
+@{
+
+}
+
+<div align="center"><h2>Produtos</h2></div>
+<table class="table table-hover table-striped"
+       style="margin-top:15px;margin-bottom:15px">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Rendimento</th>
+            <th>Banco</th>
+
+            <th></th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Produto item in Model)
+        {
+
+            <tr>
+                <td>@item.Nome</td>
+                <td>@item.Descricao</td>
+
+                <td>@item.Rendimento</td>
+                <td>@item.Banco.Nome</td>
+
+                <td>
+                    <form asp-action="Investir">
+                        <input name="produto" value="@item.IdProduto" hidden />
+                        
+                        <input type="submit" class="btn btn-info" value="Investir" />
+                    </form>
+                </td>             
+            </tr>
+
+        }
+
+    </tbody>
+</table>

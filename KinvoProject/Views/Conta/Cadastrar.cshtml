@@ -1,0 +1,62 @@
+﻿@model Conta
+
+
+@{
+
+    ViewData["Title"] = "Cadastrar Conta";
+
+
+}
+<script src="~/lib/jquery/dist/jquery.maskedinput.js" type="text/javascript"></script>
+
+<center><h2>Cadastrar Conta</h2></center>
+<br />
+<br />
+<form asp-action="Cadastrar" method="post"
+      enctype="multipart/form-data">
+    <fieldset>
+        <legend>Nome Cliente</legend>
+        <div asp-validation-summary="ModelOnly" class="text-primary"></div>
+
+        <div class="form-group" id="Nome">
+            <label asp-for="Cliente.Nome"></label>
+            <input type="text" class="form-control" asp-for="Cliente.Nome" />
+            <span asp-validation-for="Cliente.Nome" class="text-primary"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Cliente.Cpf"></label>           
+           <input type="number" class="form-control" asp-for="Cliente.Cpf" id="cpf" />
+            <span asp-validation-for="Cliente.Cpf" class="text-primary"></span>
+        </div>
+        <div class="form-group" id="NumeroConta">
+            <label asp-for="NumeroConta"></label>
+            <input type="number" min="0" maxlength="11" class="form-control" asp-for="NumeroConta" />
+            <span asp-validation-for="NumeroConta" class="text-primary"></span>
+        </div>
+
+        <div class="form-group" id="Senha">
+            <label asp-for="Senha"></label>
+            <input type="password" class="form-control" asp-for="Senha" />
+            <span asp-validation-for="Senha" class="text-primary"></span>
+        </div>
+
+        <div class="form-group" id="Banco">
+            <label>Banco</label>
+            <select asp-items="@ViewBag.Banco" class="form-control" name="drpBanco">
+                <option> -- SELECIONE -- </option>
+            </select>
+            <p></p>
+        </div>
+
+
+
+
+        <div>
+            <input type="submit" class="btn btn-success" value="Cadastrar" />
+            <br><br />
+        </div>
+
+    </fieldset>
+</form>
+

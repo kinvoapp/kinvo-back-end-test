@@ -1,0 +1,5 @@
+C:\Users\yanrd\source\repos\KinvoProject\Repository.Aliquiota\bin\Debug\netstandard2.0\Repository.Aliquiota.deps.json
+C:\Users\yanrd\source\repos\KinvoProject\Repository.Aliquiota\bin\Debug\netstandard2.0\Repository.Aliquiota.dll
+C:\Users\yanrd\source\repos\KinvoProject\Repository.Aliquiota\obj\Debug\netstandard2.0\Repository.Aliquiota.AssemblyInfoInputs.cache
+C:\Users\yanrd\source\repos\KinvoProject\Repository.Aliquiota\obj\Debug\netstandard2.0\Repository.Aliquiota.AssemblyInfo.cs
+C:\Users\yanrd\source\repos\KinvoProject\Repository.Aliquiota\obj\Debug\netstandard2.0\Repository.Aliquiota.csprojAssemblyReference.cache

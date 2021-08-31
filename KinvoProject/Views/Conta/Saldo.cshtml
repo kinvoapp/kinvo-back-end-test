@@ -1,0 +1,39 @@
+﻿@model Conta
+
+
+@{
+
+    ViewData["Title"] = "Cadastrar Conta";
+
+
+}
+
+<br />
+<br />
+
+
+
+
+
+
+<table class="table table-hover table-striped" style="margin-top:15px;margin-bottom:15px">
+    <thead>
+        <tr>
+            <th>Numero Conta</th>
+            <th>Nome Cliente</th>
+            <th>Banco</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        
+        
+
+            <tr>
+                <td> <input type="text" class="form-control" asp-for="Cliente.Nome" disabled /> </td>
+                <td <input type="text" class="form-control" asp-for="NumeroConta" disabled /></td>
+                <td ><input type="text" class="form-control" asp-for="Saldo" disabled /></td>
+            </tr>       
+    </tbody>
+
+</table>

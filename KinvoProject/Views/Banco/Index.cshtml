@@ -1,0 +1,41 @@
+﻿@model List<Banco>
+
+
+
+
+<div align="center"><h2>Bancos</h2></div>
+<table class="table table-hover table-striped"
+       style="margin-top:15px;margin-bottom:15px">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Numero</th>           
+            <th></th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Banco item in Model)
+        {
+
+            <tr>
+                <td>@item.Nome</td>
+                <td>@item.Numero</td>
+                
+
+              
+               
+            </tr>
+
+
+
+
+        }
+
+    </tbody>
+</table>
+<div>
+    <a asp-action="Cadastrar" class="btn btn-success"> Cadastrar Novo</a>
+</div>
+

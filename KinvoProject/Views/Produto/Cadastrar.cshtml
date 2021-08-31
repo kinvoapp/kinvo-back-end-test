@@ -1,0 +1,122 @@
+﻿@model Produto
+
+
+@{
+
+    ViewData["Title"] = "Cadastrar Produto";
+
+
+}
+
+
+
+<script src="~/lib/jquery/dist/jquery.maskedinput.js" type="text/javascript"></script>
+
+
+
+
+
+<center><h2>Cadastrar Produto</h2></center>
+<br />
+<br />
+<form class="row g-3" asp-action="Cadastrar" method="post"
+      enctype="multipart/form-data">
+    <fieldset>
+
+        <div asp-validation-summary="ModelOnly" class="text-primary"></div>
+
+        <div class="form-group" id="Nome">
+            <label class="form-label">Nome Produto</label>
+            <input type="text" class="form-control" asp-for="Nome" />
+            <span asp-validation-for="Nome" class="text-primary"></span>
+        </div>
+
+        <div class="form-group" id="Descricao">
+            <label class="form-label">Descrição Produto</label>
+            <input type="text" class="form-control" asp-for="Descricao" />
+            <span asp-validation-for="Descricao" class="text-primary"></span>
+        </div>
+
+        <div class="form-group" id="Banco">
+            <label class="form-label">Banco</label>
+            <select asp-items="@ViewBag.Banco" class="form-control" name="drpBanco">
+                <option> -- SELECIONE -- </option>
+            </select>
+            <p></p>
+        </div>
+
+        <div class="form-group" id="">
+            <label class="form-label">Rendimento (00,00%) </label>
+            <input type="text" class="form-control" name="rend" id="rend"/>
+            <span hidden> <input type="number" class="form-control" asp-for="Rendimento" name="rend2" step="00.01"/></span>
+            <span asp-validation-for="Rendimento" class="text-primary"></span>
+        </div>
+
+        <div class="form-group" id="">
+            <label class="form-label">Tempo para Render em Dias </label>
+            <input type="number" class="form-control" asp-for="Tempo_Rendimento_Dias"  />
+            <span asp-validation-for="Tempo_Rendimento_Dias" class="text-primary"></span>
+        </div>
+
+        <div><h4>Regras do Imposto de Renda</h4></div>
+
+        <div class="form-group" id="">
+            <label>Até quando cobrar a taxa Inicial em anos: ex (2) </label>
+            <input type="number" class="form-control" asp-for="Ano_Menor_IR" id="AnoMenor" />
+            <span asp-validation-for="Ano_Menor_IR" class="text-primary"></span>
+        </div>
+        <div class="form-group" id="">
+            <label>Apartir de Quando cobrar a taxa final em anos: ex(7) </label>
+            <input type="number" class="form-control" asp-for="Ano_Maior_IR" id="AnoMaior" />
+            <span asp-validation-for="Ano_Maior_IR" class="text-primary"></span>
+        </div>
+
+        <div class="form-group" id="">
+            <label>Taxa Inicial (00,00%)</label>
+            <input type="text" class="form-control" name="txaI" id="txaI"/>
+            <span hidden> <input type="number" class="form-control" asp-for="Taxa_Menor_IR" name="txaI2" step="00.01" /></span>
+            <span asp-validation-for="Taxa_Menor_IR" class="text-primary"></span>
+        </div>
+
+        <div class="form-group" id="">
+            <label>Taxa Média (00,00%)</label>
+            <input type="text" class="form-control"  name="txaM"  id="txaM"/>
+            <span hidden> <input type="number" class="form-control" asp-for="Taxa_Entre_IR" name="txaM2" step="00.01"/></span>
+            <span asp-validation-for="Taxa_Entre_IR" class="text-primary"></span>
+        </div>
+
+        <div class="form-group" id="">
+            <label>Taxa Final (00,00%)</label>
+            <input type="text" class="form-control"  name="txaF"  id="txaF" onblur="Formatar()" />
+            <span hidden><input type="number" class="form-control" asp-for="Taxa_Maior_IR" name="txaF2" step="00.01"/></span>
+            <span asp-validation-for="Taxa_Maior_IR" class="text-primary"></span>
+        </div>
+
+        <div>
+            <input type="submit" class="btn btn-success" value="Cadastrar" onclick="Formatar()" />
+            <br><br />
+        </div>
+
+    </fieldset>
+</form>
+
+<script type="text/javascript">
+    function Formatar()
+    {
+       document.getElementById('txaF2').value = parseFloat(document.getElementById('txaF').value.replace('%'))
+        document.getElementById('txaM2').value = parseFloat(document.getElementById('txaM').value.replace('%'))
+        document.getElementById('txaI2').value = parseFloat(document.getElementById('txaI').value.replace('%'))
+       document.getElementById('rend2').value = document.getElementById('rend').value.replace('%')
+         
+        
+      
+    }
+
+    $(document).ready(function () {
+        $("#txaF").mask("99,99%");
+        $("#txaM").mask("99,99%");
+        $("#txaI").mask("99,99%");
+        $("#rend").mask("99,99%");        
+    });
+
+</script>

@@ -1,0 +1,8 @@
+C:\Users\yanrd\source\repos\KinvoProject\Domain.Aliquiota\bin\Debug\netstandard2.0\Domain.Aliquiota.deps.json
+C:\Users\yanrd\source\repos\KinvoProject\Domain.Aliquiota\bin\Debug\netstandard2.0\Domain.Aliquiota.dll
+C:\Users\yanrd\source\repos\KinvoProject\Domain.Aliquiota\obj\Debug\netstandard2.0\Domain.Aliquiota.csprojAssemblyReference.cache
+C:\Users\yanrd\source\repos\KinvoProject\Domain.Aliquiota\obj\Debug\netstandard2.0\Domain.Aliquiota.AssemblyInfoInputs.cache
+C:\Users\yanrd\source\repos\KinvoProject\Domain.Aliquiota\obj\Debug\netstandard2.0\Domain.Aliquiota.AssemblyInfo.cs
+C:\Users\yanrd\source\repos\KinvoProject\Domain.Aliquiota\bin\Debug\netstandard2.0\Domain.Aliquiota.pdb
+C:\Users\yanrd\source\repos\KinvoProject\Domain.Aliquiota\obj\Debug\netstandard2.0\Domain.Aliquiota.dll
+C:\Users\yanrd\source\repos\KinvoProject\Domain.Aliquiota\obj\Debug\netstandard2.0\Domain.Aliquiota.pdb

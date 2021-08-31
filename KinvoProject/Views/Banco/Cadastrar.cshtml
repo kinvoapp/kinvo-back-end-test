@@ -1,0 +1,37 @@
+﻿@model Banco
+
+
+@{
+
+    ViewData["Title"] = "Banco";
+
+
+}
+<center><h2>Cadastrar Banco</h2></center>
+<br />
+<br />
+<form asp-action="Cadastrar" method="post"
+      enctype="multipart/form-data">
+    <fieldset>
+        <legend>Banco</legend>
+        <div asp-validation-summary="ModelOnly" class="text-primary"></div>
+
+        <div class="form-group" id="Nome">
+            <label asp-for="Nome"></label>
+            <input type="text" class="form-control" asp-for="Nome" />
+            <span asp-validation-for="Nome" class="text-primary"></span>
+        </div>
+
+        <div class="form-group" id="Numero">
+            <label asp-for="Numero"></label>
+            <input type="number" class="form-control" onblur="verificaNmr()" asp-for="Numero" />
+            <span asp-validation-for="Numero" class="text-primary"></span>
+        </div>
+
+        <div>
+            <input type="submit" class="btn btn-success" value="Cadastrar" />
+            <br><br />
+        </div>
+
+    </fieldset>
+</form>

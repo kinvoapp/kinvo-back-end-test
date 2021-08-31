@@ -1,0 +1,32 @@
+﻿@model List<Investimento>
+
+<h2>Lista Contas</h2>
+<table class="table table-hover table-striped"
+       style="margin-top:15px;margin-bottom:15px">
+    <thead>
+        <tr>
+            <th>Produto</th>
+            <th>Taxa de Rendimento</th>
+            <th>Valor Investido</th>
+            <th>Data Investimento</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Investimento item in Model)
+        {
+
+        <tr>
+            <td>@item.Produto.Nome</td>
+            <td>@item.Produto.Rendimento</td>
+            <td>@item.ValorInvestido</td>
+            <td>@item.DataAplicacao</td>
+        </tr>
+
+
+
+
+        }
+
+    </tbody>
+</table>
