@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aliquota.Web", "Aliquota.Web\Aliquota.Web.csproj", "{0ECCD3E0-1032-42F5-8C36-336B64F9BFC4}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aliquota.Domain.Business", "Aliquota.Domain.Business\Aliquota.Domain.Business.csproj", "{AE7D7660-CE0C-450C-B631-3E645F584743}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aliquota.Domain.Business.Implementacao", "Aliquota.Domain.Business.Implementacao\Aliquota.Domain.Business.Implementacao.csproj", "{B959BB54-D70A-457B-AFED-4E007355149E}"
@@ -19,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aliquota.Domain.Test", "Ali
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aliquota.CrossCutting", "Aliquota.CrossCutting\Aliquota.CrossCutting.csproj", "{6C11AAE5-51DA-4952-A8E0-64A46A8D1311}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliquota.Domin.Util", "Aliquota.Domin.Util\Aliquota.Domin.Util.csproj", "{E7E55727-6617-4557-9C9E-AF406957BFA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aliquota.Domin.Util", "Aliquota.Domin.Util\Aliquota.Domin.Util.csproj", "{E7E55727-6617-4557-9C9E-AF406957BFA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliquota.Web", "Aliquota.Web\Aliquota.Web.csproj", "{8E8D288D-9D27-469A-90F0-8DDB96984CE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,10 +27,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0ECCD3E0-1032-42F5-8C36-336B64F9BFC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0ECCD3E0-1032-42F5-8C36-336B64F9BFC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0ECCD3E0-1032-42F5-8C36-336B64F9BFC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0ECCD3E0-1032-42F5-8C36-336B64F9BFC4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AE7D7660-CE0C-450C-B631-3E645F584743}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AE7D7660-CE0C-450C-B631-3E645F584743}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE7D7660-CE0C-450C-B631-3E645F584743}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,6 +59,10 @@ Global
 		{E7E55727-6617-4557-9C9E-AF406957BFA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7E55727-6617-4557-9C9E-AF406957BFA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7E55727-6617-4557-9C9E-AF406957BFA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E8D288D-9D27-469A-90F0-8DDB96984CE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E8D288D-9D27-469A-90F0-8DDB96984CE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E8D288D-9D27-469A-90F0-8DDB96984CE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E8D288D-9D27-469A-90F0-8DDB96984CE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

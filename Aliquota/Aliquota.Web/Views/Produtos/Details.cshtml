@@ -1,0 +1,55 @@
+﻿@model Aliquota.Domain.Entities.DTO.ProdutoDto
+
+<div>
+    <h4>Produto</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorInvestido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ValorInvestido)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorAtual)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ValorAtual)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorResgatado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ValorResgatado)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataInvestimento)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataInvestimento)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataResgate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataResgate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SituacaoAtual.Situacao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SituacaoAtual.Situacao)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Proprietario.NomeCliente)
+            3333,,
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Proprietario.NomeCliente)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
