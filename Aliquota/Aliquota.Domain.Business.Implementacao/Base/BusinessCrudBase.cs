@@ -1,13 +1,8 @@
 ﻿using Aliquota.Domain.Business.IBusiness;
-using Aliquota.Domain.Business.Validation;
 using Aliquota.Domain.Entities.Interface;
-using Aliquota.Domain.Repository.Implementacao.Context;
 using Aliquota.Domain.Repository.IRepositorios;
-using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Aliquota.Domain.Business.Implementacao.Base
@@ -15,7 +10,6 @@ namespace Aliquota.Domain.Business.Implementacao.Base
     public abstract class BusinessCrudBase<T> : IBusinessCrudBase<T>, IDisposable where T : class, IEntidade<int>
     {
 
-        public virtual IValidation<T> Validator { get; set; }
         public virtual IBaseRepositorio<T> _repository { get; set; }
         private bool _disposed = false;
 
@@ -26,57 +20,29 @@ namespace Aliquota.Domain.Business.Implementacao.Base
         public Task Add(T Entidade)
         {
             Task r;
-            if (Validator.GetRules(ValidationEnum.Insercao).Count() > 0)
-            {
-                var testaEntidade = Validator.Validate(Entidade, ValidationEnum.Insercao);
-                if (testaEntidade.IsValid)
-                {
-                    r = _repository.Add(Entidade);
-                }
-                else
-                {
-                    throw new Exception(testaEntidade.ToString());
-                }
-            }
-            else
-            {
-                r = _repository.Add(Entidade);
-            }
+            
+            r = _repository.Add(Entidade);
+            
             return r;
         }
 
         public Task AddAll(IEnumerable<T> items)
         {
             Task r;
-            if (Validator.GetRules(ValidationEnum.Insercao).Any())
-            {
-                var todosValidos = true;
-                foreach (var e in items)
-                {
-                    var testaEntidade = Validator.Validate(e,ValidationEnum.Insercao);
-                    if (!testaEntidade.IsValid)
-                    {
-                        todosValidos = false;
-                        break;
-                    }
-                }
-                if (todosValidos)
-                {
-                    r = _repository.AddAll(items);
-                }
-                else
-                {
-                    r = Task.CompletedTask;
-                }
-            }
-            else
-            {
-                r = _repository.AddAll(items);
-            }
+            r = _repository.AddAll(items);
             return r;
         }
+        public async Task<List<T>> GetAll()
+        {
+            return await _repository.AllAssync();
+        }
 
-        public Task DeleteById(object id)
+        public Task<T> GetById(int id)
+        {
+            return _repository.GetById(id);
+        }
+
+        public Task DeleteById(int id)
         {
             var Entidade = _repository.GetById(id).Result;
             return Delete(Entidade);
@@ -85,46 +51,14 @@ namespace Aliquota.Domain.Business.Implementacao.Base
         public Task Delete(T Entidade)
         {
             Task r;
-            if (Validator.GetRules(ValidationEnum.Delecao).Count() > 0)
-            {
-                var testaEntidade = Validator.Validate(Entidade, ValidationEnum.Delecao);
-                if (testaEntidade.IsValid)
-                {
-                    r = _repository.Delete(Entidade);
-                }
-                else
-                {
-
-                    r = Task.CompletedTask;
-                }
-            }
-            else
-            {
-                r = _repository.Delete(Entidade);
-            }
+            r = _repository.Delete(Entidade);
             return r;
         }
 
         public Task Update(T Entidade)
         {
             Task r;
-            if (Validator.GetRules(ValidationEnum.Atualizacao).Count() > 0)
-            {
-                var testaEntidade = Validator.Validate(Entidade, ValidationEnum.Atualizacao);
-                if (testaEntidade.IsValid)
-                {
-                    r = _repository.Update(Entidade);
-                }
-                else
-                {
-
-                    r = Task.CompletedTask;
-                }
-            }
-            else
-            {
-                r = _repository.Update(Entidade);
-            }
+            r = _repository.Update(Entidade);
             return r;
         }
         public void Dispose()
@@ -146,5 +80,6 @@ namespace Aliquota.Domain.Business.Implementacao.Base
             }
             _disposed = true;
         }
+
     }
 }
