@@ -1,0 +1,11 @@
+.vs/
+AliquotaImpostoRenda.Aplicacao/bin/
+AliquotaImpostoRenda.Aplicacao/obj/
+AliquotaImpostoRenda.Blazor/bin/
+AliquotaImpostoRenda.Blazor/obj/
+AliquotaImpostoRenda.Dados/bin/
+AliquotaImpostoRenda.Dados/obj/
+AliquotaImpostoRenda.Dominio/bin/
+AliquotaImpostoRenda.Dominio/obj/
+AliquotaImpostoRenda.Teste/bin/
+AliquotaImpostoRenda.Teste/obj/

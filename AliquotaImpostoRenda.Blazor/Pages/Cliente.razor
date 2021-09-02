@@ -1,0 +1,51 @@
+﻿@page "/cliente"
+
+@using AliquotaImpostoRenda.Dominio.DTO
+@using AliquotaImpostoRenda.Aplicacao.Interface
+
+@inject IClienteAplicacao clienteAplicacao
+
+<div class="row" style="margin-bottom: 20px; border-bottom: 2px solid #808080; padding-bottom: 10px;">
+    <a class="btn btn-primary" href="cadastrocliente" role="button">Cadastro</a>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Data</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (clientes != null && clientes.Any())
+                {
+                    foreach (var c in clientes)
+                    {
+                        <tr>
+                            <th scope="row">@c.Nome</th>
+                            <td>@c.Createad</td>
+                            <td></td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@code {
+    List<ClienteDTO> clientes;
+    protected override void OnInitialized()
+    {
+        BuscarClientes();
+    }
+
+    public async Task BuscarClientes()
+    {
+        base.StateHasChanged();
+        clientes = await clienteAplicacao.ListarClientes();
+        base.StateHasChanged();
+    }
+}

@@ -1,0 +1,58 @@
+﻿@page "/cadastrocliente"
+
+@using AliquotaImpostoRenda.Aplicacao.Interface;
+@inject IJSRuntime jsRuntime
+@inject IMatToaster Toaster
+@inject NavigationManager NavManager
+@inject IClienteAplicacao clienteAplicacao
+
+<div class="bd-example">
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" @onfocus="RemoveMensagem" @bind-value="NomeCliente" id="nome">
+    </div>
+    @if (snackBar3IsOpen)
+    {
+        <h5 class="text-danger">@snackBarText</h5>
+    }
+    <button @onclick="SalvarCliente" class="btn btn-success">Salvar</button>
+</div>
+
+@code {
+    bool snackBar3IsOpen = false;
+    string snackBarText;
+    string NomeCliente;
+    bool StatusBtnPrincipal = false;
+
+    public async Task SalvarCliente()
+    {
+        try
+        {
+            if (!string.IsNullOrEmpty(NomeCliente))
+            {
+                clienteAplicacao.GravarCliente(NomeCliente);
+                NavManager.NavigateTo("/cliente");
+            }
+            else
+            {
+                SnackMessage("Nome é obrigatório");
+            }
+        }
+        catch (Exception ex)
+        {
+            SnackMessage(ex.Message);
+        }
+    }
+
+    private void RemoveMensagem()
+    {
+        snackBar3IsOpen = false;
+        snackBarText = "";
+    }
+
+    private void SnackMessage(string pMsg)
+    {
+        snackBar3IsOpen = true;
+        snackBarText = pMsg;
+    }
+}

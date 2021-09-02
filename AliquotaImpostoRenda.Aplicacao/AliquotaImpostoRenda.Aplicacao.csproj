@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AliquotaImpostoRenda.Dados\AliquotaImpostoRenda.Dados.csproj" />
+    <ProjectReference Include="..\AliquotaImpostoRenda.Dominio\AliquotaImpostoRenda.Dominio.csproj" />
+  </ItemGroup>
+
+</Project>

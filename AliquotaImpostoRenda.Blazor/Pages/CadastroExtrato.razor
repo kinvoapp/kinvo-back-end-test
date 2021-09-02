@@ -1,0 +1,125 @@
+﻿@page "/cadastroextrato"
+
+@using AliquotaImpostoRenda.Dominio.DTO;
+@using AliquotaImpostoRenda.Aplicacao.Interface;
+@using AliquotaImpostoRenda.Dominio.Enum;
+
+@inject NavigationManager NavManager
+@inject IJSRuntime jsRuntime
+@inject IExtratoAplicacao extratoAplicacao
+
+<div class="bd-example">
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" @bind-value="extrato.Cliente.Nome" id="nome">
+    </div>
+    <div class="mb-3">
+        <label for="nome" class="form-label">Valor Resgatado</label>
+        <input type="text" class="form-control" @bind-value="extrato.ValorResgatado" id="valorAplicacao">
+    </div>
+    <div class="mb-3">
+        <label for="nome" class="form-label">Data Aplicação</label>
+        <input type="date" class="form-control" @bind-value="extrato.DataAplicacao" id="dataAplicacao">
+    </div>
+    <div class="mb-3">
+        <label for="nome" class="form-label">Tipo Entrada Lucro</label>
+        <select class="form-control" @bind="tipoEntradaLucro" id="tipoEntradaLucro">
+            <option value="0">Selecione Tipo Entrada Lucro</option>
+            <option value="1">Porcentagem</option>
+            <option value="2">Valor</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="nome" class="form-label">Lucro</label>
+        <input type="text" class="form-control" @bind-value="extrato.PorcentagemLucro" id="porcentagemLucro">
+    </div>
+    <div class="mb-3">
+        <label for="nome" class="form-label">Data Resgate</label>
+        <input type="date" @bind-value="@extrato.DataResgate" class="form-control" id="dataResgate">
+    </div>
+    <button @onclick="CalcularTotal" class="btn btn-success btn-sm">Calcular</button>
+    <div class="mb-3">
+        <label for="nome" class="form-label">Porcentagem Pagamento</label>
+        <div style="margin-bottom: 20px;">
+            <span style="">@string.Format("{0:0.00}", extrato.PorcentagemPagamento) %</span>
+        </div>
+        @if (mostrarValor)
+        {
+            <span>Valor a ser Pago = R$ @string.Format("{0:0.00}", extrato.ValorParaPagarImposto)</span>
+        }
+        <input type="hidden" class="form-control" @bind-value="extrato.PorcentagemPagamento" id="porcentagemPagamento">
+    </div>
+    @if (snackBar3IsOpen)
+    {
+        <h5 class="text-danger">@snackBarText</h5>
+    }
+    @if (habilitarBtnSalvar)
+    {
+        <button disabled="disabled" class="btn btn-success disabled">Salvar</button>
+    }
+    else
+    {
+        <button @onclick="SalvarExtrato" class="btn btn-success">Salvar</button>
+    }
+
+</div>
+
+@code {
+    bool snackBar3IsOpen = false;
+    string snackBarText;
+    ExtratoDTO extrato = new ExtratoDTO();
+    int tipoEntradaLucro;
+    bool habilitarBtnSalvar = true;
+    bool mostrarValor = false;
+
+    protected override void OnInitialized()
+    {
+        extrato.DataAplicacao = DateTime.Now;
+        extrato.DataResgate = DateTime.Now;
+    }
+
+    private void CalcularTotal()
+    {
+        if (tipoEntradaLucro != 0 && extrato.ValorResgatado > 0.0)
+        {
+            extrato.TipoEntradaLucro = (eTipoEntradaLucro)tipoEntradaLucro;
+            var AnosDiferenca = extratoAplicacao.DiferencaData(extrato.DataAplicacao, extrato.DataResgate);
+            extrato.PorcentagemPagamento = extratoAplicacao.VerificarPorcentagem(AnosDiferenca);
+            try
+            {
+                extrato.ValorParaPagarImposto = extratoAplicacao.CalcularValorParaPagar(extrato);
+            }
+            catch (Exception ex)
+            {
+                SnackMessage(ex.Message);
+            }
+        }
+        mostrarValor = true;
+        habilitarBtnSalvar = false;
+    }
+
+    public async Task SalvarExtrato()   
+    {
+        try
+        {
+            extratoAplicacao.GravarExtrato(extrato);
+            NavManager.NavigateTo("/listaraplicacao");
+        }
+        catch (Exception ex)    
+        {
+            SnackMessage(ex.Message);
+        }
+    }
+
+    private void RemoveMensagem()
+    {
+        snackBar3IsOpen = false;
+        snackBarText = "";
+    }
+
+    private void SnackMessage(string pMsg)
+    {
+        snackBar3IsOpen = true;
+        snackBarText = pMsg;
+    }
+}

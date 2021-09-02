@@ -1,0 +1,71 @@
+﻿@page "/listaraplicacao"
+
+@using AliquotaImpostoRenda.Dominio.DTO
+@using AliquotaImpostoRenda.Aplicacao.Interface
+
+@inject IExtratoAplicacao extratoAplicacao
+
+<div class="row" style="margin-bottom: 20px; border-bottom: 2px solid #808080; padding-bottom: 10px;">
+    <a class="btn btn-primary" href="cadastroextrato" role="button">Cadastro</a>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Data Aplicação</th>
+                    <th scope="col">Valor Resgate</th>
+                    <th scope="col">Data Resgate</th>
+                    <th scope="col">Porcentagem Lucro</th>
+                    <th scope="col">Porcentagem Pagamento</th>
+                    <th scope="col">Valor Pago Imposto</th>
+                    <th scope="col">Data Criação</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (extratos != null && extratos.Any())
+                {
+                    foreach (var e in extratos)
+                    {
+                <tr>
+                    <th scope="row">@e.Cliente.Nome</th>
+                    <td>@e.DataAplicacao.ToString("dd/MM/yyyy")</td>
+                    <td>@string.Format("R$ {0:0.00}", e.ValorResgatado)</td>
+                    <td>@e.DataResgate.ToString("dd/MM/yyyy")</td>
+                    @if (e.TipoEntradaLucro == Dominio.Enum.eTipoEntradaLucro.Porcentagem)
+                    {
+                        <td>@string.Format("{0:0.00} %", e.PorcentagemLucro)</td>
+                    }
+                    else
+                    {
+                        <td>@string.Format("R$ {0:0.00}", e.PorcentagemLucro)</td>
+                    }
+                    <td>@string.Format("{0:0.00} %", e.PorcentagemPagamento)</td>
+                    <td>@string.Format("R$ {0:0.00}", e.ValorParaPagarImposto)</td>
+                    <td>@e.Createad.ToString("dd/MM/yyyy")</td>
+                    <td></td>
+                </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@code {
+    List<ExtratoDTO> extratos;
+
+    protected override void OnInitialized()
+    {
+        BuscarExtrato();
+    }
+
+    public async Task BuscarExtrato()
+    {
+        base.StateHasChanged();
+        extratos = await extratoAplicacao.ListarExtratos();
+        base.StateHasChanged();
+    }
+}
