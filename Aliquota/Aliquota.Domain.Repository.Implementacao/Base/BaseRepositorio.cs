@@ -64,16 +64,11 @@ namespace Aliquota.Domain.Repository.Implementacao.Base
             }
         }
 
-        public async Task<IEnumerable<T>> AllAssync()
+        public async Task<List<T>> AllAssync()
         {
             var entidadeLista = await _context.Set<T>().ToListAsync();
             try
             {
-                if (!entidadeLista.Any())
-                {
-                    throw new NaoEncontradoException(@"Objetos não encontrado no banco de dados! ");
-                }
-
                 return entidadeLista;
             }
             catch (DbUpdateException)
@@ -96,7 +91,7 @@ namespace Aliquota.Domain.Repository.Implementacao.Base
             }
         }
 
-        public Task Delete(object id)
+        public Task Delete(int id)
         {
 
             var obj = _context.Set<T>().FirstOrDefault(a => a.Id == (int)id);
@@ -152,12 +147,12 @@ namespace Aliquota.Domain.Repository.Implementacao.Base
             throw new NotImplementedException();
         }
 
-        public async Task<T> GetById(object id)
+        public async Task<T> GetById(int id)
         {
-            var entidade = await _context.Set<T>().FirstOrDefaultAsync(a => a.Id == (int)id);
             try
             {
-                if(entidade == null)
+                var entidade = await _context.Set<T>().Where(a => a.Id == id).FirstOrDefaultAsync();
+                if (entidade == null)
                 {
                     throw new NaoEncontradoException(@"Objeto não encontrado no banco de dados! ");
                 }
@@ -166,7 +161,11 @@ namespace Aliquota.Domain.Repository.Implementacao.Base
             }
             catch (DbUpdateException)
             {
-                throw new IntegridadeException("Não foi possível completar a busca da entidade " + entidade.GetType() + " " + entidade.Descricao);
+                throw new IntegridadeException("Não foi possível completar a busca da entidade ");
+            }
+            catch(Exception ex)
+            {
+                throw;
             }
         }
 

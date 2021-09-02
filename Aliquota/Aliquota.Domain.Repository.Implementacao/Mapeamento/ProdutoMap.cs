@@ -13,12 +13,11 @@ namespace Aliquota.Domain.Repository.Implementacao.Mapeamento
         {
             builder.ToTable("tb_produto");
 
-            builder.HasKey(e => e.IdProduto);
+            builder.HasKey(e => e.Id);
 
-            builder.Ignore(e => e.Id);
             builder.Ignore(e => e.Descricao);
 
-            builder.Property(e => e.IdProduto).HasColumnName("id_produto").ValueGeneratedOnAdd();
+            builder.Property(e => e.Id).HasColumnName("id_produto").ValueGeneratedOnAdd();
             builder.Property(e => e.DataInvestimento).HasColumnName("din_investimento");
             builder.Property(e => e.ValorInvestido).HasColumnName("val_investido");
             builder.Property(e => e.ValorAtual).HasColumnName("val_atual");

@@ -16,7 +16,7 @@ namespace Aliquota.Domain.Repository.Implementacao.Context
         public DbSet<SituacaoProduto> SituacaoProdutos { get; set; }
         public AliquotaDbContext(IConfiguration configuration) : base()
         {
-            _connectionString = configuration.GetConnectionString("SAATSuspensaoPBConnection");
+            _connectionString = configuration.GetConnectionString("AliquotaDbContext");
         }
 
         public AliquotaDbContext(string connectionString) : base()
