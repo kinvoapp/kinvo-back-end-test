@@ -22,26 +22,26 @@ namespace Aliquota.Domain.Repository.Implementacao.Base
             _context = context;
         }
 
-        public async Task<Task> Add(T entidade)
+        public async Task<T> Add(T entidade)
         {
             try
             {
                 await _context.Set<T>().AddAsync(entidade);
                 await _context.SaveChangesAsync();
-                return Task.CompletedTask;
+                return entidade;
             }
-            catch (DbUpdateException)
+            catch (DbUpdateException ex)
             {
                 throw new IntegridadeException("Não foi possível completar a inserção da entidade "+ entidade.GetType() + " "+ entidade.Descricao);
             }
         }
 
-        public Task AddAll(IEnumerable<T> entidadeLista)
+        public async Task<Task> AddAll(IEnumerable<T> entidadeLista)
         {
             try
             {
                 _context.Set<T>().AddRange(entidadeLista);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return Task.CompletedTask;
             }
             catch (DbUpdateException)
@@ -76,14 +76,25 @@ namespace Aliquota.Domain.Repository.Implementacao.Base
                 throw new IntegridadeException("Não foi possível completar a inserção da entidade " + entidadeLista.GetType() + " " + entidadeLista.First().Descricao);
             }
         }
+        public List<T> All()
+        {
+            var entidadeLista = _context.Set<T>().ToList();
+            try
+            {
+                return entidadeLista;
+            }
+            catch (DbUpdateException)
+            {
+                throw new IntegridadeException("Não foi possível completar a inserção da entidade " + entidadeLista.GetType() + " " + entidadeLista.First().Descricao);
+            }
+        }
 
-        public Task Delete(T Entidade)
+        public async Task Delete(T Entidade)
         {
             try
             {
                 _context.Set<T>().Remove(Entidade);
-                _context.SaveChangesAsync();
-                return Task.CompletedTask;
+                await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {
@@ -99,7 +110,7 @@ namespace Aliquota.Domain.Repository.Implementacao.Base
             {
                 if(obj == null)
                 {
-                    throw new NaoEncontradoException(@"Objeto não encontrado no banco de dados! ");
+                    throw new NotFoundException(@"Objeto não encontrado no banco de dados! ");
                 }
 
                 _context.Set<T>().Remove(obj);
@@ -154,7 +165,7 @@ namespace Aliquota.Domain.Repository.Implementacao.Base
                 var entidade = await _context.Set<T>().Where(a => a.Id == id).FirstOrDefaultAsync();
                 if (entidade == null)
                 {
-                    throw new NaoEncontradoException(@"Objeto não encontrado no banco de dados! ");
+                    throw new NotFoundException(@"Objeto não encontrado no banco de dados! ");
                 }
 
                 return entidade;
@@ -163,10 +174,6 @@ namespace Aliquota.Domain.Repository.Implementacao.Base
             {
                 throw new IntegridadeException("Não foi possível completar a busca da entidade ");
             }
-            catch(Exception ex)
-            {
-                throw;
-            }
         }
 
         public IQueryable<T> GetQueryable()
@@ -174,13 +181,12 @@ namespace Aliquota.Domain.Repository.Implementacao.Base
             return _context.Set<T>().AsQueryable();
         }
 
-        public Task Update(T entidade)
+        public async Task Update(T entidade)
         {
             try
             {
                 _context.Set<T>().Update(entidade);
-                _context.SaveChanges();
-                return Task.CompletedTask;
+                await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {

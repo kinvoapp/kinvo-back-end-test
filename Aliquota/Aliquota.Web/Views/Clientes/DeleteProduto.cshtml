@@ -1,5 +1,6 @@
 ﻿@model Aliquota.Domain.Entities.DTO.ProdutoDto
 
+<h3>deseja deletar esse produto?</h3>
 <div>
     <h4>Produto</h4>
     <hr />
@@ -15,6 +16,12 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ValorAtual)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorImposto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ValorImposto)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ValorResgatado)
@@ -34,22 +41,12 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DataResgate)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SituacaoAtual.Situacao)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SituacaoAtual.Situacao)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Proprietario.NomeCliente)
-            3333,,
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Proprietario.NomeCliente)
-        </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+    <form asp-action="DeleteProduto">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+    </form>
+    <a asp-action="Details" asp-route-Id="@Model.IdCliente">Voltar</a>
+
 </div>

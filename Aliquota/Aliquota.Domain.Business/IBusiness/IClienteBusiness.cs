@@ -10,8 +10,11 @@ namespace Aliquota.Domain.Business.IBusiness
     public interface IClienteBusiness : IBusinessCrudBase<Cliente>
     {
         Task<List<ClienteDto>> GetListGrid();
-        void Criar(ClienteDto item);
+        Task Criar(ClienteDto item);
         Task<ClienteDto> GetItemById(int id);
-        void Editar(ClienteDto item);
+        Task Editar(ClienteDto item);
+        Task CadastrarProduto(ProdutoDto produto);
+        Task MovimentarProduto(ProdutoDto produto);
+
     }
 }

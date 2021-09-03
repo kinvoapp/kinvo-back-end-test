@@ -8,8 +8,8 @@ namespace Aliquota.Domain.Business.IBusiness
     public interface ITipoProdutoBusiness : IBusinessCrudBase<TipoProduto>
     {
         Task<List<TipoProdutoDto>> GetListGrid();
-        void Criar(TipoProdutoDto item);
+        Task Criar(TipoProdutoDto item);
         Task<TipoProdutoDto> GetItemById(int id);
-        void Editar(TipoProdutoDto item);
+        Task Editar(TipoProdutoDto item);
     }
 }

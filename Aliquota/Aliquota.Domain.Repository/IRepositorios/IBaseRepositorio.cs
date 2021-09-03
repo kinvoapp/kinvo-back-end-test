@@ -9,9 +9,10 @@ namespace Aliquota.Domain.Repository.IRepositorios
 {
     public interface IBaseRepositorio<T> : IDisposable where T : class, IEntidade<int>
     {
-        Task<Task> Add(T entity);
+        Task<T> Add(T entity);
         Task<List<T>> AllAssync();
-        Task AddAll(IEnumerable<T> entities);
+        List<T> All();
+        Task<Task> AddAll(IEnumerable<T> entities);
         Task<Task> AddAllAsync(IEnumerable<T> entities);
         Task DeleteAll(IEnumerable<T> entities);
         Task<Task> DeleteAllAsync(IEnumerable<T> entities);

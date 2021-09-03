@@ -11,5 +11,10 @@ namespace Aliquota.Domain.Entities.Entidades
         public string Descricao { get => @"Entidade responsável por manter os dados referentes ao cliente"; }
         public string NomeCliente { get; set; }
         public ICollection<Produto> ProdutoLista { get; set; }
+
+        public Cliente()
+        {
+            ProdutoLista = new List<Produto>();
+        }
     }
 }

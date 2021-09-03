@@ -10,8 +10,11 @@ namespace Aliquota.Domain.Business.IBusiness
     public interface IProdutoBusiness : IBusinessCrudBase<Produto>
     {
         Task<List<ProdutoDto>> GetListGrid();
-        void Criar(ProdutoDto item);
+        Task<Produto> Criar(ProdutoDto item, Cliente cliente);
         Task<ProdutoDto> GetItemById(int id);
-        void Editar(ProdutoDto item);
+        Task Editar(ProdutoDto item);
+        decimal? CalculaValorAtual(decimal valorInvestido, decimal rentabilidade, DateTime dataInvestimento, DateTime hoje);
+
+
     }
 }

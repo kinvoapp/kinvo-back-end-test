@@ -1,0 +1,47 @@
+﻿@model Aliquota.Domain.Entities.DTO.ProdutoDto
+
+<h4>Produto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="MovimentarProduto">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="IdTipoProduto" />
+            <input type="hidden" asp-for="IdCliente" />
+            <div class="form-group">
+                <label asp-for="ValorInvestido" class="control-label"></label>
+                <input asp-for="ValorInvestido" class="form-control" disabled />
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorAtual" class="control-label"></label>
+                <input asp-for="ValorAtual" class="form-control" disabled />
+            </div>
+            <div class="form-group">
+                <label asp-for="DataInvestimento" class="control-label"></label>
+                <input type="date" asp-for="DataInvestimento" class="form-control" disabled />
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorResgatado" class="control-label"></label>
+                <input asp-for="ValorResgatado" type="number" min="0" class="form-control" />
+                <span asp-validation-for="ValorResgatado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataResgate" class="control-label"></label>
+                <input type="date" asp-for="DataResgate" class="form-control" />
+                <span asp-validation-for="DataResgate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Details" asp-route-Id="@Model.IdCliente">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

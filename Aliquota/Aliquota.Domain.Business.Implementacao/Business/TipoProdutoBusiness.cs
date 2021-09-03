@@ -16,14 +16,14 @@ namespace Aliquota.Domain.Business.Implementacao.Business
             _repository = tipoProdutoRepositorio;
         }
 
-        public void Criar(TipoProdutoDto item)
+        public async Task Criar(TipoProdutoDto item)
         {
-            Add(ConverteDtoParaObj(item));
+            await Add(ConverteDtoParaObj(item));
         }
 
-        public void Editar(TipoProdutoDto item)
+        public async Task Editar(TipoProdutoDto item)
         {
-            Update(ConverteDtoParaObj(item));
+            await Update(ConverteDtoParaObj(item));
         }
 
         public async Task<TipoProdutoDto> GetItemById(int id)
@@ -33,7 +33,7 @@ namespace Aliquota.Domain.Business.Implementacao.Business
 
         public async Task<List<TipoProdutoDto>> GetListGrid()
         {
-            List<TipoProduto> tipoProdutoLista = await GetAll(); 
+            List<TipoProduto> tipoProdutoLista = await GetAllAsync(); 
             var retorno = new List<TipoProdutoDto>();
             foreach (var item in tipoProdutoLista)
             {
@@ -44,7 +44,8 @@ namespace Aliquota.Domain.Business.Implementacao.Business
         }
         private TipoProduto ConverteDtoParaObj(TipoProdutoDto item)
         {
-            return new TipoProduto() { Id = item.Id, NomeTipoProduto = item.NomeTipoProduto, Rentabilidade = item.Rentabilidade };
+            var rentabilidade = 1 + (item.Rentabilidade / 100m);
+            return new TipoProduto() { Id = item.Id, NomeTipoProduto = item.NomeTipoProduto, Rentabilidade = rentabilidade };
         }
     }
 }

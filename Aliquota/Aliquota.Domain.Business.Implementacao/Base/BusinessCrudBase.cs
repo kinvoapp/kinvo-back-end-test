@@ -17,24 +17,24 @@ namespace Aliquota.Domain.Business.Implementacao.Base
         {
         }
 
-        public Task Add(T Entidade)
+        public async Task<T> Add(T Entidade)
         {
-            Task r;
-            
-            r = _repository.Add(Entidade);
-            
-            return r;
+            return await _repository.Add(Entidade);
         }
 
-        public Task AddAll(IEnumerable<T> items)
+        public async Task<Task> AddAll(IEnumerable<T> items)
         {
             Task r;
-            r = _repository.AddAll(items);
+            r = await _repository.AddAll(items);
             return r;
         }
-        public async Task<List<T>> GetAll()
+        public async Task<List<T>> GetAllAsync()
         {
             return await _repository.AllAssync();
+        }
+        public List<T> GetAll()
+        {
+            return  _repository.All();
         }
 
         public Task<T> GetById(int id)
@@ -42,24 +42,20 @@ namespace Aliquota.Domain.Business.Implementacao.Base
             return _repository.GetById(id);
         }
 
-        public Task DeleteById(int id)
+        public async Task DeleteById(int id)
         {
-            var Entidade = _repository.GetById(id).Result;
-            return Delete(Entidade);
+            var Entidade = await _repository.GetById(id);
+            await Delete(Entidade);
         }
 
-        public Task Delete(T Entidade)
+        public async Task Delete(T Entidade)
         {
-            Task r;
-            r = _repository.Delete(Entidade);
-            return r;
+            await _repository.Delete(Entidade);
         }
 
-        public Task Update(T Entidade)
+        public async Task Update(T Entidade)
         {
-            Task r;
-            r = _repository.Update(Entidade);
-            return r;
+            await _repository.Update(Entidade);
         }
         public void Dispose()
         {

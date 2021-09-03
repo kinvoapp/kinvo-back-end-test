@@ -10,10 +10,10 @@ namespace Aliquota.Domain.Business.IBusiness
 {
     public interface IBusinessCrudBase<T> : IDisposable where T : class, IEntidade<int>
     {
-        Task Add(T entity);
-        Task<List<T>> GetAll();
+        Task<T> Add(T entity);
+        Task<List<T>> GetAllAsync();
         Task<T> GetById(int id);
-        Task AddAll(IEnumerable<T> items);
+        Task<Task> AddAll(IEnumerable<T> items);
         Task DeleteById(int id);
         Task Delete(T entity);
         Task Update(T entity);

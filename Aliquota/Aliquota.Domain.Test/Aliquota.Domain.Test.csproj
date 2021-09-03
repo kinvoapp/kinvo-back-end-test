@@ -19,4 +19,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Aliquota.Domain.Business.Implementacao\Aliquota.Domain.Business.Implementacao.csproj" />
+    <ProjectReference Include="..\Aliquota.Domain.Entities\Aliquota.Domain.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

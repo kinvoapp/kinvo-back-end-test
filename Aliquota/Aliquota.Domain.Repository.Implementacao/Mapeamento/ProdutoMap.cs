@@ -21,6 +21,10 @@ namespace Aliquota.Domain.Repository.Implementacao.Mapeamento
             builder.Property(e => e.DataInvestimento).HasColumnName("din_investimento");
             builder.Property(e => e.ValorInvestido).HasColumnName("val_investido");
             builder.Property(e => e.ValorAtual).HasColumnName("val_atual");
+            builder.Property(e => e.ValorResgatado).HasColumnName("val_resgatado");
+            builder.Property(e => e.LucroAcumulado).HasColumnName("val_lucroacumulado");
+            builder.Property(e => e.ValorImposto).HasColumnName("val_imposto");
+            builder.Property(e => e.DataResgate).HasColumnName("din_resgate");
             builder.HasOne(r => r.TipoProduto).WithMany(a => a.ProdutoLista).HasForeignKey(a => a.IdTipoProduto);
             builder.HasOne(r => r.SituacaoProduto).WithMany(a => a.ProdutoLista).HasForeignKey(a => a.IdSituacaoProduto);
             builder.HasOne(r => r.Cliente).WithMany(a => a.ProdutoLista).HasForeignKey(a => a.IdCliente);

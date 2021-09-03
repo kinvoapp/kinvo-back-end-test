@@ -16,14 +16,14 @@ namespace Aliquota.Domain.Business.Implementacao.Business
             _repository = situacaoProdutoRepository;
         }
 
-        public void Criar(SituacaoProdutoDto item)
+        public async Task Criar(SituacaoProdutoDto item)
         {
-            Add(ConverteDtoParaObj(item));
+            await Add(ConverteDtoParaObj(item));
         }
 
-        public void Editar(SituacaoProdutoDto item)
+        public async Task Editar(SituacaoProdutoDto item)
         {
-            Update(ConverteDtoParaObj(item));
+           await Update(ConverteDtoParaObj(item));
         }
 
         public async Task<SituacaoProdutoDto> GetItemById(int id)
@@ -33,7 +33,7 @@ namespace Aliquota.Domain.Business.Implementacao.Business
 
         public async Task<List<SituacaoProdutoDto>> GetListGrid()
         {
-            List<SituacaoProduto> situacaoProdutoLista = await GetAll();
+            List<SituacaoProduto> situacaoProdutoLista = await GetAllAsync();
             var retorno = new List<SituacaoProdutoDto>();
             foreach (var item in situacaoProdutoLista)
             {

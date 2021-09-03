@@ -10,8 +10,8 @@ namespace Aliquota.Domain.Business.IBusiness
     public interface ISituacaoProdutoBusiness : IBusinessCrudBase<SituacaoProduto>
     {
         Task<List<SituacaoProdutoDto>> GetListGrid();
-        void Criar(SituacaoProdutoDto item);
+        Task Criar(SituacaoProdutoDto item);
         Task<SituacaoProdutoDto> GetItemById(int id);
-        void Editar(SituacaoProdutoDto item);
+        Task Editar(SituacaoProdutoDto item);
     }
 }

@@ -19,6 +19,7 @@ namespace Aliquota.Domain.Repository.Implementacao.Mapeamento
             builder.Property(e => e.Id).HasColumnName("id_cliente").ValueGeneratedOnAdd();
             builder.Property(e => e.NomeCliente).HasColumnName("nom_cliente");
 
+            builder.HasMany(a => a.ProdutoLista).WithOne(b => b.Cliente).HasForeignKey(b => b.IdCliente);
         }
     }
 }

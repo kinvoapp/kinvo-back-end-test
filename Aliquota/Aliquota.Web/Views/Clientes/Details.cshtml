@@ -4,14 +4,99 @@
     <h4>Cliente</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.NomeCliente)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.NomeCliente)
         </dd>
+        <dt class="col-sm-2">
+            Cadastrar Produto.
+        </dt>
+        <dd class="col-sm-10">
+            <a asp-action="CadastrarProduto" asp-route-id="@Model.Id">Cadastrar Produto</a> |
+        </dd>
+
     </dl>
 </div>
+@{
+    if (Model.ProdutoLista.Any())
+    {
+
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ProdutoLista.First().ValorInvestido)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ProdutoLista.First().ValorAtual)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ProdutoLista.First().ValorResgatado)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ProdutoLista.First().ValorImposto)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ProdutoLista.First().DataInvestimento)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ProdutoLista.First().DataResgate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ProdutoLista.First().TipoProduto)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ProdutoLista.First().SituacaoAtual)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ProdutoLista)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ValorInvestido)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ValorAtual)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ValorResgatado)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ValorImposto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DataInvestimento)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DataResgate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TipoProduto.NomeTipoProduto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SituacaoAtual.Situacao)
+                        </td>
+                        <td>
+                            @if (item.IdSituacaoProduto == 1) 
+                            {
+                                <a asp-action="MovimentarProduto" asp-route-id="@item.Id">Movimentar Produto |</a> 
+                            }
+                            <a asp-action="DeleteProduto" asp-route-id="@item.Id">Deletar produto</a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    }
+}
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>

@@ -21,7 +21,7 @@ namespace Aliquota.Domain.Repository.Implementacao.Migrations
 
             modelBuilder.Entity("Aliquota.Domain.Entities.Entidades.Cliente", b =>
                 {
-                    b.Property<int>("IdCliente")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("id_cliente")
@@ -31,14 +31,14 @@ namespace Aliquota.Domain.Repository.Implementacao.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("nom_cliente");
 
-                    b.HasKey("IdCliente");
+                    b.HasKey("Id");
 
                     b.ToTable("tb_cliente");
                 });
 
             modelBuilder.Entity("Aliquota.Domain.Entities.Entidades.Produto", b =>
                 {
-                    b.Property<int>("IdProduto")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("id_produto")
@@ -49,7 +49,8 @@ namespace Aliquota.Domain.Repository.Implementacao.Migrations
                         .HasColumnName("din_investimento");
 
                     b.Property<DateTime?>("DataResgate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasColumnName("din_resgate");
 
                     b.Property<int>("IdCliente")
                         .HasColumnType("int");
@@ -60,18 +61,27 @@ namespace Aliquota.Domain.Repository.Implementacao.Migrations
                     b.Property<int>("IdTipoProduto")
                         .HasColumnType("int");
 
+                    b.Property<decimal?>("LucroAcumulado")
+                        .HasColumnType("decimal(18,2)")
+                        .HasColumnName("val_lucroacumulado");
+
                     b.Property<decimal?>("ValorAtual")
                         .HasColumnType("decimal(18,2)")
                         .HasColumnName("val_atual");
+
+                    b.Property<decimal?>("ValorImposto")
+                        .HasColumnType("decimal(18,2)")
+                        .HasColumnName("val_imposto");
 
                     b.Property<decimal?>("ValorInvestido")
                         .HasColumnType("decimal(18,2)")
                         .HasColumnName("val_investido");
 
                     b.Property<decimal?>("ValorResgatado")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,2)")
+                        .HasColumnName("val_resgatado");
 
-                    b.HasKey("IdProduto");
+                    b.HasKey("Id");
 
                     b.HasIndex("IdCliente");
 
@@ -84,7 +94,7 @@ namespace Aliquota.Domain.Repository.Implementacao.Migrations
 
             modelBuilder.Entity("Aliquota.Domain.Entities.Entidades.SituacaoProduto", b =>
                 {
-                    b.Property<int>("IdSituacaoProduto")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("id_situacaoproduto")
@@ -94,14 +104,14 @@ namespace Aliquota.Domain.Repository.Implementacao.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("nom_situacao");
 
-                    b.HasKey("IdSituacaoProduto");
+                    b.HasKey("Id");
 
                     b.ToTable("tb_situacaoproduto");
                 });
 
             modelBuilder.Entity("Aliquota.Domain.Entities.Entidades.TipoProduto", b =>
                 {
-                    b.Property<int>("IdTipoProduto")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("id_tipoproduto")
@@ -115,7 +125,7 @@ namespace Aliquota.Domain.Repository.Implementacao.Migrations
                         .HasColumnType("decimal(18,2)")
                         .HasColumnName("val_rentabilidade");
 
-                    b.HasKey("IdTipoProduto");
+                    b.HasKey("Id");
 
                     b.ToTable("tb_tipoproduto");
                 });
