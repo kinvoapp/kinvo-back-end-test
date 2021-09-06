@@ -1,0 +1,142 @@
+﻿
+@model Entities.Entities.Consulta
+
+@{
+    IEnumerable<Entities.Entities.Consulta> consultas = ViewBag.Consultas as IEnumerable<Entities.Entities.Consulta>;
+}
+
+@{
+    ViewData["Title"] = "Consultas";
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="text-center">CONSULTAS REALIZADAS: @ViewBag.IRGeradas</h1>
+            <div>
+                <br />
+                <table data-page-length='5' class="table table-striped table-hover table-responsive-sm" id="tabela">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Renda)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Lucro)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DataAplicacao)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DataResgate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.IOF)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.IR)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ValorIR)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Resgate)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Entities.Entities.Consulta consulta in consultas)
+                        {
+                            <tr>
+                                <td>
+                                    @consulta.Renda
+                                </td>
+                                <td>
+                                    @consulta.Lucro
+                                </td>
+                                <td>
+                                    @consulta.DataAplicacao.ToShortDateString()
+                                </td>
+                                <td>
+                                    @consulta.DataResgate.ToShortDateString()
+                                </td>
+                                <td>
+                                    @consulta.IOF
+                                </td>
+                                <td>
+                                    @consulta.IR
+                                </td>
+                                <td>
+                                    @consulta.ValorIR
+                                </td>
+                                <td>
+                                    @consulta.Resgate
+                                </td>
+                                <td>
+                                    <a asp-controller="Consulta" asp-action="Delete" asp-route-id="@consulta.Id" class="btn btn-sm btn-danger">
+                                        <i class="fa fa-times-circle"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="row d-flex justify-content-center">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="card">
+                <div class="card-header text-center">CONSULTAR IR</div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label asp-for="Renda" class="control-label"></label>
+                        <input asp-for="Renda" class="form-control" />
+                        <span asp-validation-for="Renda" class="text-danger"></span>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label asp-for="Lucro" class="control-label"></label>
+                        <input asp-for="Lucro" class="form-control" />
+                        <span asp-validation-for="Lucro" class="text-danger"></span>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label asp-for="DataAplicacao" class="control-label"></label>
+                        <input asp-for="DataAplicacao" class="form-control" />
+                        <span asp-validation-for="DataAplicacao" class="text-danger"></span>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label asp-for="DataResgate" class="control-label"></label>
+                        <input asp-for="DataResgate" class="form-control" />
+                        <span asp-validation-for="DataResgate" class="text-danger"></span>
+                    </div>
+                    <br />
+                    <div class="form-group d-flex justify-content-center">
+                        <input type="submit" asp-controller="Consulta" asp-action="Consulta" value="Consultar" class="btn btn-success btn-block" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#tabela').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
+                }
+            });
+        });
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

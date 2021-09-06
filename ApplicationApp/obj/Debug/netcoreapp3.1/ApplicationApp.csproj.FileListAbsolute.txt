@@ -1,0 +1,15 @@
+C:\Users\mathe\Documents\Projeto\Desafio\Desafio\ApplicationApp\bin\Debug\netcoreapp3.1\ApplicationApp.deps.json
+C:\Users\mathe\Documents\Projeto\Desafio\Desafio\ApplicationApp\bin\Debug\netcoreapp3.1\ApplicationApp.dll
+C:\Users\mathe\Documents\Projeto\Desafio\Desafio\ApplicationApp\bin\Debug\netcoreapp3.1\ApplicationApp.pdb
+C:\Users\mathe\Documents\Projeto\Desafio\Desafio\ApplicationApp\obj\Debug\netcoreapp3.1\ApplicationApp.csproj.AssemblyReference.cache
+C:\Users\mathe\Documents\Projeto\Desafio\Desafio\ApplicationApp\obj\Debug\netcoreapp3.1\ApplicationApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mathe\Documents\Projeto\Desafio\Desafio\ApplicationApp\obj\Debug\netcoreapp3.1\ApplicationApp.AssemblyInfoInputs.cache
+C:\Users\mathe\Documents\Projeto\Desafio\Desafio\ApplicationApp\obj\Debug\netcoreapp3.1\ApplicationApp.AssemblyInfo.cs
+C:\Users\mathe\Documents\Projeto\Desafio\Desafio\ApplicationApp\obj\Debug\netcoreapp3.1\ApplicationApp.csproj.CoreCompileInputs.cache
+C:\Users\mathe\Documents\Projeto\Desafio\Desafio\ApplicationApp\obj\Debug\netcoreapp3.1\ApplicationApp.dll
+C:\Users\mathe\Documents\Projeto\Desafio\Desafio\ApplicationApp\obj\Debug\netcoreapp3.1\ApplicationApp.pdb
+C:\Users\mathe\Documents\Projeto\Desafio\Desafio\ApplicationApp\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Users\mathe\Documents\Projeto\Desafio\Desafio\ApplicationApp\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\mathe\Documents\Projeto\Desafio\Desafio\ApplicationApp\obj\Debug\netcoreapp3.1\ApplicationApp.csproj.CopyComplete
+C:\Users\mathe\Documents\Projeto\Desafio\Desafio\ApplicationApp\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\mathe\Documents\Projeto\Desafio\Desafio\ApplicationApp\bin\Debug\netcoreapp3.1\Domain.pdb
