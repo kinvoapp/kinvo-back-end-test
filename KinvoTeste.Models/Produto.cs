@@ -47,7 +47,7 @@ namespace KinvoTeste.Models
             {
                 var aliqservice = new AliquotaService();
                 var aliq = aliqservice.Calcular(DataAplicacao, dataResgate);
-                Resgate = new Resgate() { ValorInvestido = ValorInvestido, ValorBruto = ValorBruto, AlicotaIR = aliq };
+                Resgate = new Resgate() { ValorInvestido = ValorInvestido, ValorBruto = ObterValorBruto(dataResgate), AlicotaIR = aliq };
             }
         }
     }
