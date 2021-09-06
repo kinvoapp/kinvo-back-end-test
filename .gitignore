@@ -1,0 +1,16 @@
+.vs/
+Aliquota.Domain.Test/bin/
+Aliquota.Domain.Test/obj/
+Aliquota.Domain/bin/
+Aliquota.Domain/obj/
+KinvoTeste/KinvoDatabase.db
+KinvoTeste.Data/bin/
+KinvoTeste.Data/obj/
+KinvoTeste.Domain/bin/
+KinvoTeste.Domain/obj/
+KinvoTeste.Models/bin/
+KinvoTeste.Models/obj/
+KinvoTeste/bin/
+KinvoTeste/obj/
+KinvoTesteConsole/bin/
+KinvoTesteConsole/obj/
