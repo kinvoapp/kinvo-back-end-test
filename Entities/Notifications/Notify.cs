@@ -30,7 +30,7 @@ namespace Entities.Notifications
             {
                 Notificacoes.Add(new Notify
                 {
-                    Mensagem = "A Renda não pode ser menor que 0!",
+                    Mensagem = "Renda não pode ser menor que 0!",
                     NomePropriedade = nomePropriedade
                 });
                 return false;
@@ -44,7 +44,7 @@ namespace Entities.Notifications
             {
                 Notificacoes.Add(new Notify
                 {
-                    Mensagem = "O Lucro não pode ser menor que 0!",
+                    Mensagem = "Lucro não pode ser menor que 0!",
                     NomePropriedade = nomePropriedade
                 });
                 return false;
@@ -58,7 +58,7 @@ namespace Entities.Notifications
             {
                 Notificacoes.Add(new Notify
                 {
-                    Mensagem = "A Data de Aplicação deve ser informada!",
+                    Mensagem = "Data de Aplicação deve ser informada!",
                     NomePropriedade = nomePropriedade
                 });
                 return false;
@@ -72,7 +72,7 @@ namespace Entities.Notifications
             {
                 Notificacoes.Add(new Notify
                 {
-                    Mensagem = "A Data de Resgate deve ser informada!",
+                    Mensagem = "Data de Resgate deve ser informada!",
                     NomePropriedade = nomePropriedade
                 });
                 return false;
