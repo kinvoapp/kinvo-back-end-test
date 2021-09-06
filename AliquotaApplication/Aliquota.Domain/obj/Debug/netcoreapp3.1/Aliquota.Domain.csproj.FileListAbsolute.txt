@@ -1,0 +1,10 @@
+C:\Users\icaro\source\repos\AliquotaApplication\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.csproj.AssemblyReference.cache
+C:\Users\icaro\source\repos\AliquotaApplication\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\icaro\source\repos\AliquotaApplication\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.AssemblyInfoInputs.cache
+C:\Users\icaro\source\repos\AliquotaApplication\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.AssemblyInfo.cs
+C:\Users\icaro\source\repos\AliquotaApplication\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.csproj.CoreCompileInputs.cache
+C:\Users\icaro\source\repos\AliquotaApplication\Aliquota.Domain\bin\Debug\netcoreapp3.1\Aliquota.Domain.deps.json
+C:\Users\icaro\source\repos\AliquotaApplication\Aliquota.Domain\bin\Debug\netcoreapp3.1\Aliquota.Domain.dll
+C:\Users\icaro\source\repos\AliquotaApplication\Aliquota.Domain\bin\Debug\netcoreapp3.1\Aliquota.Domain.pdb
+C:\Users\icaro\source\repos\AliquotaApplication\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.dll
+C:\Users\icaro\source\repos\AliquotaApplication\Aliquota.Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.pdb
