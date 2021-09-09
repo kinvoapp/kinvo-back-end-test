@@ -1,0 +1,110 @@
+﻿@model Aliquota.Domain.WebApp.Views.ViewModel.InvestimentoDetailsViewModel
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<form method="post" asp-action="rescue">
+
+    <div>
+        <h1>Detalhes do investimento</h1>
+        <hr />
+
+        <!-- container investimento -->
+        <div class="col col-10 p-0">
+            
+            <!-- Detalhes da aplicação -->
+            <div>
+                <div class="bg-dark text-light text-center p-2 mb-1 rounded">
+                    <h4>Investimento: @Model.Investimento.Produto.Nome (@Model.Investimento.Produto.TaxaRendimentoAnual %)</h4>
+                </div>
+                <div class="form-row p-1">
+                    <div class="col col-4 p-1">
+                        <div class="font-weight-bold">@Html.DisplayNameFor(model => model.Investimento.DataInvestimento)</div>
+                        <div>@Html.DisplayFor(model => model.Investimento.DataInvestimento)</div>
+                    </div>
+                    <div class="col col-4 p-1">
+                        <div class="font-weight-bold">@Html.DisplayNameFor(model => model.Investimento.ValorInvestido)</div>
+                        <div>R$ @Html.DisplayFor(model => model.Investimento.ValorInvestido)</div>
+                    </div>
+                    <div class="col col-4 p-1 @(Model.Investimento.Status == StatusInvestimento.Resgatado ? "bg-success text-white" : string.Empty )  ">
+                        <div class="font-weight-bold">@Html.DisplayNameFor(model => model.Investimento.Status)</div>
+                        <div>@Html.DisplayFor(model => model.Investimento.Status)</div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <!-- Detalhes da simulação ou resgate -->
+            <div>
+                <div class="bg-dark text-light text-center p-2 mb-1 rounded">
+                    <h4>@(Model.Investimento.Status == StatusInvestimento.Investido
+                            ? "Simulação de resgate" : "Dados do resgate") - @Html.DisplayFor(model => model.Rendimento.DataResgate)</h4>
+                </div>
+                <div class="form-row">
+                    <div class="col col-3">
+                        <div class="font-weight-bold">@Html.DisplayNameFor(model => model.Rendimento.ValorRendimento)</div>
+                        <div>R$ @Html.DisplayFor(model => model.Rendimento.ValorRendimento)</div>
+                    </div>
+                    <div class="col col-3">
+                        <div class="font-weight-bold">@Html.DisplayNameFor(model => model.Rendimento.ImpostoAplicavel)</div>
+                        <div>@Html.DisplayFor(model => model.Rendimento.ImpostoAplicavel)%</div>
+                    </div>
+                    <div class="col col-3">
+                        <div class="font-weight-bold">@Html.DisplayNameFor(model => model.Rendimento.ValorImposto)</div>
+                        <div>R$ @Html.DisplayFor(model => model.Rendimento.ValorImposto)</div>
+                    </div>
+                    <div class="col col-3">
+                        <div class="font-weight-bold">@Html.DisplayNameFor(model => model.Rendimento.ValorMontanteLiquido)</div>
+                        <div>R$ @Html.DisplayFor(model => model.Rendimento.ValorMontanteLiquido)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input type='hidden' asp-for='Investimento.Id' />
+
+    <br />
+    <br />
+
+    <!-- Controles - Resgatado -->
+    <div @Html.Raw(Model.Investimento.Status == StatusInvestimento.Resgatado ? "" : "style='display: none;'")>
+        <a asp-action="Index" class="btn btn-primary mr-1" >Voltar</a>
+        <a type='button' asp-action='Delete' asp-route-id='@Model.Investimento.Id' class='btn btn-danger'>Excluir</a>
+    </div>
+
+    <!-- Controles - Investido -->
+    <div @Html.Raw(Model.Investimento.Status == StatusInvestimento.Investido ? "" : "style='display: none;'")>
+        <a asp-action="Index" class="btn btn-primary mr-1" >Voltar</a>
+        <a asp-action="Edit" asp-route-id="@Model.Investimento.Id" class="btn btn-warning mr-1" >Editar</a>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#resgateModal" value="Resgatar">Resgatar</button>
+        <a type='button' asp-action='Delete' asp-route-id='@Model.Investimento.Id' class='btn btn-danger'>Excluir</a>
+
+        <!-- Modal -->
+        <div class="modal fade" id="resgateModal" tabindex="-1" role="dialog" aria-labelledby="resgateModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Resgate de investimento</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <p>
+                    Deseja confirmar o resgate do investimento <span class="font-weight-bold">@Model.Investimento.Produto.ToString()</span>?
+                  </p>
+                  <br />
+              </div>
+              <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-secondary" >Fechar</button>
+                <input asp-action="Rescue" asp-route-id="@Model.Investimento.Id" type="submit" class="btn btn-danger" value="Resgatar" />
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+</form>

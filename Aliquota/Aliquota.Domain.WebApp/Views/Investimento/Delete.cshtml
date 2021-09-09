@@ -1,0 +1,73 @@
+﻿@model Aliquota.Domain.Models.Investimento
+
+@{
+    ViewData["Title"] = "Excluir";
+}
+
+<h1>Excluir</h1>
+
+<h3>Você tem certeza que quer excluir o investimento?</h3>
+
+<div>
+
+    <hr />
+
+    @{
+        string checkStatus = Model.Status == StatusInvestimento.Resgatado ? "" : "hidden";
+    }
+
+    <dl class="row">
+        <dt class="col-sm-2 mb-4">
+            @Html.DisplayNameFor(model => model.Produto.Nome)
+        </dt>
+        <dd class="col-sm-10 mb-4">
+            @Model.Produto.ToString()
+        </dd>
+        <dt class="col-sm-2 mb-4">
+            @Html.DisplayNameFor(model => model.DataInvestimento)
+        </dt>
+        <dd class="col-sm-10 mb-4">
+            @Html.DisplayFor(model => model.DataInvestimento)
+        </dd>
+        <dt class="col-sm-2 mb-4">
+            @Html.DisplayNameFor(model => model.ValorInvestido)
+        </dt>
+        <dd class="col-sm-10 mb-4">
+            R$ @Html.DisplayFor(model => model.ValorInvestido)
+        </dd>
+
+        <!-- Informações para investimentos com status Resgatado -->
+        <dt class="col-sm-2 mb-4" @checkStatus>
+            @Html.DisplayNameFor(model => model.DataResgate)
+        </dt>
+        <dd class="col-sm-10 mb-4" @checkStatus>
+            @Html.DisplayFor(model => model.DataResgate)
+        </dd>
+        <dt class="col-sm-2 mb-4" @checkStatus>
+            @Html.DisplayNameFor(model => model.ValorResgatado)
+        </dt>
+        <dd class="col-sm-10 mb-4" @checkStatus>
+            R$ @Html.DisplayFor(model => model.ValorResgatado)
+        </dd>
+        <dt class="col-sm-2 mb-4" @checkStatus>
+            @Html.DisplayNameFor(model => model.ImpostoRecolhido)
+        </dt>
+        <dd class="col-sm-10 mb-4" @checkStatus>
+            R$ @Html.DisplayFor(model => model.ImpostoRecolhido)
+        </dd>
+        <dt class="col-sm-2 mb-4" @checkStatus>
+            @Html.DisplayNameFor(model => model.ImpostoFaixaAplicavel)
+        </dt>
+        <dd class="col-sm-10 mb-4" @checkStatus>
+            @Html.DisplayFor(model => model.ImpostoFaixaAplicavel)%
+        </dd>
+
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-primary mr-2">Voltar</a>
+        <input type="submit" value="Excluir" class="btn btn-danger" />
+    </form>
+
+</div>

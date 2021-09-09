@@ -1,0 +1,56 @@
+﻿@model Aliquota.Domain.WebApp.Views.ViewModel.InvestimentoViewModel
+
+@{
+    ViewData["Title"] = "Aplicação";
+}
+
+<h1>Aplicação</h1>
+
+<h4>Investimento</h4>
+<hr />
+
+<div class="alert alert-warning mt-2 mb-2" role="alert">
+  <b>Observação:</b> a data de aplicação deve ser posterior a data de hoje.
+</div>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Investimento.Produto.Nome" class="control-label"></label>
+                <select asp-for="Investimento.Produto.Id" class="form-control">
+                    @foreach (var produto in Model.Produtos)
+                    {
+                        <option value="@produto.Id">@produto.Nome</option>
+                    }
+                </select>
+                <span asp-validation-for="Investimento.Produto.Nome" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Investimento.DataInvestimento" class="control-label"></label>
+                <input type="date" asp-for="Investimento.DataInvestimento" class="form-control" />
+                <span asp-validation-for="Investimento.DataInvestimento" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Investimento.ValorInvestido" class="control-label"></label>
+                <input type="number" asp-for="Investimento.ValorInvestido" class="form-control" />
+                <span asp-validation-for="Investimento.ValorInvestido" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Inserir" class="btn btn-primary" />
+                <a asp-controller="Investimento" asp-action="Index" class="btn btn-light">Voltar</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

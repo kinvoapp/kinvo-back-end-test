@@ -1,0 +1,67 @@
+﻿@model Aliquota.Domain.WebApp.Views.ViewModel.InvestimentoViewModel
+
+@{
+    ViewData["Title"] = "Edição";
+}
+
+<h1>Edição</h1>
+
+<h4>Investimento</h4>
+<hr />
+
+<div class="alert alert-warning mt-2 mb-2" role="alert">
+  <b>Observação:</b> a data de aplicação deve ser posterior a data de hoje.
+</div>
+
+<div class="row">
+    <div class="col-md-4 ">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="Investimento.Produto.Nome" class="control-label"></label>
+                <select asp-for="Investimento.Produto.Id" class="form-control">
+                    @foreach (var produto in Model.Produtos)
+                    {
+                        if(produto.Id == Model.Investimento.Id)
+                        {
+                            <option value="@produto.Id" selected>@produto.Nome</option>
+                        }
+                        else
+                        {
+                            <option value="@produto.Id" >@produto.Nome</option>
+                        }
+                    }
+                </select>
+                <span asp-validation-for="Investimento.Produto.Nome" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Investimento.DataInvestimento" class="control-label"></label>
+                <input asp-for="Investimento.DataInvestimento" asp-format="{0:yyyy-MM-dd}" type="date" class="form-control" />
+                <span asp-validation-for="Investimento.DataInvestimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Investimento.ValorInvestido" class="control-label"></label>
+                <input asp-for="Investimento.ValorInvestido" type="number" class="form-control"
+                       value="@(Model.Investimento.ValorInvestido.ToString().Replace(",", "."))" />
+                <span asp-validation-for="Investimento.ValorInvestido" class="text-danger"></span>
+            </div>
+
+            <input type="hidden" asp-for="Investimento.Id" />
+            
+            <div class="form-group mt-2">
+                <a asp-action="Details" asp-route-id="@Model.Investimento.Id" class="btn btn-primary mr-2">Voltar</a>
+                <input type="submit" value="Salvar" class="btn btn-success" />
+            </div>
+
+        </form>
+
+        <br />
+
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
