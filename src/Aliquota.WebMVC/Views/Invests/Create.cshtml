@@ -1,0 +1,46 @@
+﻿@model Aliquota.Domain.Entitys.Invest
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Invest</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Client" class="control-label"></label>
+                @Html.DisplayFor(modelItem => modelItem.Client)
+                @Html.ViewData.Model.Client
+                <input type="hidden" asp-for="Client" />
+                <span asp-validation-for="Client" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="InvestedValue" class="control-label"></label>
+                <input asp-for="InvestedValue" class="form-control" />
+                <span asp-validation-for="InvestedValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AppDate" class="control-label"></label>
+                <input asp-for="AppDate" class="form-control" />
+                <span asp-validation-for="AppDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
