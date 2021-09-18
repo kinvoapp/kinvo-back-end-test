@@ -1,0 +1,9 @@
+1: Definir entidades -> Produto, Cliente, Resgate, Imposto de Renda....
+2: Criar Regra de Negócio
+3: Testar (melhorar os testes)
+4: Melhorar o domain notification
+5: Desenvolver Commands, Handler e Repositórios (dar uma polida)
+6: Verificar necessidade de pasta Infra e/ou Shared
+7: Criar API
+8: Testar
+9: Criar Front 
