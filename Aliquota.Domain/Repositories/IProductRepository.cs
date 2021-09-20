@@ -4,10 +4,12 @@ using Aliquota.Domain.Entities;
 
 namespace Aliquota.Domain.Repositories
 {
+    //Abstração
     public interface IProductRepository
     {
         void Create(Product product);
-        IncomeTaxValue GetApplicationTaxValue(Product product);
+        void Save(Product product);
+        double GetTaxValue(double value);
         Product GetProduct(Guid id, string title, double price);
         IEnumerable<Product> GetProducts(string title);
         IEnumerable<Product> GetPrices(double price);

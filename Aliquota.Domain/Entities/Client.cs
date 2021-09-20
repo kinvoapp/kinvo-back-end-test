@@ -11,13 +11,11 @@ namespace Aliquota.Domain.Entities
         public Guid Id { get; private set; }
         public string Name { get; private set; }
         public IReadOnlyCollection<Product> Products { get; private set; }
-        public IncomeTaxValue IncomeTax { get; private set; }
         public Client(string name)
         {
             Id = Guid.NewGuid();
             Name = name;
             _products = new List<Product>();
-            IncomeTax = new IncomeTaxValue();
             AddNotifications(new Contract().Requires()
             .HasMinLen(Name, 3, "Name", "O nome deve conter ao mínimo 3 caracteres !")
             .HasMaxLen(Name, 25, "Name", "O nome deve conter ao máximo 25 caracteres !")
@@ -30,7 +28,7 @@ namespace Aliquota.Domain.Entities
         public double Rescue(Product product)
         {
             _products.Add(product);
-            double result = IncomeTax.Calculo(product);
+            double result = product.CalculationOfIncomeTaxCollection();
             return result;
         }
         public override string ToString()

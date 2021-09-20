@@ -25,15 +25,35 @@ namespace Aliquota.Domain.Entities
         public string Title { get; private set; }
         public DateTime ApplicationDate { get; private set; }
         public DateTime EndApplicationDate { get; private set; }
-        public bool Exists { get { return true; } }
+        public TimeSpan DateCompare { get; private set; }
+
         public bool Equals(Product other)
         {
             return Id == other.Id;
         }
 
-        public bool ImAlive()
+        public double CalculationOfIncomeTaxCollection()
         {
-            return Exists;
+            DateCompare = EndApplicationDate.Date - ApplicationDate.Date;
+            double time = DateCompare.Days / 365;
+            double value = 0;
+            if (time <= 1)
+            {
+                var n = (22.5 / 100) * Price;
+                value = n;
+            }
+            if (time == 2)
+            {
+                var n = (18.5 / 100) * Price;
+                value = n;
+            }
+            if (time >= 3)
+            {
+                var n = (15.0 / 100) * Price;
+                value = n;
+            }
+
+            return value;
         }
 
         public override string ToString()

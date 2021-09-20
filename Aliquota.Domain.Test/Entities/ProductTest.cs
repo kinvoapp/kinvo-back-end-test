@@ -14,8 +14,7 @@ namespace Aliquota.Domain.Test
             Client _client = new Client("Kaoe");
             var expected = true;
             _client.AddProduct(_product);
-            var result = _product.ImAlive();
-            Assert.Equal(expected, result);
+            Assert.Equal(expected, _product.Valid);
         }
         [Fact(DisplayName = "Teste de data de finalização do Produto menor que data de criação - Domain Notification")]
         public void ErrorProductDateNotification()
