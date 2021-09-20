@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliquota.Domain.Test", "Ali
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliquota.Infra", "Aliquota.Infra\Aliquota.Infra.csproj", "{43B1DA15-6683-44BD-944E-AD7444FA71C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliquota.Api", "Aliquota.Api\Aliquota.Api.csproj", "{78AC6164-F037-4BBF-A97B-EE8048DFACEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,5 +60,17 @@ Global
 		{43B1DA15-6683-44BD-944E-AD7444FA71C0}.Release|x64.Build.0 = Release|Any CPU
 		{43B1DA15-6683-44BD-944E-AD7444FA71C0}.Release|x86.ActiveCfg = Release|Any CPU
 		{43B1DA15-6683-44BD-944E-AD7444FA71C0}.Release|x86.Build.0 = Release|Any CPU
+		{78AC6164-F037-4BBF-A97B-EE8048DFACEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78AC6164-F037-4BBF-A97B-EE8048DFACEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78AC6164-F037-4BBF-A97B-EE8048DFACEE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{78AC6164-F037-4BBF-A97B-EE8048DFACEE}.Debug|x64.Build.0 = Debug|Any CPU
+		{78AC6164-F037-4BBF-A97B-EE8048DFACEE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{78AC6164-F037-4BBF-A97B-EE8048DFACEE}.Debug|x86.Build.0 = Debug|Any CPU
+		{78AC6164-F037-4BBF-A97B-EE8048DFACEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78AC6164-F037-4BBF-A97B-EE8048DFACEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78AC6164-F037-4BBF-A97B-EE8048DFACEE}.Release|x64.ActiveCfg = Release|Any CPU
+		{78AC6164-F037-4BBF-A97B-EE8048DFACEE}.Release|x64.Build.0 = Release|Any CPU
+		{78AC6164-F037-4BBF-A97B-EE8048DFACEE}.Release|x86.ActiveCfg = Release|Any CPU
+		{78AC6164-F037-4BBF-A97B-EE8048DFACEE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
