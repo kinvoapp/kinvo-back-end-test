@@ -17,28 +17,26 @@ namespace Aliquota.Domain
         }
         public ICommandResult Handle(CreateProductCommand command)
         {
-            command.Validate();
-            if (command.Invalid)
+            if (Invalid)
             {
                 return new GenericCommandResult(false, "Opa, tem algo errado aí !", command.Notifications);
             }
             var product = new Product(command.Title, command.Price, command.InitialApplicationDate, command.EndApplicationDate);
             _repository.Create(product);
-            return new GenericCommandResult(true, "Produto salvo com sucesso !", product);
+            return new GenericCommandResult(true, "Produto criado com sucesso !", product.ToString());
         }
 
         public ICommandResult Handle(RescueProductApplicationCommand command)
         {
-            command.Validate();
-            if (command.Invalid)
+            if (Invalid)
             {
                 return new GenericCommandResult(false, "Opa, tem algo errado aí !", command.Notifications);
             }
             var product = new Product(command.Title, command.Price, command.InitialApplicationDate, command.EndApplicationDate);
             var taxValueRescue = _repository.GetApplicationTaxValue(product);
             taxValueRescue.Calculo(product);
-            _repository.RescueTaxValue(product);
-            return new GenericCommandResult(true, "Produto resgatado com sucesso !", product);
+            _repository.RescueTaxValue(taxValueRescue);
+            return new GenericCommandResult(true, "Aplicação resgatada com sucesso ! Seu valor é de: ", taxValueRescue);
         }
     }
 }

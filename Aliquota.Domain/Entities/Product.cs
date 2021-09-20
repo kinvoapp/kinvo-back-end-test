@@ -35,5 +35,10 @@ namespace Aliquota.Domain.Entities
         {
             return Exists;
         }
+
+        public override string ToString()
+        {
+            return Title.ToString();
+        }
     }
 }
