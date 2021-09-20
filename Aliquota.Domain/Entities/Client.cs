@@ -21,7 +21,7 @@ namespace Aliquota.Domain.Entities
             AddNotifications(new Contract().Requires()
             .HasMinLen(Name, 3, "Name", "O nome deve conter ao mínimo 3 caracteres !")
             .HasMaxLen(Name, 25, "Name", "O nome deve conter ao máximo 25 caracteres !")
-            .IsNotNullOrEmpty(Name, "Name", "O Nome do cliente não pode ser nulo !"));
+            .IsNotNullOrEmpty(Name, "Name", "O Nome do cliente não pode ser vazio !"));
         }
         public void AddProduct(Product products)
         {
@@ -32,6 +32,10 @@ namespace Aliquota.Domain.Entities
             _products.Add(product);
             double result = IncomeTax.Calculo(product);
             return result;
+        }
+        public override string ToString()
+        {
+            return Name.ToString();
         }
     }
 }

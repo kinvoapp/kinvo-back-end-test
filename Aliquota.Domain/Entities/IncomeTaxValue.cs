@@ -12,19 +12,19 @@ namespace Aliquota.Domain.Entities
             DateCompare = product.EndApplicationDate.Date - product.ApplicationDate.Date;
             double time = DateCompare.Days / 365;
             double value = 0;
-            if (time == 1)
+            if (time <= 1)
             {
                 var n = (22.5 / 100) * product.Price;
                 value = n;
             }
-            if (time > 1)
+            if (time == 2)
             {
                 var n = (18.5 / 100) * product.Price;
                 value = n;
             }
-            if (time > 2)
+            if (time >= 3)
             {
-                var n = (15 / 100) * product.Price;
+                var n = (15.0 / 100) * product.Price;
                 value = n;
             }
 

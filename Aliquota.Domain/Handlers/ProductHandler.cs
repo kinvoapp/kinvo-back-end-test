@@ -35,9 +35,9 @@ namespace Aliquota.Domain
                 return new GenericCommandResult(false, "Opa, tem algo errado aí !", command.Notifications);
             }
             var product = new Product(command.Title, command.Price, command.InitialApplicationDate, command.EndApplicationDate);
-            var taxValue = _repository.GetTaxValue(command.Price);
-            taxValue.Calculo(product);
-            _repository.Rescue(product);
+            var taxValueRescue = _repository.GetApplicationTaxValue(product);
+            taxValueRescue.Calculo(product);
+            _repository.RescueTaxValue(product);
             return new GenericCommandResult(true, "Produto resgatado com sucesso !", product);
         }
     }

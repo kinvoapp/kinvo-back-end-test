@@ -27,6 +27,7 @@ namespace Aliquota.Domain.Commands
         public DateTime EndApplicationDate { get; set; }
         public void Validate()
         {
+            //Adicionar contract Price não pode ser zero ! 
             AddNotifications(new Contract().Requires().HasMinLen(Title, 3, "Title", "Por favor, no mínimo 3 caracteres para o nome do produto")
             .HasMaxLen(Title, 12, "Title", "Titulo com no máximo até 12 caracteres !")
             .IsLowerThan(EndApplicationDate, InitialApplicationDate, "EndApplicationDate", "O Resgate não pode ser feito se a data for menor que a data de aplicação !")

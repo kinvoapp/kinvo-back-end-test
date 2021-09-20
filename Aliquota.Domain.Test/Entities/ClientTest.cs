@@ -6,6 +6,8 @@ namespace Aliquota.Domain.Test
 {
     public class ClientTest
     {
+        //Red, Green Refactor
+        //Arrange, Act, Assert 
         [Fact(DisplayName = "Teste Criação de Produto e Cliente")]
 
         public void CreateProductAndClientAndProduct()
@@ -15,6 +17,7 @@ namespace Aliquota.Domain.Test
             var expected = true;
             _client.AddProduct(_product);
             Assert.Equal(expected, _client.Valid);
+            Assert.Equal(expected, _product.Valid);
         }
         [Fact(DisplayName = "Teste Criação de Produto, Cliente e Pegar Taxa")]
         public void CreateProductAndClientAndProductAndGetRescue()
@@ -22,36 +25,27 @@ namespace Aliquota.Domain.Test
             Product _product = new Product("EGIE3", 300, DateTime.Now, DateTime.Now.AddMonths(3));
             Client _client = new Client("Kaoe");
             var expected = true;
-            _client.Rescue(_product);
+            _client.Rescue(_product); //retorna valor da taxa do produto
             Assert.Equal(expected, _client.Valid);
+            Assert.Equal(expected, _product.Valid);
         }
-        [Fact(DisplayName = "Teste de Nome Nulo - Error Notification")]
-        public void NullNameNotification()
+        [Fact(DisplayName = "Teste de Nome De Cliente Nulo - Domain Notification")]
+        public void NullClientNameNotification()
         {
             Product _product = new Product("EGIE3", 300, DateTime.Now, DateTime.Now.AddMonths(3));
-            Client _client = new Client(null);
-            var expected = true;
+            Client _client = new Client(null); //não pode ser nulo !!
+            var expected = false;
             _client.Rescue(_product);
             Assert.Equal(expected, _client.Valid);
         }
-        [Fact(DisplayName = "Teste de Nome 3 Caractere - Error Notification")]
-        public void ShortNameNotification()
+        [Fact(DisplayName = "Teste de Cliente Nome minimo 3 Caractere - Domain Notification")]
+        public void ShortClientNameNotification()
         {
             Product _product = new Product("EGIE3", 300, DateTime.Now, DateTime.Now.AddMonths(3));
             Client _client = new Client("a");
-            var expected = true;
+            var expected = false;
             _client.Rescue(_product);
             Assert.Equal(expected, _client.Valid);
-        }
-        [Fact(DisplayName = "Teste de data de finalização menor que data de criação - Error Notification")]
-        public void ErrorDateNotification()
-        {
-            Product _product = new Product("EGIE3", 300, DateTime.Now.AddDays(5), DateTime.Now);
-            Client _client = new Client("");
-            var expected = true;
-            _client.Rescue(_product);
-            Assert.Equal(expected, _client.Valid);
-            //codigo correto
         }
     }
 }
