@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliquota.Domain", "Aliquota.Domain.csproj", "{74C43081-42DA-4C30-9695-CA3ACDC9EE87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliquota.Domain.Test", "..\Aliquota.Domain.Test\Aliquota.Domain.Test.csproj", "{347D5FEC-B67C-4F2B-B05F-0CAD87FEB96C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aliquota.Domain.Test", "..\Aliquota.Domain.Test\Aliquota.Domain.Test.csproj", "{347D5FEC-B67C-4F2B-B05F-0CAD87FEB96C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

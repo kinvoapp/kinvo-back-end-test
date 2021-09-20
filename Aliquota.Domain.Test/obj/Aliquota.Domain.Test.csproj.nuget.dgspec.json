@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tcout\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj": {}
+    "C:\\Users\\tcout\\Documents\\GitHub\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tcout\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj": {
+    "C:\\Users\\tcout\\Documents\\GitHub\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tcout\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj",
+        "projectUniqueName": "C:\\Users\\tcout\\Documents\\GitHub\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj",
         "projectName": "Aliquota.Domain.Test",
-        "projectPath": "C:\\Users\\tcout\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj",
+        "projectPath": "C:\\Users\\tcout\\Documents\\GitHub\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj",
         "packagesPath": "C:\\Users\\tcout\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tcout\\kinvo-back-end-test\\Aliquota.Domain.Test\\obj\\",
+        "outputPath": "C:\\Users\\tcout\\Documents\\GitHub\\kinvo-back-end-test\\Aliquota.Domain.Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

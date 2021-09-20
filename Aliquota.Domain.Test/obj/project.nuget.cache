@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/YTPxeeOsvi3Wtz+yJFTK+6AZ4DOMrJupsEk2HoZh4czu+EeClYiu44UHO5LmLO6BlYTTe5LmTMhZr0q30zZ2g==",
+  "dgSpecHash": "ySph+FLXk8nj78zraByZF4Rw6v1dWZi0CuOykZGJt6Anna1xoEHKoTWqKNsu9LrAbBa2OQsk3eMZMKdWwqlDZA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tcout\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj",
+  "projectFilePath": "C:\\Users\\tcout\\Documents\\GitHub\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tcout\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\tcout\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",

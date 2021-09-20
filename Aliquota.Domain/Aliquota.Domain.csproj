@@ -221,11 +221,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Investimento.cs" />
-    <Compile Include="InvestimentoDOA.cs" />
-    <Compile Include="Lucro.cs" />
+    <Compile Include="KinvoContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resgatar.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
