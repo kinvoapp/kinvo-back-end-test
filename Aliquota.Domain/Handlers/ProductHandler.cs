@@ -34,7 +34,7 @@ namespace Aliquota.Domain.Handlers
             }
             var product = new Product(command.Title, command.Price, command.InitialApplicationDate, command.EndApplicationDate);
             _repository.Create(product);
-            return new GenericCommandResult(true, "Produto criado com sucesso !", product.ToString());
+            return new GenericCommandResult(true, "Produto criado com sucesso !", product);
         }
 
         public ICommandResult Handle(RescueProductApplicationCommand command)

@@ -1,12 +1,9 @@
-using System;
 using System.Collections.Generic;
 using Aliquota.Domain.Commands;
 using Aliquota.Domain.Entities;
 using Aliquota.Domain.Handlers;
 using Aliquota.Domain.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace Aliquota.Api.Controller
 {
@@ -18,8 +15,10 @@ namespace Aliquota.Api.Controller
         [HttpGet]
         public IEnumerable<Product> GetProducts([FromServices] IProductRepository repo)
         {
-            return repo.GetProducts("ITSA4");
+            return repo.GetProducts("ABCD4");
         }
+
+
 
         [Route("")]
         [HttpPost]
