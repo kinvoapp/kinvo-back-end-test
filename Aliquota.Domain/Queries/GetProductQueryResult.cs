@@ -15,9 +15,10 @@ namespace Aliquota.Domain.Queries
         {
             return x => x.Price == price;
         }
-        public static Expression<Func<Product, bool>> GetById(Guid id)
+        public static Expression<Func<Product, bool>> GetById(Guid id, string title)
         {
-            return x => x.Id == id;
+            return x => x.Id == id &&
+            x.Title == title;
         }
         public static Expression<Func<Product, bool>> GetByDate(string title, DateTime date)
         {

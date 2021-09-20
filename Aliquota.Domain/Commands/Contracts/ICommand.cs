@@ -1,7 +1,9 @@
+using Flunt.Validations;
+
 namespace Aliquota.Domain.Commands.Contracts
 {
-    public interface ICommand
+    public interface ICommand : IValidatable
     {
-        bool Valid();
+
     }
 }
