@@ -26,5 +26,9 @@ namespace Aliquota.Domain.Queries
             x.Title == title &&
             x.ApplicationDate == date;
         }
+        public static Expression<Func<Product, bool>> GetTaxValue(double value)
+        {
+            return x => x.Value == value;
+        }
     }
 }

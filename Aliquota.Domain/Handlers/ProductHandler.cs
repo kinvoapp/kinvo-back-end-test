@@ -34,7 +34,6 @@ namespace Aliquota.Domain.Handlers
             }
             var product = new Product(command.Title, command.Price, command.InitialApplicationDate, command.EndApplicationDate);
             _repository.Create(product);
-            _repository.Save(product);
             return new GenericCommandResult(true, "Produto criado com sucesso !", product.ToString());
         }
 
@@ -45,7 +44,7 @@ namespace Aliquota.Domain.Handlers
             {
                 return new GenericCommandResult(false, "Opa, tem algo errado aí !", command.Notifications);
             }
-            var product = _repository.GetProduct(command.Id, command.Title, command.Price);
+            var product = _repository.GetProduct(command.Id, command.Title, command.Price); //pega do banco
             var value = _repository.GetTaxValue(product.CalculationOfIncomeTaxCollection());
             return new GenericCommandResult(true, "Aplicação resgatada com sucesso ! Seu valor é de: ", value);
         }

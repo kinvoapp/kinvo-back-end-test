@@ -49,14 +49,14 @@ namespace Aliquota.Domain.Test.Repositories
             return null;
         }
 
+        public Product GetTaxValue(double value)
+        {
+            return new Product("ABEV3", value, DateTime.Now, DateTime.Now);
+        }
+
         public void Save(Product product)
         {
 
-        }
-
-        double IProductRepository.GetTaxValue(double value)
-        {
-            return value;
         }
     }
 }

@@ -23,6 +23,7 @@ namespace Aliquota.Domain.Entities
         public Guid Id { get; private set; }
         public double Price { get; private set; }
         public string Title { get; private set; }
+        public double Value { get { return CalculationOfIncomeTaxCollection(); } }
         public DateTime ApplicationDate { get; private set; }
         public DateTime EndApplicationDate { get; private set; }
         public TimeSpan DateCompare { get; private set; }

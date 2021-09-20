@@ -13,9 +13,9 @@ namespace Aliquota.Domain.Commands
         {
 
         }
-        public CreateProductCommand(Guid id, string title, double price, DateTime initialApplicationDate, DateTime endApplicationDate)
+        public CreateProductCommand(string title, double price, DateTime initialApplicationDate, DateTime endApplicationDate)
         {
-            Id = id;
+            Id = Guid.NewGuid();
             Price = price;
             Title = title;
             InitialApplicationDate = initialApplicationDate;

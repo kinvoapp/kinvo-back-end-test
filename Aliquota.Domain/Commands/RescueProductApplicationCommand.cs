@@ -12,9 +12,9 @@ namespace Aliquota.Domain.Commands
 
         }
 
-        public RescueProductApplicationCommand(Guid id, string title, double price, DateTime initialApplicationDate, DateTime endApplicationDate)
+        public RescueProductApplicationCommand(string title, double price, DateTime initialApplicationDate, DateTime endApplicationDate)
         {
-            Id = id;
+            Id = Guid.NewGuid();
             Price = price;
             Title = title;
             InitialApplicationDate = initialApplicationDate;
