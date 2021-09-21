@@ -9,8 +9,8 @@ namespace Aliquota.Domain.Models
 {
     public class Investimento
     {
-        //[Key]
-        //[Required]
+        [Key]
+        [Required]
         /*[Required(ErrorMessage = "O campo é obrigatório")]*/
         public int Id {get; set; }
 

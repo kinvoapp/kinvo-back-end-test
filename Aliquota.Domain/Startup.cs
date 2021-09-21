@@ -1,22 +1,23 @@
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
+using Aliquota.Domain.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using Aliquota.Domain.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Aliquota.Domain
 {
-    public class Startup : DbContext
+    public class Startup 
     {
         public Startup(IConfiguration configuration)
         {
@@ -29,7 +30,7 @@ namespace Aliquota.Domain
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddDbContext <InvestimentoContext> (opts => opts.UseMySQL(Configuration.GetConnectionString("OnvestimentoConnection"))); 
+            services.AddDbContext <InvestimentoContext> (opts => opts.UseMySQL(Configuration.GetConnectionString("InvestimentoConnection"))); 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

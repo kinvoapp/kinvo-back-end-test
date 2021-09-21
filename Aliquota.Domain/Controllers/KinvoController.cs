@@ -24,37 +24,14 @@ namespace Aliquota.Domain.Controllers
         public IActionResult AdicionarInvestimento([FromBody] Investimento investimento)
         {
             _context.Investimentos.Add(investimento);
+            _context.SaveChanges();
             return CreatedAtAction(nameof(RecuperaInvestientoPorId), new { Id = investimento.Id }, investimento);
-            
-            //Console.WriteLine(investimento.Id);
-             
-            //Console.WriteLine("O nome do cliente é" + investimento.Cliente);
-             
-            //Console.WriteLine("O lucro foi de " + investimento.Lucro);
-
-            //Console.WriteLine(investimento.TempoEmDias); 
-            //Console.WriteLine(investimento.TempoEmAnos);
-
-            //onsole.WriteLine(investimento.DataDeInicio); 
-            //Console.WriteLine(investimento.DataDeResgate);
-            if (investimento.TempoEmDias <= 365)
-            {
-                Console.WriteLine("O imposto foi de " + investimento.Lucro*0.225);
-            }
-            else if (investimento.TempoEmDias <= 365*2 && investimento.TempoEmDias > 365)
-            {
-                Console.WriteLine("O imposto foi de " + investimento.Lucro*0.185);
-            }
-            else if (investimento.TempoEmDias > 365*2)
-            {
-                Console.WriteLine("O imposto foi de " + investimento.Lucro*0.15);
-            }
         }
 
         [HttpGet]
-        public IActionResult RecuperaInvestimento()
+        public IEnumerable <Investimento>RecuperaInvestimento()
         {
-            return Ok(_context.Investimentos);
+            return _context.Investimentos;
 
         }
 
@@ -66,6 +43,7 @@ namespace Aliquota.Domain.Controllers
              {
                 Ok(investimento);
              }
+             return NotFound();
         }
     }
 }
