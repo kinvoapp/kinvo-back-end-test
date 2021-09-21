@@ -1,0 +1,18 @@
+{
+  "Cliente" : "Thiago",
+  "lucro": 1000.00,
+  "TempoEmDias": 365,
+  "TempoEmAnos": 1,
+  "DataDeInicio": "2020-09-21",
+  "DataDeResgate": "2021-09-21"
+}
+
+
+{
+  "Cliente" : "Alicia",
+  "lucro": 1000.00,
+  "TempoEmDias": 730,
+  "TempoEmAnos": 2,
+  "DataDeInicio": "2019-09-21",
+  "DataDeResgate": "2021-09-21"
+}

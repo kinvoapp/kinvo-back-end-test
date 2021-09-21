@@ -1,0 +1,2019 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MySql.Data.EntityFrameworkCore</name>
+    </assembly>
+    <members>
+        <member name="T:MySql.Data.EntityFrameworkCore.DataAnnotations.MySqlCharsetAttribute">
+            <summary>
+            Establishes the character set of an entity property.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.DataAnnotations.MySqlCharsetAttribute.Charset">
+            <summary>
+            Character set to use for the attribute.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.DataAnnotations.MySqlCharsetAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MySql.Data.EntityFrameworkCore.DataAnnotations.MySqlCharsetAttribute"/> class.
+            </summary>
+            <param name="charset">Character set to use.</param>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.DataAnnotations.MySqlCollationAttribute">
+            <summary>
+            Sets the collation in an entity property.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.DataAnnotations.MySqlCollationAttribute.Collation">
+            <summary>
+            Collation set in the attribute.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.DataAnnotations.MySqlCollationAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MySql.Data.EntityFrameworkCore.DataAnnotations.MySqlCollationAttribute"/> class.
+            </summary>
+            <param name="collation">Collation to use.</param>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Design.Internal.MySQLAnnotationCodeGenerator">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Design.Internal.MySQLAnnotationCodeGenerator.#ctor(Microsoft.EntityFrameworkCore.Design.AnnotationCodeGeneratorDependencies)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Design.Internal.MySQLAnnotationCodeGenerator.IsHandledByConvention(Microsoft.EntityFrameworkCore.Metadata.IModel,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Design.Internal.MySQLAnnotationCodeGenerator.GenerateFluentApi(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Infrastructure.IAnnotation)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Design.Internal.MySQLDesignTimeServices">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Design.Internal.MySQLDesignTimeServices.ConfigureDesignTimeServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Diagnostics.Internal.MySQLLoggingDefinitions">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Extensions.MySQLDatabaseFacadeExtensions">
+            <summary>
+                MySQL specific extension methods for <see cref="P:Microsoft.EntityFrameworkCore.DbContext.Database" />.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDatabaseFacadeExtensions.IsMySql(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade)">
+            <summary>
+                <para>
+                    Returns true if the database provider currently in use is the MySQL provider.
+                </para>
+                <para>
+                    This method can only be used after the <see cref="T:Microsoft.EntityFrameworkCore.DbContext" /> has been configured because
+                    it is only then that the provider is known. This means that this method cannot be used
+                    in <see cref="M:Microsoft.EntityFrameworkCore.DbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)" /> because this is where application code sets the
+                    provider to use as part of configuring the context.
+                </para>
+            </summary>
+            <param name="database"> The facade from <see cref="P:Microsoft.EntityFrameworkCore.DbContext.Database" />. </param>
+            <returns> True if MySQL is being used; false otherwise. </returns>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions">
+            <summary>
+                Provides CLR methods that get translated to database functions when used in LINQ to Entities queries.
+                The methods on this class are accessed via <see cref="P:Microsoft.EntityFrameworkCore.EF.Functions" />.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffYear(Microsoft.EntityFrameworkCore.DbFunctions,System.DateTime,System.DateTime)">
+            <summary>
+                Counts the number of year boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(YEAR,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of year boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffYear(Microsoft.EntityFrameworkCore.DbFunctions,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+                Counts the number of year boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(YEAR,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of year boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffYear(Microsoft.EntityFrameworkCore.DbFunctions,System.DateTimeOffset,System.DateTimeOffset)">
+            <summary>
+                Counts the number of year boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(YEAR,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of year boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffYear(Microsoft.EntityFrameworkCore.DbFunctions,System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})">
+            <summary>
+                Counts the number of year boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(YEAR,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of year boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffMonth(Microsoft.EntityFrameworkCore.DbFunctions,System.DateTime,System.DateTime)">
+            <summary>
+                Counts the number of month boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(MONTH,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of month boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffMonth(Microsoft.EntityFrameworkCore.DbFunctions,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+                Counts the number of month boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(MONTH,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of month boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffMonth(Microsoft.EntityFrameworkCore.DbFunctions,System.DateTimeOffset,System.DateTimeOffset)">
+            <summary>
+                Counts the number of month boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(MONTH,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of month boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffMonth(Microsoft.EntityFrameworkCore.DbFunctions,System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})">
+            <summary>
+                Counts the number of month boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(MONTH,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of month boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffDay(Microsoft.EntityFrameworkCore.DbFunctions,System.DateTime,System.DateTime)">
+            <summary>
+                Counts the number of day boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(DAY,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of day boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffDay(Microsoft.EntityFrameworkCore.DbFunctions,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+                Counts the number of day boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(DAY,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of day boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffDay(Microsoft.EntityFrameworkCore.DbFunctions,System.DateTimeOffset,System.DateTimeOffset)">
+            <summary>
+                Counts the number of day boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(DAY,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of day boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffDay(Microsoft.EntityFrameworkCore.DbFunctions,System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})">
+            <summary>
+                Counts the number of day boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(DAY,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of day boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffHour(Microsoft.EntityFrameworkCore.DbFunctions,System.DateTime,System.DateTime)">
+            <summary>
+                Counts the number of hour boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(HOUR,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of hour boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffHour(Microsoft.EntityFrameworkCore.DbFunctions,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+                Counts the number of hour boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(HOUR,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of hour boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffHour(Microsoft.EntityFrameworkCore.DbFunctions,System.DateTimeOffset,System.DateTimeOffset)">
+            <summary>
+                Counts the number of hour boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(HOUR,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of hour boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffHour(Microsoft.EntityFrameworkCore.DbFunctions,System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})">
+            <summary>
+                Counts the number of hour boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(HOUR,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of hour boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffMinute(Microsoft.EntityFrameworkCore.DbFunctions,System.DateTime,System.DateTime)">
+            <summary>
+                Counts the number of minute boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(MINUTE,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of minute boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffMinute(Microsoft.EntityFrameworkCore.DbFunctions,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+                Counts the number of minute boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(MINUTE,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of minute boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffMinute(Microsoft.EntityFrameworkCore.DbFunctions,System.DateTimeOffset,System.DateTimeOffset)">
+            <summary>
+                Counts the number of minute boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(MINUTE,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of minute boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffMinute(Microsoft.EntityFrameworkCore.DbFunctions,System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})">
+            <summary>
+                Counts the number of minute boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(MINUTE,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of minute boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffSecond(Microsoft.EntityFrameworkCore.DbFunctions,System.DateTime,System.DateTime)">
+            <summary>
+                Counts the number of second boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(SECOND,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of second boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffSecond(Microsoft.EntityFrameworkCore.DbFunctions,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+                Counts the number of second boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(SECOND,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of second boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffSecond(Microsoft.EntityFrameworkCore.DbFunctions,System.DateTimeOffset,System.DateTimeOffset)">
+            <summary>
+                Counts the number of second boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(SECOND,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of second boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffSecond(Microsoft.EntityFrameworkCore.DbFunctions,System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})">
+            <summary>
+                Counts the number of second boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(SECOND,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of second boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffMicrosecond(Microsoft.EntityFrameworkCore.DbFunctions,System.DateTime,System.DateTime)">
+            <summary>
+                Counts the number of microsecond boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(MICROSECOND,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of microsecond boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffMicrosecond(Microsoft.EntityFrameworkCore.DbFunctions,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+                Counts the number of microsecond boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(MICROSECOND,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of microsecond boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffMicrosecond(Microsoft.EntityFrameworkCore.DbFunctions,System.DateTimeOffset,System.DateTimeOffset)">
+            <summary>
+                Counts the number of microsecond boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(MICROSECOND,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of microsecond boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.DateDiffMicrosecond(Microsoft.EntityFrameworkCore.DbFunctions,System.Nullable{System.DateTimeOffset},System.Nullable{System.DateTimeOffset})">
+            <summary>
+                Counts the number of microsecond boundaries crossed between the startDate and endDate.
+                Corresponds to TIMESTAMPDIFF(MICROSECOND,startDate,endDate).
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="startDate">Starting date for the calculation.</param>
+            <param name="endDate">Ending date for the calculation.</param>
+            <returns>Number of microsecond boundaries crossed between the dates.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.Like``1(Microsoft.EntityFrameworkCore.DbFunctions,``0,System.String)">
+            <summary>
+                <para>
+                    An implementation of the SQL LIKE operation. On relational databases this is usually directly
+                    translated to SQL.
+                </para>
+                <para>
+                    Note that if this function is translated into SQL, then the semantics of the comparison will
+                    depend on the database configuration. In particular, it may be either case-sensitive or
+                    case-insensitive. If this function is evaluated on the client, then it will always use
+                    a case-insensitive comparison.
+                </para>
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="matchExpression">The property of entity that is to be matched.</param>
+            <param name="pattern">The pattern which may involve wildcards %,_,[,],^.</param>
+            <returns>true if there is a match.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLDbFunctionsExtensions.Like``1(Microsoft.EntityFrameworkCore.DbFunctions,``0,System.String,System.String)">
+            <summary>
+                <para>
+                    An implementation of the SQL LIKE operation. On relational databases this is usually directly
+                    translated to SQL.
+                </para>
+                <para>
+                    Note that if this function is translated into SQL, then the semantics of the comparison will
+                    depend on the database configuration. In particular, it may be either case-sensitive or
+                    case-insensitive. If this function is evaluated on the client, then it will always use
+                    a case-insensitive comparison.
+                </para>
+            </summary>
+            <param name="_">The DbFunctions instance.</param>
+            <param name="matchExpression">The property of entity that is to be matched.</param>
+            <param name="pattern">The pattern which may involve wildcards %,_,[,],^.</param>
+            <param name="escapeCharacter">
+                The escape character (as a single character string) to use in front of %,_,[,],^
+                if they are not used as wildcards.
+            </param>
+            <returns>true if there is a match.</returns>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Extensions.MySQLIndexExtensions">
+            <summary>
+                Extension methods for <see cref="T:Microsoft.EntityFrameworkCore.Metadata.IIndex" /> for SQL Server-specific metadata.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLIndexExtensions.IsFullText(Microsoft.EntityFrameworkCore.Metadata.IIndex)">
+            <summary>
+                Returns a value indicating whether the index is full text.
+            </summary>
+            <param name="index"> The index. </param>
+            <returns> <c>true</c> if the index is clustered. </returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLIndexExtensions.SetIsFullText(Microsoft.EntityFrameworkCore.Metadata.IMutableIndex,System.Nullable{System.Boolean})">
+            <summary>
+                Sets a value indicating whether the index is full text.
+            </summary>
+            <param name="value"> The value to set. </param>
+            <param name="index"> The index. </param>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLIndexExtensions.SetIsFullText(Microsoft.EntityFrameworkCore.Metadata.IConventionIndex,System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+                Sets a value indicating whether the index is full text.
+            </summary>
+            <param name="value"> The value to set. </param>
+            <param name="index"> The index. </param>
+            <param name="fromDataAnnotation"> Indicates whether the configuration was specified using a data annotation. </param>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLIndexExtensions.GetIsFullTextConfigurationSource(Microsoft.EntityFrameworkCore.Metadata.IConventionIndex)">
+            <summary>
+                Returns the <see cref="T:Microsoft.EntityFrameworkCore.Metadata.ConfigurationSource" /> for whether the index is full text.
+            </summary>
+            <param name="property"> The property. </param>
+            <returns> The <see cref="T:Microsoft.EntityFrameworkCore.Metadata.ConfigurationSource" /> for whether the index is full text. </returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLIndexExtensions.IsSpatial(Microsoft.EntityFrameworkCore.Metadata.IIndex)">
+            <summary>
+                Returns a value indicating whether the index is spartial.
+            </summary>
+            <param name="index"> The index. </param>
+            <returns> <c>true</c> if the index is clustered. </returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLIndexExtensions.SetIsSpatial(Microsoft.EntityFrameworkCore.Metadata.IMutableIndex,System.Nullable{System.Boolean})">
+            <summary>
+                Sets a value indicating whether the index is spartial.
+            </summary>
+            <param name="value"> The value to set. </param>
+            <param name="index"> The index. </param>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLIndexExtensions.SetIsSpatial(Microsoft.EntityFrameworkCore.Metadata.IConventionIndex,System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+                Sets a value indicating whether the index is spartial.
+            </summary>
+            <param name="value"> The value to set. </param>
+            <param name="index"> The index. </param>
+            <param name="fromDataAnnotation"> Indicates whether the configuration was specified using a data annotation. </param>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLIndexExtensions.GetIsSpatialConfigurationSource(Microsoft.EntityFrameworkCore.Metadata.IConventionIndex)">
+            <summary>
+                Returns the <see cref="T:Microsoft.EntityFrameworkCore.Metadata.ConfigurationSource" /> for whether the index is spartial.
+            </summary>
+            <param name="property"> The property. </param>
+            <returns> The <see cref="T:Microsoft.EntityFrameworkCore.Metadata.ConfigurationSource" /> for whether the index is spartial. </returns>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Extensions.MySQLMigrationBuilderExtensions">
+            <summary>
+                MySQL specific extension methods for <see cref="T:Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder" />.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLMigrationBuilderExtensions.IsMySql(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <summary>
+                <para>
+                    Returns true if the database provider currently in use is the MySQL Server provider.
+                </para>
+            </summary>
+            <param name="migrationBuilder">
+                The migrationBuilder from the parameters on <see cref="M:Microsoft.EntityFrameworkCore.Migrations.Migration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)" /> or
+                <see cref="M:Microsoft.EntityFrameworkCore.Migrations.Migration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)" />.
+            </param>
+            <returns> True if SQL Server is being used; false otherwise. </returns>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Extensions.MySQLModelExtensions">
+            <summary>
+                Extension methods for <see cref="T:Microsoft.EntityFrameworkCore.Metadata.IModel" /> for SQL Server-specific metadata.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLModelExtensions.GetValueGenerationStrategy(Microsoft.EntityFrameworkCore.Metadata.IModel)">
+            <summary>
+                Returns the <see cref="T:MySql.Data.EntityFrameworkCore.Metadata.MySQLValueGenerationStrategy" /> to use for properties
+                of keys in the model, unless the property has a strategy explicitly set.
+            </summary>
+            <param name="model"> The model. </param>
+            <returns> The default <see cref="T:MySql.Data.EntityFrameworkCore.Metadata.MySQLValueGenerationStrategy" />. </returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLModelExtensions.SetValueGenerationStrategy(Microsoft.EntityFrameworkCore.Metadata.IMutableModel,System.Nullable{MySql.Data.EntityFrameworkCore.Metadata.MySQLValueGenerationStrategy})">
+            <summary>
+                Attempts to set the <see cref="T:MySql.Data.EntityFrameworkCore.Metadata.MySQLValueGenerationStrategy" /> to use for properties
+                of keys in the model that don't have a strategy explicitly set.
+            </summary>
+            <param name="model"> The model. </param>
+            <param name="value"> The value to set. </param>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLModelExtensions.SetValueGenerationStrategy(Microsoft.EntityFrameworkCore.Metadata.IConventionModel,System.Nullable{MySql.Data.EntityFrameworkCore.Metadata.MySQLValueGenerationStrategy},System.Boolean)">
+            <summary>
+                Attempts to set the <see cref="T:MySql.Data.EntityFrameworkCore.Metadata.MySQLValueGenerationStrategy" /> to use for properties
+                of keys in the model that don't have a strategy explicitly set.
+            </summary>
+            <param name="model"> The model. </param>
+            <param name="value"> The value to set. </param>
+            <param name="fromDataAnnotation"> Indicates whether the configuration was specified using a data annotation. </param>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLModelExtensions.GetValueGenerationStrategyConfigurationSource(Microsoft.EntityFrameworkCore.Metadata.IConventionModel)">
+            <summary>
+                Returns the <see cref="T:Microsoft.EntityFrameworkCore.Metadata.ConfigurationSource" /> for the default <see cref="T:MySql.Data.EntityFrameworkCore.Metadata.MySQLValueGenerationStrategy" />.
+            </summary>
+            <param name="model"> The model. </param>
+            <returns> The <see cref="T:Microsoft.EntityFrameworkCore.Metadata.ConfigurationSource" /> for the default <see cref="T:MySql.Data.EntityFrameworkCore.Metadata.MySQLValueGenerationStrategy" />. </returns>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Extensions.MySQLPropertyBuilderExtensions">
+            <summary>
+            Represents the implementation of MySQL property-builder extensions used in Fluent API.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLPropertyBuilderExtensions.UseMySQLAutoIncrementColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.String)">
+            <summary>
+            Defines a MySQL auto-increment column.
+            </summary>
+            <param name="propertyBuilder">Entity property to be set.</param>
+            <param name="typeName">MySQL column type as string.</param>
+            <returns>Property builder of the auto-increment column.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLPropertyBuilderExtensions.ForMySQLHasDefaultValueSql(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.String)">
+            <summary>
+            Defines a column default value expression.
+            </summary>
+            <param name="propertyBuilder">Entity property to be set.</param>
+            <param name="sql">Default value expression.</param>
+            <returns>Property builder of a MySQL column with a default value.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLPropertyBuilderExtensions.ForMySQLHasDefaultValue(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Object)">
+            <summary>
+            Defines a column default value.
+            </summary>
+            <param name="propertyBuilder">Entity property to be set.</param>
+            <param name="sql">Default value.</param>
+            <returns>Property builder of a MySQL column with a default value.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLPropertyBuilderExtensions.ForMySQLHasCharset(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.String)">
+            <summary>
+            Adds the character set to an entity property.
+            </summary>
+            <param name="propertyBuilder">Property builder.</param>
+            <param name="charset">MySQL character set to use.</param>
+            <returns>Property builder with a character set.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLPropertyBuilderExtensions.ForMySQLHasCharset(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder,System.String)">
+            <summary>
+            Adds the character set to an entity.
+            </summary>
+            <param name="entityTypeBuilder">Entity type builder.</param>
+            <param name="charset">MySQL character set to use.</param>
+            <returns>Entity type builder with a character set.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLPropertyBuilderExtensions.ForMySQLHasCollation(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.String)">
+            <summary>
+            Adds the collation to an entity property.
+            </summary>
+            <param name="propertyBuilder">Property builder.</param>
+            <param name="collation">MySQL collation to use.</param>
+            <returns>Property builder with a collation.</returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLPropertyBuilderExtensions.ForMySQLHasCollation(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder,System.String)">
+            <summary>
+            Adds the collation to an entity.
+            </summary>
+            <param name="entityTypeBuilder">Entity type builder.</param>
+            <param name="collation">MySQL collation to use.</param>
+            <returns>Entity type builder with a collation.</returns>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Extensions.MySQLPropertyExtensions">
+            <summary>
+                Extension methods for <see cref="T:Microsoft.EntityFrameworkCore.Metadata.IProperty" /> for MySQL Server-specific metadata.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLPropertyExtensions.GetValueGenerationStrategy(Microsoft.EntityFrameworkCore.Metadata.IProperty)">
+            <summary>
+                <para>
+                    Returns the <see cref="T:MySql.Data.EntityFrameworkCore.Metadata.MySQLValueGenerationStrategy" /> to use for the property.
+                </para>
+                <para>
+                    If no strategy is set for the property, then the strategy to use will be taken from the <see cref="T:Microsoft.EntityFrameworkCore.Metadata.IModel" />.
+                </para>
+            </summary>
+            <returns> The strategy, or <see cref="!:SqlServerValueGenerationStrategy.None" /> if none was set. </returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLPropertyExtensions.IsCompatibleIdentityColumn(Microsoft.EntityFrameworkCore.Metadata.IProperty)">
+            <summary>
+            Returns a value indicating whether the property is compatible with <see cref="F:MySql.Data.EntityFrameworkCore.Metadata.MySQLValueGenerationStrategy.IdentityColumn"/>.
+            </summary>
+            <param name="property"> The property. </param>
+            <returns> <c>true</c> if compatible. </returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLPropertyExtensions.IsCompatibleComputedColumn(Microsoft.EntityFrameworkCore.Metadata.IProperty)">
+            <summary>
+            Returns a value indicating whether the property is compatible with <see cref="F:MySql.Data.EntityFrameworkCore.Metadata.MySQLValueGenerationStrategy.ComputedColumn"/>.
+            </summary>
+            <param name="property"> The property. </param>
+            <returns> <c>true</c> if compatible. </returns>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Extensions.MySQLServiceCollectionExtensions">
+            <summary>
+            MySQL extension class for <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" />.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Extensions.MySQLServiceCollectionExtensions.AddEntityFrameworkMySQL(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+                <para>
+                    Adds the services required by the Microsoft SQL Server database provider for Entity Framework
+                    to an <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" />.
+                </para>
+                <para>
+                    Calling this method is no longer necessary when building most applications, including those that
+                    use dependency injection in ASP.NET or elsewhere.
+                    It is only needed when building the internal service provider for use with
+                    the <see cref="!:DbContextOptionsBuilder.UseInternalServiceProvider" /> method.
+                    This is not recommend other than for some advanced scenarios.
+                </para>
+            </summary>
+            <param name="serviceCollection"> The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> to add services to. </param>
+            <returns>
+                The same service collection so that multiple calls can be chained.
+            </returns>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Infrastructure.Internal.IMySQLOptions">
+            <summary>
+            Options to set on the provider.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Infrastructure.Internal.MySQLOptionsExtension">
+            <summary>
+            Represents the <see cref="T:Microsoft.EntityFrameworkCore.Infrastructure.RelationalOptionsExtension"/> implementation for MySQL.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.Infrastructure.Internal.MySQLOptionsExtension.Info">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Infrastructure.Internal.MySQLOptionsExtension.Clone">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Infrastructure.Internal.MySQLOptionsExtension.WithCharSet(MySql.Data.MySqlClient.CharacterSet)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Infrastructure.Internal.MySQLOptionsExtension.ApplyServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+                This method supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This method may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Infrastructure.MySQLDbContextOptionsBuilder">
+            <summary>
+            Represents the <see cref="T:Microsoft.EntityFrameworkCore.Infrastructure.RelationalDbContextOptionsBuilder`2" /> implementation for MySQL.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Infrastructure.MySQLDbContextOptionsBuilder.#ctor(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+                Initializes a new instance of the <see cref="T:MySql.Data.EntityFrameworkCore.Infrastructure.MySQLDbContextOptionsBuilder" /> class.
+            </summary>
+            <param name="optionsBuilder"> The options builder. </param>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Internal.MySQLModelValidator">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Internal.MySQLModelValidator.Validate(Microsoft.EntityFrameworkCore.Metadata.IModel,Microsoft.EntityFrameworkCore.Diagnostics.IDiagnosticsLogger{Microsoft.EntityFrameworkCore.DbLoggerCategory.Model.Validation})">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySqlCharsetAttributeConvention">
+            <summary>
+            Represents a charset attribute for a property.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySqlCharsetAttributeConvention.#ctor(Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies)">
+            <summary>
+                Creates a new instance of <see cref="T:Microsoft.EntityFrameworkCore.Metadata.Conventions.PropertyAttributeConventionBase`1" />.
+            </summary>
+            <param name="dependencies"> Parameter object containing dependencies for this convention. </param>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySqlCollationAttributeConvention">
+            <summary>
+            Represents a collation attribute for a property.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySqlCollationAttributeConvention.#ctor(Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies)">
+            <summary>
+                Creates a new instance of <see cref="T:Microsoft.EntityFrameworkCore.Metadata.Conventions.PropertyAttributeConventionBase`1" />.
+            </summary>
+            <param name="dependencies"> Parameter object containing dependencies for this convention. </param>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySQLConventionSetBuilder">
+            <summary>
+                <para>
+                    A builder for building conventions for MySQL.
+                </para>
+                <para>
+                    The service lifetime is <see cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Scoped" /> and multiple registrations
+                    are allowed. This means that each <see cref="T:Microsoft.EntityFrameworkCore.DbContext" /> instance will use its own
+                    set of instances of this service.
+                    The implementations may depend on other services registered with any lifetime.
+                    The implementations do not need to be thread-safe.
+                </para>
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySQLConventionSetBuilder.CreateConventionSet">
+            <summary>
+            Builds and returns the convention set for MySQL.
+            </summary>
+            <returns> The convention set for MySQL. </returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySQLConventionSetBuilder.Build">
+            <summary>
+            <para>
+            Call this method to build a <see cref="T:Microsoft.EntityFrameworkCore.Metadata.Conventions.ConventionSet" /> for MySQL Server when using
+            the <see cref="T:Microsoft.EntityFrameworkCore.ModelBuilder" /> outside of <see cref="M:Microsoft.EntityFrameworkCore.DbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)" />.
+            </para>
+            <para>
+            Note that it is unusual to use this method.
+            Consider using <see cref="T:Microsoft.EntityFrameworkCore.DbContext" /> in the normal way instead.
+            </para>
+            </summary>
+            <returns> The convention set. </returns>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySqlEntityCharsetAttributeConvention">
+            <summary>
+            Represents a charset attribute for an entity.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySqlEntityCharsetAttributeConvention.#ctor(Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies)">
+            <summary>
+                Creates a new instance of <see cref="T:Microsoft.EntityFrameworkCore.Metadata.Conventions.PropertyAttributeConventionBase`1" />.
+            </summary>
+            <param name="dependencies"> Parameter object containing dependencies for this convention. </param>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySqlEntityCollationAttributeConvention">
+            <summary>
+            Represents a collation attribute for an entity.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySqlEntityCollationAttributeConvention.#ctor(Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies)">
+            <summary>
+                Creates a new instance of <see cref="T:Microsoft.EntityFrameworkCore.Metadata.Conventions.EntityTypeAttributeConventionBase`1" />.
+            </summary>
+            <param name="dependencies"> Parameter object containing dependencies for this convention. </param>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySQLValueGenerationConvention">
+            <summary>
+                A convention that configures store value generation as <see cref="F:Microsoft.EntityFrameworkCore.Metadata.ValueGenerated.OnAdd"/> on properties that are
+                part of the primary key and not part of any foreign keys, were configured to have a database default value
+                or were configured to use a <see cref="!:SqlServerValueGenerationStrategy"/>.
+                It also configures properties as <see cref="F:Microsoft.EntityFrameworkCore.Metadata.ValueGenerated.OnAddOrUpdate"/> if they were configured as computed columns.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySQLValueGenerationConvention.#ctor(Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies,Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies)">
+            <summary>
+            Creates a new instance of <see cref="T:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySQLValueGenerationConvention" />.
+            </summary>
+            <param name="dependencies"> Parameter object containing dependencies for this convention. </param>
+            <param name="relationalDependencies">  Parameter object containing relational dependencies for this convention. </param>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySQLValueGenerationConvention.ProcessPropertyAnnotationChanged(Microsoft.EntityFrameworkCore.Metadata.Builders.IConventionPropertyBuilder,System.String,Microsoft.EntityFrameworkCore.Metadata.IConventionAnnotation,Microsoft.EntityFrameworkCore.Metadata.IConventionAnnotation,Microsoft.EntityFrameworkCore.Metadata.Conventions.IConventionContext{Microsoft.EntityFrameworkCore.Metadata.IConventionAnnotation})">
+            <summary>
+            Called after an annotation is changed on a property.
+            </summary>
+            <param name="propertyBuilder"> The builder for the property. </param>
+            <param name="name"> The annotation name. </param>
+            <param name="annotation"> The new annotation. </param>
+            <param name="oldAnnotation"> The old annotation.  </param>
+            <param name="context"> Additional information associated with convention execution. </param>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySQLValueGenerationConvention.GetValueGenerated(Microsoft.EntityFrameworkCore.Metadata.IConventionProperty)">
+            <summary>
+            Returns the store value generation strategy to set for the given property.
+            </summary>
+            <param name="property"> The property. </param>
+            <returns> The store value generation strategy to set for the given property. </returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySQLValueGenerationConvention.GetValueGenerated(Microsoft.EntityFrameworkCore.Metadata.IProperty)">
+            <summary>
+            Returns the store value generation strategy to set for the given property.
+            </summary>
+            <param name="property"> The property. </param>
+            <returns> The store value generation strategy to set for the given property. </returns>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySQLValueGenerationStrategyConvention">
+            <summary>
+            A convention that configures the default model <see cref="T:MySql.Data.EntityFrameworkCore.Metadata.MySQLValueGenerationStrategy"/> as
+            <see cref="F:MySql.Data.EntityFrameworkCore.Metadata.MySQLValueGenerationStrategy.IdentityColumn"/>.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySQLValueGenerationStrategyConvention.Dependencies">
+            <summary>
+            Parameter object containing service dependencies.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySQLValueGenerationStrategyConvention.#ctor(Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.ProviderConventionSetBuilderDependencies,Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure.RelationalConventionSetBuilderDependencies)">
+            <summary>
+            Creates a new instance of <see cref="T:MySql.Data.EntityFrameworkCore.Metadata.Conventions.MySQLValueGenerationStrategyConvention" />.
+            </summary>
+            <param name="dependencies"> Parameter object containing dependencies for this convention. </param>
+            <param name="relationalDependencies">  Parameter object containing relational dependencies for this convention. </param>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Metadata.Internal.MySQLAnnotationNames">
+            <summary>
+            Names for MySQL annotations.
+            </summary>
+        </member>
+        <member name="F:MySql.Data.EntityFrameworkCore.Metadata.Internal.MySQLAnnotationNames.ValueGenerationStrategy">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Metadata.MySQLValueGenerationStrategy">
+            <summary>
+                Defines two strategies to use across the EF Core stack when generating key values
+                from MySQL Server database columns.
+            </summary>
+        </member>
+        <member name="F:MySql.Data.EntityFrameworkCore.Metadata.MySQLValueGenerationStrategy.None">
+            <summary>
+              No specific MySQL Server strategy
+            </summary>
+        </member>
+        <member name="F:MySql.Data.EntityFrameworkCore.Metadata.MySQLValueGenerationStrategy.IdentityColumn">
+            <summary>
+              A pattern that uses a standard MySQL Server <c>Identity</c> column in the same way as EF6 and previous frameworks.
+            </summary>
+        </member>
+        <member name="F:MySql.Data.EntityFrameworkCore.Metadata.MySQLValueGenerationStrategy.ComputedColumn">
+            <summary>
+              Values of a generated column are computed from an expression included in the column definition.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Migrations.Internal.MySQLHistoryRepository">
+            <summary>
+                <para>
+                    This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                    the same compatibility standards as public APIs. It may be changed or removed without notice in
+                    any release. You should only use it directly in your code with extreme caution and knowing that
+                    doing so can result in application failures when updating to a new Entity Framework Core release.
+                </para>
+                <para>
+                    The service lifetime is <see cref="!:ServiceLifetime.Scoped" />. This means that each
+                    <see cref="!:DbContext" /> instance will use its own instance of this service.
+                    The implementation may depend on other services registered with any lifetime.
+                    The implementation does not need to be thread-safe.
+                </para>
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Migrations.Internal.MySQLHistoryRepository.#ctor(Microsoft.EntityFrameworkCore.Migrations.HistoryRepositoryDependencies)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.Migrations.Internal.MySQLHistoryRepository.ExistsSql">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Migrations.Internal.MySQLMigrationsAnnotationProvider">
+            <summary>
+                <para>
+                    This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                    the same compatibility standards as public APIs. It may be changed or removed without notice in
+                    any release. You should only use it directly in your code with extreme caution and knowing that
+                    doing so can result in application failures when updating to a new Entity Framework Core release.
+                </para>
+                <para>
+                    The service lifetime is <see cref="!:ServiceLifetime.Singleton" />. This means a single instance
+                    is used by many <see cref="!:DbContext" /> instances. The implementation must be thread-safe.
+                    This service cannot depend on services registered as <see cref="!:ServiceLifetime.Scoped" />.
+                </para>
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Migrations.Internal.MySQLMigrationsAnnotationProvider.#ctor(Microsoft.EntityFrameworkCore.Migrations.MigrationsAnnotationProviderDependencies)">
+            <summary>
+                Initializes a new instance of this class.
+            </summary>
+            <param name="dependencies"> Parameter object containing dependencies for this service. </param>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Migrations.Internal.MySQLMigrationsAnnotationProvider.For(Microsoft.EntityFrameworkCore.Metadata.IModel)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Migrations.Internal.MySQLMigrationsAnnotationProvider.For(Microsoft.EntityFrameworkCore.Metadata.IEntityType)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Migrations.Internal.MySQLMigrationsAnnotationProvider.For(Microsoft.EntityFrameworkCore.Metadata.IIndex)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Migrations.Internal.MySQLMigrationsAnnotationProvider.For(Microsoft.EntityFrameworkCore.Metadata.IProperty)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Migrations.MySQLMigrationsSqlGenerator">
+            <summary>
+            MigrationSqlGenerator implementation for MySQL
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Migrations.MySQLMigrationsSqlGenerator.ColumnDefinition(Microsoft.EntityFrameworkCore.Migrations.Operations.AddColumnOperation,Microsoft.EntityFrameworkCore.Metadata.IModel,Microsoft.EntityFrameworkCore.Migrations.MigrationCommandListBuilder)">
+            <summary>
+                Generates a SQL fragment for a column definition in an <see cref="T:Microsoft.EntityFrameworkCore.Migrations.Operations.AddColumnOperation" />.
+            </summary>
+            <param name="operation"> The operation. </param>
+            <param name="model"> The target model which may be <c>null</c> if the operations exist without a model. </param>
+            <param name="builder"> The command builder to use to add the SQL fragment. </param>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Migrations.MySQLMigrationsSqlGenerator.ColumnDefinition(System.String,System.String,System.String,Microsoft.EntityFrameworkCore.Migrations.Operations.ColumnOperation,Microsoft.EntityFrameworkCore.Metadata.IModel,Microsoft.EntityFrameworkCore.Migrations.MigrationCommandListBuilder)">
+            <summary>
+                Generates a SQL fragment for a column definition for the given column metadata.
+            </summary>
+            <param name="schema"> The schema that contains the table, or <c>null</c> to use the default schema. </param>
+            <param name="table"> The table that contains the column. </param>
+            <param name="name"> The column name. </param>
+            <param name="operation"> The column metadata. </param>
+            <param name="model"> The target model which may be <c>null</c> if the operations exist without a model. </param>
+            <param name="builder"> The command builder to use to add the SQL fragment. </param>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Migrations.MySQLMigrationsSqlGenerator.DefaultValue(System.Object,System.String,System.String,Microsoft.EntityFrameworkCore.Migrations.MigrationCommandListBuilder)">
+            <summary>
+            Generates a SQL fragment for the default constraint of a column.
+            </summary>
+            <param name="defaultValue"> The default value for the column. </param>
+            <param name="defaultValueSql"> The SQL expression to use for the column's default constraint. </param>
+            <param name="builder"> The command builder to use to add the SQL fragment. </param>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Migrations.Operations.MySQLCreateDatabaseOperation">
+            <summary>
+            Create database operation class for migrations
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Migrations.Operations.MySQLDropDatabaseOperation">
+            <summary>
+            Drop database operation for migrations.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.Migrations.Operations.MySQLDropDatabaseOperation.Name">
+            <summary>
+                The name of the database.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Properties.MySQLStrings">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.Properties.MySQLStrings.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.Properties.MySQLStrings.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.Properties.MySQLStrings.ExpressionTypeMismatch">
+            <summary>
+              Looks up a localized string similar to The specified expression does not have the correct Type..
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.Properties.MySQLStrings.InvalidTableToIncludeInScaffolding">
+            <summary>
+              Looks up a localized string similar to The specified table &apos;{0}&apos; is not valid..
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.Properties.MySQLStrings.NoInitialCatalog">
+            <summary>
+              Looks up a localized string similar to The database name could not be determined. To use EnsureDeleted, the connection string must specify Initial Catalog..
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.Properties.MySQLStrings.TransientExceptionDetected">
+            <summary>
+              Looks up a localized string similar to An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding &apos;EnableRetryOnFailure()&apos; to the &apos;UseMySql&apos; call..
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.Properties.MySQLStrings.UnqualifiedDataType">
+            <summary>
+              Looks up a localized string similar to Missing length for data type &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Query.Expressions.Internal.MySQLCollateExpression">
+            <summary>
+                An expression that explicitly specifies the collation of a string value.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.Query.Expressions.Internal.MySQLCollateExpression.ValueExpression">
+            <summary>
+                The expression for which a collation is being specified.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.Query.Expressions.Internal.MySQLCollateExpression.Charset">
+            <summary>
+                The character set that the string is being converted to.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.Query.Expressions.Internal.MySQLCollateExpression.Collation">
+            <summary>
+                The collation that the string is being converted to.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Query.Expressions.Internal.MySQLCollateExpression.Accept(System.Linq.Expressions.ExpressionVisitor)">
+            <summary>
+                Dispatches to the specific visit method for this node type.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Query.Expressions.Internal.MySQLCollateExpression.VisitChildren(System.Linq.Expressions.ExpressionVisitor)">
+            <summary>
+                Reduces the node and then calls the <see cref="M:System.Linq.Expressions.ExpressionVisitor.Visit(System.Linq.Expressions.Expression)" /> method passing the
+                reduced expression.
+                Throws an exception if the node isn't reducible.
+            </summary>
+            <param name="visitor"> An instance of <see cref="T:System.Linq.Expressions.ExpressionVisitor" />. </param>
+            <returns> The expression being visited, or an expression which should replace it in the tree. </returns>
+            <remarks>
+                Override this method to provide logic to walk the node's children.
+                A typical implementation will call visitor.Visit on each of its
+                children, and if any of them change, should return a new copy of
+                itself with the modified children.
+            </remarks>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Query.Expressions.Internal.MySQLCollateExpression.Equals(System.Object)">
+            <summary>
+                Tests if this object is considered equal to another.
+            </summary>
+            <param name="obj"> The object to compare with the current object. </param>
+            <returns>
+                true if the objects are considered equal, false if they are not.
+            </returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Query.Expressions.Internal.MySQLCollateExpression.GetHashCode">
+            <summary>
+                Returns a hash code for this object.
+            </summary>
+            <returns>
+                A hash code for this object.
+            </returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Query.Expressions.Internal.MySQLCollateExpression.ToString">
+            <summary>
+                Creates a <see cref="T:System.String" /> representation of the Expression.
+            </summary>
+            <returns>A <see cref="T:System.String" /> representation of the Expression.</returns>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.Query.Expressions.Internal.MySQLComplexFunctionArgumentExpression.ArgumentParts">
+            <summary>
+                The arguments parts.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Query.Expressions.Internal.MySQLComplexFunctionArgumentExpression.Accept(System.Linq.Expressions.ExpressionVisitor)">
+            <summary>
+                Dispatches to the specific visit method for this node type.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Query.Expressions.Internal.MySQLComplexFunctionArgumentExpression.GetHashCode">
+            <summary>
+                Returns a hash code for this object.
+            </summary>
+            <returns>
+                A hash code for this object.
+            </returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Query.Expressions.Internal.MySQLComplexFunctionArgumentExpression.ToString">
+            <summary>
+                Creates a <see cref="T:System.String" /> representation of the Expression.
+            </summary>
+            <returns>A <see cref="T:System.String" /> representation of the Expression.</returns>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Query.ExpressionTranslators.Internal.MySQLDbFunctionsExtensionsMethodTranslator">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Query.ExpressionTranslators.Internal.MySQLDbFunctionsExtensionsMethodTranslator.Translate(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Reflection.MethodInfo,System.Collections.Generic.IReadOnlyList{Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression})">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Query.Internal.MySQLCompiledQueryCacheKeyGenerator">
+            <summary>
+                <para>
+                    This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                    the same compatibility standards as public APIs. It may be changed or removed without notice in
+                    any release. You should only use it directly in your code with extreme caution and knowing that
+                    doing so can result in application failures when updating to a new Entity Framework Core release.
+                </para>
+                <para>
+                    The service lifetime is <see cref="F:Microsoft.Extensions.DependencyInjection.ServiceLifetime.Scoped" />. This means that each
+                    <see cref="T:Microsoft.EntityFrameworkCore.DbContext" /> instance will use its own instance of this service.
+                    The implementation may depend on other services registered with any lifetime.
+                    The implementation does not need to be thread-safe.
+                </para>
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Query.Internal.MySQLCompiledQueryCacheKeyGenerator.#ctor(Microsoft.EntityFrameworkCore.Query.CompiledQueryCacheKeyGeneratorDependencies,Microsoft.EntityFrameworkCore.Query.RelationalCompiledQueryCacheKeyGeneratorDependencies)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Query.Internal.MySQLCompiledQueryCacheKeyGenerator.GenerateCacheKey(System.Linq.Expressions.Expression,System.Boolean)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Query.Internal.MySQLMathMethodTranslator.Translate(Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression,System.Reflection.MethodInfo,System.Collections.Generic.IReadOnlyList{Microsoft.EntityFrameworkCore.Query.SqlExpressions.SqlExpression})">
+            <inheritdoc />
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Query.MySQLQueryGeneratorFactory">
+            <summary>
+            Implementation for QuerySqlGeneratorFactoryBase
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Scaffolding.Internal.MySQLCodeGenerator">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Scaffolding.Internal.MySQLCodeGenerator.GenerateUseProvider(System.String,Microsoft.EntityFrameworkCore.Design.MethodCallCodeFragment)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Scaffolding.Internal.MySQLDatabaseModelFactory">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Scaffolding.Internal.MySQLDatabaseModelFactory.Create(System.String,Microsoft.EntityFrameworkCore.Scaffolding.DatabaseModelFactoryOptions)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Scaffolding.Internal.MySQLDataReaderExtension">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Scaffolding.Internal.MySQLDataReaderExtension.GetValueOrDefault``1(System.Data.Common.DbDataReader,System.String)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Scaffolding.Internal.MySQLDataReaderExtension.GetValueOrDefault``1(System.Data.Common.DbDataRecord,System.String)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.IMySQLServerConnection.CreateMasterConnection">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLBinaryTypeMapping">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLBoolTypeMapping">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLBoolTypeMapping.#ctor(Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping.RelationalTypeMappingParameters)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLBoolTypeMapping.Clone(Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping.RelationalTypeMappingParameters)">
+            <summary>
+                Creates a copy of this mapping.
+            </summary>
+            <param name="parameters"> The parameters for this mapping. </param>
+            <returns> The newly created mapping. </returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLBoolTypeMapping.GenerateNonNullSqlLiteral(System.Object)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLByteArrayTypeMapping">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLByteArrayTypeMapping.#ctor(System.String,System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLByteArrayTypeMapping.#ctor(System.Data.DbType,System.String,System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLByteArrayTypeMapping.#ctor(Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping.RelationalTypeMappingParameters)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLByteArrayTypeMapping.Clone(Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping.RelationalTypeMappingParameters)">
+            <summary>
+                Creates a copy of this mapping.
+            </summary>
+            <param name="parameters"> The parameters for this mapping. </param>
+            <returns> The newly created mapping. </returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLByteArrayTypeMapping.ConfigureParameter(System.Data.Common.DbParameter)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLByteArrayTypeMapping.GenerateNonNullSqlLiteral(System.Object)">
+            <summary>
+                Generates the SQL representation of a literal value.
+            </summary>
+            <param name="value">The literal value.</param>
+            <returns>
+                The generated string.
+            </returns>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLDateTimeTypeMapping">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLDateTimeTypeMapping.#ctor(Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping.RelationalTypeMappingParameters)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLDateTimeTypeMapping.Clone(Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping.RelationalTypeMappingParameters)">
+            <summary>
+                Creates a copy of this mapping.
+            </summary>
+            <param name="parameters"> The parameters for this mapping. </param>
+            <returns> The newly created mapping. </returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLExecutionStrategy.#ctor(Microsoft.EntityFrameworkCore.Storage.ExecutionStrategyDependencies)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLExecutionStrategy.RetriesOnFailure">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLExecutionStrategy.Execute``2(``0,System.Func{Microsoft.EntityFrameworkCore.DbContext,``0,``1},System.Func{Microsoft.EntityFrameworkCore.DbContext,``0,Microsoft.EntityFrameworkCore.Storage.ExecutionResult{``1}})">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLExecutionStrategy.ExecuteAsync``2(``0,System.Func{Microsoft.EntityFrameworkCore.DbContext,``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},System.Func{Microsoft.EntityFrameworkCore.DbContext,``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{Microsoft.EntityFrameworkCore.Storage.ExecutionResult{``1}}},System.Threading.CancellationToken)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLExecutionStrategyFactory">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLExecutionStrategyFactory.#ctor(Microsoft.EntityFrameworkCore.Storage.ExecutionStrategyDependencies)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLExecutionStrategyFactory.CreateDefaultStrategy(Microsoft.EntityFrameworkCore.Storage.ExecutionStrategyDependencies)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLStringTypeMapping">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLStringTypeMapping.#ctor(System.String,System.Nullable{System.Data.DbType},System.Boolean,System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLStringTypeMapping.#ctor(Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping.RelationalTypeMappingParameters)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLStringTypeMapping.Clone(Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping.RelationalTypeMappingParameters)">
+            <summary>
+                Creates a copy of this mapping.
+            </summary>
+            <param name="parameters"> The parameters for this mapping. </param>
+            <returns> The newly created mapping. </returns>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLStringTypeMapping.ConfigureParameter(System.Data.Common.DbParameter)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLTimeSpanMapping">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLTimeSpanMapping.#ctor(System.String,System.Nullable{System.Int32})">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLTimeSpanMapping.#ctor(Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping.RelationalTypeMappingParameters)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLTimeSpanMapping.Clone(Microsoft.EntityFrameworkCore.Storage.RelationalTypeMapping.RelationalTypeMappingParameters)">
+            <summary>
+                Creates a copy of this mapping.
+            </summary>
+            <param name="parameters"> The parameters for this mapping. </param>
+            <returns> The newly created mapping. </returns>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLTimeSpanMapping.SqlLiteralFormatString">
+            <summary>
+                Gets the string format to be used to generate SQL literals of this type.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLTransientExceptionDetector">
+            <summary>
+            Detects the exceptions caused by SQL Server transient failures.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLTransientExceptionDetector.ShouldRetryOn(System.Exception)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLTypeMapper.ValidateMapping(Microsoft.EntityFrameworkCore.Storage.CoreTypeMapping,Microsoft.EntityFrameworkCore.Metadata.IProperty)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Storage.Internal.MySQLTypeMapper.FindMapping(Microsoft.EntityFrameworkCore.Storage.RelationalTypeMappingInfo@)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.MySQLDatabaseCreator">
+            <summary>
+            Relational Database creator implementation in MySQL
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.MySQLDatabaseCreator.RetryDelay">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.MySQLDatabaseCreator.RetryTimeout">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.MySQLDatabaseCreator.Delete">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.MySQLDatabaseCreator.Exists">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.MySQLDatabaseCreator.ExistsAsync(System.Threading.CancellationToken)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.MySQLDatabaseCreator.HasTables">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.MySQLDatabaseCreator.HasTablesAsync(System.Threading.CancellationToken)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.MySQLSqlGenerationHelper.EscapeIdentifier(System.String)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.MySQLSqlGenerationHelper.EscapeIdentifier(System.Text.StringBuilder,System.String)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.MySQLSqlGenerationHelper.DelimitIdentifier(System.Text.StringBuilder,System.String)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.MySQLSqlGenerationHelper.DelimitIdentifier(System.String)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Update.IMySQLUpdateSqlGenerator">
+            <summary>
+                <para>
+                    This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                    the same compatibility standards as public APIs. It may be changed or removed without notice in
+                    any release. You should only use it directly in your code with extreme caution and knowing that
+                    doing so can result in application failures when updating to a new Entity Framework Core release.
+                </para>
+                <para>
+                    The service lifetime is <see cref="!:ServiceLifetime.Singleton" />. This means a single instance
+                    is used by many <see cref="!:DbContext" /> instances. The implementation must be thread-safe.
+                    This service cannot depend on services registered as <see cref="!:ServiceLifetime.Scoped" />.
+                </para>
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Update.MySQLModificationCommandBatch">
+            <summary>
+            AffectedCountModificationCommandBatch implementation for MySQL
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Update.MySQLModificationCommandBatch.#ctor(Microsoft.EntityFrameworkCore.Update.ModificationCommandBatchFactoryDependencies,System.Nullable{System.Int32})">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.EntityFrameworkCore.Update.MySQLModificationCommandBatch.UpdateSqlGenerator">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Update.MySQLModificationCommandBatch.CanAddCommand(Microsoft.EntityFrameworkCore.Update.ModificationCommand)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Update.MySQLModificationCommandBatch.IsCommandTextValid">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Update.MySQLModificationCommandBatch.GetParameterCount">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Update.MySQLModificationCommandBatch.ResetCommandText">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Update.MySQLModificationCommandBatch.GetCommandText">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Update.MySQLModificationCommandBatch.UpdateCachedCommandText(System.Int32)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.Update.MySQLModificationCommandBatchFactory">
+            <summary>
+            IModificationCommandBatchFactory implemntation for MySQL
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Update.MySQLModificationCommandBatchFactory.#ctor(Microsoft.EntityFrameworkCore.Update.ModificationCommandBatchFactoryDependencies,Microsoft.EntityFrameworkCore.Infrastructure.IDbContextOptions)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.Update.MySQLModificationCommandBatchFactory.Create">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.MySQLUpdateSqlGenerator">
+            <summary>
+                <para>
+                    This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                    the same compatibility standards as public APIs. It may be changed or removed without notice in
+                    any release. You should only use it directly in your code with extreme caution and knowing that
+                    doing so can result in application failures when updating to a new Entity Framework Core release.
+                </para>
+                <para>
+                    The service lifetime is <see cref="!:ServiceLifetime.Singleton" />. This means a single instance
+                    is used by many <see cref="!:DbContext" /> instances. The implementation must be thread-safe.
+                    This service cannot depend on services registered as <see cref="!:ServiceLifetime.Scoped" />.
+                </para>
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.MySQLUpdateSqlGenerator.#ctor(Microsoft.EntityFrameworkCore.Update.UpdateSqlGeneratorDependencies)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.MySQLUpdateSqlGenerator.AppendBulkInsertOperation(System.Text.StringBuilder,System.Collections.Generic.IReadOnlyList{Microsoft.EntityFrameworkCore.Update.ModificationCommand},System.Int32)">
+            <summary>
+                This API supports the Entity Framework Core infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="T:MySql.Data.EntityFrameworkCore.ValueGeneration.Internal.MySQLValueGeneratorSelector">
+            <summary>
+                <para>
+                    This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                    the same compatibility standards as public APIs. It may be changed or removed without notice in
+                    any release. You should only use it directly in your code with extreme caution and knowing that
+                    doing so can result in application failures when updating to a new Entity Framework Core release.
+                </para>
+                <para>
+                    The service lifetime is <see cref="!:ServiceLifetime.Scoped" />. This means that each
+                    <see cref="T:Microsoft.EntityFrameworkCore.DbContext" /> instance will use its own instance of this service.
+                    The implementation may depend on other services registered with any lifetime.
+                    The implementation does not need to be thread-safe.
+                </para>
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.ValueGeneration.Internal.MySQLValueGeneratorSelector.#ctor(Microsoft.EntityFrameworkCore.ValueGeneration.ValueGeneratorSelectorDependencies)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:MySql.Data.EntityFrameworkCore.ValueGeneration.Internal.MySQLValueGeneratorSelector.Create(Microsoft.EntityFrameworkCore.Metadata.IProperty,Microsoft.EntityFrameworkCore.Metadata.IEntityType)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="T:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId">
+            <summary>
+                <para>
+                    Event IDs for MySQL events that correspond to messages logged to an <see cref="T:Microsoft.Extensions.Logging.ILogger" />
+                    and events sent to a <see cref="T:System.Diagnostics.DiagnosticSource" />.
+                </para>
+                <para>
+                    These IDs are also used with <see cref="T:Microsoft.EntityFrameworkCore.Diagnostics.WarningsConfigurationBuilder" /> to configure the
+                    behavior of warnings.
+                </para>
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.DecimalTypeDefaultWarning">
+            <summary>
+                <para>
+                    No explicit type for a decimal column.
+                </para>
+                <para>
+                    This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Model.Validation" /> category.
+                </para>
+                <para>
+                    This event uses the <see cref="T:Microsoft.EntityFrameworkCore.Diagnostics.PropertyEventData" /> payload when used with a <see cref="T:System.Diagnostics.DiagnosticSource" />.
+                </para>
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.ByteIdentityColumnWarning">
+            <summary>
+                <para>
+                    A byte property is set up to use a MySQL identity column.
+                </para>
+                <para>
+                    This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Model.Validation" /> category.
+                </para>
+                <para>
+                    This event uses the <see cref="T:Microsoft.EntityFrameworkCore.Diagnostics.PropertyEventData" /> payload when used with a <see cref="T:System.Diagnostics.DiagnosticSource" />.
+                </para>
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.ColumnFound">
+            <summary>
+                A column was found.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.ForeignKeyColumnFound">
+            <summary>
+                A column of a foreign key was found.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.DefaultSchemaFound">
+            <summary>
+                A default schema was found.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.TypeAliasFound">
+            <summary>
+                A type alias was found.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.MissingSchemaWarning">
+            <summary>
+                The database is missing a schema.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.MissingTableWarning">
+            <summary>
+                The database is missing a table.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.SequenceNotNamedWarning">
+            <summary>
+                The database has an unnamed sequence.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.IndexColumnsNotMappedWarning">
+            <summary>
+                Columns in an index were not mapped.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.ForeignKeyReferencesMissingPrincipalTableWarning">
+            <summary>
+                A foreign key references a missing table at the principal end.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.ForeignKeyColumnsNotMappedWarning">
+            <summary>
+                Columns in a foreign key were not mapped.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.ForeignKeyNotNamedWarning">
+            <summary>
+                A foreign key is not named.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.ForeignKeyColumnMissingWarning">
+            <summary>
+                A foreign key column was not found.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.ForeignKeyColumnNotNamedWarning">
+            <summary>
+                A foreign key column was not named.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.ColumnNotNamedWarning">
+            <summary>
+                A column is not named.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.IndexNotNamedWarning">
+            <summary>
+                An index is not named.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.IndexTableMissingWarning">
+            <summary>
+                The table referenced by an index was not found.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.IndexColumnNotNamedWarning">
+            <summary>
+                An index column was not named.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.TableFound">
+            <summary>
+                A table was found.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.TableSkipped">
+            <summary>
+                A table was skipped.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.ColumnSkipped">
+            <summary>
+                A column was skipped.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.IndexColumnFound">
+            <summary>
+                An index was skipped.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.IndexColumnSkipped">
+            <summary>
+                A column of an index was skipped.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.SequenceFound">
+            <summary>
+                A sequence was found.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.ForeignKeyTableMissingWarning">
+            <summary>
+                A foreign key table was not found.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.PrimaryKeyFound">
+            <summary>
+                Primary key was found.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.UniqueConstraintFound">
+            <summary>
+                An unique constraint was found.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.IndexFound">
+            <summary>
+                An index was found.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.ForeignKeyFound">
+            <summary>
+                A foreign key was found.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.ForeignKeyPrincipalColumnMissingWarning">
+            <summary>
+                A principal column referenced by a foreign key was not found.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="F:MySQL.Data.EntityFrameworkCore.Diagnostics.MySQLEventId.ReflexiveConstraintIgnored">
+            <summary>
+                A reflexive foreign key constraint was skipped.
+                This event is in the <see cref="T:Microsoft.EntityFrameworkCore.DbLoggerCategory.Scaffolding" /> category.
+            </summary>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.MySQLDbContextOptionsExtensions">
+            <summary>
+            Represents the context-option extensions implemented for MySQL.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.MySQLDbContextOptionsExtensions.UseMySQL(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,System.String,System.Action{MySql.Data.EntityFrameworkCore.Infrastructure.MySQLDbContextOptionsBuilder})">
+            <summary>
+            Configures the <see cref="T:Microsoft.EntityFrameworkCore.DbContext" /> to use MySQL Sever.
+            </summary>
+            <param name="optionsBuilder">DbContext option builder.</param>
+            <param name="connectionString">MySQL connection string.</param>
+            <param name="MySQLOptionsAction">DbContext option builder action.</param>
+            <returns>DbContext option builder using MySQL.</returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.MySQLDbContextOptionsExtensions.UseMySQL(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,System.Data.Common.DbConnection,System.Action{MySql.Data.EntityFrameworkCore.Infrastructure.MySQLDbContextOptionsBuilder})">
+            <summary>
+            Configures the <see cref="T:Microsoft.EntityFrameworkCore.DbContext" /> to use MySQL Sever.
+            </summary>
+            <param name="optionsBuilder">DbContext option builder.</param>
+            <param name="connection">MySQL connection object.</param>
+            <param name="MySQLOptionsAction">DbContext option builder action.</param>
+            <returns>DbContext option builder using MySQL.</returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.MySQLDbContextOptionsExtensions.UseMySQL``1(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder{``0},System.String,System.Action{MySql.Data.EntityFrameworkCore.Infrastructure.MySQLDbContextOptionsBuilder})">
+            <summary>
+            Configures the <see cref="T:Microsoft.EntityFrameworkCore.DbContext" /> to use MySQL Sever.
+            </summary>
+            <typeparam name="TContext"><see cref="T:Microsoft.EntityFrameworkCore.DbContext" /> type.</typeparam>
+            <param name="optionsBuilder">DbContext option builder.</param>
+            <param name="connectionString">MySQL connection string.</param>
+            <param name="MySQLOptionsAction">DbContext option builder action.</param>
+            <returns>DbContext option builder using MySQL.</returns>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.MySQLDbContextOptionsExtensions.UseMySQL``1(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder{``0},System.Data.Common.DbConnection,System.Action{MySql.Data.EntityFrameworkCore.Infrastructure.MySQLDbContextOptionsBuilder})">
+            <summary>
+            Configures the <see cref="T:Microsoft.EntityFrameworkCore.DbContext" /> to use MySQL Sever.
+            </summary>
+            <typeparam name="TContext"><see cref="T:Microsoft.EntityFrameworkCore.DbContext" /> type.</typeparam>
+            <param name="optionsBuilder">DbContext option builder.</param>
+            <param name="connection">MySQL connection object.</param>
+            <param name="MySQLOptionsAction">DbContext option builder action.</param>
+            <returns>DbContext option builder using MySQL.</returns>
+        </member>
+    </members>
+</doc>
