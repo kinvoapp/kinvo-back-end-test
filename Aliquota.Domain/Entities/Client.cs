@@ -21,6 +21,7 @@ namespace Aliquota.Domain.Entities
 
         public string Document { get; private set; }
         public string User { get; private set; }
+        public double TaxValue { get; private set; }
         public override string ToString()
         {
             return $"{User}";

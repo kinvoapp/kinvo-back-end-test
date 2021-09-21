@@ -12,7 +12,12 @@ namespace Aliquota.Domain.Repositories
         void Save(Client client);
         void SaveOrder(Order order);
         void SaveProduct(Product product);
-        Client GetById(Guid id);
-        Product GetByProductId(Guid id);
+
+        IEnumerable<Client> GetById(Guid id);
+        IEnumerable<Product> GetByProductId(Guid id);
+        IEnumerable<Order> GetOrderById(Guid id);
+        Order ReturnIncomeTax(double productTax);
+
+
     }
 }

@@ -12,20 +12,23 @@ namespace Aliquota.Domain.Commands
     {
         public AddOrderCommand()
         {
-            Products = new List<Product>();
+
+            ProductsList = new List<Product>();
+            ProductsList.Add(Product);
         }
 
         public Guid CustomerId { get; set; } //reidratar
         public Guid ProductId { get; set; }
-        public IList<Product> Products { get; set; }
-
+        public IList<Product> ProductsList { get; set; }
+        public Product Product { get; set; }
+        public string User { get; set; }
+        public string Document { get; set; }
         public void Validate()
         {
-            AddNotification("AddOrderCommand", "Válido !");
             AddNotifications(new Contract()
             .HasLen(CustomerId.ToString(), 36, "CustomerId", "Identificador do Cliente Inválido !!!")
             .HasLen(ProductId.ToString(), 36, "ProductId", "Identificador do Produto Inválido !!!")
-            .IsGreaterThan(Products.Count, 0, "Products", "Nenhum ativo foi encontrado !"));
+            .IsGreaterThan(ProductsList.Count, 0, "Products", "Nenhum ativo foi encontrado !"));
 
         }
     }

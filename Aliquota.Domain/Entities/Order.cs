@@ -1,29 +1,30 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Aliquota.Domain.Entities
 {
     public class Order : Entity
     {
         private IList<Product> _products;
-        public Order(Client client)
+        public Order(string user, string document)
         {
-            Client = client;
+            User = user;
+            Document = document;
             _products = new List<Product>();
         }
-
-        public Client Client { get; private set; }
+        public string User { get; private set; }
+        public string Document { get; private set; }
         public double TaxValue { get; private set; }
-
+        public IReadOnlyCollection<Product> Products => _products.ToArray();
         public void SaveOrder(Product product)
         {
             //Product = product;
         }
-        public IEnumerable<Product> AddProducts(Product product)
+        public void AddProducts(Product product)
         {
             _products.Add(product);
             AddNotification("AddProducts", "Produto adicionado com sucesso !");
-            return _products;
         }
         public double ReturnProductTax(Product product)
         {

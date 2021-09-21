@@ -1,4 +1,5 @@
 using Aliquota.Domain.Handlers;
+using Aliquota.Domain.Infra.Repositories;
 using Aliquota.Domain.Repositories;
 using Aliquota.Infra.Context;
 using Microsoft.AspNetCore.Builder;
@@ -27,7 +28,7 @@ namespace Aliquota.Api
             //Nativo do aspnet
             services.AddDbContext<DataContext>(options => options.UseInMemoryDatabase("Database"));
             services.AddTransient<IProductRepository, ProductRepository>();
-            services.AddTransient<CreateOrderCommandHandler, CreateOrderCommandHandler>(); //usado no From Services
+            services.AddTransient<CreateFlowCommandHandler, CreateFlowCommandHandler>(); //usado no From Services
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

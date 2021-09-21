@@ -23,6 +23,31 @@ namespace Aliquota.Domain.Test.Repositories
             return null;
         }
 
+        public Order GetOrderById(Order order)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Order GetOrderById(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Order GetTax(Product product)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Order ReturnIncomeTax(Order order)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Order ReturnIncomeTax(double productTax)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Save(Client client)
         {
 
@@ -36,6 +61,21 @@ namespace Aliquota.Domain.Test.Repositories
         public void SaveProduct(Product product)
         {
 
+        }
+
+        IEnumerable<Client> IProductRepository.GetById(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<Product> IProductRepository.GetByProductId(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<Order> IProductRepository.GetOrderById(Guid id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,13 +1,19 @@
 using System;
+using System.Collections.Generic;
 using Aliquota.Domain.Commands.Contracts;
-using Aliquota.Domain.Handlers.Contracts;
+using Aliquota.Domain.Entities;
 using Flunt.Notifications;
 using Flunt.Validations;
 
 namespace Aliquota.Domain.Commands
 {
-    public class CreateProductCommand : Notifiable, ICommand
+    public class ReturnTaxRescueValueCommand : Notifiable, ICommand
     {
+        public ReturnTaxRescueValueCommand()
+        {
+            Products = new List<Product>();
+        }
+        public double TaxValue { get; set; }
         public string Title { get; set; }
         public double Price { get; set; }
         public DateTime CreateDate { get; set; }
@@ -16,6 +22,9 @@ namespace Aliquota.Domain.Commands
         public string Document { get; set; }
         public string User { get; set; }
         public Guid CustomerId { get; set; }
+        public Guid ProductId { get; set; }
+        public Guid OrderId { get; set; }
+        public IList<Product> Products { get; set; }
 
         public void Validate()
         {
@@ -27,7 +36,10 @@ namespace Aliquota.Domain.Commands
             .HasLen(Document, 11, "Document", "CPF inválido !")
             .IsNotNullOrEmpty(Title, "Title", "O Título de resgate não pode ser vazio !")
             .HasMinLen(Title, 5, "Title", "O Ativo deve conter ao mínimo 5 caracteres !")
-            .HasMaxLen(Title, 5, "Title", "O Ativo deve conter ao máximo 5 caracteres !"));
+            .HasMaxLen(Title, 5, "Title", "O Ativo deve conter ao máximo 5 caracteres !")
+            .HasLen(CustomerId.ToString(), 36, "CustomerId", "Identificador do Cliente Inválido !!!")
+            .HasLen(ProductId.ToString(), 36, "ProductId", "Identificador do Produto Inválido !!!")
+            .IsGreaterThan(Products.Count, 0, "Products", "Nenhum ativo foi encontrado !")); ;
         }
     }
 }

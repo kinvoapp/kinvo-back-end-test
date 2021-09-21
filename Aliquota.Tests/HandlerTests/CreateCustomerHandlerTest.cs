@@ -15,7 +15,7 @@ namespace Aliquota.Domain.Test
             command.Document = "00000000000";
             command.User = "KaoeF";
 
-            var handler = new CreateOrderCommandHandler(new FakeProductsRepository());
+            var handler = new CreateFlowCommandHandler(new FakeProductsRepository());
             var result = handler.Handle(command);
 
             Assert.NotEqual(null, result);

@@ -8,12 +8,13 @@ using Flunt.Notifications;
 
 namespace Aliquota.Domain.Handlers
 {
-    public class CreateOrderCommandHandler : Notifiable, IHandler<CreateClientCommand>,
+    public class CreateFlowCommandHandler : Notifiable, IHandler<CreateClientCommand>,
     IHandler<AddOrderCommand>,
-    IHandler<CreateProductCommand>
+    IHandler<CreateProductCommand>,
+    IHandler<ReturnTaxRescueValueCommand>
     {
         private readonly IProductRepository _repository;
-        public CreateOrderCommandHandler(IProductRepository repository)
+        public CreateFlowCommandHandler(IProductRepository repository)
         {
             _repository = repository;
         }
@@ -37,17 +38,17 @@ namespace Aliquota.Domain.Handlers
             _repository.Save(client);
 
             //Retorna resultado para tela
-            return new CreateClientCommandResult(client.Id, client.Document, client.User.ToString());
+            return new GenericCommandResult(true, "Cliente cadastrado com sucesso !", client);
         }
         public ICommandResult Handle(CreateProductCommand command)
         {
             var product = new Product(command.Title, command.Price, command.CreateDate, command.RescueDate);
             var client = _repository.GetById(command.CustomerId);
-            var order = new Order(client);
+            //var order = new Order(client.User, client.Document);
 
-            AddNotifications(client.Notifications);
-            AddNotifications(order.Notifications);
-
+            //AddNotifications(client.Notifications);
+            AddNotifications(product.Notifications);
+            //validar se cliente existe
             command.Validate();
             if (command.Invalid)
             {
@@ -55,16 +56,15 @@ namespace Aliquota.Domain.Handlers
             }
 
             _repository.SaveProduct(product);
-            return new CreateClientCommandResult(product.Id, product.Title, product.Price.ToString());
+            return new GenericCommandResult(true, "Produto cadastrado com sucesso !", product);
         }
 
         public ICommandResult Handle(AddOrderCommand command)
         {
             var product = _repository.GetByProductId(command.ProductId);
             var client = _repository.GetById(command.CustomerId);
-            var order = new Order(client);
+            var order = new Order(command.User, command.Document);
 
-            AddNotifications(client.Notifications);
             AddNotifications(order.Notifications);
 
             command.Validate();
@@ -72,11 +72,26 @@ namespace Aliquota.Domain.Handlers
             {
                 return new GenericCommandResult(false, "Erro ao criar pedido !", command.Notifications);
             }
-
             _repository.SaveOrder(order);
-            return new CreateClientCommandResult(order.Id, client.Document, client.User.ToString());
+            order.AddProducts(command.Product);
+            return new GenericCommandResult(true, "Pedido criado com sucesso !", order);
         }
+        public ICommandResult Handle(ReturnTaxRescueValueCommand command)
+        {
+            //Pega produto, cliente e ordem do banco
+            var product = _repository.GetByProductId(command.ProductId);
+            var client = _repository.GetById(command.CustomerId);
+            var order = _repository.GetOrderById(command.OrderId);
 
+            command.Validate();
+            if (command.Invalid)
+            {
+                return new GenericCommandResult(false, "Erro ao resgatar ativo !", command.Notifications);
+            }
+            _repository.ReturnIncomeTax(command.TaxValue);
+            return new GenericCommandResult(true, "Ativo resgatado com sucesso ! O valor da taxa é: ", command.TaxValue);
+        }
+        //Resolver erro NULL EXCEPTION que esta dando do postman
 
     }
 }

@@ -14,7 +14,7 @@ namespace Aliquota.Domain.Test
         {
             Product _product = new Product("EGIE3", 250, DateTime.Now, DateTime.Now.AddYears(1));
             Client _client = new Client("Kaoe", "00000000000");
-            Order order = new Order(_client);
+            Order order = new Order(_client.User, _client.Document);
 
 
             // order.SaveOrder(_product); quem salva é o repositorio
@@ -29,7 +29,7 @@ namespace Aliquota.Domain.Test
         {
             Product _product = new Product("EGIE3", 250, DateTime.Now, DateTime.Now.AddYears(1));
             Client _client = new Client("Kaoe", "00000000000");
-            Order order = new Order(_client);
+            Order order = new Order(_client.User, _client.Document);
 
 
             var expected = true;
@@ -44,7 +44,7 @@ namespace Aliquota.Domain.Test
         {
             Product _product = new Product("EGIE3", 250, DateTime.Now, DateTime.Now.AddYears(1));
             Client _client = new Client(null, null);
-            Order order = new Order(_client);
+            Order order = new Order(_client.User, _client.Document);
 
 
             var expected = true;
@@ -60,7 +60,7 @@ namespace Aliquota.Domain.Test
         {
             Product _product = new Product("EGIE3", 250, DateTime.Now, DateTime.Now.AddYears(1));
             Client _client = new Client("K", "00000000000");
-            Order order = new Order(_client);
+            Order order = new Order(_client.User, _client.Document);
 
 
             var expected = true;
@@ -76,7 +76,7 @@ namespace Aliquota.Domain.Test
         {
             Product _product = new Product("EGIE3", 250, DateTime.Now, DateTime.Now.AddYears(1));
             Client _client = new Client("Kaoe", "00000");
-            Order order = new Order(_client);
+            Order order = new Order(_client.User, _client.Document);
 
 
             var expected = true;

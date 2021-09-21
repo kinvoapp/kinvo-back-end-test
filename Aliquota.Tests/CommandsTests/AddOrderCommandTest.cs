@@ -14,7 +14,7 @@ namespace Aliquota.Domain.Test.CommandsTests
             var _product = new List<Product>();
             var command = new AddOrderCommand();
             command.CustomerId = Guid.NewGuid();
-            command.Products = _product;
+            command.ProductsList = _product;
 
             Assert.Equal(true, command.Valid);
         }
