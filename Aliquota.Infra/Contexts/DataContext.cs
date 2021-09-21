@@ -14,6 +14,7 @@ namespace Aliquota.Infra.Context
 
         public DbSet<Product> Product { get; set; }
         public DbSet<Client> Client { get; set; }
+        public DbSet<Order> Orders { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Ignore<ValidationResult>();

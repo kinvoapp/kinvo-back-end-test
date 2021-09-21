@@ -1,30 +1,22 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Aliquota.Domain.Commands.Contracts;
+using Aliquota.Domain.Handlers.Contracts;
 using Flunt.Notifications;
 using Flunt.Validations;
 
-namespace Aliquota.Domain.Entities
+namespace Aliquota.Domain.Commands
 {
-    public class Client : Entity
+    public class CreateClientCommand : Notifiable, ICommand
     {
-        public Client(string user, string document)
+        public string Document { get; set; }
+        public string User { get; set; }
+
+        public void Validate()
         {
-            User = user;
-            Document = document;
             AddNotifications(new Contract().Requires()
             .HasMinLen(User, 3, "Name", "O nome deve conter ao mínimo 3 caracteres !")
             .HasMaxLen(User, 25, "Name", "O nome deve conter ao máximo 25 caracteres !")
             .IsNotNullOrEmpty(User, "Name", "O Nome do cliente não pode ser vazio !")
             .HasLen(Document, 11, "Document", "CPF inválido !"));
         }
-
-        public string Document { get; private set; }
-        public string User { get; private set; }
-        public override string ToString()
-        {
-            return $"{User}";
-        }
-
     }
 }

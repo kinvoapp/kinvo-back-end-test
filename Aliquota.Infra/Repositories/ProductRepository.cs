@@ -1,12 +1,10 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using Aliquota.Domain.Entities;
-using Aliquota.Domain.Queries;
+using Aliquota.Domain.Repositories;
 using Aliquota.Infra.Context;
-using Microsoft.EntityFrameworkCore;
 
-namespace Aliquota.Domain.Repositories
+namespace Aliquota.Domain.Infra.Repositories
 {
     //CQRS
     //Leitura e Escrita
@@ -18,49 +16,40 @@ namespace Aliquota.Domain.Repositories
         {
             _context = context;
         }
-        public void Create(Product product)
+
+        public bool ClientExist(string document)
+        {
+            _context.Client.Find(document);
+            //_context.SaveChanges(); 
+            return true;
+        }
+
+        public Client GetById(Guid id)
+        {
+            return _context.Client.FirstOrDefault(x => x.Id == id);
+        }
+
+        public Product GetByProductId(Guid id)
+        {
+            return _context.Product.FirstOrDefault(x => x.Id == id);
+        }
+
+        public void Save(Client client)
+        {
+            _context.Client.Add(client);
+            _context.SaveChanges();
+        }
+
+        public void SaveOrder(Order order)
+        {
+            _context.Orders.Add(order);
+            _context.SaveChanges();
+        }
+
+        public void SaveProduct(Product product)
         {
             _context.Product.Add(product);
-            _context.SaveChanges(); //persiste os dados
+            _context.SaveChanges();
         }
-
-        public IEnumerable<Product> GetByDate(string title, DateTime date)
-        {
-            return _context.Product.AsNoTracking()
-                        .Where(GetProductQueryResult.GetByDate(title, date))
-                        .OrderBy(x => x.ApplicationDate);
-        }
-
-        public Product GetById(Guid id, string title)
-        {
-            return _context.Product.FirstOrDefault(x => x.Id == id && x.Title == title);
-        }
-
-        public IEnumerable<Product> GetPrices(double price)
-        {
-            return _context.Product.AsNoTracking()
-                        .Where(GetProductQueryResult.GetPrices(price))
-                        .OrderBy(x => x.ApplicationDate);
-        }
-
-        public Product GetProduct(Guid id, string title, double price)
-        {
-            return _context.Product.FirstOrDefault(x => x.Id == id && x.Title == title && x.Price == price);
-        }
-
-        public IEnumerable<Product> GetProducts(string title)
-        {
-            return _context.Product.AsNoTracking()
-            .Where(GetProductQueryResult.GetProducts(title))
-            .OrderBy(x => x.ApplicationDate);
-            //Se não for fazer update ou delete é bom utilizar o AsNoTracking para apenas lançar os dados na tela
-        }
-
-        public Product GetTaxValue(double value)
-        {
-            return _context.Product.FirstOrDefault(x => x.Value == value);
-
-        }
-
     }
 }

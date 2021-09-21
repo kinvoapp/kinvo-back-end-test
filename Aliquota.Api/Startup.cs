@@ -27,7 +27,7 @@ namespace Aliquota.Api
             //Nativo do aspnet
             services.AddDbContext<DataContext>(options => options.UseInMemoryDatabase("Database"));
             services.AddTransient<IProductRepository, ProductRepository>();
-            services.AddTransient<ProductHandler, ProductHandler>(); //usado no From Services
+            services.AddTransient<CreateOrderCommandHandler, CreateOrderCommandHandler>(); //usado no From Services
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

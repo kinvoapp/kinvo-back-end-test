@@ -3,29 +3,26 @@ using Flunt.Notifications;
 using Flunt.Validations;
 namespace Aliquota.Domain.Entities
 {
-    public class Product : Notifiable
+    public class Product : Entity
     {
-        public Product(string title, double price, DateTime applicationDate, DateTime endApplicationDate)
+        public Product(string title, double price, DateTime createDate, DateTime rescueDate)
         {
-            Id = Guid.NewGuid();
-            Price = price;
             Title = title;
-            ApplicationDate = applicationDate;
-            EndApplicationDate = endApplicationDate;
+            Price = price;
+            CreateDate = createDate;
+            RescueDate = rescueDate;
             AddNotifications(new Contract().Requires()
-            .IsGreaterOrEqualsThan(EndApplicationDate, ApplicationDate, "EndApplicationDate", "A data final da aplicação não pode ser no passado !")
+            .IsGreaterOrEqualsThan(RescueDate, CreateDate, "EndApplicationDate", "A data final da aplicação não pode ser no passado !")
             .IsGreaterThan(Price, 0, "Price", "O valor de resgate não pode ser zero !")
             .IsNotNullOrEmpty(Title, "Title", "O Título de resgate não pode ser vazio !")
             .HasMinLen(Title, 5, "Title", "O Ativo deve conter ao mínimo 5 caracteres !")
             .HasMaxLen(Title, 5, "Title", "O Ativo deve conter ao máximo 5 caracteres !"));
         }
 
-        public Guid Id { get; private set; }
-        public double Price { get; private set; }
         public string Title { get; private set; }
-        public double Value { get { return CalculationOfIncomeTaxCollection(); } }
-        public DateTime ApplicationDate { get; private set; }
-        public DateTime EndApplicationDate { get; private set; }
+        public double Price { get; private set; }
+        public DateTime CreateDate { get; private set; }
+        public DateTime RescueDate { get; private set; }
         public TimeSpan DateCompare { get; private set; }
 
         public bool Equals(Product other)
@@ -35,7 +32,7 @@ namespace Aliquota.Domain.Entities
 
         public double CalculationOfIncomeTaxCollection()
         {
-            DateCompare = EndApplicationDate.Date - ApplicationDate.Date;
+            DateCompare = RescueDate.Date - CreateDate.Date;
             double time = DateCompare.Days / 365;
             double value = 0;
             if (time <= 1)
@@ -53,13 +50,14 @@ namespace Aliquota.Domain.Entities
                 var n = (15.0 / 100) * Price;
                 value = n;
             }
-
+            AddNotification("Product", "Produto resgatado com sucesso !");
             return value;
         }
 
         public override string ToString()
         {
-            return Title.ToString();
+            return $"{Title}";
         }
     }
+
 }

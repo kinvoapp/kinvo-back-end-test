@@ -7,13 +7,12 @@ namespace Aliquota.Domain.Repositories
     //Abstração
     public interface IProductRepository
     {
-        void Create(Product product);
-        Product GetTaxValue(double value);
-        Product GetProduct(Guid id, string title, double price);
-        IEnumerable<Product> GetProducts(string title);
-        IEnumerable<Product> GetPrices(double price);
-        Product GetById(Guid id, string title);
-        IEnumerable<Product> GetByDate(string title, DateTime date);
         //IEnumerable é usado para que uma vez fora do banco de dados ninguém manipule a lista
+        bool ClientExist(string document);
+        void Save(Client client);
+        void SaveOrder(Order order);
+        void SaveProduct(Product product);
+        Client GetById(Guid id);
+        Product GetByProductId(Guid id);
     }
 }
