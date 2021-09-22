@@ -35,14 +35,14 @@ namespace Aliquota.Domain.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult RecuperaInvestientoPorId (int id)
+        public IActionResult RecuperaInvestientoPorId(int id)
         {
             Investimento investimento = _context.Investimentos.FirstOrDefault(investimento => investimento.Id == id);
-             if(investimento != null)
-             {
+            if (investimento != null)
+            {
                 Ok(investimento);
-             }
-             return NotFound();
+            }
+            return NotFound();
         }
 
         /*[HttpPut("{id}")]
@@ -63,6 +63,7 @@ namespace Aliquota.Domain.Controllers
             _context.SaveChanges();
             return NoContent();
         }*/
+
         [HttpDelete("{id}")]
         public IActionResult DeletaPorId(int id)
         {
@@ -94,19 +95,19 @@ namespace Aliquota.Domain.Controllers
             Ok(investimento);
 
             Double Imposto;
-            if (365 <= totalDias)
+            if (365 >= totalDias)
             {
                 Imposto = 0.225;
                 Console.WriteLine("O imposto foi de : " + (Imposto) + " Sobre o lucro de " + (investimento.Lucro));
                 Console.WriteLine("Totalizando " + (Imposto * investimento.Lucro) + " Reais de imposto, e lucro final de " + ((investimento.Lucro) - (Imposto * investimento.Lucro)));
             }
-            else if (365 < totalDias && 365 * 2 >= totalDias)
+            else if (365 < totalDias && 730 >= totalDias)
             {
                 Imposto = 0.185;
                 Console.WriteLine("O imposto foi de : " + (Imposto) + " Sobre o lucro de " + (investimento.Lucro));
                 Console.WriteLine("Totalizando " + (Imposto * investimento.Lucro) + " Reais de imposto, e lucro final de " + ((investimento.Lucro) - (Imposto * investimento.Lucro)));
             }
-            else if (365 * 2 < totalDias)
+            else if (730 < totalDias)
             {
                 Imposto = 0.15;
                 Console.WriteLine("O imposto foi de : " + (Imposto) + " Sobre o lucro de " + (investimento.Lucro));

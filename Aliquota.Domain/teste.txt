@@ -1,9 +1,9 @@
 {
   "Cliente" : "Thiago",
   "lucro": 1000.00,
-  "TempoEmDias": 365,
+  "TempoEmDias": 364,
   "TempoEmAnos": 1,
-  "DataDeInicio": "2020-09-21",
+  "DataDeInicio": "2020-09-22",
   "DataDeResgate": "2021-09-21"
 }
 
@@ -20,8 +20,8 @@
 {
   "Cliente" : "Levi",
   "lucro": 1000.00,
-  "TempoEmDias" : 1095: ,
+  "TempoEmDias" : 1094: ,
   "TempoEmAnos": 3,
   "DataDeInicio": "2018-09-21",
-  "DataDeResgate": "2021-09-21"
+  "DataDeResgate": "2021-09-20"
 }
