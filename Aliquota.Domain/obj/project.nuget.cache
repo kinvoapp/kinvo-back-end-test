@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3Raa7x+AUrfQaQbcqdMiGYUvePcQTkGb9NtjRd17lrk/veVu1hhcfkZ3kTR8VoYGJuM16FTrmS3STGo6BZqmsg==",
+  "dgSpecHash": "mMb906olp+7adwAWOJgdAsxgmW7qiWjAeUMO4diCSi3tieiZQPyEHuCALslfjERas3qzRWTXX/Wcw54LRY0irg==",
   "success": true,
   "projectFilePath": "C:\\Users\\tcout\\Documents\\GitHub\\kinvo-back-end-test\\Aliquota.Domain\\Aliquota.Domain.csproj",
   "expectedPackageFiles": [
@@ -19,7 +19,7 @@
     "C:\\Users\\tcout\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.10\\microsoft.entityframeworkcore.design.5.0.10.nupkg.sha512",
     "C:\\Users\\tcout\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.10\\microsoft.entityframeworkcore.relational.5.0.10.nupkg.sha512",
     "C:\\Users\\tcout\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.10\\microsoft.entityframeworkcore.sqlserver.5.0.10.nupkg.sha512",
-    "C:\\Users\\tcout\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.5\\microsoft.entityframeworkcore.tools.5.0.5.nupkg.sha512",
+    "C:\\Users\\tcout\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.10\\microsoft.entityframeworkcore.tools.5.0.10.nupkg.sha512",
     "C:\\Users\\tcout\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\tcout\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\tcout\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",

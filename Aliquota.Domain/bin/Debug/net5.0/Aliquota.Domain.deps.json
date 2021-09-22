@@ -35,7 +35,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": "5.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.10",
-          "Microsoft.EntityFrameworkCore.Tools": "5.0.5",
+          "Microsoft.EntityFrameworkCore.Tools": "5.0.10",
           "MySql.EntityFrameworkCore": "5.0.5",
           "Swashbuckle.AspNetCore": "5.6.3",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
@@ -562,7 +562,7 @@
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/5.0.5": {
+      "Microsoft.EntityFrameworkCore.Tools/5.0.10": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": "5.0.10"
         }
@@ -3295,12 +3295,12 @@
       "path": "microsoft.entityframeworkcore.sqlserver/5.0.10",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.5.0.10.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Tools/5.0.5": {
+    "Microsoft.EntityFrameworkCore.Tools/5.0.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YfEG6UQumR2+L/c2c/mdwNH9vRA2KscsCgKCI/REh8KZL65dfoRSkTzLknJ1ai+WK/GM8EI1eClfAyZCTIMhOQ==",
-      "path": "microsoft.entityframeworkcore.tools/5.0.5",
-      "hashPath": "microsoft.entityframeworkcore.tools.5.0.5.nupkg.sha512"
+      "sha512": "sha512-tZyRQ01KmPIGXO/jGGG9OrxKvFUckgq65FvGmYjwDazgBXIvfX2kdxXp2nN5gIQOiSMPMpRu8RDqI+2InyBuMg==",
+      "path": "microsoft.entityframeworkcore.tools/5.0.10",
+      "hashPath": "microsoft.entityframeworkcore.tools.5.0.10.nupkg.sha512"
     },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
       "type": "package",

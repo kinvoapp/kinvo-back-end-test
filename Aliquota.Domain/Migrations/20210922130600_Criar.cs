@@ -4,7 +4,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace Aliquota.Domain.Migrations
 {
-    public partial class CriandoTabelaDeInvestimento : Migration
+    public partial class Criar : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

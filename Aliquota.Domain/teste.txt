@@ -16,3 +16,12 @@
   "DataDeInicio": "2019-09-21",
   "DataDeResgate": "2021-09-21"
 }
+
+{
+  "Cliente" : "Levi",
+  "lucro": 1000.00,
+  "TempoEmDias" : 1095: ,
+  "TempoEmAnos": 3,
+  "DataDeInicio": "2018-09-21",
+  "DataDeResgate": "2021-09-21"
+}

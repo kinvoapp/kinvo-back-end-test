@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Aliquota.Domain.Migrations
 {
     [DbContext(typeof(InvestimentoContext))]
-    [Migration("20210921205821_CriandoTabelaDeInvestimento")]
-    partial class CriandoTabelaDeInvestimento
+    [Migration("20210922130600_Criar")]
+    partial class Criar
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
