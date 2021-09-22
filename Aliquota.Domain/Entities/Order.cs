@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
+using Flunt.Notifications;
 
 namespace Aliquota.Domain.Entities
 {
@@ -21,10 +23,10 @@ namespace Aliquota.Domain.Entities
         {
             //Product = product;
         }
-        public void AddProducts(Product product)
+        public IEnumerable<Product> AddProducts(Product product)
         {
             _products.Add(product);
-            AddNotification("AddProducts", "Produto adicionado com sucesso !");
+            return _products;
         }
         public double ReturnProductTax(Product product)
         {
@@ -32,6 +34,7 @@ namespace Aliquota.Domain.Entities
             TaxValue = product.CalculationOfIncomeTaxCollection();
             return TaxValue;
         }
+
     }
 }
 

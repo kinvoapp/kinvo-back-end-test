@@ -38,28 +38,26 @@ namespace Aliquota.Domain.Infra.Repositories
         }
         public bool ClientExist(string document)
         {
-            //if(_context.Client.Where(_context.Clie));
-            //implementar sistema de verificação
-            //_context.SaveChanges(); 
+
             return true;
         }
 
-        public IEnumerable<Client> GetById(Guid id)
+        public IEnumerable<Client> GetClient(string document)
         {
             //return _context.Client.FirstOrDefault(x => x.Id == id);
-            return _context.Client.AsNoTracking().Where(CreateQueriesInfos.GetClientInfo(id));
+            return _context.Client.AsNoTracking().Where(CreateQueriesInfos.GetClientInfo(document));
         }
 
-        public IEnumerable<Product> GetByProductId(Guid id)
+        public IEnumerable<Product> GetProduct(string product)
         {
             //return _context.Product.FirstOrDefault(x => x.Id == id);
-            return _context.Product.AsNoTracking().Where(CreateQueriesInfos.GetProductsInfo(id));
+            return _context.Product.AsNoTracking().Where(CreateQueriesInfos.GetProductsInfo(product));
         }
 
-        public IEnumerable<Order> GetOrderById(Guid id)
+        public IEnumerable<Order> GetOrder(string order)
         {
             //return _context.Orders.FirstOrDefault(x => x.Id == id);
-            return _context.Orders.AsNoTracking().Where(CreateQueriesInfos.GetOrderInfo(id));
+            return _context.Orders.AsNoTracking().Where(CreateQueriesInfos.GetOrderInfo(order));
         }
         // public Order ReturnIncomeTax(Order order)
         // {
@@ -72,6 +70,9 @@ namespace Aliquota.Domain.Infra.Repositories
             //return _context.Orders.AsNoTracking().Where(CreateQueriesInfos.GetValue(productTax));
         }
 
-
+        public bool ProductExist(string productName)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

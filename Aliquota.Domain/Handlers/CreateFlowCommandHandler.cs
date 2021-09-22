@@ -43,7 +43,7 @@ namespace Aliquota.Domain.Handlers
         public ICommandResult Handle(CreateProductCommand command)
         {
             var product = new Product(command.Title, command.Price, command.CreateDate, command.RescueDate);
-            var client = _repository.GetById(command.CustomerId);
+            var client = _repository.GetClient(command.Document);
             //var order = new Order(client.User, client.Document);
 
             //AddNotifications(client.Notifications);
@@ -61,8 +61,8 @@ namespace Aliquota.Domain.Handlers
 
         public ICommandResult Handle(AddOrderCommand command)
         {
-            var product = _repository.GetByProductId(command.ProductId);
-            var client = _repository.GetById(command.CustomerId);
+            var product = _repository.GetProduct(command.Title);
+            var client = _repository.GetClient(command.Document);
             var order = new Order(command.User, command.Document);
 
             AddNotifications(order.Notifications);
@@ -79,9 +79,9 @@ namespace Aliquota.Domain.Handlers
         public ICommandResult Handle(ReturnTaxRescueValueCommand command)
         {
             //Pega produto, cliente e ordem do banco
-            var product = _repository.GetByProductId(command.ProductId);
-            var client = _repository.GetById(command.CustomerId);
-            var order = _repository.GetOrderById(command.OrderId);
+            var product = _repository.GetProduct(command.Title);
+            var client = _repository.GetClient(command.Document);
+            var order = _repository.GetOrder(command.Document);
 
             command.Validate();
             if (command.Invalid)

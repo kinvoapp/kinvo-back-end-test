@@ -1,14 +1,17 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Aliquota.Domain.Commands;
 using Aliquota.Domain.Entities;
 using Aliquota.Domain.Handlers;
 using Aliquota.Domain.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 namespace Aliquota.Api.Controller
 {
     [ApiController]
     [Route("v1/clients")]
+
     public class ProductController : ControllerBase
     {
         //O Command é recebido pelo corpo da requisição por json
@@ -46,12 +49,37 @@ namespace Aliquota.Api.Controller
             //Toda escrita necessita de um handler
             return (GenericCommandResult)handler.Handle(command);
         }
-        [Route("{id}")]
+        [Route("")]
         [HttpGet]
-        public IEnumerable<Client> GetClient([FromBody] IProductRepository repository, Guid id)
+        public IEnumerable<Client> GetClient([FromServices] IProductRepository repository)
         {
             //Toda escrita necessita de um handler
-            return repository.GetById(id);
+            var documetnt = User.Claims.FirstOrDefault(x => x.Type == "user_id")?.Value;
+            return repository.GetClient(documetnt);
+        }
+        [Route("products")]
+        [HttpGet]
+        public IEnumerable<Product> GetProducts([FromServices] IProductRepository repository)
+        {
+            //Toda escrita necessita de um handler
+            var product = User.Claims.FirstOrDefault(x => x.Type == "user_id")?.Value;
+            return repository.GetProduct(product);
+        }
+        [Route("aliquota")]
+        [HttpGet]
+        public Order GetIncomeTax([FromServices] IProductRepository repository)
+        {
+            //Toda escrita necessita de um handler
+            var value = User.Claims.FirstOrDefault(x => x.Type == "user_id")?.Value;
+            return repository.ReturnIncomeTax(5);
+        }
+        [Route("")]
+        [HttpPut]
+        public GenericCommandResult PutClient([FromBody] CreateClientCommand command,
+        [FromServices] CreateFlowCommandHandler handler)
+        {
+            //Toda escrita necessita de um handler
+            return (GenericCommandResult)handler.Handle(command);
         }
     }
 }

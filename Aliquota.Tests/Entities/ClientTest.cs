@@ -27,15 +27,15 @@ namespace Aliquota.Domain.Test
         [Fact(DisplayName = "Teste Criação de Produto, Cliente e Pegar Taxa")]
         public void CreateProductAndClientAndProductAndGetRescue()
         {
-            Product _product = new Product("EGIE3", 250, DateTime.Now, DateTime.Now.AddYears(1));
+            Product produto = new Product("EGIE3", 250, DateTime.Now, DateTime.Now.AddYears(1));
             Client _client = new Client("Kaoe", "00000000000");
             Order order = new Order(_client.User, _client.Document);
 
 
             var expected = true;
 
-            order.AddProducts(_product);
-            order.ReturnProductTax(_product);
+            order.AddProducts(produto);
+            order.ReturnProductTax(produto);
 
             Assert.Equal(expected, _client.Valid);
         }

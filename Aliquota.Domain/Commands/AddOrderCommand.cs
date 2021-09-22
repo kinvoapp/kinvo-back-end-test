@@ -18,7 +18,8 @@ namespace Aliquota.Domain.Commands
         }
 
         public Guid CustomerId { get; set; } //reidratar
-        public Guid ProductId { get; set; }
+        //public Guid ProductId { get; set; }
+        public string Title { get; set; }
         public IList<Product> ProductsList { get; set; }
         public Product Product { get; set; }
         public string User { get; set; }
@@ -27,7 +28,7 @@ namespace Aliquota.Domain.Commands
         {
             AddNotifications(new Contract()
             .HasLen(CustomerId.ToString(), 36, "CustomerId", "Identificador do Cliente Inválido !!!")
-            .HasLen(ProductId.ToString(), 36, "ProductId", "Identificador do Produto Inválido !!!")
+            //.HasLen(ProductId.ToString(), 36, "ProductId", "Identificador do Produto Inválido !!!")
             .IsGreaterThan(ProductsList.Count, 0, "Products", "Nenhum ativo foi encontrado !"));
 
         }

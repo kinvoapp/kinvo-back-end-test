@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Flunt.Notifications;
 using Flunt.Validations;
 namespace Aliquota.Domain.Entities
@@ -9,6 +10,7 @@ namespace Aliquota.Domain.Entities
         {
             Title = title;
             Price = price;
+
             CreateDate = createDate.Date;
             RescueDate = rescueDate.Date;
             AddNotifications(new Contract().Requires()
@@ -16,7 +18,8 @@ namespace Aliquota.Domain.Entities
             .IsGreaterThan(Price, 0, "Price", "O valor de resgate não pode ser zero !")
             .IsNotNullOrEmpty(Title, "Title", "O Título de resgate não pode ser vazio !")
             .HasMinLen(Title, 5, "Title", "O Ativo deve conter ao mínimo 5 caracteres !")
-            .HasMaxLen(Title, 5, "Title", "O Ativo deve conter ao máximo 5 caracteres !"));
+            .HasMaxLen(Title, 5, "Title", "O Ativo deve conter ao máximo 5 caracteres !")
+            );
         }
 
         public string Title { get; private set; }

@@ -51,14 +51,14 @@ namespace Aliquota.Domain.Test.Queries
 
         public void GetClientInfoQuerySuccess()
         {
-            var result = _clients.AsQueryable().Where(CreateQueriesInfos.GetClientInfo(_client3.Id));
+            var result = _clients.AsQueryable().Where(CreateQueriesInfos.GetClientInfo(_client3.Document));
 
             Assert.Equal(1, result.Count());
         }
         [Fact]
         public void GetProductInfoQuerySuccess()
         {
-            var result = _product.AsQueryable().Where(CreateQueriesInfos.GetProductsInfo(_product3.Id));
+            var result = _product.AsQueryable().Where(CreateQueriesInfos.GetProductsInfo(_product3.Title));
 
             Assert.Equal(1, result.Count());
         }

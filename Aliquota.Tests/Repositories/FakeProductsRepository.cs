@@ -10,35 +10,40 @@ namespace Aliquota.Domain.Test.Repositories
     {
         public bool ClientExist(string document)
         {
-            return false;
+            throw new NotImplementedException();
         }
 
-        public Client GetById(Guid id)
-        {
-            return null;
-        }
-
-        public Product GetByProductId(Guid id)
-        {
-            return null;
-        }
-
-        public Order GetOrderById(Order order)
+        public IEnumerable<Client> GetById(string document)
         {
             throw new NotImplementedException();
         }
 
-        public Order GetOrderById(Guid id)
+        public IEnumerable<Product> GetByProductId(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public Order GetTax(Product product)
+        public IEnumerable<Client> GetClient(string document)
         {
             throw new NotImplementedException();
         }
 
-        public Order ReturnIncomeTax(Order order)
+        public IEnumerable<Order> GetOrder(string order)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Order> GetOrderById(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Product> GetProduct(string title)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool ProductExist(string productName)
         {
             throw new NotImplementedException();
         }
@@ -50,30 +55,15 @@ namespace Aliquota.Domain.Test.Repositories
 
         public void Save(Client client)
         {
-
+            throw new NotImplementedException();
         }
 
         public void SaveOrder(Order order)
         {
-
+            throw new NotImplementedException();
         }
 
         public void SaveProduct(Product product)
-        {
-
-        }
-
-        IEnumerable<Client> IProductRepository.GetById(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerable<Product> IProductRepository.GetByProductId(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerable<Order> IProductRepository.GetOrderById(Guid id)
         {
             throw new NotImplementedException();
         }
