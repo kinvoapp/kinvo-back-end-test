@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Aliquota.Domain.Entities;
+using Aliquota.Domain.Queries;
 using Aliquota.Domain.Repositories;
 
 namespace Aliquota.Domain.Test.Repositories
@@ -10,7 +11,7 @@ namespace Aliquota.Domain.Test.Repositories
     {
         public bool ClientExist(string document)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public IEnumerable<Client> GetById(string document)
@@ -28,7 +29,22 @@ namespace Aliquota.Domain.Test.Repositories
             throw new NotImplementedException();
         }
 
+        public Client GetClient(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public CustomerQueryResult GetCustomer(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Order> GetOrder(string order)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Order> GetOrder(Guid id)
         {
             throw new NotImplementedException();
         }
@@ -38,7 +54,22 @@ namespace Aliquota.Domain.Test.Repositories
             throw new NotImplementedException();
         }
 
+        public IEnumerable<OrdersQueryResult> GetOrders(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Product> GetProduct(string title)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Product> GetProduct(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<ProductsQueryResult> GetProducts(Guid id)
         {
             throw new NotImplementedException();
         }
@@ -53,17 +84,37 @@ namespace Aliquota.Domain.Test.Repositories
             throw new NotImplementedException();
         }
 
-        public void Save(Client client)
+        public Order ReturnIncomeTax(string productTax)
         {
             throw new NotImplementedException();
+        }
+
+        public void Save(Client client)
+        {
+
         }
 
         public void SaveOrder(Order order)
         {
-            throw new NotImplementedException();
+
         }
 
         public void SaveProduct(Product product)
+        {
+
+        }
+
+        Client IProductRepository.GetClient(string document)
+        {
+            throw new NotImplementedException();
+        }
+
+        Order IProductRepository.GetOrder(string title)
+        {
+            throw new NotImplementedException();
+        }
+
+        Product IProductRepository.GetProduct(string title)
         {
             throw new NotImplementedException();
         }

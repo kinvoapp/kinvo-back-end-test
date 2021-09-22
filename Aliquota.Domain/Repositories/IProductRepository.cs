@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Aliquota.Domain.Entities;
+using Aliquota.Domain.Queries;
 
 namespace Aliquota.Domain.Repositories
 {
@@ -14,11 +15,9 @@ namespace Aliquota.Domain.Repositories
         void SaveOrder(Order order);
         void SaveProduct(Product product);
 
-        IEnumerable<Client> GetClient(string document);
-        IEnumerable<Product> GetProduct(string product);
-        IEnumerable<Order> GetOrder(string order);
-        Order ReturnIncomeTax(double productTax);
-
-
+        Client GetClient(string document);
+        Product GetProduct(string title);
+        Order GetOrder(string userDocument);
+        Order ReturnIncomeTax(string productTax);
     }
 }

@@ -44,7 +44,7 @@ namespace Aliquota.Domain.Test.Queries
             _product.Add(_product3);
             _product.Add(_product4);
 
-            _order.Add(new Order(_client1.User, _client1.Document));
+            _order.Add(new Order(_client1));
         }
 
         [Fact]

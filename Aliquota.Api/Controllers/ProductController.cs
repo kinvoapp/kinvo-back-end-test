@@ -4,6 +4,7 @@ using System.Linq;
 using Aliquota.Domain.Commands;
 using Aliquota.Domain.Entities;
 using Aliquota.Domain.Handlers;
+using Aliquota.Domain.Queries;
 using Aliquota.Domain.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -31,14 +32,7 @@ namespace Aliquota.Api.Controller
         [FromServices] CreateFlowCommandHandler handler)
         {
             //Toda escrita necessita de um handler
-            return (GenericCommandResult)handler.Handle(command);
-        }
-        [Route("products/order")]
-        [HttpPost]
-        public GenericCommandResult PostOrder([FromBody] AddOrderCommand command,
-        [FromServices] CreateFlowCommandHandler handler)
-        {
-            //Toda escrita necessita de um handler
+            //Cria o cliente
             return (GenericCommandResult)handler.Handle(command);
         }
         [Route("products")]
@@ -46,39 +40,53 @@ namespace Aliquota.Api.Controller
         public GenericCommandResult PostProduct([FromBody] CreateProductCommand command,
         [FromServices] CreateFlowCommandHandler handler)
         {
-            //Toda escrita necessita de um handler
+            //Cria o produto
             return (GenericCommandResult)handler.Handle(command);
         }
-        [Route("")]
-        [HttpGet]
-        public IEnumerable<Client> GetClient([FromServices] IProductRepository repository)
+        [Route("products/order")]
+        [HttpPost]
+        public GenericCommandResult PostOrder([FromBody] AddOrderCommand command,
+        [FromServices] CreateFlowCommandHandler handler)
         {
-            //Toda escrita necessita de um handler
-            var documetnt = User.Claims.FirstOrDefault(x => x.Type == "user_id")?.Value;
-            return repository.GetClient(documetnt);
+            // Adiciona a Ordem
+            return (GenericCommandResult)handler.Handle(command);
         }
-        [Route("products")]
+
+        [Route("customers/{document}")]
         [HttpGet]
-        public IEnumerable<Product> GetProducts([FromServices] IProductRepository repository)
+        public Client GetClient([FromServices] IProductRepository repository, string document)
         {
-            //Toda escrita necessita de um handler
-            var product = User.Claims.FirstOrDefault(x => x.Type == "user_id")?.Value;
-            return repository.GetProduct(product);
+            // GET retorna o cliente
+            return repository.GetClient(document);
         }
-        [Route("aliquota")]
+        [Route("customers/products/{title}")]
         [HttpGet]
-        public Order GetIncomeTax([FromServices] IProductRepository repository)
+        public Product GetProducts([FromServices] IProductRepository repository, string title)
         {
-            //Toda escrita necessita de um handler
-            var value = User.Claims.FirstOrDefault(x => x.Type == "user_id")?.Value;
-            return repository.ReturnIncomeTax(5);
+            // GET retorna os produtos
+            return repository.GetProduct(title);
+        }
+        [Route("customers/products/orders/{userDocument}")]
+        [HttpGet]
+        public Order GetOrders([FromServices] IProductRepository repository, string userDocument)
+        {
+            // GET retorna os produtos
+            //var product = User.Claims.FirstOrDefault(x => x.Type == "user_id")?.Value;
+            return repository.GetOrder(userDocument);
+        }
+        [Route("customers/products/orders/aliquota/{product}")]
+        [HttpGet]
+        public Order GetIncomeTax([FromServices] IProductRepository repository, string product)
+        {
+            // GET retorna a aliquota...
+            return repository.ReturnIncomeTax(product);
         }
         [Route("")]
         [HttpPut]
         public GenericCommandResult PutClient([FromBody] CreateClientCommand command,
         [FromServices] CreateFlowCommandHandler handler)
         {
-            //Toda escrita necessita de um handler
+            //PUT altera cliente
             return (GenericCommandResult)handler.Handle(command);
         }
     }

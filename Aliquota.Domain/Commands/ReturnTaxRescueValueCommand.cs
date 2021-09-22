@@ -21,8 +21,8 @@ namespace Aliquota.Domain.Commands
         public TimeSpan DateCompare { get; set; }
         public string Document { get; set; }
         public string User { get; set; }
-        public Guid CustomerId { get; set; }
-        public Guid ProductId { get; set; }
+        public string CustomerDocument { get; set; }
+        public string ProductTitle { get; set; }
         public Guid OrderId { get; set; }
         public IList<Product> Products { get; set; }
 
@@ -37,8 +37,9 @@ namespace Aliquota.Domain.Commands
             .IsNotNullOrEmpty(Title, "Title", "O Título de resgate não pode ser vazio !")
             .HasMinLen(Title, 5, "Title", "O Ativo deve conter ao mínimo 5 caracteres !")
             .HasMaxLen(Title, 5, "Title", "O Ativo deve conter ao máximo 5 caracteres !")
-            .HasLen(CustomerId.ToString(), 36, "CustomerId", "Identificador do Cliente Inválido !!!")
-            .HasLen(ProductId.ToString(), 36, "ProductId", "Identificador do Produto Inválido !!!")
+            .HasMinLen(ProductTitle, 5, "ProductTitle", "O titulo deve conter ao mínimo 5 caracteres !")
+            .HasMaxLen(ProductTitle, 5, "ProductTitle", "O titulo deve conter ao máximo 5 caracteres !")
+            .HasMaxLen(CustomerDocument, 11, "CustomerDocument", "CPF Inválido !")
             .IsGreaterThan(Products.Count, 0, "Products", "Nenhum ativo foi encontrado !")); ;
         }
     }

@@ -1,32 +1,43 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.Linq;
-using Flunt.Notifications;
+using Flunt.Validations;
 
 namespace Aliquota.Domain.Entities
 {
     public class Order : Entity
     {
-        private IList<Product> _products;
-        public Order(string user, string document)
+        private readonly IList<OrderProduct> _products;
+        public Order()
         {
-            User = user;
-            Document = document;
-            _products = new List<Product>();
+
         }
-        public string User { get; private set; }
-        public string Document { get; private set; }
+        public Order(Client client)
+        {
+            Client = client;
+            //ClientDocument = client.Document;
+            _products = new List<OrderProduct>();
+
+            AddNotifications(new Contract().Requires()
+            .HasLen(ClientDocument, 11, "ClientDocument", "CPF inválido !"));
+        }
+        public Client Client { get; private set; }
+        public string OrderNumber { get; private set; }
+        public string ProductTaxTitle { get; private set; }
+        public string ClientDocument { get; private set; }
         public double TaxValue { get; private set; }
-        public IReadOnlyCollection<Product> Products => _products.ToArray();
-        public void SaveOrder(Product product)
+        public IReadOnlyCollection<OrderProduct> Products => _products.ToArray();
+        public void AddProducts(Product product)
         {
-            //Product = product;
+            var order = new OrderProduct(product);
+            _products.Add(order);
         }
-        public IEnumerable<Product> AddProducts(Product product)
+        public void PlaceOrder()
         {
-            _products.Add(product);
-            return _products;
+            //validar
+            OrderNumber = Guid.NewGuid().ToString().Replace("-", "").Substring(0, 8).ToUpper();
+            if (_products.Count == 0)
+                AddNotification("Products", "Esta ordem não possui itens !");
         }
         public double ReturnProductTax(Product product)
         {

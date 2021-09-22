@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Aliquota.Domain.Commands.Contracts;
 using Aliquota.Domain.Entities;
 using Aliquota.Domain.Handlers.Contracts;
@@ -10,27 +11,32 @@ namespace Aliquota.Domain.Commands
 {
     public class AddOrderCommand : Notifiable, ICommand
     {
+        private readonly IList<OrderProduct> _products;
+
         public AddOrderCommand()
         {
-
-            ProductsList = new List<Product>();
-            ProductsList.Add(Product);
+            _products = new List<OrderProduct>();
+            OrderItems = new List<OrderItemCommand>();
         }
 
-        public Guid CustomerId { get; set; } //reidratar
-        //public Guid ProductId { get; set; }
-        public string Title { get; set; }
-        public IList<Product> ProductsList { get; set; }
-        public Product Product { get; set; }
-        public string User { get; set; }
-        public string Document { get; set; }
+        public string ClientDocument { get; set; }
+        public string ProductTitle { get; set; }
+        public IList<OrderItemCommand> OrderItems { get; set; }
+
+        public IReadOnlyCollection<OrderProduct> Products => _products.ToArray();
         public void Validate()
         {
-            AddNotifications(new Contract()
-            .HasLen(CustomerId.ToString(), 36, "CustomerId", "Identificador do Cliente Inválido !!!")
-            //.HasLen(ProductId.ToString(), 36, "ProductId", "Identificador do Produto Inválido !!!")
-            .IsGreaterThan(ProductsList.Count, 0, "Products", "Nenhum ativo foi encontrado !"));
+            AddNotifications(new Contract().Requires()
+            .IsNotNullOrEmpty(ClientDocument, "ClientDocument", "O documento do cliente não pode ser vazio !")
+            .HasLen(ClientDocument, 11, "ClientDocument", "CPF do cliente inválido !")
+            .HasMinLen(ProductTitle, 5, "ProductTitle", "O produto deve conter ao mínimo 3 caracteres !")
+            .HasMaxLen(ProductTitle, 5, "ProductTitle", "O produto deve conter ao máximo 25 caracteres !"));
 
         }
+    }
+    public class OrderItemCommand
+    {
+        public Guid Product { get; set; }
+        public double Price { get; set; }
     }
 }

@@ -22,14 +22,14 @@ namespace Aliquota.Domain.Queries
         {
             return x => x.Document == document;
         }
-        public static Expression<Func<Order, bool>> GetOrderInfo(string order)
+        public static Expression<Func<Order, bool>> GetOrderInfo(string userDocument)
         {
-            return x => x.Document == order;
+            return x => x.ClientDocument == userDocument;
             //return x => x.Client.User == user && x.Client.Document == document;
         }
-        public static Expression<Func<Order, bool>> GetValue(double price)
+        public static Expression<Func<Order, bool>> GetValue(string title)
         {
-            return x => x.TaxValue == price;
-        }
+            return x => x.ProductTaxTitle == title;
+        } //PARA PEGAR A TAXA  NAO PASSAR VALOR APENAS O TITULO DO PRODUTO
     }
 }

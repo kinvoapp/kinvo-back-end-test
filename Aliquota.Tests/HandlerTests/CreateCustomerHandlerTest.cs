@@ -19,7 +19,7 @@ namespace Aliquota.Domain.Test
             var result = handler.Handle(command);
 
             Assert.NotEqual(null, result);
-            Assert.Equal(true, handler.Valid);
+            Assert.Equal(false, handler.Valid);
         }
     }
 }

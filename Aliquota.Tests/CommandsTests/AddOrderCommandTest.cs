@@ -11,12 +11,26 @@ namespace Aliquota.Domain.Test.CommandsTests
         [Fact]
         public void CreateSuccessCommand()
         {
-            var _product = new List<Product>();
+            var _product = new Product("EGIE1", 250, DateTime.Now, DateTime.Now.AddYears(1));
             var command = new AddOrderCommand();
-            command.CustomerId = Guid.NewGuid();
-            command.ProductsList = _product;
+
+            command.ClientDocument = "00000000011";
+            command.ProductTitle = "EGIE1";
 
             Assert.Equal(true, command.Valid);
+            //Assert.Equal(true, command.Valid);
+        }
+        [Fact]
+        public void CreateFailCommand()
+        {
+            var _product = new Product("EGIE1", 250, DateTime.Now, DateTime.Now.AddYears(1));
+            var command = new AddOrderCommand();
+
+            command.ClientDocument = "00011";
+            command.ProductTitle = "EGI";
+
+            Assert.Equal(false, command.Invalid);
+            //Assert.Equal(true, command.Valid);
         }
     }
 }

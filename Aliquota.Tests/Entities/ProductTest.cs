@@ -12,27 +12,31 @@ namespace Aliquota.Domain.Test
         {
             Product _product = new Product("EGIE3", 250, DateTime.Now, DateTime.Now.AddYears(1));
             Client _client = new Client("Kaoe", "00000000000");
-            Order order = new Order(_client.User, _client.Document);
+            Order order = new Order(_client);
 
 
             var expected = true;
 
             order.AddProducts(_product);
+            order.ReturnProductTax(_product);
+            order.PlaceOrder();
 
 
-            Assert.Equal(expected, _product.Valid);
+            Assert.Equal(expected, order.Invalid);
         }
         [Fact(DisplayName = "Teste de data de finalização do Produto menor que data de criação - Domain Notification")]
         public void ErrorProductDateNotification()
         {
             Product _product = new Product("EGIE3", 250, DateTime.Now.AddDays(5), DateTime.Now);
             Client _client = new Client("Kaoe", "00000000000");
-            Order order = new Order(_client.User, _client.Document);
+            Order order = new Order(_client);
 
 
             var expected = true;
 
             order.AddProducts(_product);
+            order.ReturnProductTax(_product);
+            order.PlaceOrder();
 
             Assert.Equal(expected, _product.Invalid);
         }
@@ -41,12 +45,14 @@ namespace Aliquota.Domain.Test
         {
             Product _product = new Product("EGIE3", 0, DateTime.Now, DateTime.Now.AddYears(1));
             Client _client = new Client("Kaoe", "00000000000");
-            Order order = new Order(_client.User, _client.Document);
+            Order order = new Order(_client);
 
 
             var expected = true;
 
             order.AddProducts(_product);
+            order.ReturnProductTax(_product);
+            order.PlaceOrder();
 
             Assert.Equal(expected, _product.Invalid);
         }
@@ -55,15 +61,17 @@ namespace Aliquota.Domain.Test
         {
             Product _product = new Product("EGIE3", 250, DateTime.Now, DateTime.Now.AddYears(1));
             Client _client = new Client("K", "00000000000");
-            Order order = new Order(_client.User, _client.Document);
+            Order order = new Order(_client);
 
 
-            var expected = true;
+
 
             order.AddProducts(_product);
+            order.ReturnProductTax(_product);
+            order.PlaceOrder();
 
-            Assert.Equal(expected, _client.Invalid);
-            Assert.Equal(expected, _product.Valid);
+            Assert.Equal(true, _client.Invalid);
+            Assert.Equal(false, order.Valid);
         }
         [Fact(DisplayName = "Teste de data do Produto(Data correta) - Domain Notification")]
         public void ErrorProductDateCorrectNotification()
@@ -71,14 +79,16 @@ namespace Aliquota.Domain.Test
         {
             Product _product = new Product("EGIE3", 250, DateTime.Now, DateTime.Now.AddYears(1));
             Client _client = new Client("Kaoe", "00000000000");
-            Order order = new Order(_client.User, _client.Document);
+            Order order = new Order(_client);
 
 
-            var expected = true;
+
 
             order.AddProducts(_product);
+            order.ReturnProductTax(_product);
+            order.PlaceOrder();
 
-            Assert.Equal(expected, _product.Valid);
+            Assert.Equal(false, _product.Valid);
         }
     }
 }

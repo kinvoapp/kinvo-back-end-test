@@ -27,7 +27,7 @@ namespace Aliquota.Domain.Infra.Repositories
 
         public void SaveOrder(Order order)
         {
-            _context.Orders.Add(order);
+            _context.Order.Add(order);
             _context.SaveChanges();
         }
 
@@ -38,41 +38,41 @@ namespace Aliquota.Domain.Infra.Repositories
         }
         public bool ClientExist(string document)
         {
-
+            return true;
+        }
+        public bool ProductExist(string productName)
+        {
             return true;
         }
 
-        public IEnumerable<Client> GetClient(string document)
+        public Client GetClient(string document)
         {
             //return _context.Client.FirstOrDefault(x => x.Id == id);
-            return _context.Client.AsNoTracking().Where(CreateQueriesInfos.GetClientInfo(document));
+            return _context.Client.AsNoTracking().FirstOrDefault(CreateQueriesInfos.GetClientInfo(document));
         }
 
-        public IEnumerable<Product> GetProduct(string product)
+        public Product GetProduct(string title)
         {
             //return _context.Product.FirstOrDefault(x => x.Id == id);
-            return _context.Product.AsNoTracking().Where(CreateQueriesInfos.GetProductsInfo(product));
+            return _context.Product.AsNoTracking().FirstOrDefault(CreateQueriesInfos.GetProductsInfo(title));
         }
 
-        public IEnumerable<Order> GetOrder(string order)
+        public Order GetOrder(string userDocument)
         {
             //return _context.Orders.FirstOrDefault(x => x.Id == id);
-            return _context.Orders.AsNoTracking().Where(CreateQueriesInfos.GetOrderInfo(order));
+            return _context.Order.AsNoTracking().FirstOrDefault(CreateQueriesInfos.GetOrderInfo(userDocument));
         }
         // public Order ReturnIncomeTax(Order order)
         // {
         //     return _context.Orders.FirstOrDefault(x => x.TaxValue == order.TaxValue);
         // }
 
-        public Order ReturnIncomeTax(double productTax)
+        public Order ReturnIncomeTax(string productTax)
         {
-            return _context.Orders.AsNoTracking().FirstOrDefault(CreateQueriesInfos.GetValue(productTax));
+            return _context.Order.AsNoTracking().FirstOrDefault(CreateQueriesInfos.GetValue(productTax));
             //return _context.Orders.AsNoTracking().Where(CreateQueriesInfos.GetValue(productTax));
         }
 
-        public bool ProductExist(string productName)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

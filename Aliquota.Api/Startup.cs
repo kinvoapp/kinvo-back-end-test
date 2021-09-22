@@ -24,8 +24,8 @@ namespace Aliquota.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            //services.AddMvc();
             //Resolvendo dependencias
-            //Nativo do aspnet
             services.AddDbContext<DataContext>(options => options.UseInMemoryDatabase("Database"));
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<CreateFlowCommandHandler, CreateFlowCommandHandler>(); //usado no From Services
@@ -38,7 +38,7 @@ namespace Aliquota.Api
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            // app.UseMvc();
             app.UseHttpsRedirection();
 
             app.UseRouting();
