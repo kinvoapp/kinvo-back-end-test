@@ -14,13 +14,11 @@ namespace Aliquota.Domain.Test
             Client _client = new Client("Kaoe", "00000000000");
             Order order = new Order(_client);
 
-
             var expected = true;
 
             order.AddProducts(_product);
             order.ReturnProductTax(_product);
             order.PlaceOrder();
-
 
             Assert.Equal(expected, order.Invalid);
         }
@@ -30,7 +28,6 @@ namespace Aliquota.Domain.Test
             Product _product = new Product("EGIE3", 250, DateTime.Now.AddDays(5), DateTime.Now);
             Client _client = new Client("Kaoe", "00000000000");
             Order order = new Order(_client);
-
 
             var expected = true;
 
@@ -47,7 +44,6 @@ namespace Aliquota.Domain.Test
             Client _client = new Client("Kaoe", "00000000000");
             Order order = new Order(_client);
 
-
             var expected = true;
 
             order.AddProducts(_product);
@@ -63,9 +59,6 @@ namespace Aliquota.Domain.Test
             Client _client = new Client("K", "00000000000");
             Order order = new Order(_client);
 
-
-
-
             order.AddProducts(_product);
             order.ReturnProductTax(_product);
             order.PlaceOrder();
@@ -80,9 +73,6 @@ namespace Aliquota.Domain.Test
             Product _product = new Product("EGIE3", 250, DateTime.Now, DateTime.Now.AddYears(1));
             Client _client = new Client("Kaoe", "00000000000");
             Order order = new Order(_client);
-
-
-
 
             order.AddProducts(_product);
             order.ReturnProductTax(_product);

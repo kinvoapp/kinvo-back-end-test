@@ -1,6 +1,5 @@
 using System.ComponentModel.DataAnnotations;
 using Aliquota.Domain.Entities;
-using Aliquota.Domain.Queries;
 using Flunt.Notifications;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,14 +16,11 @@ namespace Aliquota.Infra.Context
         public DbSet<Client> Client { get; set; }
         public DbSet<Order> Order { get; set; }
         public DbSet<OrderProduct> OrderProduct { get; set; }
-        public DbSet<CustomerQueryResult> CustomerQueryResult { get; set; }
-        public DbSet<ProductsQueryResult> ProductsQueryResult { get; set; }
-        public DbSet<OrdersQueryResult> OrdersQueryResult { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //ignorando validações e notificações do ef
             modelBuilder.Ignore<ValidationResult>();
             modelBuilder.Ignore<Notification>();
-            //modelBuilder.Ignore<DomainEvent>();
         }
     }
 }

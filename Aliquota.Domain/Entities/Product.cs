@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using Flunt.Notifications;
 using Flunt.Validations;
 namespace Aliquota.Domain.Entities
 {
@@ -10,7 +8,6 @@ namespace Aliquota.Domain.Entities
         {
             Title = title;
             Price = price;
-
             CreateDate = createDate.Date;
             RescueDate = rescueDate.Date;
             AddNotifications(new Contract().Requires()
@@ -26,7 +23,7 @@ namespace Aliquota.Domain.Entities
         public double Price { get; private set; }
         public DateTime CreateDate { get; private set; }
         public DateTime RescueDate { get; private set; }
-        public TimeSpan DateCompare { get; private set; }
+        protected TimeSpan DateCompare { get; private set; }
         public double TaxValue { get; private set; }
 
         public bool Equals(Product other)

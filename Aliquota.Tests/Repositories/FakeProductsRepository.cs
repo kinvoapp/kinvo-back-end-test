@@ -33,32 +33,18 @@ namespace Aliquota.Domain.Test.Repositories
         {
             throw new NotImplementedException();
         }
-
-        public CustomerQueryResult GetCustomer(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
         public IEnumerable<Order> GetOrder(string order)
         {
             throw new NotImplementedException();
         }
-
         public IEnumerable<Order> GetOrder(Guid id)
         {
             throw new NotImplementedException();
         }
-
         public IEnumerable<Order> GetOrderById(Guid id)
         {
             throw new NotImplementedException();
         }
-
-        public IEnumerable<OrdersQueryResult> GetOrders(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
         public IEnumerable<Product> GetProduct(string title)
         {
             throw new NotImplementedException();
@@ -68,12 +54,6 @@ namespace Aliquota.Domain.Test.Repositories
         {
             throw new NotImplementedException();
         }
-
-        public IEnumerable<ProductsQueryResult> GetProducts(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
         public bool ProductExist(string productName)
         {
             throw new NotImplementedException();
@@ -108,12 +88,6 @@ namespace Aliquota.Domain.Test.Repositories
         {
             throw new NotImplementedException();
         }
-
-        Order IProductRepository.GetOrder(string title)
-        {
-            throw new NotImplementedException();
-        }
-
         Product IProductRepository.GetProduct(string title)
         {
             throw new NotImplementedException();

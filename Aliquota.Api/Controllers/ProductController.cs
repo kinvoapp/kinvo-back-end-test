@@ -22,7 +22,7 @@ namespace Aliquota.Api.Controller
         //Assim o controller fica muito mais enxuto 
         //Já que precisa passar por um command e ser manipulado por um handler
         private readonly IProductRepository _repo;
-        public ProductController(IProductRepository repository)
+        public ProductController(IProductRepository repository) //injeção de dependencia... preciso do meu repositorio para retorno
         {
             _repo = repository;
         }
@@ -33,6 +33,14 @@ namespace Aliquota.Api.Controller
         {
             //Toda escrita necessita de um handler
             //Cria o cliente
+            //localhost:5000/v1/clients
+            /*
+            Exemplo de uso... Método POST Body > RAW > Json 
+            Corpo: {
+                        "user":"KaoeFerreira",
+                        "document":"01234567899" 
+                    }
+            */
             return (GenericCommandResult)handler.Handle(command);
         }
         [Route("products")]
@@ -40,24 +48,29 @@ namespace Aliquota.Api.Controller
         public GenericCommandResult PostProduct([FromBody] CreateProductCommand command,
         [FromServices] CreateFlowCommandHandler handler)
         {
-            //Cria o produto
+            //Cria o produto e retorna o valor da aliquota
+            //localhost:5000/v1/clients/products
+            //Exemplo de uso... Método POST Body > RAW > Json 
+            /*
+                {
+                    "title":"OIBR3",
+                    "price": 500,
+                    "createDate":"2021-05-06", Formato da data YYYY-MM-DD
+                    "rescueDate":"2022-09-03",
+                    "user":"KaoeFerreira",
+                    "document":"00000000000"
+                }
+            */
             return (GenericCommandResult)handler.Handle(command);
         }
-
-        // [Route("products/order")]
-        // [HttpPost]
-        // public GenericCommandResult PostOrder([FromBody] AddOrderCommand command,
-        // [FromServices] CreateFlowCommandHandler handler)
-        // {
-        //     // Adiciona a Ordem
-        //     return (GenericCommandResult)handler.Handle(command);
-        // }
 
         [Route("customers/{document}")]
         [HttpGet]
         public Client GetClient([FromServices] IProductRepository repository, string document)
         {
             // GET retorna o cliente
+            //url 
+            //localhost:5000/v1/clients/customers/01234567899 <---- CPF cadastrado 
             return repository.GetClient(document);
         }
         [Route("customers/products/{title}")]
@@ -65,24 +78,9 @@ namespace Aliquota.Api.Controller
         public Product GetProducts([FromServices] IProductRepository repository, string title)
         {
             // GET retorna os produtos
+            //url 
+            //localhost:5000/v1/clients/customers/products/OIBR3 <----- Ativo cadastrado
             return repository.GetProduct(title);
-        }
-        [Route("customers/products/orders/{userDocument}")]
-        [HttpGet]
-        public Order GetOrders([FromServices] IProductRepository repository, string userDocument)
-        {
-            // GET retorna os produtos
-            //var product = User.Claims.FirstOrDefault(x => x.Type == "user_id")?.Value;
-            return repository.GetOrder(userDocument);
-        }
-
-        [Route("")]
-        [HttpPut]
-        public GenericCommandResult PutClient([FromBody] CreateClientCommand command,
-        [FromServices] CreateFlowCommandHandler handler)
-        {
-            //PUT altera cliente
-            return (GenericCommandResult)handler.Handle(command);
         }
     }
 }

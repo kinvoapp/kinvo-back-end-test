@@ -8,6 +8,7 @@ namespace Aliquota.Domain.Commands
 {
     public class CreateProductCommand : Notifiable, ICommand
     {
+        //Command da criação do produto
         public string Title { get; set; }
         public double Price { get; set; }
         public DateTime CreateDate { get; set; }
@@ -19,6 +20,8 @@ namespace Aliquota.Domain.Commands
 
         public void Validate()
         {
+            //Muito melhor fazer notificações pelo próprio domínio 
+
             AddNotifications(new Contract().Requires()
             .HasMinLen(User, 3, "Name", "O nome deve conter ao mínimo 3 caracteres !")
             .IsGreaterOrEqualsThan(RescueDate.Date, CreateDate.Date, "EndApplicationDate", "A data final da aplicação não pode ser no passado !")

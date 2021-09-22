@@ -7,7 +7,7 @@ namespace Aliquota.Domain.Commands
     {
         public GenericCommandResult()
         {
-
+            //classe apenas para retornar um resultado generico para a tela
         }
         public GenericCommandResult(bool succes, string message, object data)
         {

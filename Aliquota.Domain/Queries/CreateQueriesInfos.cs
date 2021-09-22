@@ -6,13 +6,14 @@ namespace Aliquota.Domain.Queries
 {
     public static class CreateQueriesInfos
     {
+        //Classe estática apenas para retornar as query, não precisando instanciar elas 
         public static Expression<Func<Client, bool>> ClientExists(string document)
         {
             return x => x.Document == document;
         }
         public static Expression<Func<Product, bool>> ProductExists(string productName)
         {
-            return x => x.Title == productName; //trocar por id
+            return x => x.Title == productName;
         }
         public static Expression<Func<Product, bool>> GetProductsInfo(string title)
         {
@@ -25,15 +26,10 @@ namespace Aliquota.Domain.Queries
         public static Expression<Func<Order, bool>> GetOrderInfo(string userDocument)
         {
             return x => x.ClientDocument == userDocument;
-            //return x => x.Client.User == user && x.Client.Document == document;
         }
         public static Expression<Func<Order, bool>> GetValue(double value)
         {
             return x => x.TaxValue == value;
-        } //PARA PEGAR A TAXA  NAO PASSAR VALOR APENAS O TITULO DO PRODUTO
-        public static Expression<Func<Product, bool>> GetAliquota(string product)
-        {
-            return x => x.Title == product;
         }
     }
 }

@@ -1,4 +1,3 @@
-using System;
 using Aliquota.Domain.Commands;
 using Aliquota.Domain.Commands.Contracts;
 using Aliquota.Domain.Entities;
@@ -9,29 +8,29 @@ using Flunt.Notifications;
 namespace Aliquota.Domain.Handlers
 {
     public class CreateFlowCommandHandler : Notifiable, IHandler<CreateClientCommand>,
-    IHandler<AddOrderCommand>,
-    IHandler<CreateProductCommand>,
-    IHandler<ReturnTaxRescueValueCommand>
+    IHandler<CreateProductCommand>
     {
         private readonly IProductRepository _repository;
-        public CreateFlowCommandHandler(IProductRepository repository)
+        public CreateFlowCommandHandler(IProductRepository repository) //injeta a dependencia do repositorio
         {
             _repository = repository;
         }
         public ICommandResult Handle(CreateClientCommand command)
         {
-            //verificar se o usuario ja existe (document e name)
+            //verificar se o usuario ja existe (document e name) //não aplicado
             if (_repository.ClientExist(command.Document))
                 AddNotification("Document", "CPF Já cadastrado !");
 
             //Criar as entidade 
             var client = new Client(command.User, command.Document);
-            //validação
+
+            //Validação
             AddNotifications(client.Notifications);
 
             command.Validate();
             if (command.Invalid)
             {
+                //se não for valido já retorna o erro para tela junto com o que foi colocado errado
                 return new GenericCommandResult(false, "Erro ao cadastrar cliente !", command.Notifications);
             }
             //Persistir no banco
@@ -46,7 +45,6 @@ namespace Aliquota.Domain.Handlers
             var client = _repository.GetClient(command.Document);
             var order = new Order(client);
 
-            //validar se cliente existe
 
             command.Validate();
             if (command.Invalid)
@@ -54,51 +52,11 @@ namespace Aliquota.Domain.Handlers
                 return new GenericCommandResult(false, "Erro ao criar produto !", command.Notifications);
             }
 
-            _repository.SaveProduct(product);
-            order.AddProducts(product); //esse fluxo
+            _repository.SaveProduct(product); //Inicio do fluxo
+            order.AddProducts(product);
             order.PlaceOrder();
             order.ReturnProductTax(product);
             return new GenericCommandResult(true, $"Produto cadastrado com sucesso. Seu resgate foi consultado e o valor é de {product.TaxValue} !", product.Id);
         }
-
-        public ICommandResult Handle(AddOrderCommand command)
-        {
-            var product = _repository.GetProduct(command.ProductTitle);
-
-            // var product = new Product(command.Title, command.Price, command.CreateDate, command.RescueDate);
-            var client = _repository.GetClient(command.ClientDocument);
-            var order = new Order(client);
-
-            command.Validate();
-            if (command.Invalid)
-            {
-                return new GenericCommandResult(false, "Erro ao criar Ordem...A Ordem deve ser de um ativo que você já tem !", command.Notifications);
-            }
-
-            _repository.SaveOrder(order);
-
-            return new GenericCommandResult(true, "Pedido criado com sucesso !", order.Id);
-        }
-        public ICommandResult Handle(ReturnTaxRescueValueCommand command)
-        {
-            //Pega produto, cliente e ordem do banco
-            var product = _repository.GetProduct(command.ProductTitle);
-            var client = _repository.GetClient(command.Document);
-            var order = _repository.GetOrder(command.Title);
-
-            command.Validate();
-            if (command.Invalid)
-            {
-                return new GenericCommandResult(false, "Erro ao resgatar ativo !", command.Notifications);
-            }
-
-            _repository.SaveProduct(product);
-            order.AddProducts(product); //esse fluxo
-            order.PlaceOrder();
-            order.ReturnProductTax(product);
-            return new GenericCommandResult(true, "Ativo resgatado com sucesso ! O valor da taxa é: ", product.TaxValue);
-        }
-
-
     }
 }
