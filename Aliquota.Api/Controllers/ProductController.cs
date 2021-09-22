@@ -21,6 +21,8 @@ namespace Aliquota.Api.Controller
         //Sem tomada de decisões em controller (ex: IF's)
         //Assim o controller fica muito mais enxuto 
         //Já que precisa passar por um command e ser manipulado por um handler
+
+        //Melhor para se testar no Postman
         private readonly IProductRepository _repo;
         public ProductController(IProductRepository repository) //injeção de dependencia... preciso do meu repositorio para retorno
         {
