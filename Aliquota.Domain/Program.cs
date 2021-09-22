@@ -2,7 +2,7 @@
 
 namespace Aliquota.Domain {
     
-    class Program {
+    class ClienteIR {
         
         static void Main(string[] args){
 
@@ -24,18 +24,18 @@ namespace Aliquota.Domain {
                 renda=double.Parse(Console.ReadLine());
                 
                 //estrutura para a quantidade de tempo que a pessoa quer fazer o IR
-                Console.WriteLine("O Resgate sera de 1 ano ou sera maior que 2 anos, se sim digite quantos anos voce quer?");
+                Console.WriteLine("O Resgate sera de 1 ano ou sera maior que 2 anos, se sim digite quantos anos voce quer fazer o resgate do IR?");
                 ano=double.Parse(Console.ReadLine());
                 if(ano==1){
                     //Calculando o IR de 1 ano
                     ano_resgate=(ano_aplicacao + 1.0);
                     ir=(renda*0.225);
-                    Console.WriteLine("O resgate sera efetuado no ano " + ano_resgate +" e o valor total a ser pago sera de " + ir +" reais");
+                    Console.WriteLine("O resgate sera efetuado no ano de " + ano_resgate +" e o valor total a ser pago sera de " + ir +" reais \n");
                 }if(ano>=2){
                     //Calculando o IR >2 anos.
                     ano_resgate=(ano_aplicacao + ano);
                     ir=(renda*0.15);
-                    Console.WriteLine("O resgate sera efetuado no ano " + ano_resgate +" e o valor total a ser pago sera de " + ir +" reais");
+                    Console.WriteLine("O resgate sera efetuado no ano de " + ano_resgate +" e o valor total a ser pago sera de " + ir +" reais \n");
                 }
                 //Calculando o IR de 1 e 2 anos.
                 Console.WriteLine("Deseja fazer o calculo de 1 e 2 anos?");
