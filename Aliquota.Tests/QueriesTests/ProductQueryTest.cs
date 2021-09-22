@@ -32,7 +32,7 @@ namespace Aliquota.Domain.Test.Queries
 
             _client1 = new Client("Kaoe", "00000000000");
             _client2 = new Client("Joao", "00000000000");
-            _client3 = new Client("Kaoe", "00000000000");
+            _client3 = new Client("Kaoe", "00000000010");
 
             _clients.Add(_client1);
             _clients.Add(_client2);
@@ -51,9 +51,9 @@ namespace Aliquota.Domain.Test.Queries
 
         public void GetClientInfoQuerySuccess()
         {
-            var result = _clients.AsQueryable().Where(CreateQueriesInfos.GetClientInfo(_client3.Document));
+            var result = _clients.AsQueryable().Where(CreateQueriesInfos.GetClientInfo(_client1.Document));
 
-            Assert.Equal(1, result.Count());
+            Assert.Equal(2, result.Count());
         }
         [Fact]
         public void GetProductInfoQuerySuccess()
@@ -62,12 +62,5 @@ namespace Aliquota.Domain.Test.Queries
 
             Assert.Equal(2, result.Count());
         }
-        // [Fact]
-        // public void GetProductTaxQuerySuccess()
-        // {
-        //     var result = _product.AsQueryable().Where(CreateQueriesInfos.GetValue(25.05));
-
-        //     Assert.Equal(1, result.Contains(_product1.TaxValue));
-        // }
     }
 }
