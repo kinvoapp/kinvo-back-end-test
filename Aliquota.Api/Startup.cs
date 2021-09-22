@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace Aliquota.Api
 {
@@ -29,6 +30,11 @@ namespace Aliquota.Api
             services.AddDbContext<DataContext>(options => options.UseInMemoryDatabase("Database"));
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<CreateFlowCommandHandler, CreateFlowCommandHandler>(); //usado no From Services
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Exercicio Back End Kinvo", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +52,11 @@ namespace Aliquota.Api
 
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseSwagger();
+            app.UseSwaggerUI(s =>
+            {
+                s.SwaggerEndpoint("/swagger/v1/swagger.json", "Exercicio - v1");
+            });
 
             app.UseEndpoints(endpoints =>
             {
