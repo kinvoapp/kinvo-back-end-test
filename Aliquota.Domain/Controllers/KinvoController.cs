@@ -81,39 +81,39 @@ namespace Aliquota.Domain.Controllers
         public IActionResult TudoPorId(int id)
         {
             Investimento investimento = _context.Investimentos.FirstOrDefault(investimento => investimento.Id == id);
+
             TimeSpan date = Convert.ToDateTime(investimento.DataDeResgate) - Convert.ToDateTime(investimento.DataDeInicio);
             int totalDias = date.Days;
 
-            investimento.TempoEmDias = totalDias;
-            investimento.TempoEmAnos =  totalDias / 365;
 
+            if (investimento != null || investimento.Lucro > 0 || totalDias > 0)
+            {
+                investimento.TempoEmDias = totalDias;
+                investimento.TempoEmAnos = totalDias / 365;
+                Ok(investimento);
 
-            if (investimento == null || investimento.Lucro <= 0 || totalDias < 1)
-            {
-                return NotFound(); 
+                Double Imposto;
+                if (365 >= totalDias)
+                {
+                    Imposto = 0.225;
+                    Console.WriteLine("O imposto foi de : " + (Imposto) + " Sobre o lucro de " + (investimento.Lucro));
+                    Console.WriteLine("Totalizando " + (Imposto * investimento.Lucro) + " Reais de imposto, e lucro final de " + ((investimento.Lucro) - (Imposto * investimento.Lucro)));
+                }
+                else if (365 < totalDias && totalDias <= 730)
+                {
+                    Imposto = 0.185;
+                    Console.WriteLine("O imposto foi de : " + (Imposto) + " Sobre o lucro de " + (investimento.Lucro));
+                    Console.WriteLine("Totalizando " + (Imposto * investimento.Lucro) + " Reais de imposto, e lucro final de " + ((investimento.Lucro) - (Imposto * investimento.Lucro)));
+                }
+                else if (730 < totalDias)
+                {
+                    Imposto = 0.15;
+                    Console.WriteLine("O imposto foi de : " + (Imposto) + " Sobre o lucro de " + (investimento.Lucro));
+                    Console.WriteLine("Totalizando " + (Imposto * investimento.Lucro) + " Reais de imposto, e lucro final de " + ((investimento.Lucro) - (Imposto * investimento.Lucro)));
+                }
+                return NoContent();
             }
-            Ok(investimento);
-
-            Double Imposto;
-            if (365 >= totalDias)
-            {
-                Imposto = 0.225;
-                Console.WriteLine("O imposto foi de : " + (Imposto) + " Sobre o lucro de " + (investimento.Lucro));
-                Console.WriteLine("Totalizando " + (Imposto * investimento.Lucro) + " Reais de imposto, e lucro final de " + ((investimento.Lucro) - (Imposto * investimento.Lucro)));
-            }
-            else if (365 < totalDias && 730 >= totalDias)
-            {
-                Imposto = 0.185;
-                Console.WriteLine("O imposto foi de : " + (Imposto) + " Sobre o lucro de " + (investimento.Lucro));
-                Console.WriteLine("Totalizando " + (Imposto * investimento.Lucro) + " Reais de imposto, e lucro final de " + ((investimento.Lucro) - (Imposto * investimento.Lucro)));
-            }
-            else if (730 < totalDias)
-            {
-                Imposto = 0.15;
-                Console.WriteLine("O imposto foi de : " + (Imposto) + " Sobre o lucro de " + (investimento.Lucro));
-                Console.WriteLine("Totalizando " + (Imposto * investimento.Lucro) + " Reais de imposto, e lucro final de " + ((investimento.Lucro) - (Imposto * investimento.Lucro)));
-            }
-            return NoContent();
+            return NotFound();
         }
     }
 }
