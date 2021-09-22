@@ -16,7 +16,7 @@ namespace Aliquota.Domain.Test
             var _client = new Client("Kaoe", "00000000000");
             var order = new Order(_client);
 
-            // order.SaveOrder(_product); quem salva é o repositorio
+
             var expected = true;
 
             order.AddProducts(_product);
@@ -92,9 +92,6 @@ namespace Aliquota.Domain.Test
             var _product = new Product("EGIE3", 250, DateTime.Now, DateTime.Now.AddYears(1));
             var _client = new Client("Kaoe", "00000");
             var order = new Order(_client);
-
-
-            //var expected = true;
 
             order.AddProducts(new Product("EGIE1", 250, DateTime.Now, DateTime.Now.AddYears(1)));
             order.AddProducts(new Product("EGIE2", 150, DateTime.Now, DateTime.Now.AddYears(5)));

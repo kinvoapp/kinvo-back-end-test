@@ -15,7 +15,6 @@ namespace Aliquota.Infra.Context
         public DbSet<Product> Product { get; set; }
         public DbSet<Client> Client { get; set; }
         public DbSet<Order> Order { get; set; }
-        public DbSet<OrderProduct> OrderProduct { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //ignorando validações e notificações do ef
