@@ -60,7 +60,7 @@ namespace Aliquota.Domain.Test.Queries
         {
             var result = _product.AsQueryable().Where(CreateQueriesInfos.GetProductsInfo(_product3.Title));
 
-            Assert.Equal(1, result.Count());
+            Assert.Equal(2, result.Count());
         }
         // [Fact]
         // public void GetProductTaxQuerySuccess()

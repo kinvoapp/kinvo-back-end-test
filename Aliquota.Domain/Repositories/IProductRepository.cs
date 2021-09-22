@@ -18,6 +18,6 @@ namespace Aliquota.Domain.Repositories
         Client GetClient(string document);
         Product GetProduct(string title);
         Order GetOrder(string userDocument);
-        Order ReturnIncomeTax(string productTax);
+        Order ReturnIncomeTax(double productTax);
     }
 }

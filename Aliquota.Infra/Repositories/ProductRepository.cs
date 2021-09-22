@@ -67,10 +67,15 @@ namespace Aliquota.Domain.Infra.Repositories
         //     return _context.Orders.FirstOrDefault(x => x.TaxValue == order.TaxValue);
         // }
 
-        public Order ReturnIncomeTax(string productTax)
+        public Order ReturnIncomeTax(double productTax)
         {
             return _context.Order.AsNoTracking().FirstOrDefault(CreateQueriesInfos.GetValue(productTax));
             //return _context.Orders.AsNoTracking().Where(CreateQueriesInfos.GetValue(productTax));
+        }
+
+        public Product Aliquota(string product)
+        {
+            return _context.Product.AsNoTracking().FirstOrDefault(CreateQueriesInfos.GetProductsInfo(product));
         }
 
 

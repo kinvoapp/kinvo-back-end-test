@@ -27,9 +27,13 @@ namespace Aliquota.Domain.Queries
             return x => x.ClientDocument == userDocument;
             //return x => x.Client.User == user && x.Client.Document == document;
         }
-        public static Expression<Func<Order, bool>> GetValue(string title)
+        public static Expression<Func<Order, bool>> GetValue(double value)
         {
-            return x => x.ProductTaxTitle == title;
+            return x => x.TaxValue == value;
         } //PARA PEGAR A TAXA  NAO PASSAR VALOR APENAS O TITULO DO PRODUTO
+        public static Expression<Func<Product, bool>> GetAliquota(string product)
+        {
+            return x => x.Title == product;
+        }
     }
 }

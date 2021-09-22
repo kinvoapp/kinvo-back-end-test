@@ -43,14 +43,15 @@ namespace Aliquota.Api.Controller
             //Cria o produto
             return (GenericCommandResult)handler.Handle(command);
         }
-        [Route("products/order")]
-        [HttpPost]
-        public GenericCommandResult PostOrder([FromBody] AddOrderCommand command,
-        [FromServices] CreateFlowCommandHandler handler)
-        {
-            // Adiciona a Ordem
-            return (GenericCommandResult)handler.Handle(command);
-        }
+
+        // [Route("products/order")]
+        // [HttpPost]
+        // public GenericCommandResult PostOrder([FromBody] AddOrderCommand command,
+        // [FromServices] CreateFlowCommandHandler handler)
+        // {
+        //     // Adiciona a Ordem
+        //     return (GenericCommandResult)handler.Handle(command);
+        // }
 
         [Route("customers/{document}")]
         [HttpGet]
@@ -74,13 +75,7 @@ namespace Aliquota.Api.Controller
             //var product = User.Claims.FirstOrDefault(x => x.Type == "user_id")?.Value;
             return repository.GetOrder(userDocument);
         }
-        [Route("customers/products/orders/aliquota/{product}")]
-        [HttpGet]
-        public Order GetIncomeTax([FromServices] IProductRepository repository, string product)
-        {
-            // GET retorna a aliquota...
-            return repository.ReturnIncomeTax(product);
-        }
+
         [Route("")]
         [HttpPut]
         public GenericCommandResult PutClient([FromBody] CreateClientCommand command,

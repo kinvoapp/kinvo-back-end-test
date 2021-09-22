@@ -55,9 +55,10 @@ namespace Aliquota.Domain.Handlers
             }
 
             _repository.SaveProduct(product);
-            order.AddProducts(product);
+            order.AddProducts(product); //esse fluxo
             order.PlaceOrder();
-            return new GenericCommandResult(true, "Produto cadastrado com sucesso !", product.Id);
+            order.ReturnProductTax(product);
+            return new GenericCommandResult(true, $"Produto cadastrado com sucesso. Seu resgate foi consultado e o valor é de {product.TaxValue} !", product.Id);
         }
 
         public ICommandResult Handle(AddOrderCommand command)
@@ -90,9 +91,12 @@ namespace Aliquota.Domain.Handlers
             {
                 return new GenericCommandResult(false, "Erro ao resgatar ativo !", command.Notifications);
             }
-            _repository.GetProduct(product.Title);
+
+            _repository.SaveProduct(product);
+            order.AddProducts(product); //esse fluxo
+            order.PlaceOrder();
             order.ReturnProductTax(product);
-            return new GenericCommandResult(true, "Ativo resgatado com sucesso ! O valor da taxa é: ", command.TaxValue);
+            return new GenericCommandResult(true, "Ativo resgatado com sucesso ! O valor da taxa é: ", product.TaxValue);
         }
 
 
