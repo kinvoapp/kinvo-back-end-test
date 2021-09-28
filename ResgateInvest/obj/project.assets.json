@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ismae\\Desktop\\Ismael Kinvo\\ResgateInvest\\ResgateInvest\\Aliquota.csproj",
+      "projectUniqueName": "C:\\Users\\ismae\\Desktop\\kinvo-back-end-test\\ResgateInvest\\Aliquota.csproj",
       "projectName": "Aliquota",
-      "projectPath": "C:\\Users\\ismae\\Desktop\\Ismael Kinvo\\ResgateInvest\\ResgateInvest\\Aliquota.csproj",
+      "projectPath": "C:\\Users\\ismae\\Desktop\\kinvo-back-end-test\\ResgateInvest\\Aliquota.csproj",
       "packagesPath": "C:\\Users\\ismae\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ismae\\Desktop\\Ismael Kinvo\\ResgateInvest\\ResgateInvest\\obj\\",
+      "outputPath": "C:\\Users\\ismae\\Desktop\\kinvo-back-end-test\\ResgateInvest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -58,8 +58,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\ismae\\Desktop\\Ismael Kinvo\\ResgateInvest\\Aliquota.Domain\\Aliquota.Domain.csproj": {
-              "projectPath": "C:\\Users\\ismae\\Desktop\\Ismael Kinvo\\ResgateInvest\\Aliquota.Domain\\Aliquota.Domain.csproj"
+            "C:\\Users\\ismae\\Desktop\\kinvo-back-end-test\\Aliquota.Domain\\Aliquota.Domain.csproj": {
+              "projectPath": "C:\\Users\\ismae\\Desktop\\kinvo-back-end-test\\Aliquota.Domain\\Aliquota.Domain.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "52uZjuW8559TZxOul5AsBo2jJfeqvk/4ebsgtGKm3BmJ+kCddy1yadOsZBhcZQ1cS0xUKlzy69OECBrRRU+Gng==",
+  "dgSpecHash": "UKBli+JMcHW0phnT1YU6mom1Sqs68kLA5fBoH100IoAN+8CongFmLexcnBt6hi4dpMgU8JhUlyBKBMlRNpmM8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ismae\\Desktop\\Ismael Kinvo\\ResgateInvest\\Aliquota.Domain\\Aliquota.Domain.csproj",
+  "projectFilePath": "C:\\Users\\ismae\\Desktop\\kinvo-back-end-test\\Aliquota.Domain\\Aliquota.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
