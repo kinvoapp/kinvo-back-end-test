@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "ResgateInvest/1.0.0": {
+        "dependencies": {
+          "Aliquota.Domain": "1.0.0"
+        },
+        "runtime": {
+          "ResgateInvest.dll": {}
+        }
+      },
+      "Aliquota.Domain/1.0.0": {
+        "runtime": {
+          "Aliquota.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ResgateInvest/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Aliquota.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

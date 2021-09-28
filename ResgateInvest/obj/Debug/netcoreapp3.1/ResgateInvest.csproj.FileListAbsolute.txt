@@ -1,0 +1,16 @@
+C:\Users\ismae\Desktop\Test Kinvo1\ResgateInvest\ResgateInvest\bin\Debug\netcoreapp3.1\ResgateInvest.exe
+C:\Users\ismae\Desktop\Test Kinvo1\ResgateInvest\ResgateInvest\bin\Debug\netcoreapp3.1\ResgateInvest.deps.json
+C:\Users\ismae\Desktop\Test Kinvo1\ResgateInvest\ResgateInvest\bin\Debug\netcoreapp3.1\ResgateInvest.runtimeconfig.json
+C:\Users\ismae\Desktop\Test Kinvo1\ResgateInvest\ResgateInvest\bin\Debug\netcoreapp3.1\ResgateInvest.runtimeconfig.dev.json
+C:\Users\ismae\Desktop\Test Kinvo1\ResgateInvest\ResgateInvest\bin\Debug\netcoreapp3.1\ResgateInvest.dll
+C:\Users\ismae\Desktop\Test Kinvo1\ResgateInvest\ResgateInvest\bin\Debug\netcoreapp3.1\ResgateInvest.pdb
+C:\Users\ismae\Desktop\Test Kinvo1\ResgateInvest\ResgateInvest\bin\Debug\netcoreapp3.1\Aliquota.Domain.dll
+C:\Users\ismae\Desktop\Test Kinvo1\ResgateInvest\ResgateInvest\bin\Debug\netcoreapp3.1\Aliquota.Domain.pdb
+C:\Users\ismae\Desktop\Test Kinvo1\ResgateInvest\ResgateInvest\obj\Debug\netcoreapp3.1\ResgateInvest.csprojAssemblyReference.cache
+C:\Users\ismae\Desktop\Test Kinvo1\ResgateInvest\ResgateInvest\obj\Debug\netcoreapp3.1\ResgateInvest.AssemblyInfoInputs.cache
+C:\Users\ismae\Desktop\Test Kinvo1\ResgateInvest\ResgateInvest\obj\Debug\netcoreapp3.1\ResgateInvest.AssemblyInfo.cs
+C:\Users\ismae\Desktop\Test Kinvo1\ResgateInvest\ResgateInvest\obj\Debug\netcoreapp3.1\ResgateInvest.csproj.CoreCompileInputs.cache
+C:\Users\ismae\Desktop\Test Kinvo1\ResgateInvest\ResgateInvest\obj\Debug\netcoreapp3.1\ResgateInvest.csproj.CopyComplete
+C:\Users\ismae\Desktop\Test Kinvo1\ResgateInvest\ResgateInvest\obj\Debug\netcoreapp3.1\ResgateInvest.dll
+C:\Users\ismae\Desktop\Test Kinvo1\ResgateInvest\ResgateInvest\obj\Debug\netcoreapp3.1\ResgateInvest.pdb
+C:\Users\ismae\Desktop\Test Kinvo1\ResgateInvest\ResgateInvest\obj\Debug\netcoreapp3.1\ResgateInvest.genruntimeconfig.cache

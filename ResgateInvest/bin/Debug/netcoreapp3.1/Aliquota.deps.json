@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Aliquota/1.0.0": {
+        "dependencies": {
+          "Aliquota.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Aliquota.dll": {}
+        }
+      },
+      "Aliquota.Domain/1.0.0": {
+        "runtime": {
+          "Aliquota.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Aliquota/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Aliquota.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
