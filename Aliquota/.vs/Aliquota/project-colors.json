@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "e925b8f3-91c9-4530-9cbd-d2116ed145d6": {
+      "ProjectGuid": "e925b8f3-91c9-4530-9cbd-d2116ed145d6",
+      "DisplayName": "Aliquota.Domain",
+      "ColorIndex": 0
+    },
+    "4efd0d4a-522a-4e52-bcff-10be90425cd3": {
+      "ProjectGuid": "4efd0d4a-522a-4e52-bcff-10be90425cd3",
+      "DisplayName": "Aliquota.BusinessLogic",
+      "ColorIndex": 1
+    },
+    "f8c69821-a4b9-466b-bc87-411cf4c30dda": {
+      "ProjectGuid": "f8c69821-a4b9-466b-bc87-411cf4c30dda",
+      "DisplayName": "Aliquota.UseCases",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
