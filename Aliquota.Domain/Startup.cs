@@ -37,7 +37,8 @@ namespace Aliquota.Domain
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<AliquotaDomainContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("AliquotaDomainContext")));
+                    options.UseMySql(Configuration.GetConnectionString("AliquotaDomainContext"), BuilderExtensions =>
+                    BuilderExtensions.MigrationsAssembly("Aliquota.Domain")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
