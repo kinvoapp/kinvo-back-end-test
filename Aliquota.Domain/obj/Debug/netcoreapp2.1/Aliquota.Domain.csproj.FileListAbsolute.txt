@@ -7,7 +7,6 @@ C:\Users\Leonam\source\repos\Aliquota.Domain\Aliquota.Domain\bin\Debug\netcoreap
 C:\Users\Leonam\source\repos\Aliquota.Domain\Aliquota.Domain\bin\Debug\netcoreapp2.1\Aliquota.Domain.pdb
 C:\Users\Leonam\source\repos\Aliquota.Domain\Aliquota.Domain\bin\Debug\netcoreapp2.1\Aliquota.Domain.Views.dll
 C:\Users\Leonam\source\repos\Aliquota.Domain\Aliquota.Domain\bin\Debug\netcoreapp2.1\Aliquota.Domain.Views.pdb
-C:\Users\Leonam\source\repos\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp2.1\Aliquota.Domain.csproj.AssemblyReference.cache
 C:\Users\Leonam\source\repos\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp2.1\Aliquota.Domain.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Leonam\source\repos\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp2.1\Aliquota.Domain.AssemblyInfoInputs.cache
 C:\Users\Leonam\source\repos\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp2.1\Aliquota.Domain.AssemblyInfo.cs
@@ -34,3 +33,5 @@ C:\Users\Leonam\source\repos\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreap
 C:\Users\Leonam\source\repos\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp2.1\Aliquota.Domain.pdb
 C:\Users\Leonam\source\repos\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp2.1\Aliquota.Domain.genruntimeconfig.cache
 C:\Users\Leonam\source\repos\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp2.1\Aliquota.Domain.csproj.CopyComplete
+C:\Users\Leonam\source\repos\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp2.1\Aliquota.Domain.csproj.AssemblyReference.cache
+C:\Users\Leonam\source\repos\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp2.1\Razor\Views\Clients\Index.cshtml.g.cs

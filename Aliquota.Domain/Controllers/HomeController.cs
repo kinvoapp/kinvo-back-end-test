@@ -1,4 +1,4 @@
-﻿using Aliquota.Domain.Models;
+﻿using Aliquota.Domain.Models.ViewsModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

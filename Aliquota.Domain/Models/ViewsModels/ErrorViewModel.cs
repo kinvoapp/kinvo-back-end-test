@@ -1,6 +1,6 @@
 using System;
 
-namespace Aliquota.Domain.Models
+namespace Aliquota.Domain.Models.ViewsModels
 {
     public class ErrorViewModel
     {
