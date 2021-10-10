@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControllersGatewaysAndPrese
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrameworksAndDrivers", "FrameworksAndDrivers\FrameworksAndDrivers.csproj", "{ED69FDF1-D1AB-4399-B160-EA0A6359EF74}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleFrontEnd", "ConsoleFrontEnd\ConsoleFrontEnd.csproj", "{107BEBA6-4557-4600-9A68-654AC3CF6F9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{ED69FDF1-D1AB-4399-B160-EA0A6359EF74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED69FDF1-D1AB-4399-B160-EA0A6359EF74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED69FDF1-D1AB-4399-B160-EA0A6359EF74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{107BEBA6-4557-4600-9A68-654AC3CF6F9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{107BEBA6-4557-4600-9A68-654AC3CF6F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{107BEBA6-4557-4600-9A68-654AC3CF6F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{107BEBA6-4557-4600-9A68-654AC3CF6F9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

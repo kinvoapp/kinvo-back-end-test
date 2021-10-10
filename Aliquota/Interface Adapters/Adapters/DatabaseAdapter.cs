@@ -87,5 +87,29 @@ namespace ControllersGatewaysAndPresenters.Adapters
         private FinanceProduct GetfinanceProductFromFinanceProductMove(FinanceProductMove move) =>
             DatabaseDriver.GetFinanceProductFromFinanceProductMove(move);
 
+        public List<FinanceProductMove> GetFinanceProductMoveListWithinTimeRange(User user, FinanceProduct financeProduct, DateTime first, DateTime second)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<FinanceProductMove> GetFinanceProductMoveList(User user, FinanceProduct product)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<FinanceProductMove> GetFinanceProductMoveOrderedByDate(User user, FinanceProduct product, bool reverse)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<FinanceProduct> GetAllFinanceProducts()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<FinanceProductWallet> GetAllFinanceProductWallets(User user)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

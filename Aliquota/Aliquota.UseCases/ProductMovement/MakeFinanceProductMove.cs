@@ -1,12 +1,8 @@
 ﻿using Aliquota.BusinessLogic.Models;
 using Aliquota.UseCases.Plugin.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Aliquota.UseCases.NewFolder
+namespace Aliquota.UseCases.ProductMovement
 {
     public class MakeFinanceProductMove
     {
@@ -20,16 +16,16 @@ namespace Aliquota.UseCases.NewFolder
         {
             return AmountA * (PriceA / PriceB);
         }
-        Boolean TradeFinanceProductMove(Decimal Amount, FinanceProductMove FromA, FinanceProduct ToB, IDatabaseAdapter DatabaseAdapter)
+        Boolean TradeFinanceProductMove(FinanceProductMove FromA, Decimal Amount, FinanceProduct ToB, IDatabaseAdapter DatabaseAdapter, IStockMarket stockMarketAdapter)
         {
             User owner = DatabaseAdapter.GetOwnerFromFinanceProductMove(FromA);
             if (!DoesMoveHasEnoughtProduct(owner, Amount, ToB, DatabaseAdapter))
                 return false;
             FinanceProduct financeProductA = DatabaseAdapter.GetFinanceProductFromFinanceProductMove(FromA);
-            Decimal priceA = DatabaseAdapter.GetFinanceProductCurrentPrice(financeProductA);
-            Decimal priceB = DatabaseAdapter.GetFinanceProductCurrentPrice(ToB);
+            Decimal priceA = stockMarketAdapter.GetProductValue(financeProductA);
+            Decimal priceB = stockMarketAdapter.GetProductValue(ToB);
             Decimal amountB = ConvertAmountAToAmountB(priceA, Amount, priceB);
-            return DatabaseAdapter.RestrictFinanceProductTrade(FromA, -Amount, ToB, amountB);
+            return DatabaseAdapter.RestrictFinanceProductTrade(FromA, Amount, ToB, amountB);
             
         }
     }

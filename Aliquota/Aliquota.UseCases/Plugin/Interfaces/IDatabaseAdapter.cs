@@ -12,8 +12,13 @@ namespace Aliquota.UseCases.Plugin.Interfaces
         Decimal GetFinanceProductCurrentPrice(FinanceProduct product);
         FinanceProductWallet GetFinanceProductWallet(User user, FinanceProduct financeProduct);
         Boolean RestrictFinanceProductTrade(FinanceProductMove fromA, decimal amountA, FinanceProduct toB, decimal amountB);
-        Boolean RestrictFinanceProductBuy(User user, FinanceProduct financeproduct, decimal amountB);
-        User GetOwnerFromFinanceProductMove(FinanceProductMove fromA);
-        FinanceProduct GetFinanceProductFromFinanceProductMove(FinanceProductMove fromA);
+        List<FinanceProductMove> GetFinanceProductMoveListWithinTimeRange(User user, FinanceProduct financeProduct, DateTime first, DateTime second);
+        Boolean RestrictFinanceProductBuy(User user, FinanceProduct financeproduct, decimal amount);
+        User GetOwnerFromFinanceProductMove(FinanceProductMove move);
+        List<FinanceProductMove> GetFinanceProductMoveList(User user, FinanceProduct product);
+        FinanceProduct GetFinanceProductFromFinanceProductMove(FinanceProductMove product);
+        List<FinanceProductMove> GetFinanceProductMoveOrderedByDate(User user, FinanceProduct product, bool reverse);
+        List<FinanceProduct> GetAllFinanceProducts();
+        List<FinanceProductWallet> GetAllFinanceProductWallets(User user);
     }
 }
