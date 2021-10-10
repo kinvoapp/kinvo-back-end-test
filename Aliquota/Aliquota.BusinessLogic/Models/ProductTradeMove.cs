@@ -26,7 +26,7 @@ namespace Aliquota.BusinessLogic.Models
 
         [Required]
         public decimal Amount { get; set; }
-        [Required]
+
         public DateTime DateTime { get; set; }
     }
 }

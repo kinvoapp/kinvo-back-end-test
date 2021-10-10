@@ -11,7 +11,7 @@ C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\obj\Deb
 C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\obj\Debug\net5.0\ControllersGatewaysAndPresenters.AssemblyInfoInputs.cache
 C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\obj\Debug\net5.0\ControllersGatewaysAndPresenters.AssemblyInfo.cs
 C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\obj\Debug\net5.0\ControllersGatewaysAndPresenters.csproj.CoreCompileInputs.cache
-C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\obj\Debug\net5.0\ControllersGatewaysAndPresenters.csproj.CopyComplete
 C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\obj\Debug\net5.0\ControllersGatewaysAndPresenters.dll
 C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\obj\Debug\net5.0\ref\ControllersGatewaysAndPresenters.dll
 C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\obj\Debug\net5.0\ControllersGatewaysAndPresenters.pdb
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\obj\Debug\net5.0\ControllersGatewaysAndPresenters.csproj.CopyComplete

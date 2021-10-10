@@ -23,7 +23,7 @@
     },
     "256723f2-02f0-4a31-b213-ea7a3673b905": {
       "ProjectGuid": "256723f2-02f0-4a31-b213-ea7a3673b905",
-      "DisplayName": "Interface Adapters",
+      "DisplayName": "ControllersGatewaysAndPresenters",
       "ColorIndex": 3
     },
     "774a3597-7e41-4a54-ba64-2591f2c7f577": {
@@ -40,7 +40,12 @@
       "ProjectGuid": "023423f9-db5e-443c-95d4-f04c50058a2e",
       "DisplayName": "Database",
       "ColorIndex": 6
+    },
+    "107beba6-4557-4600-9a68-654ac3cf6f9c": {
+      "ProjectGuid": "107beba6-4557-4600-9a68-654ac3cf6f9c",
+      "DisplayName": "ConsoleFrontEnd",
+      "ColorIndex": 7
     }
   },
-  "NextColorIndex": 7
+  "NextColorIndex": 8
 }

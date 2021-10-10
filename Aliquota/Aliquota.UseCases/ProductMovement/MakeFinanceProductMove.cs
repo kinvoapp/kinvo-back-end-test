@@ -4,29 +4,35 @@ using System;
 
 namespace Aliquota.UseCases.ProductMovement
 {
-    public class MakeFinanceProductMove
+    public static class MakeFinanceProductMove
     {
 
-        Boolean DoesMoveHasEnoughtProduct(User User, Decimal Amount, FinanceProduct FinanceProduct, IDatabaseAdapter DatabaseAdapter)
+        public static Boolean DoesMoveHasEnoughtProduct(User user, Decimal amount, FinanceProduct financeProduct, IDatabaseAdapter databaseAdapter)
         {
-            Decimal UsersFPBalance = DatabaseAdapter.GetFinanceProductWallet(User, FinanceProduct).Amount;
-            return (UsersFPBalance >= Amount);
+            var wallet = databaseAdapter.GetFinanceProductWallet(user, financeProduct);
+            if (wallet == null) return false;
+            Decimal UsersFPBalance = wallet.Amount;
+            return (UsersFPBalance >= amount);
         }
-        Decimal ConvertAmountAToAmountB(Decimal PriceA, Decimal AmountA, Decimal PriceB)
+
+        private static bool DoesMoveHasEnoughtProduct(FinanceProductMove fromA, decimal amount, IDatabaseAdapter databaseAdapter)
         {
-            return AmountA * (PriceA / PriceB);
+            return fromA.Amount >= amount;
         }
-        Boolean TradeFinanceProductMove(FinanceProductMove FromA, Decimal Amount, FinanceProduct ToB, IDatabaseAdapter DatabaseAdapter, IStockMarket stockMarketAdapter)
+        public static Decimal ConvertAmountAToAmountB(Decimal priceA, Decimal amountA, Decimal priceB)
         {
-            User owner = DatabaseAdapter.GetOwnerFromFinanceProductMove(FromA);
-            if (!DoesMoveHasEnoughtProduct(owner, Amount, ToB, DatabaseAdapter))
+            return amountA * (priceA / priceB);
+        }
+        public static Boolean TradeFinanceProductMove(FinanceProductMove fromA, Decimal amount, FinanceProduct toB, IDatabaseAdapter databaseAdapter, IStockMarket stockMarketAdapter)
+        {
+            if (fromA.CurrentAmount < amount)
                 return false;
-            FinanceProduct financeProductA = DatabaseAdapter.GetFinanceProductFromFinanceProductMove(FromA);
+            FinanceProduct financeProductA = databaseAdapter.GetFinanceProductFromFinanceProductMove(fromA);
             Decimal priceA = stockMarketAdapter.GetProductValue(financeProductA);
-            Decimal priceB = stockMarketAdapter.GetProductValue(ToB);
-            Decimal amountB = ConvertAmountAToAmountB(priceA, Amount, priceB);
-            return DatabaseAdapter.RestrictFinanceProductTrade(FromA, Amount, ToB, amountB);
-            
+            Decimal priceB = stockMarketAdapter.GetProductValue(toB);
+            Decimal amountB = ConvertAmountAToAmountB(priceA, amount, priceB);
+            return databaseAdapter.RestrictFinanceProductTrade(fromA, amount, toB, amountB) != null;
         }
+
     }
 }

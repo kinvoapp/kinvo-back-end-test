@@ -14,102 +14,80 @@ namespace ControllersGatewaysAndPresenters.Adapters
 
         private IDatabaseDriver DatabaseDriver;
 
-        DatabaseAdapter(IDatabaseDriver databaseDriver)
+        public DatabaseAdapter(IDatabaseDriver databaseDriver)
         {
             this.DatabaseDriver = databaseDriver;
         }
-        // PELO AMOR DE DEUS RAFAEL DO FUTURO REMOVA ISSO. RAFAEL DO PRESENTE ESTÁ OCUPADO DEMAIS
-        public decimal GetFinanceProductCurrentPrice(FinanceProduct product)
+       
+        public FinanceProductMove RestrictFinanceProductBuy(User user, FinanceProduct financeproduct, decimal amount)
         {
-            return 1;
+            try
+            {
+                FinanceProductMove move = DatabaseDriver.PromisseCreateFinanceProductMove(user, financeproduct, amount);
+                DatabaseDriver.FulfillAllPromisses();
+                return move;
+            }
+            catch
+            {
+                throw;
+                DatabaseDriver.ThrowBack();
+            }
         }
 
-        public FinanceProduct GetFinanceProductFromFinanceProductMove(FinanceProductMove move) =>
-            DatabaseDriver.GetFinanceProductFromFinanceProductMove(move);
+        public ProductTradeMove RestrictFinanceProductTrade(FinanceProductMove fromA, decimal removedFromA, FinanceProduct toB, decimal addedToB)
+        {
+            try
+            {
+                User user = this.GetOwnerFromFinanceProductMove(fromA);
+                FinanceProductMove createdMove = DatabaseDriver.PromisseCreateFinanceProductMove(user, toB, addedToB);
+                Console.WriteLine("created move");
+                this.PromisseDebitFromFinanceProductMove(user, fromA, removedFromA);
+                Console.WriteLine("debited move");
+                ProductTradeMove tradeMove = DatabaseDriver.PromisseCreateFinanceProductTrade(fromA, removedFromA, createdMove, addedToB);
+                Console.WriteLine("created trademove");
 
-        public FinanceProductWallet GetFinanceProductWallet(User user, FinanceProduct product) => 
+                DatabaseDriver.FulfillAllPromisses();
+                Console.WriteLine("fufilled");
+                return tradeMove;
+            } 
+            catch
+            {
+                DatabaseDriver.ThrowBack();
+                throw;
+            }
+        }
+        private void PromisseDebitFromFinanceProductMove(User user, FinanceProductMove fromA, decimal removedFromA)
+        {
+            FinanceProduct financeProductA = this.GetFinanceProductFromFinanceProductMove(fromA);
+            DatabaseDriver.PromisseDebitProductMove(fromA, removedFromA);
+        }
+
+
+
+
+
+        public FinanceProduct GetFinanceProductFromFinanceProductMove(FinanceProductMove move) =>
+           DatabaseDriver.GetFinanceProductFromFinanceProductMove(move);
+
+        public FinanceProductWallet GetFinanceProductWallet(User user, FinanceProduct product) =>
             DatabaseDriver.GetFinanceProductWallet(user, product);
 
         public User GetOwnerFromFinanceProductMove(FinanceProductMove move) =>
             DatabaseDriver.GetOwnerFromFinanceProductMove(move);
 
-        public bool RestrictFinanceProductBuy(User user, FinanceProduct financeproduct, decimal amount)
-        {
-            try
-            {
-                
-                this.RestrictFinanceProductCreateMove(user, financeproduct, amount);
-                DatabaseDriver.FulfillAllPromisses();
-                return true;
-            }
-            catch (Exception e)
-            {
-                // PELO AMOR DE DEUS RAFAEL DO FUTURO LOG EXCEPTION 
-                return false;
-            }
-        }
+        public List<FinanceProductMove> GetFinanceProductMoveListWithinTimeRange(User user, FinanceProduct financeProduct, DateTime first, DateTime second) =>
+            DatabaseDriver.GetFinanceProductMoveListWithinTimeRange(user, financeProduct, first, second);
 
-        private void RestrictFinanceProductCreateMove(User user, FinanceProduct financeproduct, decimal amount)
-        {
-            DatabaseDriver.CreateWalletIfNotExists(user, financeproduct);
-            FinanceProductWallet wallet = DatabaseDriver.GetFinanceProductWallet(user, financeproduct);
-            
-            DatabaseDriver.PromisseCreateFinanceProductMove(user, financeproduct, amount);
-            DatabaseDriver.PromisseAddFundsToWallet(wallet, amount);
-        }
+        public List<FinanceProductMove> GetFinanceProductMoveList(User user, FinanceProduct product) =>
+            DatabaseDriver.GetFinanceProductMoveList(user, product);
 
-        public bool RestrictFinanceProductTrade(FinanceProductMove fromA, decimal removedFromA, FinanceProduct toB, decimal addedToB)
-        {
-            try
-            {
-                User user = this.GetOwnerFromFinanceProductMove(fromA);
-                this.PromisseDebitFromFinanceProductMove(user, fromA, removedFromA);
-                this.RestrictFinanceProductCreateMove(user, toB, addedToB);
+        public List<FinanceProductMove> GetFinanceProductMoveOrderedByDate(User user, FinanceProduct product, bool reverse) =>
+            DatabaseDriver.GetFinanceProductMoveOrderedByDate(user, product, reverse);
 
-                DatabaseDriver.FulfillAllPromisses();
-                return true;
-            } 
-            catch (Exception e)
-            {
-                return false;
-            }
-        }
+        public List<FinanceProduct> GetAllFinanceProducts() =>
+            DatabaseDriver.GetAllFinanceProducts();
 
-        private void PromisseDebitFromFinanceProductMove(User user, FinanceProductMove fromA, decimal removedFromA)
-        {
-            FinanceProduct financeProductA = this.GetfinanceProductFromFinanceProductMove(fromA);
-            DatabaseDriver.PromisseDebitProductMove(fromA, removedFromA);
-
-            FinanceProductWallet wallet = DatabaseDriver.GetFinanceProductWallet(user, financeProductA);
-            DatabaseDriver.PromisseDebitFundsToWallet(wallet, removedFromA);
-        }
-
-        private FinanceProduct GetfinanceProductFromFinanceProductMove(FinanceProductMove move) =>
-            DatabaseDriver.GetFinanceProductFromFinanceProductMove(move);
-
-        public List<FinanceProductMove> GetFinanceProductMoveListWithinTimeRange(User user, FinanceProduct financeProduct, DateTime first, DateTime second)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<FinanceProductMove> GetFinanceProductMoveList(User user, FinanceProduct product)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<FinanceProductMove> GetFinanceProductMoveOrderedByDate(User user, FinanceProduct product, bool reverse)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<FinanceProduct> GetAllFinanceProducts()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<FinanceProductWallet> GetAllFinanceProductWallets(User user)
-        {
-            throw new NotImplementedException();
-        }
+        public List<FinanceProductWallet> GetAllFinanceProductWallets(User user) =>
+            DatabaseDriver.GetAllFinanceProductWallets(user);
     }
 }

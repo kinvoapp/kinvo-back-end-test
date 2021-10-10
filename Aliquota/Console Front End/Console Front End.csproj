@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Console_Front_End</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aliquota.BusinessLogic\Aliquota.BusinessLogic.csproj" />
+    <ProjectReference Include="..\Aliquota.UseCases\Aliquota.UseCases.csproj" />
+    <ProjectReference Include="..\FrameworksAndDrivers\FrameworksAndDrivers.csproj" />
+    <ProjectReference Include="..\Interface Adapters\ControllersGatewaysAndPresenters.csproj" />
+  </ItemGroup>
+
+</Project>

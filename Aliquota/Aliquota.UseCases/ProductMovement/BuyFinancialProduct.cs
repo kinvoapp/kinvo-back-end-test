@@ -8,26 +8,19 @@ using System.Threading.Tasks;
 
 namespace Aliquota.UseCases.ProductMovement
 {
-    class BuyFinancialProduct
+    public static class BuyFinancialProduct
     {
-        public delegate Decimal TaxesDelegate(decimal d);
 
-        bool BuyFinanceProduct
+        public static FinanceProductMove BuyFinanceProduct
         (
             User owner, 
             decimal amount, 
-            IDatabaseAdapter databaseAdapter,
             FinanceProduct financeProduct,
-            TaxesDelegate applyTaxes = null
+            IDatabaseAdapter databaseAdapter
         ) 
         {
-            if (applyTaxes == null) 
-                applyTaxes = applyTaxesDefault;
-
-            amount = applyTaxes(amount);
             return databaseAdapter.RestrictFinanceProductBuy(owner, financeProduct, amount);
         }
 
-        private TaxesDelegate applyTaxesDefault  =  (decimal e) => e;
     }
 }
