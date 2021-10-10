@@ -17,7 +17,8 @@ namespace Aliquota.Domain.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Teste Para estágio backend - KINVO";
+            ViewData["Candidato"] = "Leonam Sousa Bittencourt Dias Lima";
 
             return View();
         }
