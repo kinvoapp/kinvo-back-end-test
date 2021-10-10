@@ -1,0 +1,12 @@
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Aliquota.BusinessLogic\bin\Debug\net5.0\Aliquota.BusinessLogic.deps.json
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Aliquota.BusinessLogic\bin\Debug\net5.0\Aliquota.BusinessLogic.dll
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Aliquota.BusinessLogic\bin\Debug\net5.0\ref\Aliquota.BusinessLogic.dll
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Aliquota.BusinessLogic\bin\Debug\net5.0\Aliquota.BusinessLogic.pdb
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Aliquota.BusinessLogic\obj\Debug\net5.0\Aliquota.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Aliquota.BusinessLogic\obj\Debug\net5.0\Aliquota.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Aliquota.BusinessLogic\obj\Debug\net5.0\Aliquota.BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Aliquota.BusinessLogic\obj\Debug\net5.0\Aliquota.BusinessLogic.AssemblyInfo.cs
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Aliquota.BusinessLogic\obj\Debug\net5.0\Aliquota.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Aliquota.BusinessLogic\obj\Debug\net5.0\Aliquota.BusinessLogic.dll
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Aliquota.BusinessLogic\obj\Debug\net5.0\ref\Aliquota.BusinessLogic.dll
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Aliquota.BusinessLogic\obj\Debug\net5.0\Aliquota.BusinessLogic.pdb

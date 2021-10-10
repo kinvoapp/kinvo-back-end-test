@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Aliquota.UseCases
+namespace BusinessLogicTest
 {
     public class Class1
     {

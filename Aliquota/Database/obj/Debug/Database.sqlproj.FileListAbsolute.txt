@@ -1,0 +1,10 @@
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Database\bin\Debug\Database.dacpac
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Database\bin\Debug\Database.dll
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Database\bin\Debug\Database.pdb
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Database\obj\Debug\Database.sqlproj.AssemblyReference.cache
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Database\obj\Debug\Model.xml
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Database\obj\Debug\refactor.xml
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Database\obj\Debug\postdeploy.sql
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Database\obj\Debug\predeploy.sql
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Database\obj\Debug\Database.dll
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Database\obj\Debug\Database.pdb

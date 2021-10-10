@@ -1,0 +1,17 @@
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\bin\Debug\net5.0\Interface Adapters.deps.json
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\bin\Debug\net5.0\Interface Adapters.dll
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\bin\Debug\net5.0\ref\Interface Adapters.dll
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\bin\Debug\net5.0\Interface Adapters.pdb
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\bin\Debug\net5.0\Aliquota.BusinessLogic.dll
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\bin\Debug\net5.0\Aliquota.UseCases.dll
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\bin\Debug\net5.0\Aliquota.BusinessLogic.pdb
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\bin\Debug\net5.0\Aliquota.UseCases.pdb
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\obj\Debug\net5.0\Interface Adapters.csproj.AssemblyReference.cache
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\obj\Debug\net5.0\Interface Adapters.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\obj\Debug\net5.0\Interface Adapters.AssemblyInfoInputs.cache
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\obj\Debug\net5.0\Interface Adapters.AssemblyInfo.cs
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\obj\Debug\net5.0\Interface Adapters.csproj.CoreCompileInputs.cache
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\obj\Debug\net5.0\Interface Adapters.csproj.CopyComplete
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\obj\Debug\net5.0\Interface Adapters.dll
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\obj\Debug\net5.0\ref\Interface Adapters.dll
+C:\Users\lab\source\repos\kinvo-back-end-tes\Aliquota\Interface Adapters\obj\Debug\net5.0\Interface Adapters.pdb

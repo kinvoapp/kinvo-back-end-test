@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>ControllersGatewaysAndPresenters</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aliquota.BusinessLogic\Aliquota.BusinessLogic.csproj" />
+    <ProjectReference Include="..\Aliquota.UseCases\Aliquota.UseCases.csproj" />
+  </ItemGroup>
+
+</Project>

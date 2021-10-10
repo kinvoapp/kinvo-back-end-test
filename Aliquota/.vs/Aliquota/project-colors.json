@@ -15,7 +15,32 @@
       "ProjectGuid": "f8c69821-a4b9-466b-bc87-411cf4c30dda",
       "DisplayName": "Aliquota.UseCases",
       "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "256723f2-02f0-4a31-b213-ea7a3673b905": {
+      "ProjectGuid": "256723f2-02f0-4a31-b213-ea7a3673b905",
+      "DisplayName": "Interface Adapters",
+      "ColorIndex": 3
+    },
+    "774a3597-7e41-4a54-ba64-2591f2c7f577": {
+      "ProjectGuid": "774a3597-7e41-4a54-ba64-2591f2c7f577",
+      "DisplayName": "FrameworksAndDrivers",
+      "ColorIndex": 4
+    },
+    "ed69fdf1-d1ab-4399-b160-ea0a6359ef74": {
+      "ProjectGuid": "ed69fdf1-d1ab-4399-b160-ea0a6359ef74",
+      "DisplayName": "FrameworksAndDrivers",
+      "ColorIndex": 5
+    },
+    "023423f9-db5e-443c-95d4-f04c50058a2e": {
+      "ProjectGuid": "023423f9-db5e-443c-95d4-f04c50058a2e",
+      "DisplayName": "Database",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 7
 }

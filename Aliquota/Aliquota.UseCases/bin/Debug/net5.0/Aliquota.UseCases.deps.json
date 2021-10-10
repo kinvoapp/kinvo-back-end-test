@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Aliquota.UseCases/1.0.0": {
+        "dependencies": {
+          "Aliquota.BusinessLogic": "1.0.0"
+        },
+        "runtime": {
+          "Aliquota.UseCases.dll": {}
+        }
+      },
+      "Aliquota.BusinessLogic/1.0.0": {
+        "runtime": {
+          "Aliquota.BusinessLogic.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Aliquota.UseCases/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Aliquota.BusinessLogic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

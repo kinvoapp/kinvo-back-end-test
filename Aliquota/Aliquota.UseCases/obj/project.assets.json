@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "Aliquota.BusinessLogic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Aliquota.BusinessLogic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Aliquota.BusinessLogic.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Aliquota.BusinessLogic/1.0.0": {
+      "type": "project",
+      "path": "../Aliquota.BusinessLogic/Aliquota.BusinessLogic.csproj",
+      "msbuildProject": "../Aliquota.BusinessLogic/Aliquota.BusinessLogic.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "Aliquota.BusinessLogic >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\lab\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.BusinessLogic\\Aliquota.BusinessLogic.csproj": {
+              "projectPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.BusinessLogic\\Aliquota.BusinessLogic.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
