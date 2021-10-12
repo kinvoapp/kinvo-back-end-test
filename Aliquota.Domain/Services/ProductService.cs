@@ -20,5 +20,11 @@ namespace Aliquota.Domain.Services
         {
             return _context.Product.ToList();
         }
+
+        public void Insert(Product obj)
+        {
+            _context.Add(obj);
+            _context.SaveChanges();
+        }
     }
 }

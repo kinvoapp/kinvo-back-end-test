@@ -1,4 +1,5 @@
-﻿using Aliquota.Domain.Services;
+﻿using Aliquota.Domain.Models;
+using Aliquota.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,18 @@ namespace Aliquota.Domain.Controllers
         {
             var list = _productService.FindAll();
             return View(list);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Product product)
+        {
+            _productService.Insert(product);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
