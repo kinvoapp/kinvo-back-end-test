@@ -1,10 +1,12 @@
 ﻿using Aliquota.Domain.Models.Enums;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Aliquota.Domain.Models
 {
     public class IR_Record
     {
+        [Key]
         public int recordId { get; set; }
         public DateTime recordDate { get; set; }
         public double recordAmount { get; set; }

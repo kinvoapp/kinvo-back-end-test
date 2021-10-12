@@ -15,5 +15,7 @@ namespace Aliquota.Domain.Data
         }
 
         public DbSet<Aliquota.Domain.Models.Client> Client { get; set; }
+        public DbSet<Aliquota.Domain.Models.Product> Product { get; set; }
+        public DbSet<Aliquota.Domain.Models.IR_Record> IR_Record { get; set; }
     }
 }

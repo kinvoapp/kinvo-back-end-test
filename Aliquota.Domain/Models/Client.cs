@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Aliquota.Domain.Models
 {
@@ -17,5 +19,16 @@ namespace Aliquota.Domain.Models
             this.clientId = clientId;
             this.clientName = clientName;
         }
+
+        public void AddProduct(Product _product)
+        {
+            Products.Add(_product);
+        }
+
+        public double TotalProducts(DateTime _dateApplication, DateTime _dateRescue)
+        {
+            return Products.Sum(products => products.TotalProducts(_dateApplication, _dateRescue));
+        }
+
     }
 }
