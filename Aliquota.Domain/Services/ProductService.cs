@@ -23,6 +23,7 @@ namespace Aliquota.Domain.Services
 
         public void Insert(Product obj)
         {
+            obj.Client = _context.Client.First();
             _context.Add(obj);
             _context.SaveChanges();
         }

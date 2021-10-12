@@ -15,6 +15,7 @@ namespace Aliquota.Domain.Models
         public DateTime dateRescue { get; set; }
         public DateTime dateApplication { get; set; }
         public Client Client { get; set; }
+        public int ClientId { get; set; }
         public ICollection<IR_Record> Records { get; set; } = new List<IR_Record>();
 
         public Product()
