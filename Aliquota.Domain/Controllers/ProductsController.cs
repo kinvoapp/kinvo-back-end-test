@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Aliquota.Domain.Services;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,17 @@ namespace Aliquota.Domain.Controllers
 {
     public class ProductsController : Controller
     {
+
+        private readonly ProductService _productService;
+
+        public ProductsController(ProductService productService)
+        {
+            _productService = productService;
+        }
         public IActionResult Index()
         {
-            return View();
+            var list = _productService.FindAll();
+            return View(list);
         }
     }
 }

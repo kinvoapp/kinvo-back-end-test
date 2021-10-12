@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Aliquota.Domain.Data;
+using Aliquota.Domain.Services;
 
 namespace Aliquota.Domain
 {
@@ -41,7 +42,8 @@ namespace Aliquota.Domain
                     BuilderExtensions.MigrationsAssembly("Aliquota.Domain")));
 
             services.AddScoped<SeedingService>();
-        
+
+            services.AddScoped<ProductService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
