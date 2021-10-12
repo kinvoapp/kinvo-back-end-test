@@ -1,5 +1,5 @@
 ﻿
-@model Aliquota.Domain.Models.Product
+@model Aliquota.Domain.Models.ViewsModels.ProductFormViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -13,24 +13,28 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div class="form-group">
-                <label asp-for="productName" class="control-label"></label>
-                <input asp-for="productName" class="form-control" />
+                <label asp-for="Product.productName" class="control-label"></label>
+                <input asp-for="Product.productName" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="productInvestment" class="control-label"></label>
-                <input asp-for="productInvestment" class="form-control" />
+                <label asp-for="Product.productInvestment" class="control-label"></label>
+                <input asp-for="Product.productInvestment" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="dateApplication" class="control-label"></label>
-                <input asp-for="dateApplication" class="form-control" />
+                <label asp-for="Product.dateApplication" class="control-label"></label>
+                <input asp-for="Product.dateApplication" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="dateRescue" class="control-label"></label>
-                <input asp-for="dateRescue" class="form-control" />
+                <label asp-for="Product.dateRescue" class="control-label"></label>
+                <input asp-for="Product.dateRescue" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Client" class="control-label"></label>
-                <input asp-for="Client" class="form-control" />
+                <label asp-for="Product.Client" class="control-label"></label>
+                <input asp-for="Product.Client" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-fpr="Product.ClientId" class="control-label"></label>
+                <select asp-for="Product.ClientId" asp-items="@(new SelectList(Model.Clients, "clientId", "clientName"))" class="form-control"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />

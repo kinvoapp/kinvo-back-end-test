@@ -1,4 +1,5 @@
 ﻿using Aliquota.Domain.Models;
+using Aliquota.Domain.Models.ViewsModels;
 using Aliquota.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,10 +13,12 @@ namespace Aliquota.Domain.Controllers
     {
 
         private readonly ProductService _productService;
+        private readonly ClientService _clientService;
 
-        public ProductsController(ProductService productService)
+        public ProductsController(ProductService productService, ClientService clientService)
         {
             _productService = productService;
+            _clientService = clientService;
         }
         public IActionResult Index()
         {
@@ -25,8 +28,11 @@ namespace Aliquota.Domain.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var clients = _clientService.FindAll();
+            var viewModel = new ProductFormViewModel { Clients = clients };
+            return View(viewModel);
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Product product)
