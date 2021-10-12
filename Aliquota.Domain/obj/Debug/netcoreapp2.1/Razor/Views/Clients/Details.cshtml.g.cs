@@ -84,7 +84,7 @@ using Aliquota.Domain.Models;
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div>\r\n    ");
             EndContext();
             BeginContext(383, 60, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "19e9433c4cf6433fa65bc6d115cd55c6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "983a31a47726416586f184be5e5c2d0a", async() => {
                 BeginContext(435, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -119,7 +119,7 @@ using Aliquota.Domain.Models;
             WriteLiteral(" |\r\n    ");
             EndContext();
             BeginContext(451, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "15cfc14fb876407c9e0f0a0cadda0e73", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4899c0e4664a477489c25976182b135d", async() => {
                 BeginContext(473, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();

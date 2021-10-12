@@ -39,3 +39,4 @@ C:\Users\Leonam\source\repos\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreap
 C:\Users\Leonam\source\repos\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp2.1\Razor\Views\Clients\Details.cshtml.g.cs
 C:\Users\Leonam\source\repos\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp2.1\Razor\Views\Clients\Edit.cshtml.g.cs
 C:\Users\Leonam\source\repos\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp2.1\Razor\Views\Clients\Index.cshtml.g.cs
+C:\Users\Leonam\source\repos\Aliquota.Domain\Aliquota.Domain\obj\Debug\netcoreapp2.1\Razor\Views\Products\Index.cshtml.g.cs
