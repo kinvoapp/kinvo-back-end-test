@@ -8,7 +8,7 @@ namespace Aliquota.Domain.Models
     {
 
         public int productId { get; set; }
-        public List<string> productName = new List<string>();
+        public string productName { get; set; }
         public double productInvestment { get; set; }
         public double productGain { get; set; }
         public double productTax { get; set; }
@@ -16,46 +16,16 @@ namespace Aliquota.Domain.Models
         public DateTime dateApplication { get; set; }
         public Client Client { get; set; }
         public ICollection<IR_Record> Records { get; set; } = new List<IR_Record>();
-   
+
         public Product()
         {
-            productName.Add("Fixed Income");
-            productName.Add("Variable Income");
-            productName.Add("High Liquidity");
-            productName.Add("Low Liquidity");
-            productName.Add("High Risk");
-            productName.Add("Short Term");
-            productName.Add("Mid Term");
-            productName.Add("Long Term");
-
-            try
-            {
-                if (this.dateRescue <= this.dateApplication)
-                {
-
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
         }
 
-        public Product(int productId, double productInvestment, double productGain, DateTime dateRescue, DateTime dateApplication, Client client)
+        public Product(int productId, string productName, double productInvestment, DateTime dateRescue, DateTime dateApplication, Client client)
         {
-
-            productName.Add("Fixed Income");
-            productName.Add("Variable Income");
-            productName.Add("High Liquidity");
-            productName.Add("Low Liquidity");
-            productName.Add("High Risk");
-            productName.Add("Short Term");
-            productName.Add("Mid Term");
-            productName.Add("Long Term");
-
             this.productId = productId;
+            this.productName = productName;
             this.productInvestment = productInvestment;
-            this.productGain = productGain;
             this.dateRescue = dateRescue;
             this.dateApplication = dateApplication;
             Client = client;
@@ -72,9 +42,9 @@ namespace Aliquota.Domain.Models
         {
             return Records.Where(ir => ir.recordDate >= _dateApplication && ir.recordDate <= _dateRescue).Sum(ir => ir.recordAmount);
         }
-        public void Rescue(DateTime _dateApplication, DateTime _dateRescue, double _gain)
+        public double Rescue(DateTime _dateApplication, DateTime _dateRescue)
         {
-            double aux;
+            double aux = 0.0;
             TimeSpan timeApplication = _dateApplication.Subtract(_dateRescue);
 
             timeApplication /= 24;
@@ -87,26 +57,30 @@ namespace Aliquota.Domain.Models
                     productTax = 0.225;
                     productGain = productInvestment + 100;
                     aux = productGain / productTax;
+                    return aux;
                 }
                 else if (timeApplication.TotalHours > 1 && timeApplication.TotalHours <= 2)
                 {
                     productTax = 0.185;
-                    productGain = productInvestment + 150;
+                    productGain = productInvestment + 200;
                     aux = productGain / productTax;
+                    return aux;
                 }
                 else if (timeApplication.TotalHours > 2)
                 {
                     productTax = 0.15;
                     productGain = productInvestment + 500;
                     aux = productGain / productTax;
+                    return aux;
                 }
+                
             }
             catch (Exception e)
             {
                 Console.WriteLine("Aplicação invalida, valor menor que 0" + e);
             }
 
-
+            return aux;
         }
 
     }
