@@ -1,0 +1,53 @@
+﻿@model Aliquota.Domain.Models.Product
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3>Are you sure want to delete this?</h3>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.productName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.productName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.productInvestment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.productInvestment)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dateRescue)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dateRescue)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dateApplication)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dateApplication)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Client)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Client)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="productId" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
+

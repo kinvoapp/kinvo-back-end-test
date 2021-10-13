@@ -1,0 +1,48 @@
+﻿@model Aliquota.Domain.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.productName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.productName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.productInvestment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.productInvestment)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dateRescue)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dateRescue)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dateApplication)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dateApplication)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Client)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Client)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.productId" class="btn btn-default">Edit</a>
+    <a asp-action="Index">Back to list</a>
+</div>
