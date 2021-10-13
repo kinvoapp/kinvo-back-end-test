@@ -1,0 +1,9 @@
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Entities\bin\Debug\netcoreapp3.1\Aliquota.Entities.deps.json
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Entities\bin\Debug\netcoreapp3.1\Aliquota.Entities.dll
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Entities\bin\Debug\netcoreapp3.1\Aliquota.Entities.pdb
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Entities\obj\Debug\netcoreapp3.1\Aliquota.Entities.csprojAssemblyReference.cache
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Entities\obj\Debug\netcoreapp3.1\Aliquota.Entities.AssemblyInfoInputs.cache
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Entities\obj\Debug\netcoreapp3.1\Aliquota.Entities.AssemblyInfo.cs
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Entities\obj\Debug\netcoreapp3.1\Aliquota.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Entities\obj\Debug\netcoreapp3.1\Aliquota.Entities.dll
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Entities\obj\Debug\netcoreapp3.1\Aliquota.Entities.pdb

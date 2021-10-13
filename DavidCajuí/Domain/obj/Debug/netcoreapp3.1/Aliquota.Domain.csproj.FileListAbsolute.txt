@@ -1,0 +1,12 @@
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Domain\bin\Debug\netcoreapp3.1\Aliquota.Domain.deps.json
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Domain\bin\Debug\netcoreapp3.1\Aliquota.Domain.dll
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Domain\bin\Debug\netcoreapp3.1\Aliquota.Domain.pdb
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Domain\bin\Debug\netcoreapp3.1\Aliquota.Entities.dll
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Domain\bin\Debug\netcoreapp3.1\Aliquota.Entities.pdb
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.csprojAssemblyReference.cache
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.AssemblyInfoInputs.cache
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.AssemblyInfo.cs
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.csproj.CopyComplete
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.dll
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Domain\obj\Debug\netcoreapp3.1\Aliquota.Domain.pdb

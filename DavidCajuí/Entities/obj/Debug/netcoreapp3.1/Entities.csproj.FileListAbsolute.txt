@@ -1,0 +1,8 @@
+D:\DDD2020\Presentation\Entities\bin\Debug\netcoreapp3.1\Entities.deps.json
+D:\DDD2020\Presentation\Entities\bin\Debug\netcoreapp3.1\Entities.dll
+D:\DDD2020\Presentation\Entities\bin\Debug\netcoreapp3.1\Entities.pdb
+D:\DDD2020\Presentation\Entities\obj\Debug\netcoreapp3.1\Entities.csprojAssemblyReference.cache
+D:\DDD2020\Presentation\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfoInputs.cache
+D:\DDD2020\Presentation\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfo.cs
+D:\DDD2020\Presentation\Entities\obj\Debug\netcoreapp3.1\Entities.dll
+D:\DDD2020\Presentation\Entities\obj\Debug\netcoreapp3.1\Entities.pdb

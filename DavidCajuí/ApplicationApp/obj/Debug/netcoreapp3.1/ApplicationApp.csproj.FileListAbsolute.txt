@@ -1,0 +1,13 @@
+D:\DDD2020\Presentation\ApplicationApp\bin\Debug\netcoreapp3.1\ApplicationApp.deps.json
+D:\DDD2020\Presentation\ApplicationApp\bin\Debug\netcoreapp3.1\ApplicationApp.dll
+D:\DDD2020\Presentation\ApplicationApp\bin\Debug\netcoreapp3.1\ApplicationApp.pdb
+D:\DDD2020\Presentation\ApplicationApp\bin\Debug\netcoreapp3.1\Domain.dll
+D:\DDD2020\Presentation\ApplicationApp\bin\Debug\netcoreapp3.1\Entities.dll
+D:\DDD2020\Presentation\ApplicationApp\bin\Debug\netcoreapp3.1\Domain.pdb
+D:\DDD2020\Presentation\ApplicationApp\bin\Debug\netcoreapp3.1\Entities.pdb
+D:\DDD2020\Presentation\ApplicationApp\obj\Debug\netcoreapp3.1\ApplicationApp.csprojAssemblyReference.cache
+D:\DDD2020\Presentation\ApplicationApp\obj\Debug\netcoreapp3.1\ApplicationApp.AssemblyInfoInputs.cache
+D:\DDD2020\Presentation\ApplicationApp\obj\Debug\netcoreapp3.1\ApplicationApp.AssemblyInfo.cs
+D:\DDD2020\Presentation\ApplicationApp\obj\Debug\netcoreapp3.1\ApplicationApp.csproj.CopyComplete
+D:\DDD2020\Presentation\ApplicationApp\obj\Debug\netcoreapp3.1\ApplicationApp.dll
+D:\DDD2020\Presentation\ApplicationApp\obj\Debug\netcoreapp3.1\ApplicationApp.pdb

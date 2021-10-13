@@ -1,0 +1,14 @@
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Infrastructure\bin\Debug\netcoreapp3.1\Aliquota.Infrastructure.deps.json
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Infrastructure\bin\Debug\netcoreapp3.1\Aliquota.Infrastructure.dll
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Infrastructure\bin\Debug\netcoreapp3.1\Aliquota.Infrastructure.pdb
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Infrastructure\bin\Debug\netcoreapp3.1\Aliquota.Domain.dll
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Infrastructure\bin\Debug\netcoreapp3.1\Aliquota.Entities.dll
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Infrastructure\bin\Debug\netcoreapp3.1\Aliquota.Domain.pdb
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Infrastructure\bin\Debug\netcoreapp3.1\Aliquota.Entities.pdb
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Infrastructure\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.csprojAssemblyReference.cache
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Infrastructure\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Infrastructure\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.AssemblyInfo.cs
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Infrastructure\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Infrastructure\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.csproj.CopyComplete
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Infrastructure\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.dll
+C:\Users\Tamiris&David\Downloads\Nova pasta (4)\DDD2020\DDD2020\Presentation\Infrastructure\obj\Debug\netcoreapp3.1\Aliquota.Infrastructure.pdb
