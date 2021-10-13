@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace Aliquota.Domain.Models
@@ -8,11 +9,19 @@ namespace Aliquota.Domain.Models
     {
 
         public int productId { get; set; }
+        [Display(Name = "Name")]
         public string productName { get; set; }
+        [Display(Name = "Investment")]
+        [DisplayFormat(DataFormatString = "{0:F2}")]
         public double productInvestment { get; set; }
         public double productGain { get; set; }
         public double productTax { get; set; }
+        [Display(Name = "Date Rescue")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyy}")]
         public DateTime dateRescue { get; set; }
+        [Display(Name = "Date Application")]
+        [DataType(DataType.Date)]
         public DateTime dateApplication { get; set; }
         public Client Client { get; set; }
         public int ClientId { get; set; }
