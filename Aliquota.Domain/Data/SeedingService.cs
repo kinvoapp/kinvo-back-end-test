@@ -38,13 +38,13 @@ namespace Aliquota.Domain.Data
             Product p8 = new Product(8, "Long Term", 400.0, new DateTime(2022, 12, 31), new DateTime(2021, 10, 12), c2);
 
             IR_Record ir1 = new IR_Record(1, new DateTime(2021, 10, 12), p1.Rescue(p1.dateApplication, p1.dateRescue), IR_Status.MoreTwoYearApplication, c1);
-            IR_Record ir2 = new IR_Record(2, new DateTime(2021, 10, 12), p1.Rescue(p1.dateApplication, p1.dateRescue), IR_Status.LessOneYearApplication, c2);
-            IR_Record ir3 = new IR_Record(3, new DateTime(2021, 10, 12), p1.Rescue(p1.dateApplication, p1.dateRescue), IR_Status.MoreTwoYearApplication, c3);
-            IR_Record ir4 = new IR_Record(4, new DateTime(2021, 10, 12), p1.Rescue(p1.dateApplication, p1.dateRescue), IR_Status.LessTwoYearApplication, c1);
-            IR_Record ir5 = new IR_Record(5, new DateTime(2021, 10, 12), p1.Rescue(p1.dateApplication, p1.dateRescue), IR_Status.MoreTwoYearApplication, c2);
-            IR_Record ir6 = new IR_Record(6, new DateTime(2021, 10, 12), p1.Rescue(p1.dateApplication, p1.dateRescue), IR_Status.MoreTwoYearApplication, c3);
-            IR_Record ir7 = new IR_Record(7, new DateTime(2021, 10, 12), p1.Rescue(p1.dateApplication, p1.dateRescue), IR_Status.LessTwoYearApplication, c1);
-            IR_Record ir8 = new IR_Record(8, new DateTime(2021, 10, 12), p1.Rescue(p1.dateApplication, p1.dateRescue), IR_Status.LessOneYearApplication, c2);
+            IR_Record ir2 = new IR_Record(2, new DateTime(2021, 10, 12), p2.Rescue(p2.dateApplication, p2.dateRescue), IR_Status.LessOneYearApplication, c2);
+            IR_Record ir3 = new IR_Record(3, new DateTime(2021, 10, 12), p3.Rescue(p3.dateApplication, p3.dateRescue), IR_Status.MoreTwoYearApplication, c3);
+            IR_Record ir4 = new IR_Record(4, new DateTime(2021, 10, 12), p4.Rescue(p4.dateApplication, p4.dateRescue), IR_Status.LessTwoYearApplication, c1);
+            IR_Record ir5 = new IR_Record(5, new DateTime(2021, 10, 12), p5.Rescue(p5.dateApplication, p5.dateRescue), IR_Status.MoreTwoYearApplication, c2);
+            IR_Record ir6 = new IR_Record(6, new DateTime(2021, 10, 12), p6.Rescue(p6.dateApplication, p6.dateRescue), IR_Status.MoreTwoYearApplication, c3);
+            IR_Record ir7 = new IR_Record(7, new DateTime(2021, 10, 12), p7.Rescue(p7.dateApplication, p7.dateRescue), IR_Status.LessTwoYearApplication, c1);
+            IR_Record ir8 = new IR_Record(8, new DateTime(2021, 10, 12), p8.Rescue(p8.dateApplication, p8.dateRescue), IR_Status.LessOneYearApplication, c2);
 
 
             _context.Client.AddRange(c1, c2, c3);

@@ -55,33 +55,30 @@ namespace Aliquota.Domain.Models
         public double Rescue(DateTime _dateApplication, DateTime _dateRescue)
         {
             double aux = 0.0;
-            TimeSpan timeApplication = _dateApplication.Subtract(_dateRescue);
-
-            timeApplication /= 24;
-            timeApplication /= 365;
+            TimeSpan timeApplication = _dateRescue.Subtract(_dateApplication);
 
             try
             {
-                if (timeApplication.TotalHours > 0 && timeApplication.TotalHours <= 1)
+                if (timeApplication.TotalDays > 0 && timeApplication.TotalDays <= 366)
                 {
                     productTax = 0.225;
                     productGain = productInvestment + 100;
-                    aux = productGain / productTax;
-                    return aux;
+                    aux = productGain * productTax;
+                    return productGain - aux;
                 }
-                else if (timeApplication.TotalHours > 1 && timeApplication.TotalHours <= 2)
+                else if (timeApplication.TotalDays > 367 && timeApplication.TotalDays <= 734)
                 {
                     productTax = 0.185;
                     productGain = productInvestment + 200;
-                    aux = productGain / productTax;
-                    return aux;
+                    aux = productGain * productTax;
+                    return productGain - aux;
                 }
-                else if (timeApplication.TotalHours > 2)
+                else if (timeApplication.TotalDays > 374)
                 {
                     productTax = 0.15;
                     productGain = productInvestment + 500;
-                    aux = productGain / productTax;
-                    return aux;
+                    aux = productGain * productTax;
+                    return productGain - aux;
                 }
                 
             }
