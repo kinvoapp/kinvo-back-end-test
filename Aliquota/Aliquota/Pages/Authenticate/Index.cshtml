@@ -1,0 +1,30 @@
+﻿@page
+@model Aliquota.Website.Pages.Authenticate.IndexModel
+@{
+    ViewData["Title"] = "Authenticate";
+
+}
+    @foreach (var item in Model.db.GetAllFinanceProducts())
+    {
+        <div class="card">@item.Name</div>
+        
+    }
+
+    <h1>@Model.user.Name</h1>
+    <div class="wrapper">
+        <div class="content">
+            <div class="card">
+                <div class="text-center card-body">
+                    <div class="title">Authenticate</div>
+                    <form method="post">
+                        <div class="input-group mb3"><input type="text" class="form-control" asp-for="user.Name" name="Name" placeholder="Nome Completo"/></div>
+                        <div class="input-group mb3"><input type="email" class="form-control" asp-for="user.Email" name="Email" placeholder="E-mail"/></div>
+                        <div class="input-group mb3"><input type="password" class="form-control"  name="Password" placeholder="Senha"/></div>
+                        <div class="input-group mb3"><input type="text" class="form-control" asp-for="user.Phone" name="Phone" placeholder="Numero de Celular"/></div>
+                        <div class="input-group mb3"><input type="text" class="form-control" asp-for="user.PhoneNumber" name="PhoneNumber" placeholder="Numero de Telefone"/></div>
+                        <input type="submit" class="btn btn-primary " value="Login"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

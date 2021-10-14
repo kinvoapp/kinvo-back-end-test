@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aliquota.UseCases\Aliquota.UseCases.csproj" />
+    <ProjectReference Include="..\FrameworksAndDrivers\ExternalInterfacesAndDevices.csproj" />
+    <ProjectReference Include="..\Interface Adapters\ControllersGatewaysAndPresenters.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+</Project>

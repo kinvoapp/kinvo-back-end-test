@@ -1,0 +1,61 @@
+﻿@page "/wallet"
+@using Aliquota.Domain.Entities.Models
+@using Aliquota.Domain.UseCases.ProductMovement
+@using Aliquota.Website.Blazor.Data;
+
+
+@code {
+
+	//public User user = Program.databaseAdapter.DatabaseDriver.GetUserById(1);
+	//public List<ProductTradeMove> trademoves { get; set; }
+	//public List<FinanceProductWallet> wallets { get; set; }
+
+}
+@if (wallets == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table table-striped text-center">
+        <thead>
+          <tr>
+            <th scope="col">Produto</th>
+            <th scope="col">Em Carteira</th>
+          </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in wallets)
+            {
+                <tr @onclick="()=>history(item.FinanceProduct)" class="">
+                <td class="">@item.FinanceProduct.Name</td>
+                <td class="">@item.Amount</td>
+                </tr>
+                
+            }
+        </tbody>
+    </table>
+
+}
+
+
+@code {
+    List<FinanceProductWallet> wallets = null;
+    List<FinanceProductMove> moves = null;
+    User user;
+    protected override async Task OnInitializedAsync()
+    {
+        user = Program.databaseAdapter.DatabaseDriver.GetUserById(1);
+        wallets = await Task.Run(()=>DataLists.GetAllFinanceProductWallets(user, Program.databaseAdapter));
+    }
+
+    protected async Task history(FinanceProduct financeProduct)
+    {
+        moves = null;
+        DateTime startTime = DateTime.Now.AddDays(-50);
+        moves = await Task.Run(()=>
+            DataLists.GetFinanceProductMoveListWithinTimeRange(
+                user, financeProduct, startTime, DateTime.Now, Program.databaseAdapter));
+
+    }
+}

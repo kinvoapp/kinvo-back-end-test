@@ -1,0 +1,30 @@
+﻿@page "/free-money"
+@using Aliquota.Domain.Entities.Models
+@using Aliquota.Domain.UseCases.ProductMovement
+
+<h2>Pegue o quanto quiser, só cuidado com a Inflação.</h2>
+<p>clique no botão para gerar dinheiro super legitimo</p>
+@if(wallet != null)
+{
+    <h3>@wallet.Amount</h3>
+}
+
+<button class="btn btn-outline-success" @onclick="EstocarVento"> R$ 200,00</button>
+
+
+@code {
+    private int currentCount = 0;
+    User u = Program.databaseAdapter.DatabaseDriver.GetUserById(1);
+    public FinanceProduct BRL  = Program.databaseAdapter.DatabaseDriver.GetFinanceProductByName("BRL");
+    FinanceProductWallet wallet = null;
+    
+    private void EstocarVento()
+    {
+        MakeFinanceProductMove.BuyFinanceProduct(u, 200, BRL, Program.databaseAdapter);
+    
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        wallet = await Task.Run(()=>Program.databaseAdapter.DatabaseDriver.GetFinanceProductWallet(u, BRL));
+    }
+}   

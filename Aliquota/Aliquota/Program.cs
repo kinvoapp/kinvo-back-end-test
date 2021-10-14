@@ -1,3 +1,5 @@
+using ControllersGatewaysAndPresenters.Adapters;
+using FrameworksAndDrivers;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -11,6 +13,7 @@ namespace Aliquota
 {
     public class Program
     {
+        static public DatabaseAdapter databaseAdapter = new DatabaseAdapter(new DatabaseDriver());
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();

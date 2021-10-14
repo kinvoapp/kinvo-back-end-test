@@ -1,0 +1,42 @@
+﻿@page
+@using Aliquota.BusinessLogic.Models
+@using Aliquota.UseCases.ProductMovement
+@model Aliquota.Website.Pages.Wallets.IndexModel
+
+
+
+<table id="transactions" class="table table-striped table-sm hidden">
+  <thead>
+    <tr>
+      <th scope="col">Product</th>
+      <th scope="col">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    @foreach (var item in Model.wallets)
+        {
+        <tr class="">
+          <td>@item.FinanceProduct.Name</td>
+          <td>@item.Amount</td>
+        </tr>
+        }
+  </tbody>
+</table>
+@{
+    string color = "";
+}
+@foreach (var item in Model.wallets)
+{
+    @foreach (var i in DataLists.GetFinanceProductMoveListWithinTimeRange(Model.user, item.FinanceProduct,  DateTime.Now.AddDays(-50), DateTime.Now.AddDays(50), Program.databaseAdapter))
+    {
+        <p class="bg-success text-white">@i.DateTime.ToString(): @i.Amount, price:@i.Price</p>
+        @foreach (var j in DataLists.GetLastProductTradeMovesRanged(i, 0, 10, Program.databaseAdapter))
+        {
+            color =  (j.FistFinanceProductMove == i)? "text-danger": "text-success";
+            string direction = (j.FistFinanceProductMove == i) ? " > " : " < ";
+            FinanceProductMove name = (j.FistFinanceProductMove == i) ? j.FistFinanceProductMove: j.SecondFinanceProductMove;
+            <p class="@color">@j.DateTime.ToString(): @j.Amount @direction @name.FinanceProduct.Name, price:@name.Price </p>
+        }
+    }
+}

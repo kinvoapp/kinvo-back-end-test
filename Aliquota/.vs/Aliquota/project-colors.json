@@ -8,7 +8,7 @@
     },
     "4efd0d4a-522a-4e52-bcff-10be90425cd3": {
       "ProjectGuid": "4efd0d4a-522a-4e52-bcff-10be90425cd3",
-      "DisplayName": "Aliquota.BusinessLogic",
+      "DisplayName": "Aliquota.Entities",
       "ColorIndex": 1
     },
     "f8c69821-a4b9-466b-bc87-411cf4c30dda": {
@@ -33,7 +33,7 @@
     },
     "ed69fdf1-d1ab-4399-b160-ea0a6359ef74": {
       "ProjectGuid": "ed69fdf1-d1ab-4399-b160-ea0a6359ef74",
-      "DisplayName": "FrameworksAndDrivers",
+      "DisplayName": "ExternalInterfacesAndDevices",
       "ColorIndex": 5
     },
     "023423f9-db5e-443c-95d4-f04c50058a2e": {
@@ -45,7 +45,42 @@
       "ProjectGuid": "107beba6-4557-4600-9a68-654ac3cf6f9c",
       "DisplayName": "ConsoleFrontEnd",
       "ColorIndex": 7
+    },
+    "d9704fae-89c1-4d76-90a7-95f804ec094a": {
+      "ProjectGuid": "d9704fae-89c1-4d76-90a7-95f804ec094a",
+      "DisplayName": "Console Front End",
+      "ColorIndex": 8
+    },
+    "8e053dc4-b85e-4581-b06d-c8dce2387919": {
+      "ProjectGuid": "8e053dc4-b85e-4581-b06d-c8dce2387919",
+      "DisplayName": "Aliquota.Website.old",
+      "ColorIndex": 9
+    },
+    "3b5de0fd-71db-4fdf-9805-c3f14aa1720a": {
+      "ProjectGuid": "3b5de0fd-71db-4fdf-9805-c3f14aa1720a",
+      "DisplayName": "JWT Auth",
+      "ColorIndex": 10
+    },
+    "57ee0a3d-b67f-42d1-8e81-403f29f58c1d": {
+      "ProjectGuid": "57ee0a3d-b67f-42d1-8e81-403f29f58c1d",
+      "DisplayName": "Aliquota.Website.Blazor",
+      "ColorIndex": 11
+    },
+    "7bca4e90-b22b-4888-8b4e-f0c1bab0e7d2": {
+      "ProjectGuid": "7bca4e90-b22b-4888-8b4e-f0c1bab0e7d2",
+      "DisplayName": "Aliquota.Website.Blazor",
+      "ColorIndex": 12
+    },
+    "54557bf1-bcd6-4170-a409-c8f655dad0a8": {
+      "ProjectGuid": "54557bf1-bcd6-4170-a409-c8f655dad0a8",
+      "DisplayName": "Aliquota.Entities",
+      "ColorIndex": 13
+    },
+    "61d5a8e3-56e6-4bb4-9fc3-74740bf033e4": {
+      "ProjectGuid": "61d5a8e3-56e6-4bb4-9fc3-74740bf033e4",
+      "DisplayName": "WebScrapper",
+      "ColorIndex": 14
     }
   },
-  "NextColorIndex": 8
+  "NextColorIndex": 15
 }

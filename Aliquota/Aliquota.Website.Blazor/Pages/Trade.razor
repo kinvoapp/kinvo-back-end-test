@@ -1,0 +1,83 @@
+﻿@page "/trade"
+@using Aliquota.Domain.Entities.Models
+@using Aliquota.Domain.UseCases.ProductMovement
+@using Aliquota.Website.Blazor.Data;
+@inject AuthenticationStateProvider authenticationStateProvider 
+
+@if(products == null){
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+}
+else{
+
+    <table class="table table-striped text-center">
+        <thead>
+          <tr>
+            <th scope="col">Produto</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Em Carteira</th>
+            <th scope="col">
+                <input @bind="quantidade" type="number" name="number" @bind:event="oninput" />
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in products)
+            {
+                if(item.Name != "BRL")
+                {
+                    <tr class="">
+                        <td class="">@item.Name</td>
+                        <td class="">@((new StockMarket()).GetProductValue(@item))</td>
+                        <td class="">@getWalletAmount(item)</td>
+                        <td class="">
+                            <button @onclick="() => buyProduct(item)" class="btn btn-lg btn-success">Comprar</button>
+                            <button @onclick="() => sellProduct(item)" class="btn btn-lg btn-primary">Vender</button>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+@code {
+    List<FinanceProduct> products = null;
+    User user;
+    public  decimal quantidade = 0;
+    List<FinanceProductWallet> wallets;
+    public FinanceProduct BRL  = Program.databaseAdapter.DatabaseDriver.GetFinanceProductByName("BRL");
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = await Task.Run(() => DataLists.GetAllFinanceProducts(Program.databaseAdapter) );
+        var userblazor = await authenticationStateProvider.GetAuthenticationStateAsync();
+        user = Program.databaseAdapter.DatabaseDriver.GetUserById(1);
+        getwallet();
+    }
+    decimal getWalletAmount(FinanceProduct p)
+    {
+        decimal result = 0;
+        foreach (var item in wallets)
+        {
+            if (item.FinanceProduct == p)
+                result = item.Amount;
+        }
+        getwallet();
+        return result;
+    }
+    void getwallet()
+    {
+        wallets = DataLists.GetAllFinanceProductWallets(user, Program.databaseAdapter);
+        
+    }
+
+    void buyProduct(FinanceProduct p)
+    {
+        MakeFinanceProductMove.TradeFinanceProducts(user, BRL, quantidade, p,Program.databaseAdapter, new StockMarket(), new Taxer());
+    }
+    void sellProduct(FinanceProduct p)
+    {
+        MakeFinanceProductMove.TradeFinanceProducts(user, p, quantidade, BRL,Program.databaseAdapter, new StockMarket(), new Taxer());
+    }
+}

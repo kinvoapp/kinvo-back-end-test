@@ -1,0 +1,330 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota\\Aliquota.Website.old.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.Entities\\Aliquota.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.Entities\\Aliquota.Entities.csproj",
+        "projectName": "Aliquota.Entities",
+        "projectPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.Entities\\Aliquota.Entities.csproj",
+        "packagesPath": "C:\\Users\\lab\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lab\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.1.21463.6\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.UseCases\\Aliquota.UseCases.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.UseCases\\Aliquota.UseCases.csproj",
+        "projectName": "Aliquota.UseCases",
+        "projectPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.UseCases\\Aliquota.UseCases.csproj",
+        "packagesPath": "C:\\Users\\lab\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.UseCases\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lab\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.Entities\\Aliquota.Entities.csproj": {
+                "projectPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.Entities\\Aliquota.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.1.21463.6\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota\\Aliquota.Website.old.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota\\Aliquota.Website.old.csproj",
+        "projectName": "Aliquota.Website.old",
+        "projectPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota\\Aliquota.Website.old.csproj",
+        "packagesPath": "C:\\Users\\lab\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lab\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.UseCases\\Aliquota.UseCases.csproj": {
+                "projectPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.UseCases\\Aliquota.UseCases.csproj"
+              },
+              "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\FrameworksAndDrivers\\ExternalInterfacesAndDevices.csproj": {
+                "projectPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\FrameworksAndDrivers\\ExternalInterfacesAndDevices.csproj"
+              },
+              "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Interface Adapters\\ControllersGatewaysAndPresenters.csproj": {
+                "projectPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Interface Adapters\\ControllersGatewaysAndPresenters.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.1.21463.6\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\FrameworksAndDrivers\\ExternalInterfacesAndDevices.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\FrameworksAndDrivers\\ExternalInterfacesAndDevices.csproj",
+        "projectName": "ExternalInterfacesAndDevices",
+        "projectPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\FrameworksAndDrivers\\ExternalInterfacesAndDevices.csproj",
+        "packagesPath": "C:\\Users\\lab\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\FrameworksAndDrivers\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lab\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.Entities\\Aliquota.Entities.csproj": {
+                "projectPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.Entities\\Aliquota.Entities.csproj"
+              },
+              "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.UseCases\\Aliquota.UseCases.csproj": {
+                "projectPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.UseCases\\Aliquota.UseCases.csproj"
+              },
+              "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Interface Adapters\\ControllersGatewaysAndPresenters.csproj": {
+                "projectPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Interface Adapters\\ControllersGatewaysAndPresenters.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.1.21463.6\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Interface Adapters\\ControllersGatewaysAndPresenters.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Interface Adapters\\ControllersGatewaysAndPresenters.csproj",
+        "projectName": "ControllersGatewaysAndPresenters",
+        "projectPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Interface Adapters\\ControllersGatewaysAndPresenters.csproj",
+        "packagesPath": "C:\\Users\\lab\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Interface Adapters\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lab\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.Entities\\Aliquota.Entities.csproj": {
+                "projectPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.Entities\\Aliquota.Entities.csproj"
+              },
+              "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.UseCases\\Aliquota.UseCases.csproj": {
+                "projectPath": "C:\\Users\\lab\\source\\repos\\kinvo-back-end-tes\\Aliquota\\Aliquota.UseCases\\Aliquota.UseCases.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.1.21463.6\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

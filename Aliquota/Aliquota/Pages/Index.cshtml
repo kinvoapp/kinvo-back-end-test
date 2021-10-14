@@ -1,5 +1,9 @@
 ﻿@page
 @model IndexModel
+
+@{
+    await Html.RenderComponentAsync<Aliquota.Website.Components.Counter>(RenderMode.ServerPrerendered);
+}
 @{
     ViewData["Title"] = "Home page";
 }
