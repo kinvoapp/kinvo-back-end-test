@@ -80,7 +80,17 @@
       "ProjectGuid": "61d5a8e3-56e6-4bb4-9fc3-74740bf033e4",
       "DisplayName": "WebScrapper",
       "ColorIndex": 14
+    },
+    "639386a5-f9dd-405b-bc85-c64dcf3583dd": {
+      "ProjectGuid": "639386a5-f9dd-405b-bc85-c64dcf3583dd",
+      "DisplayName": "Aliquota.Domain",
+      "ColorIndex": 15
+    },
+    "33353dc1-57e4-41dc-b571-f0271f61e9ce": {
+      "ProjectGuid": "33353dc1-57e4-41dc-b571-f0271f61e9ce",
+      "DisplayName": "Aliquota.Website.Blazor",
+      "ColorIndex": 0
     }
   },
-  "NextColorIndex": 15
+  "NextColorIndex": 1
 }
