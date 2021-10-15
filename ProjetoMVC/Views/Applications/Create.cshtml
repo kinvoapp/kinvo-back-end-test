@@ -1,0 +1,43 @@
+﻿@model Aliquota.Domain.Models.Application
+
+@{
+    ViewData["Title"] = "Nova Aplicação";
+}
+
+<h1>Aplicação</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ApplicationValue" class="control-label"></label>
+                <input asp-for="ApplicationValue" class="form-control" />
+                <span asp-validation-for="ApplicationValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicationDate" class="control-label"></label>
+                <input asp-for="ApplicationDate" class="form-control" />
+                <span asp-validation-for="ApplicationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicationRescue" class="control-label"></label>
+                <input asp-for="ApplicationRescue" class="form-control" />
+                <span asp-validation-for="ApplicationRescue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Aplicar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

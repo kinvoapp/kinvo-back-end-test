@@ -1,45 +1,31 @@
-> ![Logo Kinvo](https://github.com/kinvoapp/kinvo-mobile-test/blob/master/logo.svg)
-
-# Teste para candidatos à vaga de Desenvolvedor C#  
+# Projeto Produto Financeiro
 
 
-## Problema:
 
-* Um determinado produto financeiro recolhe imposto de renda apenas quando o cliente faz o seu resgate.
-* O Produto pode ter diversas aplicações e resgates, no decorrer do tempo.
-* O cálculo do IR segue a seguinte lógica abaixo:
-  * Até 1 ano de aplicação: 22,5% sobre o lucro;
-  * De 1 a 2 anos de aplicação: 18,5% sobre o lucro;
-  * Acima de 2 anos de aplicação: 15% sobre o lucro;
-* A aplicação não pode ser igual ou menor que zero.
-* A data de resgate não pode ser menor que a data de aplicação.
+Dado o contexto de uma aplicação financeira, a solução desenvolvida foi uma API Rest integrada a um banco de dados SQL Server, dessa forma facilitaria a manutenção e a integração com o código fonte principal.
 
-Após terminar seu teste submeta um pull request e aguarde seu feedback.
+Nesse projeto também foi desenvolvido uma aplicação web utilizando a estrutura MVC, como forma de melhorar a visualização da API numa possível aplicação real. 
 
-### Instruções:
 
-1. Criar um projeto de classes chamado “Aliquota.Domain”;
-2. Criar um projeto de testes chamado “Aliquota.Domain.Test”
-3. Modelar a(s) entidade(s) que resolvem o problema citado;
-4. Mapear as entidades no Entity Framework Core;
-5. Criar um projeto de frontend para permitir a persistência de dados (console, webapp, etc.);
-6. Neste mesmo projeto, criar uma consulta que retorne todas as aplicações e resgates do Produto;
-7. Testar a(s) entidade(s) de forma que garantam as regras de negócio;
-8. Utilizar os conceitos de DDD, OO, POCO e SOLID que você julgar necessário;
-9. Use inglês ou português no seu código. Como achar melhor. Isso não será critério de avaliação.
 
-### Pré-requisitos:
+**IMPORTANTE**: 
 
-* Utilizar C# e framework .NET 5;
-* Utilizar xUnit para os testes;
-* O projeto deve compilar;
-* Os testes devem rodar pelo Test Explorer do VS e via console (dotnet test);
+A projeto MVC (**ProjetoMVC** ) utiliza a configuração de **referência** as Models e o Context do projeto da API (**Aliquota.Domain**), ou seja não é um projeto independente e só funcionará se o seu diretório estiver no mesmo nível do diretório da API (dentro de uma mesma Solution).
 
-* **Importante:** Usamos o mesmo teste para todos os níveis de desenvolvedor, **junior**, **pleno** ou **senior**, mas procuramos adequar nossa exigência na avaliação com cada um desses níveis sem, por exemplo, exigir excelência de quem está começando :-)
 
-## Submissão
 
-Para iniciar o teste, faça um fork deste repositório, crie uma branch com o seu nome e depois envie-nos o pull request.
-Se você apenas clonar o repositório não vai conseguir fazer push e depois vai ser mais complicado fazer o pull request.
+**Funcionamento:**
 
-**Sucesso!**
+- A Entidade Applications recebe os dados de uma aplicação financeira do usuário, contendo o valor, a data de aplicação e a data do resgate. 
+- A Entidade Rescues exibe os resgates das aplicações realizados pelo usuário, contendo valor, datas de aplicação e resgate, valor líquido e valor bruto, lucro do período, porcentagem e valor calculado do Imposto de Renda sob o lucro.
+
+
+
+**Sugestão para implementação no Front-End:**
+
+- O método "Delete" na Entidade Applications  foi modificado na sua Controller para quando disparado, além de excluir os dados na sua Entidade, também enviá-los para Entidade Rescues. Então é necessário implementar: Uma personalização visual do botão que dispara o método Delete na ApplicationsController modificando de "Deletar" para "Resgatar aplicação" e criar uma rota que se comunique com o método GET na RescuesController.
+
+
+
+
+

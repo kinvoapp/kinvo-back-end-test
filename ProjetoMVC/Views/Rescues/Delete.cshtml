@@ -1,0 +1,69 @@
+﻿@model Aliquota.Domain.Models.Rescue
+
+@{
+    ViewData["Title"] = "Deletar";
+}
+
+<h1>Deletar</h1>
+
+<h3>Deseja excluir esse comprovante de resgate?</h3>
+<div>
+    <h4>Rescue</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ApplicationDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ApplicationDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ApplicationRescue)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ApplicationRescue)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ApplicationValue)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ApplicationValue)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GrossValue)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GrossValue)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Income)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Income)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ir)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ir)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Profit)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Profit)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LiquidValue)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LiquidValue)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="RescueId" />
+        <input type="submit" value="excluir+" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

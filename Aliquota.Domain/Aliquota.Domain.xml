@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aliquota.Domain</name>
+    </assembly>
+    <members>
+        <member name="M:Aliquota.Domain.Controllers.ApplicationsController.GetApplications">
+            <summary>
+            Obtém a lista das aplicações Realizadas.
+            </summary>
+        </member>
+        <member name="M:Aliquota.Domain.Controllers.ApplicationsController.GetApplication(System.Int32)">
+            <summary>
+            Obtém a lista das aplicações Realizadas por Id.
+            </summary>
+        </member>
+        <member name="M:Aliquota.Domain.Controllers.ApplicationsController.PutApplication(System.Int32,Aliquota.Domain.Models.Application)">
+            <summary>
+            Edita uma aplicação.
+            </summary>
+        </member>
+        <member name="M:Aliquota.Domain.Controllers.ApplicationsController.PostApplication(Aliquota.Domain.Models.Application)">
+            <summary>
+            Cria uma nova aplicação.
+            </summary>
+        </member>
+        <member name="M:Aliquota.Domain.Controllers.ApplicationsController.DeleteApplication(System.Int32)">
+            <summary>
+            Implementar o nome desse método no front-end como "Resgatar Aplicação".
+            Deleta da tabela atual, envia a "aplicação" para entidade "Resgates".
+            </summary>
+        </member>
+        <member name="M:Aliquota.Domain.Controllers.RescuesController.GetRescues">
+            <summary>
+            Obtém a lista das aplicações resgatas.
+            </summary>
+        </member>
+        <member name="M:Aliquota.Domain.Controllers.RescuesController.GetRescue(System.Int32)">
+            <summary>
+            Obtém a lista das aplicações resgatas por Id.
+            </summary>
+        </member>
+        <member name="M:Aliquota.Domain.Controllers.RescuesController.DeleteRescue(System.Int32)">
+            <summary>
+            Deleta um resgate.
+            </summary>
+        </member>
+    </members>
+</doc>

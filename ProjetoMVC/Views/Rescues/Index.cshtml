@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Aliquota.Domain.Models.Rescue>
+
+@{
+    ViewData["Title"] = "Resgates";
+}
+
+<h1>Resgates</h1>
+
+<p>
+  
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationRescue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrossValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Income)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ir)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LiquidValue)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationRescue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrossValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Income)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ir)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LiquidValue)
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.RescueId">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

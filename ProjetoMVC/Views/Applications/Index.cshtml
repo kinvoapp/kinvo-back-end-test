@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Aliquota.Domain.Models.Application>
+
+@{
+    ViewData["Title"] = "Aplicações";
+}
+
+<h1>Aplicações</h1>
+
+<p>
+    <a asp-action="Create">Nova Aplicação</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationRescue)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationRescue)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ApplicationID">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.ApplicationID">Detalhar</a> |
+                <a asp-action="Delete" asp-route-id="@item.ApplicationID">Resgatar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
