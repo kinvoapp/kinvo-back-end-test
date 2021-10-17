@@ -2,7 +2,7 @@
 
 
 
-Dado o contexto de uma aplicação financeira, a solução desenvolvida foi uma API Rest integrada a um banco de dados SQL Server. Dessa forma, facilitaria a manutenção e a integração com o código fonte principal.
+Dado o contexto de uma aplicação financeira, a solução desenvolvida foi uma API Rest integrada a um banco de dados SQL Server. Dessa forma, facilitaria a manutenção e a integração com o código fonte principal. Para fazer a simulação do recolhimento do Imposto de Renda, foi simulado um produto financeiro que rende 10% ao ano.
 
 Nesse projeto também foi desenvolvido uma aplicação web utilizando a arquitetura MVC, como forma de melhorar a visualização da API numa possível aplicação real. 
 
