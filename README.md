@@ -10,7 +10,10 @@ Nesse projeto também foi desenvolvido uma aplicação web utilizando a arquitet
 
 **IMPORTANTE**: 
 
-O projeto MVC (**ProjetoMVC** ) utiliza a configuração de **referência** para as Models e o Context do projeto da API (**Aliquota.Domain**), ou seja, não é um projeto independente e só funcionará se o seu diretório estiver no mesmo nível do diretório da API (dentro de uma mesma Solution).
+- O projeto MVC (**ProjetoMVC**) utiliza a configuração de **referência** para as Models e o Context do projeto da API (**Aliquota.Domain**), ou seja, não é um projeto independente e só funcionará se o seu diretório estiver no mesmo nível do diretório da API (dentro de uma mesma Solution).
+- Ao iniciar o projeto é necessario subir o banco de dados. No console do seu gerenciador Nuget digite o comando `Update-Database` se estiver usando o Visual Studio ou o comando `dotnet ef database update` caso esteja no VS Code.
+- Para rodar os testes são necessárias **duas** modificações temporarias no projeto: **1ª** na Model Context da API Aliquota.Domain alterar a entidade Applications **de**: `public DbSet<Application> Applications { get; set; }` **para**: `public virtual DbSet<Application> Applications { get; set; }`. **2ª** na ApplicationsController  da API, no método PutApplication, **substituir** `_context.Entry(application).State = EntityState.Modified;` **por** `_context.SetModified(application);`
+
 
 
 
