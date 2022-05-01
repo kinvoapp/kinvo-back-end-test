@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<DataContext>(opt=>opt.UseInMemoryDatabase("Database"));
+builder.Services.AddDbContext<DataContext>(opt=>opt.UseInMemoryDatabase("DataContext"));
 
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<ProductHandler, ProductHandler>();
