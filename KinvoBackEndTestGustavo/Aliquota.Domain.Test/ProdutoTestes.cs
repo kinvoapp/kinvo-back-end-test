@@ -1,4 +1,4 @@
-﻿using Aliquota.Domain.Dominios.ProdutoModule;
+﻿using Aliquota.Domain.ProdutoModule;
 using Xunit;
 
 namespace Aliquota.Domain.Test

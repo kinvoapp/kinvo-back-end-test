@@ -1,5 +1,5 @@
-using Aliquota.Domain.Dominios.AplicacaoModule;
-using Aliquota.Domain.Dominios.ProdutoModule;
+using Aliquota.Domain.AplicacaoModule;
+using Aliquota.Domain.ProdutoModule;
 using System;
 using Xunit;
 
@@ -7,7 +7,7 @@ namespace Aliquota.Domain.Test
 {
     public class AplicacaoTestes
     {
-        Produto produtoTeste = new(0, "produtoVazio");
+        readonly Produto produtoTeste = new(0, "produto");
 
         private string resultadoAplicacao_MenorOuIgualZero;
         private string resultadoAplicacao_ProdutoVazio;
@@ -60,11 +60,11 @@ namespace Aliquota.Domain.Test
 
             //Action
             double lucro = 75;
-            double aplicacaoTaxada = aplicationValue + lucro * 0.775;
-            aplicacao.Resgatar(aplicacao, lucro, DateTime.Now);
+            double aplicacaoTaxada = lucro * 0.775;
+            double lucroFinal = aplicacao.CalcularLucro(aplicacao, lucro, DateTime.Now);
 
             //Assert
-            Assert.Equal(aplicacaoTaxada, aplicacao.Valor);
+            Assert.Equal(aplicacaoTaxada, lucroFinal);
         }
 
         [Fact]
@@ -76,11 +76,11 @@ namespace Aliquota.Domain.Test
 
             //Action
             double lucro = 100;
-            double aplicacaoTaxada = aplicationValue + lucro * 0.815;
-            aplicacao.Resgatar(aplicacao, lucro, dataUmAnoESeisMesesAtras);
+            double aplicacaoTaxada = lucro * 0.815;
+            double lucroFinal = aplicacao.CalcularLucro(aplicacao, lucro, DateTime.Now);
 
             //Assert
-            Assert.Equal(aplicacaoTaxada, aplicacao.Valor);
+            Assert.Equal(aplicacaoTaxada, lucroFinal);
         }
 
         [Fact]
@@ -92,11 +92,11 @@ namespace Aliquota.Domain.Test
 
             //Action
             double lucro = 1000;
-            double aplicacaoTaxada = aplicationValue + lucro * 0.85;
-            aplicacao.Resgatar(aplicacao, lucro, dataDoisAnosESeisMesesAtras);
+            double aplicacaoTaxada = lucro * 0.85;
+            double lucroFinal = aplicacao.CalcularLucro(aplicacao, lucro, DateTime.Now);
 
             //Assert
-            Assert.Equal(aplicacaoTaxada, aplicacao.Valor);
+            Assert.Equal(aplicacaoTaxada, lucroFinal);
         }
 
         #region Métodos Privados

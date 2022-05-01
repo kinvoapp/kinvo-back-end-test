@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Modules\Aplicacoes\AplicacaoControlTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Modules\Aplicacoes\AplicacaoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Modules\Aplicacoes\FiltroAplicacaoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Modules\Aplicacoes\ResgatarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Modules\Produtos\ProdutoControlTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Modules\Produtos\ProdutoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TelaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
