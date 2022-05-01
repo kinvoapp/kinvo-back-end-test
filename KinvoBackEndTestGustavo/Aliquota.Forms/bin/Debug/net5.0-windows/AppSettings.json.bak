@@ -1,0 +1,6 @@
+﻿{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=MSSQLSERVER01;Trusted_Connection=True;MultipleActiveResultSets=true",
+    "connection": "Data Source=localhost\\MSSQLSERVER01;Initial Catalog=KinvoBackEndTest;Integrated Security=True"
+  }
+}

@@ -1,0 +1,111 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="toolBoxAcoes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>132, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="SBtnAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFsSURBVEhL3ZQtUgNBEIVXIBAIJAIRyREQCFwEB0AgIhAI
+        joCMjOAASA6QAyAQCGQkIiIiIgKJRMD7tvKorZ2emSUyr+oTs9073bv90+y9DsRYPIl3sdryJh7FpdhZ
+        V+JD/FQg8IUYLLKeCl+wFA/iXIy2kDk+G4HPt7gXgzQT3ZcImNOh6CZTDXItfPl//u+N8HvZ30U2FBDH
+        Wx4EcqaR/CXUJNRE4LBoT7FKAUjQNQm/fi4w5rJHpQDIX0ELJ1oLjHRJTrUAZI6dOUkUvexnNSyS40wt
+        E/WdkZ/VsE4FZ/5GIhfopD3F6l/YF8OIPeykF4GRns6pFoCJx87uSnQnML62p1ilAEw8awU7CzLRsfgU
+        OLDoIpUCsCawsSCz68VOX+KMBwNFe7ImSsn96Vk4SNVZYjB9OYNW1ZFwEKAmFL7bXfQ7F7NW7McWLm3e
+        RPwu16QEQ8UW3kkUnu6ihT0nwCCxu1iQLLm9VdP8AoRUk4QNG2bpAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="SBtnResgatar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFSSURBVEhL3dWxLgRRGMXxKyoNBYkXkKyoFHRKJYVCViQq
+        CQXNhkSCUFqioEKi9QpU1DriGShIUChWiPA/m/vJzeyMndkZzZ7kl+zc/e49mcxm1rVFujCHhYLpTJ3t
+        NvD9T9bhdoKFouns34JzrBXkAg0FNyhjAicYh6UTszj1ZvyaRbPao7064xYNBXKAbf+5AkUP6go2Yy5R
+        f4hEs1rTXp1hM/WC5WAhrmAX9r2848t/rkJJKliC68AodJslRAse8IIxXKMfw3jFPZSwQGforBHEJlrw
+        iU0MYR6HGITmPqCEBU0TLbiDrlcxDd3NmV/Tw1RyFeiXoes4U1ByFSgrqMEOfsMiLLkLlD5Mer1aCFJI
+        wV9pqUAPNW00m7ngGUfoRlJ6cAzNZi4we0jKPsLZlgoeodeFXgshrT0hnE1VsIVwUxba2zQDiPsLTEN7
+        2yrO/QCSldfc9l7GawAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="SBtnFiltrar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJnSURBVEhLxZXLq09RFMc38jbAlYTII4XrOTZhpJjIxH/g
+        lYzMUORvMLilGJkpA5GJ97MImaLIKyXvR56fz+6s393n/M697pXyrU/nrLXXXuecvdbZO/1vLYIDcAc+
+        wi/4CW8r30EwZtiaCPvBRCYNfMinhu8NGDsJhqR5cAMiwVXYActhVoX3+hyLOOc4d1DNgYfghEuwCv6k
+        1XAdnPMAzNGqcXALDDwOU2AkTAPfem6BSWaCY2oCnADnmmM8dGkfGHAT/NTTlS0/KixwoO3YZzgMPtTC
+        67MmNS0AAy3qRrgIr+E2PIan8ByeVddX4Lh+rybdC9bGh9sI5uzoEBh0FMZU9ydB2R2TG0wFl1D5tsZv
+        zVZK50HbnB3dBZ2bs5XSFdDekq2BtQy+wjUYoQPZXc69l61KX8BPW5KtlGaDy2Bg7VMLrQTHX0IUW/WC
+        fpe8Ix0+xMShFaDf1huto5BLZC0cX6yjkN1lLsc68u2/gS1Yag8Y2Jetfp0F/XZeU60PeAc6/Oymor/X
+        ZCulnaB9JFvdWgqO15YoirwtW3XZ347Fn20LPoKx0CZzGF8rcrSp+0lTtqPL9wI2gMt5CgZS7GO1NrVT
+        PoAD63QUsvDf4Qn4E3rvjxhtWWotmMNcXd0XW4VdY5eE3Db8w00cf+0maKoHnOt4W/HzGRC1OAfTQbmR
+        RWLZDU0Z6xzHXXtztWohWEADvUbnHIMzMCNb/RoF6yG2eK/mGFSuXXngXIBd4ES3b7duu2k7XIaIc858
+        GJLc4NzE3kMksIu04ycKrM+wjsxSHuge7PfBTS2SejZbr78+9P+RUvoNZavG6zMbaosAAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>258, 17</value>
+  </metadata>
+</root>
