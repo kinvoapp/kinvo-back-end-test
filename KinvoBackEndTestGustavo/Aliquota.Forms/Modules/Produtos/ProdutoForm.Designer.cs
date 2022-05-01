@@ -93,7 +93,7 @@ namespace Aliquota.Forms.Modules.Produtos
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(88, 27);
-            this.btnCancelar.TabIndex = 63;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -105,7 +105,7 @@ namespace Aliquota.Forms.Modules.Produtos
             this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(88, 27);
-            this.btnConfirmar.TabIndex = 62;
+            this.btnConfirmar.TabIndex = 2;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
@@ -123,7 +123,8 @@ namespace Aliquota.Forms.Modules.Produtos
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ProdutoForm";
-            this.Text = "Produto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Kinvo Back End Test - Produto";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -53,12 +53,12 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             this.lblRegistroDeProduto.AutoSize = true;
             this.lblRegistroDeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblRegistroDeProduto.ForeColor = System.Drawing.Color.Black;
-            this.lblRegistroDeProduto.Location = new System.Drawing.Point(117, 14);
+            this.lblRegistroDeProduto.Location = new System.Drawing.Point(75, 14);
             this.lblRegistroDeProduto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRegistroDeProduto.Name = "lblRegistroDeProduto";
-            this.lblRegistroDeProduto.Size = new System.Drawing.Size(83, 20);
+            this.lblRegistroDeProduto.Size = new System.Drawing.Size(166, 20);
             this.lblRegistroDeProduto.TabIndex = 73;
-            this.lblRegistroDeProduto.Text = "Resgatar";
+            this.lblRegistroDeProduto.Text = "Resgatar Aplicação";
             // 
             // groupBox1
             // 
@@ -88,7 +88,8 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             this.txtLucro.Location = new System.Drawing.Point(122, 158);
             this.txtLucro.Name = "txtLucro";
             this.txtLucro.Size = new System.Drawing.Size(133, 20);
-            this.txtLucro.TabIndex = 20;
+            this.txtLucro.TabIndex = 2;
+            this.txtLucro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLucro_KeyPress);
             // 
             // labelLucro
             // 
@@ -106,7 +107,7 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             this.dateTPAplicacao.Location = new System.Drawing.Point(122, 132);
             this.dateTPAplicacao.Name = "dateTPAplicacao";
             this.dateTPAplicacao.Size = new System.Drawing.Size(133, 20);
-            this.dateTPAplicacao.TabIndex = 18;
+            this.dateTPAplicacao.TabIndex = 1;
             // 
             // labelAplicacaoData
             // 
@@ -122,31 +123,31 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             // 
             this.labelAplicacaoValor.AutoSize = true;
             this.labelAplicacaoValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelAplicacaoValor.Location = new System.Drawing.Point(114, 81);
+            this.labelAplicacaoValor.Location = new System.Drawing.Point(178, 81);
             this.labelAplicacaoValor.Name = "labelAplicacaoValor";
-            this.labelAplicacaoValor.Size = new System.Drawing.Size(149, 16);
+            this.labelAplicacaoValor.Size = new System.Drawing.Size(44, 16);
             this.labelAplicacaoValor.TabIndex = 16;
-            this.labelAplicacaoValor.Text = "labelAplicacaoValor";
+            this.labelAplicacaoValor.Text = "Valor";
             // 
             // labelAplicacaoProduto
             // 
             this.labelAplicacaoProduto.AutoSize = true;
             this.labelAplicacaoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelAplicacaoProduto.Location = new System.Drawing.Point(105, 52);
+            this.labelAplicacaoProduto.Location = new System.Drawing.Point(170, 52);
             this.labelAplicacaoProduto.Name = "labelAplicacaoProduto";
-            this.labelAplicacaoProduto.Size = new System.Drawing.Size(166, 16);
+            this.labelAplicacaoProduto.Size = new System.Drawing.Size(61, 16);
             this.labelAplicacaoProduto.TabIndex = 15;
-            this.labelAplicacaoProduto.Text = "labelAplicacaoProduto";
+            this.labelAplicacaoProduto.Text = "Produto";
             // 
             // labelAplicacaoId
             // 
             this.labelAplicacaoId.AutoSize = true;
             this.labelAplicacaoId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelAplicacaoId.Location = new System.Drawing.Point(126, 23);
+            this.labelAplicacaoId.Location = new System.Drawing.Point(190, 23);
             this.labelAplicacaoId.Name = "labelAplicacaoId";
-            this.labelAplicacaoId.Size = new System.Drawing.Size(125, 16);
+            this.labelAplicacaoId.Size = new System.Drawing.Size(20, 16);
             this.labelAplicacaoId.TabIndex = 14;
-            this.labelAplicacaoId.Text = "labelAplicacaoId";
+            this.labelAplicacaoId.Text = "Id";
             // 
             // labelDataResgate
             // 
@@ -207,7 +208,7 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(88, 27);
-            this.btnCancelar.TabIndex = 71;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -219,7 +220,7 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(88, 27);
-            this.btnConfirmar.TabIndex = 70;
+            this.btnConfirmar.TabIndex = 3;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
@@ -233,8 +234,12 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ResgatarForm";
-            this.Text = "ResgatarForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Kinvo Back End Test - Resgatar";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

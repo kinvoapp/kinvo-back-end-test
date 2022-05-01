@@ -8,6 +8,7 @@ namespace Aliquota.Domain.AplicacaoModule
     {
         public Produto Produto { get; set; }
         public double Valor { get; set; }
+        public double? Faturamento { get; set; }
         public double? Lucro { get; set; }
         public DateTime DataAplicacao { get; set; }
         public DateTime? DataResgate { get; set; }
@@ -59,6 +60,11 @@ namespace Aliquota.Domain.AplicacaoModule
             double lucroFinal = lucro - taxaSobreLucro;
 
             return lucroFinal;
+        }
+
+        public void CalcularFaturamento()
+        {
+            Faturamento =  Valor + Lucro;
         }
     }
 }

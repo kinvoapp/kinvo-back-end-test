@@ -162,7 +162,7 @@ namespace Aliquota.Forms
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TelaPrincipal";
-            this.Text = "Form1";
+            this.Text = "Kinvo Back End Test";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolBoxAcoes.ResumeLayout(false);

@@ -12,7 +12,7 @@ namespace Aliquota.Infrastructure
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                .UseSqlServer();
+                .UseSqlServer(@"Data Source=localhost\MSSQLSERVER01;Initial Catalog=KinvoBackEndTest;Integrated Security=True");
         }
     }
 }

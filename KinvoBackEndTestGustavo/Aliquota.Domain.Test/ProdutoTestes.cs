@@ -6,7 +6,7 @@ namespace Aliquota.Domain.Test
     public class ProdutoTestes
     {
         [Fact]
-        public void ImpostoRenda_PropriedadesInvalidas()
+        public void ValidarProduto_PropriedadesInvalidas()
         {
             //Arrange
             Produto produto = new(0, null);
@@ -19,7 +19,7 @@ namespace Aliquota.Domain.Test
         }
 
         [Fact]
-        public void ImpostoRenda_PropriedadesValidas()
+        public void ValidarProduto_PropriedadesValidas()
         {
             //Arrange
             Produto produto = new(0, "Nome do produto");

@@ -78,14 +78,14 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             this.comboBoxProdutos.Location = new System.Drawing.Point(73, 27);
             this.comboBoxProdutos.Name = "comboBoxProdutos";
             this.comboBoxProdutos.Size = new System.Drawing.Size(180, 21);
-            this.comboBoxProdutos.TabIndex = 12;
+            this.comboBoxProdutos.TabIndex = 1;
             // 
             // txtValor
             // 
             this.txtValor.Location = new System.Drawing.Point(73, 54);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(180, 20);
-            this.txtValor.TabIndex = 11;
+            this.txtValor.TabIndex = 2;
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
             // labelValor
@@ -113,7 +113,7 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             this.dateTPAplicacao.Location = new System.Drawing.Point(73, 80);
             this.dateTPAplicacao.Name = "dateTPAplicacao";
             this.dateTPAplicacao.Size = new System.Drawing.Size(180, 20);
-            this.dateTPAplicacao.TabIndex = 8;
+            this.dateTPAplicacao.TabIndex = 3;
             // 
             // labelProduto
             // 
@@ -135,7 +135,7 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(88, 27);
-            this.btnCancelar.TabIndex = 67;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -147,7 +147,7 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(88, 27);
-            this.btnConfirmar.TabIndex = 66;
+            this.btnConfirmar.TabIndex = 4;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
@@ -161,8 +161,12 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AplicacaoForm";
-            this.Text = "AplicacaoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Kinvo Back End Test - Aplicação";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

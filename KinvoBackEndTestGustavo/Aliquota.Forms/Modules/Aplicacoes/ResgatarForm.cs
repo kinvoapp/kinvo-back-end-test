@@ -54,8 +54,29 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             else
             {
                 aplicacao.Lucro = lucroFinal;
-                MessageBox.Show("Test");
+                aplicacao.CalcularFaturamento();
+                ConfirmacaoOperacaoUsuario(lucro);
             }
+        }
+
+        private void ConfirmacaoOperacaoUsuario(double lucro)
+        {
+            DialogResult resultadoMBox = MessageBox.Show($"Valor inicial da Aplicação: R$ {aplicacao.Valor}\n" +
+                                $"Lucro: R$ {lucro}\n" +
+                                $"Lucro após IR: R$ {aplicacao.Lucro}\n" +
+                                $"Aplicação + Lucro após IR: R$ {aplicacao.Faturamento}",
+                                "Confirmar Resgate", MessageBoxButtons.YesNo);
+
+            if (resultadoMBox == DialogResult.No)
+            {
+                TelaPrincipal.Instancia.AtualizaRodape("Operação cancelada pelo usuário");
+                DialogResult = DialogResult.None;
+            }
+        }
+
+        private void txtLucro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

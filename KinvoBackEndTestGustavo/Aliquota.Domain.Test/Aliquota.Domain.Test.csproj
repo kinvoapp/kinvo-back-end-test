@@ -20,7 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Aliquota.Applications\Aliquota.Applications.csproj" />
     <ProjectReference Include="..\Aliquota.Domain\Aliquota.Domain.csproj" />
+    <ProjectReference Include="..\Aliquota.Infrastructure\Aliquota.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

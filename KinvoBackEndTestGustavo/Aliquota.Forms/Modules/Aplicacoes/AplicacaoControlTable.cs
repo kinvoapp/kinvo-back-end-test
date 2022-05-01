@@ -24,7 +24,8 @@ namespace Aliquota.Forms.Modules.Aplicacoes
                 new DataGridViewTextBoxColumn { DataPropertyName = "Valor", HeaderText = "Valor" },
                 new DataGridViewTextBoxColumn { DataPropertyName = "Aplicacao", HeaderText = "Aplicação" },
                 new DataGridViewTextBoxColumn { DataPropertyName = "Resgate", HeaderText = "Resgate" },
-                new DataGridViewTextBoxColumn { DataPropertyName = "Lucro", HeaderText = "Lucro" }
+                new DataGridViewTextBoxColumn { DataPropertyName = "Lucro", HeaderText = "Lucro" },
+                new DataGridViewTextBoxColumn { DataPropertyName = "Faturamento", HeaderText = "Faturamento" }
             };
             return columns;
         }
@@ -49,7 +50,8 @@ namespace Aliquota.Forms.Modules.Aplicacoes
                     aplicacao.Valor, 
                     aplicacao.DataAplicacao,
                     aplicacao.DataResgate,
-                    aplicacao.Lucro);
+                    aplicacao.Lucro,
+                    aplicacao.Faturamento);
             }
         }
     }

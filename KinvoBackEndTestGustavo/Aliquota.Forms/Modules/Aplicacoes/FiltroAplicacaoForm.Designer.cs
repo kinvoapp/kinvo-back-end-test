@@ -46,7 +46,7 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             this.radioBtnTodasAplicacoes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.radioBtnTodasAplicacoes.Name = "radioBtnTodasAplicacoes";
             this.radioBtnTodasAplicacoes.Size = new System.Drawing.Size(171, 17);
-            this.radioBtnTodasAplicacoes.TabIndex = 28;
+            this.radioBtnTodasAplicacoes.TabIndex = 3;
             this.radioBtnTodasAplicacoes.Text = "Visualizar Todas as Aplicações";
             this.radioBtnTodasAplicacoes.UseVisualStyleBackColor = true;
             // 
@@ -58,7 +58,7 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             this.radioBtnAplicacaoResgatada.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.radioBtnAplicacaoResgatada.Name = "radioBtnAplicacaoResgatada";
             this.radioBtnAplicacaoResgatada.Size = new System.Drawing.Size(184, 17);
-            this.radioBtnAplicacaoResgatada.TabIndex = 27;
+            this.radioBtnAplicacaoResgatada.TabIndex = 1;
             this.radioBtnAplicacaoResgatada.TabStop = true;
             this.radioBtnAplicacaoResgatada.Text = "Visualizar Aplicações Resgatadas";
             this.radioBtnAplicacaoResgatada.UseVisualStyleBackColor = true;
@@ -70,7 +70,7 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             this.radioBtnAplicacoesNaoResgatadas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.radioBtnAplicacoesNaoResgatadas.Name = "radioBtnAplicacoesNaoResgatadas";
             this.radioBtnAplicacoesNaoResgatadas.Size = new System.Drawing.Size(210, 17);
-            this.radioBtnAplicacoesNaoResgatadas.TabIndex = 26;
+            this.radioBtnAplicacoesNaoResgatadas.TabIndex = 2;
             this.radioBtnAplicacoesNaoResgatadas.Text = "Visualizar Aplicações NÃO Resgatadas";
             this.radioBtnAplicacoesNaoResgatadas.UseVisualStyleBackColor = true;
             // 
@@ -108,7 +108,7 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(88, 27);
-            this.btnCancelar.TabIndex = 71;
+            this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -120,7 +120,7 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(88, 27);
-            this.btnConfirmar.TabIndex = 70;
+            this.btnConfirmar.TabIndex = 4;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             // 
@@ -137,7 +137,8 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FiltroAplicacaoForm";
-            this.Text = "Filtrar Aplicações";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Kinvo Back End Test - Filtrar Aplicações";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

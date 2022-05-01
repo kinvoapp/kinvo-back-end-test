@@ -31,11 +31,6 @@ namespace Aliquota.Forms.Modules.Aplicacoes
             }
         }
 
-        private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
-
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             int id = 0;
@@ -55,6 +50,11 @@ namespace Aliquota.Forms.Modules.Aplicacoes
                 TelaPrincipal.Instancia.AtualizaRodape(primeiroErro);
                 DialogResult = DialogResult.None;
             }
+        }
+
+        private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

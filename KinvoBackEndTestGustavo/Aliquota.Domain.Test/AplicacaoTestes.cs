@@ -7,7 +7,7 @@ namespace Aliquota.Domain.Test
 {
     public class AplicacaoTestes
     {
-        readonly Produto produtoTeste = new(0, "produto");
+        readonly Produto produtoTeste;
 
         private string resultadoAplicacao_MenorOuIgualZero;
         private string resultadoAplicacao_ProdutoVazio;
@@ -20,6 +20,7 @@ namespace Aliquota.Domain.Test
         {
             DefineMensagensDasValidacoes();
             DefineDatas();
+            produtoTeste = new(0, "produto");
         }
 
         [Fact]
@@ -55,8 +56,8 @@ namespace Aliquota.Domain.Test
         public void DataResgate_MenorQue_UmAno()
         {
             //Arrange
-            double aplicationValue = 350;
-            Aplicacao aplicacao = new(0, produtoTeste, aplicationValue, dataSeisMesesAtras, null);
+            double valorAplicacao = 350;
+            Aplicacao aplicacao = new(0, produtoTeste, valorAplicacao, dataSeisMesesAtras, null);
 
             //Action
             double lucro = 75;
@@ -71,8 +72,8 @@ namespace Aliquota.Domain.Test
         public void DataResgate_MenorQue_DoisAnos()
         {
             //Arrange
-            double aplicationValue = 500;
-            Aplicacao aplicacao = new(0, produtoTeste, aplicationValue, dataUmAnoESeisMesesAtras, null);
+            double valorAplicacao = 500;
+            Aplicacao aplicacao = new(0, produtoTeste, valorAplicacao, dataUmAnoESeisMesesAtras, null);
 
             //Action
             double lucro = 100;
@@ -87,8 +88,8 @@ namespace Aliquota.Domain.Test
         public void DataResgate_MaiorQue_DoisAnos()
         {
             //Arrange
-            double aplicationValue = 10000;
-            Aplicacao aplicacao = new(0, produtoTeste, aplicationValue, dataDoisAnosESeisMesesAtras, null);
+            double valorAplicacao = 10000;
+            Aplicacao aplicacao = new(0, produtoTeste, valorAplicacao, dataDoisAnosESeisMesesAtras, null);
 
             //Action
             double lucro = 1000;
