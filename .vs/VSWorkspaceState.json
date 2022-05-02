@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Aliquota",
+    "\\Aliquota\\Aliquota",
+    "\\Aliquota\\Aliquota.Domain.Test",
+    "\\Aliquota\\Aliquota.Domain.Test\\Domain",
+    "\\Aliquota\\Aliquota\\Domain",
+    "\\Aliquota\\Aliquota\\Domain\\Entities"
+  ],
+  "SelectedNode": "\\Aliquota\\Aliquota\\Program.cs",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,0 +1,16 @@
+D:\TestKinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\bin\Debug\net5.0\Aliquota.Domain.exe
+D:\TestKinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\bin\Debug\net5.0\Aliquota.Domain.deps.json
+D:\TestKinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\bin\Debug\net5.0\Aliquota.Domain.runtimeconfig.json
+D:\TestKinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\bin\Debug\net5.0\Aliquota.Domain.runtimeconfig.dev.json
+D:\TestKinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\bin\Debug\net5.0\Aliquota.Domain.dll
+D:\TestKinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\bin\Debug\net5.0\ref\Aliquota.Domain.dll
+D:\TestKinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\bin\Debug\net5.0\Aliquota.Domain.pdb
+D:\TestKinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\net5.0\Aliquota.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\TestKinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\net5.0\Aliquota.Domain.AssemblyInfoInputs.cache
+D:\TestKinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\net5.0\Aliquota.Domain.AssemblyInfo.cs
+D:\TestKinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\net5.0\Aliquota.Domain.csproj.CoreCompileInputs.cache
+D:\TestKinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\net5.0\Aliquota.Domain.dll
+D:\TestKinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\net5.0\ref\Aliquota.Domain.dll
+D:\TestKinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\net5.0\Aliquota.Domain.pdb
+D:\TestKinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\net5.0\Aliquota.Domain.genruntimeconfig.cache
+D:\TestKinvo\kinvo-back-end-test\Aliquota.Domain\Aliquota.Domain\obj\Debug\net5.0\Aliquota.Domain.csproj.AssemblyReference.cache
