@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DataTransferObject\NovaPasta\**" />
+    <EmbeddedResource Remove="DataTransferObject\NovaPasta\**" />
+    <None Remove="DataTransferObject\NovaPasta\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Factories\" />
+    <Folder Include="ValueObject\" />
+  </ItemGroup>
+
+</Project>
