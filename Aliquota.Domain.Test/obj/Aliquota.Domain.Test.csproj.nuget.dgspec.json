@@ -1,0 +1,84 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\cesarmsj\\Source\\Repos\\cesarmsj\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\cesarmsj\\Source\\Repos\\cesarmsj\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\cesarmsj\\Source\\Repos\\cesarmsj\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj",
+        "projectName": "Aliquota.Domain.Test",
+        "projectPath": "C:\\Users\\cesarmsj\\Source\\Repos\\cesarmsj\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj",
+        "packagesPath": "C:\\Users\\cesarmsj\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cesarmsj\\Source\\Repos\\cesarmsj\\kinvo-back-end-test\\Aliquota.Domain.Test\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\cesarmsj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.9.4, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
