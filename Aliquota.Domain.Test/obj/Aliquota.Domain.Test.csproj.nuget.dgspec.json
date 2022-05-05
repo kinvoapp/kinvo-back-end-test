@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cesarmsj\\Source\\Repos\\cesarmsj\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj": {}
+    "C:\\Users\\cesarmsj\\Documents\\ambiente_dev\\dotnet\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cesarmsj\\Source\\Repos\\cesarmsj\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj": {
+    "C:\\Users\\cesarmsj\\Documents\\ambiente_dev\\dotnet\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cesarmsj\\Source\\Repos\\cesarmsj\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj",
+        "projectUniqueName": "C:\\Users\\cesarmsj\\Documents\\ambiente_dev\\dotnet\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj",
         "projectName": "Aliquota.Domain.Test",
-        "projectPath": "C:\\Users\\cesarmsj\\Source\\Repos\\cesarmsj\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj",
+        "projectPath": "C:\\Users\\cesarmsj\\Documents\\ambiente_dev\\dotnet\\kinvo-back-end-test\\Aliquota.Domain.Test\\Aliquota.Domain.Test.csproj",
         "packagesPath": "C:\\Users\\cesarmsj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cesarmsj\\Source\\Repos\\cesarmsj\\kinvo-back-end-test\\Aliquota.Domain.Test\\obj\\",
+        "outputPath": "C:\\Users\\cesarmsj\\Documents\\ambiente_dev\\dotnet\\kinvo-back-end-test\\Aliquota.Domain.Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cesarmsj\\AppData\\Roaming\\NuGet\\NuGet.Config",

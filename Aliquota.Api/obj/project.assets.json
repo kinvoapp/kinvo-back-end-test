@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cesarmsj\\Documents\\ambiente_dev\\dotnet\\kinvo-back-end-test\\Aliquota.Application\\Aliquota.Application.csproj",
-      "projectName": "Aliquota.Application",
-      "projectPath": "C:\\Users\\cesarmsj\\Documents\\ambiente_dev\\dotnet\\kinvo-back-end-test\\Aliquota.Application\\Aliquota.Application.csproj",
+      "projectUniqueName": "C:\\Users\\cesarmsj\\Documents\\ambiente_dev\\dotnet\\kinvo-back-end-test\\Aliquota.Api\\Aliquota.Api.csproj",
+      "projectName": "Aliquota.Api",
+      "projectPath": "C:\\Users\\cesarmsj\\Documents\\ambiente_dev\\dotnet\\kinvo-back-end-test\\Aliquota.Api\\Aliquota.Api.csproj",
       "packagesPath": "C:\\Users\\cesarmsj\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cesarmsj\\Documents\\ambiente_dev\\dotnet\\kinvo-back-end-test\\Aliquota.Application\\obj\\",
+      "outputPath": "C:\\Users\\cesarmsj\\Documents\\ambiente_dev\\dotnet\\kinvo-back-end-test\\Aliquota.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\cesarmsj\\AppData\\Roaming\\NuGet\\NuGet.Config",
