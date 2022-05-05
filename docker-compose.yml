@@ -1,0 +1,14 @@
+version: '3.0'
+
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_DATABASE: aliquota
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      volumes:
+        - dbdata:/var/lib/mysql
+        - ./_MySQL_Init_Script/docker-entrypoint-initdb.d
+      restart: always
