@@ -1,10 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+
 public partial class AliquotaContext : DbContext
 {
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if(!optionsBuilder.IsConfigured)
         {
-            optionsBuilder.UseMySql("Server=db;User Id=admin;Password=admin;Database=aliquota");
+            optionsBuilder.UseMySQL("server=db;database=aliquota;user=admin;password=admin");
         }
     }
 
