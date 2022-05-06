@@ -8,7 +8,10 @@ services:
       MYSQL_DATABASE: aliquota
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
-      volumes:
-        - dbdata:/var/lib/mysql
-        - ./_MySQL_Init_Script/docker-entrypoint-initdb.d
-      restart: always
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./_MySQL_Init_Script:/docker-entrypoint-initdb.d
+    restart: always
+
+volumes:
+  dbdata:
