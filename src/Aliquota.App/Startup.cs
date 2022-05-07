@@ -1,3 +1,4 @@
+using Aliquota.App.Configurations;
 using Aliquota.App.Data;
 using Aliquota.Data.Context;
 using Aliquota.Data.Repository;
@@ -46,16 +47,10 @@ namespace Aliquota.App
 
             services.AddAutoMapper(typeof(Startup));
 
-            services.AddControllersWithViews();
+            //services.AddControllersWithViews();
+            services.AddMvcConfiguration();
 
-            services.AddScoped<AliquotaDbContext>();
-            services.AddScoped<IProdutoRepository, ProdutoRepository>();
-            services.AddScoped<IPosicaoRepository, PosicaoRepository>();
-            //services.AddSingleton<IValidationAttributeAdapterProvider, MoedaValidationAttributeAdapterProvider>();
-
-            services.AddScoped<INotificador, Notificador>();
-            services.AddScoped<IProdutoService, ProdutoService>();
-            services.AddScoped<IPosicaoService, PosicaoService>();
+            services.ResolveDependencies();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -79,6 +74,8 @@ namespace Aliquota.App
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseGlobalizationConfig();
 
             app.UseEndpoints(endpoints =>
             {

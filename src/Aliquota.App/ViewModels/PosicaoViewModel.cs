@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using Aliquota.App.Extensions;
 
 namespace Aliquota.App.ViewModels
 {
@@ -28,15 +29,18 @@ namespace Aliquota.App.ViewModels
         [DataType(DataType.Date)]
         public DateTime? DataResgate { get; set; }
 
+        [Moeda]
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [DisplayName("Valor Aportado")]
         [DataType(DataType.Currency)]
         public decimal ValorAportado { get; set; }
 
+        [Moeda]
         [DisplayName("Valor Resgatado")]
         [DataType(DataType.Currency)]
         public decimal? ValorResgatado { get; set; }
 
+        [Moeda]
         [DisplayName("Valor Tributado")]
         [DataType(DataType.Currency)]
         public decimal? ValorTributado { get; set; }

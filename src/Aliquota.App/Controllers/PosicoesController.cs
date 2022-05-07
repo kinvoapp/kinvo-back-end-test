@@ -74,6 +74,32 @@ namespace Aliquota.App.Controllers
             return RedirectToAction("Index");
         }
 
+        // GET: Posicoes/Create
+        public async Task<IActionResult> Depositar()
+        {
+            var posicaoViewModel = await PopularProdutos(new PosicaoViewModel());
+
+            return View(posicaoViewModel);
+        }
+
+        // POST: Posicoes/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Depositar(PosicaoViewModel posicaoViewModel)
+        {
+            posicaoViewModel = await PopularProdutos(posicaoViewModel);
+
+            if (!ModelState.IsValid) return View(posicaoViewModel);
+
+            await _posicaoService.Adicionar(_mapper.Map<Posicao>(posicaoViewModel));
+
+            if (!OperacaoValida()) return View(posicaoViewModel);
+
+            return RedirectToAction("Index");
+        }
+
         // GET: Posicoes/Edit/5
         public async Task<IActionResult> Edit(Guid id)
         {
@@ -102,6 +128,42 @@ namespace Aliquota.App.Controllers
             posicaoAtualizacao.ValorResgatado = posicaoViewModel.ValorResgatado;
             posicaoAtualizacao.ValorTributado = posicaoViewModel.ValorTributado;
             posicaoAtualizacao.DataAporte = posicaoViewModel.DataAporte;
+            posicaoAtualizacao.DataResgate = posicaoViewModel.DataResgate;
+            posicaoAtualizacao.Ativo = posicaoViewModel.Ativo;
+
+            await _posicaoService.Atualizar(_mapper.Map<Posicao>(posicaoAtualizacao));
+
+            if (!OperacaoValida()) return View(posicaoViewModel);
+
+            return RedirectToAction("Index");
+        }
+
+        // GET: Posicoes/Edit/5
+        public async Task<IActionResult> Resgatar(Guid id)
+        {
+            var posicaoViewModel = await ObterPosicao(id);
+
+            if (posicaoViewModel == null) return NotFound();
+
+            return View(posicaoViewModel);
+        }
+
+        // POST: Posicoes/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Resgatar(Guid id, PosicaoViewModel posicaoViewModel)
+        {
+            if (id != posicaoViewModel.Id) return NotFound();
+
+            var posicaoAtualizacao = await ObterPosicao(id);
+            posicaoViewModel.Produtos = posicaoAtualizacao.Produtos;
+
+            if (!ModelState.IsValid) return View(posicaoViewModel);
+
+            posicaoAtualizacao.ValorResgatado = posicaoViewModel.ValorResgatado;
+            //posicaoAtualizacao.ValorTributado = posicaoViewModel.ValorTributado;
             posicaoAtualizacao.DataResgate = posicaoViewModel.DataResgate;
             posicaoAtualizacao.Ativo = posicaoViewModel.Ativo;
 
@@ -142,7 +204,7 @@ namespace Aliquota.App.Controllers
 
         private async Task<PosicaoViewModel> ObterPosicao(Guid id)
         {
-            var posicao = _mapper.Map<PosicaoViewModel>(await _posicaoRepository.ObterPorId(id));
+            var posicao = _mapper.Map<PosicaoViewModel>(await _posicaoRepository.ObterProdutoPosicao(id));
             return posicao;
         }
 

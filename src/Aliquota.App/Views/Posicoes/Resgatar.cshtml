@@ -1,0 +1,66 @@
+﻿@model Aliquota.App.ViewModels.PosicaoViewModel
+
+@{
+    ViewData["Title"] = "Resgatar";
+}
+
+<h1>Resgatar</h1>
+
+<h4>PosicaoViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="ProdutoId" class="control-label"></label><br />
+                <label asp-for="ProdutoId" class="control-label"></label>
+                <select asp-for="ProdutoId" readonly class="form-control" asp-items="@(new SelectList(Model.Produtos, "Id", "Nome", Model.ProdutoId))">
+                    <option></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataAporte" class="control-label"></label>
+                <input asp-for="DataAporte" readonly class="form-control" />
+                <span asp-validation-for="DataAporte" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorAportado" class="control-label"></label>
+                <input asp-for="ValorAportado" readonly class="form-control" />
+                <span asp-validation-for="ValorAportado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataResgate" class="control-label"></label>
+                <input asp-for="DataResgate" class="form-control" />
+                <span asp-validation-for="DataResgate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorResgatado" class="control-label"></label>
+                <input asp-for="ValorResgatado" class="form-control" />
+                <span asp-validation-for="ValorResgatado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorTributado" class="control-label"></label>
+                <input asp-for="ValorTributado" class="form-control" />
+                <span asp-validation-for="ValorTributado" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Ativo" /> @Html.DisplayNameFor(model => model.Ativo)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

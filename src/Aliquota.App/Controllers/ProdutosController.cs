@@ -104,7 +104,7 @@ namespace Aliquota.App.Controllers
         // GET: Produtos/Delete/5
         public async Task<IActionResult> Delete(Guid id)
         {
-            var produtoViewModel = await ObterProduto(id);
+            var produtoViewModel = await ObterPosicoesProduto(id);
 
             if (produtoViewModel == null)  return NotFound();
 
@@ -116,7 +116,7 @@ namespace Aliquota.App.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var produto = await ObterProduto(id);
+            var produto = await ObterPosicoesProduto(id);
 
             if (produto == null) return NotFound();
       
