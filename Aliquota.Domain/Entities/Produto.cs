@@ -1,7 +1,21 @@
 using System;
-class Produto {
+using System.ComponentModel.DataAnnotations;
 
-    int id;
+namespace Aliquota.Domain.Entities
+{
+    public class Produto {
 
-    string name;
+        [Key]
+        public int Id { get; set; }
+
+        private String _nome;
+        public String Nome { 
+            get { return _nome; }
+            set {
+                if(value.Length <3)
+                {
+                    throw new FormatException("Nome do produto deve possuir pelo menos 3 caracteres");
+                }
+            }}
+    }
 }

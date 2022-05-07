@@ -1,15 +1,31 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
-class Movimentacao {
+namespace Aliquota.Domain.Entities
+{
+    public enum Tipo 
+    {
+        Aplicacao,
+        Resgate
+    }
 
-    int id;
+    public class Movimentacao 
+    {
 
-    DateTime dataMovimentacao;
-    double valor;
+        [Key]
+        public int Id { get; set; }
 
-    // Aplicacao ou Resgate
-    Enum Tipo;
+        public DateTime DataMovimentacao;
+        public double Valor;
+
+        // Aplicacao ou Resgate
+        public Tipo Tipo;
+
+        public Guid Identificador { get; set; }
 
 
 
+
+
+    }
 }

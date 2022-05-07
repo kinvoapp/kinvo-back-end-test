@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Aliquota.Domain\Aliquota.Domain.csproj" />
+    <ProjectReference Include="..\Aliquota.Infrasctructure\Aliquota.Infrasctructure.csproj" />
   </ItemGroup>
 
 </Project>
