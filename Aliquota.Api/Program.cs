@@ -30,18 +30,18 @@ namespace Aliquota.Api
         {
             string menu = "Escolha uma opção:\n\n" +
                           " 1 - Realizar aplicação\n" +
-                          " 2 - Realizar resgate\n" +;
+                          " 2 - Realizar resgate\n" +
                           " 3 - Ver histórico de movimentaçõesz\n" +
                           " 4 - Sair do Programa \n"; 
             return menu;
         }
 
-        statis string MostrarCabecalho()
+        static string MostrarCabecalho()
         {
             return "[ ALIQUOTA ]\n";
         }
 
-        static void ProcessarOpcaoMenu(sting opcao)
+        static void ProcessarOpcaoMenu(string opcao)
         {
             switch(opcao)
             {
@@ -91,11 +91,11 @@ namespace Aliquota.Api
             Console.Clear();
             Console.WriteLine("\n[APLICACAO]");
             Console.Write("Valor: ");
-            movimentacaoDTO.Valor = Console.ReadLine();
+            movimentacaoDTO.Valor = double.Parse(Console.ReadLine());
             movimentacaoDTO.DataMovimentacao = DateTime.Now;
-            movimentacaoDTO.Tipo = "Aplicacao";
+            movimentacaoDTO.Tipo = Tipo.Aquisicao;
 
-            if(movimentacaoComando.Adicionar(movimentacaoDTO))
+            if(comando.Adicionar(movimentacaoDTO))
             {
                 Console.WriteLine("Aplicação Realizada com sucesso!");
                 Console.ReadKey();
@@ -111,11 +111,11 @@ namespace Aliquota.Api
             Console.Clear();
             Console.WriteLine("\n[Resgate]");
             Console.Write("Valor: ");
-            movimentacaoDTO.Valor = Console.ReadLine();
+            movimentacaoDTO.Valor = double.Parse(Console.ReadLine());
             movimentacaoDTO.DataMovimentacao = DateTime.Now;
-            movimentacaoDTO.Tipo = "Resgate";
+            movimentacaoDTO.Tipo = Tipo.Resgate;
 
-            if(movimentacaoComando.Adicionar(movimentacaoDTO))
+            if(comando.Adicionar(movimentacaoDTO))
             {
                 Console.WriteLine("Aplicação Realizada com sucesso!");
                 Console.ReadKey();

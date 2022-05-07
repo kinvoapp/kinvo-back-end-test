@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = Aliquota.Infrasctructure
-build_property.ProjectDir = c:\Users\cesarmsj\Documents\ambiente_dev\dotnet\kinvo-back-end-test\Aliquota.Infrasctructure\
+build_property.ProjectDir = C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Infrasctructure\

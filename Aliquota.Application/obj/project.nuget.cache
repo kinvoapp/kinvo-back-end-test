@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "TeyeLMcxPN0c2RKjfo/FjXFH3wBcrBLxpWWTWiVbHWFQkGEhEAUdXA9F0HyyrL7bcbcaQzXN4jq/y/yzWeiL5w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Application\\Aliquota.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cesarmsj\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\cesarmsj\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

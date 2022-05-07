@@ -1,0 +1,12 @@
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Domain\bin\Debug\net5.0\Aliquota.Domain.deps.json
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Domain\bin\Debug\net5.0\Aliquota.Domain.dll
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Domain\bin\Debug\net5.0\ref\Aliquota.Domain.dll
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Domain\bin\Debug\net5.0\Aliquota.Domain.pdb
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Domain\obj\Debug\net5.0\Aliquota.Domain.csproj.AssemblyReference.cache
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Domain\obj\Debug\net5.0\Aliquota.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Domain\obj\Debug\net5.0\Aliquota.Domain.AssemblyInfoInputs.cache
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Domain\obj\Debug\net5.0\Aliquota.Domain.AssemblyInfo.cs
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Domain\obj\Debug\net5.0\Aliquota.Domain.csproj.CoreCompileInputs.cache
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Domain\obj\Debug\net5.0\Aliquota.Domain.dll
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Domain\obj\Debug\net5.0\ref\Aliquota.Domain.dll
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Domain\obj\Debug\net5.0\Aliquota.Domain.pdb

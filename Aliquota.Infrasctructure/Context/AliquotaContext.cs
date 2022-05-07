@@ -1,5 +1,6 @@
 using Aliquota.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using MySql.EntityFrameworkCore;
 
 namespace Aliquota.Infrasctructure.Context
 {
@@ -12,7 +13,7 @@ namespace Aliquota.Infrasctructure.Context
         {
             if(!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySQL("server=db;database=aliquota;user=admin;password=admin");
+                optionsBuilder.UseMySQL("server=localhost;port=3307;userid=admin;password=admin;database=aliquota;");
             }
         }
 

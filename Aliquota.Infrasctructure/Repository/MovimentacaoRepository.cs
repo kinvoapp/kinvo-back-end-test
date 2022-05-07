@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Aliquota.Infrasctructure.Repository
 {
-    public class MovimentacaoRepositorio : IMovimentacaoRepository
+    public class MovimentacaoRepositorio : IMovimentacaoRepositorio
     {
         private readonly AliquotaContext _context;
 

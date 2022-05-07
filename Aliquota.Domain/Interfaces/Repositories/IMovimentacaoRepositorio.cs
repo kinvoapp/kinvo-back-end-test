@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Aliquota.Domain.Interfaces.Repositories
 {
-    public interface IMovimentacaoRepository:IDisposable
+    public interface IMovimentacaoRepositorio:IDisposable
     {
         public List<Movimentacao> ListarTodas();
         public Movimentacao ObterPorId(int id);

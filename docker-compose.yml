@@ -8,6 +8,11 @@ services:
       MYSQL_DATABASE: aliquota
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
+      MYSQL_TCP_PORT: 3307
+    ports:
+    - 3307:3307
+    expose:
+      - 3307
     volumes:
       - dbdata:/var/lib/mysql
       - ./_MySQL_Init_Script:/docker-entrypoint-initdb.d
