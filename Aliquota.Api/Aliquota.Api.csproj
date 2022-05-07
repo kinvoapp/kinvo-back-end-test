@@ -1,5 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\Aliquota.Application\Aliquota.Application.csproj" />
+    <ProjectReference Include="..\Aliquota.Infrasctructure\Aliquota.Infrasctructure.csproj" />
+    <ProjectReference Include="..\Aliquota.Domain\Aliquota.Domain.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>

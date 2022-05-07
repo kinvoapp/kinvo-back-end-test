@@ -1,4 +1,6 @@
 ﻿using System;
+using Aliquota.Application.DTO;
+using Aliquota.Api.Commands;
 
 namespace Aliquota.Api
 {
@@ -6,7 +8,14 @@ namespace Aliquota.Api
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string opcao;
+            do{
+                Console.Clear();
+                Console.WriteLine(MostrarCabecalho());
+                Console.WriteLine(MostrarMenu());
+                opcao = LerOpcaoMenu();
+                ProcessarOpcaoMenu(opcao);
+            } while (opcao != "4");
         }
 
         static string LerOpcaoMenu()
