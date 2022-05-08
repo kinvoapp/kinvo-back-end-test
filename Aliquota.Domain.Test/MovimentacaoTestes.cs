@@ -51,7 +51,7 @@ namespace Aliquota.Domain.Test
             //Arrange        
             //Act
             //Assert
-            Assert.Throws<FormatException>(
+            Assert.Throws<ArgumentException>(
                 () => new Movimentacao(
                 DateTime.Now,
                 -200,

@@ -2,7 +2,6 @@ using Aliquota.Domain.Entities;
 using Aliquota.Domain.Interfaces.Repositories;
 using Aliquota.Infrasctructure.Repository;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 using System.Collections.Generic;
 using Xunit;
 
@@ -40,18 +39,6 @@ namespace Aliquota.Infrasctructure.Test
             //Assert
             Assert.NotNull(movimentacao);
         }
-
-        [Fact]
-        public void TestaRemoverMovimentacao()
-        {
-            //Arrange
-            //Act
-            var atualizado = _repositorio.Excluir(3);
-
-            //Assert
-            Assert.True(atualizado);
-        }
-
         
     }
 }

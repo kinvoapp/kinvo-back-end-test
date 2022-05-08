@@ -83,7 +83,7 @@ namespace Aliquota.Infrasctructure.Repository
 
         public Movimentacao ObterPorId(int id)
         {
-            throw new NotImplementedException();
+            return _context.Movimentacoes.FirstOrDefault(m => m.Id == id);
         }
 
         public Double ObterSaldo()
