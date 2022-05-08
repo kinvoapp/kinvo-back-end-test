@@ -3,7 +3,7 @@ using System;
 namespace Aliquota.Application.DTO
 {
     public enum Tipo {
-        Aquisicao,
+        Aplicacao,
         Resgate
     }
 

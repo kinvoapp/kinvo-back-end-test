@@ -8,9 +8,10 @@ namespace Aliquota.Domain.Interfaces.Repositories
     {
         public List<Movimentacao> ListarTodas();
         public Movimentacao ObterPorId(int id);
-        public Movimentacao ObterPorGuid(Guid guid);
         public bool Adicionar(Movimentacao movimentacao);
         public bool Atualizar(int id, Movimentacao movimentacao);
         public bool Excluir(int id);
+
+        public double ObterSaldo();
     }
 }

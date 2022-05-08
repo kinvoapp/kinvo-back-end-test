@@ -10,9 +10,7 @@ namespace Aliquota.Application.Interfaces
         public List<MovimentacaoDTO> ListarTodas();
         public MovimentacaoDTO ObterPorId(int id);
 
-        public MovimentacaoDTO ObterPorGuid(Guid guid);
-
-        public bool Adicionar(MovimentacaoDTO movimentacao);
+        public String Adicionar(MovimentacaoDTO movimentacao);
 
         public bool Atualizar(int id, MovimentacaoDTO movimentacao);
 

@@ -15,7 +15,7 @@ namespace Aliquota.Api
                 Console.WriteLine(MostrarMenu());
                 opcao = LerOpcaoMenu();
                 ProcessarOpcaoMenu(opcao);
-            } while (opcao != "4");
+            } while (opcao != "5");
         }
 
         static string LerOpcaoMenu()
@@ -31,8 +31,9 @@ namespace Aliquota.Api
             string menu = "Escolha uma opção:\n\n" +
                           " 1 - Realizar aplicação\n" +
                           " 2 - Realizar resgate\n" +
-                          " 3 - Ver histórico de movimentaçõesz\n" +
-                          " 4 - Sair do Programa \n"; 
+                          " 3 - Ver histórico de movimentações\n" +
+                          " 4 - Ver saldo capitalizado\n" +
+                          " 5 - Sair do Programa \n"; 
             return menu;
         }
 
@@ -55,6 +56,9 @@ namespace Aliquota.Api
                     VerHistorico();
                     break;
                 case "4":
+                    ObterSaldo();
+                    break;
+                case "5":
                     Console.WriteLine("Até mais!");
                     break;
                 default:
@@ -70,9 +74,12 @@ namespace Aliquota.Api
             
             if (movimentacoes!=null)
             {
+                Console.WriteLine(String.Format("| {0,17} | {1,6} | {2,8} |", "Data Movimentação", "Valor", "Tipo"));
+
                 foreach (var movimentacao in movimentacoes )
                 {
-                    Console.WriteLine("\n"+movimentacao.ToString());
+                    Console.WriteLine(String.Format("| {0,17} | {1,6} | {2,8} |", movimentacao.DataMovimentacao.ToString(), movimentacao.Valor.ToString(), movimentacao.Tipo.ToString()));
+                   
                 }
             }
             else
@@ -80,6 +87,15 @@ namespace Aliquota.Api
                 Console.WriteLine("A consulta não retornou movimentações.");
             }
 
+            Console.ReadKey();
+        }
+
+         private static void ObterSaldo()
+        {
+            var comando = new MovimentacaoComando();
+            var saldo = comando.ObterSaldo();
+            
+            Console.WriteLine("Saldo total: "+ String.Format("{0:0.00}", saldo));
             Console.ReadKey();
         }
 
@@ -92,14 +108,29 @@ namespace Aliquota.Api
             Console.WriteLine("\n[APLICACAO]");
             Console.Write("Valor: ");
             movimentacaoDTO.Valor = double.Parse(Console.ReadLine());
-            movimentacaoDTO.DataMovimentacao = DateTime.Now;
-            movimentacaoDTO.Tipo = Tipo.Aquisicao;
 
-            if(comando.Adicionar(movimentacaoDTO))
-            {
-                Console.WriteLine("Aplicação Realizada com sucesso!");
-                Console.ReadKey();
-            }
+           DateTime? dataMovimentacao = null;
+            
+            do {
+                Console.Write("Informe a data no formato DD/MM/YYYY: ");
+
+                 try{
+                     dataMovimentacao = DateTime.Parse(Console.ReadLine());
+                }
+                catch
+                {
+                     Console.WriteLine("Data inválida");
+                }
+            } while (dataMovimentacao == null);
+
+            movimentacaoDTO.DataMovimentacao = dataMovimentacao.GetValueOrDefault();
+            movimentacaoDTO.Tipo = Tipo.Aplicacao;
+
+            var retorno = comando.Adicionar(movimentacaoDTO);
+
+            Console.WriteLine(retorno);
+            Console.ReadKey();
+            
 
         }
 
@@ -112,15 +143,32 @@ namespace Aliquota.Api
             Console.WriteLine("\n[Resgate]");
             Console.Write("Valor: ");
             movimentacaoDTO.Valor = double.Parse(Console.ReadLine());
-            movimentacaoDTO.DataMovimentacao = DateTime.Now;
+
+            DateTime? dataMovimentacao = null;
+            
+            do {
+                Console.Write("Informe a data no formato DD/MM/YYYY: ");
+
+                 try{
+                     dataMovimentacao = DateTime.Parse(Console.ReadLine());
+                }
+                catch
+                {
+                     Console.WriteLine("Data inválida");
+                }
+            } while (dataMovimentacao == null);
+            
+            movimentacaoDTO.DataMovimentacao = dataMovimentacao.GetValueOrDefault();
             movimentacaoDTO.Tipo = Tipo.Resgate;
 
-            if(comando.Adicionar(movimentacaoDTO))
-            {
-                Console.WriteLine("Aplicação Realizada com sucesso!");
-                Console.ReadKey();
-            }
+            var retorno = comando.Adicionar(movimentacaoDTO);
 
+            Console.WriteLine(retorno);
+            Console.ReadKey();
+            
+        
         }
+
     }
 }
+

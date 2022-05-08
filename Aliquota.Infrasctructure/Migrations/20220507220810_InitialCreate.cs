@@ -14,7 +14,6 @@ namespace Aliquota.Infrasctructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Identificador = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
                     DataMovimentacao = table.Column<DateTime>(type: "datetime", nullable: false),
                     Tipo = table.Column<string>(type: "text", nullable: false),
                     Valor = table.Column<double>(type: "double", nullable: false)

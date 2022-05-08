@@ -44,14 +44,14 @@ namespace Aliquota.Domain.Services
             return _repositorio.ListarTodas();
         }
 
-        public Movimentacao ObterPorGuid(Guid guid)
-        {
-            return _repositorio.ObterPorGuid(guid);
-        }
-
         public Movimentacao ObterPorId(int id)
         {
             return _repositorio.ObterPorId(id);
+        }
+
+        public double ObterSaldo()
+        {
+            return _repositorio.ObterSaldo();
         }
     }
 }

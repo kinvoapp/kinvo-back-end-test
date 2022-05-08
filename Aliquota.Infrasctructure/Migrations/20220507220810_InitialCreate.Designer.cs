@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Aliquota.Infrasctructure.Migrations
 {
     [DbContext(typeof(AliquotaContext))]
-    [Migration("20220507164335_InitialCreate")]
+    [Migration("20220507220810_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,10 +27,6 @@ namespace Aliquota.Infrasctructure.Migrations
 
                     b.Property<DateTime>("DataMovimentacao")
                         .HasColumnType("datetime");
-
-                    b.Property<byte[]>("Identificador")
-                        .IsRequired()
-                        .HasColumnType("varbinary(16)");
 
                     b.Property<string>("Tipo")
                         .IsRequired()

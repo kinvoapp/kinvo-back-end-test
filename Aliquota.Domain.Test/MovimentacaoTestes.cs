@@ -13,12 +13,13 @@ namespace Aliquota.Domain.Test
             Tipo tipo = Tipo.Aplicacao;
             DateTime dataMovimentacao = new DateTime(2022,05,06,22,11,00);
 
-            var movimentacao = new Movimentacao()
-            {
-                Valor = valor,
-                DataMovimentacao = dataMovimentacao,
-                Tipo = tipo
-            };
+            var movimentacao = new Movimentacao(
+                dataMovimentacao,
+                valor,
+                tipo
+
+            );
+            
 
             Assert.Equal(valor, movimentacao.Valor);
             Assert.Equal(dataMovimentacao, movimentacao.DataMovimentacao);
@@ -32,12 +33,12 @@ namespace Aliquota.Domain.Test
             Tipo tipo = Tipo.Resgate;
             DateTime dataMovimentacao = new DateTime(2023,05,07,22,11,00);
 
-            var movimentacao = new Movimentacao()
-            {
-                Valor = valor,
-                DataMovimentacao = dataMovimentacao,
-                Tipo = tipo
-            };
+            var movimentacao = new Movimentacao(
+                dataMovimentacao,
+                valor,
+                tipo
+
+            );
 
             Assert.Equal(valor, movimentacao.Valor);
             Assert.Equal(dataMovimentacao, movimentacao.DataMovimentacao);
@@ -48,13 +49,15 @@ namespace Aliquota.Domain.Test
         public void TestaExcecaoComResgateInvalido()
         {
             //Arrange        
-            int numeroInvalido = 1000;
             //Act
             //Assert
             Assert.Throws<FormatException>(
-                () => new Movimentacao().Valor = numeroInvalido
-
-             );
+                () => new Movimentacao(
+                DateTime.Now,
+                -200,
+                Tipo.Resgate
+             )
+            );
         }
     }
 }

@@ -133,7 +133,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cesarmsj\\.nuget\\packages\\": {}
+    "C:\\Users\\cesarmsj\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
@@ -144,6 +145,9 @@
       "packagesPath": "C:\\Users\\cesarmsj\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Application\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
         "C:\\Users\\cesarmsj\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

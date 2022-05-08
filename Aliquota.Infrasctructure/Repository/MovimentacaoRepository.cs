@@ -80,23 +80,47 @@ namespace Aliquota.Infrasctructure.Repository
             }
         }
 
-        public Movimentacao ObterPorGuid(Guid guid)
-        {
-            try{
-                var movimentacao = _context.Movimentacoes.FirstOrDefault(m => m.Identificador == guid);
-                if( movimentacao == null ){
-                    return null;
-                }
-                return movimentacao;
-            }
-            catch {
-                throw new Exception($"Erro ao obter movimentacao com Guid = {guid}.");
-            }
-        }
-
         public Movimentacao ObterPorId(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public Double ObterSaldo()
+        {
+            double somaAplicacao = _context.Movimentacoes.Where(t=>t.Tipo == Tipo.Aplicacao).Sum(v=>v.Valor);
+           
+
+            List<Movimentacao> resgates = _context.Movimentacoes.Where(t=>t.Tipo == Tipo.Resgate).ToList();
+
+            double somaResgate = 0;
+            double resgateDescontado = 0;
+
+            foreach(var resgate in resgates)
+            {
+                DateTime primeiraAplicacao = _context.Movimentacoes.Where(t=>t.Tipo == Tipo.Aplicacao).Where(t=>t.DataMovimentacao < resgate.DataMovimentacao).Min(v=>v.DataMovimentacao);
+                DateTime ultimaAplicacao = _context.Movimentacoes.Where(t=>t.Tipo == Tipo.Aplicacao).Where(t=>t.DataMovimentacao < resgate.DataMovimentacao).Max(v=>v.DataMovimentacao);
+
+                int periodoDias = (ultimaAplicacao - primeiraAplicacao).Days;
+
+                if(periodoDias <= 365){
+
+                    resgateDescontado = resgate.Valor - (resgate.Valor * 0.225);
+                } 
+                else if (periodoDias > 365 && periodoDias <= 720) {
+
+                    resgateDescontado = resgate.Valor - (resgate.Valor * 0.185);
+                }
+                else {
+
+                    resgateDescontado = resgate.Valor - (resgate.Valor * 0.15);
+                }
+                
+                somaResgate += resgateDescontado;
+            }
+
+            double saldo = somaAplicacao - somaResgate;
+
+            return saldo;
         }
     }
 }

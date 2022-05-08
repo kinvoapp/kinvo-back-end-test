@@ -12,6 +12,18 @@ namespace Aliquota.Domain.Entities
     public class Movimentacao 
     {
 
+        public Movimentacao(DateTime dataMovimentacao, double valor, Tipo tipo)
+        {
+            if( valor <= 0)
+            {
+                throw new ArgumentException("A aplicação/resgate não pode ser igual ou menor que zero.");
+            }
+
+            this.DataMovimentacao = dataMovimentacao;
+            this.Valor = valor;
+            this.Tipo = tipo;
+        }
+
         [Key]
         public int Id { get; set; }
 
@@ -20,12 +32,6 @@ namespace Aliquota.Domain.Entities
 
         // Aplicacao ou Resgate
         public Tipo Tipo;
-
-        public Guid Identificador { get; set; }
-
-
-
-
 
     }
 }

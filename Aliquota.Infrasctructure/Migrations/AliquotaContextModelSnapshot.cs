@@ -26,10 +26,6 @@ namespace Aliquota.Infrasctructure.Migrations
                     b.Property<DateTime>("DataMovimentacao")
                         .HasColumnType("datetime");
 
-                    b.Property<byte[]>("Identificador")
-                        .IsRequired()
-                        .HasColumnType("varbinary(16)");
-
                     b.Property<string>("Tipo")
                         .IsRequired()
                         .HasColumnType("text");

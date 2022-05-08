@@ -26,7 +26,7 @@ namespace Aliquota.Api.Commands
             movimentacaoServicoApp = new MovimentacaoServicoApp(_servico);
         }
 
-        public bool Adicionar(MovimentacaoDTO movimentacao)
+        public String Adicionar(MovimentacaoDTO movimentacao)
         {
             return movimentacaoServicoApp.Adicionar(movimentacao);
         }
@@ -49,6 +49,11 @@ namespace Aliquota.Api.Commands
         public List<MovimentacaoDTO> ListarTodas()
         {
             return movimentacaoServicoApp.ListarTodas();
+        }
+
+        public double ObterSaldo()
+        {
+            return movimentacaoServicoApp.ObterSaldo();
         }
     }
 }
