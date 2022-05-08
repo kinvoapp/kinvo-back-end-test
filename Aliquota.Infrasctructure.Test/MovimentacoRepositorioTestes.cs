@@ -27,6 +27,7 @@ namespace Aliquota.Infrasctructure.Test
             List<Movimentacao> lista = _repositorio.ListarTodas();
 
             Assert.NotNull(lista);
+            //Assert.Equal(5, lista.Count);
         }
 
         [Fact]
@@ -38,6 +39,17 @@ namespace Aliquota.Infrasctructure.Test
 
             //Assert
             Assert.NotNull(movimentacao);
+        }
+
+        [Fact]
+        public void TestaRemoverMovimentacao()
+        {
+            //Arrange
+            //Act
+            var atualizado = _repositorio.Excluir(3);
+
+            //Assert
+            Assert.True(atualizado);
         }
 
         

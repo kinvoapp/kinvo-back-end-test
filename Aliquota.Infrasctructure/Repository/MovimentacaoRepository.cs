@@ -11,6 +11,7 @@ namespace Aliquota.Infrasctructure.Repository
     public class MovimentacaoRepositorio : IMovimentacaoRepositorio
     {
         private readonly AliquotaContext _context;
+        public const double rentababilidadeAnual = 0.12;
 
         public MovimentacaoRepositorio()
         {
@@ -93,26 +94,32 @@ namespace Aliquota.Infrasctructure.Repository
             List<Movimentacao> resgates = _context.Movimentacoes.Where(t=>t.Tipo == Tipo.Resgate).ToList();
 
             double somaResgate = 0;
+            double somaAplicacoes = 0;
             double resgateDescontado = 0;
+            double lucro = 0;
 
             foreach(var resgate in resgates)
             {
-                DateTime primeiraAplicacao = _context.Movimentacoes.Where(t=>t.Tipo == Tipo.Aplicacao).Where(t=>t.DataMovimentacao < resgate.DataMovimentacao).Min(v=>v.DataMovimentacao);
-                DateTime ultimaAplicacao = _context.Movimentacoes.Where(t=>t.Tipo == Tipo.Aplicacao).Where(t=>t.DataMovimentacao < resgate.DataMovimentacao).Max(v=>v.DataMovimentacao);
+                DateTime primeiraAplicacao = _context.Movimentacoes.Where(t=>t.Tipo == Tipo.Aplicacao && t.DataMovimentacao < resgate.DataMovimentacao).Min(v=>v.DataMovimentacao);
+                DateTime ultimaAplicacao = _context.Movimentacoes.Where(t=>t.Tipo == Tipo.Aplicacao && t.DataMovimentacao < resgate.DataMovimentacao).Max(v=>v.DataMovimentacao);
+                somaAplicacoes =  _context.Movimentacoes.Where(t=>t.Tipo == Tipo.Aplicacao && t.DataMovimentacao >= primeiraAplicacao && t.DataMovimentacao <= ultimaAplicacao ).Sum(v=>v.Valor);
 
-                int periodoDias = (ultimaAplicacao - primeiraAplicacao).Days;
+                int totalDias = (ultimaAplicacao - primeiraAplicacao).Days;
 
-                if(periodoDias <= 365){
+                if(totalDias <= 365){
 
-                    resgateDescontado = resgate.Valor - (resgate.Valor * 0.225);
+                    lucro = somaAplicacoes * rentababilidadeAnual;
+                    resgateDescontado = resgate.Valor - (lucro * 0.225);
                 } 
-                else if (periodoDias > 365 && periodoDias <= 720) {
+                else if (totalDias > 365 && totalDias <= 720) {
 
-                    resgateDescontado = resgate.Valor - (resgate.Valor * 0.185);
+                    lucro = somaAplicacoes * rentababilidadeAnual * 2;
+                    resgateDescontado = resgate.Valor - (lucro * 0.185);
                 }
                 else {
 
-                    resgateDescontado = resgate.Valor - (resgate.Valor * 0.15);
+                    lucro = somaAplicacoes * rentababilidadeAnual * Math.Truncate((double) totalDias / 365) ;
+                    resgateDescontado = resgate.Valor - (lucro * 0.15);
                 }
                 
                 somaResgate += resgateDescontado;
