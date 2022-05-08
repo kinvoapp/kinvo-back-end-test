@@ -97,7 +97,7 @@ namespace Aliquota.App.Controllers
 
             if (!OperacaoValida()) return View(posicaoViewModel);
 
-            return RedirectToAction("Index");
+            return LocalRedirect("~/Produtos");
         }
 
         // GET: Posicoes/Edit/5
@@ -171,7 +171,7 @@ namespace Aliquota.App.Controllers
 
             if (!OperacaoValida()) return View(posicaoViewModel);
 
-            return RedirectToAction("Index");
+            return LocalRedirect("~/Produtos");
         }
 
         // GET: Posicoes/Delete/5

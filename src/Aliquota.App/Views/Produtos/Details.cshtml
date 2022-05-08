@@ -7,7 +7,6 @@
 <h1>Details</h1>
 
 <div>
-    <h4>ProdutoViewModel</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -30,13 +29,13 @@
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="list-group-item-action">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+    <a asp-action="Index" class="btn btn-info">Back to List</a>
+    <a asp-controller="Posicoes" asp-action="Depositar" class="btn btn-warning">Cadastrar Depósito</a>
 </div>
-
 <hr />
-<h4>Produtos</h4>
+<h4>Posições:</h4>
 <div>
     <partial name="../Posicoes/_ListaPosicoes" model="@Model.Posicoes" />
 </div>

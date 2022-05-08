@@ -32,7 +32,7 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ProdutoId)
+                    @Html.DisplayFor(modelItem => item.Produto.Nome)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.DataAporte)
@@ -53,7 +53,14 @@
                     @Html.DisplayFor(modelItem => item.Ativo)
                 </td>
                 <td>
-                    <a asp-controller="Posicoes" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    @if (item.DataResgate is null)
+                    {
+                        <a asp-controller="Posicoes" asp-action="Resgatar" asp-route-id="@item.Id" class="btn btn-info">Cadastrar Resgate</a>
+                    }
+                    else
+                    {
+                        <button disabled class="disabled btn btn-info">Cadastrar Resgatar</button>
+                    }
                 </td>
             </tr>
         }
