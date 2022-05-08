@@ -88,46 +88,56 @@ namespace Aliquota.Infrasctructure.Repository
 
         public Double ObterSaldo()
         {
-            double somaAplicacao = _context.Movimentacoes.Where(t=>t.Tipo == Tipo.Aplicacao).Sum(v=>v.Valor);
-           
+            
+            double saldoAplicadoComJuros = 0;
 
+            List<Movimentacao> aplicacoes = _context.Movimentacoes.Where(t=>t.Tipo == Tipo.Aplicacao).ToList();
             List<Movimentacao> resgates = _context.Movimentacoes.Where(t=>t.Tipo == Tipo.Resgate).ToList();
 
-            double somaResgate = 0;
-            double somaAplicacoes = 0;
-            double resgateDescontado = 0;
-            double lucro = 0;
+            double TotalAplicado = _context.Movimentacoes.Where(t=>t.Tipo == Tipo.Aplicacao).Sum(t=>t.Valor);
+            DateTime dataPrimeiraAplicacao = _context.Movimentacoes.Where(t=>t.Tipo == Tipo.Aplicacao).Min(t=>t.DataMovimentacao);
 
+            foreach(var aplicacao in aplicacoes)
+            {
+                var diasAplicacao = (DateTime.Now - aplicacao.DataMovimentacao).Days; 
+                var anosAplicacao = Math.Truncate( (double) (diasAplicacao / 365) );
+
+                if(anosAplicacao > 1)
+                {
+
+                    saldoAplicadoComJuros = saldoAplicadoComJuros + aplicacao.Valor * Math.Pow( 1 + rentababilidadeAnual, anosAplicacao);
+                   
+                } else {
+                    saldoAplicadoComJuros = saldoAplicadoComJuros + aplicacao.Valor;
+                }
+            
+            }
+
+            // **** AQUI NAO ESTOU APLICANDO A REGRA PEPS - AINDA TENTANDO ACHAR UMA SOLUÇÃO PARA ISSO ****
+
+            double lucroTotal = saldoAplicadoComJuros - TotalAplicado;
+            double saldo = saldoAplicadoComJuros;
+            
             foreach(var resgate in resgates)
             {
-                DateTime primeiraAplicacao = _context.Movimentacoes.Where(t=>t.Tipo == Tipo.Aplicacao && t.DataMovimentacao < resgate.DataMovimentacao).Min(v=>v.DataMovimentacao);
-                DateTime ultimaAplicacao = _context.Movimentacoes.Where(t=>t.Tipo == Tipo.Aplicacao && t.DataMovimentacao < resgate.DataMovimentacao).Max(v=>v.DataMovimentacao);
-                somaAplicacoes =  _context.Movimentacoes.Where(t=>t.Tipo == Tipo.Aplicacao && t.DataMovimentacao >= primeiraAplicacao && t.DataMovimentacao <= ultimaAplicacao ).Sum(v=>v.Valor);
+                int diasAteResgate = (resgate.DataMovimentacao - dataPrimeiraAplicacao).Days;
 
-                int totalDias = (ultimaAplicacao - primeiraAplicacao).Days;
+                if(diasAteResgate <= 365){
+                    saldo = saldo - (resgate.Valor + (lucroTotal * 0.225));
+                }
+                else if (diasAteResgate > 365 && diasAteResgate <= 720) {
 
-                if(totalDias <= 365){
-
-                    lucro = somaAplicacoes * rentababilidadeAnual;
-                    resgateDescontado = resgate.Valor - (lucro * 0.225);
-                } 
-                else if (totalDias > 365 && totalDias <= 720) {
-
-                    lucro = somaAplicacoes * rentababilidadeAnual * 2;
-                    resgateDescontado = resgate.Valor - (lucro * 0.185);
+                    saldo = saldo - (resgate.Valor + (lucroTotal * 0.185));
+                   
                 }
                 else {
 
-                    lucro = somaAplicacoes * rentababilidadeAnual * Math.Truncate((double) totalDias / 365) ;
-                    resgateDescontado = resgate.Valor - (lucro * 0.15);
+                    saldo = saldo - (resgate.Valor + (lucroTotal * 0.15));
                 }
-                
-                somaResgate += resgateDescontado;
             }
 
-            double saldo = somaAplicacao - somaResgate;
-
             return saldo;
+           
         }
     }
 }
