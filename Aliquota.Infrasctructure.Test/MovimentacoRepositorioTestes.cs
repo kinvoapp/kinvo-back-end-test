@@ -28,5 +28,18 @@ namespace Aliquota.Infrasctructure.Test
 
             Assert.NotNull(lista);
         }
+
+        [Fact]
+        public void TestaObterMovimentacaoPorId()
+        {
+            //Arrange
+            //Act
+            var movimentacao = _repositorio.ObterPorId(1);
+
+            //Assert
+            Assert.NotNull(movimentacao);
+        }
+
+        
     }
 }
