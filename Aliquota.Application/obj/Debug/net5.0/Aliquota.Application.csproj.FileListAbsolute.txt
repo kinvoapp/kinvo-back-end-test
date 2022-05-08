@@ -1,0 +1,15 @@
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Application\bin\Debug\net5.0\Aliquota.Application.deps.json
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Application\bin\Debug\net5.0\Aliquota.Application.dll
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Application\bin\Debug\net5.0\ref\Aliquota.Application.dll
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Application\bin\Debug\net5.0\Aliquota.Application.pdb
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Application\bin\Debug\net5.0\Aliquota.Domain.dll
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Application\bin\Debug\net5.0\Aliquota.Domain.pdb
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Application\obj\Debug\net5.0\Aliquota.Application.csproj.AssemblyReference.cache
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Application\obj\Debug\net5.0\Aliquota.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Application\obj\Debug\net5.0\Aliquota.Application.AssemblyInfoInputs.cache
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Application\obj\Debug\net5.0\Aliquota.Application.AssemblyInfo.cs
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Application\obj\Debug\net5.0\Aliquota.Application.csproj.CoreCompileInputs.cache
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Application\obj\Debug\net5.0\Aliquota.Application.csproj.CopyComplete
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Application\obj\Debug\net5.0\Aliquota.Application.dll
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Application\obj\Debug\net5.0\ref\Aliquota.Application.dll
+C:\Users\cesarmsj\ambiente-dev\c#\kinvo-back-end-test\Aliquota.Application\obj\Debug\net5.0\Aliquota.Application.pdb

@@ -1,0 +1,236 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Infrasctructure.Test\\Aliquota.Infrasctructure.Test.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Domain\\Aliquota.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Domain\\Aliquota.Domain.csproj",
+        "projectName": "Aliquota.Domain",
+        "projectPath": "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Domain\\Aliquota.Domain.csproj",
+        "packagesPath": "C:\\Users\\cesarmsj\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cesarmsj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Infrasctructure.Test\\Aliquota.Infrasctructure.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Infrasctructure.Test\\Aliquota.Infrasctructure.Test.csproj",
+        "projectName": "Aliquota.Infrasctructure.Test",
+        "projectPath": "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Infrasctructure.Test\\Aliquota.Infrasctructure.Test.csproj",
+        "packagesPath": "C:\\Users\\cesarmsj\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Infrasctructure.Test\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cesarmsj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Domain\\Aliquota.Domain.csproj": {
+                "projectPath": "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Domain\\Aliquota.Domain.csproj"
+              },
+              "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Infrasctructure\\Aliquota.Infrasctructure.csproj": {
+                "projectPath": "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Infrasctructure\\Aliquota.Infrasctructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.9.4, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.2, )"
+            },
+            "mock": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Infrasctructure\\Aliquota.Infrasctructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Infrasctructure\\Aliquota.Infrasctructure.csproj",
+        "projectName": "Aliquota.Infrasctructure",
+        "projectPath": "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Infrasctructure\\Aliquota.Infrasctructure.csproj",
+        "packagesPath": "C:\\Users\\cesarmsj\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Infrasctructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cesarmsj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Domain\\Aliquota.Domain.csproj": {
+                "projectPath": "C:\\Users\\cesarmsj\\ambiente-dev\\c#\\kinvo-back-end-test\\Aliquota.Domain\\Aliquota.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "MySQL.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
