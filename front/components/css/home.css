@@ -1,0 +1,43 @@
+.pesq#pesq{
+    
+    padding-top: 350px;
+		
+}
+.row#pesq{
+    margin-left: 300px;
+    margin-right: 300px;
+    border-radius: 15px;
+    padding: 20px;
+	box-shadow: 0px 0px 15px rgba(50, 50, 50, 0.20);
+
+}
+
+.form-control:focus{
+    box-shadow: none;
+}
+
+.btnpesquisar{
+    width: 100%;
+    margin-top: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #2720E6;
+}
+
+.btnpesquisar:hover{
+    background-color: #1712ac;
+    box-shadow: none;
+
+
+}
+
+.btnpesquisar:focus{
+    background-color: #2720E6;
+    box-shadow: none;
+
+}
+
+.btnpesquisar:active:focus{
+    box-shadow: none;
+
+}
