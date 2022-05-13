@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kinvo.Aliquota.Domain.Entities\Kinvo.Aliquota.Domain.Entities.csproj" />
+    <ProjectReference Include="..\Kinvo.Aliquota.Models\Kinvo.Aliquota.Models.csproj" />
+  </ItemGroup>
+
+</Project>
