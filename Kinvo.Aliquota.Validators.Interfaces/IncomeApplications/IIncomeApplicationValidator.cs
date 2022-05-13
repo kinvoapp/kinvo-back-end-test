@@ -11,5 +11,6 @@ namespace Kinvo.Aliquota.Validators.Interfaces.IncomeApplications
 {
     public interface IIncomeApplicationValidator : IBaseValidator<IncomeApplication, IncomeApplicationRequest>
     {
+        Task<IncomeApplication> ValidateUuid(Guid? uuid);
     }
 }

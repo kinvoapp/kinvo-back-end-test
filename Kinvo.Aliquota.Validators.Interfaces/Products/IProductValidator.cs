@@ -11,5 +11,6 @@ namespace Kinvo.Aliquota.Validators.Interfaces.Products
 {
     public interface IProductValidator : IBaseValidator<Product, ProductRequest>
     {
+        Task<Product> ValidateUuid(Guid? uuid);
     }
 }

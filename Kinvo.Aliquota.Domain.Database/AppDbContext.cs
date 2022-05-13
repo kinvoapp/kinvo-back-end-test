@@ -9,16 +9,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kinvo.Aliquota.Domain.Database.Seeds;
 
 namespace Kinvo.Aliquota.Domain
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext()
-        {
-
-        }
-
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options){}
 
         public DbSet<Client> Clients { get; set; }
@@ -30,6 +26,13 @@ namespace Kinvo.Aliquota.Domain
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Password=1234;Persist Security Info=True;User ID=sa;Initial Catalog=KinvoApp;Data Source=DESKTOP-0JB5BST");
+        }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.SeedClient();
+            builder.SeedProduct();
         }
 
     }

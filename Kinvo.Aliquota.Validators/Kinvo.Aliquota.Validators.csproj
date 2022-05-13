@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Kinvo.Aliquota.Domain.Database.Interfaces\Kinvo.Aliquota.Domain.Database.Interfaces.csproj" />
     <ProjectReference Include="..\Kinvo.Aliquota.Models\Kinvo.Aliquota.Models.csproj" />
     <ProjectReference Include="..\Kinvo.Aliquota.Validators.Interfaces\Kinvo.Aliquota.Validators.Interfaces.csproj" />
   </ItemGroup>

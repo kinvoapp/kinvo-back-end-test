@@ -16,10 +16,12 @@ namespace Kinvo.Aliquota.Test.Integration.Clients
         {
             return new StringContent(body, Encoding.UTF8, "application/json");
         }
+        
 
         [Fact]
         public async Task PostClient()
         {
+
             var cliente = new ClientRequest
             {
                 Active = true,

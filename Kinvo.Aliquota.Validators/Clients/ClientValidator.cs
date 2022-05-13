@@ -7,13 +7,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kinvo.Aliquota.Domain.Database.Interfaces.Clients;
 
 namespace Kinvo.Aliquota.Validators.Clients
 {
     public class ClientValidator : AbstractValidator<ClientRequest>, IClientValidator
     {
-        public ClientValidator()
+        private readonly IClientRepository _clientRepository;
+        public ClientValidator(IClientRepository clientRepository)
         {
+            _clientRepository = clientRepository;
         }
 
         private void GeneralValidator()
@@ -39,6 +42,20 @@ namespace Kinvo.Aliquota.Validators.Clients
         public async Task<Client> ValidateRemove(Guid? uuid)
         {
             throw new NotImplementedException();
+        }
+        
+        public async Task<Client> ValidateUuid(Guid? uuid)
+        {
+            if (!uuid.HasValue)
+            {
+                throw new ArgumentException("Uuid is required");
+                return null;
+            }
+
+            var obj = await _clientRepository.FindAsync(uuid.Value);
+
+            return obj;
+
         }
 
     }

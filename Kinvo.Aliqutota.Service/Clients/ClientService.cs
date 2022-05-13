@@ -29,6 +29,7 @@ namespace Kinvo.Aliqutota.Service.Clients
 
         public async Task<ClientResponse> Create(ClientRequest clientRequest)
         {
+            await _clientValidator.ValidateCreation(clientRequest);
             var client = _mapper.Map<Client>(clientRequest);
             
             _clientRepository.Insert(client);
@@ -36,10 +37,9 @@ namespace Kinvo.Aliqutota.Service.Clients
             
         }
 
-        public async Task<ClientResponse> Edit(Guid? Uuid, ClientRequest clientRequest)
+        public async Task<ClientResponse> Edit(Guid? uuid, ClientRequest clientRequest)
         {
-            
-            var client = await _clientRepository.FindAsync(Uuid.Value); 
+            var client = await _clientRepository.FindAsync(uuid.Value); 
 
             client.ModificationDate = DateTime.Now;
             client.Name = clientRequest.Name;

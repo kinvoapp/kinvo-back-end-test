@@ -11,5 +11,6 @@ namespace Kinvo.Aliquota.Validators.Interfaces.Clients
 {
     public interface IClientValidator : IBaseValidator<Client, ClientRequest>
     {
+        Task<Client> ValidateUuid(Guid? uuid);
     }
 }

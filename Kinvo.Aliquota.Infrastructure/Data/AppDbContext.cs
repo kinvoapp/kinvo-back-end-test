@@ -14,12 +14,10 @@ namespace Kinvo.Aliquota.Infrastructure.Data
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext()
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 
         }
-
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options){}
 
         public DbSet<Client> Clients { get; set; }
         public DbSet<Product> Products { get; set; }
@@ -27,11 +25,10 @@ namespace Kinvo.Aliquota.Infrastructure.Data
         public DbSet<IncomeApplication> IncomeApplications { get; set; }
         public DbSet<DateWithdrawal> DateWithdrawals { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(modelBuilder);
-
-  
+            base.OnModelCreating(builder);
+            
         }
 
     }
