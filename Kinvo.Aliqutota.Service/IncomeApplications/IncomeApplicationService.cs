@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kinvo.Aliquota.Validators.Interfaces.Clients;
+using Kinvo.Aliquota.Validators.Interfaces.Products;
 
 namespace Kinvo.Aliqutota.Service.IncomeApplications
 {
@@ -17,19 +19,40 @@ namespace Kinvo.Aliqutota.Service.IncomeApplications
     {
         private readonly IIncomeApplicationRepository _incomeApplicationRepository;
         private readonly IIncomeApplicationValidator _incomeApplicationValidator;
+        private readonly IProductValidator _productValidator;
+        private readonly IClientValidator _clientValidator;
         private readonly IMapper _mapper;
 
-        public IncomeApplicationService(IIncomeApplicationRepository incomeApplicationRepository, IIncomeApplicationValidator incomeApplicationValidator, IMapper mapper)
-            : base(incomeApplicationRepository)
+        public IncomeApplicationService(IIncomeApplicationRepository incomeApplicationRepository, 
+                                        IIncomeApplicationValidator incomeApplicationValidator, 
+                                        IMapper mapper,
+                                        IProductValidator productValidator,
+                                        IClientValidator clientValidator)
+                                                        : base(incomeApplicationRepository)
         {
             _incomeApplicationRepository = incomeApplicationRepository;
             _incomeApplicationValidator = incomeApplicationValidator;
             _mapper = mapper;
+            _productValidator = productValidator;
+            _clientValidator = clientValidator;
         }
 
         public async Task<IncomeApplicationResponse> Create(IncomeApplicationRequest incomeApplicationRequest)
         {
+            await _productValidator.ValidateUuid(incomeApplicationRequest.Product.Uuid);
+
+            await _clientValidator.ValidateUuid(incomeApplicationRequest.Client.Uuid);
+            
+            await _incomeApplicationValidator.ValidateCreation(incomeApplicationRequest);
+
             var incomeApplication = _mapper.Map<IncomeApplication>(incomeApplicationRequest);
+            var dateIncomeApplications = incomeApplication.DateIncomeApplication;
+            
+            dateIncomeApplications.ToList().ForEach(application =>
+            {
+                application.Uuid = Guid.NewGuid();
+                application.AppliedValue = incomeApplication.AppliedValue;
+            });
 
             _incomeApplicationRepository.Insert(incomeApplication);
             return _mapper.Map<IncomeApplicationResponse>(incomeApplication);
@@ -43,8 +66,8 @@ namespace Kinvo.Aliqutota.Service.IncomeApplications
 
             incomeApplication.ModificationDate = DateTime.Now;
             incomeApplication.AppliedValue = incomeApplicationRequest.AppliedValue;
-            incomeApplication.ClientId = incomeApplicationRequest.ClientId;
-            incomeApplication.ProductId = incomeApplicationRequest.ProductId;
+            incomeApplication.Client = incomeApplicationRequest.Client;
+            incomeApplication.Product = incomeApplicationRequest.Product;
             
 
             _incomeApplicationRepository.Update(incomeApplication);
