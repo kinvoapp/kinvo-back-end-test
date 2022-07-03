@@ -1,43 +1,91 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using Aliquota.Domain.Interfaces;
+using Aliquota.API.ViewModels;
+using Aliquota.Domain.Models;
 
 namespace Aliquota.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProdutosController : ControllerBase
+    public class ProdutosController : MainController
     {
-        // GET: api/<ProdutosController>
+        private readonly IProdutoRepository _produtoRepository;
+        private readonly IProdutoService _produtoService;
+        private readonly IMapper _mapper;
+
+        public ProdutosController(INotificador notificador,
+                                  IProdutoRepository produtoRepository,
+                                  IProdutoService produtoService,
+                                  IMapper mapper) : base(notificador)
+        {
+            _produtoRepository = produtoRepository;
+            _produtoService = produtoService;
+            _mapper = mapper;
+        }
+
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IEnumerable<ProdutoViewModel>> ObterTodos()
         {
-            return new string[] { "value1", "value2" };
+            return _mapper.Map<IEnumerable<ProdutoViewModel>>(await _produtoRepository.ObterTodos());
         }
 
-        // GET api/<ProdutosController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{id:guid}")]
+        public async Task<ActionResult<ProdutoViewModel>> ObterPorId(Guid id)
         {
-            return "value";
+            var produtoViewModel = await ObterProduto(id);
+
+            if (produtoViewModel == null) return NotFound();
+
+            return produtoViewModel;
         }
 
-        // POST api/<ProdutosController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<ActionResult<ProdutoViewModel>> Adicionar(ProdutoViewModel produtoViewModel)
         {
+            if (!ModelState.IsValid) return CustomResponse(ModelState);
+
+            await _produtoService.Adicionar(_mapper.Map<Produto>(produtoViewModel));
+
+            return CustomResponse(produtoViewModel);
         }
 
-        // PUT api/<ProdutosController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("{id:guid}")]
+        public async Task<IActionResult> Atualizar(Guid id, ProdutoViewModel produtoViewModel)
         {
+            if (id != produtoViewModel.Id)
+            {
+                NotificarErro("O id informado não é o mesmo que foi passado na query");
+                return CustomResponse(produtoViewModel);
+            }
+
+            if (!ModelState.IsValid) return CustomResponse(ModelState);
+
+            await _produtoService.Atualizar(_mapper.Map<Produto>(produtoViewModel));
+
+            return CustomResponse(produtoViewModel);
         }
 
-        // DELETE api/<ProdutosController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{id:guid}")]
+        public async Task<ActionResult<ProdutoViewModel>> Excluir(Guid id)
         {
+            var cidadeViewModel = await ObterPosicoesDoProduto(id);
+
+            if (cidadeViewModel == null) return NotFound();
+
+            await _produtoService.Remover(id);
+
+            return CustomResponse(cidadeViewModel);
+        }
+
+        private async Task<ProdutoViewModel> ObterProduto(Guid id)
+        {
+            return _mapper.Map<ProdutoViewModel>(await _produtoRepository.ObterPorId(id));
+        }
+
+        private async Task<ProdutoViewModel> ObterPosicoesDoProduto(Guid id)
+        {
+            return _mapper.Map<ProdutoViewModel>(await _produtoRepository.ObterPosicoesProduto(id));
         }
     }
 }

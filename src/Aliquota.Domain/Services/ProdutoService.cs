@@ -7,14 +7,11 @@ namespace Aliquota.Domain.Services
     public class ProdutoService : BaseService, IProdutoService
     {
         private readonly IProdutoRepository _produtoRepository;
-        private readonly IPosicaoRepository _posicaoRepository;
 
         public ProdutoService(IProdutoRepository produtoRepository,
-                              IPosicaoRepository posicaoRepository,
                               INotificador notificador) : base(notificador)
         {
             _produtoRepository = produtoRepository;
-            _posicaoRepository = posicaoRepository;
         }
 
         public async Task Adicionar(Produto produto)
@@ -58,7 +55,6 @@ namespace Aliquota.Domain.Services
         public void Dispose()
         {
             _produtoRepository?.Dispose();
-            _posicaoRepository?.Dispose();
         }
     }
 }

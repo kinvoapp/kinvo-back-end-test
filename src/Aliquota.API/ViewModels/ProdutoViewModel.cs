@@ -9,7 +9,7 @@ namespace Aliquota.API.ViewModels
         public Guid Id { get; set; }
 
         [Required]
-        [MaxLength(50)]
+        [StringLength(100, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres", MinimumLength = 5)]
         public string Nome { get; set; }
 
         [Required]
