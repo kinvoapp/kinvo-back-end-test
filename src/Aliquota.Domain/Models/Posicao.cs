@@ -12,5 +12,19 @@
         public bool Ativo { get; set; }
         public Produto Produto { get; set; }
 
+        public Posicao()
+        {
+
+        }
+
+        public Posicao(Guid posicaoId, Guid produtoId, DateTime dataCadastro, DateTime dataAporte, decimal valorAportado, bool ativo)
+        {
+            Id = posicaoId;
+            ProdutoId = produtoId;
+            DataCadastro = dataCadastro;
+            DataAporte = dataAporte;
+            ValorAportado = valorAportado;
+            Ativo = ativo;
+        }
     }
 }

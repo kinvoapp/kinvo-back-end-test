@@ -17,7 +17,7 @@ namespace Aliquota.Data.Repository
         public async Task<Posicao> ObterProdutoPosicao(Guid id)
         {
             return await Db.Posicoes.AsNoTracking()
-                .Include(p => p.Produto)
+                //.Include(p => p.Produto)
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
     }
