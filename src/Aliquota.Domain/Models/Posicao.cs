@@ -12,10 +12,7 @@
         public bool Ativo { get; set; }
         public Produto Produto { get; set; }
 
-        public Posicao()
-        {
-
-        }
+        public Posicao() { }
 
         public Posicao(Guid posicaoId, Guid produtoId, DateTime dataCadastro, DateTime dataAporte, decimal valorAportado, bool ativo)
         {

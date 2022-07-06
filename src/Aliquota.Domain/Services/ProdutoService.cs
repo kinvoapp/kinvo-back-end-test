@@ -7,11 +7,14 @@ namespace Aliquota.Domain.Services
     public class ProdutoService : BaseService, IProdutoService
     {
         private readonly IProdutoRepository _produtoRepository;
+        private readonly IPosicaoRepository _posicaoRepository;
 
         public ProdutoService(IProdutoRepository produtoRepository,
+                              IPosicaoRepository posicaoRepository,    
                               INotificador notificador) : base(notificador)
         {
             _produtoRepository = produtoRepository;
+            _posicaoRepository = posicaoRepository;
         }
 
         public async Task Adicionar(Produto produto)
@@ -31,7 +34,7 @@ namespace Aliquota.Domain.Services
         {
             if (!ExecutarValidacao(new ProdutoValidation(), produto)) return;
 
-            if (_produtoRepository.Buscar(p => p.Nome == produto.Nome && p.Id != produto.Id).Result.Any())
+            if (_produtoRepository.Buscar(p => p.Nome == produto.Nome).Result.Any())
             {
                 Notificar("Já existe um produto com este documento infomado.");
                 return;
@@ -42,12 +45,11 @@ namespace Aliquota.Domain.Services
 
         public async Task Remover(Guid id)
         {
-            /* Todo
-            if (_produtoRepository.ObterPosicoesAtivasProduto(id).Result.Posicoes.Any())
+            if (_posicaoRepository.ObterPosicoesPorProduto(id).Result.Any())
             {
                 Notificar("O produto ainda possui posições ativas!");
                 return;
-            }*/
+            }
 
             await _produtoRepository.Remover(id);
         }
