@@ -10,7 +10,7 @@ namespace Aliquota.Domain.Tests
 {
     public class PosicaoTests
     {
-        [Fact(DisplayName = "Adicionar Posição Válida")]
+        [Fact(DisplayName = "01 Adicionar Posição Válida")]
         [Trait("Categoria", "Posicao")]
         public async void AdicionarPosicao_NovoPosicaoValida_DeveCadastrarPosicao()
         {
@@ -30,7 +30,7 @@ namespace Aliquota.Domain.Tests
             posicaoRepo.Verify(r => r.Adicionar(posicao), Times.Once);
         }
 
-        [Fact(DisplayName = "Adicionar Posição Invalida")]
+        [Fact(DisplayName = "02 Adicionar Posição Invalida")]
         [Trait("Categoria", "Posicao")]
         public async void AdicionarPosicao_NovoPosicaoInalida_NaoDeveCadastrarPosicao()
         {
@@ -51,7 +51,7 @@ namespace Aliquota.Domain.Tests
         }
 
 
-        [Fact(DisplayName = "Atualizar Posição Válida")]
+        [Fact(DisplayName = "03 Atualizar Posição Válida")]
         [Trait("Categoria", "Posicao")]
         public async void AtualizarPosicao_AtualizarPosicaoValida_DeveAtualizarPosicao()
         {
@@ -79,7 +79,7 @@ namespace Aliquota.Domain.Tests
             posicaoRepo.Verify(r => r.Atualizar(posicaoAtualizada), Times.Once);
         }
 
-        [Fact(DisplayName = "Atualizar Posição Inválida")]
+        [Fact(DisplayName = "04 Atualizar Posição Inválida")]
         [Trait("Categoria", "Posicao")]
         public async void AtualizarPosicao_AtualizarPosicaoInalida_NaoDeveAtualizarPosicao()
         {
@@ -107,7 +107,7 @@ namespace Aliquota.Domain.Tests
             posicaoRepo.Verify(r => r.Atualizar(posicaoAtualizada), Times.Never);
         }
 
-        [Fact(DisplayName = "Remover Posição Válida")]
+        [Fact(DisplayName = "05 Remover Posição Válida")]
         [Trait("Categoria", "Posicao")]
         public async void RemoverPosicao_RemoverPosicaoValida_DeveRemoverPosicao()
         {
@@ -129,7 +129,7 @@ namespace Aliquota.Domain.Tests
             posicaoRepo.Verify(r => r.Remover(posicaoId), Times.Once);
         }
 
-        [Fact(DisplayName = "Remover Posição Inválida")]
+        [Fact(DisplayName = "06 Remover Posição Inválida")]
         [Trait("Categoria", "Posicao")]
         public async void RemoverPosicao_RemoverPosicaoInvalida_NaoDeveRemoverPosicao()
         {

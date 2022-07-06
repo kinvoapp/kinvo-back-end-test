@@ -7,14 +7,32 @@ using Aliquota.Domain.Interfaces;
 
 namespace Aliquota.Domain.Tests
 {
+    [TestCaseOrderer("Aliquota.Domain.Tests.PriorityOrderer", "Aliquota.Domain.Tests")]
+    [Collection(nameof(ProdutoCollection))]
     public class ProdutoTests
     {
-        [Fact(DisplayName = "Adicionar Produto Válido")]
+        /*
+        public Produto ProdutoValido;
+
+        public ProdutoTests()
+        {
+            ProdutoValido = new Produto(Guid.NewGuid(),"Fundo XYZ",12,true,DateTime.Now);
+        }*/
+
+        private readonly ProdutoTestsFixture _produtoTestsFixture;
+
+        public ProdutoTests(ProdutoTestsFixture produtoTestsFixture)
+        {
+            _produtoTestsFixture = produtoTestsFixture;
+        }
+
+        [Fact(DisplayName = "01 Adicionar Produto Válido"), TestPriority(1)]
         [Trait("Categoria", "Produto")]
         public async void AdicionarProduto_NovoProdutoValido_DeveCadastrarProduto()
         {
             // AAA
-            var produto = new Produto(Guid.NewGuid(), "Fundo XYZ", 12,true, DateTime.Now);
+            //var produto = new Produto(Guid.NewGuid(), "Fundo XYZ", 12,true, DateTime.Now);  
+            var produtoValido = _produtoTestsFixture.GerarProdutoValido();
 
             var produtoRepo = new Mock<IProdutoRepository>();
             var posicaoRepo = new Mock<IPosicaoRepository>();
@@ -23,18 +41,23 @@ namespace Aliquota.Domain.Tests
             var produtoService = new ProdutoService(produtoRepo.Object, posicaoRepo.Object, notificador.Object);
 
             // ACT
-            await produtoService.Adicionar(produto);
+            //await produtoService.Adicionar(produto);
+            //await produtoService.Adicionar(ProdutoValido);
+            await produtoService.Adicionar(produtoValido);
 
             // Assert
-            produtoRepo.Verify(r => r.Adicionar(produto), Times.Once);
+            //produtoRepo.Verify(r => r.Adicionar(produto), Times.Once);
+            //produtoRepo.Verify(r => r.Adicionar(ProdutoValido), Times.Once);
+            produtoRepo.Verify(r => r.Adicionar(produtoValido), Times.Once);
         }
 
-        [Fact(DisplayName = "Adicionar Produto Inválido")]
+        [Fact(DisplayName = "02 Adicionar Produto Inválido"), TestPriority(2)]
         [Trait("Categoria", "Produto")]
         public async void AdicionarProduto_NovoProdutoInvalido_NaoDeveCadastrarProduto()
         {
             // AAA
-            var produto = new Produto(Guid.NewGuid(), "Fund", 12, true, DateTime.Now);
+            //var produto = new Produto(Guid.NewGuid(), "Fund", 12, true, DateTime.Now);
+            var produtoInvalido = _produtoTestsFixture.GerarProdutoInvalido();
 
             var produtoRepo = new Mock<IProdutoRepository>();
             var posicaoRepo = new Mock<IPosicaoRepository>();
@@ -43,13 +66,15 @@ namespace Aliquota.Domain.Tests
             var produtoService = new ProdutoService(produtoRepo.Object, posicaoRepo.Object, notificador.Object);
 
             // ACT
-            await produtoService.Adicionar(produto);
+            //await produtoService.Adicionar(produto);
+            await produtoService.Adicionar(produtoInvalido);
 
             // Assert
-            produtoRepo.Verify(r => r.Adicionar(produto), Times.Never);
+            //produtoRepo.Verify(r => r.Adicionar(produto), Times.Never);
+            produtoRepo.Verify(r => r.Adicionar(produtoInvalido), Times.Never);
         }
 
-        [Fact(DisplayName = "Adicionar Produto Repedido")]
+        [Fact(DisplayName = "03 Adicionar Produto Repedido"), TestPriority(3)]
         [Trait("Categoria", "Produto")]
         public async void AdicionarProduto_ProdutoRepetido_NaoDeveCadastrarProduto()
         {
@@ -73,7 +98,7 @@ namespace Aliquota.Domain.Tests
             produtoRepo.Verify(r => r.Adicionar(produtoRepetido), Times.Never);
         }
 
-        [Fact(DisplayName = "Atualizar Produto Válido")]
+        [Fact(DisplayName = "04 Atualizar Produto Válido"), TestPriority(4)]
         [Trait("Categoria", "Produto")]
         public async void AtualizarProduto_AtualizarProdutoValido_DeveAtualizarProduto()
         {
@@ -99,7 +124,7 @@ namespace Aliquota.Domain.Tests
             produtoRepo.Verify(r => r.Atualizar(produtoAtualizado), Times.Once);
         }
 
-        [Fact(DisplayName = "Atualizar Produto Inválido")]
+        [Fact(DisplayName = "05 Atualizar Produto Inválido"), TestPriority(5)]
         [Trait("Categoria", "Produto")]
         public async void AtualizarProduto_AtualizarProduto_NaoDeveAtualizarProdutoInvalido()
         {
@@ -125,7 +150,7 @@ namespace Aliquota.Domain.Tests
             produtoRepo.Verify(r => r.Atualizar(produtoAtualizado), Times.Never);
         }
 
-        [Fact(DisplayName = "Atualizar Produto Repetido", Skip = "Está Executando Atualizar Quando Não Deveria")]
+        [Fact(DisplayName = "06 Atualizar Produto Repetido", Skip = "Está Executando Atualizar Quando Não Deveria"), TestPriority(6)]
         [Trait("Categoria", "Produto")]
         public async void AtualizarProduto_AtualizarProdutoRepetido_NaoDeveAtualizarProduto()
         {
@@ -153,7 +178,7 @@ namespace Aliquota.Domain.Tests
             produtoRepo.Verify(r => r.Atualizar(produtoAtualizadoRepetido), Times.Never);
         }
 
-        [Fact(DisplayName = "Remover Produto Sem Posições")]
+        [Fact(DisplayName = "07 Remover Produto Sem Posições"), TestPriority(7)]
         [Trait("Categoria", "Produto")]
         public async void RemoverProduto_ExcluirProdutoSemProsicoes_DeveExcluirProduto()
         {
@@ -176,7 +201,7 @@ namespace Aliquota.Domain.Tests
             produtoRepo.Verify(r => r.Remover(produtoId), Times.Once);
         }
 
-        [Fact(DisplayName = "Remover Produto Com Posições", Skip = "Cenário Incompleto, pois não valida cenário")]
+        [Fact(DisplayName = "08 Remover Produto Com Posições", Skip = "Cenário Incompleto, pois não valida cenário"), TestPriority(8)]
         [Trait("Categoria", "Produto")]
         public async  void RemoverProduto_ExcluirProdutoComPosicoes_DeveExcluirProduto()
         {
