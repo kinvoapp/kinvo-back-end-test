@@ -4,6 +4,7 @@ using Aliquota.Domain.Models.Validations;
 
 namespace Aliquota.Domain.Services
 {
+
     public class ProdutoService : BaseService, IProdutoService
     {
         private readonly IProdutoRepository _produtoRepository;
@@ -15,6 +16,11 @@ namespace Aliquota.Domain.Services
         {
             _produtoRepository = produtoRepository;
             _posicaoRepository = posicaoRepository;
+        }
+
+        public async Task<IEnumerable<Produto>> ObterProdutosAtivos()
+        {
+            return await _produtoRepository.ObterTodos();
         }
 
         public async Task Adicionar(Produto produto)

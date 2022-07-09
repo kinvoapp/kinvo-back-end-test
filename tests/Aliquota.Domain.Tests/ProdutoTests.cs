@@ -4,6 +4,7 @@ using System;
 using Aliquota.Domain.Models;
 using Aliquota.Domain.Services;
 using Aliquota.Domain.Interfaces;
+using System.Linq;
 
 namespace Aliquota.Domain.Tests
 {
@@ -24,6 +25,27 @@ namespace Aliquota.Domain.Tests
         public ProdutoTests(ProdutoTestsFixture produtoTestsFixture)
         {
             _produtoTestsFixture = produtoTestsFixture;
+        }
+
+        [Fact(DisplayName = "00 Obter Todos Os Produtod")]
+        [Trait("Categoria", "Produto")]
+        public async void ObterProdutos_ObterListaDeProdutos_DeveObterTodosProdutos()
+        {
+            // Arrange
+            var produtoValido = _produtoTestsFixture.GerarProdutoValido();
+            var produtoRepo = new Mock<IProdutoRepository>();
+            var posicaoRepo = new Mock<IPosicaoRepository>();
+            var notificador = new Mock<INotificador>();
+
+            var produtoService = new ProdutoService(produtoRepo.Object, posicaoRepo.Object, notificador.Object);
+
+            await produtoService.Adicionar(produtoValido);
+
+            // Act
+            var produtos = produtoService.ObterProdutosAtivos().Result;
+
+            // Assert
+            Assert.True(produtos.Any());
         }
 
         [Fact(DisplayName = "01 Adicionar Produto Válido"), TestPriority(1)]
